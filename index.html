@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Entrance Exam – Hệ Thống Thi Trắc Nghiệm AI 2026</title>
+  <meta name="description" content="Hệ thống thi trắc nghiệm tuyển sinh chương trình đào tạo AI với 200 câu hỏi, 4 modules, đồng hồ đếm ngược và kết quả chi tiết." />
+
+  <!-- KaTeX for math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <!-- Highlight.js for code syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <!-- Main styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Background ambient orbs -->
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
+
+<!-- Loading screen -->
+<div class="loading-screen" id="loading-screen">
+  <div class="loading-spinner"></div>
+  <span class="loading-text">Đang tải hệ thống…</span>
+</div>
+
+<!-- ===========================
+     LANDING PAGE
+     =========================== -->
+<section class="page-section" id="landing-page">
+  <div class="landing-container">
+
+    <div class="badge-pill">
+      <span>AI Training Program 2026</span>
+    </div>
+
+    <h1 class="hero-title">
+      Hệ Thống Thi<br/>
+      <span class="gradient-text">Trắc Nghiệm AI</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Đánh giá năng lực toàn diện qua <strong>200 câu hỏi</strong> từ
+      Toán học, Lập trình, Kiến thức AI và Suy luận Đạo đức.
+      Được thiết kế cho kỳ thi tuyển sinh chương trình đào tạo AI.
+    </p>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">200</div>
+        <div class="stat-label">Câu hỏi</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">4</div>
+        <div class="stat-label">Modules</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">90'</div>
+        <div class="stat-label">Thời gian</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">3</div>
+        <div class="stat-label">Mức độ khó</div>
+      </div>
+    </div>
+
+    <!-- Mode selector -->
+    <div class="mode-selector">
+      <div class="mode-label">Chọn chế độ thi</div>
+      <div class="mode-options">
+        <button class="mode-btn" data-count="20">
+          <span class="mode-questions">20</span>
+          <span>câu hỏi</span>
+          <span class="mode-time">35 phút</span>
+        </button>
+        <button class="mode-btn selected" data-count="40">
+          <span class="mode-questions">40</span>
+          <span>câu hỏi</span>
+          <span class="mode-time">70 phút</span>
+        </button>
+        <button class="mode-btn" data-count="50">
+          <span class="mode-questions">50</span>
+          <span>câu hỏi</span>
+          <span class="mode-time">90 phút</span>
+        </button>
+      </div>
+    </div>
+
+    <button class="btn-start" id="start-btn">
+      <span>Bắt đầu làm bài</span>
+    </button>
+
+    <!-- Module overview -->
+    <div class="modules-grid">
+      <div class="module-card">
+        <div class="module-card-header">
+          <span class="module-tag mod-a">Module A</span>
+          <span class="module-count">50 câu</span>
+        </div>
+        <div class="module-card-title">Toán học & Suy luận định lượng</div>
+        <div class="module-card-desc">Đại số tuyến tính, Xác suất thống kê, Giải tích, Hàm kích hoạt, Chỉ số đánh giá mô hình.</div>
+      </div>
+      <div class="module-card">
+        <div class="module-card-header">
+          <span class="module-tag mod-b">Module B</span>
+          <span class="module-count">50 câu</span>
+        </div>
+        <div class="module-card-title">Lập trình & Xử lý dữ liệu</div>
+        <div class="module-card-desc">Python syntax, Cấu trúc dữ liệu, Thuật toán, Tiền xử lý dữ liệu, Tokenization, Augmentation.</div>
+      </div>
+      <div class="module-card">
+        <div class="module-card-header">
+          <span class="module-tag mod-c">Module C</span>
+          <span class="module-count">50 câu</span>
+        </div>
+        <div class="module-card-title">Kiến thức AI & Tư duy sản phẩm</div>
+        <div class="module-card-desc">Supervised/Unsupervised Learning, Computer Vision, NLP, LLM, RAG, Transfer Learning, UX Metrics.</div>
+      </div>
+      <div class="module-card">
+        <div class="module-card-header">
+          <span class="module-tag mod-d">Module D</span>
+          <span class="module-count">50 câu</span>
+        </div>
+        <div class="module-card-title">Logic, Đạo đức & Phán đoán hành vi</div>
+        <div class="module-card-desc">Suy luận mệnh đề, Quyền riêng tư dữ liệu, Định kiến AI, Đạo đức nghề nghiệp, Giấy phép mã nguồn.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===========================
+     QUIZ PAGE
+     =========================== -->
+<section class="page-section" id="quiz-page">
+
+  <!-- Sidebar -->
+  <aside class="quiz-sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">AI Entrance Exam</div>
+
+      <!-- Timer -->
+      <div class="timer-container">
+        <div class="timer-label">Thời gian còn lại</div>
+        <div class="timer-display" id="timer-display">90:00</div>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-info">
+        <span>Tiến độ</span>
+        <span id="progress-text">0 / 40 câu</span>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="sidebar-body">
+      <div class="sidebar-section-title">Danh sách câu hỏi</div>
+      <div class="questions-grid" id="questions-grid"></div>
+
+      <!-- Legend -->
+      <div class="legend">
+        <div class="legend-item"><span class="legend-dot current"></span>Câu hiện tại</div>
+        <div class="legend-item"><span class="legend-dot answered"></span>Đã trả lời</div>
+        <div class="legend-item"><span class="legend-dot flagged"></span>Đã đánh dấu</div>
+        <div class="legend-item"><span class="legend-dot unanswered"></span>Chưa trả lời</div>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <button class="btn-submit" id="submit-btn">Nộp bài</button>
+    </div>
+  </aside>
+
+  <!-- Main quiz area -->
+  <main class="quiz-main">
+
+    <!-- Question header row -->
+    <div class="question-header">
+      <span class="question-number" id="question-number">Câu 1 / 40</span>
+      <div class="question-meta">
+        <span class="module-badge Module_A" id="module-badge">Module A</span>
+        <span class="difficulty-badge easy" id="difficulty-badge">Dễ</span>
+        <button class="btn-flag" id="flag-btn">Đánh dấu</button>
+      </div>
+    </div>
+
+    <!-- Question card -->
+    <div class="question-card">
+      <div class="question-content" id="question-content">
+        Đang tải câu hỏi…
+      </div>
+    </div>
+
+    <!-- Options -->
+    <div class="options-list" id="options-list"></div>
+
+    <!-- Navigation -->
+    <div class="question-nav">
+      <button class="btn-nav" id="prev-btn">← Câu trước</button>
+      <button class="btn-nav btn-nav-next" id="next-btn">Tiếp theo →</button>
+    </div>
+
+  </main>
+
+</section>
+
+
+<!-- ===========================
+     RESULTS PAGE
+     =========================== -->
+<section class="page-section" id="results-page">
+  <div class="results-container">
+
+    <!-- Hero score -->
+    <div class="results-hero">
+      <div class="score-circle">
+        <svg class="score-svg" viewBox="0 0 120 120">
+          <circle class="score-track" cx="60" cy="60" r="54"/>
+          <circle class="score-fill" id="score-fill" cx="60" cy="60" r="54"
+            stroke="#4f8ef7"
+            stroke-dasharray="339.29"
+            stroke-dashoffset="339.29"/>
+        </svg>
+        <div class="score-number">
+          <span class="score-value" id="score-value">0</span>
+          <span class="score-total" id="score-total-label">/ 40</span>
+        </div>
+      </div>
+
+      <h2 class="results-title" id="results-title">Hoàn thành!</h2>
+      <p class="results-subtitle" id="results-subtitle">Xem phân tích chi tiết kết quả của bạn bên dưới.</p>
+    </div>
+
+    <!-- Quick stats -->
+    <div class="results-stats">
+      <div class="result-stat-card">
+        <div class="result-stat-value correct" id="result-correct">0</div>
+        <div class="result-stat-label">Đúng</div>
+      </div>
+      <div class="result-stat-card">
+        <div class="result-stat-value wrong" id="result-wrong">0</div>
+        <div class="result-stat-label">Sai</div>
+      </div>
+      <div class="result-stat-card">
+        <div class="result-stat-value skipped" id="result-skipped">0</div>
+        <div class="result-stat-label">Bỏ qua</div>
+      </div>
+      <div class="result-stat-card">
+        <div class="result-stat-value time" id="result-time">0:00</div>
+        <div class="result-stat-label">Thời gian</div>
+      </div>
+    </div>
+
+    <!-- Module breakdown -->
+    <div class="breakdown-grid">
+      <div class="breakdown-card">
+        <div class="breakdown-header">
+          <span class="module-tag mod-a breakdown-title">Module A – Toán học</span>
+          <span class="breakdown-score" style="color:var(--accent-blue)" id="mod-score-A">–</span>
+        </div>
+        <div class="breakdown-bar"><div class="breakdown-bar-fill bar-mod-a" id="mod-bar-A" style="width:0%"></div></div>
+      </div>
+      <div class="breakdown-card">
+        <div class="breakdown-header">
+          <span class="module-tag mod-b breakdown-title">Module B – Lập trình</span>
+          <span class="breakdown-score" style="color:var(--accent-green)" id="mod-score-B">–</span>
+        </div>
+        <div class="breakdown-bar"><div class="breakdown-bar-fill bar-mod-b" id="mod-bar-B" style="width:0%"></div></div>
+      </div>
+      <div class="breakdown-card">
+        <div class="breakdown-header">
+          <span class="module-tag mod-c breakdown-title">Module C – AI Knowledge</span>
+          <span class="breakdown-score" style="color:var(--accent-purple)" id="mod-score-C">–</span>
+        </div>
+        <div class="breakdown-bar"><div class="breakdown-bar-fill bar-mod-c" id="mod-bar-C" style="width:0%"></div></div>
+      </div>
+      <div class="breakdown-card">
+        <div class="breakdown-header">
+          <span class="module-tag mod-d breakdown-title">Module D – Đạo đức & Logic</span>
+          <span class="breakdown-score" style="color:var(--accent-orange)" id="mod-score-D">–</span>
+        </div>
+        <div class="breakdown-bar"><div class="breakdown-bar-fill bar-mod-d" id="mod-bar-D" style="width:0%"></div></div>
+      </div>
+    </div>
+
+    <!-- Review section -->
+    <div class="review-section">
+      <div class="review-header">
+        <h3 class="review-title">Xem lại câu hỏi</h3>
+        <div class="review-filter">
+          <button class="filter-btn active" data-filter="all">Tất cả</button>
+          <button class="filter-btn" data-filter="correct">Đúng</button>
+          <button class="filter-btn" data-filter="wrong">Sai</button>
+          <button class="filter-btn" data-filter="skipped">Bỏ qua</button>
+        </div>
+      </div>
+      <div class="review-list" id="review-list"></div>
+    </div>
+
+    <!-- Actions -->
+    <div class="results-actions">
+      <button class="btn-action btn-action-primary" id="btn-retry">Làm lại bài thi</button>
+      <button class="btn-action btn-action-secondary" id="btn-home">Về trang chủ</button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Submit Modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-card">
+    <h3 class="modal-title">Xác nhận nộp bài</h3>
+    <p class="modal-text" id="modal-text">Bạn có chắc muốn nộp bài không?</p>
+    <div class="modal-actions">
+      <button class="btn-modal btn-modal-cancel" id="modal-cancel">Quay lại</button>
+      <button class="btn-modal btn-modal-confirm" id="modal-confirm">Nộp bài</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Data files (question banks) -->
+<script src="questions_a.js"></script>
+<script src="questions_b.js"></script>
+<script src="questions_c.js"></script>
+<script src="questions_d.js"></script>
+
+<!-- App engine -->
+<script src="app.js"></script>
+
+</body>
+</html>
