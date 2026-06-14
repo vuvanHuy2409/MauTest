@@ -432,7 +432,7 @@ function renderResults() {
 
   // Animate SVG circle
   const fill = document.getElementById('score-fill');
-  const colors = '#000000';
+  const colors = '#1d1d1f';
   fill.style.stroke = colors;
   fill.style.strokeDasharray = circumference;
   fill.style.strokeDashoffset = circumference;
