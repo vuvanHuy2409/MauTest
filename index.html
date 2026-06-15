@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Entrance Exam – Hệ Thống Thi Trắc Nghiệm AI 2026</title>
-  <meta name="description" content="Hệ thống thi trắc nghiệm tuyển sinh chương trình đào tạo AI với 200 câu hỏi, 4 modules, đồng hồ đếm ngược và kết quả chi tiết." />
+  <meta name="description" content="Hệ thống thi trắc nghiệm tuyển sinh chương trình đào tạo AI với 400 câu hỏi, 4 modules, đồng hồ đếm ngược và kết quả chi tiết." />
 
   <!-- KaTeX for math rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous" />
@@ -47,7 +47,7 @@
     </h1>
 
     <p class="hero-subtitle">
-      Đánh giá năng lực toàn diện qua <strong>200 câu hỏi</strong> từ
+      Đánh giá năng lực toàn diện qua <strong>400 câu hỏi</strong> từ
       Toán học, Lập trình, Kiến thức AI và Suy luận Đạo đức.
       Được thiết kế cho kỳ thi tuyển sinh chương trình đào tạo AI.
     </p>
@@ -55,7 +55,7 @@
     <!-- Stats -->
     <div class="stats-grid">
       <div class="stat-card">
-        <div class="stat-value">200</div>
+        <div class="stat-value">400</div>
         <div class="stat-label">Câu hỏi</div>
       </div>
       <div class="stat-card">
@@ -103,7 +103,7 @@
       <div class="module-card">
         <div class="module-card-header">
           <span class="module-tag mod-a">Module A</span>
-          <span class="module-count">50 câu</span>
+          <span class="module-count">100 câu</span>
         </div>
         <div class="module-card-title">Toán học & Suy luận định lượng</div>
         <div class="module-card-desc">Đại số tuyến tính, Xác suất thống kê, Giải tích, Hàm kích hoạt, Chỉ số đánh giá mô hình.</div>
@@ -111,7 +111,7 @@
       <div class="module-card">
         <div class="module-card-header">
           <span class="module-tag mod-b">Module B</span>
-          <span class="module-count">50 câu</span>
+          <span class="module-count">100 câu</span>
         </div>
         <div class="module-card-title">Lập trình & Xử lý dữ liệu</div>
         <div class="module-card-desc">Python syntax, Cấu trúc dữ liệu, Thuật toán, Tiền xử lý dữ liệu, Tokenization, Augmentation.</div>
@@ -119,7 +119,7 @@
       <div class="module-card">
         <div class="module-card-header">
           <span class="module-tag mod-c">Module C</span>
-          <span class="module-count">50 câu</span>
+          <span class="module-count">100 câu</span>
         </div>
         <div class="module-card-title">Kiến thức AI & Tư duy sản phẩm</div>
         <div class="module-card-desc">Supervised/Unsupervised Learning, Computer Vision, NLP, LLM, RAG, Transfer Learning, UX Metrics.</div>
@@ -127,7 +127,7 @@
       <div class="module-card">
         <div class="module-card-header">
           <span class="module-tag mod-d">Module D</span>
-          <span class="module-count">50 câu</span>
+          <span class="module-count">100 câu</span>
         </div>
         <div class="module-card-title">Logic, Đạo đức & Phán đoán hành vi</div>
         <div class="module-card-desc">Suy luận mệnh đề, Quyền riêng tư dữ liệu, Định kiến AI, Đạo đức nghề nghiệp, Giấy phép mã nguồn.</div>
@@ -167,21 +167,30 @@
       <button class="btn-menu" id="menu-trigger">Tác vụ</button>
     </div>
 
-    <div class="sidebar-body">
-      <div class="sidebar-section-title">Danh sách câu hỏi</div>
-      <div class="questions-grid" id="questions-grid"></div>
+    <!-- Backdrop overlay for mobile drawer -->
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
 
-      <!-- Legend -->
-      <div class="legend">
-        <div class="legend-item"><span class="legend-dot current"></span>Câu hiện tại</div>
-        <div class="legend-item"><span class="legend-dot answered"></span>Đã trả lời</div>
-        <div class="legend-item"><span class="legend-dot flagged"></span>Đã đánh dấu</div>
-        <div class="legend-item"><span class="legend-dot unanswered"></span>Chưa trả lời</div>
+    <div class="sidebar-drawer-content" id="sidebar-drawer-content">
+      <div class="sidebar-body">
+        <div class="drawer-header-mobile">
+          <span>Tác vụ</span>
+          <button class="btn-close-drawer" id="close-drawer-btn" aria-label="Đóng tác vụ">✕</button>
+        </div>
+        <div class="sidebar-section-title">Danh sách câu hỏi</div>
+        <div class="questions-grid" id="questions-grid"></div>
+
+        <!-- Legend -->
+        <div class="legend">
+          <div class="legend-item"><span class="legend-dot current"></span>Câu hiện tại</div>
+          <div class="legend-item"><span class="legend-dot answered"></span>Đã trả lời</div>
+          <div class="legend-item"><span class="legend-dot flagged"></span>Đã đánh dấu</div>
+          <div class="legend-item"><span class="legend-dot unanswered"></span>Chưa trả lời</div>
+        </div>
       </div>
-    </div>
 
-    <div class="sidebar-footer">
-      <button class="btn-submit" id="submit-btn">Nộp bài</button>
+      <div class="sidebar-footer">
+        <button class="btn-submit" id="submit-btn">Nộp bài</button>
+      </div>
     </div>
   </aside>
 

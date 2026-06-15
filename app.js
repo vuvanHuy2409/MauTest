@@ -95,6 +95,23 @@ document.addEventListener('DOMContentLoaded', () => {
   DOM.modalConfirm.addEventListener('click', () => { closeModal(); finishExam(); });
   DOM.modalCancel.addEventListener('click', closeModal);
 
+  // Mobile drawer trigger
+  const menuTrigger = document.getElementById('menu-trigger');
+  const closeDrawerBtn = document.getElementById('close-drawer-btn');
+  const drawerBackdrop = document.getElementById('drawer-backdrop');
+
+  if (menuTrigger) {
+    menuTrigger.addEventListener('click', () => {
+      document.getElementById('quiz-page').classList.add('drawer-open');
+    });
+  }
+  if (closeDrawerBtn) {
+    closeDrawerBtn.addEventListener('click', closeMobileDrawer);
+  }
+  if (drawerBackdrop) {
+    drawerBackdrop.addEventListener('click', closeMobileDrawer);
+  }
+
   // Review filters
   DOM.filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -353,6 +370,14 @@ function selectAnswer(index, letter) {
 function navigateTo(index) {
   if (index < 0 || index > STATE.examMode - 1) return;
   renderQuestion(index);
+  closeMobileDrawer();
+}
+
+function closeMobileDrawer() {
+  const quizPage = document.getElementById('quiz-page');
+  if (quizPage) {
+    quizPage.classList.remove('drawer-open');
+  }
 }
 
 // ---------- Flag ----------
@@ -515,8 +540,40 @@ function renderReviewList() {
     item.className = `review-item ${status}`;
 
     const statusIcon = { correct: '✓', wrong: '✗', skipped: '—' }[status];
-
     const shortContent = q.content.replace(/\$[^$]+\$/g, '[...]').replace(/```[\s\S]*?```/g, '[code]').substring(0, 80) + '...';
+
+    const letters = ['A', 'B', 'C', 'D'];
+    let optionsHtml = '';
+    q.options.forEach((opt, idx) => {
+      const letter = letters[idx];
+      const optText = opt.replace(/^[A-D]\.\s*/, '');
+      const isUserChoice = (ans === letter);
+      const isCorrect = (q.correct_option === letter);
+
+      let optClass = 'review-option';
+      let badgeHtml = '';
+
+      if (isUserChoice) {
+        if (isCorrect) {
+          optClass += ' user-correct';
+          badgeHtml = '<span class="review-badge badge-user-correct">Bạn chọn đúng ✓</span>';
+        } else {
+          optClass += ' user-wrong';
+          badgeHtml = '<span class="review-badge badge-user-wrong">Bạn đã chọn ✗</span>';
+        }
+      } else if (isCorrect) {
+        optClass += ' correct-answer';
+        badgeHtml = '<span class="review-badge badge-correct">Đáp án đúng ✓</span>';
+      }
+
+      optionsHtml += `
+        <div class="${optClass}">
+          <span class="review-opt-letter">${letter}</span>
+          <span class="review-opt-text">${parseContent(optText)}</span>
+          ${badgeHtml}
+        </div>
+      `;
+    });
 
     item.innerHTML = `
       <div class="review-item-header" onclick="toggleReviewItem(this)">
@@ -526,11 +583,8 @@ function renderReviewList() {
       </div>
       <div class="review-item-body">
         <div class="review-item-content">${parseContent(q.content)}</div>
-        <div class="review-answer-row">
-          ${ans ? `<span class="review-answer your-answer ${ans === q.correct_option ? 'correct-pick' : ''}">Bạn chọn: ${ans}. ${q.options[['A','B','C','D'].indexOf(ans)]?.replace(/^[A-D]\.\s*/,'') || ''}</span>` : '<span class="review-answer your-answer">Chưa trả lời</span>'}
-          ${ans !== q.correct_option ? `<span class="review-answer correct-answer">Đáp án: ${q.correct_option}. ${q.options[['A','B','C','D'].indexOf(q.correct_option)]?.replace(/^[A-D]\.\s*/,'') || ''}</span>` : ''}
-        </div>
-        <div class="review-explanation"><strong>Giải thích:</strong> ${parseContent(q.explanation)}</div>
+        <div class="review-options-list">${optionsHtml}</div>
+        ${q.explanation ? `<div class="review-explanation"><strong>Giải thích:</strong> ${parseContent(q.explanation)}</div>` : ''}
       </div>
     `;
 
@@ -538,7 +592,7 @@ function renderReviewList() {
   });
 
   // Re-render math in review
-  DOM.reviewList.querySelectorAll('.review-item-content, .review-explanation').forEach(el => {
+  DOM.reviewList.querySelectorAll('.review-item-content, .review-options-list, .review-explanation').forEach(el => {
     renderMath(el);
   });
 }
