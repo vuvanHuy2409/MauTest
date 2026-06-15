@@ -78,7 +78,7 @@ const QUESTIONS_C = [
     explanation: "RAG (Retrieval-Augmented Generation) giới hạn không gian dữ liệu của LLM vào kho tài liệu chuẩn được cung cấp, giúp giảm thiểu tối đa hiện tượng \"bịa đặt\" thông tin (Hallucination)."
   },
   {
-    id: "Q_MOD_C_007", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_007", module_id: "Module_C", difficulty: "Medium",
     tags: ["overfitting"],
     content: "Khi huấn luyện một mô hình học máy, hiện tượng mô hình \"học vẹt\" – đạt độ chính xác cực kỳ cao ($99\\%$) trên tập dữ liệu dùng để học (Train set) nhưng khi áp dụng vào dữ liệu thực tế mới (Test set) thì kết quả lại rất tệ ($50\\%$) được gọi là hiện tượng gì?",
     options: [
@@ -533,7 +533,7 @@ const QUESTIONS_C = [
     explanation: "Fine-tuning thay đổi bản thân mô hình (học thêm luật, hành vi mới). RAG là kỹ thuật tìm kiếm ngữ cảnh rồi gửi kèm vào prompt, mô hình chỉ 'đọc' tài liệu được đưa thêm để trả lời chứ bản chất không thay đổi trọng số."
   },
   {
-    id: "Q_MOD_C_042", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_042", module_id: "Module_C", difficulty: "Medium",
     tags: ["supervised-learning"],
     content: "Trong các mạng nơ-ron sâu, hiện tượng 'Tiêu biến đạo hàm' (Vanishing Gradient) ảnh hưởng như thế nào đến việc huấn luyện mô hình và cách khắc phục nào sau đây là hiệu quả?",
     options: [
@@ -546,7 +546,7 @@ const QUESTIONS_C = [
     explanation: "Các hàm kích hoạt như Sigmoid hoặc Tanh có đạo hàm cực đại nhỏ ($<0.25$). Khi nhân chuỗi đạo hàm qua nhiều lớp, giá trị đạo hàm giảm lũy thừa về 0. ReLU (đạo hàm = 1 khi x > 0) và kết nối tắt trong ResNet giải quyết hiệu quả vấn đề này."
   },
   {
-    id: "Q_MOD_C_043", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_043", module_id: "Module_C", difficulty: "Medium",
     tags: ["nlp"],
     content: "Trong cơ chế Attention của mạng Transformer, công thức tính Attention nào sau đây là đúng? (Với $Q, K, V$ tương ứng là các ma trận Query, Key, Value và $d_k$ là kích thước của vector key).",
     options: [
@@ -559,7 +559,7 @@ const QUESTIONS_C = [
     explanation: "Đây là công thức Scaled Dot-Product Attention nổi tiếng trong bài báo 'Attention Is All You Need'. Việc chia cho $\\sqrt{d_k}$ giúp giảm thiểu sự bùng nổ giá trị tích vô hướng khi số chiều lớn, giữ cho softmax hoạt động ở vùng có gradient ổn định."
   },
   {
-    id: "Q_MOD_C_044", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_044", module_id: "Module_C", difficulty: "Medium",
     tags: ["computer-vision"],
     content: "Mạng đối địch sinh tạo (GAN - Generative Adversarial Networks) bao gồm hai thành phần Generator và Discriminator. Trò chơi minimax giữa chúng được tối ưu hóa như thế nào?",
     options: [
@@ -572,7 +572,7 @@ const QUESTIONS_C = [
     explanation: "GAN hoạt động như một trò chơi hai người có tổng bằng không. Generator sinh ảnh giả G(z) từ nhiễu z, Discriminator D(x) chấm điểm độ thật. Generator tối thiểu hóa $\\log(1 - D(G(z)))$ trong khi Discriminator tối đa hóa $\\log D(x) + \\log(1 - D(G(z)))$."
   },
   {
-    id: "Q_MOD_C_045", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_045", module_id: "Module_C", difficulty: "Medium",
     tags: ["llm"],
     content: "Khi huấn luyện các mô hình ngôn ngữ lớn (LLM), kỹ thuật RLHF (Reinforcement Learning from Human Feedback) đóng vai trò gì trong giai đoạn sau tiền huấn luyện?",
     options: [
@@ -585,7 +585,7 @@ const QUESTIONS_C = [
     explanation: "Sau khi học dự đoán từ (Pre-training) và học theo hướng dẫn (SFT), LLM có thể sinh nội dung độc hại hoặc vô ích. RLHF căn chỉnh mô hình thông qua phản hồi từ con người để đưa ra các câu trả lời tối ưu và an toàn nhất."
   },
   {
-    id: "Q_MOD_C_046", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_046", module_id: "Module_C", difficulty: "Medium",
     tags: ["metrics"],
     content: "Chỉ số AUC-ROC (Area Under the Receiver Operating Characteristic curve) thể hiện năng lực nào của mô hình phân loại nhị phân?",
     options: [
@@ -598,7 +598,7 @@ const QUESTIONS_C = [
     explanation: "ROC curve biểu diễn tỷ lệ True Positive Rate theo False Positive Rate tại các ngưỡng khác nhau. AUC (diện tích dưới đường cong) nằm trong $[0, 1]$. AUC càng gần 1 chứng tỏ mô hình phân loại cực tốt mà không phụ thuộc vào việc chọn ngưỡng ban đầu."
   },
   {
-    id: "Q_MOD_C_047", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_047", module_id: "Module_C", difficulty: "Medium",
     tags: ["product-ux"],
     content: "Khi thiết kế một sản phẩm AI phát hiện tin giả (Fake News Detection) hỗ trợ người kiểm duyệt nội dung mạng xã hội, làm sao để giải quyết vấn đề UX về niềm tin và tính minh bạch (Transparency) của AI?",
     options: [
@@ -611,7 +611,7 @@ const QUESTIONS_C = [
     explanation: "Sản phẩm AI cần giải thích được quyết định của mình (Explainability). Việc highlight bằng chứng và hiển thị độ tự tin giúp con người có cơ sở để đánh giá lại và tăng sự hợp tác người - máy."
   },
   {
-    id: "Q_MOD_C_048", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_048", module_id: "Module_C", difficulty: "Medium",
     tags: ["rag"],
     content: "Trong kiến trúc RAG nâng cao (Advanced RAG), kỹ thuật 'Query Rewriting' hoặc 'Query Expansion' giải quyết vấn đề gì?",
     options: [
@@ -624,7 +624,7 @@ const QUESTIONS_C = [
     explanation: "Người dùng thường đặt câu hỏi ngắn hoặc mơ hồ. Query Rewriting sử dụng LLM để diễn đạt lại câu hỏi theo nhiều hướng khác nhau, tăng khả năng khớp ngữ nghĩa với tài liệu gốc trong vector database."
   },
   {
-    id: "Q_MOD_C_049", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_049", module_id: "Module_C", difficulty: "Medium",
     tags: ["overfitting"],
     content: "Kỹ thuật Regularization nào sau đây (được gọi là L1 Regularization) thêm số hạng phạt bằng tổng giá trị tuyệt đối của các trọng số vào hàm mất mát, giúp tạo ra ma trận trọng số thưa thớt (sparse weights)?",
     options: [
@@ -637,7 +637,7 @@ const QUESTIONS_C = [
     explanation: "Lasso Regression (L1) thêm lượng phạt $\\lambda \\sum |w_i|$ vào hàm loss. Nó có xu hướng đẩy các trọng số của đặc trưng không quan trọng về bằng đúng 0, hoạt động như một cơ chế chọn lọc đặc trưng tự động."
   },
   {
-    id: "Q_MOD_C_050", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_050", module_id: "Module_C", difficulty: "Medium",
     tags: ["transfer-learning"],
     content: "Phương pháp 'Parameter-Efficient Fine-Tuning' (PEFT), tiêu biểu là LoRA (Low-Rank Adaptation), hoạt động dựa trên nguyên lý nào để tiết kiệm tài nguyên tính toán?",
     options: [
@@ -1170,7 +1170,7 @@ const QUESTIONS_C = [
     explanation: "Model Drift xảy ra khi các mối quan hệ trong dữ liệu thay đổi theo thời gian (ví dụ: xu hướng thị trường thay đổi), khiến các dự đoán huấn luyện trước đó không còn chính xác."
   },
   {
-    id: "Q_MOD_C_091", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_091", module_id: "Module_C", difficulty: "Medium",
     tags: ["machine-learning", "optimization"],
     content: "Tại sao phương pháp tối ưu hóa Adam (Adaptive Moment Estimation) thường hội tụ nhanh hơn Gradient Descent truyền thống trong các mạng nơ-ron sâu?",
     options: [
@@ -1183,7 +1183,7 @@ const QUESTIONS_C = [
     explanation: "Adam kết hợp cả Momentum (quán tính của các gradient trước) và RMSProp (chia tốc độ học cho căn bậc hai của trung bình động bình phương gradient) để tự điều chỉnh tốc độ học cho từng trọng số."
   },
   {
-    id: "Q_MOD_C_092", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_092", module_id: "Module_C", difficulty: "Medium",
     tags: ["computer-vision"],
     content: "Trong kiến trúc mạng Transformer dành cho thị giác máy tính (Vision Transformer - ViT), hình ảnh đầu vào được xử lý thế nào trước khi đưa vào các lớp Self-Attention?",
     options: [
@@ -1196,7 +1196,7 @@ const QUESTIONS_C = [
     explanation: "ViT chia ảnh đầu vào kích thước $H \\times W$ thành các patches kích thước $P \\times P$. Mỗi patch được phẳng hóa thành một vector độ dài $P^2 \\cdot C$, sau đó được ánh xạ tuyến tính và cộng thêm position embedding trước khi nạp vào Transformer Encoder."
   },
   {
-    id: "Q_MOD_C_093", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_093", module_id: "Module_C", difficulty: "Medium",
     tags: ["nlp", "llm"],
     content: "Hàm kích hoạt 'SwiGLU' (Swish Gated Linear Unit) thường được sử dụng trong các LLM hiện đại (như LLaMA) có điểm cải tiến gì nổi bật so với ReLU truyền thống?",
     options: [
@@ -1209,7 +1209,7 @@ const QUESTIONS_C = [
     explanation: "SwiGLU là một dạng của Gated Linear Unit sử dụng Swish làm hàm kích hoạt. Nó cung cấp sự kiểm soát dòng thông tin tốt hơn và duy trì đạo hàm phi tuyến tính mượt mà ở cả vùng âm, giúp mô hình hội tụ tốt hơn ReLU."
   },
   {
-    id: "Q_MOD_C_094", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_094", module_id: "Module_C", difficulty: "Medium",
     tags: ["rag"],
     content: "Trong hệ thống RAG nâng cao, kỹ thuật 'Re-ranking' đóng vai trò gì để tối ưu hóa ngữ cảnh cung cấp cho LLM?",
     options: [
@@ -1222,7 +1222,7 @@ const QUESTIONS_C = [
     explanation: "Mô hình Bi-Encoder tìm kiếm vector rất nhanh nhưng độ chính xác chưa tối ưu. Re-ranking sử dụng Cross-Encoder (nhập cả câu hỏi và đoạn văn cùng lúc) để tính điểm tương tác chi tiết hơn, giúp lọc ra các ngữ cảnh chuẩn xác nhất trước khi gửi tới LLM."
   },
   {
-    id: "Q_MOD_C_095", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_095", module_id: "Module_C", difficulty: "Medium",
     tags: ["product-metrics"],
     content: "Để đánh giá hiệu năng của hệ thống AI khuyến nghị (Recommender System), chỉ số 'NDCG' (Normalized Discounted Cumulative Gain) ưu việt hơn Recall ở điểm nào?",
     options: [
@@ -1235,7 +1235,7 @@ const QUESTIONS_C = [
     explanation: "NDCG đo lường mức độ hữu ích của sản phẩm dựa trên vị trí của nó trong danh sách gợi ý. Sản phẩm liên quan cao xuất hiện càng sớm (ở trên cùng) thì điểm NDCG càng cao, điều mà Recall truyền thống không đo lường được."
   },
   {
-    id: "Q_MOD_C_096", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_096", module_id: "Module_C", difficulty: "Medium",
     tags: ["machine-learning", "overfitting"],
     content: "Phương pháp chuẩn hóa 'Batch Normalization' giúp đẩy nhanh quá trình huấn luyện mạng nơ-ron sâu chủ yếu nhờ cơ chế nào?",
     options: [
@@ -1248,7 +1248,7 @@ const QUESTIONS_C = [
     explanation: "Batch Normalization thực hiện chuẩn hóa đầu vào của mỗi lớp ẩn theo mini-batch, giúp giảm hiện tượng Internal Covariate Shift (sự thay đổi phân phối đầu vào của các lớp sau do cập nhật trọng số ở lớp trước), làm quá trình huấn luyện ổn định và cho phép dùng tốc độ học cao hơn."
   },
   {
-    id: "Q_MOD_C_097", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_097", module_id: "Module_C", difficulty: "Medium",
     tags: ["product-ux", "metrics"],
     content: "Khi xây dựng mô hình AI nhận diện giọng nói (Speech-to-Text), làm sao để tối ưu hóa trải nghiệm người dùng đối với ứng dụng dịch thuật thời gian thực dựa trên các chỉ số mô hình?",
     options: [
@@ -1261,7 +1261,7 @@ const QUESTIONS_C = [
     explanation: "Đối với dịch thuật thời gian thực, độ trễ cực kỳ quan trọng đối với UX. Do đó, cần cân bằng giữa chất lượng dịch (WER thấp) và độ trễ (latency) sao cho phản hồi mượt mà không gây cảm giác đứt quãng cho người dùng."
   },
   {
-    id: "Q_MOD_C_098", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_098", module_id: "Module_C", difficulty: "Medium",
     tags: ["nlp", "llm"],
     content: "Cơ chế 'RoPE' (Rotary Position Embedding) được sử dụng phổ biến trong các mô hình LLaMA cải tiến việc mã hóa vị trí trong Transformer như thế nào so với mã hóa vị trí tuyệt đối của Attention Is All You Need?",
     options: [
@@ -1274,7 +1274,7 @@ const QUESTIONS_C = [
     explanation: "RoPE áp dụng một ma trận quay xoay các vector Query và Key tùy theo vị trí của chúng. Phép toán này đảm bảo rằng tích vô hướng $q_m^T k_n$ chỉ phụ thuộc vào khoảng cách tương đối $m - n$, giúp mô hình mở rộng độ dài ngữ cảnh tốt hơn."
   },
   {
-    id: "Q_MOD_C_099", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_099", module_id: "Module_C", difficulty: "Medium",
     tags: ["machine-learning", "optimization"],
     content: "Khi gặp hiện tượng mất cân bằng dữ liệu cực kỳ nghiêm trọng trong bài toán phân loại nhãn, tại sao hàm mất mát 'Focal Loss' hiệu quả hơn Cross-Entropy truyền thống?",
     options: [
@@ -1287,7 +1287,7 @@ const QUESTIONS_C = [
     explanation: "Focal Loss thêm thừa số $(1 - p_t)^\\gamma$ vào hàm Cross Entropy. Đối với mẫu dễ phân loại ($p_t$ tiến gần 1), thừa số này tiến về 0 làm giảm mạnh đóng góp của chúng vào loss, buộc mô hình tập trung vào các mẫu khó phân loại."
   },
   {
-    id: "Q_MOD_C_100", module_id: "Module_C", difficulty: "Hard",
+    id: "Q_MOD_C_100", module_id: "Module_C", difficulty: "Medium",
     tags: ["llm", "quantization"],
     content: "Trong kỹ thuật lượng hóa mô hình ngôn ngữ lớn (LLM Quantization), phương pháp lượng hóa sau huấn luyện (Post-Training Quantization - PTQ) khác gì so với lượng hóa trong khi huấn luyện (Quantization-Aware Training - QAT)?",
     options: [

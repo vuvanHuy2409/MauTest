@@ -451,7 +451,7 @@ const QUESTIONS_B = [
     explanation: "Với Time Series, các kỹ thuật Feature Engineering phổ biến gồm: Lag Features (giá trị quá khứ), Rolling Statistics (trung bình/độ lệch chuẩn trượt), Calendar Features (ngày tuần, tháng, quý), Trend/Seasonality decomposition. Những đặc trưng này giúp mô hình nắm bắt quy luật thời gian."
   },
   {
-    id: "Q_MOD_B_038", module_id: "Module_B", difficulty: "Hard",
+    id: "Q_MOD_B_038", module_id: "Module_B", difficulty: "Medium",
     tags: ["algorithms"],
     content: "**Dynamic Programming (Quy hoạch động)** là kỹ thuật tối ưu hóa dựa trên nguyên lý nào?",
     options: [
@@ -464,7 +464,7 @@ const QUESTIONS_B = [
     explanation: "Dynamic Programming giải quyết bài toán bằng cách: (1) xác định **Optimal Substructure** – nghiệm tối ưu của bài toán con đóng góp vào nghiệm tổng thể; (2) **Overlapping Subproblems** – các bài toán con lặp lại; (3) Dùng **Memoization/Tabulation** để lưu kết quả tránh tính lại. Ví dụ: Fibonacci, Knapsack, Longest Common Subsequence."
   },
   {
-    id: "Q_MOD_B_039", module_id: "Module_B", difficulty: "Hard",
+    id: "Q_MOD_B_039", module_id: "Module_B", difficulty: "Medium",
     tags: ["syntax-python"],
     content: "Trong Python, **GIL (Global Interpreter Lock)** ảnh hưởng như thế nào đến lập trình đa luồng (multithreading) cho các tác vụ AI nặng tính toán (CPU-bound)?",
     options: [
@@ -477,7 +477,7 @@ const QUESTIONS_B = [
     explanation: "GIL là cơ chế khóa trong CPython đảm bảo chỉ một thread Python thực thi bytecode tại một thời điểm. Với tác vụ CPU-bound (tính toán nặng), đa luồng không giúp tăng tốc. Giải pháp: dùng `multiprocessing` để tạo nhiều process độc lập, hoặc dùng NumPy/PyTorch (giải phóng GIL khi gọi C extensions)."
   },
   {
-    id: "Q_MOD_B_040", module_id: "Module_B", difficulty: "Hard",
+    id: "Q_MOD_B_040", module_id: "Module_B", difficulty: "Medium",
     tags: ["data-preprocessing"],
     content: "Kỹ thuật **Feature Scaling** bằng **StandardScaler** (Z-score Normalization) khác với **MinMaxScaler** như thế nào?",
     options: [
@@ -490,7 +490,7 @@ const QUESTIONS_B = [
     explanation: "StandardScaler: $x' = \\frac{x - \\mu}{\\sigma}$, kết quả có mean=0, std=1. Phù hợp với các thuật toán giả định phân phối chuẩn (SVM, PCA, Linear Regression). MinMaxScaler: $x' = \\frac{x - x_{min}}{x_{max} - x_{min}}$, đưa về $[0,1]$ nhưng nhạy cảm với outlier."
   },
   {
-    id: "Q_MOD_B_041", module_id: "Module_B", difficulty: "Hard",
+    id: "Q_MOD_B_041", module_id: "Module_B", difficulty: "Medium",
     tags: ["algorithms"],
     content: "Trong bài toán phát hiện cộng đồng (Community Detection) trên mạng xã hội sử dụng đồ thị, thuật toán nào phổ biến nhất?",
     options: [
@@ -503,7 +503,7 @@ const QUESTIONS_B = [
     explanation: "Thuật toán Louvain là phương pháp phổ biến nhất cho Community Detection trên đồ thị lớn. Nó tối ưu **modularity** – chỉ số đo lường mức độ tập trung các cạnh trong cộng đồng so với mạng ngẫu nhiên. Thuật toán chạy nhanh và có thể xử lý đồ thị hàng triệu đỉnh."
   },
   {
-    id: "Q_MOD_B_042", module_id: "Module_B", difficulty: "Hard",
+    id: "Q_MOD_B_042", module_id: "Module_B", difficulty: "Medium",
     tags: ["data-structures"],
     content: "**Inverted Index** (Chỉ mục ngược) là cấu trúc dữ liệu nền tảng của các công cụ tìm kiếm (như Elasticsearch). Nó hoạt động như thế nào?",
     options: [
@@ -568,7 +568,7 @@ const QUESTIONS_B = [
     explanation: "Ví dụ: `sorted(['banana', 'apple', 'cherry'], key=len)` sắp xếp theo độ dài chuỗi → `['apple', 'banana', 'cherry']`. `key=lambda x: x[1]` sắp xếp list of tuples theo phần tử thứ 2. Rất linh hoạt cho nhiều tiêu chí sắp xếp."
   },
   {
-    id: "Q_MOD_B_047", module_id: "Module_B", difficulty: "Hard",
+    id: "Q_MOD_B_047", module_id: "Module_B", difficulty: "Medium",
     tags: ["syntax-python"],
     content: "Trong Python, **Generator** (sử dụng từ khóa `yield`) khác với hàm thông thường (dùng `return`) như thế nào về mặt quản lý bộ nhớ?",
     options: [
@@ -581,7 +581,7 @@ const QUESTIONS_B = [
     explanation: "Generator dùng `yield` để trả về từng giá trị một khi được yêu cầu (lazy), trạng thái hàm được giữ nguyên giữa các lần gọi. Với tập dữ liệu 1 triệu ảnh, dùng generator để load từng batch tránh tràn RAM, thay vì load tất cả cùng lúc."
   },
   {
-    id: "Q_MOD_B_048", module_id: "Module_B", difficulty: "Hard",
+    id: "Q_MOD_B_048", module_id: "Module_B", difficulty: "Medium",
     tags: ["data-preprocessing"],
     content: "**Imbalanced Dataset** (Tập dữ liệu mất cân bằng) trong bài toán phân loại thường gây ra vấn đề gì và cách giải quyết nào sau đây hiệu quả?",
     options: [
@@ -594,7 +594,7 @@ const QUESTIONS_B = [
     explanation: "Với tập mất cân bằng, mô hình học được thiên vị về lớp đa số (ví dụ: 99% Bình thường, 1% Gian lận). Giải pháp: **SMOTE** (Synthetic Minority Oversampling Technique) tạo mẫu tổng hợp cho lớp thiểu số; **Undersampling** giảm mẫu lớp đa số; **Class Weights** điều chỉnh để penalize lỗi trên lớp thiểu số nặng hơn."
   },
   {
-    id: "Q_MOD_B_049", module_id: "Module_B", difficulty: "Hard",
+    id: "Q_MOD_B_049", module_id: "Module_B", difficulty: "Medium",
     tags: ["algorithms"],
     content: "Trong hệ thống AI xử lý dữ liệu lớn (Big Data), **MapReduce** là mô hình lập trình làm gì?",
     options: [
@@ -607,7 +607,7 @@ const QUESTIONS_B = [
     explanation: "MapReduce (nền tảng của Hadoop) chia dữ liệu lớn thành các chunk nhỏ, **Map** xử lý song song tạo cặp (key, value), **Shuffle/Sort** nhóm các cặp cùng key, **Reduce** tổng hợp theo từng key. Ví dụ: đếm từ trong hàng tỷ document."
   },
   {
-    id: "Q_MOD_B_050", module_id: "Module_B", difficulty: "Hard",
+    id: "Q_MOD_B_050", module_id: "Module_B", difficulty: "Medium",
     tags: ["data-augmentation"],
     content: "Kỹ thuật **MixUp** trong Data Augmentation cho hình ảnh thực hiện điều gì đặc biệt?",
     options: [
@@ -1140,7 +1140,7 @@ const QUESTIONS_B = [
     explanation: "Rolling Mean (Moving Average - trung bình trượt) tính toán giá trị trung bình trong một cửa sổ trượt (window) để làm mượt dữ liệu chuỗi thời gian, giúp loại bỏ nhiễu ngắn hạn và làm rõ xu hướng dài hạn."
   },
   {
-    id: "Q_MOD_B_091", module_id: "Module_B", difficulty: "Hard",
+    id: "Q_MOD_B_091", module_id: "Module_B", difficulty: "Medium",
     tags: ["syntax-python"],
     content: "Xét đoạn mã Python triển khai một decorator đo thời gian thực thi sau:\n```python\nimport time\ndef timer(func):\n    def wrapper(*args, **kwargs):\n        start = time.time()\n        result = func(*args, **kwargs)\n        print(f\"{func.__name__} took {time.time() - start:.2f}s\")\n        return result\n    return wrapper\n@timer\ndef compute(n):\n    return sum(i * i for i in range(n))\n```\nKhi chúng ta gọi `compute(1000)`, đối tượng thực tế nào đang được thực thi và giá trị `compute.__name__` là gì?",
     options: [
@@ -1153,7 +1153,7 @@ const QUESTIONS_B = [
     explanation: "Khi áp dụng decorator `@timer`, hàm `compute` được thay thế bằng hàm `wrapper` được trả về từ `timer`. Khi gọi `compute(1000)`, thực chất ta đang gọi `wrapper(1000)`. Do đó, `compute.__name__` sẽ là `\"wrapper\"` (trừ khi dùng `functools.wraps` để bảo toàn siêu dữ liệu)."
   },
   {
-    id: "Q_MOD_B_092", module_id: "Module_B", difficulty: "Hard",
+    id: "Q_MOD_B_092", module_id: "Module_B", difficulty: "Medium",
     tags: ["algorithms"],
     content: "Thuật toán sắp xếp nhanh (Quick Sort) sử dụng phân hoạch Lomuto (Lomuto Partitioning Scheme) hoạt động như thế nào?",
     options: [
@@ -1166,7 +1166,7 @@ const QUESTIONS_B = [
     explanation: "Phân hoạch Lomuto chọn phần tử cuối cùng làm chốt (pivot). Nó duy trì một chỉ số $i$ để theo dõi ranh giới của các phần tử nhỏ hơn hoặc bằng chốt và một con trỏ $j$ để duyệt mảng từ trái qua phải. Mỗi khi tìm thấy phần tử nhỏ hơn chốt, nó sẽ hoán đổi với phần tử tại vị trí $i+1$."
   },
   {
-    id: "Q_MOD_B_093", module_id: "Module_B", difficulty: "Hard",
+    id: "Q_MOD_B_093", module_id: "Module_B", difficulty: "Medium",
     tags: ["data-preprocessing"],
     content: "Trong bài toán xử lý văn bản quy mô lớn, thuật toán mã hóa cặp byte (Byte Pair Encoding - BPE) quyết định từ vựng (Vocabulary) mới dựa trên nguyên tắc nào?",
     options: [
@@ -1179,7 +1179,7 @@ const QUESTIONS_B = [
     explanation: "BPE ban đầu chia tất cả các từ thành các ký tự đơn lẻ. Sau đó, nó đếm tần suất xuất hiện của mọi cặp token liền kề trong tập dữ liệu và lặp đi lặp lại việc kết hợp cặp có tần suất cao nhất thành một token mới cho đến khi đạt kích thước từ vựng mong muốn."
   },
   {
-    id: "Q_MOD_B_094", module_id: "Module_B", difficulty: "Hard",
+    id: "Q_MOD_B_094", module_id: "Module_B", difficulty: "Medium",
     tags: ["data-structures"],
     content: "Khi triển khai cấu trúc dữ liệu Hàng đợi ưu tiên (Priority Queue) bằng Heap nhị phân cực đại (Max-Heap), thao tác lấy ra phần tử có độ ưu tiên cao nhất và tái cấu trúc Heap có độ phức tạp thời gian là bao nhiêu?",
     options: [
@@ -1192,7 +1192,7 @@ const QUESTIONS_B = [
     explanation: "Phần tử có độ ưu tiên cao nhất nằm ở gốc của Max-Heap, lấy ra mất $O(1)$. Tuy nhiên, sau đó ta phải đưa phần tử cuối cùng lên gốc và thực hiện thao tác vun đống xuống dưới (heapify down) để duy trì tính chất của Heap. Chiều cao của cây nhị phân hoàn chỉnh là $\\log_2 n$, do đó thao tác này mất $O(\\log n)$."
   },
   {
-    id: "Q_MOD_B_095", module_id: "Module_B", difficulty: "Hard",
+    id: "Q_MOD_B_095", module_id: "Module_B", difficulty: "Medium",
     tags: ["syntax-python"],
     content: "Xét đoạn mã Python sử dụng thư viện `multiprocessing` để tính toán song song sau:\n```python\nimport multiprocessing\ndef worker(x):\n    return x * x\nif __name__ == '__main__':\n    with multiprocessing.Pool(processes=4) as pool:\n        results = pool.map(worker, range(10))\n```\nTại sao trong Python cần phải kiểm tra điều kiện `if __name__ == '__main__':` khi chạy đa tiến trình?",
     options: [
@@ -1205,7 +1205,7 @@ const QUESTIONS_B = [
     explanation: "Khi sử dụng `multiprocessing`, các tiến trình con được sinh ra (đặc biệt trên Windows/macOS sử dụng phương thức `spawn`) sẽ chạy lại toàn bộ mã của file script để thiết lập môi trường. Nếu không có khối `if __name__ == '__main__':`, các tiến trình con sẽ tiếp tục chạy lệnh tạo `Pool` mới, dẫn đến lỗi tạo tiến trình đệ quy vô hạn."
   },
   {
-    id: "Q_MOD_B_096", module_id: "Module_B", difficulty: "Hard",
+    id: "Q_MOD_B_096", module_id: "Module_B", difficulty: "Medium",
     tags: ["algorithms"],
     content: "Hãy phân biệt sự khác nhau về cơ chế tìm kiếm đường đi ngắn nhất giữa thuật toán Dijkstra và thuật toán Bellman-Ford trên đồ thị trọng số.",
     options: [
@@ -1218,7 +1218,7 @@ const QUESTIONS_B = [
     explanation: "Dijkstra dùng chiến lược tham lam (greedy) bằng cách luôn chọn đỉnh có khoảng cách ngắn nhất hiện tại để tối ưu, do đó không chạy đúng trên đồ thị có cạnh trọng số âm. Bellman-Ford thực hiện nới lỏng (relaxation) tất cả các cạnh $V-1$ lần, có thể xử lý trọng số âm và giúp phát hiện chu trình âm trên đồ thị."
   },
   {
-    id: "Q_MOD_B_097", module_id: "Module_B", difficulty: "Hard",
+    id: "Q_MOD_B_097", module_id: "Module_B", difficulty: "Medium",
     tags: ["data-preprocessing"],
     content: "Khi tiền xử lý dữ liệu dạng bảng bị mất cân bằng nhãn cực kỳ nghiêm trọng (ví dụ 99.9% là giao dịch bình thường, 0.1% là gian lận), tại sao độ chính xác tổng thể (Accuracy) không còn là độ đo đánh giá mô hình đáng tin cậy?",
     options: [
@@ -1231,7 +1231,7 @@ const QUESTIONS_B = [
     explanation: "Trong tập dữ liệu mất cân bằng nghiêm trọng, một mô hình phân loại ngây thơ dự đoán mọi giao dịch là bình thường sẽ đạt độ chính xác $99.9\\%$. Tuy nhiên, mô hình này hoàn toàn vô dụng vì không phát hiện được bất kỳ trường hợp gian lận nào (lớp thiểu số). Khi đó ta cần dùng Precision, Recall, F1-score hoặc AUC-ROC."
   },
   {
-    id: "Q_MOD_B_098", module_id: "Module_B", difficulty: "Hard",
+    id: "Q_MOD_B_098", module_id: "Module_B", difficulty: "Medium",
     tags: ["syntax-python"],
     content: "Xét đoạn mã Python tạo ra một biểu thức máy phát (Generator Expression) sau:\n```python\ngen = (x * x for x in range(3))\nres1 = list(gen)\nres2 = list(gen)\n```\nSau khi đoạn mã trên chạy xong, giá trị của `res1` và `res2` lần lượt là gì?",
     options: [
@@ -1244,7 +1244,7 @@ const QUESTIONS_B = [
     explanation: "Generator trong Python là một iterator chỉ có thể duyệt qua một lần duy nhất. Sau khi chuyển đổi thành danh sách bằng `list(gen)`, generator đã cạn kiệt (exhausted) giá trị. Lần gọi `list(gen)` thứ hai sẽ trả về danh sách rỗng `[]` mà không sinh lại dữ liệu."
   },
   {
-    id: "Q_MOD_B_099", module_id: "Module_B", difficulty: "Hard",
+    id: "Q_MOD_B_099", module_id: "Module_B", difficulty: "Medium",
     tags: ["algorithms"],
     content: "Trong thuật toán quy hoạch động giải bài toán cái túi dạng số nguyên (0/1 Knapsack Problem) với $n$ đồ vật và trọng lượng tối đa của túi là $W$, bảng quy hoạch động có kích thước như thế nào và độ phức tạp thời gian chạy là bao nhiêu?",
     options: [
@@ -1257,7 +1257,7 @@ const QUESTIONS_B = [
     explanation: "Để giải bài toán 0/1 Knapsack bằng quy hoạch động, ta xây dựng bảng lưu trữ kết quả trung gian có số dòng là $n+1$ (đại diện cho số đồ vật từ 0 đến $n$) và số cột là $W+1$ (đại diện cho các mức tải trọng từ 0 đến $W$). Thuật toán cần hai vòng lặp lồng nhau duyệt qua bảng này, cho độ phức tạp thời gian là $O(nW)$."
   },
   {
-    id: "Q_MOD_B_100", module_id: "Module_B", difficulty: "Hard",
+    id: "Q_MOD_B_100", module_id: "Module_B", difficulty: "Medium",
     tags: ["data-preprocessing"],
     content: "Trong các mô hình Transformer như BERT hay GPT, kỹ thuật mặt nạ (Masking) được áp dụng trong cơ chế tự chú ý (Self-Attention) của Decoder nhằm mục đích gì?",
     options: [

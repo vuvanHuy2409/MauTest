@@ -117,7 +117,7 @@ const QUESTIONS_A = [
     explanation: "$\\det(A) = ad - bc = (2 \\times 4) - (3 \\times 1) = 8 - 3 = 5$."
   },
   {
-    id: "Q_MOD_A_010", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_010", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
     content: "Có 3 hộp đựng linh kiện điện tử. Hộp I có $10\\%$ linh kiện lỗi, Hộp II có $5\\%$ linh kiện lỗi, Hộp III có $20\\%$ linh kiện lỗi. Chọn ngẫu nhiên một hộp, rồi từ đó lấy ra 1 linh kiện. Xác suất để chọn trúng Hộp III **và** lấy ra một linh kiện lỗi là bao nhiêu?",
     options: [
@@ -156,7 +156,7 @@ const QUESTIONS_A = [
     explanation: "Chuẩn $L_2$ của vector $w=[3, 4]$: $\\|w\\|_2 = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$."
   },
   {
-    id: "Q_MOD_A_013", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_013", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
     content: "Nếu đạo hàm bậc nhất của một hàm chi phí (Loss function) tại điểm $x_0$ có giá trị là một số dương ($f'(x_0) > 0$), để giảm chi phí theo thuật toán Gradient Descent, ta cần dịch chuyển $x$ về phía nào?",
     options: [
@@ -221,7 +221,7 @@ const QUESTIONS_A = [
     explanation: "Tính đạo hàm: $f'(x) = -2x + 6$. Cho $f'(x) = 0 \\Leftrightarrow x = 3$. Vì hệ số của $x^2$ âm ($-1$), đây là điểm đạt giá trị lớn nhất."
   },
   {
-    id: "Q_MOD_A_018", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_018", module_id: "Module_A", difficulty: "Medium",
     tags: ["metrics"],
     content: "Trong Học máy, hàm mất mát (Loss Function) phổ biến dành cho bài toán phân loại nhị phân (Binary Classification) là hàm nào?",
     options: [
@@ -455,7 +455,7 @@ const QUESTIONS_A = [
     explanation: "Learning Rate $\\alpha$ kiểm soát bước nhảy: $\\theta_{new} = \\theta_{old} - \\alpha \\nabla L$. Nếu $\\alpha$ quá lớn, thuật toán có thể phân kỳ. Nếu quá nhỏ, huấn luyện sẽ rất chậm."
   },
   {
-    id: "Q_MOD_A_036", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_036", module_id: "Module_A", difficulty: "Medium",
     tags: ["metrics"],
     content: "**ROC Curve** (Receiver Operating Characteristic) trong đánh giá mô hình phân loại là đồ thị biểu diễn mối quan hệ giữa hai chỉ số nào?",
     options: [
@@ -468,7 +468,7 @@ const QUESTIONS_A = [
     explanation: "ROC Curve vẽ **True Positive Rate (Recall/Sensitivity)** trên trục Y và **False Positive Rate (1 - Specificity)** trên trục X, tại nhiều ngưỡng quyết định khác nhau. Diện tích dưới đường cong (AUC) càng gần 1 thì mô hình càng tốt."
   },
   {
-    id: "Q_MOD_A_037", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_037", module_id: "Module_A", difficulty: "Medium",
     tags: ["linear-algebra"],
     content: "**Eigenvalue** (giá trị riêng) $\\lambda$ của một ma trận vuông $A$ thỏa mãn phương trình nào, với $v$ là eigenvector (vector riêng) tương ứng?",
     options: [
@@ -481,7 +481,7 @@ const QUESTIONS_A = [
     explanation: "Định nghĩa: $Av = \\lambda v$, trong đó $\\lambda$ là eigenvalue và $v \\neq 0$ là eigenvector. Eigenvalue/eigenvector rất quan trọng trong PCA (Principal Component Analysis) để giảm chiều dữ liệu."
   },
   {
-    id: "Q_MOD_A_038", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_038", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
     content: "Trong học máy, kỹ thuật **Regularization L2 (Ridge)** thêm vào hàm mất mát một số hạng phạt là gì? Mục đích của nó là gì?",
     options: [
@@ -494,7 +494,7 @@ const QUESTIONS_A = [
     explanation: "L2 Regularization (Ridge) thêm hạng phạt $\\lambda \\sum_i w_i^2$ vào hàm mất mát. Điều này khuyến khích các trọng số nhỏ và phân tán đều, giúp mô hình không quá phụ thuộc vào một vài đặc trưng cụ thể, từ đó giảm Overfitting."
   },
   {
-    id: "Q_MOD_A_039", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_039", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
     content: "Hiện tượng **Vanishing Gradient** (tiêu biến đạo hàm) trong mạng nơ-ron sâu xảy ra khi nào và gây ra hậu quả gì?",
     options: [
@@ -507,7 +507,7 @@ const QUESTIONS_A = [
     explanation: "Khi lan truyền ngược qua nhiều lớp, gradient được nhân với đạo hàm của hàm kích hoạt lặp đi lặp lại. Hàm Sigmoid/Tanh có đạo hàm < 1, khiến gradient giảm dần theo cấp số nhân về gần 0 → các lớp đầu học rất chậm. ReLU và kỹ thuật Batch Normalization giúp giảm thiểu vấn đề này."
   },
   {
-    id: "Q_MOD_A_040", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_040", module_id: "Module_A", difficulty: "Medium",
     tags: ["matrix-operations"],
     content: "Trong phân tích thành phần chính (PCA - Principal Component Analysis), ma trận Covariance $\\Sigma$ của tập dữ liệu được dùng để làm gì?",
     options: [
@@ -598,7 +598,7 @@ const QUESTIONS_A = [
     explanation: "PCA là kỹ thuật giảm chiều (dimensionality reduction) không giám sát. Nó chiếu dữ liệu từ không gian $n$ chiều xuống $k$ chiều ($k < n$) sao cho giữ được nhiều phương sai nhất, giúp trực quan hóa và loại bỏ nhiễu."
   },
   {
-    id: "Q_MOD_A_047", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_047", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
     content: "**KL-Divergence** (Kullback-Leibler Divergence) $D_{KL}(P \\| Q)$ đo lường điều gì giữa hai phân phối xác suất $P$ và $Q$?",
     options: [
@@ -611,7 +611,7 @@ const QUESTIONS_A = [
     explanation: "$D_{KL}(P \\| Q) = \\sum_x P(x) \\log \\frac{P(x)}{Q(x)}$. KL-Divergence đo \"lượng thông tin\" cần thêm khi dùng $Q$ thay cho $P$. Nó không đối xứng ($D_{KL}(P\\|Q) \\neq D_{KL}(Q\\|P)$) và là nền tảng của Binary Cross-Entropy."
   },
   {
-    id: "Q_MOD_A_048", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_048", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
     content: "Trong tối ưu hóa, phương pháp **Stochastic Gradient Descent (SGD)** khác với **Batch Gradient Descent** như thế nào?",
     options: [
@@ -624,7 +624,7 @@ const QUESTIONS_A = [
     explanation: "SGD cập nhật tham số sau mỗi mẫu (hoặc mini-batch), tạo ra gradient ồn ào (noisy) nhưng cập nhật thường xuyên hơn → hội tụ nhanh hơn với dữ liệu lớn và có khả năng thoát Local Minima nhờ tính ngẫu nhiên. Batch GD ổn định hơn nhưng chậm với tập dữ liệu lớn."
   },
   {
-    id: "Q_MOD_A_049", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_049", module_id: "Module_A", difficulty: "Medium",
     tags: ["metrics"],
     content: "Trong bài toán phân loại với tập dữ liệu **mất cân bằng** (ví dụ 99% mẫu âm tính, 1% dương tính), tại sao Accuracy không phải là chỉ số đánh giá tốt?",
     options: [
@@ -637,7 +637,7 @@ const QUESTIONS_A = [
     explanation: "Với tập mất cân bằng 99%/1%, một mô hình \"ngốc\" luôn đoán âm tính đạt Accuracy 99% mà không học được gì. F1-Score, AUC-ROC, hoặc PR-AUC là các chỉ số phù hợp hơn để đánh giá bài toán này."
   },
   {
-    id: "Q_MOD_A_050", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_050", module_id: "Module_A", difficulty: "Medium",
     tags: ["matrix-operations"],
     content: "Phân tích giá trị suy biến (SVD - Singular Value Decomposition) phân tích ma trận $A$ thành dạng $A = U \\Sigma V^T$. Ma trận $\\Sigma$ trong phân tích này là gì?",
     options: [
@@ -1170,7 +1170,7 @@ const QUESTIONS_A = [
     explanation: "Xác suất để cả hai máy đều hỏng là $0.1 \\times 0.2 = 0.02$. Biến cố đối của \"cả hai máy hỏng\" là \"có ít nhất một máy hoạt động bình thường\": $1 - 0.02 = 0.98$."
   },
   {
-    id: "Q_MOD_A_091", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_091", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
     content: "Trong định lý giới hạn trung tâm (Central Limit Theorem), khi kích thước mẫu $n$ tiến ra vô cùng ($n \\to \\infty$), phân phối của số trung bình mẫu $\\bar{X}$ sẽ hội tụ về phân phối nào?",
     options: [
@@ -1183,7 +1183,7 @@ const QUESTIONS_A = [
     explanation: "Định lý giới hạn trung tâm phát biểu rằng, với mẫu đủ lớn ($n \\ge 30$), phân phối của trung bình mẫu sẽ xấp xỉ phân phối chuẩn, bất kể phân phối ban đầu của quần thể là gì."
   },
   {
-    id: "Q_MOD_A_092", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_092", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
     content: "Trong tối ưu hóa đa biến, ma trận chứa toàn bộ các đạo hàm riêng bậc hai của một hàm số được gọi là gì? Nó đóng vai trò xác định tính lồi lõm của hàm số.",
     options: [
@@ -1196,7 +1196,7 @@ const QUESTIONS_A = [
     explanation: "Ma trận Hessian là ma trận vuông chứa các đạo hàm riêng cấp hai của một hàm số đa biến. Nó được dùng để kiểm tra điểm cực trị là cực đại, cực tiểu hay điểm yên ngựa."
   },
   {
-    id: "Q_MOD_A_093", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_093", module_id: "Module_A", difficulty: "Medium",
     tags: ["matrix-operations"],
     content: "Một ma trận vuông $A$ kích thước $n \\times n$ được gọi là ma trận trực giao (orthogonal matrix) nếu thỏa mãn điều kiện nào sau đây?",
     options: [
@@ -1209,7 +1209,7 @@ const QUESTIONS_A = [
     explanation: "Một ma trận vuông $A$ trực giao nếu chuyển vị của nó cũng là nghịch đảo của nó, tức là $A^T A = A A^T = I$."
   },
   {
-    id: "Q_MOD_A_094", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_094", module_id: "Module_A", difficulty: "Medium",
     tags: ["linear-algebra"],
     content: "Trong phương pháp phân tích thành phần chính (PCA), ta tìm các vectơ riêng ứng với các trị riêng như thế nào của ma trận hiệp phương sai để làm các trục tọa độ mới?",
     options: [
@@ -1222,7 +1222,7 @@ const QUESTIONS_A = [
     explanation: "Để giảm chiều dữ liệu mà vẫn giữ tối đa lượng thông tin (phương sai), PCA chọn các vectơ riêng tương ứng với các trị riêng lớn nhất của ma trận hiệp phương sai."
   },
   {
-    id: "Q_MOD_A_095", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_095", module_id: "Module_A", difficulty: "Medium",
     tags: ["information-theory"],
     content: "Entropy thông tin $H(X)$ của một nguồn tin rời rạc có 2 trạng thái với xác suất xảy ra lần lượt là $p$ và $1-p$ đạt giá trị cực đại khi nào?",
     options: [
@@ -1235,7 +1235,7 @@ const QUESTIONS_A = [
     explanation: "Entropy biểu thị độ không chắc chắn. Độ không chắc chắn lớn nhất khi 2 kết quả xảy ra với khả năng đồng đều nhất, tức là $p = 1 - p = 0.5$."
   },
   {
-    id: "Q_MOD_A_096", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_096", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
     content: "Cho hàm số $f(x, y) = 3x^2 + 2y^2 - 4x - 8y$. Điểm cực tiểu (cực trị tối ưu) của hàm số này nằm tại tọa độ $(x, y)$ nào?",
     options: [
@@ -1248,7 +1248,7 @@ const QUESTIONS_A = [
     explanation: "Giải hệ phương trình đạo hàm riêng bằng 0: $\\frac{\\partial f}{\\partial x} = 6x - 4 = 0 \\Rightarrow x = 2/3$; $\\frac{\\partial f}{\\partial y} = 4y - 8 = 0 \\Rightarrow y = 2$. Do ma trận Hessian xác định dương nên đây là điểm cực tiểu."
   },
   {
-    id: "Q_MOD_A_097", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_097", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
     content: "Trong ước lượng thống kê, một ước lượng $\\hat{\\theta}$ được gọi là ước lượng không chệch (unbiased estimator) của tham số $\\theta$ nếu thỏa mãn điều kiện nào?",
     options: [
@@ -1261,7 +1261,7 @@ const QUESTIONS_A = [
     explanation: "Một ước lượng là không chệch nếu giá trị kỳ vọng (trung bình) của phân phối mẫu của ước lượng đó bằng đúng giá trị của tham số quần thể cần ước lượng, tức $E(\\hat{\\theta}) = \\theta$."
   },
   {
-    id: "Q_MOD_A_098", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_098", module_id: "Module_A", difficulty: "Medium",
     tags: ["matrix-operations"],
     content: "Cho ma trận vuông $A$ kích thước $n \\times n$. Nếu ma trận $A$ có định thức $\\det(A) = 3$, định thức của ma trận nghịch đảo $\\det(A^{-1})$ bằng bao nhiêu?",
     options: [
@@ -1274,7 +1274,7 @@ const QUESTIONS_A = [
     explanation: "Từ tính chất định thức của tích hai ma trận: $A A^{-1} = I \\Rightarrow \\det(A) \\times \\det(A^{-1}) = \\det(I) = 1 \\Rightarrow \\det(A^{-1}) = 1/\\det(A) = 1/3$."
   },
   {
-    id: "Q_MOD_A_099", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_099", module_id: "Module_A", difficulty: "Medium",
     tags: ["information-theory"],
     content: "Hàm Cross-Entropy $H(P, Q) = -\\sum P(x) \\log Q(x)$ đạt giá trị nhỏ nhất khi phân phối dự báo $Q$ có quan hệ như thế nào với phân phối thực tế $P$?",
     options: [
@@ -1287,7 +1287,7 @@ const QUESTIONS_A = [
     explanation: "Theo bất đẳng thức Gibbs, hàm Cross-Entropy đạt giá trị tối thiểu bằng Entropy thực tế $H(P)$ khi và chỉ khi phân phối dự báo $Q$ trùng khớp hoàn toàn với phân phối xác suất thực tế $P$."
   },
   {
-    id: "Q_MOD_A_100", module_id: "Module_A", difficulty: "Hard",
+    id: "Q_MOD_A_100", module_id: "Module_A", difficulty: "Medium",
     tags: ["linear-algebra"],
     content: "Xét hệ phương trình tuyến tính $Ax = b$ trong đó $A$ là ma trận kích thước $m \\times n$. Nếu số ẩn nhiều hơn số phương trình ($n > m$), khẳng định nào sau đây là **luôn đúng**?",
     options: [

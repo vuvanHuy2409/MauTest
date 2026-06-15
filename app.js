@@ -178,26 +178,35 @@ function startExam() {
   startTimer();
 }
 
-// Select questions with balanced module & difficulty distribution
+// Select questions with module-weighted distribution.
+// Module A (Math) and Module B (Programming) are prioritized at 35% each.
+// Module C (AI) and Module D (Ethics) each contribute 15%.
+// All difficulties are Easy or Medium — no Hard questions.
 function selectQuestions(n) {
-  const perModule = Math.floor(n / 4);
-  const modules = ['Module_A', 'Module_B', 'Module_C', 'Module_D'];
+  // Module quotas (weights: A=35%, B=35%, C=15%, D=15%)
+  const moduleWeights = {
+    Module_A: 0.35,
+    Module_B: 0.35,
+    Module_C: 0.15,
+    Module_D: 0.15,
+  };
+
   let selected = [];
 
-  modules.forEach(mod => {
+  Object.entries(moduleWeights).forEach(([mod, weight]) => {
+    const quota = Math.round(n * weight);
     const pool = STATE.allQuestions.filter(q => q.module_id === mod);
+
     const easy   = shuffle(pool.filter(q => q.difficulty === 'Easy'));
     const medium = shuffle(pool.filter(q => q.difficulty === 'Medium'));
-    const hard   = shuffle(pool.filter(q => q.difficulty === 'Hard'));
 
-    const easyCount  = Math.floor(perModule * 0.4);
-    const medCount   = Math.floor(perModule * 0.4);
-    const hardCount  = perModule - easyCount - medCount;
+    // 40% Easy, 60% Medium (no Hard)
+    const easyCount   = Math.round(quota * 0.4);
+    const mediumCount = quota - easyCount;
 
     selected = selected.concat(
       easy.slice(0, easyCount),
-      medium.slice(0, medCount),
-      hard.slice(0, hardCount),
+      medium.slice(0, mediumCount),
     );
   });
 
@@ -342,7 +351,7 @@ function renderMath(el) {
 }
 
 function difficultyLabel(d) {
-  return { Easy: 'Dễ', Medium: 'Trung bình', Hard: 'Khó' }[d] || d;
+  return { Easy: 'Dễ', Medium: 'Trung bình' }[d] || d;
 }
 
 function moduleLabel(m) {

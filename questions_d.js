@@ -26,7 +26,7 @@ const QUESTIONS_D = [
     explanation: "Quyền riêng tư và sự đồng thuận minh bạch (Informed Consent) từ chủ thể dữ liệu là nguyên tắc cốt lõi mang tính pháp lý trong đạo đức dữ liệu AI."
   },
   {
-    id: "Q_MOD_D_003", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_003", module_id: "Module_D", difficulty: "Medium",
     tags: ["ai-bias"],
     content: "Một công ty công nghệ dùng dữ liệu hồ sơ tuyển dụng của 10 năm qua để huấn luyện AI lọc CV kỹ sư phần mềm. Do lịch sử ngành này trong quá khứ có tỷ lệ nam giới nộp đơn vượt trội, AI sau khi huấn luyện có xu hướng tự động đánh rớt các CV có chứa từ khóa liên quan đến \"nữ\" (Ví dụ: \"Hội cựu nữ sinh viên\"). Hiện tượng này được gọi là gì?",
     options: [
@@ -52,7 +52,7 @@ const QUESTIONS_D = [
     explanation: "Theo quy tắc phủ định của mệnh đề kéo theo ($P \\rightarrow Q$ thì $\\neg Q \\rightarrow \\neg P$). Vì Alpha không cần GPU ($\\neg Q$), nên Alpha không thể là \"mô hình deep learning có trên 1 tỷ tham số\". Do đó, nó phải có dưới hoặc bằng 1 tỷ tham số."
   },
   {
-    id: "Q_MOD_D_005", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_005", module_id: "Module_D", difficulty: "Medium",
     tags: ["data-privacy"],
     content: "Bạn đang làm việc với một tập dữ liệu lớn chứa thông tin hành vi mua sắm của khách hàng để huấn luyện AI. Bạn phát hiện ra trong file dữ liệu có chứa cả số CCCD, số điện thoại và địa chỉ nhà riêng của khách hàng dưới dạng văn bản thô (Plain text). Hành động nào sau đây thể hiện tư duy đúng đắn về an toàn dữ liệu?",
     options: [
@@ -104,7 +104,7 @@ const QUESTIONS_D = [
     explanation: "Giấy phép MIT là giấy phép mã nguồn mở tự do. Nó cho phép thương mại hóa hoàn toàn miễn phí, yêu cầu duy nhất là phải giữ nguyên thông báo bản quyền và quyền miễn trừ trách nhiệm của tác giả gốc trong source code."
   },
   {
-    id: "Q_MOD_D_009", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_009", module_id: "Module_D", difficulty: "Medium",
     tags: ["data-ethics"],
     content: "Trong việc phát triển AI y tế giúp bác sĩ chẩn đoán ung thư qua ảnh chụp X-quang, hành vi nào sau đây được coi là **thiếu trách nhiệm đạo đức nghề nghiệp**?",
     options: [
@@ -130,7 +130,7 @@ const QUESTIONS_D = [
     explanation: "Mệnh đề logic có dạng: $A \\rightarrow B$ (Nếu An được giải thì Bình được giải). Đề bài khẳng định vế $A$ xảy ra (An đã đoạt giải), theo quy tắc Modus Ponens, vế $B$ chắc chắn phải xảy ra $\\rightarrow$ Bình chắc chắn đoạt giải."
   },
   {
-    id: "Q_MOD_D_011", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_011", module_id: "Module_D", difficulty: "Medium",
     tags: ["ai-bias"],
     content: "Một ứng dụng AI tuyển dụng nhân sự tự động liên tục loại bỏ hồ sơ của các ứng viên đến từ một vùng miền cụ thể mà không dựa trên năng lực. Nguyên nhân gốc rễ của hành vi phân biệt đối xử này của AI thường bắt nguồn từ đâu?",
     options: [
@@ -156,7 +156,7 @@ const QUESTIONS_D = [
     explanation: "Mệnh đề: $LLM \\rightarrow Tốn\\_tài\\_nguyên$. Do EcoChat không tốn tài nguyên, theo logic phản chứng ($\\neg Q \\rightarrow \\neg P$), EcoChat chắc chắn không phải là mô hình LLM."
   },
   {
-    id: "Q_MOD_D_013", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_013", module_id: "Module_D", difficulty: "Medium",
     tags: ["data-privacy"],
     content: "Việc một kỹ sư AI âm thầm cài đặt một đoạn code ngầm trong ứng dụng để thu thập toàn bộ lịch sử gõ bàn phím (Keylogger) của người dùng nhằm lấy dữ liệu hội thoại thực tế huấn luyện AI mà không được sự cho phép của họ là vi phạm nguyên tắc đạo đức nào nghiêm trọng nhất?",
     options: [
@@ -585,7 +585,7 @@ const QUESTIONS_D = [
     explanation: "Đạo đức nghiên cứu khoa học yêu cầu tính thực nghiệm, trung thực và đóng góp tri thức thực sự từ con người. Việc spam bài viết do AI sinh ra làm loãng học thuật và tạo ra các thông tin sai lệch nguy hiểm."
   },
   {
-    id: "Q_MOD_D_046", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_046", module_id: "Module_D", difficulty: "Medium",
     tags: ["pure-logic"],
     content: "Cho ba mệnh đề logic sau:\n\n1. Nếu Nam học giỏi AI (P) hoặc Nam giỏi Toán (Q), thì Nam sẽ đỗ kỳ thi tuyển sinh (R).\n2. Nếu Nam đỗ kỳ thi tuyển sinh (R), Nam sẽ được nhận học bổng (S).\n3. Thực tế Nam không nhận được học bổng ($\\neg$S).\nPhát biểu nào sau đây chắc chắn đúng về mặt logic?",
     options: [
@@ -598,7 +598,7 @@ const QUESTIONS_D = [
     explanation: "Từ (2) và (3): $R \\rightarrow S$ và $\\neg S \\Rightarrow \\neg R$ (Nam không đỗ kỳ thi). Từ (1) và $\\neg R$: $(P \\lor Q) \\rightarrow R$ và $\\neg R \\Rightarrow \\neg(P \\lor Q) \\equiv \\neg P \\land \\neg Q$ (Nam không học giỏi AI và Nam không giỏi Toán)."
   },
   {
-    id: "Q_MOD_D_047", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_047", module_id: "Module_D", difficulty: "Medium",
     tags: ["data-privacy"],
     content: "Kỹ thuật mã hóa đồng cấu (Homomorphic Encryption) mang lại lợi ích đột phá nào cho an toàn dữ liệu và quyền riêng tư trong các ứng dụng AI đám mây?",
     options: [
@@ -611,7 +611,7 @@ const QUESTIONS_D = [
     explanation: "Mã hóa đồng cấu cho phép xử lý dữ liệu ở dạng mã hóa. Kết quả tính toán sau khi giải mã bởi người sở hữu khóa sẽ trùng khớp với kết quả tính trên dữ liệu thô, giúp bảo vệ dữ liệu nhạy cảm tối đa."
   },
   {
-    id: "Q_MOD_D_048", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_048", module_id: "Module_D", difficulty: "Medium",
     tags: ["ai-bias"],
     content: "Phương pháp 'Pre-processing bias mitigation' giải quyết hiện tượng định kiến (bias) trong AI bằng cách nào?",
     options: [
@@ -624,7 +624,7 @@ const QUESTIONS_D = [
     explanation: "Pre-processing bias mitigation can thiệp vào giai đoạn chuẩn bị dữ liệu (ví dụ re-weighting, tối ưu hóa biểu diễn dữ liệu) để triệt tiêu bias ngay từ nguồn trước khi mô hình học."
   },
   {
-    id: "Q_MOD_D_049", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_049", module_id: "Module_D", difficulty: "Medium",
     tags: ["open-source-licensing"],
     content: "Một công ty công nghệ sử dụng một thư viện AI có giấy phép 'GNU AGPL v3' (Affero GPL v3) để xây dựng dịch vụ SaaS chạy trên đám mây cho người dùng truy cập qua web. Công ty sửa đổi một phần code của thư viện này để tối ưu hóa. Công ty có nghĩa vụ gì về mặt bản quyền?",
     options: [
@@ -637,7 +637,7 @@ const QUESTIONS_D = [
     explanation: "AGPL v3 được thiết kế đặc biệt để lấp đầy 'lỗ hổng SaaS' của GPL. Nó quy định việc chạy phần mềm trên mạng cho người dùng tương tác từ xa cũng tương đương với việc phân phối phần mềm, buộc phải cung cấp mã nguồn phái sinh cho người dùng mạng."
   },
   {
-    id: "Q_MOD_D_050", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_050", module_id: "Module_D", difficulty: "Medium",
     tags: ["data-ethics"],
     content: "Trong các xe tự lái tích hợp AI, bài toán 'Tình huống khó xử đạo đức' (Ethical Dilemma - ví dụ: xe mất phanh buộc phải chọn đâm vào 1 người già hay 3 người trẻ) thường được các nhà nghiên cứu tiếp cận giải quyết như thế nào dưới góc độ thiết kế sản phẩm có trách nhiệm?",
     options: [
@@ -1170,7 +1170,7 @@ const QUESTIONS_D = [
     explanation: "Phủ định của mệnh đề tồn tại $\\exists x, \\neg P(x)$ là mệnh đề toàn thể $\\forall x, P(x)$ (Tất cả phần tử đều thỏa mãn P)."
   },
   {
-    id: "Q_MOD_D_091", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_091", module_id: "Module_D", difficulty: "Medium",
     tags: ["pure-logic"],
     content: "Chứng minh mệnh đề logic bằng phương pháp phản chứng (Proof by Contradiction) được thực hiện dựa trên nguyên lý toán học nào?",
     options: [
@@ -1183,7 +1183,7 @@ const QUESTIONS_D = [
     explanation: "Phương pháp phản chứng bắt đầu bằng cách giả sử mệnh đề cần chứng minh là sai (tức là $\\neg P$ đúng). Từ đó, thông qua các bước suy luận logic đúng đắn, ta chỉ ra một mâu thuẫn (như $A \\land \\neg A$). Do đó giả thiết $\\neg P$ sai, suy ra P phải đúng."
   },
   {
-    id: "Q_MOD_D_092", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_092", module_id: "Module_D", difficulty: "Medium",
     tags: ["data-ethics"],
     content: "Trong đạo đức dữ liệu y tế, nguy cơ 'Re-identification' (Tái định danh) xảy ra khi kẻ tấn công thực hiện hành vi nào sau đây?",
     options: [
@@ -1196,7 +1196,7 @@ const QUESTIONS_D = [
     explanation: "Tái định danh (Re-identification) là quá trình liên kết dữ liệu ẩn danh (đã bị loại bỏ các PII trực tiếp) với các nguồn dữ liệu phụ trợ bên ngoài (như danh sách cử tri, mạng xã hội) để tìm ra danh tính thực của chủ thể dữ liệu."
   },
   {
-    id: "Q_MOD_D_093", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_093", module_id: "Module_D", difficulty: "Medium",
     tags: ["open-source-licensing"],
     content: "Giấy phép nguồn mở 'GNU AGPL v3' giải quyết triệt để 'lỗ hổng dịch vụ ứng dụng' (SaaS loophole) của giấy phép 'GPL v3' bằng cách nào?",
     options: [
@@ -1209,7 +1209,7 @@ const QUESTIONS_D = [
     explanation: "AGPL v3 (Affero GPL) quy định rằng nếu phần mềm được sửa đổi và cho phép người dùng tương tác qua mạng (như SaaS), nhà phát triển phải công khai mã nguồn sửa đổi cho người dùng mạng đó, điều mà GPL v3 không bắt buộc vì không coi đó là phân phối phần mềm truyền thống."
   },
   {
-    id: "Q_MOD_D_094", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_094", module_id: "Module_D", difficulty: "Medium",
     tags: ["pure-logic"],
     content: "Cho phát biểu logic sau: 'Mọi mô hình AI đạt độ chính xác cao trên tập train thì đều bị overfitting hoặc có dữ liệu chất lượng cao. Mô hình AI Alpha không bị overfitting và không có dữ liệu chất lượng cao'. Kết luận logic nào là đúng?",
     options: [
@@ -1222,7 +1222,7 @@ const QUESTIONS_D = [
     explanation: "Mệnh đề: $Acc \\rightarrow (Over \\lor Qual)$. Từ luật Modus Tollens, nếu phủ định hệ quả $\\neg(Over \\lor Qual) \\equiv \\neg Over \\land \\neg Qual$ xảy ra (Alpha không overfitting và không có dữ liệu chất lượng cao), ta suy ra phủ định giả thiết $\\neg Acc$ phải xảy ra (Alpha không đạt độ chính xác cao trên tập train)."
   },
   {
-    id: "Q_MOD_D_095", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_095", module_id: "Module_D", difficulty: "Medium",
     tags: ["data-privacy"],
     content: "Thuật toán 'Local Differential Privacy' (LDP) khác biệt cốt lõi như thế nào so với 'Centralized Differential Privacy' (CDP)?",
     options: [
@@ -1235,7 +1235,7 @@ const QUESTIONS_D = [
     explanation: "Local Differential Privacy (LDP) thêm nhiễu trực tiếp tại nguồn (thiết bị của người dùng) trước khi gửi về máy chủ, do đó người thu thập dữ liệu cũng không biết dữ liệu thật của cá nhân. Centralized DP (CDP) giả định người thu thập dữ liệu là đáng tin cậy, dữ liệu thô được gửi về máy chủ và nhiễu được thêm vào khi truy vấn hoặc công bố kết quả."
   },
   {
-    id: "Q_MOD_D_096", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_096", module_id: "Module_D", difficulty: "Medium",
     tags: ["data-ethics"],
     content: "Tại sao phương pháp giảm định kiến 'In-processing bias mitigation' lại khó triển khai hơn phương pháp 'Pre-processing' trong thực tế phát triển AI?",
     options: [
@@ -1248,7 +1248,7 @@ const QUESTIONS_D = [
     explanation: "In-processing bias mitigation can thiệp trực tiếp vào thuật toán học (ví dụ: thêm ràng buộc công bằng vào hàm tối ưu/loss function), do đó phức tạp và đòi hỏi quyền can thiệp sâu vào code huấn luyện, trong khi Pre-processing chỉ cần biến đổi dữ liệu đầu vào."
   },
   {
-    id: "Q_MOD_D_097", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_097", module_id: "Module_D", difficulty: "Medium",
     tags: ["open-source-licensing"],
     content: "Một lập trình viên tích hợp một thư viện có giấy phép 'GNU GPL v3' vào sản phẩm thương mại của mình bằng phương thức liên kết động (Dynamic Linking). Hành vi này có thể dẫn tới hậu quả pháp lý nào đối với sản phẩm thương mại đó?",
     options: [
@@ -1261,7 +1261,7 @@ const QUESTIONS_D = [
     explanation: "Tổ chức FSF (Free Software Foundation) giữ quan điểm rằng việc liên kết (dù là động hay tĩnh) một thư viện GPL vào phần mềm đều tạo ra một sản phẩm phái sinh, do đó toàn bộ chương trình phải mở mã nguồn dưới GPL v3. Điều này gây ra rủi ro pháp lý lớn cho các phần mềm thương mại đóng."
   },
   {
-    id: "Q_MOD_D_098", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_098", module_id: "Module_D", difficulty: "Medium",
     tags: ["pure-logic"],
     content: "Trong logic mệnh đề, một tập hợp các mệnh đề $\{P_1, P_2, ..., P_n\}$ được gọi là 'Satisfiable' (Khả thỏa) khi nào?",
     options: [
@@ -1274,7 +1274,7 @@ const QUESTIONS_D = [
     explanation: "Khả thỏa (Satisfiable) nghĩa là tồn tại ít nhất một cách gán giá trị chân lý cho các biến logic làm cho tất cả các mệnh đề trong hệ đồng thời nhận giá trị True. Nếu không tồn tại cách gán nào như vậy, tập hợp mệnh đề được gọi là bất khả thỏa (unsatisfiable/contradiction)."
   },
   {
-    id: "Q_MOD_D_099", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_099", module_id: "Module_D", difficulty: "Medium",
     tags: ["data-privacy"],
     content: "Trong đạo đức AI, nguyên tắc 'Accountability' (Trách nhiệm giải trình) đối mặt với thách thức lớn nào từ hiện tượng 'Black Box' (Hộp đen AI)?",
     options: [
@@ -1287,7 +1287,7 @@ const QUESTIONS_D = [
     explanation: "Hiện tượng 'hộp đen' của học sâu (deep learning) làm cho việc truy vết và giải thích tại sao AI đưa ra một quyết định cụ thể trở nên cực kỳ khó khăn. Khi AI đưa ra dự đoán sai gây thiệt hại (ví dụ: tai nạn xe tự lái, chẩn đoán bệnh sai), việc quy trách nhiệm giải trình (accountability) cho các bên liên quan gặp trở ngại lớn."
   },
   {
-    id: "Q_MOD_D_100", module_id: "Module_D", difficulty: "Hard",
+    id: "Q_MOD_D_100", module_id: "Module_D", difficulty: "Medium",
     tags: ["open-source-licensing"],
     content: "Nếu bạn muốn đóng góp mã nguồn cho một dự án nguồn mở lớn nhưng không muốn bị kiện tụng về bản quyền sáng chế sau này, thỏa thuận pháp lý nào sau đây bảo vệ bạn tốt nhất?",
     options: [
