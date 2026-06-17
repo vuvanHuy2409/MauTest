@@ -200,7 +200,33 @@ function selectQuestions(n) {
     selected = selected.concat(pool.slice(0, quota));
   });
 
-  return shuffle(selected).slice(0, n);
+  const examQs = shuffle(selected).slice(0, n).map(q => {
+    // Clone the question object to avoid mutating original state
+    const cloned = JSON.parse(JSON.stringify(q));
+    const letters = ['A', 'B', 'C', 'D'];
+    
+    const correctIdx = letters.indexOf(cloned.correct_option);
+    if (correctIdx !== -1 && cloned.options && cloned.options.length === 4) {
+      // Find the correct answer string without the option prefix
+      const correctText = cloned.options[correctIdx].replace(/^[A-D]\.\s*/, '');
+      const cleanOptions = cloned.options.map(opt => opt.replace(/^[A-D]\.\s*/, ''));
+      
+      // Shuffle the clean options
+      const shuffledClean = shuffle(cleanOptions);
+      
+      // Re-add prefixes
+      cloned.options = shuffledClean.map((opt, i) => `${letters[i]}. ${opt}`);
+      
+      // Find new correct option index
+      const newCorrectIdx = shuffledClean.indexOf(correctText);
+      if (newCorrectIdx !== -1) {
+        cloned.correct_option = letters[newCorrectIdx];
+      }
+    }
+    return cloned;
+  });
+
+  return examQs;
 }
 
 function shuffle(arr) {
