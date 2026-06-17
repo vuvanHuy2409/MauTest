@@ -1,1302 +1,1219 @@
 const QUESTIONS_A = [
   {
-    id: "Q_MOD_A_001", module_id: "Module_A", difficulty: "Easy",
+    id: "Q_MOD_A_001", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Một mô hình phân loại AI dự đoán một hình ảnh là \"Mèo\" với độ chính xác (Precision) là $80\\%$. Nếu trong một tập dữ liệu gồm $100$ ảnh mà mô hình dự đoán là Mèo, có bao nhiêu ảnh thực sự là mèo?",
+    content: "Một cửa hàng bán điện thoại có chương trình giảm giá $10\\%$ cho tất cả sản phẩm. Nếu một chiếc điện thoại có giá gốc là $10$ triệu đồng, khách hàng sẽ được giảm bao nhiêu tiền?",
     options: [
-      "A. $20$",
-      "B. $50$",
-      "C. $80$",
-      "D. $100$"
-    ],
-    correct_option: "C",
-    explanation: "Độ chính xác (Precision) được tính bằng tỷ lệ số điểm dữ liệu thực sự tích cực (True Positive) trên tổng số điểm được dự đoán là tích cực. Với $80\\%$ của $100$ hình ảnh được dự đoán, ta có: $100 \\times 0.8 = 80$ ảnh thực sự là mèo."
-  },
-  {
-    id: "Q_MOD_A_002", module_id: "Module_A", difficulty: "Easy",
-    tags: ["linear-algebra"],
-    content: "Cho hai vector $u = [1, 2]$ và $v = [3, 4]$. Tích vô hướng (dot product) của hai vector $u \\cdot v$ bằng bao nhiêu?",
-    options: [
-      "A. $11$",
-      "B. $14$",
-      "C. $7$",
-      "D. $10$"
+      "A. $1.0$ triệu đồng.",
+      "B. $2.0$ triệu đồng.",
+      "C. $3.0$ triệu đồng.",
+      "D. $4.0$ triệu đồng."
     ],
     correct_option: "A",
-    explanation: "Tích vô hướng của hai vector được tính bằng tổng các tích của các phần tử tương ứng: $u \\cdot v = (1 \\times 3) + (2 \\times 4) = 3 + 8 = 11$."
+    explanation: "Số tiền được giảm bằng giá gốc nhân với phần trăm giảm giá: $10 \\times 10\\% = 10 \\times 0.1 = 1$ triệu đồng."
   },
   {
-    id: "Q_MOD_A_003", module_id: "Module_A", difficulty: "Easy",
+    id: "Q_MOD_A_002", module_id: "Module_A", difficulty: "Medium",
     tags: ["linear-algebra"],
-    content: "Trong học máy, một hình ảnh kỹ thuật số grayscale (ảnh xám) kích thước $28 \\times 28$ pixel thường được biểu diễn dưới dạng cấu trúc toán học nào sau đây?",
+    content: "Trong một kho dữ liệu ảnh, tuần thứ nhất thu thập được $120$ bức ảnh mèo và tuần thứ hai thu thập được $80$ bức ảnh mèo. Tổng số ảnh mèo thu được sau hai tuần là bao nhiêu?",
     options: [
-      "A. Một Vector hàng có 28 phần tử.",
-      "B. Một Ma trận (Matrix) kích thước $28 \\times 28$.",
-      "C. Một Tập hợp không có thứ tự.",
-      "D. Một Biến số vô hướng (Scalar)."
+      "A. $180$ bức ảnh mèo.",
+      "B. $200$ bức ảnh mèo.",
+      "C. $220$ bức ảnh mèo.",
+      "D. $240$ bức ảnh mèo."
     ],
     correct_option: "B",
-    explanation: "Ảnh xám là một lưới các điểm ảnh, mỗi điểm ảnh có một giá trị độ sáng. Do đó, nó được biểu diễn tự nhiên nhất bằng một ma trận hai chiều (2D Array/Matrix)."
+    explanation: "Tổng số ảnh mèo sau hai tuần được tính bằng phép cộng đơn giản: $120 + 80 = 200$ bức ảnh."
+  },
+  {
+    id: "Q_MOD_A_003", module_id: "Module_A", difficulty: "Medium",
+    tags: ["linear-algebra"],
+    content: "Điểm số môn Toán của một học sinh trong 3 lần kiểm tra lần lượt là $7$, $8$ và $9$. Điểm trung bình cộng của học sinh này sau 3 lần kiểm tra là bao nhiêu?",
+    options: [
+      "A. $6.0$ điểm.",
+      "B. $7.0$ điểm.",
+      "C. $8.0$ điểm.",
+      "D. $9.0$ điểm."
+    ],
+    correct_option: "C",
+    explanation: "Điểm trung bình cộng được tính bằng tổng số điểm chia cho số lần kiểm tra: $(7 + 8 + 9) / 3 = 24 / 3 = 8$ điểm."
   },
   {
     id: "Q_MOD_A_004", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Xét một hệ thống AI phát hiện gian lận thi cử. Xác suất để hệ thống báo động sai (sinh viên không gian lận nhưng AI bảo có) là $5\\%$. Nếu trong một phòng thi có $40$ sinh viên làm bài nghiêm túc, kỳ vọng về số sinh viên bị AI gắn cờ cảnh báo sai là bao nhiêu?",
+    content: "Khi gieo một đồng xu cân đối và đồng chất một lần, xác suất để đồng xu xuất hiện mặt ngửa (N) là bao nhiêu?",
     options: [
-      "A. $0$ sinh viên",
-      "B. $2$ sinh viên",
-      "C. $5$ sinh viên",
-      "D. $8$ sinh viên"
+      "A. $25\\%$",
+      "B. $50\\%$",
+      "C. $75\\%$",
+      "D. $90\\%$"
     ],
     correct_option: "B",
-    explanation: "Giá trị kỳ vọng $E(X) = n \\times p = 40 \\times 0.05 = 2$ sinh viên."
+    explanation: "Đồng xu có 2 mặt (Sấp và Ngửa) với khả năng xuất hiện như nhau. Do đó, xác suất xuất hiện mặt ngửa là $1/2 = 50\\%$."
   },
   {
     id: "Q_MOD_A_005", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
-    content: "Hàm số bậc hai $f(x) = x^2 - 4x + 5$ đạt giá trị nhỏ nhất (cực tiểu) tại điểm $x$ bằng bao nhiêu? (Gợi ý: Tìm điểm mà tại đó đạo hàm $f'(x) = 0$).",
+    content: "Một học sinh trả lời đúng $16$ câu trên tổng số $20$ câu hỏi của một bài kiểm tra. Tỷ lệ phần trăm câu trả lời đúng của học sinh này là bao nhiêu?",
     options: [
-      "A. $x = 0$",
-      "B. $x = 2$",
-      "C. $x = 4$",
-      "D. $x = -2$"
+      "A. $70\\%$",
+      "B. $80\\%$",
+      "C. $90\\%$",
+      "D. $60\\%$"
     ],
     correct_option: "B",
-    explanation: "Đạo hàm của hàm số là $f'(x) = 2x - 4$. Cho $f'(x) = 0 \\Leftrightarrow 2x - 4 = 0 \\Leftrightarrow x = 2$. Đây chính là nguyên lý tìm điểm tối ưu tối thiểu trong các thuật toán huấn luyện AI."
+    explanation: "Tỷ lệ phần trăm câu trả lời đúng được tính bằng: $(16 / 20) \\times 100\\% = 0.8 \\times 100\\% = 80\\%$."
   },
   {
     id: "Q_MOD_A_006", module_id: "Module_A", difficulty: "Medium",
     tags: ["linear-algebra"],
-    content: "Cho một ma trận dòng $A = [2, -1, 3]$ và một ma trận cột $B = \\begin{bmatrix} 4 \\\\ 0 \\\\ 1 \\end{bmatrix}$. Kết quả của phép nhân ma trận $A \\times B$ là gì?",
+    content: "Một lập trình viên viết được $15$ dòng mã nguồn (code) mỗi giờ. Nếu lập trình viên đó làm việc liên tục trong $4$ giờ, tổng số dòng mã nguồn viết được là bao nhiêu?",
     options: [
-      "A. Một ma trận kích thước $3 \\times 3$.",
-      "B. Một giá trị vô hướng bằng $11$.",
-      "C. Một giá trị vô hướng bằng $8$.",
-      "D. Phép toán này không thực hiện được."
+      "A. $50$ dòng mã.",
+      "B. $60$ dòng mã.",
+      "C. $70$ dòng mã.",
+      "D. $80$ dòng mã."
     ],
     correct_option: "B",
-    explanation: "Phép nhân ma trận hàng $1 \\times 3$ với ma trận cột $3 \\times 1$ cho ra một vô hướng: $(2 \\times 4) + ((-1) \\times 0) + (3 \\times 1) = 8 + 0 + 3 = 11$."
+    explanation: "Tổng số dòng mã nguồn viết được trong $4$ giờ là: $15 \\times 4 = 60$ dòng mã."
   },
   {
     id: "Q_MOD_A_007", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Thống kê tại một ngã tư: Xác suất một phương tiện rẽ trái là $0.3$, đi thẳng là $0.5$, và rẽ phải là $0.2$. Nếu có 2 phương tiện di chuyển độc lập vào ngã tư, xác suất để **cả hai phương tiện cùng rẽ trái** là bao nhiêu?",
+    content: "Gieo một con xúc xắc cân đối và đồng chất $6$ mặt (được đánh số chấm từ $1$ đến $6$). Xác suất để gieo được mặt có số chấm là $5$ bằng bao nhiêu?",
     options: [
-      "A. $0.6$",
-      "B. $0.09$",
-      "C. $0.3$",
-      "D. $0.15$"
+      "A. $1/6$",
+      "B. $2/6$",
+      "C. $3/6$",
+      "D. $4/6$"
     ],
-    correct_option: "B",
-    explanation: "Vì hai phương tiện di chuyển hoàn toàn độc lập: $P(A \\text{ và } B) = P(A) \\times P(B) = 0.3 \\times 0.3 = 0.09$."
+    correct_option: "A",
+    explanation: "Xúc xắc có $6$ mặt có khả năng xuất hiện như nhau. Chỉ có $1$ mặt có số chấm là $5$. Do đó xác suất là $1/6$."
   },
   {
     id: "Q_MOD_A_008", module_id: "Module_A", difficulty: "Medium",
     tags: ["activation-functions"],
-    content: "Trong các hàm kích hoạt (Activation Function) phổ biến, hàm **Sigmoid** $f(x) = \\frac{1}{1 + e^{-x}}$ nén tất cả các giá trị đầu vào vào khoảng nào?",
+    content: "Một dự án phần mềm dự kiến hoàn thành trong $30$ ngày. Sau $12$ ngày làm việc, số ngày còn lại để hoàn thành dự án theo đúng kế hoạch là bao nhiêu?",
     options: [
-      "A. $[-1, 1]$",
-      "B. $[0, 1]$",
-      "C. $[0, +\\infty)$",
-      "D. $(-\\infty, +\\infty)$"
+      "A. $15$ ngày.",
+      "B. $18$ ngày.",
+      "C. $20$ ngày.",
+      "D. $22$ ngày."
     ],
     correct_option: "B",
-    explanation: "Khi $x \\to +\\infty$, $e^{-x} \\to 0 \\Rightarrow f(x) \\to 1$. Khi $x \\to -\\infty$, $e^{-x} \\to +\\infty \\Rightarrow f(x) \\to 0$. Do đó Sigmoid luôn nằm trong $[0, 1]$."
+    explanation: "Số ngày còn lại được tính bằng phép trừ đơn giản: $30 - 12 = 18$ ngày."
   },
   {
     id: "Q_MOD_A_009", module_id: "Module_A", difficulty: "Medium",
     tags: ["matrix-operations"],
-    content: "Cho ma trận $A = \\begin{bmatrix} 2 & 3 \\\\ 1 & 4 \\end{bmatrix}$. Định thức (Determinant) của ma trận $A$, ký hiệu là $\\det(A)$, bằng bao nhiêu?",
+    content: "Nhiệt độ đo được tại một trạm khí tượng trong 4 ngày liên tiếp lần lượt là $20^\\circ\\text{C}$, $22^\\circ\\text{C}$, $24^\\circ\\text{C}$ và $26^\\circ\\text{C}$. Nhiệt độ trung bình trong 4 ngày đó là bao nhiêu?",
     options: [
-      "A. $5$",
-      "B. $11$",
-      "C. $3$",
-      "D. $8$"
+      "A. $21^\\circ\\text{C}$",
+      "B. $23^\\circ\\text{C}$",
+      "C. $25^\\circ\\text{C}$",
+      "D. $27^\\circ\\text{C}$"
     ],
-    correct_option: "A",
-    explanation: "$\\det(A) = ad - bc = (2 \\times 4) - (3 \\times 1) = 8 - 3 = 5$."
+    correct_option: "B",
+    explanation: "Nhiệt độ trung bình cộng của 4 ngày là: $(20 + 22 + 24 + 26) / 4 = 92 / 4 = 23^\\circ\\text{C}$."
   },
   {
     id: "Q_MOD_A_010", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Có 3 hộp đựng linh kiện điện tử. Hộp I có $10\\%$ linh kiện lỗi, Hộp II có $5\\%$ linh kiện lỗi, Hộp III có $20\\%$ linh kiện lỗi. Chọn ngẫu nhiên một hộp, rồi từ đó lấy ra 1 linh kiện. Xác suất để chọn trúng Hộp III **và** lấy ra một linh kiện lỗi là bao nhiêu?",
+    content: "Trong một khảo sát gồm $50$ người, có $30$ người nói rằng họ thường xuyên sử dụng mạng xã hội. Tỷ lệ phần trăm người sử dụng mạng xã hội trong cuộc khảo sát này là bao nhiêu?",
     options: [
-      "A. $\\frac{1}{3} \\times 0.2$",
-      "B. $\\frac{1}{3} + 0.2$",
-      "C. $\\frac{1}{3} - 0.2$",
-      "D. $\\frac{1}{3} / 0.2$"
+      "A. $40\\%$",
+      "B. $50\\%$",
+      "C. $60\\%$",
+      "D. $70\\%$"
     ],
-    correct_option: "A",
-    explanation: "Xác suất chọn ngẫu nhiên 1 trong 3 hộp là $\\frac{1}{3}$. Xác suất lấy được linh kiện lỗi trong Hộp III là $0.2$. Hai hành động diễn ra liên tiếp nên nhân lại: $\\frac{1}{3} \\times 0.2$."
+    correct_option: "C",
+    explanation: "Tỷ lệ phần trăm được tính bằng: $(30 / 50) \\times 100\\% = 0.6 \\times 100\\% = 60\\%$."
   },
   {
     id: "Q_MOD_A_011", module_id: "Module_A", difficulty: "Medium",
     tags: ["metrics"],
-    content: "Khi đo lường hiệu năng của mô hình AI dự báo giá nhà, nếu bạn muốn các sai số lớn bị phạt nặng hơn, bạn nên chọn hàm đo lường sai số nào?",
+    content: "Một chiếc hộp chứa $3$ quả bóng đỏ và $2$ quả bóng xanh. Nếu bạn lấy ngẫu nhiên một quả bóng từ hộp, xác suất để quả bóng đó có màu đỏ là bao nhiêu?",
     options: [
-      "A. MAE (Sai số tuyệt đối trung bình)",
-      "B. MSE (Sai số bình phương trung bình)",
-      "C. ACC (Độ chính xác dự báo tổng thể)",
-      "D. F1 (Trung bình điều hòa F1-score)"
+      "A. $1/5$",
+      "B. $2/5$",
+      "C. $3/5$",
+      "D. $4/5$"
     ],
-    correct_option: "B",
-    explanation: "Hàm MSE thực hiện bình phương các khoảng cách sai số $(y_{true} - f(x))^2$. Khi sai số lớn, bình phương sẽ đẩy giá trị lỗi lên rất cao, giúp phạt nặng các điểm dữ liệu bị lệch nhiều (outliers)."
+    correct_option: "C",
+    explanation: "Tổng số quả bóng trong hộp là $3 + 2 = 5$ quả. Số quả bóng đỏ là $3$. Xác suất chọn được quả bóng đỏ là $3/5$."
   },
   {
-    id: "Q_MOD_A_012", module_id: "Module_A", difficulty: "Easy",
+    id: "Q_MOD_A_012", module_id: "Module_A", difficulty: "Medium",
     tags: ["linear-algebra"],
-    content: "Cho vector $w = [3, 4]$. Khoảng cách Euclide (chuẩn $L_2$) của vector này từ gốc tọa độ $(0,0)$ bằng bao nhiêu?",
+    content: "Một công ty chia đều $80$ máy tính cho $4$ phòng ban. Mỗi phòng ban sẽ nhận được bao nhiêu chiếc máy tính?",
     options: [
-      "A. $5$",
-      "B. $7$",
-      "C. $25$",
-      "D. $12$"
+      "A. $15$ máy.",
+      "B. $20$ máy.",
+      "C. $25$ máy.",
+      "D. $30$ máy."
     ],
-    correct_option: "A",
-    explanation: "Chuẩn $L_2$ của vector $w=[3, 4]$: $\\|w\\|_2 = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$."
+    correct_option: "B",
+    explanation: "Số máy tính mỗi phòng ban nhận được là: $80 / 4 = 20$ máy."
   },
   {
     id: "Q_MOD_A_013", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
-    content: "Nếu đạo hàm bậc nhất của một hàm chi phí (Loss function) tại điểm $x_0$ có giá trị là một số dương ($f'(x_0) > 0$), để giảm chi phí theo thuật toán Gradient Descent, ta cần dịch chuyển $x$ về phía nào?",
+    content: "Số lượng người dùng của một ứng dụng di động tăng từ $100$ người lên $120$ người. Tỷ lệ phần trăm tăng trưởng số lượng người dùng là bao nhiêu?",
     options: [
-      "A. Giảm giá trị của $x$ ($x_{new} < x_0$)",
-      "B. Tăng giá trị của $x$ ($x_{new} > x_0$)",
-      "C. Giữ nguyên giá trị $x$ ($x_{new} = x_0$)",
-      "D. Nhân đôi giá trị của $x$ ($x_{new} = 2x_0$)"
+      "A. $10\\%$",
+      "B. $15\\%$",
+      "C. $20\\%$",
+      "D. $25\\%$"
     ],
-    correct_option: "A",
-    explanation: "Công thức Gradient Descent: $x_{new} = x_{old} - \\alpha \\times f'(x_{old})$. Nếu $f'(x_{old}) > 0$, ta trừ đi một số dương, làm $x_{new} < x_{old}$, tức là phải giảm $x$."
+    correct_option: "C",
+    explanation: "Số người tăng thêm là: $120 - 100 = 20$ người. Tỷ lệ tăng là: $(20 / 100) \\times 100\\% = 20\\%$."
   },
   {
     id: "Q_MOD_A_014", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Một xúc xắc cân đối 6 mặt được gieo 2 lần. Xác suất để tổng số chấm xuất hiện trong 2 lần gieo bằng $4$ là bao nhiêu?",
+    content: "Trong một ngày, một nhân viên bán hàng chốt được $8$ đơn hàng vào buổi sáng và $5$ đơn hàng vào buổi chiều. Tổng số đơn hàng nhân viên đó chốt được trong ngày là bao nhiêu?",
     options: [
-      "A. $\\frac{1}{12}$",
-      "B. $\\frac{1}{6}$",
-      "C. $\\frac{1}{18}$",
-      "D. $\\frac{1}{9}$"
-    ],
-    correct_option: "A",
-    explanation: "Tổng số không gian mẫu: $6 \\times 6 = 36$. Các cặp có tổng bằng 4: $(1,3), (2,2), (3,1)$ → 3 trường hợp. Xác suất: $\\frac{3}{36} = \\frac{1}{12}$."
-  },
-  {
-    id: "Q_MOD_A_015", module_id: "Module_A", difficulty: "Easy",
-    tags: ["probability-statistics"],
-    content: "Trong một tập dữ liệu gồm lương của 5 kỹ sư AI lần lượt là: $20, 22, 25, 28, 95$ (triệu/tháng). Giá trị nào phản ánh sát nhất mức thu nhập phổ biến mà không bị ảnh hưởng bởi giá trị đột biến (outlier)?",
-    options: [
-      "A. Giá trị trung bình (Mean)",
-      "B. Giá trị trung vị (Median)",
-      "C. Giá trị cực đại (Maximum)",
-      "D. Tổng tất cả giá trị (Sum)"
-    ],
-    correct_option: "B",
-    explanation: "Giá trị trung bình (Mean) sẽ bị kéo lên cao bởi outlier $95$ ($\\approx 38$), không phản ánh đúng thực tế. Giá trị trung vị (Median) là $25$, phản ánh chính xác mức lương phổ biến hơn."
-  },
-  {
-    id: "Q_MOD_A_016", module_id: "Module_A", difficulty: "Easy",
-    tags: ["matrix-operations"],
-    content: "Phép toán nào dưới đây biến đổi một ma trận kích thước $m \\times n$ thành một ma trận kích thước $n \\times m$ bằng cách đổi dòng thành cột và cột thành dòng?",
-    options: [
-      "A. Nhân ma trận (Multiplication)",
-      "B. Nghịch đảo ma trận (Inversion)",
-      "C. Chuyển vị ma trận (Transpose)",
-      "D. Tính định thức ma trận (Determinant)"
+      "A. $11$ đơn.",
+      "B. $12$ đơn.",
+      "C. $13$ đơn.",
+      "D. $14$ đơn."
     ],
     correct_option: "C",
-    explanation: "Ma trận chuyển vị (Transpose), ký hiệu là $A^T$, thu được bằng cách chuyển các dòng của ma trận $A$ thành các cột tương ứng và ngược lại."
+    explanation: "Tổng số đơn hàng chốt được trong ngày là: $8 + 5 = 13$ đơn hàng."
+  },
+  {
+    id: "Q_MOD_A_015", module_id: "Module_A", difficulty: "Medium",
+    tags: ["probability-statistics"],
+    content: "Khi tung một đồng xu cân đối và đồng chất hai lần liên tiếp, có bao nhiêu kết quả có thể xảy ra ở cả hai lần tung?",
+    options: [
+      "A. $2$ kết quả.",
+      "B. $4$ kết quả.",
+      "C. $6$ kết quả.",
+      "D. $8$ kết quả."
+    ],
+    correct_option: "B",
+    explanation: "Mỗi lần tung có 2 kết quả có thể xảy ra (Sấp hoặc Ngửa). Hai lần tung độc lập có tổng số kết quả là: $2 \\times 2 = 4$ kết quả (SS, SN, NS, NN)."
+  },
+  {
+    id: "Q_MOD_A_016", module_id: "Module_A", difficulty: "Medium",
+    tags: ["matrix-operations"],
+    content: "Ba bạn học sinh có cân nặng lần lượt là $40\\text{ kg}$, $42\\text{ kg}$ và $44\\text{ kg}$. Cân nặng trung bình của ba bạn là bao nhiêu?",
+    options: [
+      "A. $41\\text{ kg}$",
+      "B. $42\\text{ kg}$",
+      "C. $43\\text{ kg}$",
+      "D. $44\\text{ kg}$"
+    ],
+    correct_option: "B",
+    explanation: "Cân nặng trung bình được tính bằng: $(40 + 42 + 44) / 3 = 126 / 3 = 42\\text{ kg}$."
   },
   {
     id: "Q_MOD_A_017", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
-    content: "Hàm số $f(x) = -x^2 + 6x - 1$ đạt giá trị lớn nhất (Cực đại) tại $x$ bằng bao nhiêu?",
+    content: "Một cửa hàng thời trang giảm giá một chiếc áo từ $200$ nghìn đồng xuống còn $160$ nghìn đồng. Chiếc áo này đã được giảm giá bao nhiêu phần trăm?",
     options: [
-      "A. $x = 3$",
-      "B. $x = -3$",
-      "C. $x = 6$",
-      "D. $x = 0$"
+      "A. $10\\%$",
+      "B. $15\\%$",
+      "C. $20\\%$",
+      "D. $25\\%$"
     ],
-    correct_option: "A",
-    explanation: "Tính đạo hàm: $f'(x) = -2x + 6$. Cho $f'(x) = 0 \\Leftrightarrow x = 3$. Vì hệ số của $x^2$ âm ($-1$), đây là điểm đạt giá trị lớn nhất."
+    correct_option: "C",
+    explanation: "Số tiền được giảm là: $200 - 160 = 40$ nghìn đồng. Phần trăm giảm giá là: $(40 / 200) \\times 100\\% = 20\\%$."
   },
   {
     id: "Q_MOD_A_018", module_id: "Module_A", difficulty: "Medium",
     tags: ["metrics"],
-    content: "Trong Học máy, hàm mất mát (Loss Function) phổ biến dành cho bài toán phân loại nhị phân (Binary Classification) là hàm nào?",
+    content: "Một học sinh mua $3$ quyển vở với giá $10$ nghìn đồng mỗi quyển và $1$ chiếc bút với giá $5$ nghìn đồng. Tổng số tiền học sinh đó phải trả là bao nhiêu?",
     options: [
-      "A. Mean Squared Error (MSE loss)",
-      "B. Binary Cross-Entropy (BCE loss)",
-      "C. Smooth L1 Error (Huber loss)",
-      "D. Mean Absolute Error (L1 loss)"
+      "A. $30$ nghìn.",
+      "B. $35$ nghìn.",
+      "C. $40$ nghìn.",
+      "D. $45$ nghìn."
     ],
     correct_option: "B",
-    explanation: "**Binary Cross-Entropy** đo lường khoảng cách giữa hai phân phối xác suất. Nó phạt rất nặng nếu mô hình dự đoán sai với độ tự tin cao, làm cho nó trở thành hàm mất mát tiêu chuẩn cho phân loại nhị phân."
+    explanation: "Tổng số tiền học sinh phải trả là: $(3 \\times 10) + 5 = 30 + 5 = 35$ nghìn đồng."
   },
   {
-    id: "Q_MOD_A_019", module_id: "Module_A", difficulty: "Easy",
+    id: "Q_MOD_A_019", module_id: "Module_A", difficulty: "Medium",
     tags: ["matrix-operations"],
-    content: "Cho ma trận $A$ kích thước $3 \\times 2$ và ma trận $B$ kích thước $2 \\times 4$. Ma trận kết quả $C = A \\times B$ sẽ có kích thước là bao nhiêu?",
+    content: "Gieo một con xúc xắc cân đối và đồng chất $6$ mặt (từ $1$ đến $6$ chấm). Xác suất để gieo được mặt có số chấm là số chẵn (các số $2, 4, 6$) bằng bao nhiêu?",
     options: [
-      "A. Kích thước $3 \\times 4$",
-      "B. Kích thước $2 \\times 2$",
-      "C. Kích thước $3 \\times 2$",
-      "D. Không nhân được ma trận"
+      "A. $1/2$",
+      "B. $1/3$",
+      "C. $1/4$",
+      "D. $1/6$"
     ],
     correct_option: "A",
-    explanation: "Điều kiện nhân hai ma trận: số cột của ma trận trước bằng số dòng của ma trận sau ($2 = 2$). Kích thước kết quả: số dòng của $A$ × số cột của $B$ = $3 \\times 4$."
+    explanation: "Các mặt có số chấm chẵn là $2, 4, 6$ (gồm 3 mặt). Tổng số mặt của xúc xắc là 6. Xác suất gieo được mặt chẵn là: $3/6 = 1/2$."
   },
   {
-    id: "Q_MOD_A_020", module_id: "Module_A", difficulty: "Easy",
+    id: "Q_MOD_A_020", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Một hệ thống kiểm tra lỗi vi mạch tìm thấy trung bình 2 sản phẩm lỗi trên mỗi 100 sản phẩm. Nếu chọn ngẫu nhiên 1 sản phẩm để kiểm tra, xác suất chọn phải sản phẩm **không bị lỗi** là bao nhiêu?",
+    content: "Một nhóm gồm $5$ sinh viên cùng nhau làm một bài tập lớn và nhận được phần thưởng trị giá $500$ nghìn đồng. Nếu chia đều số tiền này, mỗi sinh viên sẽ được bao nhiêu?",
     options: [
-      "A. $0.02$",
-      "B. $0.2$",
-      "C. $0.98$",
-      "D. $0.5$"
+      "A. $80$ nghìn.",
+      "B. $90$ nghìn.",
+      "C. $100$ nghìn.",
+      "D. $110$ nghìn."
     ],
     correct_option: "C",
-    explanation: "Xác suất chọn phải sản phẩm lỗi là $\\frac{2}{100} = 0.02$. Xác suất không lỗi (biến cố đối): $1 - 0.02 = 0.98$."
+    explanation: "Số tiền mỗi sinh viên nhận được sau khi chia đều là: $500 / 5 = 100$ nghìn đồng."
   },
   {
-    id: "Q_MOD_A_021", module_id: "Module_A", difficulty: "Easy",
+    id: "Q_MOD_A_021", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
-    content: "Phép toán đạo hàm của hàm số $f(x) = 3x^2 + 5x - 2$ là gì?",
+    content: "Trong lớp học có $40$ học sinh, trong đó có $60\\%$ là học sinh nữ. Số học sinh nữ của lớp học đó là bao nhiêu?",
     options: [
-      "A. $f'(x) = 3x + 5$",
-      "B. $f'(x) = 6x + 5$",
-      "C. $f'(x) = 6x - 2$",
-      "D. $f'(x) = 6x^2 + 5$"
+      "A. $22$ bạn nữ.",
+      "B. $24$ bạn nữ.",
+      "C. $26$ bạn nữ.",
+      "D. $28$ bạn nữ."
     ],
     correct_option: "B",
-    explanation: "$(3x^2)' = 6x$; $(5x)' = 5$; $(-2)' = 0$. Vậy $f'(x) = 6x + 5$."
+    explanation: "Số học sinh nữ của lớp học là: $40 \\times 60\\% = 40 \\times 0.6 = 24$ học sinh nữ."
   },
   {
-    id: "Q_MOD_A_022", module_id: "Module_A", difficulty: "Easy",
+    id: "Q_MOD_A_022", module_id: "Module_A", difficulty: "Medium",
     tags: ["linear-algebra"],
-    content: "Khái niệm \"Phương sai\" (Variance) trong Thống kê mô tả điều gì của tập dữ liệu?",
+    content: "Điểm số của 4 thành viên trong một đội chơi trò chơi lần lượt là $10$, $12$, $14$ và $16$. Điểm số trung bình của các thành viên trong đội này là bao nhiêu?",
     options: [
-      "A. Giá trị có độ lớn cực đại thu được từ tập dữ liệu.",
-      "B. Mức độ biến thiên phân tán dữ liệu quanh số trung bình.",
-      "C. Giá trị xuất hiện với tần suất lớn nhất trong tập.",
-      "D. Tổng số lượng các mẫu quan sát có trong tập dữ liệu."
-    ],
-    correct_option: "B",
-    explanation: "Phương sai đo lường xem dữ liệu nằm tập trung sát quanh giá trị trung bình hay bị trải rộng phân tán ra xa. Phương sai càng lớn nghĩa là dữ liệu càng biến thiên mạnh."
-  },
-  {
-    id: "Q_MOD_A_023", module_id: "Module_A", difficulty: "Easy",
-    tags: ["linear-algebra"],
-    content: "Cho vector $v = [1, -2, 2]$. Chuẩn $L_1$ (tổng giá trị tuyệt đối) của vector này bằng bao nhiêu?",
-    options: [
-      "A. $3$",
-      "B. $5$",
-      "C. $9$",
-      "D. $1$"
-    ],
-    correct_option: "B",
-    explanation: "Chuẩn $L_1$ là tổng giá trị tuyệt đối của tất cả các phần tử: $\\|v\\|_1 = |1| + |-2| + |2| = 1 + 2 + 2 = 5$."
-  },
-  {
-    id: "Q_MOD_A_024", module_id: "Module_A", difficulty: "Easy",
-    tags: ["activation-functions"],
-    content: "Hàm kích hoạt **ReLU** (Rectified Linear Unit) được định nghĩa là $f(x) = \\max(0, x)$. Phạm vi (range) đầu ra của hàm ReLU là khoảng nào?",
-    options: [
-      "A. $(-\\infty, +\\infty)$",
-      "B. $[-1, 1]$",
-      "C. $[0, 1]$",
-      "D. $[0, +\\infty)$"
-    ],
-    correct_option: "D",
-    explanation: "Hàm ReLU trả về $0$ khi $x < 0$ và trả về chính $x$ khi $x \\geq 0$. Do đó đầu ra luôn không âm, nằm trong khoảng $[0, +\\infty)$."
-  },
-  {
-    id: "Q_MOD_A_025", module_id: "Module_A", difficulty: "Easy",
-    tags: ["probability-statistics"],
-    content: "Trong thống kê, **Độ lệch chuẩn (Standard Deviation)** là gì?",
-    options: [
-      "A. Giá trị trung bình cộng của tất cả phần tử trong tập.",
-      "B. Căn bậc hai phương sai, đo mức phân tán của dữ liệu.",
-      "C. Điểm nằm chính giữa khi sắp xếp dãy số từ nhỏ đến lớn.",
-      "D. Tích số của toàn bộ phần tử quan sát trong tập dữ liệu."
-    ],
-    correct_option: "B",
-    explanation: "Độ lệch chuẩn $\\sigma = \\sqrt{\\text{Variance}}$. Nó có cùng đơn vị với dữ liệu gốc, giúp dễ hiểu hơn phương sai khi đánh giá mức độ biến thiên."
-  },
-  {
-    id: "Q_MOD_A_026", module_id: "Module_A", difficulty: "Easy",
-    tags: ["metrics"],
-    content: "Công thức tính **Accuracy** (Độ chính xác tổng thể) của một mô hình phân loại là gì?",
-    options: [
-      "A. $\\text{Precision} = \\frac{TP}{TP + FP}$",
-      "B. $\\text{Accuracy} = \\frac{TP + TN}{TP + TN + FP + FN}$",
-      "C. $\\text{Recall} = \\frac{TP}{TP + FN}$",
-      "D. $\\text{F1-score} = \\frac{2 \\cdot P \\cdot R}{P + R}$"
-    ],
-    correct_option: "B",
-    explanation: "Accuracy = (Số dự đoán đúng) / (Tổng số dự đoán) = $\\frac{TP + TN}{TP + TN + FP + FN}$. Đây là chỉ số cơ bản nhất để đánh giá mô hình phân loại."
-  },
-  {
-    id: "Q_MOD_A_027", module_id: "Module_A", difficulty: "Easy",
-    tags: ["linear-algebra"],
-    content: "Ma trận đơn vị (Identity Matrix) $I$ có tính chất đặc biệt nào khi nhân với một ma trận $A$ bất kỳ (cùng kích thước phù hợp)?",
-    options: [
-      "A. $A \\times I = 0$",
-      "B. $A \\times I = I$",
-      "C. $A \\times I = A$",
-      "D. $A \\times I = A^T$"
+      "A. $11$ điểm.",
+      "B. $12$ điểm.",
+      "C. $13$ điểm.",
+      "D. $14$ điểm."
     ],
     correct_option: "C",
-    explanation: "Ma trận đơn vị $I$ đóng vai trò như số $1$ trong phép nhân số học. Kết quả nhân bất kỳ ma trận $A$ với ma trận đơn vị $I$ (tương thích) luôn trả về chính $A$: $A \\times I = I \\times A = A$."
+    explanation: "Điểm số trung bình của đội là: $(10 + 12 + 14 + 16) / 4 = 52 / 4 = 13$ điểm."
+  },
+  {
+    id: "Q_MOD_A_023", module_id: "Module_A", difficulty: "Medium",
+    tags: ["linear-algebra"],
+    content: "Trong một ngăn kéo có $4$ chiếc bút đen và $6$ chiếc bút xanh. Bạn nhắm mắt và lấy ngẫu nhiên ra $1$ chiếc bút. Xác suất lấy được chiếc bút màu xanh là bao nhiêu?",
+    options: [
+      "A. $0.4$",
+      "B. $0.5$",
+      "C. $0.6$",
+      "D. $0.7$"
+    ],
+    correct_option: "C",
+    explanation: "Tổng số bút trong ngăn kéo là: $4 + 6 = 10$ chiếc. Xác suất để lấy được chiếc bút màu xanh là: $6 / 10 = 0.6$."
+  },
+  {
+    id: "Q_MOD_A_024", module_id: "Module_A", difficulty: "Medium",
+    tags: ["activation-functions"],
+    content: "Một trang web tin tức nhận được $150$ lượt truy cập trong giờ đầu tiên và $250$ lượt truy cập trong giờ thứ hai. Tổng số lượt truy cập trang web nhận được sau hai giờ là bao nhiêu?",
+    options: [
+      "A. $360$ lượt.",
+      "B. $380$ lượt.",
+      "C. $400$ lượt.",
+      "D. $420$ lượt."
+    ],
+    correct_option: "C",
+    explanation: "Tổng số lượt truy cập trang web sau hai giờ được tính bằng phép cộng đơn giản: $150 + 250 = 400$ lượt."
+  },
+  {
+    id: "Q_MOD_A_025", module_id: "Module_A", difficulty: "Medium",
+    tags: ["probability-statistics"],
+    content: "Một chiếc máy tính xách tay có giá $15$ triệu đồng. Nếu cửa hàng áp dụng mức thuế VAT là $10\\%$, số tiền thuế VAT mà người mua phải trả thêm cho chiếc máy tính này là bao nhiêu?",
+    options: [
+      "A. $1.0$ triệu.",
+      "B. $1.5$ triệu.",
+      "C. $2.0$ triệu.",
+      "D. $2.5$ triệu."
+    ],
+    correct_option: "B",
+    explanation: "Số tiền thuế VAT được tính bằng: $15 \\times 10\\% = 15 \\times 0.1 = 1.5$ triệu đồng."
+  },
+  {
+    id: "Q_MOD_A_026", module_id: "Module_A", difficulty: "Medium",
+    tags: ["metrics"],
+    content: "Nếu bạn mua 5 chiếc bánh ngọt với giá 12 nghìn đồng mỗi chiếc, bạn phải trả tổng cộng bao nhiêu tiền?",
+    options: [
+      "A. 50 nghìn.",
+      "B. 60 nghìn.",
+      "C. 70 nghìn.",
+      "D. 80 nghìn."
+    ],
+    correct_option: "B",
+    explanation: "Tổng số tiền phải trả được tính bằng phép nhân đơn giản: $5 \\times 12 = 60$ nghìn đồng."
+  },
+  {
+    id: "Q_MOD_A_027", module_id: "Module_A", difficulty: "Medium",
+    tags: ["linear-algebra"],
+    content: "Một bình chứa nước có dung tích tối đa là 20 lít. Hiện tại nước trong bình đang chiếm $40\\%$ dung tích. Trong bình hiện có bao nhiêu lít nước?",
+    options: [
+      "A. 6 lít nước.",
+      "B. 8 lít nước.",
+      "C. 10 lít nước.",
+      "D. 12 lít nước."
+    ],
+    correct_option: "B",
+    explanation: "Số lít nước hiện có trong bình là: $20 \\times 40\\% = 20 \\times 0.4 = 8$ lít nước."
   },
   {
     id: "Q_MOD_A_028", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Theo định lý Bayes, nếu $P(B|A) = 0.9$, $P(A) = 0.01$, $P(B) = 0.1$, thì xác suất $P(A|B)$ bằng bao nhiêu?",
+    content: "Một đồng xu cân đối và đồng chất được tung lên. Xác suất để đồng xu xuất hiện mặt sấp (S) là bao nhiêu?",
     options: [
-      "A. $0.09$",
-      "B. $0.90$",
-      "C. $0.19$",
-      "D. $0.01$"
+      "A. $1/4$",
+      "B. $1/2$",
+      "C. $3/4$",
+      "D. $1/3$"
     ],
-    correct_option: "A",
-    explanation: "Theo định lý Bayes: $P(A|B) = \\frac{P(B|A) \\times P(A)}{P(B)} = \\frac{0.9 \\times 0.01}{0.1} = \\frac{0.009}{0.1} = 0.09$."
+    correct_option: "B",
+    explanation: "Đồng xu có 2 mặt (Sấp và Ngửa) với khả năng xuất hiện như nhau. Do đó, xác suất xuất hiện mặt sấp là $1/2$."
   },
   {
     id: "Q_MOD_A_029", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
-    content: "Quy tắc **Chain Rule** (quy tắc dây chuyền) trong giải tích được sử dụng để tính đạo hàm của hàm hợp $h(x) = f(g(x))$. Công thức đúng là gì?",
+    content: "Một vận động viên chạy cự ly ngắn trong 3 lần chạy thử đạt thành tích lần lượt là $10$ giây, $11$ giây và $12$ giây. Thời gian chạy trung bình của vận động viên này là bao nhiêu?",
     options: [
-      "A. $h'(x) = f'(x) + g'(x)$",
-      "B. $h'(x) = f'(g(x)) \\times g'(x)$",
-      "C. $h'(x) = f'(x) \\times g'(x)$",
-      "D. $h'(x) = f(g'(x))$"
+      "A. $10$ giây.",
+      "B. $11$ giây.",
+      "C. $12$ giây.",
+      "D. $13$ giây."
     ],
     correct_option: "B",
-    explanation: "Chain Rule: Đạo hàm của hàm hợp $h(x) = f(g(x))$ là $h'(x) = f'(g(x)) \\times g'(x)$. Đây là nền tảng của thuật toán Backpropagation trong học sâu."
+    explanation: "Thời gian chạy trung bình cộng là: $(10 + 11 + 12) / 3 = 33 / 3 = 11$ giây."
   },
   {
     id: "Q_MOD_A_030", module_id: "Module_A", difficulty: "Medium",
     tags: ["linear-algebra"],
-    content: "**Cosine Similarity** giữa hai vector $u$ và $v$ được tính bằng công thức nào? Nó thường dùng để đo lường sự tương đồng ngữ nghĩa trong NLP.",
+    content: "Một cửa hàng có $120$ quả táo. Sau một ngày bán hàng, cửa hàng còn lại $45$ quả táo. Hỏi cửa hàng đã bán được bao nhiêu quả táo?",
     options: [
-      "A. $\\frac{u \\cdot v}{\\|u\\| \\cdot \\|v\\|}$",
-      "B. $\\frac{u - v}{\\|u\\| \\cdot \\|v\\|}$",
-      "C. $\\frac{u \\cdot v}{\\|u\\| + \\|v\\|}$",
-      "D. $\\frac{\\|u\\| \\cdot \\|v\\|}{u \\cdot v}$"
+      "A. $65$ quả.",
+      "B. $75$ quả.",
+      "C. $85$ quả.",
+      "D. $95$ quả."
     ],
-    correct_option: "A",
-    explanation: "Cosine Similarity $= \\cos(\\theta) = \\frac{u \\cdot v}{\\|u\\|_2 \\times \\|v\\|_2}$. Giá trị nằm trong $[-1, 1]$: bằng $1$ là hoàn toàn giống nhau, bằng $0$ là vuông góc, bằng $-1$ là ngược chiều nhau."
+    correct_option: "B",
+    explanation: "Số quả táo cửa hàng đã bán được là: $120 - 45 = 75$ quả táo."
   },
   {
     id: "Q_MOD_A_031", module_id: "Module_A", difficulty: "Medium",
     tags: ["activation-functions"],
-    content: "Hàm **Softmax** thường được sử dụng ở lớp đầu ra của mạng nơ-ron phân loại đa lớp. Điều gì xảy ra với tổng tất cả đầu ra của hàm Softmax?",
+    content: "Một nhân viên văn phòng có mức lương là 10 triệu đồng mỗi tháng. Người này quyết định tiết kiệm $20\\%$ mức lương của mình. Số tiền tiết kiệm mỗi tháng là bao nhiêu?",
     options: [
-      "A. Tổng các giá trị đầu ra bằng 0.",
-      "B. Tổng các giá trị đầu ra bằng 1.",
-      "C. Tổng các giá trị đầu ra bằng số lớp.",
-      "D. Tổng các giá trị đầu ra là ngẫu nhiên."
+      "A. $1.0$ triệu.",
+      "B. $2.0$ triệu.",
+      "C. $3.0$ triệu.",
+      "D. $4.0$ triệu."
     ],
     correct_option: "B",
-    explanation: "Hàm Softmax chuyển đổi vector điểm số thô (logits) thành phân phối xác suất. Tổng tất cả đầu ra của Softmax luôn bằng $1$, mỗi giá trị biểu diễn xác suất thuộc về lớp tương ứng."
+    explanation: "Số tiền tiết kiệm mỗi tháng được tính bằng: $10 \\times 20\\% = 10 \\times 0.2 = 2$ triệu đồng."
   },
   {
     id: "Q_MOD_A_032", module_id: "Module_A", difficulty: "Medium",
     tags: ["metrics"],
-    content: "Công thức tính **F1-Score** là gì? Đây là chỉ số kết hợp giữa Precision và Recall.",
+    content: "Gieo một con xúc xắc cân đối và đồng chất 6 mặt. Xác suất để gieo được mặt có số chấm là số lẻ (các số $1, 3, 5$) bằng bao nhiêu?",
     options: [
-      "A. $F1 = \\frac{Precision \\times Recall}{Precision + Recall}$",
-      "B. $F1 = \\frac{Precision + Recall}{Precision \\times Recall}$",
-      "C. $F1 = \\frac{2 \\times Precision \\times Recall}{Precision + Recall}$",
-      "D. $F1 = \\frac{2 \\times (Precision + Recall)}{Precision \\times Recall}$"
+      "A. $1/6$",
+      "B. $2/6$",
+      "C. $3/6$",
+      "D. $4/6$"
     ],
     correct_option: "C",
-    explanation: "F1-Score là trung bình điều hòa (harmonic mean) của Precision và Recall: $F1 = \\frac{2 \\times P \\times R}{P + R}$. Nó hữu ích khi cần cân bằng cả hai chỉ số, đặc biệt với tập dữ liệu mất cân bằng."
+    explanation: "Các mặt lẻ là $1, 3, 5$ (gồm 3 mặt). Tổng số mặt của xúc xắc là 6. Xác suất gieo được mặt có số chấm lẻ là: $3/6$."
   },
   {
     id: "Q_MOD_A_033", module_id: "Module_A", difficulty: "Medium",
     tags: ["matrix-operations"],
-    content: "Trong học sâu, phép toán **Hadamard Product** (tích từng phần tử) giữa hai ma trận $A$ và $B$ cùng kích thước ký hiệu là $A \\odot B$. Phần tử tại vị trí $(i,j)$ của kết quả là gì?",
+    content: "Một lớp học trực tuyến có $60$ học viên đăng ký ban đầu. Sau một tuần, có thêm $15$ học viên mới tham gia. Tổng số học viên hiện tại của lớp là bao nhiêu?",
     options: [
-      "A. Tổng hai phần tử tại cùng vị trí: $A_{ij} + B_{ij}$",
-      "B. Tích hai phần tử tại cùng vị trí: $A_{ij} \\times B_{ij}$",
-      "C. Tích thông thường giữa hàng $i$ và cột $j$ tương ứng",
-      "D. Hiệu hai phần tử tại cùng vị trí: $A_{ij} - B_{ij}$"
+      "A. $70$ người.",
+      "B. $75$ người.",
+      "C. $80$ người.",
+      "D. $85$ người."
     ],
     correct_option: "B",
-    explanation: "Hadamard Product nhân từng phần tử tương ứng: $(A \\odot B)_{ij} = A_{ij} \\times B_{ij}$. Phép toán này yêu cầu hai ma trận có cùng kích thước và khác với phép nhân ma trận thông thường."
+    explanation: "Tổng số học viên của lớp là: $60 + 15 = 75$ học viên."
   },
   {
     id: "Q_MOD_A_034", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Một kỹ sư AI muốn chọn ngẫu nhiên $k = 5$ ảnh từ tập $n = 100$ ảnh để kiểm tra thủ công. Số cách chọn mà **không** tính đến thứ tự là bao nhiêu (tổ hợp $C_{100}^5$)?",
+    content: "Một nhóm bạn gồm 5 người có số tiền tiết kiệm lần lượt là $10$, $20$, $30$, $40$ và $50$ nghìn đồng. Số tiền tiết kiệm trung bình của mỗi người trong nhóm là bao nhiêu?",
     options: [
-      "A. Tích số lặp $100 \\times 100 \\times 100 \\times 100 \\times 100$",
-      "B. Tích số giảm $100 \\times 99 \\times 98 \\times 97 \\times 96$",
-      "C. Tỷ lệ tổ hợp $\\frac{100!}{5! \\times 95!}$",
-      "D. Tích số hoán vị $5 \\times 4 \\times 3 \\times 2 \\times 1$"
+      "A. $25$ nghìn.",
+      "B. $30$ nghìn.",
+      "C. $35$ nghìn.",
+      "D. $40$ nghìn."
     ],
-    correct_option: "C",
-    explanation: "Tổ hợp chập $k$ của $n$ phần tử không tính thứ tự: $C_n^k = \\frac{n!}{k!(n-k)!} = \\frac{100!}{5! \\times 95!}$. Đây là công cụ cơ bản trong thống kê và xác suất."
+    correct_option: "B",
+    explanation: "Số tiền tiết kiệm trung bình của mỗi người là: $(10 + 20 + 30 + 40 + 50) / 5 = 150 / 5 = 30$ nghìn đồng."
   },
   {
     id: "Q_MOD_A_035", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
-    content: "Trong học máy, **Learning Rate** (tốc độ học $\\alpha$) trong thuật toán Gradient Descent có vai trò gì?",
+    content: "Một món đồ chơi có giá niêm yết là $50$ nghìn đồng. Người mua phải trả thêm phí giao hàng bằng $10\\%$ giá niêm yết của món đồ. Chi phí giao hàng là bao nhiêu?",
     options: [
-      "A. Xác định tổng số lượng lớp ẩn có trong mạng nơ-ron.",
-      "B. Kiểm soát kích thước bước cập nhật tham số ngược gradient.",
-      "C. Lựa chọn loại hàm kích hoạt tối ưu được sử dụng ở các lớp.",
-      "D. Xác định tổng dung lượng kích thước dữ liệu huấn luyện mô hình."
+      "A. $4.0$ nghìn.",
+      "B. $5.0$ nghìn.",
+      "C. $6.0$ nghìn.",
+      "D. $7.0$ nghìn."
     ],
     correct_option: "B",
-    explanation: "Learning Rate $\\alpha$ kiểm soát bước nhảy: $\\theta_{new} = \\theta_{old} - \\alpha \\nabla L$. Nếu $\\alpha$ quá lớn, thuật toán có thể phân kỳ. Nếu quá nhỏ, huấn luyện sẽ rất chậm."
+    explanation: "Phí giao hàng được tính là: $50 \\times 10\\% = 50 \\times 0.1 = 5$ nghìn đồng."
   },
   {
     id: "Q_MOD_A_036", module_id: "Module_A", difficulty: "Medium",
     tags: ["metrics"],
-    content: "**ROC Curve** (Receiver Operating Characteristic) trong đánh giá mô hình phân loại là đồ thị biểu diễn mối quan hệ giữa hai chỉ số nào?",
+    content: "Trong một túi kẹo có chứa $8$ chiếc kẹo màu dâu và $2$ chiếc kẹo màu nho. Nếu lấy ngẫu nhiên một chiếc kẹo từ túi, xác suất lấy được kẹo màu dâu là bao nhiêu?",
     options: [
-      "A. Precision và Recall biến đổi theo các ngưỡng quyết định phân loại.",
-      "B. True Positive Rate và False Positive Rate theo các ngưỡng quyết định.",
-      "C. Accuracy và Loss biến đổi qua từng chu kỳ (epoch) huấn luyện mạng.",
-      "D. Learning Rate và Validation Loss biến đổi theo thuật toán tối ưu."
+      "A. $0.6$",
+      "B. $0.7$",
+      "C. $0.8$",
+      "D. $0.9$"
     ],
-    correct_option: "B",
-    explanation: "ROC Curve vẽ **True Positive Rate (Recall/Sensitivity)** trên trục Y và **False Positive Rate (1 - Specificity)** trên trục X, tại nhiều ngưỡng quyết định khác nhau. Diện tích dưới đường cong (AUC) càng gần 1 thì mô hình càng tốt."
+    correct_option: "C",
+    explanation: "Tổng số kẹo là: $8 + 2 = 10$ chiếc. Xác suất để chọn được kẹo màu dâu là: $8 / 10 = 0.8$."
   },
   {
     id: "Q_MOD_A_037", module_id: "Module_A", difficulty: "Medium",
     tags: ["linear-algebra"],
-    content: "**Eigenvalue** (giá trị riêng) $\\lambda$ của một ma trận vuông $A$ thỏa mãn phương trình nào, với $v$ là eigenvector (vector riêng) tương ứng?",
+    content: "Một xưởng sản xuất giày làm được $40$ đôi giày mỗi ngày. Sau $5$ ngày làm việc liên tục, xưởng đó sẽ sản xuất được tổng cộng bao nhiêu đôi giày?",
     options: [
-      "A. $Av = \\lambda + v$",
-      "B. $Av = \\lambda v$",
-      "C. $A + v = \\lambda v$",
-      "D. $A^T v = \\lambda$"
+      "A. $180$ đôi.",
+      "B. $200$ đôi.",
+      "C. $220$ đôi.",
+      "D. $240$ đôi."
     ],
     correct_option: "B",
-    explanation: "Định nghĩa: $Av = \\lambda v$, trong đó $\\lambda$ là eigenvalue và $v \\neq 0$ là eigenvector. Eigenvalue/eigenvector rất quan trọng trong PCA (Principal Component Analysis) để giảm chiều dữ liệu."
+    explanation: "Tổng số đôi giày sản xuất được sau $5$ ngày là: $40 \\times 5 = 200$ đôi."
   },
   {
     id: "Q_MOD_A_038", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Trong học máy, kỹ thuật **Regularization L2 (Ridge)** thêm vào hàm mất mát một số hạng phạt là gì? Mục đích của nó là gì?",
+    content: "Nhiệt độ trung bình trong tuần của một thành phố được đo từ thứ Hai đến thứ Sáu (5 ngày) lần lượt là: $25, 27, 26, 28, 29$ độ C. Nhiệt độ trung bình của 5 ngày này là bao nhiêu?",
     options: [
-      "A. Thêm phạt $\\lambda \\sum |w_i|$ nhằm tạo ra các trọng số thưa thớt.",
-      "B. Thêm phạt $\\lambda \\sum w_i^2$ nhằm giới hạn trọng số lớn, tránh overfitting.",
-      "C. Thêm hằng số cộng $\\lambda$ nhằm tăng tốc độ hội tụ của mô hình mạng.",
-      "D. Thêm nhiễu ngẫu nhiên $\\lambda \\epsilon$ trực tiếp vào tập dữ liệu huấn luyện."
+      "A. $26$ độ C.",
+      "B. $27$ độ C.",
+      "C. $28$ độ C.",
+      "D. $29$ độ C."
     ],
     correct_option: "B",
-    explanation: "L2 Regularization (Ridge) thêm hạng phạt $\\lambda \\sum_i w_i^2$ vào hàm mất mát. Điều này khuyến khích các trọng số nhỏ và phân tán đều, giúp mô hình không quá phụ thuộc vào một vài đặc trưng cụ thể, từ đó giảm Overfitting."
+    explanation: "Nhiệt độ trung bình cộng là: $(25 + 27 + 26 + 28 + 29) / 5 = 135 / 5 = 27$ độ C."
   },
   {
     id: "Q_MOD_A_039", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
-    content: "Hiện tượng **Vanishing Gradient** (tiêu biến đạo hàm) trong mạng nơ-ron sâu xảy ra khi nào và gây ra hậu quả gì?",
+    content: "Một cuốn sách có giá bìa là 80 nghìn đồng. Vào ngày lễ, cửa hàng sách áp dụng chương trình giảm giá $25\\%$. Cuốn sách đó được giảm giá bao nhiêu tiền?",
     options: [
-      "A. Gradient bùng nổ cực đại qua các lớp, làm thay đổi trọng số quá lớn khiến mạng mất ổn định.",
-      "B. Gradient suy giảm dần về 0 qua các lớp sâu, khiến các lớp đầu tiên gần như không được cập nhật.",
-      "C. Tốc độ học (learning rate) thiết lập quá lớn, làm các tham số phân kỳ không thể hội tụ.",
-      "D. Dữ liệu huấn luyện bị thiếu hụt nhãn nghiêm trọng, khiến việc tính toán đạo hàm bị sai lệch."
+      "A. 15 nghìn.",
+      "B. 20 nghìn.",
+      "C. 25 nghìn.",
+      "D. 30 nghìn."
     ],
     correct_option: "B",
-    explanation: "Khi lan truyền ngược qua nhiều lớp, gradient được nhân với đạo hàm của hàm kích hoạt lặp đi lặp lại. Hàm Sigmoid/Tanh có đạo hàm < 1, khiến gradient giảm dần theo cấp số nhân về gần 0 → các lớp đầu học rất chậm. ReLU và kỹ thuật Batch Normalization giúp giảm thiểu vấn đề này."
+    explanation: "Số tiền được giảm giá của cuốn sách là: $80 \\times 25\\% = 80 \\times 0.25 = 20$ nghìn đồng."
   },
   {
     id: "Q_MOD_A_040", module_id: "Module_A", difficulty: "Medium",
     tags: ["matrix-operations"],
-    content: "Trong phân tích thành phần chính (PCA - Principal Component Analysis), ma trận Covariance $\\Sigma$ của tập dữ liệu được dùng để làm gì?",
+    content: "Một công ty muốn đóng gói 120 món quà vào các hộp quà, mỗi hộp chứa đúng 6 món quà. Hỏi công ty cần chuẩn bị bao nhiêu hộp quà như thế?",
     options: [
-      "A. Tính toán các giá trị kỳ vọng trung bình cộng của từng biến đặc trưng.",
-      "B. Xác định hướng có biến thiên lớn nhất qua việc phân tích trị riêng.",
-      "C. Quy đổi toàn bộ tập dữ liệu ban đầu về dạng phân phối chuẩn chuẩn hóa.",
-      "D. Tìm kiếm và loại bỏ các thành phần đặc trưng có độ lệch chuẩn bằng 0."
+      "A. 15 hộp quà.",
+      "B. 20 hộp quà.",
+      "C. 25 hộp quà.",
+      "D. 30 hộp quà."
     ],
     correct_option: "B",
-    explanation: "PCA phân tích eigenvector/eigenvalue của ma trận Covariance để tìm các **Principal Components** – các hướng trong không gian đặc trưng mà dữ liệu có phương sai lớn nhất. Chiếu dữ liệu lên các hướng này giúp giảm chiều mà vẫn giữ được phần lớn thông tin."
+    explanation: "Số lượng hộp quà cần chuẩn bị được tính bằng phép chia: $120 / 6 = 20$ hộp quà."
   },
   {
-    id: "Q_MOD_A_041", module_id: "Module_A", difficulty: "Easy",
+    id: "Q_MOD_A_041", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Phân phối nào sau đây thường được dùng để mô hình hóa xác suất xảy ra của một sự kiện (chỉ có 2 kết quả: thành công/thất bại) trong $n$ lần thử độc lập?",
+    content: "Khi gieo một con xúc xắc 6 mặt cân đối và đồng chất, xác suất để gieo được mặt có số chấm lớn hơn $4$ (tức là mặt 5 và mặt 6) bằng bao nhiêu?",
     options: [
-      "A. Phân phối chuẩn (Normal/Gaussian)",
-      "B. Phân phối nhị thức (Binomial)",
-      "C. Phân phối Poisson",
-      "D. Phân phối đều (Uniform)"
+      "A. $1/6$",
+      "B. $2/6$",
+      "C. $3/6$",
+      "D. $4/6$"
     ],
     correct_option: "B",
-    explanation: "Phân phối nhị thức mô hình hóa số lần thành công trong $n$ phép thử Bernoulli độc lập, mỗi phép thử có xác suất thành công $p$. Công thức: $P(X=k) = C_n^k p^k (1-p)^{n-k}$."
+    explanation: "Có 2 mặt thỏa mãn là mặt 5 và mặt 6. Tổng số mặt là 6. Do đó xác suất gieo được số chấm lớn hơn $4$ là $2/6$."
   },
   {
-    id: "Q_MOD_A_042", module_id: "Module_A", difficulty: "Easy",
+    id: "Q_MOD_A_042", module_id: "Module_A", difficulty: "Medium",
     tags: ["matrix-operations"],
-    content: "Phép toán nào cho phép tìm ma trận $A^{-1}$ sao cho $A \\times A^{-1} = I$? Ma trận nghịch đảo này tồn tại khi nào?",
+    content: "Trong một hộp linh kiện có $50$ sản phẩm, người ta phát hiện có $2$ sản phẩm bị lỗi. Tỷ lệ sản phẩm lỗi trong hộp này chiếm bao nhiêu phần trăm?",
     options: [
-      "A. Định thức ma trận bằng 0: $\\det(A) = 0$.",
-      "B. Định thức ma trận khác 0: $\\det(A) \\neq 0$.",
-      "C. Kích thước ma trận có số dòng bằng 1.",
-      "D. Toàn bộ các phần tử ma trận đều dương."
+      "A. $2\\%$",
+      "B. $4\\%$",
+      "C. $6\\%$",
+      "D. $8\\%$"
     ],
     correct_option: "B",
-    explanation: "Ma trận nghịch đảo $A^{-1}$ tồn tại khi và chỉ khi $\\det(A) \\neq 0$. Nếu $\\det(A) = 0$, ma trận được gọi là suy biến (singular) và không có nghịch đảo."
+    explanation: "Tỷ lệ phần trăm sản phẩm bị lỗi là: $(2 / 50) \\times 100\\% = 0.04 \\times 100\\% = 4\\%$."
   },
   {
-    id: "Q_MOD_A_043", module_id: "Module_A", difficulty: "Easy",
+    id: "Q_MOD_A_043", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
-    content: "Đạo hàm của hàm số mũ $f(x) = e^x$ là gì?",
+    content: "Một người đi xe máy đi được quãng đường $90\\text{ km}$ trong vòng $2$ giờ. Vận tốc trung bình của người đi xe máy đó là bao nhiêu?",
     options: [
-      "A. $f'(x) = x \\cdot e^{x-1}$",
-      "B. $f'(x) = e^x$",
-      "C. $f'(x) = xe^x$",
-      "D. $f'(x) = \\ln(x)$"
+      "A. $40\\text{ km/h}$",
+      "B. $45\\text{ km/h}$",
+      "C. $50\\text{ km/h}$",
+      "D. $55\\text{ km/h}$"
     ],
     correct_option: "B",
-    explanation: "Hàm $f(x) = e^x$ có đạo hàm đặc biệt: $f'(x) = e^x$. Đây là hàm duy nhất bằng chính đạo hàm của nó, là nền tảng quan trọng trong giải tích và học máy."
+    explanation: "Vận tốc trung bình được tính bằng quãng đường chia cho thời gian: $90 / 2 = 45\\text{ km/h}$."
   },
   {
     id: "Q_MOD_A_044", module_id: "Module_A", difficulty: "Medium",
     tags: ["activation-functions"],
-    content: "So sánh hàm **Tanh** với hàm **Sigmoid**: điểm khác biệt quan trọng nhất về phạm vi đầu ra là gì?",
+    content: "Điểm số thi môn Tiếng Anh của 4 học sinh lần lượt là $5$, $7$, $8$ và $10$. Điểm số trung bình cộng môn Tiếng Anh của nhóm học sinh này là bao nhiêu?",
     options: [
-      "A. Hàm Tanh có miền giá trị là $[0, 1]$ còn hàm Sigmoid có miền giá trị là $[-1, 1]$.",
-      "B. Hàm Tanh có miền giá trị là $[-1, 1]$ còn hàm Sigmoid có miền giá trị là $[0, 1]$.",
-      "C. Cả hai hàm kích hoạt đều có miền giá trị đầu ra nằm hoàn toàn trong đoạn $[0, 1]$.",
-      "D. Hàm Tanh có miền giá trị là $[0, +\\infty)$ còn hàm Sigmoid có miền giá trị là $[-1, 0]$."
-    ],
-    correct_option: "B",
-    explanation: "Sigmoid có đầu ra trong $[0, 1]$, trong khi Tanh có đầu ra trong $[-1, 1]$. Tanh được chuẩn hóa xung quanh $0$ nên gradient trung bình gần $0$ hơn, thường giúp huấn luyện hội tụ nhanh hơn Sigmoid."
-  },
-  {
-    id: "Q_MOD_A_045", module_id: "Module_A", difficulty: "Medium",
-    tags: ["metrics"],
-    content: "Trong bài toán phân loại nhị phân phát hiện ung thư, bạn **ưu tiên** không bỏ sót bệnh nhân thực sự bị ung thư (dù có thể báo nhầm). Bạn nên tối ưu chỉ số nào?",
-    options: [
-      "A. Chỉ số Precision (Đo mức độ chính xác của dự đoán dương tính)",
-      "B. Chỉ số Specificity (Đo tỷ lệ âm tính thật trên thực tế)",
-      "C. Chỉ số Recall (Đo tỷ lệ dương tính thật tránh bị bỏ sót)",
-      "D. Chỉ số Accuracy (Đo tỷ lệ dự đoán chính xác trên toàn bộ mẫu)"
-    ],
-    correct_option: "C",
-    explanation: "**Recall = TP / (TP + FN)** đo khả năng mô hình phát hiện tất cả các trường hợp dương tính thực sự. Trong y tế, bỏ sót bệnh nhân ung thư (False Negative) nguy hiểm hơn nhiều so với báo nhầm, nên Recall cao là ưu tiên."
-  },
-  {
-    id: "Q_MOD_A_046", module_id: "Module_A", difficulty: "Medium",
+      "A. $6.5$ điểm.",
+      "B. $7.5$ điểm.",
+      "C. $8.5$ điểm.",
+    {
+    id: "Q_MOD_A_051", module_id: "Module_A", difficulty: "Medium",
     tags: ["linear-algebra"],
-    content: "Phép biến đổi **PCA (Principal Component Analysis)** thuộc loại kỹ thuật nào trong học máy và mục đích chính của nó là gì?",
+    content: "Một máy in có thể in được $25$ trang giấy mỗi phút. Hỏi nếu máy in đó hoạt động liên tục trong $8$ phút thì in được bao nhiêu trang giấy?",
     options: [
-      "A. Kỹ thuật phân loại có giám sát nhằm dự đoán chính xác nhãn lớp.",
-      "B. Kỹ thuật giảm chiều không giám sát nhằm giữ lại tối đa phương sai.",
-      "C. Kỹ thuật sinh dữ liệu nhân tạo nhằm bổ sung thêm mẫu huấn luyện.",
-      "D. Kỹ thuật tiền xử lý dữ liệu nhằm chuẩn hóa thuộc tính về $[0,1]$."
+      "A. $180$ trang.",
+      "B. $200$ trang.",
+      "C. $220$ trang.",
+      "D. $240$ trang."
     ],
     correct_option: "B",
-    explanation: "PCA là kỹ thuật giảm chiều (dimensionality reduction) không giám sát. Nó chiếu dữ liệu từ không gian $n$ chiều xuống $k$ chiều ($k < n$) sao cho giữ được nhiều phương sai nhất, giúp trực quan hóa và loại bỏ nhiễu."
+    explanation: "Tổng số trang giấy in được trong $8$ phút là: $25 \\times 8 = 200$ trang."
   },
   {
-    id: "Q_MOD_A_047", module_id: "Module_A", difficulty: "Medium",
-    tags: ["probability-statistics"],
-    content: "**KL-Divergence** (Kullback-Leibler Divergence) $D_{KL}(P \\| Q)$ đo lường điều gì giữa hai phân phối xác suất $P$ và $Q$?",
-    options: [
-      "A. Khoảng cách hình học Euclide thông thường giữa hai phân phối.",
-      "B. Mức thông tin mất đi khi dùng phân phối Q xấp xỉ phân phối P.",
-      "C. Xác suất xảy ra đồng thời của hai sự kiện hoàn toàn độc lập.",
-      "D. Tích chập tích phân thu được từ hai phân phối xác suất khác nhau."
-    ],
-    correct_option: "B",
-    explanation: "$D_{KL}(P \\| Q) = \\sum_x P(x) \\log \\frac{P(x)}{Q(x)}$. KL-Divergence đo \"lượng thông tin\" cần thêm khi dùng $Q$ thay cho $P$. Nó không đối xứng ($D_{KL}(P\\|Q) \\neq D_{KL}(Q\\|P)$) và là nền tảng của Binary Cross-Entropy."
-  },
-  {
-    id: "Q_MOD_A_048", module_id: "Module_A", difficulty: "Medium",
-    tags: ["calculus"],
-    content: "Trong tối ưu hóa, phương pháp **Stochastic Gradient Descent (SGD)** khác với **Batch Gradient Descent** như thế nào?",
-    options: [
-      "A. SGD dùng toàn bộ tập dữ liệu để tính toán đạo hàm tại mỗi chu kỳ, trong khi Batch GD chỉ dùng một mẫu duy nhất.",
-      "B. SGD cập nhật tham số dựa trên từng mẫu dữ liệu đơn lẻ (hoặc nhóm nhỏ), giúp tính toán nhanh và dễ thoát cực tiểu cục bộ.",
-      "C. SGD hoàn toàn không yêu cầu tính đạo hàm của hàm mất mát, trong khi Batch GD đòi hỏi tính toán gradient phức tạp.",
-      "D. SGD và Batch GD có cùng cách thức cập nhật tham số và tốc độ hội tụ toán học tương đương trên mọi tập dữ liệu."
-    ],
-    correct_option: "B",
-    explanation: "SGD cập nhật tham số sau mỗi mẫu (hoặc mini-batch), tạo ra gradient ồn ào (noisy) nhưng cập nhật thường xuyên hơn → hội tụ nhanh hơn với dữ liệu lớn và có khả năng thoát Local Minima nhờ tính ngẫu nhiên. Batch GD ổn định hơn nhưng chậm với tập dữ liệu lớn."
-  },
-  {
-    id: "Q_MOD_A_049", module_id: "Module_A", difficulty: "Medium",
-    tags: ["metrics"],
-    content: "Trong bài toán phân loại với tập dữ liệu **mất cân bằng** (ví dụ 99% mẫu âm tính, 1% dương tính), tại sao Accuracy không phải là chỉ số đánh giá tốt?",
-    options: [
-      "A. Vì chỉ số Accuracy không có khả năng tính toán đối với tập dữ liệu có nhiều hơn hai lớp phân loại.",
-      "B. Vì một mô hình dự đoán tất cả âm tính vẫn đạt Accuracy 99% nhưng không phát hiện được mẫu dương nào.",
-      "C. Vì chỉ số Accuracy đòi hỏi dữ liệu đầu vào phải được chuẩn hóa hoàn toàn trước khi đánh giá mô hình.",
-      "D. Vì chỉ số Accuracy chỉ được thiết kế để áp dụng cho các mô hình hồi quy dự đoán giá trị liên tục."
-    ],
-    correct_option: "B",
-    explanation: "Với tập mất cân bằng 99%/1%, một mô hình \"ngốc\" luôn đoán âm tính đạt Accuracy 99% mà không học được gì. F1-Score, AUC-ROC, hoặc PR-AUC là các chỉ số phù hợp hơn để đánh giá bài toán này."
-  },
-  {
-    id: "Q_MOD_A_050", module_id: "Module_A", difficulty: "Medium",
+    id: "Q_MOD_A_052", module_id: "Module_A", difficulty: "Medium",
     tags: ["matrix-operations"],
-    content: "Phân tích giá trị suy biến (SVD - Singular Value Decomposition) phân tích ma trận $A$ thành dạng $A = U \\Sigma V^T$. Ma trận $\\Sigma$ trong phân tích này là gì?",
+    content: "Một bể nước chứa được tối đa $500$ lít nước. Hiện tại bể đang chứa lượng nước bằng $60\\%$ dung tích của bể. Lượng nước hiện có trong bể là bao nhiêu lít?",
     options: [
-      "A. Ma trận vuông có các phần tử trên đường chéo chính là trị riêng của ma trận gốc A.",
-      "B. Ma trận chứa giá trị suy biến trên đường chéo chính và toàn bộ các phần tử còn lại bằng 0.",
-      "C. Ma trận đơn vị chứa các phần tử 1 trên đường chéo chính và các phần tử khác đều bằng 0.",
-      "D. Ma trận nghịch đảo chứa các giá trị đối xứng qua đường chéo chính của ma trận đầu vào A."
+      "A. $250$ lít.",
+      "B. $300$ lít.",
+      "C. $350$ lít.",
+      "D. $400$ lít."
     ],
     correct_option: "B",
-    explanation: "Trong SVD: $U$ và $V$ là các ma trận trực giao; $\\Sigma$ là ma trận đường chéo chứa **singular values** (căn bậc hai của eigenvalue của $A^TA$) trên đường chéo chính, sắp xếp từ lớn đến nhỏ. SVD là nền tảng của nhiều kỹ thuật ML như PCA, Matrix Factorization, LSA."
+    explanation: "Lượng nước có trong bể là: $500 \\times 60\\% = 500 \\times 0.6 = 300$ lít nước."
   },
   {
-    id: "Q_MOD_A_051", module_id: "Module_A", difficulty: "Easy",
-    tags: ["linear-algebra"],
-    content: "Cho vector $a = [3, -1]$ và $b = [2, 5]$. Vector tổng $c = a + b$ có tọa độ bằng bao nhiêu?",
-    options: [
-      "A. $c = [5, 4]$",
-      "B. $c = [1, 6]$",
-      "C. $c = [5, 6]$",
-      "D. $c = [1, 4]$"
-    ],
-    correct_option: "A",
-    explanation: "Phép cộng hai vector thực hiện cộng từng phần tử tương ứng của chúng với nhau: $c = [3+2, -1+5] = [5, 4]$."
-  },
-  {
-    id: "Q_MOD_A_052", module_id: "Module_A", difficulty: "Easy",
-    tags: ["matrix-operations"],
-    content: "Cho ma trận vuông $A = \\begin{bmatrix} 3 & 0 \\\\ 0 & 3 \\end{bmatrix}$. Ma trận này thuộc loại ma trận nào sau đây?",
-    options: [
-      "A. Ma trận cột (Column matrix).",
-      "B. Ma trận đơn vị (Identity matrix).",
-      "C. Ma trận chéo (Diagonal matrix).",
-      "D. Ma trận không (Zero matrix)."
-    ],
-    correct_option: "C",
-    explanation: "Ma trận $A$ chỉ có các phần tử trên đường chéo chính khác 0, tất cả các phần tử ngoài đường chéo đều bằng 0, do đó nó là ma trận chéo."
-  },
-  {
-    id: "Q_MOD_A_053", module_id: "Module_A", difficulty: "Easy",
+    id: "Q_MOD_A_053", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Xét một biến cố $A$ có xác suất xảy ra là $P(A) = 0.15$. Xác suất của biến cố đối nghịch $\\bar{A}$ (tức là $A$ không xảy ra) là bao nhiêu?",
+    content: "Một trò chơi bốc thăm có $10$ tấm thẻ được đánh số từ $1$ đến $10$. Lấy ngẫu nhiên $1$ tấm thẻ. Xác suất để lấy được tấm thẻ ghi số $7$ là bao nhiêu?",
     options: [
-      "A. $0.85$",
-      "B. $0.15$",
-      "C. $0.50$",
-      "D. $0.00$"
+      "A. $0.1$",
+      "B. $0.2$",
+      "C. $0.3$",
+      "D. $0.4$"
     ],
     correct_option: "A",
-    explanation: "Xác suất của biến cố đối được tính bằng công thức: $P(\\bar{A}) = 1 - P(A) = 1 - 0.15 = 0.85$."
+    explanation: "Có $10$ tấm thẻ có khả năng lấy được như nhau. Chỉ có $1$ thẻ ghi số $7$. Xác suất lấy được thẻ số $7$ là: $1/10 = 0.1$."
   },
   {
-    id: "Q_MOD_A_054", module_id: "Module_A", difficulty: "Easy",
+    id: "Q_MOD_A_054", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
-    content: "Trong giải tích giới hạn của hàm lượng giác, giá trị của giới hạn $\\lim_{x \\to 0} \\frac{\\sin(x)}{x}$ bằng bao nhiêu?",
+    content: "Số lượng tin nhắn một người nhận được trong 3 ngày lần lượt là $12$, $15$ và $18$ tin nhắn. Số tin nhắn trung bình nhận được mỗi ngày của người đó là bao nhiêu?",
     options: [
-      "A. $1$",
-      "B. $0$",
-      "C. $\\infty$",
-      "D. $-1$"
+      "A. $13$ tin.",
+      "B. $15$ tin.",
+      "C. $17$ tin.",
+      "D. $19$ tin."
     ],
-    correct_option: "A",
-    explanation: "Đây là giới hạn lượng giác cơ bản kinh điển trong toán học giải tích: $\\lim_{x \\to 0} \\frac{\\sin(x)}{x} = 1$."
+    correct_option: "B",
+    explanation: "Số tin nhắn trung bình mỗi ngày là: $(12 + 15 + 18) / 3 = 45 / 3 = 15$ tin nhắn."
   },
   {
-    id: "Q_MOD_A_055", module_id: "Module_A", difficulty: "Easy",
+    id: "Q_MOD_A_055", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Một đồng xu cân đối và đồng chất được tung lên 3 lần độc lập nhau. Không gian mẫu của phép thử này gồm bao nhiêu phần tử?",
+    content: "Một cửa hàng điện máy bán được $150$ chiếc tivi trong tháng Giêng và bán được $180$ chiếc tivi trong tháng Hai. Tổng số tivi bán được trong hai tháng đó là bao nhiêu?",
     options: [
-      "A. $8$",
-      "B. $6$",
-      "C. $4$",
-      "D. $9$"
+      "A. $310$ chiếc.",
+      "B. $330$ chiếc.",
+      "C. $350$ chiếc.",
+      "D. $370$ chiếc."
     ],
-    correct_option: "A",
-    explanation: "Mỗi lần tung đồng xu có 2 khả năng (Sấp/Ngửa). Do các lần tung độc lập, số kết quả có thể xảy ra là: $2 \\times 2 \\times 2 = 2^3 = 8$ phần tử."
+    correct_option: "B",
+    explanation: "Tổng số tivi bán được trong cả hai tháng là: $150 + 180 = 330$ chiếc."
   },
   {
-    id: "Q_MOD_A_056", module_id: "Module_A", difficulty: "Easy",
+    id: "Q_MOD_A_056", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Trong thống kê mô tả, đại lượng nào biểu diễn giá trị xuất hiện với tần suất nhiều nhất trong tập dữ liệu?",
+    content: "Một chiếc tai nghe bluetooth có giá bán chưa thuế là $400$ nghìn đồng. Thuế giá trị gia tăng VAT của chiếc tai nghe là $10\\%$. Số tiền thuế VAT của sản phẩm này là bao nhiêu?",
     options: [
-      "A. Mode (Giá trị yếu vị)",
-      "B. Mean (Giá trị trung bình)",
-      "C. Median (Giá trị trung vị)",
-      "D. Range (Khoảng biến thiên)"
+      "A. $30$ nghìn.",
+      "B. $40$ nghìn.",
+      "C. $50$ nghìn.",
+      "D. $60$ nghìn."
     ],
-    correct_option: "A",
-    explanation: "Yếu vị (Mode) là giá trị xuất hiện thường xuyên nhất (có tần số lớn nhất) trong một tập dữ liệu quan sát."
+    correct_option: "B",
+    explanation: "Số tiền thuế VAT của chiếc tai nghe là: $400 \\times 10\\% = 400 \\times 0.1 = 40$ nghìn đồng."
   },
   {
-    id: "Q_MOD_A_057", module_id: "Module_A", difficulty: "Easy",
+    id: "Q_MOD_A_057", module_id: "Module_A", difficulty: "Medium",
     tags: ["linear-algebra"],
-    content: "Nhân một vector $v$ bất kỳ với một hằng số dương $k > 1$ (phép toán $k \\cdot v$) sẽ làm thay đổi yếu tố nào sau đây của vector?",
+    content: "Một chiếc hộp chứa $6$ viên bi màu vàng và $4$ viên bi màu đỏ. Nếu bốc ngẫu nhiên một viên bi từ hộp, xác suất để bốc được viên bi màu vàng là bao nhiêu?",
     options: [
-      "A. Tăng độ dài của vector và giữ nguyên hướng ban đầu.",
-      "B. Tăng độ dài của vector và đảo ngược hướng ban đầu.",
-      "C. Giữ nguyên độ dài vector và thay đổi hướng ban đầu.",
-      "D. Giảm độ dài của vector và giữ nguyên hướng ban đầu."
-    ],
-    correct_option: "A",
-    explanation: "Khi nhân vector với hằng số $k > 1$, độ dài của vector mới sẽ tăng lên $k$ lần, trong khi hướng của vector được giữ nguyên do $k$ là số dương."
-  },
-  {
-    id: "Q_MOD_A_058", module_id: "Module_A", difficulty: "Easy",
-    tags: ["linear-algebra"],
-    content: "Cho ma trận vuông $A$ kích thước $2 \\times 2$ có hàng thứ nhất là $[1, 2]$ và hàng thứ hai là $[2, 4]$. Định thức $\\det(A)$ bằng bao nhiêu?",
-    options: [
-      "A. $0$",
-      "B. $1$",
-      "C. $-2$",
-      "D. $8$"
-    ],
-    correct_option: "A",
-    explanation: "Định thức của ma trận $A = \\begin{bmatrix} 1 & 2 \\\\ 2 & 4 \\end{bmatrix}$ là: $\\det(A) = (1 \\times 4) - (2 \\times 2) = 4 - 4 = 0$. Hai dòng phụ thuộc tuyến tính nên định thức bằng 0."
-  },
-  {
-    id: "Q_MOD_A_059", module_id: "Module_A", difficulty: "Easy",
-    tags: ["probability-statistics"],
-    content: "Nếu hai biến cố $A$ và $B$ xung khắc hoàn toàn (không thể đồng thời xảy ra), công thức tính xác suất hợp $P(A \\cup B)$ là gì?",
-    options: [
-      "A. $P(A) + P(B)$",
-      "B. $P(A) \\times P(B)$",
-      "C. $P(A) - P(B)$",
-      "D. $P(A) \\div P(B)$"
-    ],
-    correct_option: "A",
-    explanation: "Với hai biến cố xung khắc, xác suất của hợp bằng tổng xác suất của từng biến cố: $P(A \\cup B) = P(A) + P(B)$."
-  },
-  {
-    id: "Q_MOD_A_060", module_id: "Module_A", difficulty: "Easy",
-    tags: ["metrics"],
-    content: "Trong bài toán phân loại, nếu một mô hình luôn dự đoán mọi mẫu dữ liệu đều là nhãn âm tính (Negative), chỉ số nào sau đây chắc chắn sẽ bằng $0$?",
-    options: [
-      "A. Chỉ số Recall của lớp dương tính (True Positive Rate).",
-      "B. Chỉ số Accuracy tổng thể trên toàn bộ tập dữ liệu.",
-      "C. Chỉ số Specificity của lớp âm tính (True Negative Rate).",
-      "D. Tổng số lượng mẫu dự đoán sai của mô hình phân loại."
-    ],
-    correct_option: "A",
-    explanation: "Do mô hình dự đoán tất cả là âm tính nên không có mẫu nào được dự báo là dương tính (TP = 0). Vì vậy, Recall = TP / (TP + FN) = 0."
-  },
-  {
-    id: "Q_MOD_A_061", module_id: "Module_A", difficulty: "Easy",
-    tags: ["matrix-operations"],
-    content: "Cho hai ma trận $A$ kích thước $2 \\times 3$ và $B$ kích thước $3 \\times 2$. Phép toán nào sau đây không thể thực hiện được?",
-    options: [
-      "A. Phép cộng hai ma trận trực tiếp $A + B$",
-      "B. Phép nhân hai ma trận trực tiếp $A \\times B$",
-      "C. Phép nhân hai ma trận trực tiếp $B \\times A$",
-      "D. Phép cộng chuyển vị ma trận $A + B^T$"
-    ],
-    correct_option: "A",
-    explanation: "Phép cộng hai ma trận yêu cầu chúng phải có cùng kích thước. Ở đây $A$ ($2 \\times 3$) và $B$ ($3 \\times 2$) có kích thước khác nhau nên không thể cộng trực tiếp."
-  },
-  {
-    id: "Q_MOD_A_062", module_id: "Module_A", difficulty: "Easy",
-    tags: ["calculus"],
-    content: "Đạo hàm bậc nhất của hàm số logarit tự nhiên $f(x) = \\ln(x)$ (với điều kiện $x > 0$) là gì?",
-    options: [
-      "A. $f'(x) = \\frac{1}{x}$",
-      "B. $f'(x) = e^x$",
-      "C. $f'(x) = \\frac{1}{x^2}$",
-      "D. $f'(x) = x$"
-    ],
-    correct_option: "A",
-    explanation: "Đạo hàm cơ bản của hàm logarit tự nhiên là: $(\\ln(x))' = \\frac{1}{x}$ với mọi $x > 0$."
-  },
-  {
-    id: "Q_MOD_A_063", module_id: "Module_A", difficulty: "Easy",
-    tags: ["probability-statistics"],
-    content: "Đại lượng thống kê nào sau đây đo lường khoảng cách từ giá trị nhỏ nhất đến giá trị lớn nhất trong một tập dữ liệu?",
-    options: [
-      "A. Range (Khoảng biến thiên của tập dữ liệu)",
-      "B. Variance (Phương sai của tập dữ liệu)",
-      "C. Mean (Giá trị trung bình của dữ liệu)",
-      "D. Median (Giá trị trung vị của dữ liệu)"
-    ],
-    correct_option: "A",
-    explanation: "Khoảng biến thiên (Range) là hiệu số giữa giá trị lớn nhất (Max) và giá trị nhỏ nhất (Min) trong tập dữ liệu quan sát."
-  },
-  {
-    id: "Q_MOD_A_064", module_id: "Module_A", difficulty: "Easy",
-    tags: ["probability-statistics"],
-    content: "Một hộp chứa $3$ viên bi màu đỏ và $7$ viên bi màu xanh. Lấy ngẫu nhiên $1$ viên bi từ hộp. Xác suất lấy được viên bi màu đỏ là bao nhiêu?",
-    options: [
-      "A. $0.3$",
-      "B. $0.7$",
-      "C. $0.5$",
+      "A. $0.4$",
+      "B. $0.6$",
+      "C. $0.8$",
       "D. $1.0$"
     ],
-    correct_option: "A",
-    explanation: "Tổng số bi trong hộp là $3 + 7 = 10$ viên. Xác suất để lấy được viên bi đỏ là: $P = \\frac{3}{10} = 0.3$."
+    correct_option: "B",
+    explanation: "Tổng số bi trong hộp là $6 + 4 = 10$ viên. Số bi vàng là $6$. Xác suất bốc được viên bi vàng là: $6/10 = 0.6$."
   },
   {
-    id: "Q_MOD_A_065", module_id: "Module_A", difficulty: "Easy",
-    tags: ["activation-functions"],
-    content: "Hàm kích hoạt nào sau đây trả về giá trị 0 nếu đầu vào có giá trị âm, và giữ nguyên giá trị đầu vào nếu nó mang dấu dương?",
-    options: [
-      "A. Hàm kích hoạt ReLU",
-      "B. Hàm kích hoạt Sigmoid",
-      "C. Hàm kích hoạt Tanh",
-      "D. Hàm kích hoạt Softmax"
-    ],
-    correct_option: "A",
-    explanation: "Hàm kích hoạt ReLU (Rectified Linear Unit) được định nghĩa toán học là $f(x) = \\max(0, x)$, trả về 0 với đầu vào âm và giữ nguyên $x$ với đầu vào không âm."
-  },
-  {
-    id: "Q_MOD_A_066", module_id: "Module_A", difficulty: "Easy",
+    id: "Q_MOD_A_058", module_id: "Module_A", difficulty: "Medium",
     tags: ["linear-algebra"],
-    content: "Vector nào sau đây là một vector đơn vị (độ dài bằng 1) trong không gian Euclid 2 chiều?",
+    content: "Chiều cao của 4 cây con trong vườn lần lượt đo được là $8\\text{ cm}$, $10\\text{ cm}$, $12\\text{ cm}$ và $14\\text{ cm}$. Chiều cao trung bình của 4 cây con này là bao nhiêu?",
     options: [
-      "A. $u = [0.6, 0.8]$",
-      "B. $u = [1.0, 1.0]$",
-      "C. $u = [0.5, 0.5]$",
-      "D. $u = [0.0, 2.0]$"
+      "A. $10\\text{ cm}$",
+      "B. $11\\text{ cm}$",
+      "C. $12\\text{ cm}$",
+      "D. $13\\text{ cm}$"
     ],
-    correct_option: "A",
-    explanation: "Độ dài vector $u = [0.6, 0.8]$ được tính bằng: $\\|u\\| = \\sqrt{0.6^2 + 0.8^2} = \\sqrt{0.36 + 0.64} = \\sqrt{1.0} = 1$, do đó nó là vector đơn vị."
+    correct_option: "B",
+    explanation: "Chiều cao trung bình của 4 cây con là: $(8 + 10 + 12 + 14) / 4 = 44 / 4 = 11\\text{ cm}$."
   },
   {
-    id: "Q_MOD_A_067", module_id: "Module_A", difficulty: "Easy",
-    tags: ["matrix-operations"],
-    content: "Cho ma trận vuông $A$ kích thước $3 \\times 3$. Vết (Trace) của ma trận $A$, ký hiệu là $\\text{tr}(A)$, được định nghĩa như thế nào?",
-    options: [
-      "A. Tổng tất cả các phần tử trên đường chéo chính.",
-      "B. Tích tất cả các phần tử trên đường chéo chính.",
-      "C. Định thức tổng quát thu được từ ma trận đó.",
-      "D. Tổng tất cả phần tử nằm ngoài đường chéo chính."
-    ],
-    correct_option: "A",
-    explanation: "Vết (Trace) của một ma trận vuông là tổng của tất cả các phần tử nằm trên đường chéo chính của ma trận đó: $\\text{tr}(A) = \\sum_{i=1}^n A_{ii}$."
-  },
-  {
-    id: "Q_MOD_A_068", module_id: "Module_A", difficulty: "Easy",
+    id: "Q_MOD_A_059", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Trong phân phối chuẩn đối xứng (Gaussian distribution), ba giá trị trung bình (Mean), trung vị (Median) và yếu vị (Mode) liên hệ thế nào?",
+    content: "Một bình gas có trọng lượng ban đầu chứa đầy gas là $13\\text{ kg}$. Sau một thời gian sử dụng, gas bị tiêu hao hết $5\\text{ kg}$. Trọng lượng còn lại của bình gas là bao nhiêu?",
     options: [
-      "A. Ba giá trị này trùng khít hoàn toàn với nhau.",
-      "B. Giá trị trung bình lớn hơn hai giá trị còn lại.",
-      "C. Giá trị trung vị luôn nằm giữa hai giá trị còn lại.",
-      "D. Ba giá trị này hoàn toàn độc lập và khác biệt."
+      "A. $6\\text{ kg}$",
+      "B. $8\\text{ kg}$",
+      "C. $7\\text{ kg}$",
+      "D. $9\\text{ kg}$"
     ],
-    correct_option: "A",
-    explanation: "Do tính chất đối xứng hoàn hảo của phân phối chuẩn qua đỉnh của đường cong hình chuông, các giá trị Mean, Median và Mode trùng nhau tại trục đối xứng."
+    correct_option: "B",
+    explanation: "Trọng lượng còn lại của bình gas được tính bằng phép trừ: $13 - 5 = 8\\text{ kg}$."
   },
   {
-    id: "Q_MOD_A_069", module_id: "Module_A", difficulty: "Easy",
+    id: "Q_MOD_A_060", module_id: "Module_A", difficulty: "Medium",
+    tags: ["metrics"],
+    content: "Bạn gửi tiết kiệm $100$ triệu đồng vào ngân hàng với lãi suất $6\\%$ một năm. Sau một năm, số tiền lãi bạn nhận được từ ngân hàng là bao nhiêu?",
+    options: [
+      "A. $4.0$ triệu.",
+      "B. $6.0$ triệu.",
+      "C. $5.0$ triệu.",
+      "D. $7.0$ triệu."
+    ],
+    correct_option: "B",
+    explanation: "Số tiền lãi sau một năm gửi tiết kiệm là: $100 \\times 6\\% = 100 \\times 0.06 = 6$ triệu đồng."
+  },
+  {
+    id: "Q_MOD_A_061", module_id: "Module_A", difficulty: "Medium",
+    tags: ["matrix-operations"],
+    content: "Một nhóm học sinh có $3$ bạn nam và $7$ bạn nữ. Chọn ngẫu nhiên một bạn làm lớp trưởng. Xác suất chọn trúng một bạn nam làm lớp trưởng là bao nhiêu?",
+    options: [
+      "A. $0.1$",
+      "B. $0.3$",
+      "C. $0.5$",
+      "D. $0.7$"
+    ],
+    correct_option: "B",
+    explanation: "Tổng số học sinh là $3 + 7 = 10$ bạn. Số bạn nam là $3$. Xác suất chọn trúng một bạn nam là: $3 / 10 = 0.3$."
+  },
+  {
+    id: "Q_MOD_A_062", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
-    content: "Xét hàm số hằng $f(x) = 5$. Đạo hàm bậc nhất của hàm số này theo biến số $x$ là gì?",
+    content: "Một đội công nhân cần sửa quãng đường dài $150\\text{ m}$ trong $5$ ngày. Hỏi trung bình mỗi ngày đội công nhân đó phải sửa bao nhiêu mét đường?",
     options: [
-      "A. $f'(x) = 0$",
-      "B. $f'(x) = 5$",
-      "C. $f'(x) = x$",
-      "D. $f'(x) = 5x$"
+      "A. $25\\text{ m}$",
+      "B. $30\\text{ m}$",
+      "C. $35\\text{ m}$",
+      "D. $40\\text{ m}$"
     ],
-    correct_option: "A",
-    explanation: "Đạo hàm của bất kỳ hàm hằng số nào cũng luôn luôn bằng 0: $(c)' = 0$."
+    correct_option: "B",
+    explanation: "Trung bình mỗi ngày đội phải sửa số mét đường là: $150 / 5 = 30\\text{ m}$."
   },
   {
-    id: "Q_MOD_A_070", module_id: "Module_A", difficulty: "Easy",
-    tags: ["linear-algebra"],
-    content: "Trong không gian Euclid 2 chiều, góc giữa hai vector vuông góc với nhau bằng bao nhiêu độ?",
+    id: "Q_MOD_A_063", module_id: "Module_A", difficulty: "Medium",
+    tags: ["probability-statistics"],
+    content: "Số điểm đạt được của một người chơi qua 3 ván game lần lượt là $80$ điểm, $90$ điểm và $100$ điểm. Số điểm trung bình của người đó qua 3 ván game là bao nhiêu?",
     options: [
-      "A. $90^\\circ$",
-      "B. $0^\\circ$",
-      "C. $180^\\circ$",
-      "D. $45^\\circ$"
+      "A. $85$ điểm.",
+      "B. $90$ điểm.",
+      "C. $95$ điểm.",
+      "D. $80$ điểm."
     ],
-    correct_option: "A",
-    explanation: "Hai vector vuông góc với nhau khi và chỉ khi tích vô hướng bằng 0, điều này tương đương với góc giữa chúng bằng $90^\\circ$."
+    correct_option: "B",
+    explanation: "Điểm trung bình cộng qua 3 ván game của người chơi là: $(80 + 90 + 100) / 3 = 270 / 3 = 90$ điểm."
+  },
+  {
+    id: "Q_MOD_A_064", module_id: "Module_A", difficulty: "Medium",
+    tags: ["probability-statistics"],
+    content: "Mua một món đồ điện tử giá $10$ triệu đồng, cửa hàng yêu cầu thanh toán trước $30\\%$ giá trị sản phẩm. Số tiền cần thanh toán trước là bao nhiêu?",
+    options: [
+      "A. $2.0$ triệu.",
+      "B. $3.0$ triệu.",
+      "C. $4.0$ triệu.",
+      "D. $5.0$ triệu."
+    ],
+    correct_option: "B",
+    explanation: "Số tiền cần thanh toán trước cho món đồ điện tử là: $10 \\times 30\\% = 10 \\times 0.3 = 3$ triệu đồng."
+  },
+  {
+    id: "Q_MOD_A_065", module_id: "Module_A", difficulty: "Medium",
+    tags: ["activation-functions"],
+    content: "Gieo một con xúc xắc 6 mặt cân đối và đồng chất. Xác suất gieo được mặt có số chấm nhỏ hơn $3$ (tức là mặt 1 hoặc mặt 2) bằng bao nhiêu?",
+    options: [
+      "A. $1/6$",
+      "B. $2/6$",
+      "C. $3/6$",
+      "D. $4/6$"
+    ],
+    correct_option: "B",
+    explanation: "Các mặt có số chấm nhỏ hơn $3$ là mặt 1 và mặt 2 (gồm 2 mặt). Tổng số mặt của xúc xắc là 6. Xác suất gieo được là $2/6$."
+  },
+  {
+    id: "Q_MOD_A_066", module_id: "Module_A", difficulty: "Medium",
+    tags: ["linear-algebra"],
+    content: "Một cửa hàng sách bán được $45$ cuốn sách vào tuần thứ nhất và bán được $55$ cuốn sách vào tuần thứ hai. Tổng số sách cửa hàng bán được trong hai tuần là bao nhiêu?",
+    options: [
+      "A. $90$ cuốn.",
+      "B. $100$ cuốn.",
+      "C. $110$ cuốn.",
+      "D. $120$ cuốn."
+    ],
+    correct_option: "B",
+    explanation: "Tổng số cuốn sách bán được trong cả hai tuần là: $45 + 55 = 100$ cuốn."
+  },
+  {
+    id: "Q_MOD_A_067", module_id: "Module_A", difficulty: "Medium",
+    tags: ["matrix-operations"],
+    content: "Thời gian tự học mỗi ngày của một sinh viên trong 4 ngày lần lượt là $2$ giờ, $3$ giờ, $4$ giờ và $5$ giờ. Thời gian tự học trung bình mỗi ngày của sinh viên này là bao nhiêu?",
+    options: [
+      "A. $3.0$ giờ.",
+      "B. $3.5$ giờ.",
+      "C. $4.0$ giờ.",
+      "D. $4.5$ giờ."
+    ],
+    correct_option: "B",
+    explanation: "Thời gian tự học trung bình cộng mỗi ngày là: $(2 + 3 + 4 + 5) / 4 = 14 / 4 = 3.5$ giờ."
+  },
+  {
+    id: "Q_MOD_A_068", module_id: "Module_A", difficulty: "Medium",
+    tags: ["probability-statistics"],
+    content: "Một cuốn sách dày $200$ trang. Bạn đã đọc được $15\\%$ tổng số trang sách của cuốn sách đó. Số trang sách bạn đã đọc được là bao nhiêu?",
+    options: [
+      "A. $20$ trang.",
+      "B. $30$ trang.",
+      "C. $40$ trang.",
+      "D. $50$ trang."
+    ],
+    correct_option: "B",
+    explanation: "Số trang sách bạn đã đọc được là: $200 \\times 15\\% = 200 \\times 0.15 = 30$ trang."
+  },
+  {
+    id: "Q_MOD_A_069", module_id: "Module_A", difficulty: "Medium",
+    tags: ["calculus"],
+    content: "Một hộp chứa $8$ quả bóng trắng và $2$ quả bóng đen có kích thước như nhau. Lấy ngẫu nhiên $1$ quả bóng từ hộp. Xác suất lấy được quả bóng đen là bao nhiêu?",
+    options: [
+      "A. $0.1$",
+      "B. $0.2$",
+      "C. $0.3$",
+      "D. $0.4$"
+    ],
+    correct_option: "B",
+    explanation: "Tổng số bóng trong hộp là $8 + 2 = 10$ quả. Xác suất để lấy được quả bóng đen là: $2 / 10 = 0.2$."
+  },
+  {
+    id: "Q_MOD_A_070", module_id: "Module_A", difficulty: "Medium",
+    tags: ["linear-algebra"],
+    content: "Một chiếc xe ô tô chở hàng thực hiện $5$ chuyến đi, mỗi chuyến chở được $12$ tấn hàng hóa. Tổng khối lượng hàng hóa ô tô đã chở được sau 5 chuyến là bao nhiêu?",
+    options: [
+      "A. $50$ tấn.",
+      "B. $60$ tấn.",
+      "C. $70$ tấn.",
+      "D. $80$ tấn."
+    ],
+    correct_option: "B",
+    explanation: "Tổng khối lượng hàng hóa chở được sau 5 chuyến là: $5 \\times 12 = 60$ tấn."
   },
   {
     id: "Q_MOD_A_071", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Một biến ngẫu nhiên liên tục $X$ có hàm mật độ xác suất $f(x) = 2x$ trên khoảng $[0, 1]$ và $f(x) = 0$ ở các khoảng khác. Xác suất $P(0 \\le X \\le 0.5)$ bằng bao nhiêu?",
+    content: "Một lớp học có $50$ học sinh, trong đó có $8\\%$ học sinh đạt học lực xuất sắc. Hỏi lớp học đó có bao nhiêu học sinh đạt học lực xuất sắc?",
     options: [
-      "A. $0.25$",
-      "B. $0.50$",
-      "C. $0.75$",
-      "D. $0.125$"
+      "A. $2$ học sinh.",
+      "B. $4$ học sinh.",
+      "C. $6$ học sinh.",
+      "D. $8$ học sinh."
     ],
-    correct_option: "A",
-    explanation: "Xác suất là tích phân của hàm mật độ: $P(0 \\le X \\le 0.5) = \\int_{0}^{0.5} 2x \\, dx = [x^2]_0^{0.5} = 0.5^2 - 0 = 0.25$."
+    correct_option: "B",
+    explanation: "Số học sinh đạt học lực xuất sắc của lớp học đó là: $50 \\times 8\\% = 50 \\times 0.08 = 4$ học sinh."
   },
   {
     id: "Q_MOD_A_072", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Giả sử chiều cao của một quần thể tuân theo phân phối chuẩn với trung bình $\\mu = 170\\text{ cm}$ và độ lệch chuẩn $\\sigma = 5\\text{ cm}$. Tỷ lệ người có chiều cao từ $165\\text{ cm}$ đến $175\\text{ cm}$ chiếm khoảng bao nhiêu phần trăm?",
+    content: "Điểm số môn Hóa học của một nhóm 3 học sinh lần lượt là $6$, $8$ và $10$. Điểm số trung bình cộng môn Hóa học của nhóm học sinh này là bao nhiêu?",
     options: [
-      "A. Khoảng $68\\%$",
-      "B. Khoảng $95\\%$",
-      "C. Khoảng $99\\%$",
-      "D. Khoảng $50\\%$"
+      "A. $7.0$ điểm.",
+      "B. $8.0$ điểm.",
+      "C. $9.0$ điểm.",
+      "D. $6.0$ điểm."
     ],
-    correct_option: "A",
-    explanation: "Khoảng từ $165\\text{ cm}$ đến $175\\text{ cm}$ tương ứng với khoảng $[\\mu - \\sigma, \\mu + \\sigma]$. Theo quy tắc thực nghiệm phân phối chuẩn, khoảng này chứa xấp xỉ $68.27\\%$ phân bố dữ liệu."
+    correct_option: "B",
+    explanation: "Điểm số trung bình cộng của 3 học sinh là: $(6 + 8 + 10) / 3 = 24 / 3 = 8$ điểm."
   },
   {
     id: "Q_MOD_A_073", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
-    content: "Cho hàm số hai biến số $f(x, y) = x^2 y + 3y^3$. Đạo hàm riêng của hàm số theo biến $x$, ký hiệu là $\\frac{\\partial f}{\\partial x}$, bằng bao nhiêu?",
+    content: "Trong một hộp quà có chứa $4$ chiếc kẹo vị cam và $6$ chiếc kẹo vị táo. Nếu chọn ngẫu nhiên một chiếc kẹo, xác suất chọn được chiếc kẹo vị cam là bao nhiêu?",
     options: [
-      "A. $2xy$",
-      "B. $x^2 + 9y^2$",
-      "C. $2xy + 9y^2$",
-      "D. $x^2$"
+      "A. $0.2$",
+      "B. $0.4$",
+      "C. $0.6$",
+      "D. $0.8$"
     ],
-    correct_option: "A",
-    explanation: "Khi tính đạo hàm riêng theo biến $x$, ta coi biến $y$ là hằng số. Đạo hàm thu được: $\\frac{\\partial f}{\\partial x} = \\frac{\\partial}{\\partial x}(x^2 y) + \\frac{\\partial}{\\partial x}(3y^3) = 2xy + 0 = 2xy$."
+    correct_option: "B",
+    explanation: "Tổng số chiếc kẹo là $4 + 6 = 10$ chiếc. Xác suất chọn được chiếc kẹo vị cam là: $4 / 10 = 0.4$."
   },
   {
     id: "Q_MOD_A_074", module_id: "Module_A", difficulty: "Medium",
     tags: ["linear-algebra"],
-    content: "Cho ma trận vuông cấp hai có dạng tam giác $A = \\begin{bmatrix} 4 & 1 \\\\ 0 & 3 \\end{bmatrix}$. Các trị riêng (eigenvalues) của ma trận $A$ bằng bao nhiêu?",
+    content: "Một bình nước đang chứa $15$ lít nước. Người ta đổ thêm vào bình $7$ lít nước nữa. Hỏi tổng lượng nước có trong bình sau khi đổ thêm là bao nhiêu lít?",
     options: [
-      "A. $\\lambda_1 = 4, \\lambda_2 = 3$",
-      "B. $\\lambda_1 = 4, \\lambda_2 = 0$",
-      "C. $\\lambda_1 = 1, \\lambda_2 = 3$",
-      "D. $\\lambda_1 = 7, \\lambda_2 = 12$"
+      "A. $20$ lít.",
+      "B. $22$ lít.",
+      "C. $24$ lít.",
+      "D. $26$ lít."
     ],
-    correct_option: "A",
-    explanation: "Đối với ma trận tam giác (trên hoặc dưới), các trị riêng chính là các phần tử nằm trên đường chéo chính. Do đó các trị riêng của $A$ là $4$ và $3$."
+    correct_option: "B",
+    explanation: "Tổng lượng nước có trong bình sau khi đổ thêm là: $15 + 7 = 22$ lít nước."
   },
   {
     id: "Q_MOD_A_075", module_id: "Module_A", difficulty: "Medium",
     tags: ["metrics"],
-    content: "Xét một bài toán phân loại nhị phân. Nếu mô hình dự báo đúng 80 mẫu dương tính (TP), dự báo sai 20 mẫu dương tính (FP) và dự báo sai 10 mẫu âm tính (FN). Chỉ số Precision (Độ chính xác) của mô hình là bao nhiêu?",
+    content: "Một cửa hàng thời trang áp dụng mức giảm giá $30\\%$ cho một đôi giày thể thao có giá gốc là $1$ triệu đồng. Đôi giày đó được giảm giá bao nhiêu tiền?",
     options: [
-      "A. $80\\%$",
-      "B. $88.9\\%$",
-      "C. $75\\%$",
-      "D. $72.7\\%$"
+      "A. $200$ nghìn.",
+      "B. $300$ nghìn.",
+      "C. $400$ nghìn.",
+      "D. $500$ nghìn."
     ],
-    correct_option: "A",
-    explanation: "Precision được tính bằng công thức: $Precision = \\frac{TP}{TP + FP} = \\frac{80}{80 + 20} = \\frac{80}{100} = 80\\%$."
+    correct_option: "B",
+    explanation: "Số tiền được giảm giá của đôi giày thể thao là: $1,000,000 \\times 30\\% = 300,000$ đồng (tức là $300$ nghìn đồng)."
   },
   {
     id: "Q_MOD_A_076", module_id: "Module_A", difficulty: "Medium",
     tags: ["matrix-operations"],
-    content: "Cho ma trận vuông $A$. Nếu nhân tất cả các phần tử của một dòng trong ma trận $A$ với hằng số $k$ khác 0, định thức của ma trận mới thay đổi thế nào so với $\\det(A)$?",
+    content: "Một xưởng sản xuất may mặc may được $12$ chiếc áo sơ mi mỗi giờ. Nếu xưởng hoạt động liên tục trong $5$ giờ thì sản xuất được bao nhiêu chiếc áo?",
     options: [
-      "A. Tăng lên gấp $k$ lần giá trị ban đầu.",
-      "B. Tăng lên gấp $k^2$ lần giá trị ban đầu.",
-      "C. Giữ nguyên không thay đổi giá trị đó.",
-      "D. Giảm đi đúng $k$ lần giá trị ban đầu."
+      "A. $50$ chiếc.",
+      "B. $60$ chiếc.",
+      "C. $70$ chiếc.",
+      "D. $80$ chiếc."
     ],
-    correct_option: "A",
-    explanation: "Theo tính chất định thức ma trận, nếu nhân một dòng (hoặc một cột) của ma trận vuông với hằng số $k$ thì định thức của ma trận đó sẽ tăng lên gấp $k$ lần."
+    correct_option: "B",
+    explanation: "Tổng số chiếc áo sơ mi sản xuất được trong $5$ giờ là: $12 \\times 5 = 60$ chiếc."
   },
   {
     id: "Q_MOD_A_077", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
-    content: "Tìm điểm cực đại của hàm số bậc ba $f(x) = x^3 - 3x$ trên tập số thực $\\mathbb{R}$?",
+    content: "Một khu vườn trồng cây ăn quả có tổng cộng $200$ cây, trong đó có $40\\%$ là cây cam. Số cây cam có trong khu vườn đó là bao nhiêu cây?",
     options: [
-      "A. $x = -1$",
-      "B. $x = 1$",
-      "C. $x = 0$",
-      "D. $x = 3$"
+      "A. $60$ cây cam.",
+      "B. $80$ cây cam.",
+      "C. $70$ cây cam.",
+      "D. $90$ cây cam."
     ],
-    correct_option: "A",
-    explanation: "Đạo hàm $f'(x) = 3x^2 - 3 = 0 \\Leftrightarrow x = \\pm 1$. Đạo hàm bậc hai $f''(x) = 6x$. Ta có $f''(-1) = -6 < 0$ nên $x = -1$ là điểm cực đại."
+    correct_option: "B",
+    explanation: "Số cây cam có trong khu vườn là: $200 \\times 40\\% = 200 \\times 0.4 = 80$ cây cam."
   },
   {
     id: "Q_MOD_A_078", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Một kỳ thi trắc nghiệm gồm $10$ câu hỏi, mỗi câu hỏi có $4$ phương án lựa chọn và chỉ có $1$ đáp án đúng. Một thí sinh khoanh ngẫu nhiên hoàn toàn. Kỳ vọng của số câu trả lời đúng là bao nhiêu?",
+    content: "Khi gieo một đồng xu cân đối và đồng chất một lần, xác suất để đồng xu xuất hiện mặt sấp (S) là bao nhiêu?",
     options: [
-      "A. $2.5$ câu",
-      "B. $5.0$ câu",
-      "C. $1.0$ câu",
-      "D. $4.0$ câu"
+      "A. $25\\%$",
+      "B. $50\\%$",
+      "C. $75\\%$",
+      "D. $90\\%$"
     ],
-    correct_option: "A",
-    explanation: "Đây là phép thử nhị thức với số phép thử $n = 10$ và xác suất thành công mỗi câu $p = 0.25$. Giá trị kỳ vọng là $E(X) = n \\times p = 10 \\times 0.25 = 2.5$ câu."
+    correct_option: "B",
+    explanation: "Đồng xu có 2 mặt (Sấp và Ngửa) với khả năng xuất hiện như nhau. Do đó, xác suất xuất hiện mặt sấp là $1/2 = 50\\%$."
   },
   {
     id: "Q_MOD_A_079", module_id: "Module_A", difficulty: "Medium",
     tags: ["linear-algebra"],
-    content: "Trong không gian vector, hai vector $u$ và $v$ được gọi là trực giao (orthogonal) với nhau khi và chỉ khi phép toán nào sau đây xảy ra?",
+    content: "Một người đi bộ trong 3 ngày đi được quãng đường lần lượt là $4\\text{ km}$, $5\\text{ km}$ và $6\\text{ km}$. Quãng đường trung bình mỗi ngày người đó đi được là bao nhiêu?",
     options: [
-      "A. Tích vô hướng của chúng bằng 0: $u \\cdot v = 0$.",
-      "B. Tích chập của chúng bằng số 1: $u * v = 1$.",
-      "C. Khoảng cách giữa chúng bằng 0: $\\|u - v\\| = 0$.",
-      "D. Tổng hai vector đó bằng vector không: $u + v = 0$."
+      "A. $4\\text{ km}$",
+      "B. $5\\text{ km}$",
+      "C. $6\\text{ km}$",
+      "D. $7\\text{ km}$"
     ],
-    correct_option: "A",
-    explanation: "Định nghĩa trực giao trong không gian vector: hai vector trực giao khi và chỉ khi tích vô hướng (dot product) của chúng bằng 0."
+    correct_option: "B",
+    explanation: "Quãng đường trung bình mỗi ngày người đó đi được là: $(4 + 5 + 6) / 3 = 15 / 3 = 5\\text{ km}$."
   },
   {
     id: "Q_MOD_A_080", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Hệ số tương quan tuyến tính Pearson ($r$) giữa hai biến ngẫu nhiên $X$ và $Y$ nhận giá trị $r = -0.95$ cho biết điều gì về mối quan hệ giữa chúng?",
+    content: "Một xe khách khởi hành từ bến xe với $45$ hành khách. Tại trạm dừng chân thứ nhất, có $15$ hành khách xuống xe. Số hành khách còn lại trên xe là bao nhiêu?",
     options: [
-      "A. Tương quan tuyến tính nghịch biến rất mạnh.",
-      "B. Tương quan tuyến tính đồng biến rất mạnh.",
-      "C. Không có mối liên hệ tuyến tính nào giữa chúng.",
-      "D. Mối quan hệ phi tuyến tính có độ tin cậy thấp."
+      "A. $25$ người.",
+      "B. $30$ người.",
+      "C. $35$ người.",
+      "D. $40$ người."
     ],
-    correct_option: "A",
-    explanation: "Hệ số tương quan Pearson có giá trị trong $[-1, 1]$. Giá trị $r = -0.95$ gần sát với $-1$, biểu thị một tương quan tuyến tính nghịch biến (ngược chiều) rất mạnh mẽ."
+    correct_option: "B",
+    explanation: "Số hành khách còn lại trên xe là: $45 - 15 = 30$ người."
   },
   {
     id: "Q_MOD_A_081", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
-    content: "Khi sử dụng thuật toán tối ưu Gradient Descent, việc di chuyển ngược hướng với vector Gradient sẽ đưa ta đến hướng nào sau đây?",
+    content: "Một nhân viên thu ngân bán được lượng hàng trị giá $10$ triệu đồng. Cửa hàng áp dụng mức hoa hồng trích thưởng là $5\\%$. Số tiền hoa hồng nhân viên nhận được là bao nhiêu?",
     options: [
-      "A. Hướng mà tại đó giá trị hàm số giảm đi nhanh nhất.",
-      "B. Hướng mà tại đó giá trị hàm số tăng lên nhanh nhất.",
-      "C. Hướng di chuyển trực diện tới điểm cực đại toàn cục.",
-      "D. Hướng di chuyển mà giá trị hàm số giữ nguyên không đổi."
+      "A. $400$ nghìn.",
+      "B. $500$ nghìn.",
+      "C. $600$ nghìn.",
+      "D. $700$ nghìn."
     ],
-    correct_option: "A",
-    explanation: "Vector Gradient chỉ hướng tăng nhanh nhất của hàm số. Do đó, đi ngược hướng gradient (phép trừ) sẽ đưa ta theo hướng giảm nhanh nhất của hàm số."
+    correct_option: "B",
+    explanation: "Số tiền hoa hồng nhận được là: $10 \\times 5\\% = 10 \\times 0.05 = 0.5$ triệu đồng (tức là $500$ nghìn đồng)."
   },
   {
     id: "Q_MOD_A_082", module_id: "Module_A", difficulty: "Medium",
     tags: ["linear-algebra"],
-    content: "Cho một hệ phương trình tuyến tính gồm $3$ phương trình và $3$ ẩn số. Nếu ma trận hệ số có định thức khác $0$ ($\\det(A) \\neq 0$), hệ phương trình này có bao nhiêu nghiệm?",
+    content: "Gieo một con xúc xắc 6 mặt cân đối và đồng chất. Xác suất gieo được mặt có số chấm lớn hơn $5$ (tức là chỉ có mặt 6) bằng bao nhiêu?",
     options: [
-      "A. Hệ phương trình có nghiệm duy nhất.",
-      "B. Hệ phương trình vô nghiệm hoàn toàn.",
-      "C. Hệ phương trình có vô số nghiệm.",
-      "D. Hệ phương trình có đúng hai nghiệm."
+      "A. $1/6$",
+      "B. $2/6$",
+      "C. $3/6$",
+      "D. $4/6$"
     ],
     correct_option: "A",
-    explanation: "Theo quy tắc Cramer, một hệ phương trình tuyến tính vuông $Ax = b$ có định thức ma trận hệ số $\\det(A) \\neq 0$ thì luôn có một nghiệm duy nhất."
+    explanation: "Chỉ có $1$ mặt thỏa mãn (mặt 6) trên tổng số $6$ mặt. Do đó xác suất gieo được là $1/6$."
   },
   {
     id: "Q_MOD_A_083", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Xét hai biến ngẫu nhiên độc lập $X$ và $Y$. Công thức tính phương sai của tổng $\\text{Var}(X + Y)$ là gì?",
+    content: "Một công ty phân phối đều $120$ hộp sữa cho $4$ lớp học mẫu giáo. Mỗi lớp học mẫu giáo sẽ nhận được bao nhiêu hộp sữa?",
     options: [
-      "A. $\\text{Var}(X) + \\text{Var}(Y)$",
-      "B. $\\text{Var}(X) - \\text{Var}(Y)$",
-      "C. $\\text{Var}(X) \\times \\text{Var}(Y)$",
-      "D. $\\text{Var}(X) / \\text{Var}(Y)$"
+      "A. $25$ hộp sữa.",
+      "B. $30$ hộp sữa.",
+      "C. $35$ hộp sữa.",
+      "D. $40$ hộp sữa."
     ],
-    correct_option: "A",
-    explanation: "Tổng quát: $\\text{Var}(X+Y) = \\text{Var}(X) + \\text{Var}(Y) + 2\\text{Cov}(X, Y)$. Do $X$ và $Y$ độc lập nên hiệp phương sai $\\text{Cov}(X,Y) = 0$, công thức rút gọn thành $\\text{Var}(X) + \\text{Var}(Y)$."
+    correct_option: "B",
+    explanation: "Số hộp sữa mỗi lớp học mẫu giáo nhận được là: $120 / 4 = 30$ hộp."
   },
   {
     id: "Q_MOD_A_084", module_id: "Module_A", difficulty: "Medium",
     tags: ["activation-functions"],
-    content: "Đạo hàm của hàm kích hoạt Sigmoid $f(x) = \\frac{1}{1 + e^{-x}}$ có thể biểu diễn qua chính nó bằng công thức nào?",
+    content: "Cân nặng của 5 giỏ hoa quả lần lượt đo được là $6\\text{ kg}$, $7\\text{ kg}$, $8\\text{ kg}$, $9\\text{ kg}$ và $10\\text{ kg}$. Cân nặng trung bình của 5 giỏ hoa quả này là bao nhiêu?",
     options: [
-      "A. $f'(x) = f(x)(1 - f(x))$",
-      "B. $f'(x) = f(x)^2$",
-      "C. $f'(x) = f(x)(1 + f(x))$",
-      "D. $f'(x) = 1 - f(x)$"
+      "A. $7\\text{ kg}$",
+      "B. $8\\text{ kg}$",
+      "C. $9\\text{ kg}$",
+      "D. $6\\text{ kg}$"
     ],
-    correct_option: "A",
-    explanation: "Đạo hàm của hàm Sigmoid là: $f'(x) = \\frac{e^{-x}}{(1 + e^{-x})^2} = \\frac{1}{1+e^{-x}} \\times \\frac{e^{-x}}{1+e^{-x}} = f(x)(1 - f(x))$."
+    correct_option: "B",
+    explanation: "Cân nặng trung bình của 5 giỏ hoa quả là: $(6 + 7 + 8 + 9 + 10) / 5 = 40 / 5 = 8\\text{ kg}$."
   },
   {
     id: "Q_MOD_A_085", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Một biến ngẫu nhiên $X$ tuân theo phân phối Poisson với tham số kỳ vọng $\\lambda = 3$. Phương sai $\\text{Var}(X)$ của biến ngẫu nhiên này bằng bao nhiêu?",
+    content: "Một bình chứa nước dung tích tối đa là $80$ lít. Hiện tại bể chứa nước đang đầy $50\\%$ dung tích. Thể tích nước hiện có trong bình là bao nhiêu lít?",
     options: [
-      "A. $3$",
-      "B. $9$",
-      "C. $\\sqrt{3}$",
-      "D. $1.5$"
+      "A. $30$ lít nước.",
+      "B. $40$ lít nước.",
+      "C. $50$ lít nước.",
+      "D. $60$ lít nước."
     ],
-    correct_option: "A",
-    explanation: "Đối với phân phối Poisson, một tính chất đặc trưng rất quan trọng là giá trị kỳ vọng và phương sai bằng nhau và bằng chính tham số $\\lambda$. Do đó $\\text{Var}(X) = 3$."
+    correct_option: "B",
+    explanation: "Thể tích nước hiện có trong bình là: $80 \\times 50\\% = 80 \\times 0.5 = 40$ lít nước."
   },
   {
     id: "Q_MOD_A_086", module_id: "Module_A", difficulty: "Medium",
     tags: ["linear-algebra"],
-    content: "Cho ma trận $A = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}$. Giá trị vết (Trace) của ma trận $A^T$ (ma trận chuyển vị của $A$) bằng bao nhiêu?",
+    content: "Một chiếc hộp chứa $7$ viên bi màu trắng và $3$ viên bi màu vàng có kích thước như nhau. Lấy ngẫu nhiên $1$ viên bi. Xác suất lấy được viên bi màu vàng là bao nhiêu?",
     options: [
-      "A. $5$",
-      "B. $4$",
-      "C. $10$",
-      "D. $7$"
+      "A. $0.1$",
+      "B. $0.3$",
+      "C. $0.5$",
+      "D. $0.7$"
     ],
-    correct_option: "A",
-    explanation: "Chuyển vị ma trận không làm đổi đường chéo chính nên vết của $A^T$ bằng vết của $A$. Tổng phần tử đường chéo chính: $\\text{tr}(A^T) = \\text{tr}(A) = 1 + 4 = 5$."
+    correct_option: "B",
+    explanation: "Tổng số viên bi trong hộp là $7 + 3 = 10$ viên. Xác suất lấy được viên bi màu vàng là: $3 / 10 = 0.3$."
   },
   {
     id: "Q_MOD_A_087", module_id: "Module_A", difficulty: "Medium",
     tags: ["metrics"],
-    content: "Chỉ số R-squared ($R^2$ - Hệ số xác định) trong mô hình hồi quy tuyến tính (Regression) đo lường điều gì?",
+    content: "Một học sinh viết được $20$ dòng nhật ký mỗi ngày. Hỏi sau $7$ ngày liên tục viết nhật ký, học sinh đó viết được tổng cộng bao nhiêu dòng?",
     options: [
-      "A. Tỷ lệ biến thiên của biến phụ thuộc được giải thích bởi mô hình.",
-      "B. Sai số bình phương trung bình của toàn bộ các điểm dự báo.",
-      "C. Độ tương quan tuyến tính giữa các biến độc lập với nhau.",
-      "D. Tỷ lệ dự đoán phân loại chính xác trên toàn bộ dữ liệu."
+      "A. $120$ dòng.",
+      "B. $140$ dòng.",
+      "C. $160$ dòng.",
+      "D. $180$ dòng."
     ],
-    correct_option: "A",
-    explanation: "Hệ số xác định $R^2$ cho biết tỷ lệ phần trạng sự biến thiên của biến mục tiêu (biến phụ thuộc) được giải thích bởi các biến độc lập trong mô hình hồi quy."
+    correct_option: "B",
+    explanation: "Tổng số dòng nhật ký viết được sau $7$ ngày là: $20 \\times 7 = 140$ dòng."
   },
   {
     id: "Q_MOD_A_088", module_id: "Module_A", difficulty: "Medium",
     tags: ["matrix-operations"],
-    content: "Cho hai ma trận vuông $A$ và $B$ cùng kích thước $n \\times n$. Định lý về định thức của tích hai ma trận phát biểu thế nào?",
+    content: "Điểm số đánh giá chất lượng dịch vụ của một nhà hàng trong 3 ngày lần lượt là $7$, $9$ và $8$ điểm. Điểm số đánh giá trung bình của nhà hàng là bao nhiêu?",
     options: [
-      "A. $\\det(AB) = \\det(A) \\times \\det(B)$",
-      "B. $\\det(AB) = \\det(A) + \\det(B)$",
-      "C. $\\det(AB) = \\det(A) - \\det(B)$",
-      "D. $\\det(AB) = \\det(A) \\div \\det(B)$"
+      "A. $6.0$ điểm.",
+      "B. $8.0$ điểm.",
+      "C. $7.0$ điểm.",
+      "D. $9.0$ điểm."
     ],
-    correct_option: "A",
-    explanation: "Định lý định thức của tích ma trận: định thức của một tích các ma trận bằng tích các định thức của từng ma trận: $\\det(AB) = \\det(A) \\times \\det(B)$."
+    correct_option: "B",
+    explanation: "Điểm số đánh giá trung bình cộng là: $(7 + 9 + 8) / 3 = 24 / 3 = 8$ điểm."
   },
   {
     id: "Q_MOD_A_089", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
-    content: "Cho hàm số một biến số $f(x) = x \\cdot e^x$. Đạo hàm bậc nhất $f'(x)$ bằng bao nhiêu?",
+    content: "Một chiếc máy tính cũ có giá bán lại là $5$ triệu đồng. Cửa hàng đồng ý giảm giá thêm $20\\%$ cho khách hàng. Số tiền khách hàng được giảm giá là bao nhiêu?",
     options: [
-      "A. $f'(x) = (x + 1)e^x$",
-      "B. $f'(x) = e^x$",
-      "C. $f'(x) = xe^x$",
-      "D. $f'(x) = (x - 1)e^x$"
+      "A. $0.5$ triệu.",
+      "B. $1.0$ triệu.",
+      "C. $1.5$ triệu.",
+      "D. $2.0$ triệu."
     ],
-    correct_option: "A",
-    explanation: "Sử dụng quy tắc đạo hàm của tích: $(uv)' = u'v + uv'$. Ở đây: $f'(x) = (x)'e^x + x(e^x)' = e^x + xe^x = (x + 1)e^x$."
+    correct_option: "B",
+    explanation: "Số tiền được giảm giá là: $5 \\times 20\\% = 5 \\times 0.2 = 1.0$ triệu đồng."
   },
   {
     id: "Q_MOD_A_090", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Có 2 máy hoạt động độc lập. Xác suất máy 1 hỏng là $0.1$, máy 2 hỏng là $0.2$. Xác suất để **ít nhất một máy hoạt động bình thường** là bao nhiêu?",
+    content: "Một túi chứa $9$ quả bóng màu vàng và $1$ quả bóng màu đỏ có kích thước như nhau. Lấy ngẫu nhiên $1$ quả bóng. Xác suất lấy được quả bóng màu đỏ là bao nhiêu?",
     options: [
-      "A. $0.98$",
-      "B. $0.02$",
-      "C. $0.72$",
-      "D. $0.90$"
+      "A. $0.05$",
+      "B. $0.10$",
+      "C. $0.15$",
+      "D. $0.20$"
     ],
-    correct_option: "A",
-    explanation: "Xác suất để cả hai máy đều hỏng là $0.1 \\times 0.2 = 0.02$. Biến cố đối của \"cả hai máy hỏng\" là \"có ít nhất một máy hoạt động bình thường\": $1 - 0.02 = 0.98$."
+    correct_option: "B",
+    explanation: "Tổng số bóng trong túi là $9 + 1 = 10$ quả. Xác suất lấy được quả bóng màu đỏ là: $1 / 10 = 0.1$ (tức là $0.10$)."
   },
   {
     id: "Q_MOD_A_091", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Trong định lý giới hạn trung tâm (Central Limit Theorem), khi kích thước mẫu $n$ tiến ra vô cùng ($n \\to \\infty$), phân phối của số trung bình mẫu $\\bar{X}$ sẽ hội tụ về phân phối nào?",
+    content: "Một bể bơi mini ban đầu đang chứa $60$ lít nước. Người ta bơm thêm vào bể $40$ lít nước nữa. Tổng số lít nước có trong bể sau khi bơm thêm là bao nhiêu?",
     options: [
-      "A. Phân phối chuẩn bất kể phân phối của quần thể ban đầu.",
-      "B. Phân phối chuẩn chỉ khi quần thể ban đầu có phân phối chuẩn.",
-      "C. Phân phối Poisson với kỳ vọng và phương sai bằng nhau.",
-      "D. Phân phối đều trên khoảng chứa toàn bộ mẫu quan sát."
+      "A. $80$ lít nước.",
+      "B. $100$ lít nước.",
+      "C. $120$ lít nước.",
+      "D. $140$ lít nước."
     ],
-    correct_option: "A",
-    explanation: "Định lý giới hạn trung tâm phát biểu rằng, với mẫu đủ lớn ($n \\ge 30$), phân phối của trung bình mẫu sẽ xấp xỉ phân phối chuẩn, bất kể phân phối ban đầu của quần thể là gì."
+    correct_option: "B",
+    explanation: "Tổng số lít nước có trong bể sau khi bơm thêm là: $60 + 40 = 100$ lít nước."
   },
   {
     id: "Q_MOD_A_092", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
-    content: "Trong tối ưu hóa đa biến, ma trận chứa toàn bộ các đạo hàm riêng bậc hai của một hàm số được gọi là gì? Nó đóng vai trò xác định tính lồi lõm của hàm số.",
+    content: "Thời gian hoàn thành một vòng chạy của 4 vận động viên lần lượt là $50$ giây, $52$ giây, $48$ giây và $50$ giây. Thời gian chạy trung bình của 4 vận động viên là bao nhiêu?",
     options: [
-      "A. Ma trận Hessian",
-      "B. Ma trận Jacobian",
-      "C. Ma trận Covariance",
-      "D. Ma trận Correlation"
+      "A. $49$ giây.",
+      "B. $50$ giây.",
+      "C. $51$ giây.",
+      "D. $52$ giây."
     ],
-    correct_option: "A",
-    explanation: "Ma trận Hessian là ma trận vuông chứa các đạo hàm riêng cấp hai của một hàm số đa biến. Nó được dùng để kiểm tra điểm cực trị là cực đại, cực tiểu hay điểm yên ngựa."
+    correct_option: "B",
+    explanation: "Thời gian chạy trung bình cộng của 4 vận động viên là: $(50 + 52 + 48 + 50) / 4 = 200 / 4 = 50$ giây."
   },
   {
     id: "Q_MOD_A_093", module_id: "Module_A", difficulty: "Medium",
     tags: ["matrix-operations"],
-    content: "Một ma trận vuông $A$ kích thước $n \\times n$ được gọi là ma trận trực giao (orthogonal matrix) nếu thỏa mãn điều kiện nào sau đây?",
+    content: "Một bình đựng sữa có dung tích tối đa là $2$ lít. Hiện tại lượng sữa trong bình đang chiếm $25\\%$ dung tích. Lượng sữa hiện có trong bình là bao nhiêu lít?",
     options: [
-      "A. $A^T A = I$",
-      "B. $A^T = A$",
-      "C. $A^{-1} = A$",
-      "D. $\\det(A) = 0$"
+      "A. $0.3$ lít sữa.",
+      "B. $0.5$ lít sữa.",
+      "C. $0.7$ lít sữa.",
+      "D. $0.9$ lít sữa."
     ],
-    correct_option: "A",
-    explanation: "Một ma trận vuông $A$ trực giao nếu chuyển vị của nó cũng là nghịch đảo của nó, tức là $A^T A = A A^T = I$."
+    correct_option: "B",
+    explanation: "Lượng sữa hiện có trong bình là: $2 \\times 25\\% = 2 \\times 0.25 = 0.5$ lít sữa."
   },
   {
     id: "Q_MOD_A_094", module_id: "Module_A", difficulty: "Medium",
     tags: ["linear-algebra"],
-    content: "Trong phương pháp phân tích thành phần chính (PCA), ta tìm các vectơ riêng ứng với các trị riêng như thế nào của ma trận hiệp phương sai để làm các trục tọa độ mới?",
+    content: "Một nhóm làm việc gồm có $4$ nhân viên nữ và $6$ nhân viên nam. Chọn ngẫu nhiên $1$ người làm nhóm trưởng. Xác suất chọn được một nhân viên nữ là bao nhiêu?",
     options: [
-      "A. Các trị riêng có giá trị lớn nhất.",
-      "B. Các trị riêng có giá trị bằng số 0.",
-      "C. Các trị riêng có giá trị nhỏ nhất.",
-      "D. Các trị riêng có giá trị âm nhất."
+      "A. $0.2$",
+      "B. $0.4$",
+      "C. $0.6$",
+      "D. $0.8$"
     ],
-    correct_option: "A",
-    explanation: "Để giảm chiều dữ liệu mà vẫn giữ tối đa lượng thông tin (phương sai), PCA chọn các vectơ riêng tương ứng với các trị riêng lớn nhất của ma trận hiệp phương sai."
+    correct_option: "B",
+    explanation: "Tổng số nhân viên trong nhóm là $4 + 6 = 10$ người. Xác suất chọn được một nhân viên nữ là: $4 / 10 = 0.4$."
   },
   {
     id: "Q_MOD_A_095", module_id: "Module_A", difficulty: "Medium",
     tags: ["information-theory"],
-    content: "Entropy thông tin $H(X)$ của một nguồn tin rời rạc có 2 trạng thái với xác suất xảy ra lần lượt là $p$ và $1-p$ đạt giá trị cực đại khi nào?",
+    content: "Một trang web bán hàng trực tuyến nhận được $300$ đơn đặt hàng trong tuần thứ nhất và $400$ đơn đặt hàng trong tuần thứ hai. Tổng số đơn hàng sau hai tuần là bao nhiêu?",
     options: [
-      "A. $p = 0.5$",
-      "B. $p = 1.0$",
-      "C. $p = 0.0$",
-      "D. $p = 0.25$"
+      "A. $600$ đơn.",
+      "B. $700$ đơn.",
+      "C. $800$ đơn.",
+      "D. $900$ đơn."
     ],
-    correct_option: "A",
-    explanation: "Entropy biểu thị độ không chắc chắn. Độ không chắc chắn lớn nhất khi 2 kết quả xảy ra với khả năng đồng đều nhất, tức là $p = 1 - p = 0.5$."
+    correct_option: "B",
+    explanation: "Tổng số đơn đặt hàng sau hai tuần được tính bằng phép cộng đơn giản: $300 + 400 = 700$ đơn hàng."
   },
   {
     id: "Q_MOD_A_096", module_id: "Module_A", difficulty: "Medium",
     tags: ["calculus"],
-    content: "Cho hàm số $f(x, y) = 3x^2 + 2y^2 - 4x - 8y$. Điểm cực tiểu (cực trị tối ưu) của hàm số này nằm tại tọa độ $(x, y)$ nào?",
+    content: "Nhiệt độ phòng đo được vào buổi sáng là $22^\\circ\\text{C}$ và vào buổi chiều là $28^\\circ\\text{C}$. Nhiệt độ trung bình cộng của phòng trong ngày hôm đó là bao nhiêu?",
     options: [
-      "A. $(2/3, 2)$",
-      "B. $(0, 0)$",
-      "C. $(1, 2)$",
-      "D. $(4/3, 4)$"
+      "A. $24^\\circ\\text{C}$",
+      "B. $25^\\circ\\text{C}$",
+      "C. $26^\\circ\\text{C}$",
+      "D. $27^\\circ\\text{C}$"
     ],
-    correct_option: "A",
-    explanation: "Giải hệ phương trình đạo hàm riêng bằng 0: $\\frac{\\partial f}{\\partial x} = 6x - 4 = 0 \\Rightarrow x = 2/3$; $\\frac{\\partial f}{\\partial y} = 4y - 8 = 0 \\Rightarrow y = 2$. Do ma trận Hessian xác định dương nên đây là điểm cực tiểu."
+    correct_option: "B",
+    explanation: "Nhiệt độ trung bình cộng trong ngày là: $(22 + 28) / 2 = 50 / 2 = 25^\\circ\\text{C}$."
   },
   {
     id: "Q_MOD_A_097", module_id: "Module_A", difficulty: "Medium",
     tags: ["probability-statistics"],
-    content: "Trong ước lượng thống kê, một ước lượng $\\hat{\\theta}$ được gọi là ước lượng không chệch (unbiased estimator) của tham số $\\theta$ nếu thỏa mãn điều kiện nào?",
+    content: "Một chiếc máy tính bảng có giá gốc là $6$ triệu đồng. Nhân dịp khai trương, cửa hàng thực hiện giảm giá $10\\%$ chiếc máy tính bảng đó. Số tiền được giảm giá là bao nhiêu?",
     options: [
-      "A. $E(\\hat{\\theta}) = \\theta$",
-      "B. $\\text{Var}(\\hat{\\theta}) = 0$",
-      "C. $\\hat{\\theta} = \\theta$",
-      "D. $P(\\hat{\\theta} = \\theta) = 1$"
+      "A. $0.4$ triệu.",
+      "B. $0.6$ triệu.",
+      "C. $0.8$ triệu.",
+      "D. $1.0$ triệu."
     ],
-    correct_option: "A",
-    explanation: "Một ước lượng là không chệch nếu giá trị kỳ vọng (trung bình) của phân phối mẫu của ước lượng đó bằng đúng giá trị của tham số quần thể cần ước lượng, tức $E(\\hat{\\theta}) = \\theta$."
+    correct_option: "B",
+    explanation: "Số tiền khách hàng được giảm giá là: $6 \\times 10\\% = 6 \\times 0.1 = 0.6$ triệu đồng."
   },
   {
     id: "Q_MOD_A_098", module_id: "Module_A", difficulty: "Medium",
     tags: ["matrix-operations"],
-    content: "Cho ma trận vuông $A$ kích thước $n \\times n$. Nếu ma trận $A$ có định thức $\\det(A) = 3$, định thức của ma trận nghịch đảo $\\det(A^{-1})$ bằng bao nhiêu?",
+    content: "Trong một hộp phấn viết bảng có chứa $8$ viên phấn màu trắng và $2$ viên phấn màu đỏ. Chọn ngẫu nhiên $1$ viên phấn. Xác suất chọn trúng viên phấn màu đỏ là bao nhiêu?",
     options: [
-      "A. $\\frac{1}{3}$",
-      "B. $3$",
-      "C. $-3$",
-      "D. $9$"
+      "A. $0.1$",
+      "B. $0.2$",
+      "C. $0.3$",
+      "D. $0.4$"
     ],
-    correct_option: "A",
-    explanation: "Từ tính chất định thức của tích hai ma trận: $A A^{-1} = I \\Rightarrow \\det(A) \\times \\det(A^{-1}) = \\det(I) = 1 \\Rightarrow \\det(A^{-1}) = 1/\\det(A) = 1/3$."
+    correct_option: "B",
+    explanation: "Tổng số viên phấn là $8 + 2 = 10$ viên. Xác suất chọn trúng viên phấn màu đỏ là: $2 / 10 = 0.2$."
   },
   {
     id: "Q_MOD_A_099", module_id: "Module_A", difficulty: "Medium",
     tags: ["information-theory"],
-    content: "Hàm Cross-Entropy $H(P, Q) = -\\sum P(x) \\log Q(x)$ đạt giá trị nhỏ nhất khi phân phối dự báo $Q$ có quan hệ như thế nào với phân phối thực tế $P$?",
+    content: "Một người thợ làm vườn trồng được $15$ cây hoa hồng mỗi ngày. Hỏi sau $6$ ngày làm vườn liên tục, người thợ đó trồng được tổng cộng bao nhiêu cây hoa hồng?",
     options: [
-      "A. Khi phân phối Q trùng khít hoàn toàn với phân phối P.",
-      "B. Khi hai phân phối Q và P hoàn toàn độc lập với nhau.",
-      "C. Khi phân phối Q có phương sai lớn gấp hai lần P.",
-      "D. Khi định thức của phân phối Q tiến về giá trị không."
+      "A. $80$ cây hoa.",
+      "B. $90$ cây hoa.",
+      "C. $100$ cây hoa.",
+      "D. $110$ cây hoa."
     ],
-    correct_option: "A",
-    explanation: "Theo bất đẳng thức Gibbs, hàm Cross-Entropy đạt giá trị tối thiểu bằng Entropy thực tế $H(P)$ khi và chỉ khi phân phối dự báo $Q$ trùng khớp hoàn toàn với phân phối xác suất thực tế $P$."
+    correct_option: "B",
+    explanation: "Tổng số cây hoa hồng người thợ đó trồng được sau $6$ ngày là: $15 \\times 6 = 90$ cây."
   },
   {
     id: "Q_MOD_A_100", module_id: "Module_A", difficulty: "Medium",
     tags: ["linear-algebra"],
-    content: "Xét hệ phương trình tuyến tính $Ax = b$ trong đó $A$ là ma trận kích thước $m \\times n$. Nếu số ẩn nhiều hơn số phương trình ($n > m$), khẳng định nào sau đây là **luôn đúng**?",
+    content: "Một đội tuyển bóng đá tham gia thi đấu $20$ trận trong mùa giải và đã giành chiến thắng $70\\%$ số trận đấu đó. Hỏi đội tuyển đã giành chiến thắng bao nhiêu trận đấu?",
     options: [
-      "A. Hệ phương trình không thể có nghiệm duy nhất.",
-      "B. Hệ phương trình chắc chắn vô nghiệm hoàn toàn.",
-      "C. Hệ phương trình chắc chắn có vô số nghiệm thực.",
-      "D. Hệ phương trình luôn tồn tại một nghiệm duy nhất."
+      "A. $12$ trận thắng.",
+      "B. $14$ trận thắng.",
+      "C. $16$ trận thắng.",
+      "D. $18$ trận thắng."
     ],
-    correct_option: "A",
-    explanation: "Khi số ẩn nhiều hơn số phương trình ($n > m$), hạng của ma trận hệ số $r(A) \\le m < n$. Nếu hệ có nghiệm thì luôn có ít nhất $n - r(A) > 0$ ẩn tự do, dẫn tới vô số nghiệm. Do đó hệ không bao giờ có nghiệm duy nhất."
+    correct_option: "B",
+    explanation: "Số trận thắng đội tuyển giành được trong mùa giải là: $20 \\times 70\\% = 20 \\times 0.7 = 14$ trận thắng."
   }
 ];

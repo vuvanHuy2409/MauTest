@@ -1,1303 +1,1703 @@
 const QUESTIONS_C = [
   {
-    id: "Q_MOD_C_001", module_id: "Module_C", difficulty: "Easy",
-    tags: ["computer-vision"],
-    content: "Hệ thống tự động nhận diện và trích xuất thông tin biển số xe từ camera giao thông thuộc lĩnh vực nào sau đây của Trí tuệ nhân tạo?",
-    options: [
-      "A. Xử lý ngôn ngữ tự nhiên (NLP)",
-      "B. Thị giác máy tính (Computer Vision)",
-      "C. Hệ thống gợi ý (Recommender Systems)",
-      "D. Khai phá dữ liệu âm thanh (Audio Mining)"
-    ],
-    correct_option: "B",
-    explanation: "Nhận diện biển số xe liên quan trực tiếp đến việc xử lý, phân tích và hiểu thông tin từ hình ảnh/video đầu vào, đây là bài toán kinh điển của Thị giác máy tính (Computer Vision)."
-  },
-  {
-    id: "Q_MOD_C_002", module_id: "Module_C", difficulty: "Medium",
-    tags: ["product-ux"],
-    content: "Một ứng dụng AI gợi ý món ăn cho người dùng dựa trên sở thích lịch sử. Sau khi triển khai, người dùng phàn nàn rằng ứng dụng \"liên tục gợi ý đi gợi ý lại đúng 1 món duy nhất mà họ từng khen ngon, gây nhàm chán\". Với tư cách là kỹ sư sản phẩm AI, bạn sẽ đề xuất cải tiến thuật toán theo hướng nào?",
-    options: [
-      "A. Thiết kế tắt hoàn toàn hệ thống gợi ý cũ, chuyển sang hiển thị các món ăn ngẫu nhiên cho người dùng.",
-      "B. Thiết kế tăng mạnh trọng số của món ăn cũ trong lịch sử để tối ưu hóa độ chính xác của mô hình gợi ý.",
-      "C. Thiết kế thêm cơ chế khám phá lồng ghép món ăn mới có thuộc tính tương đồng hoặc món đang thịnh hành.",
-      "D. Thiết kế yêu cầu người dùng nhập thủ công danh sách món ăn họ muốn thưởng thức vào mỗi buổi sáng."
-    ],
-    correct_option: "C",
-    explanation: "Một hệ thống gợi ý tốt cần cân bằng giữa \"Khai thác\" (Exploitation - những gì người dùng đã thích) và \"Khám phá\" (Exploration - đề xuất cái mới tương tự) để tránh hiện tượng \"bẫy lọc\" gây nhàm chán."
-  },
-  {
-    id: "Q_MOD_C_003", module_id: "Module_C", difficulty: "Easy",
-    tags: ["llm"],
-    content: "Mô hình ngôn ngữ lớn (LLM) như GPT-4 hay các hệ thống chatbot thông minh hoạt động dựa trên việc dự đoán từ tiếp theo trong câu thuộc nhóm học máy nào?",
-    options: [
-      "A. Học có giám sát (Supervised) hoặc tự giám sát (Self-Supervised)",
-      "B. Học không giám sát thuần túy (Unsupervised Learning) truyền thống",
-      "C. Học tăng cường phản hồi từ môi trường (Reinforcement Learning)",
-      "D. Học theo thuật toán tìm kiếm trên đồ thị cây (Depth-First Search)"
-    ],
-    correct_option: "A",
-    explanation: "Việc dự đoán từ tiếp theo dựa trên các từ đã xuất hiện phía trước sử dụng chính các văn bản có sẵn làm \"nhãn\" tự nhiên để học, đây là bản chất của Học tự giám sát (Self-Supervised)."
-  },
-  {
-    id: "Q_MOD_C_004", module_id: "Module_C", difficulty: "Medium",
-    tags: ["product-ux"],
-    content: "Trường đại học muốn tích hợp một AI kiểm duyệt bài viết tự động trên mạng xã hội nội bộ của sinh viên nhằm loại bỏ các nội dung toxic, thô tục hoặc spam. Tuy nhiên, hệ thống ban đầu hoạt động quá nhạy cảm, liên tục khóa nhầm các bài viết thảo luận học thuật bình thường chỉ vì có chứa một vài từ ngữ mang tính tranh luận gay gắt. Là người phát triển sản phẩm, bạn nên làm gì?",
-    options: [
-      "A. Tắt hoàn toàn mô hình kiểm duyệt tự động bằng AI, quay lại cơ chế phân công nhân viên duyệt bài thủ công.",
-      "B. Tăng ngưỡng tin cậy của AI khi khóa bài vi phạm, đồng thời thiết kế thêm tính năng khiếu nại cho sinh viên.",
-      "C. Chuyển đổi toàn bộ từ ngữ tranh luận thành từ cấm để mô hình AI tự động quét và khóa triệt để các bài viết.",
-      "D. Thiết lập hệ thống tự động khóa vĩnh viễn tài khoản của những sinh viên có phản hồi không tốt về bộ duyệt."
-    ],
-    correct_option: "B",
-    explanation: "Nâng ngưỡng tin cậy (Confidence Threshold) giúp giảm tỷ lệ phạt nhầm (False Positive), và quy trình vận hành sản phẩm luôn cần một bước dự phòng (nút khiếu nại) để con người can thiệp khi AI sai sót."
-  },
-  {
-    id: "Q_MOD_C_005", module_id: "Module_C", difficulty: "Medium",
-    tags: ["computer-vision"],
-    content: "Một công ty phát triển hệ thống AI để tự động phát hiện hành vi \"vượt đèn đỏ\" từ camera giao thông. Hệ thống hoạt động bằng cách kiểm tra xem xe có cắt qua vạch dừng khi đèn đang đỏ hay không. Bài toán này sử dụng luồng xử lý chính nào dưới đây?",
-    options: [
-      "A. Sử dụng mô hình nhận diện giọng nói để nghe tiếng còi và tiếng động cơ xe tại ngã tư giao thông.",
-      "B. Sử dụng mô hình phát hiện vật thể để tìm xe và đèn, kết hợp theo dõi chuyển động qua các khung hình.",
-      "C. Sử dụng mô hình ngôn ngữ lớn (LLM) để phân tích biển số xe và tự động suy luận ra hành vi vi phạm.",
-      "D. Sử dụng thuật toán phân cụm không giám sát (Clustering) để phân nhóm hành vi di chuyển của xe máy."
-    ],
-    correct_option: "B",
-    explanation: "Để bắt lỗi vượt đèn đỏ, AI cần nhận diện được vật thể tĩnh/động (xe, đèn tín hiệu) và sau đó theo dõi (Track) vị trí tọa độ của xe qua từng khung hình xem nó có cắt qua vạch giới hạn hay không."
-  },
-  {
-    id: "Q_MOD_C_006", module_id: "Module_C", difficulty: "Medium",
-    tags: ["rag"],
-    content: "Bạn xây dựng một Chatbot AI tư vấn tuyển sinh cho trường Đại học. Trong tuần đầu tiên ra mắt, hệ thống gặp hiện tượng \"ảo tưởng\" (Hallucination) – Chatbot tự bịa ra một ngành học không hề có thật của trường và tư vấn sai cho học sinh. Giải pháp nào dưới đây là tối ưu nhất?",
-    options: [
-      "A. Gỡ bỏ hoàn toàn hệ thống chatbot tự động, tuyển thêm nhân sự để trực và phản hồi tin nhắn thủ công.",
-      "B. Áp dụng kỹ thuật RAG nhằm giới hạn phạm vi trả lời của chatbot trong tài liệu tuyển sinh được cung cấp.",
-      "C. Tiến hành phạt tiền nhà phát triển mô hình AI hoặc cấu hình lại tham số phạt lỗi của thuật toán học máy.",
-      "D. Vô hiệu hóa ô nhập câu hỏi tự do của học sinh, chỉ cho phép lựa chọn các câu hỏi mẫu có sẵn trong menu."
-    ],
-    correct_option: "B",
-    explanation: "RAG (Retrieval-Augmented Generation) giới hạn không gian dữ liệu của LLM vào kho tài liệu chuẩn được cung cấp, giúp giảm thiểu tối đa hiện tượng \"bịa đặt\" thông tin (Hallucination)."
-  },
-  {
-    id: "Q_MOD_C_007", module_id: "Module_C", difficulty: "Medium",
-    tags: ["overfitting"],
-    content: "Khi huấn luyện một mô hình học máy, hiện tượng mô hình \"học vẹt\" – đạt độ chính xác cực kỳ cao ($99\\%$) trên tập dữ liệu dùng để học (Train set) nhưng khi áp dụng vào dữ liệu thực tế mới (Test set) thì kết quả lại rất tệ ($50\\%$) được gọi là hiện tượng gì?",
-    options: [
-      "A. Hiện tượng Underfitting (Chưa khớp)",
-      "B. Hiện tượng Overfitting (Quá khớp)",
-      "C. Hiện tượng Optimization (Tối ưu hóa)",
-      "D. Hiện tượng Vanishing (Tiêu biến đạo hàm)"
-    ],
-    correct_option: "B",
-    explanation: "Hiện tượng quá khớp (Overfitting) xảy ra khi mô hình quá phức tạp hoặc học quá kỹ các chi tiết, nhiễu của tập dữ liệu Train khiến nó mất đi khả năng khái quát hóa dữ liệu mới."
-  },
-  {
-    id: "Q_MOD_C_008", module_id: "Module_C", difficulty: "Medium",
-    tags: ["metrics"],
-    content: "Một hệ thống AI tự động phát hiện thư rác (Spam Filter) nhận diện nhầm một email cực kỳ quan trọng từ đối tác của công ty là \"Spam\" và tự động xóa đi. Trong các chỉ số đo lường, sai sót này đã làm tăng chỉ số nào sau đây của mô hình?",
-    options: [
-      "A. True Positive",
-      "B. False Positive",
-      "C. True Negative",
-      "D. False Negative"
-    ],
-    correct_option: "B",
-    explanation: "Hệ thống báo động nhầm một mẫu vốn mang thuộc tính bình thường (Âm tính) thành thuộc tính vi phạm (Dương tính) được gọi là lỗi False Positive (Dương tính giả / Báo động nhầm)."
-  },
-  {
-    id: "Q_MOD_C_009", module_id: "Module_C", difficulty: "Easy",
-    tags: ["nlp"],
-    content: "Công nghệ nào sau đây cho phép một ứng dụng dịch thuật AI (như Google Translate) có thể nghe giọng nói của bạn, chuyển nó thành văn bản, dịch sang ngôn ngữ khác, và phát lại bằng giọng nói nhân tạo?",
-    options: [
-      "A. Chỉ cần sử dụng hệ thống thị giác máy tính (Computer Vision) kết hợp bộ lọc âm thanh tần số thấp.",
-      "B. Kết hợp giữa nhận diện giọng nói (STT), xử lý ngôn ngữ tự nhiên (NLP) và tổng hợp giọng nói (TTS).",
-      "C. Sử dụng hệ thống chuyên gia dựa trên các tập luật logic cố định (Rule-based) để dịch nghĩa trực tiếp.",
-      "D. Áp dụng thuật toán tìm kiếm đồ thị kết hợp phân tích cú pháp tĩnh để suy luận và chuyển ngữ văn bản."
-    ],
-    correct_option: "B",
-    explanation: "Quy trình này tích hợp 3 phân hệ AI độc lập: Speech-to-Text (STT) dịch âm thanh thành chữ; NLP dịch thuật ngôn ngữ; và Text-to-Speech (TTS) chuyển văn bản thành giọng đọc nhân tạo."
-  },
-  {
-    id: "Q_MOD_C_010", module_id: "Module_C", difficulty: "Easy",
-    tags: ["llm"],
-    content: "Nhà trường muốn phát triển một ứng dụng AI hỗ trợ sinh viên tự động tóm tắt nội dung các slide bài giảng dài thành các ý chính để ôn thi. Đầu vào là file PDF/Powerpoint, đầu ra là văn bản tóm tắt ngắn. Bạn nên đề xuất tích hợp mô hình AI thuộc nhóm nào?",
-    options: [
-      "A. Sử dụng mô hình phát hiện vật thể (Object Detection) để định vị chữ.",
-      "B. Sử dụng mô hình ngôn ngữ lớn (LLM) hoặc các công nghệ AI tạo sinh.",
-      "C. Sử dụng thuật toán dự báo chuỗi thời gian (Time Series Forecasting).",
-      "D. Sử dụng phương pháp gom cụm dữ liệu (Clustering) không có giám sát."
-    ],
-    correct_option: "B",
-    explanation: "Hiểu ngữ cảnh và tóm tắt văn bản dài (Text Summarization) là tính năng cốt lời và là thế mạnh lớn nhất của AI tạo sinh và mô hình ngôn ngữ lớn (LLM)."
-  },
-  {
-    id: "Q_MOD_C_011", module_id: "Module_C", difficulty: "Medium",
-    tags: ["product-ux"],
-    content: "Bạn triển khai hệ thống AI nhận diện khuôn mặt để nhân viên điểm danh tại cửa công ty. Vào mùa đông, rất nhiều người phàn nàn hệ thống không nhận diện được do họ đeo khẩu trang dày và đội mũ len kín tai. Cách giải quyết nào là hợp lý và tối ưu nhất về mặt sản phẩm?",
-    options: [
-      "A. Yêu cầu nhân viên tháo mũ và khẩu trang khi đi qua cửa quét bất kể tình trạng thời tiết khắc nghiệt.",
-      "B. Thu thập thêm ảnh nhân viên đeo khẩu trang hoặc đội mũ để huấn luyện lại mô hình nhận diện khuôn mặt.",
-      "C. Thay thế hoàn toàn bằng hệ thống nhận dạng giọng nói ngoài trời để tránh các tác động từ việc che mặt.",
-      "D. Điều chỉnh ngưỡng tin cậy của hệ thống xuống mức rất thấp để đảm bảo mọi người đi qua đều được chấp nhận."
-    ],
-    correct_option: "B",
-    explanation: "Về mặt sản phẩm, ta không bắt người dùng thay đổi thói quen thiết yếu. Giải pháp tối ưu là bổ sung dữ liệu huấn luyện mang tính thực tế để AI học được cách nhận diện qua các bộ phận không bị che khuất (vùng mắt)."
-  },
-  {
-    id: "Q_MOD_C_012", module_id: "Module_C", difficulty: "Easy",
-    tags: ["unsupervised-learning"],
-    content: "Thuật toán K-Means thuộc nhóm học máy nào sau đây?",
-    options: [
-      "A. Học có giám sát (Supervised Learning)",
-      "B. Học không giám sát (Unsupervised Learning)",
-      "C. Học tăng cường (Reinforcement Learning)",
-      "D. Mạng nơ-ron sâu sinh tạo (Generative AI)"
-    ],
-    correct_option: "B",
-    explanation: "K-Means là thuật toán gom cụm (Clustering). Nó hoạt động trên tập dữ liệu không có nhãn trước nhằm tự động phân nhóm các điểm dữ liệu tương đồng vào chung một cụm, thuộc nhóm Học không giám sát."
-  },
-  {
-    id: "Q_MOD_C_013", module_id: "Module_C", difficulty: "Medium",
-    tags: ["supervised-learning"],
-    content: "Khi xây dựng mô hình AI dự báo giá cổ phiếu dựa trên dữ liệu lịch sử đóng cửa qua các ngày trong 5 năm qua, bản chất bài toán này thuộc loại nào?",
-    options: [
-      "A. Bài toán phân loại nhãn (Classification)",
-      "B. Bài toán hồi quy chuỗi thời gian (Regression)",
-      "C. Bài toán gom cụm dữ liệu (Clustering)",
-      "D. Bài toán thị giác máy tính (Computer Vision)"
-    ],
-    correct_option: "B",
-    explanation: "Giá cổ phiếu là một giá trị số liên tục (Hồi quy) và dữ liệu được sắp xếp phụ thuộc trực tiếp vào mốc thời gian liên tục (Chuỗi thời gian - Time Series)."
-  },
-  {
-    id: "Q_MOD_C_014", module_id: "Module_C", difficulty: "Medium",
-    tags: ["transfer-learning"],
-    content: "Kỹ thuật nào dưới đây cho phép bạn lấy một mô hình AI lớn đã được huấn luyện sẵn trên hàng triệu hình ảnh (như ResNet hoặc MobileNet) để áp dụng và tinh chỉnh (Fine-tune) vào bài toán nhận diện bệnh cây trồng cụ thể của bạn với tập dữ liệu nhỏ?",
-    options: [
-      "A. Thuật toán học tăng cường (Reinforcement Learning)",
-      "B. Phương pháp học chuyển giao (Transfer Learning)",
-      "C. Mô hình cây quyết định ngẫu nhiên (Random Forest)",
-      "D. Thuật toán hồi quy tuyến tính (Linear Regression)"
-    ],
-    correct_option: "B",
-    explanation: "Transfer Learning tận dụng mạng tri thức đặc trưng (đường nét, hình khối) mà mô hình lớn đã học được trước đó để tinh chỉnh sang một bài toán mới, giúp tiết kiệm tài nguyên và không cần tập dữ liệu khổng lồ."
-  },
-  {
-    id: "Q_MOD_C_015", module_id: "Module_C", difficulty: "Medium",
-    tags: ["product-ux"],
-    content: "Một ứng dụng thương mại điện tử tích hợp AI để gợi ý sản phẩm cho người dùng. Số liệu cho thấy hệ thống gợi ý rất chính xác các sản phẩm người dùng quan tâm, nhưng doanh thu không tăng vì giao diện hiển thị phần gợi ý này bị giấu quá sâu ở cuối trang, khiến người dùng không nhìn thấy. Vấn đề ở đây nằm ở đâu?",
-    options: [
-      "A. Mô hình AI bị lỗi logic và đưa ra dự đoán hoàn toàn không khớp với nhu cầu của khách hàng.",
-      "B. Dữ liệu huấn luyện mô hình bị thiếu hụt nghiêm trọng khiến chất lượng gợi ý sản phẩm quá kém.",
-      "C. Thiết kế trải nghiệm người dùng (UX) chưa tối ưu để khai thác được kết quả từ thuật toán gợi ý.",
-      "D. Tốc độ xử lý của mô hình quá chậm chạp khiến hệ thống không thể hiển thị kết quả kịp thời."
-    ],
-    correct_option: "C",
-    explanation: "Một sản phẩm AI thành công không chỉ cần mô hình thông minh, mà cần một thiết kế trải nghiệm người dùng (UI/UX) hợp lý để đưa kết quả của AI tiếp cận khách hàng một cách tự nhiên và đúng thời điểm."
-  },
-  {
-    id: "Q_MOD_C_016", module_id: "Module_C", difficulty: "Easy",
-    tags: ["computer-vision"],
-    content: "Khi phát triển một ứng dụng camera AI giám sát giao thông ngoài trời để phạt nguội xe máy không đội mũ bảo hiểm, yếu tố môi trường nào sau đây ít ảnh hưởng nhất đến độ chính xác của mô hình Object Detection khi vận hành thực tế?",
-    options: [
-      "A. Sự thay đổi thời tiết cực đoan từ trời nắng gắt sang mưa giông lớn.",
-      "B. Bóng cây đổ xuống mặt đường thay đổi vị trí theo thời gian trong ngày.",
-      "C. Tiếng còi xe inh ỏi và âm thanh động cơ ồn ào phát ra từ các phương tiện.",
-      "D. Ánh đèn pha từ các xe đi ngược chiều chiếu thẳng vào ống kính camera."
-    ],
-    correct_option: "C",
-    explanation: "Mô hình Object Detection xử lý đầu vào là dữ liệu hình ảnh, do đó các yếu tố về ánh sáng, bóng đổ trực tiếp tác động lên pixel ảnh. Tiếng ồn âm thanh không thuộc luồng đầu vào nên không ảnh hưởng."
-  },
-  {
-    id: "Q_MOD_C_017", module_id: "Module_C", difficulty: "Easy",
-    tags: ["supervised-learning"],
-    content: "Trong học máy có giám sát (Supervised Learning), mô hình học từ loại dữ liệu nào?",
-    options: [
-      "A. Dữ liệu chỉ chứa các đặc trưng đầu vào (features) và hoàn toàn không có nhãn kết quả.",
-      "B. Dữ liệu đã được gán nhãn trước (gồm cả các đặc trưng đầu vào và nhãn đầu ra tương ứng).",
-      "C. Dữ liệu được sinh ngẫu nhiên từ hệ thống máy tính mà không dựa trên thực tế thu thập.",
-      "D. Dữ liệu phản hồi thu được thông qua việc thử và sai khi tương tác trực tiếp với môi trường."
-    ],
-    correct_option: "B",
-    explanation: "Học có giám sát yêu cầu tập dữ liệu huấn luyện có nhãn (labeled data) gồm cặp đầu vào và đầu ra mong muốn để mô hình học cách ánh xạ."
-  },
-  {
-    id: "Q_MOD_C_018", module_id: "Module_C", difficulty: "Easy",
-    tags: ["nlp"],
-    content: "Bài toán 'Phân tích cảm xúc' (Sentiment Analysis) từ các bình luận của khách hàng trên mạng xã hội thuộc lĩnh vực nào?",
-    options: [
-      "A. Lĩnh vực Thị giác máy tính (Computer Vision)",
-      "B. Lĩnh vực Xử lý ngôn ngữ tự nhiên (NLP)",
-      "C. Lĩnh vực Nhận dạng giọng nói (Speech Recognition)",
-      "D. Lĩnh vực Hồi quy tuyến tính (Linear Regression)"
-    ],
-    correct_option: "B",
-    explanation: "Phân tích cảm xúc là hiểu ý nghĩa và thái độ của con người thể hiện qua văn bản, thuộc lĩnh vực Xử lý ngôn ngữ tự nhiên (NLP)."
-  },
-  {
-    id: "Q_MOD_C_019", module_id: "Module_C", difficulty: "Easy",
-    tags: ["llm"],
-    content: "Tham số 'Temperature' trong các mô hình ngôn ngữ lớn (LLM) điều khiển yếu tố nào của câu trả lời?",
-    options: [
-      "A. Tốc độ phản hồi nhanh hay chậm của mô hình khi xử lý truy vấn.",
-      "B. Giới hạn số lượng từ tối đa được phép sinh ra trong câu trả lời.",
-      "C. Độ ngẫu nhiên, sự sáng tạo và tính đa dạng của văn bản sinh ra.",
-      "D. Mức tiêu thụ tài nguyên và dung lượng bộ nhớ GPU của máy chủ."
-    ],
-    correct_option: "C",
-    explanation: "Temperature càng cao thì mô hình càng chọn các từ có xác suất thấp hơn, tăng tính sáng tạo và ngẫu nhiên. Temperature thấp (gần 0) làm mô hình trả lời nhất quán và logic hơn."
-  },
-  {
-    id: "Q_MOD_C_020", module_id: "Module_C", difficulty: "Easy",
-    tags: ["computer-vision"],
-    content: "Phép toán phổ biến nhất được sử dụng trong mạng nơ-ron tích chập (CNN) để trích xuất đặc trưng hình ảnh là gì?",
-    options: [
-      "A. Phép nhân ma trận nghịch đảo",
-      "B. Phép toán tích chập (Convolution)",
-      "C. Phép chia vector đặc trưng",
-      "D. Phép biến đổi Fourier nhanh"
-    ],
-    correct_option: "B",
-    explanation: "Phép toán tích chập (Convolution) sử dụng các bộ lọc (kernel) quét qua ảnh để trích xuất các đặc trưng như đường nét, góc cạnh, hoa văn."
-  },
-  {
-    id: "Q_MOD_C_021", module_id: "Module_C", difficulty: "Easy",
-    tags: ["supervised-learning"],
-    content: "Thuật toán nào sau đây dùng để phân loại lớp (Classification) dựa trên khoảng cách đến các điểm dữ liệu lân cận gần nhất?",
-    options: [
-      "A. Thuật toán phân cụm K-Means",
-      "B. Thuật toán lân cận K-Nearest Neighbors",
-      "C. Thuật toán hồi quy Linear Regression",
-      "D. Thuật toán giảm chiều dữ liệu PCA"
-    ],
-    correct_option: "B",
-    explanation: "KNN phân loại mẫu mới dựa trên đa số phiếu bầu từ K mẫu huấn luyện gần nhất xung quanh nó trong không gian đặc trưng."
-  },
-  {
-    id: "Q_MOD_C_022", module_id: "Module_C", difficulty: "Easy",
-    tags: ["nlp"],
-    content: "Trong NLP, việc loại bỏ các từ xuất hiện rất phổ biến nhưng ít mang giá trị ngữ nghĩa (như 'và', 'hoặc', 'thì', 'là' trong tiếng Việt) được gọi là gì?",
-    options: [
-      "A. Stemming",
-      "B. Lemmatization",
-      "C. Stopwords removal",
-      "D. Word Embedding"
-    ],
-    correct_option: "C",
-    explanation: "Các từ này được gọi là stop words (từ dừng). Loại bỏ chúng giúp mô hình tập trung vào các từ khóa mang nội dung thực sự của văn bản."
-  },
-  {
-    id: "Q_MOD_C_023", module_id: "Module_C", difficulty: "Easy",
-    tags: ["llm"],
-    content: "Mạng nơ-ron Transformer - nền tảng của các mô hình LLM hiện đại - hoạt động dựa trên cơ chế cốt lõi nào?",
-    options: [
-      "A. Cơ chế đệ quy (Recurrent mechanism)",
-      "B. Cơ chế chú ý (Self-Attention mechanism)",
-      "C. Cơ chế tích chập (Convolutional mechanism)",
-      "D. Cơ chế lan truyền ngược (Backpropagation)"
-    ],
-    correct_option: "B",
-    explanation: "Cơ chế Self-Attention cho phép mô hình đánh giá mức độ liên quan giữa tất cả các từ trong câu mà không bị giới hạn bởi khoảng cách xa gần."
-  },
-  {
-    id: "Q_MOD_C_024", module_id: "Module_C", difficulty: "Easy",
-    tags: ["product-ux"],
-    content: "Khi tích hợp Chatbot AI vào website hỗ trợ khách hàng, hành động nào giúp cải thiện UX tốt nhất đối với người dùng lần đầu?",
-    options: [
-      "A. Thiết kế khung chat trống hoàn toàn để kích thích người dùng tự suy nghĩ câu hỏi.",
-      "B. Hiển thị gợi ý các câu hỏi nhanh (Quick Prompts) để người dùng có thể nhấp chọn.",
-      "C. Yêu cầu bắt buộc người dùng đăng ký tài khoản VIP trước khi bắt đầu cuộc hội thoại.",
-      "D. Sử dụng thuật ngữ kỹ thuật chuyên sâu khi phản hồi để chứng tỏ sự chuyên nghiệp."
-    ],
-    correct_option: "B",
-    explanation: "Các câu hỏi gợi ý nhanh giúp giảm tải nhận thức của người dùng, chỉ dẫn họ cách tương tác với hệ thống một cách dễ dàng nhất."
-  },
-  {
-    id: "Q_MOD_C_025", module_id: "Module_C", difficulty: "Easy",
-    tags: ["unsupervised-learning"],
-    content: "Bài toán phân tích giỏ hàng mua sắm để tìm ra luật kết hợp (Association Rules), ví dụ: 'Người mua bỉm thường mua thêm bia', thuộc loại học máy nào?",
-    options: [
-      "A. Học có giám sát (Supervised Learning)",
-      "B. Học không giám sát (Unsupervised Learning)",
-      "C. Học tăng cường (Reinforcement Learning)",
-      "D. Học bán giám sát (Semi-supervised Learning)"
-    ],
-    correct_option: "B",
-    explanation: "Tìm luật kết hợp nhằm phát hiện mối quan hệ ẩn trong dữ liệu giao dịch không có nhãn trước, đây là một dạng của học không giám sát."
-  },
-  {
-    id: "Q_MOD_C_026", module_id: "Module_C", difficulty: "Easy",
-    tags: ["computer-vision"],
-    content: "Trong Computer Vision, bài toán xác định vị trí của vật thể bằng một khung chữ nhật (Bounding Box) và gán nhãn cho nó được gọi là:",
-    options: [
-      "A. Bài toán phân loại hình ảnh (Image Classification)",
-      "B. Bài toán phát hiện vật thể (Object Detection)",
-      "C. Bài toán phân đoạn ngữ nghĩa (Semantic Segmentation)",
-      "D. Bài toán sinh hình ảnh tự động (Image Generation)"
-    ],
-    correct_option: "B",
-    explanation: "Object Detection kết hợp việc phân loại lớp của vật thể và định vị tọa độ của nó dưới dạng Bounding Box trên ảnh."
-  },
-  {
-    id: "Q_MOD_C_027", module_id: "Module_C", difficulty: "Easy",
-    tags: ["metrics"],
-    content: "Độ chính xác tổng thể (Accuracy) được tính bằng công thức nào?",
-    options: [
-      "A. $\\frac{TP + TN}{TP + TN + FP + FN}$",
-      "B. $\\frac{TP}{TP + FP}$",
-      "C. $\\frac{TP}{TP + FN}$",
-      "D. $\\frac{TN}{TN + FP}$"
-    ],
-    correct_option: "A",
-    explanation: "Accuracy là tỷ lệ số mẫu dự đoán đúng (cả True Positive và True Negative) trên tổng số mẫu."
-  },
-  {
-    id: "Q_MOD_C_028", module_id: "Module_C", difficulty: "Easy",
-    tags: ["product-ux"],
-    content: "Tại sao thời gian phản hồi (Latency) lại là một chỉ số UX quan trọng đối với các ứng dụng AI tạo sinh thời gian thực?",
-    options: [
-      "A. Chỉ số Latency càng cao sẽ phản ánh mô hình AI có độ thông minh và khả năng suy luận tốt hơn.",
-      "B. Người dùng dễ bỏ cuộc hoặc nghĩ ứng dụng lỗi nếu phản hồi chậm mà không có tín hiệu tức thời.",
-      "C. Chỉ số Latency hoàn toàn không gây ảnh hưởng đến trải nghiệm sử dụng thực tế của khách hàng.",
-      "D. Chỉ số Latency cao sẽ hỗ trợ hệ thống tiết kiệm được tối đa năng lượng tiêu thụ cho máy chủ."
-    ],
-    correct_option: "B",
-    explanation: "Thời gian phản hồi chậm gây khó chịu và giảm sút niềm tin của người dùng. Các hệ thống thường dùng kỹ thuật streaming chữ (word-by-word) để cải thiện cảm giác phản hồi nhanh."
-  },
-  {
-    id: "Q_MOD_C_029", module_id: "Module_C", difficulty: "Easy",
-    tags: ["llm"],
-    content: "Thuật ngữ 'Token' trong các mô hình ngôn ngữ lớn (LLM) là gì?",
-    options: [
-      "A. Chuỗi ký tự đóng vai trò làm khóa bảo mật khi truy cập vào hệ thống API của mô hình.",
-      "B. Đơn vị văn bản nhỏ như từ hoặc ký tự được mô hình sử dụng để biểu diễn và xử lý ngôn ngữ.",
-      "C. Tổng số lượng tham số học được chứa trong các lớp liên kết của mô hình ngôn ngữ lớn.",
-      "D. Vùng nhớ đệm tạm thời trên card đồ họa chuyên dụng dùng để lưu trữ các phép tính song song."
-    ],
-    correct_option: "B",
-    explanation: "LLM chia nhỏ văn bản đầu vào thành các tokens. Một từ có thể gồm một hoặc nhiều tokens tùy thuộc vào bộ mã hóa từ vựng (tokenizer) được sử dụng."
-  },
-  {
-    id: "Q_MOD_C_030", module_id: "Module_C", difficulty: "Easy",
-    tags: ["supervised-learning"],
-    content: "Thuật toán học máy nào xây dựng một tập hợp các Cây quyết định (Decision Trees) và kết hợp kết quả của chúng để đưa ra dự đoán cuối cùng?",
-    options: [
-      "A. Thuật toán máy vector hỗ trợ (Support Vector Machine)",
-      "B. Mô hình rừng quyết định ngẫu nhiên (Random Forest)",
-      "C. Phương pháp hồi quy tuyến tính (Linear Regression)",
-      "D. Thuật toán phân cụm dữ liệu tự động (K-Means)"
-    ],
-    correct_option: "B",
-    explanation: "Random Forest là mô hình học kết hợp (ensemble learning) hoạt động bằng cách xây dựng nhiều cây quyết định trong quá trình huấn luyện và lấy trung bình dự đoán (hoặc bỏ phiếu bầu)."
-  },
-  {
-    id: "Q_MOD_C_031", module_id: "Module_C", difficulty: "Medium",
-    tags: ["supervised-learning"],
-    content: "Thuật toán tối ưu hóa Gradient Descent cập nhật trọng số $w$ theo công thức nào sau đây? (Với $\\eta$ là tốc độ học - learning rate, và $\\nabla L(w)$ là gradient của hàm mất mát).",
-    options: [
-      "A. $w = w + \\eta \\nabla L(w)$",
-      "B. $w = w - \\eta \\nabla L(w)$",
-      "C. $w = w \\times \\eta \\nabla L(w)$",
-      "D. $w = w / (\\eta \\nabla L(w))$"
-    ],
-    correct_option: "B",
-    explanation: "Để giảm thiểu hàm mất mát, chúng ta cần đi ngược hướng gradient, do đó công thức cập nhật là trừ đi lượng tỷ lệ với gradient: $w = w - \\eta \\nabla L(w)$."
-  },
-  {
-    id: "Q_MOD_C_032", module_id: "Module_C", difficulty: "Medium",
-    tags: ["nlp"],
-    content: "Kỹ thuật 'Word Embedding' (ví dụ Word2Vec, GloVe) chuyển đổi các từ trong văn bản thành dạng nào?",
-    options: [
-      "A. Một giá trị số nguyên duy nhất được gán cho từ đó dựa trên thứ tự trong từ điển.",
-      "B. Một vector số thực nhiều chiều liên tục biểu diễn mối quan hệ ngữ nghĩa giữa các từ.",
-      "C. Một chuỗi mã hóa nhị phân gồm các ký tự 0 và 1 dùng để tối ưu hóa không gian lưu trữ.",
-      "D. Một biểu đồ tần suất mô tả số lần xuất hiện của từ trong toàn bộ tập văn bản huấn luyện."
-    ],
-    correct_option: "B",
-    explanation: "Word Embedding ánh xạ các từ vào không gian vector nhiều chiều (ví dụ 100-300 chiều) sao cho các từ có ngữ nghĩa tương đồng (như 'vua' và 'hoàng đế') nằm gần nhau."
-  },
-  {
-    id: "Q_MOD_C_033", module_id: "Module_C", difficulty: "Medium",
-    tags: ["llm"],
-    content: "Kỹ thuật 'Prompt Engineering' nào hướng dẫn mô hình LLM giải quyết bài toán phức tạp bằng cách yêu cầu nó hiển thị rõ ràng các bước suy luận trung gian?",
-    options: [
-      "A. Zero-shot Prompting",
-      "B. Chain-of-Thought (CoT) Prompting",
-      "C. Few-shot Prompting",
-      "D. Negative Prompting"
-    ],
-    correct_option: "B",
-    explanation: "Chain-of-Thought (Chuỗi suy luận) yêu cầu LLM phân tích từng bước logic trước khi đưa ra đáp án cuối cùng, giúp tăng độ chính xác trong toán học và logic."
-  },
-  {
-    id: "Q_MOD_C_034", module_id: "Module_C", difficulty: "Medium",
-    tags: ["computer-vision"],
-    content: "Lớp 'Pooling' (như Max Pooling) trong kiến trúc mạng CNN có chức năng chính là gì?",
-    options: [
-      "A. Tăng số lượng kênh của ma trận đặc trưng qua các lớp ẩn.",
-      "B. Giảm kích thước không gian ma trận để hạn chế việc quá khớp.",
-      "C. Cập nhật và tinh chỉnh trực tiếp các tham số của mô hình.",
-      "D. Biến đổi trực tiếp độ phân giải của file hình ảnh đầu vào."
-    ],
-    correct_option: "B",
-    explanation: "Max Pooling giữ lại giá trị lớn nhất trong từng vùng cục bộ, giúp trích xuất các đặc trưng nổi bật nhất đồng thời giảm kích thước tính toán."
-  },
-  {
-    id: "Q_MOD_C_035", module_id: "Module_C", difficulty: "Medium",
-    tags: ["rag"],
-    content: "Trong hệ thống RAG (Retrieval-Augmented Generation), thành phần 'Vector Database' dùng để lưu trữ và truy vấn thông tin gì?",
-    options: [
-      "A. Lưu trữ mã nguồn chính và toàn bộ các cấu hình khởi tạo của mô hình ngôn ngữ lớn.",
-      "B. Lưu trữ vector biểu diễn tài liệu để tìm kiếm nội dung tương đồng ngữ nghĩa câu hỏi.",
-      "C. Lưu trữ thông tin định danh và lịch sử thực hiện giao dịch tài chính của người dùng.",
-      "D. Lưu trữ kho hình ảnh chân dung và các tệp đa phương tiện của người dùng hệ thống."
-    ],
-    correct_option: "B",
-    explanation: "Vector Database thực hiện lưu trữ các vector đại diện cho tri thức nội bộ. Khi người dùng hỏi, hệ thống chuyển câu hỏi thành vector rồi truy vấn vector gần nhất để lấy ngữ cảnh bổ sung cho LLM."
-  },
-  {
-    id: "Q_MOD_C_036", module_id: "Module_C", difficulty: "Medium",
-    tags: ["product-ux"],
-    content: "Khi thiết kế giao diện hiển thị câu trả lời từ mô hình AI tạo sinh văn bản (như ChatGPT), tại sao kiểu hiển thị 'streaming' (chữ xuất hiện từng từ) được ưa chuộng hơn hiển thị toàn bộ một lúc?",
-    options: [
-      "A. Giúp tiết kiệm đáng kể băng thông đường truyền mạng và giảm tải cho các tài nguyên máy chủ.",
-      "B. Giảm thời gian chờ nhận thức của người dùng bằng cách hiển thị ngay lập tức các từ đầu tiên.",
-      "C. Cải thiện độ chính xác và chất lượng ngữ nghĩa của các câu văn do mô hình AI tự sinh ra.",
-      "D. Định hướng người dùng đọc chậm rãi và tập trung phân tích kỹ nội dung thông tin được phản hồi."
-    ],
-    correct_option: "B",
-    explanation: "Hiển thị streaming (chunk-by-chunk) cải thiện trải nghiệm người dùng bằng cách cung cấp phản hồi hình ảnh tức thời khi mô hình bắt đầu tính toán, thay vì bắt họ nhìn vòng xoay tải dữ liệu."
-  },
-  {
-    id: "Q_MOD_C_037", module_id: "Module_C", difficulty: "Medium",
-    tags: ["unsupervised-learning"],
-    content: "Làm thế nào để xác định số lượng cụm tối ưu $K$ trong thuật toán phân cụm K-Means?",
-    options: [
-      "A. Thiết lập mặc định giá trị K bằng một nửa tổng số lượng mẫu dữ liệu đầu vào.",
-      "B. Sử dụng phương pháp đường cong cùi chỏ (Elbow) hoặc chỉ số phân tích Silhouette.",
-      "C. Thực hiện lựa chọn giá trị K hoàn toàn ngẫu nhiên thông qua gieo số ngẫu nhiên.",
-      "D. Xây dựng một mô hình hồi quy tuyến tính (Linear Regression) để tính toán tối ưu."
-    ],
-    correct_option: "B",
-    explanation: "Phương pháp Elbow vẽ đồ thị tổng sai số bình phương trong cụm (WCSS) theo K. Điểm mà đồ thị giảm chậm lại giống cùi chỏ là giá trị K tối ưu."
-  },
-  {
-    id: "Q_MOD_C_038", module_id: "Module_C", difficulty: "Medium",
-    tags: ["metrics"],
-    content: "Độ đo F1-Score là trung bình điều hòa (harmonic mean) của hai chỉ số nào?",
-    options: [
-      "A. Accuracy và Sensitivity",
-      "B. Precision và Recall",
-      "C. Specificity và Recall",
-      "D. Precision và Accuracy"
-    ],
-    correct_option: "B",
-    explanation: "F1-Score bằng $2 \\times \\frac{Precision \\times Recall}{Precision + Recall}$. F1-Score cân bằng cả sai số báo nhầm (FP) và bỏ sót (FN), rất hữu ích khi tập dữ liệu mất cân bằng."
-  },
-  {
-    id: "Q_MOD_C_039", module_id: "Module_C", difficulty: "Medium",
-    tags: ["transfer-learning"],
-    content: "Trong Transfer Learning, thuật ngữ 'Freezing' các lớp của mạng nơ-ron trước khi huấn luyện có nghĩa là gì?",
-    options: [
-      "A. Xóa bỏ hoàn toàn các lớp đó ra khỏi cấu trúc mạng nơ-ron nhằm tinh giản mô hình.",
-      "B. Giữ cố định trọng số của các lớp đó, không cập nhật chúng khi lan truyền ngược.",
-      "C. Nhân đôi tốc độ tính toán đạo hàm của các lớp được chọn trong suốt quá trình học.",
-      "D. Vận hành mô hình trong điều kiện nhiệt độ phòng máy chủ cực thấp để tránh quá nhiệt."
-    ],
-    correct_option: "B",
-    explanation: "Đóng băng (Freezing) trọng số của các lớp trích xuất đặc trưng cơ bản (những lớp đầu tiên) giúp giữ lại tri thức cũ và chỉ huấn luyện các lớp cuối phù hợp với tác vụ mới."
-  },
-  {
-    id: "Q_MOD_C_040", module_id: "Module_C", difficulty: "Medium",
-    tags: ["overfitting"],
-    content: "Kỹ thuật 'Early Stopping' ngăn chặn Overfitting bằng cách nào?",
-    options: [
-      "A. Kết thúc quá trình huấn luyện ngay khi đạt đủ số vòng lặp tối đa được thiết lập ban đầu.",
-      "B. Dừng học khi sai số kiểm định bắt đầu tăng liên tục dù sai số trên tập huấn luyện vẫn giảm.",
-      "C. Tự động ngắt hệ thống khi nhiệt độ vận hành của thiết bị phần cứng vượt ngưỡng an toàn.",
-      "D. Loại bỏ bớt một phần dữ liệu huấn luyện có độ nhiễu cao trước khi bắt đầu huấn luyện."
-    ],
-    correct_option: "B",
-    explanation: "Early Stopping theo dõi hiệu năng trên tập validation độc lập. Khi validation loss tăng lên, chứng tỏ mô hình bắt đầu học quá khớp (overfit) vào tập train, dừng học lúc này là tối ưu nhất."
-  },
-  {
-    id: "Q_MOD_C_041", module_id: "Module_C", difficulty: "Medium",
-    tags: ["llm"],
-    content: "Kỹ thuật 'Fine-tuning' (Tinh chỉnh) mô hình LLM khác với RAG (Retrieval-Augmented Generation) như thế nào?",
-    options: [
-      "A. Fine-tuning không làm thay đổi các trọng số của mô hình gốc, trong khi đó RAG thì cập nhật liên tục.",
-      "B. Fine-tuning thay đổi trọng số mô hình; RAG chỉ cung cấp ngữ cảnh bổ sung vào prompt mà không đổi trọng số.",
-      "C. RAG đòi hỏi chi phí và thời gian tính toán phản hồi chậm hơn so với phương pháp Fine-tuning gấp 100 lần.",
-      "D. Fine-tuning là kỹ thuật chỉ áp dụng cho hình ảnh, còn RAG là giải pháp chỉ thiết kế riêng cho văn bản."
-    ],
-    correct_option: "B",
-    explanation: "Fine-tuning thay đổi bản thân mô hình (học thêm luật, hành vi mới). RAG là kỹ thuật tìm kiếm ngữ cảnh rồi gửi kèm vào prompt, mô hình chỉ 'đọc' tài liệu được đưa thêm để trả lời chứ bản chất không thay đổi trọng số."
-  },
-  {
-    id: "Q_MOD_C_042", module_id: "Module_C", difficulty: "Medium",
-    tags: ["supervised-learning"],
-    content: "Trong các mạng nơ-ron sâu, hiện tượng 'Tiêu biến đạo hàm' (Vanishing Gradient) ảnh hưởng như thế nào đến việc huấn luyện mô hình và cách khắc phục nào sau đây là hiệu quả?",
-    options: [
-      "A. Làm các giá trị trọng số bùng nổ tăng dần lên vô hạn; khắc phục bằng cách giảm mạnh learning rate.",
-      "B. Làm đạo hàm lan truyền ngược triệt tiêu về 0; khắc phục bằng cách dùng hàm kích hoạt ReLU hoặc kết nối tắt.",
-      "C. Làm cho quá trình xử lý diễn ra quá nhanh dẫn đến lỗi tràn bộ nhớ; khắc phục bằng cách dùng Batch Norm.",
-      "D. Làm mô hình bị thiên lệch chỉ dự đoán duy nhất lớp đa số; khắc phục bằng cách áp dụng gom cụm K-Means."
-    ],
-    correct_option: "B",
-    explanation: "Các hàm kích hoạt như Sigmoid hoặc Tanh có đạo hàm cực đại nhỏ ($<0.25$). Khi nhân chuỗi đạo hàm qua nhiều lớp, giá trị đạo hàm giảm lũy thừa về 0. ReLU (đạo hàm = 1 khi x > 0) và kết nối tắt trong ResNet giải quyết hiệu quả vấn đề này."
-  },
-  {
-    id: "Q_MOD_C_043", module_id: "Module_C", difficulty: "Medium",
-    tags: ["nlp"],
-    content: "Trong cơ chế Attention của mạng Transformer, công thức tính Attention nào sau đây là đúng? (Với $Q, K, V$ tương ứng là các ma trận Query, Key, Value và $d_k$ là kích thước của vector key).",
-    options: [
-      "A. $\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V$",
-      "B. $\\text{Attention}(Q, K, V) = \\text{sigmoid}\\left(QK^T\\right) \\times V$",
-      "C. $\\text{Attention}(Q, K, V) = \\text{softmax}\\left(Q K V\\right)$",
-      "D. $\\text{Attention}(Q, K, V) = \\frac{Q \\cdot K}{\\sqrt{d_k}} + V$"
-    ],
-    correct_option: "A",
-    explanation: "Đây là công thức Scaled Dot-Product Attention nổi tiếng trong bài báo 'Attention Is All You Need'. Việc chia cho $\\sqrt{d_k}$ giúp giảm thiểu sự bùng nổ giá trị tích vô hướng khi số chiều lớn, giữ cho softmax hoạt động ở vùng có gradient ổn định."
-  },
-  {
-    id: "Q_MOD_C_044", module_id: "Module_C", difficulty: "Medium",
-    tags: ["computer-vision"],
-    content: "Mạng đối địch sinh tạo (GAN - Generative Adversarial Networks) bao gồm hai thành phần Generator và Discriminator. Trò chơi minimax giữa chúng được tối ưu hóa như thế nào?",
-    options: [
-      "A. Cả hai thành phần cùng phối hợp hành vi nhằm tối đa hóa một hàm mục tiêu toán học chung.",
-      "B. Generator cố gắng sinh ảnh giả đánh lừa bộ phân biệt; Discriminator cố phân biệt ảnh thật giả.",
-      "C. Generator tập trung thực hiện tác vụ phân loại hình ảnh, còn Discriminator tập sinh dữ liệu ảnh.",
-      "D. Hai phân hệ này chạy song song độc lập và hoàn toàn không có sự tương tác hay truyền tin cho nhau."
-    ],
-    correct_option: "B",
-    explanation: "GAN hoạt động như một trò chơi hai người có tổng bằng không. Generator sinh ảnh giả G(z) từ nhiễu z, Discriminator D(x) chấm điểm độ thật. Generator tối thiểu hóa $\\log(1 - D(G(z)))$ trong khi Discriminator tối đa hóa $\\log D(x) + \\log(1 - D(G(z)))$."
-  },
-  {
-    id: "Q_MOD_C_045", module_id: "Module_C", difficulty: "Medium",
-    tags: ["llm"],
-    content: "Khi huấn luyện các mô hình ngôn ngữ lớn (LLM), kỹ thuật RLHF (Reinforcement Learning from Human Feedback) đóng vai trò gì trong giai đoạn sau tiền huấn luyện?",
-    options: [
-      "A. Thúc đẩy tốc độ đọc và xử lý các token đầu vào của mô hình trong quá trình suy luận thực tế.",
-      "B. Căn chỉnh câu trả lời theo tiêu chuẩn an toàn, hữu ích của người dùng nhờ mô hình phần thưởng.",
-      "C. Thực hiện nén kích thước lưu trữ và giảm số lượng tham số để mô hình chạy được trên di động.",
-      "D. Tự động sinh thêm các đoạn văn bản thô chất lượng cao để làm giàu tập dữ liệu huấn luyện gốc."
-    ],
-    correct_option: "B",
-    explanation: "Sau khi học dự đoán từ (Pre-training) và học theo hướng dẫn (SFT), LLM có thể sinh nội dung độc hại hoặc vô ích. RLHF căn chỉnh mô hình thông qua phản hồi từ con người để đưa ra các câu trả lời tối ưu và an toàn nhất."
-  },
-  {
-    id: "Q_MOD_C_046", module_id: "Module_C", difficulty: "Medium",
-    tags: ["metrics"],
-    content: "Chỉ số AUC-ROC (Area Under the Receiver Operating Characteristic curve) thể hiện năng lực nào của mô hình phân loại nhị phân?",
-    options: [
-      "A. Đo lường chính xác hiệu năng phân loại tại một ngưỡng phân tách quyết định cố định bằng $0.5$.",
-      "B. Đo năng lực phân tách lớp âm tính và dương tính của mô hình trên toàn bộ các ngưỡng có thể có.",
-      "C. Phản ánh tỷ số giữa tổng các mẫu được dự đoán chính xác trên tổng thời gian thực thi mô hình.",
-      "D. Biểu thị độ rộng phân tán của hàm mật độ xác suất chuẩn đối với các biến đặc trưng dữ liệu."
-    ],
-    correct_option: "B",
-    explanation: "ROC curve biểu diễn tỷ lệ True Positive Rate theo False Positive Rate tại các ngưỡng khác nhau. AUC (diện tích dưới đường cong) nằm trong $[0, 1]$. AUC càng gần 1 chứng tỏ mô hình phân loại cực tốt mà không phụ thuộc vào việc chọn ngưỡng ban đầu."
-  },
-  {
-    id: "Q_MOD_C_047", module_id: "Module_C", difficulty: "Medium",
-    tags: ["product-ux"],
-    content: "Khi thiết kế một sản phẩm AI phát hiện tin giả (Fake News Detection) hỗ trợ người kiểm duyệt nội dung mạng xã hội, làm sao để giải quyết vấn đề UX về niềm tin và tính minh bạch (Transparency) của AI?",
-    options: [
-      "A. Chỉ hiển thị trực tiếp kết quả phân loại Thật hoặc Giả và không cung cấp thêm bất kỳ lý do gì.",
-      "B. Hiển thị độ tin cậy, highlight từ khóa nghi vấn và dẫn link tới nguồn đối chứng độc lập.",
-      "C. Chọn giải pháp ẩn toàn bộ các kết quả dự đoán từ mô hình AI để tránh gây hoang mang cho độc giả.",
-      "D. Cam kết và tuyên bố với người sử dụng rằng mô hình AI đạt độ chính xác tuyệt đối trong mọi trường hợp."
-    ],
-    correct_option: "B",
-    explanation: "Sản phẩm AI cần giải thích được quyết định của mình (Explainability). Việc highlight bằng chứng và hiển thị độ tự tin giúp con người có cơ sở để đánh giá lại và tăng sự hợp tác người - máy."
-  },
-  {
-    id: "Q_MOD_C_048", module_id: "Module_C", difficulty: "Medium",
-    tags: ["rag"],
-    content: "Trong kiến trúc RAG nâng cao (Advanced RAG), kỹ thuật 'Query Rewriting' hoặc 'Query Expansion' giải quyết vấn đề gì?",
-    options: [
-      "A. Tự động chuyển ngữ câu hỏi đầu vào sang ngôn ngữ phổ biến để hệ thống truy vấn thông tin nhanh hơn.",
-      "B. Diễn đạt lại hoặc mở rộng câu hỏi của người dùng để cải thiện độ chính xác khi tìm kiếm trong vector DB.",
-      "C. Thực hiện kiểm duyệt và tự động loại bỏ các câu hỏi quá phức tạp hoặc nằm ngoài phạm vi hỗ trợ.",
-      "D. Chuyển đổi định dạng câu hỏi từ ký tự văn bản sang dạng sóng âm thanh trước khi thực hiện tìm kiếm."
-    ],
-    correct_option: "B",
-    explanation: "Người dùng thường đặt câu hỏi ngắn hoặc mơ hồ. Query Rewriting sử dụng LLM để diễn đạt lại câu hỏi theo nhiều hướng khác nhau, tăng khả năng khớp ngữ nghĩa với tài liệu gốc trong vector database."
-  },
-  {
-    id: "Q_MOD_C_049", module_id: "Module_C", difficulty: "Medium",
-    tags: ["overfitting"],
-    content: "Kỹ thuật Regularization nào sau đây (được gọi là L1 Regularization) thêm số hạng phạt bằng tổng giá trị tuyệt đối của các trọng số vào hàm mất mát, giúp tạo ra ma trận trọng số thưa thớt (sparse weights)?",
-    options: [
-      "A. Ridge Regularization",
-      "B. Lasso Regularization",
-      "C. Dropout",
-      "D. Batch Normalization"
-    ],
-    correct_option: "B",
-    explanation: "Lasso Regression (L1) thêm lượng phạt $\\lambda \\sum |w_i|$ vào hàm loss. Nó có xu hướng đẩy các trọng số của đặc trưng không quan trọng về bằng đúng 0, hoạt động như một cơ chế chọn lọc đặc trưng tự động."
-  },
-  {
-    id: "Q_MOD_C_050", module_id: "Module_C", difficulty: "Medium",
-    tags: ["transfer-learning"],
-    content: "Phương pháp 'Parameter-Efficient Fine-Tuning' (PEFT), tiêu biểu là LoRA (Low-Rank Adaptation), hoạt động dựa trên nguyên lý nào để tiết kiệm tài nguyên tính toán?",
-    options: [
-      "A. Thực hiện cắt tỉa bớt $90\\%$ số lượng neuron không quan trọng trong mô hình gốc trước khi thực thi.",
-      "B. Đóng băng trọng số gốc và chỉ huấn luyện thêm cặp ma trận phân rã hạng thấp song song các lớp cũ.",
-      "C. Chuyển đổi và chỉ chạy mô hình trên các kiểu dữ liệu số nguyên độ chính xác thấp ở dạng 4-bit.",
-      "D. Thay thế toàn bộ các cơ chế tự chú ý (Self-Attention) trong Transformer bằng các lớp tích chập CNN."
-    ],
-    correct_option: "B",
-    explanation: "LoRA giả định sự cập nhật trọng số $\\Delta W$ có 'hạng nội tại' thấp. Nó biểu diễn $\\Delta W = B \\times A$ với B cỡ $d \\times r$ và A cỡ $r \\times k$ ($r \\ll d$). Chỉ có A và B được cập nhật, tiết kiệm đáng kể bộ nhớ GPU khi huấn luyện LLM."
-  },
-  {
-    id: "Q_MOD_C_051", module_id: "Module_C", difficulty: "Easy",
-    tags: ["machine-learning", "supervised-learning"],
-    content: "Trong học máy, bài toán nào sau đây là bài toán hồi quy (Regression)?",
-    options: [
-      "A. Dự đoán xem một email nhận được có phải là thư rác hay không.",
-      "B. Dự đoán nhiệt độ trung bình của ngày mai dựa trên dữ liệu cũ.",
-      "C. Phân nhóm khách hàng siêu thị thành các phân khúc tiêu dùng.",
-      "D. Nhận diện khuôn mặt của nhân viên để tự động mở cửa ra vào."
-    ],
-    correct_option: "B",
-    explanation: "Bài toán hồi quy nhằm dự đoán một giá trị số thực liên tục (như nhiệt độ). Các phương án còn lại là phân loại (A, D) hoặc phân cụm (C)."
-  },
-  {
-    id: "Q_MOD_C_052", module_id: "Module_C", difficulty: "Easy",
-    tags: ["computer-vision"],
-    content: "Ứng dụng nào sau đây KHÔNG phải là ứng dụng trực tiếp của lĩnh vực Thị giác máy tính (Computer Vision)?",
-    options: [
-      "A. Tự động phát hiện lỗi sản phẩm trên băng chuyền nhà máy.",
-      "B. Phân tích tần số âm thanh để nhận diện người đang nói.",
-      "C. Nhận diện biển số xe từ hình ảnh chụp của camera đường.",
-      "D. Phân đoạn tế bào ung thư từ ảnh chụp cộng hưởng từ MRI."
-    ],
-    correct_option: "B",
-    explanation: "Phân tích âm thanh để nhận diện người nói thuộc lĩnh vực Xử lý âm thanh (Audio Processing) hoặc Nhận dạng giọng nói (Speech Recognition), không thuộc thị giác máy tính."
-  },
-  {
-    id: "Q_MOD_C_053", module_id: "Module_C", difficulty: "Easy",
-    tags: ["nlp"],
-    content: "Trong xử lý ngôn ngữ tự nhiên (NLP), tác vụ chuyển dịch tự động văn bản từ ngôn ngữ này sang ngôn ngữ khác được gọi là:",
-    options: [
-      "A. Dịch máy (Machine Translation)",
-      "B. Phân tích cảm xúc (Sentiment)",
-      "C. Nhận diện thực thể (NER)",
-      "D. Tóm tắt văn bản (Summarization)"
-    ],
-    correct_option: "A",
-    explanation: "Dịch máy (Machine Translation) là tác vụ sử dụng máy tính để dịch tự động văn bản hoặc giọng nói từ ngôn ngữ này sang ngôn ngữ khác."
-  },
-  {
-    id: "Q_MOD_C_054", module_id: "Module_C", difficulty: "Easy",
-    tags: ["product-metrics"],
-    content: "Khi đánh giá hiệu quả của một hệ thống chatbot AI hỗ trợ khách hàng, chỉ số 'CSAT' (Customer Satisfaction) đo lường điều gì?",
-    options: [
-      "A. Tốc độ phản hồi trung bình của hệ thống chatbot.",
-      "B. Mức độ hài lòng của khách hàng đối với dịch vụ.",
-      "C. Tỷ lệ phần trăm các câu hỏi chatbot tự giải quyết.",
-      "D. Tổng số lượng tin nhắn trao đổi trong một phiên."
-    ],
-    correct_option: "B",
-    explanation: "CSAT (Customer Satisfaction Score) là chỉ số đo lường mức độ hài lòng của khách hàng đối với một dịch vụ hoặc trải nghiệm cụ thể."
-  },
-  {
-    id: "Q_MOD_C_055", module_id: "Module_C", difficulty: "Easy",
-    tags: ["llm"],
-    content: "Trong ngữ cảnh sử dụng các API của mô hình ngôn ngữ lớn (LLM), 'token' thường được tính phí dựa trên:",
-    options: [
-      "A. Số lượng ký tự chữ và số xuất hiện trong prompt.",
-      "B. Cả số lượng token đầu vào và số token đầu ra sinh ra.",
-      "C. Tổng thời gian máy chủ xử lý để trả lời câu hỏi.",
-      "D. Dung lượng lưu trữ của tệp văn bản gửi lên hệ thống."
-    ],
-    correct_option: "B",
-    explanation: "Các nhà cung cấp API LLM thường tính phí dựa trên cả số lượng token đầu vào (prompt tokens) và số lượng token đầu ra (completion tokens)."
-  },
-  {
-    id: "Q_MOD_C_056", module_id: "Module_C", difficulty: "Easy",
-    tags: ["machine-learning"],
-    content: "Trong học máy, tập dữ liệu nào sau đây được sử dụng để trực tiếp điều chỉnh các tham số (trọng số) của mô hình?",
-    options: [
-      "A. Tập huấn luyện (Training Set)",
-      "B. Tập kiểm định (Validation Set)",
-      "C. Tập kiểm thử (Test Set)",
-      "D. Tập dữ liệu ngoại lai (Outliers)"
-    ],
-    correct_option: "A",
-    explanation: "Tập huấn luyện (Training Set) được mô hình sử dụng trực tiếp để cập nhật các trọng số trong quá trình học."
-  },
-  {
-    id: "Q_MOD_C_057", module_id: "Module_C", difficulty: "Easy",
-    tags: ["product-ux"],
-    content: "Khi thiết kế một ứng dụng AI tạo ảnh nghệ thuật từ văn bản, yếu tố nào giúp giảm cảm giác sốt ruột của người dùng khi chờ AI xử lý?",
-    options: [
-      "A. Hiển thị thông báo yêu cầu người dùng kiên nhẫn chờ.",
-      "B. Hiển thị thanh tiến trình tiến độ hoặc hình ảnh mờ dần.",
-      "C. Ẩn hoàn toàn giao diện tải để người dùng làm việc khác.",
-      "D. Tự động chuyển hướng người dùng sang trang quảng cáo."
-    ],
-    correct_option: "B",
-    explanation: "Hiển thị thanh tiến trình (progress bar) hoặc quá trình hiển thị ảnh rõ nét dần giúp giảm thời gian chờ nhận thức (perceived latency) và cải thiện UX."
-  },
-  {
-    id: "Q_MOD_C_058", module_id: "Module_C", difficulty: "Easy",
-    tags: ["nlp"],
-    content: "Trong quá trình tiền xử lý văn bản tiếng Anh cho NLP, việc đưa các từ như 'running', 'runs', 'ran' về từ gốc 'run' được gọi là:",
-    options: [
-      "A. Phân đoạn câu (Sentence Segmentation)",
-      "B. Chuẩn hóa dạng gốc (Stemming/Lemmatization)",
-      "C. Loại bỏ các từ dừng (Stopwords Removal)",
-      "D. Trích xuất đặc trưng (Feature Extraction)"
-    ],
-    correct_option: "B",
-    explanation: "Stemming và Lemmatization là các kỹ thuật biến đổi các dạng khác nhau của một từ về dạng gốc của nó để giảm kích thước từ vựng."
-  },
-  {
-    id: "Q_MOD_C_059", module_id: "Module_C", difficulty: "Easy",
-    tags: ["computer-vision"],
-    content: "Thuật ngữ 'Pixel' trong xử lý hình ảnh kỹ thuật số đại diện cho điều gì?",
-    options: [
-      "A. Tên một thuật toán nhận diện vật thể tự động.",
-      "B. Đơn vị nhỏ nhất của một bức ảnh kỹ thuật số.",
-      "C. Thời gian phản hồi của cảm biến máy ảnh.",
-      "D. Kích thước vật lý của một bức ảnh in ra."
-    ],
-    correct_option: "B",
-    explanation: "Pixel (điểm ảnh) là đơn vị nhỏ nhất cấu thành nên một bức ảnh kỹ thuật số, chứa thông tin về màu sắc và độ sáng."
-  },
-  {
-    id: "Q_MOD_C_060", module_id: "Module_C", difficulty: "Easy",
-    tags: ["machine-learning"],
-    content: "Bài toán nào sau đây thuộc nhóm học máy không giám sát (Unsupervised Learning)?",
-    options: [
-      "A. Phân loại email là thư rác hay thư thông thường.",
-      "B. Dự báo doanh số bán hàng của tháng tiếp theo.",
-      "C. Phân nhóm các khách hàng dựa trên hành vi mua.",
-      "D. Nhận diện các ký tự viết tay từ ảnh quét số."
-    ],
-    correct_option: "C",
-    explanation: "Phân nhóm khách hàng (Clustering) không cần gán nhãn trước cho dữ liệu đầu vào, do đó thuộc nhóm học máy không giám sát."
-  },
-  {
-    id: "Q_MOD_C_061", module_id: "Module_C", difficulty: "Easy",
-    tags: ["llm"],
-    content: "Trong các mô hình sinh văn bản, hiện tượng AI đưa ra các thông tin hoàn toàn sai lệch nhưng được viết rất thuyết phục gọi là:",
-    options: [
-      "A. Quá khớp dữ liệu (Overfitting)",
-      "B. Sự ảo tưởng (Hallucination)",
-      "C. Tiêu biến gradient (Vanishing)",
-      "D. Độ lệch hệ thống (System Bias)"
-    ],
-    correct_option: "B",
-    explanation: "Ảo tưởng (Hallucination) là hiện tượng mô hình ngôn ngữ lớn sinh ra các thông tin không có thực hoặc sai lệch so với nguồn dữ liệu chuẩn."
-  },
-  {
-    id: "Q_MOD_C_062", module_id: "Module_C", difficulty: "Easy",
-    tags: ["product-metrics"],
-    content: "Để đánh giá xem người dùng có thực sự tương tác tích cực với tính năng gợi ý của AI hay không, chỉ số nào sau đây là phù hợp nhất?",
-    options: [
-      "A. Tỷ lệ nhấp chuột vào gợi ý (Click-Through Rate - CTR)",
-      "B. Tổng số lượng gợi ý được hệ thống sinh ra mỗi ngày.",
-      "C. Dung lượng bộ nhớ RAM của máy chủ chạy mô hình gợi ý.",
-      "D. Số lần cập nhật cơ sở dữ liệu sản phẩm trong một tuần."
-    ],
-    correct_option: "A",
-    explanation: "CTR đo lường tỷ lệ người dùng nhấp vào gợi ý trên tổng số lần gợi ý hiển thị, phản ánh trực tiếp mức độ quan tâm của họ."
-  },
-  {
-    id: "Q_MOD_C_063", module_id: "Module_C", difficulty: "Easy",
-    tags: ["ethics"],
-    content: "Khi triển khai hệ thống AI tuyển dụng, nếu dữ liệu huấn luyện lịch sử chỉ chứa hồ sơ của nam giới, hệ thống có nguy cơ cao gặp lỗi gì?",
-    options: [
-      "A. Mô hình sẽ chạy chậm hơn do thiếu đa dạng dữ liệu.",
-      "B. Định kiến và thiên vị giới tính (Bias) đối với nữ giới.",
-      "C. Quá khớp mô hình do dữ liệu huấn luyện quá phức tạp.",
-      "D. Tiêu biến gradient ở các lớp sâu của mạng nơ-ron."
-    ],
-    correct_option: "B",
-    explanation: "Nếu dữ liệu huấn luyện bị mất cân bằng hoặc chứa định kiến lịch sử, mô hình AI sẽ học theo định kiến đó, dẫn đến thiên vị giới tính (Bias)."
-  },
-  {
-    id: "Q_MOD_C_064", module_id: "Module_C", difficulty: "Easy",
-    tags: ["nlp"],
-    content: "Trong xử lý ngôn ngữ tự nhiên, từ viết tắt 'NLP' đại diện cho thuật ngữ tiếng Anh nào sau đây?",
-    options: [
-      "A. Natural Language Processing",
-      "B. Network Link Protocol",
-      "C. Neural Logic Program",
-      "D. National Language Project"
-    ],
-    correct_option: "A",
-    explanation: "NLP là viết tắt của Natural Language Processing, tức Xử lý ngôn ngữ tự nhiên."
-  },
-  {
-    id: "Q_MOD_C_065", module_id: "Module_C", difficulty: "Easy",
-    tags: ["computer-vision"],
-    content: "Tác vụ nào sau đây xác định ranh giới chi tiết của từng vật thể ở mức độ điểm ảnh (pixel) thay vì dùng khung hình chữ nhật?",
-    options: [
-      "A. Phân loại hình ảnh (Image Classification)",
-      "B. Phân đoạn hình ảnh (Image Segmentation)",
-      "C. Phát hiện vật thể (Object Detection)",
-      "D. Trích xuất đặc trưng (Feature Extraction)"
-    ],
-    correct_option: "B",
-    explanation: "Image Segmentation (Phân đoạn hình ảnh) phân loại từng điểm ảnh (pixel) thuộc về vật thể nào, xác định ranh giới chi tiết của vật thể."
-  },
-  {
-    id: "Q_MOD_C_066", module_id: "Module_C", difficulty: "Easy",
-    tags: ["machine-learning"],
-    content: "Trong mô hình học máy, các tham số như tốc độ học (learning rate) hay số lượng cây quyết định được gọi chung là:",
-    options: [
-      "A. Trọng số mô hình (Model Weights)",
-      "B. Siêu tham số (Hyperparameters)",
-      "C. Hàm mất mát (Loss Functions)",
-      "D. Nhãn dữ liệu (Data Labels)"
-    ],
-    correct_option: "B",
-    explanation: "Siêu tham số (Hyperparameters) là các tham số được thiết lập trước quá trình huấn luyện mô hình để điều khiển quá trình học."
-  },
-  {
-    id: "Q_MOD_C_067", module_id: "Module_C", difficulty: "Easy",
-    tags: ["product-ux"],
-    content: "Khi giới thiệu một tính năng AI mới cho người dùng, cách tiếp cận nào về mặt UX giúp họ dễ dàng tiếp nhận nhất?",
-    options: [
-      "A. Hiển thị bảng giải thích các thuật toán toán học sâu.",
-      "B. Hướng dẫn từng bước trực quan kèm theo ví dụ cụ thể.",
-      "C. Ép buộc người dùng sử dụng và khóa các tính năng cũ.",
-      "D. Yêu cầu người dùng tự đọc tài liệu kỹ thuật của API."
-    ],
-    correct_option: "B",
-    explanation: "Hướng dẫn trực quan (onboarding) giúp người dùng hiểu giá trị và cách dùng tính năng AI mà không bị quá tải thông tin."
-  },
-  {
-    id: "Q_MOD_C_068", module_id: "Module_C", difficulty: "Easy",
-    tags: ["nlp"],
-    content: "Tác vụ nào dưới đây xác định các từ chỉ tên người, địa danh, hoặc tổ chức trong một câu văn bản?",
-    options: [
-      "A. Nhận diện thực thể liên kết (Entity Linking)",
-      "B. Nhận diện thực thể tên (Named Entity Recognition)",
-      "C. Gán nhãn từ loại (Part-of-Speech Tagging)",
-      "D. Phân tích cú pháp câu (Dependency Parsing)"
-    ],
-    correct_option: "B",
-    explanation: "Named Entity Recognition (NER) là tác vụ định vị và phân loại các thực thể có tên trong văn bản thành các nhóm như người, tổ chức, địa điểm."
-  },
-  {
-    id: "Q_MOD_C_069", module_id: "Module_C", difficulty: "Easy",
-    tags: ["machine-learning"],
-    content: "Mục tiêu chính của việc chia dữ liệu thành tập huấn luyện (Train) và tập kiểm thử (Test) là để làm gì?",
-    options: [
-      "A. Tăng dung lượng lưu trữ của cơ sở dữ liệu huấn luyện.",
-      "B. Đánh giá khả năng khái quát hóa của mô hình trên dữ liệu mới.",
-      "C. Đảm bảo mô hình đạt độ chính xác $100\\%$ trên tập Train.",
-      "D. Rút ngắn thời gian huấn luyện mô hình trên máy tính."
-    ],
-    correct_option: "B",
-    explanation: "Chia tập dữ liệu giúp kiểm tra khả năng dự đoán của mô hình trên dữ liệu chưa từng thấy (Test set), tránh tình trạng học vẹt."
-  },
-  {
-    id: "Q_MOD_C_070", module_id: "Module_C", difficulty: "Easy",
-    tags: ["product-metrics"],
-    content: "Chỉ số 'Precision' trong mô hình phân loại email rác đo lường điều gì?",
-    options: [
-      "A. Tỷ lệ email rác thực tế được mô hình nhận diện chính xác.",
-      "B. Tỷ lệ email được dự đoán là rác thực sự là email rác.",
-      "C. Tốc độ trung bình để phân loại một email của hệ thống.",
-      "D. Tổng số lượng email rác được người dùng báo cáo thủ công."
-    ],
-    correct_option: "B",
-    explanation: "Precision (Độ chính xác) đo tỷ lệ mẫu dự đoán dương tính thực sự là dương tính thực tế: $Precision = \\frac{TP}{TP + FP}$."
-  },
-  {
-    id: "Q_MOD_C_071", module_id: "Module_C", difficulty: "Medium",
-    tags: ["machine-learning", "metrics"],
-    content: "Một mô hình phân loại bệnh có kết quả như sau: Trong 100 người thực sự mắc bệnh, mô hình dự đoán đúng 90 người mắc bệnh. Chỉ số 0.9 ($90\\%$) này đại diện cho chỉ số nào?",
-    options: [
-      "A. Độ chính xác dương tính (Precision)",
-      "B. Độ nhạy của mô hình phân loại (Recall / Sensitivity)",
-      "C. Độ đặc hiệu của mô hình (Specificity)",
-      "D. Chỉ số cân bằng hài hòa (F1-Score)"
-    ],
-    correct_option: "B",
-    explanation: "Recall đo tỷ lệ phát hiện được các trường hợp dương tính thực tế: $Recall = \\frac{TP}{TP + FN} = \\frac{90}{100} = 0.9$."
-  },
-  {
-    id: "Q_MOD_C_072", module_id: "Module_C", difficulty: "Medium",
-    tags: ["computer-vision"],
-    content: "Kỹ thuật tăng cường dữ liệu hình ảnh (Image Data Augmentation) nào dưới đây giúp cải thiện tính bất biến đối với hướng quay của vật thể trong mô hình CNN?",
-    options: [
-      "A. Thay đổi ngẫu nhiên độ sáng và độ tương phản của ảnh.",
-      "B. Thực hiện xoay ngẫu nhiên (Rotation) và lật ảnh (Flipping).",
-      "C. Cắt tỉa bớt kích thước biên ngoài của bức ảnh gốc.",
-      "D. Chuẩn hóa phân phối giá trị các pixel ảnh về $[0, 1]$."
-    ],
-    correct_option: "B",
-    explanation: "Xoay và lật ảnh giúp mô hình CNN học được các đặc trưng độc lập với hướng xoay và vị trí của vật thể trong không gian ảnh."
-  },
-  {
-    id: "Q_MOD_C_073", module_id: "Module_C", difficulty: "Medium",
-    tags: ["nlp"],
-    content: "Trong kiến trúc mạng nơ-ron tuần hoàn (RNN), hiện tượng các đạo hàm bị giảm lũy thừa về 0 khi lan truyền ngược qua các bước thời gian dài được gọi là gì và mạng nào giải quyết được?",
-    options: [
-      "A. Lỗi bùng nổ đạo hàm (Exploding Gradient); giải quyết bằng mạng CNN.",
-      "B. Lỗi tiêu biến đạo hàm (Vanishing Gradient); giải quyết bằng LSTM.",
-      "C. Lỗi quá khớp dữ liệu huấn luyện; giải quyết bằng mô hình hồi quy.",
-      "D. Lỗi phân tách ma trận trọng số; giải quyết bằng thuật toán KNN."
-    ],
-    correct_option: "B",
-    explanation: "RNN truyền thống gặp lỗi tiêu biến đạo hàm khi lưu trữ thông tin dài hạn. LSTM (Long Short-Term Memory) với các cổng thông tin giải quyết vấn đề này."
-  },
-  {
-    id: "Q_MOD_C_074", module_id: "Module_C", difficulty: "Medium",
-    tags: ["product-ux"],
-    content: "Một tính năng AI gợi ý sản phẩm hiển thị thông báo: 'Sản phẩm này được gợi ý dựa trên lịch sử mua sách lịch sử của bạn'. Thiết kế này áp dụng nguyên lý UX nào?",
-    options: [
-      "A. Tăng tính bảo mật thông tin cá nhân của khách hàng.",
-      "B. Giải thích được quyết định của AI (AI Explainability).",
-      "C. Tối ưu hóa thời gian phản hồi của thuật toán gợi ý.",
-      "D. Giảm dung lượng truyền tải dữ liệu của trang web."
-    ],
-    correct_option: "B",
-    explanation: "Giải thích lý do gợi ý giúp xây dựng niềm tin của người dùng đối với các dự đoán của AI, thuộc nhóm thiết kế giải thích được (Explainable AI)."
-  },
-  {
-    id: "Q_MOD_C_075", module_id: "Module_C", difficulty: "Medium",
-    tags: ["llm"],
-    content: "Khi sử dụng mô hình LLM thông qua API, việc tăng tham số 'Top-P' (Nucleus Sampling) từ $0.1$ lên $0.9$ sẽ ảnh hưởng như thế nào đến văn bản sinh ra?",
-    options: [
-      "A. Giảm kích thước bộ nhớ cần thiết để sinh ra một từ.",
-      "B. Tăng tính đa dạng và độ sáng tạo của văn bản đầu ra.",
-      "C. Làm cho câu trả lời ngắn gọn và nhất quán logic hơn.",
-      "D. Đẩy nhanh thời gian phản hồi trung bình của máy chủ."
-    ],
-    correct_option: "B",
-    explanation: "Top-P giới hạn việc chọn từ tiếp theo trong nhóm các từ có tổng xác suất tích lũy đạt P. P tăng lên $0.9$ cho phép mô hình cân nhắc nhiều từ ứng viên hơn, tăng tính đa dạng."
-  },
-  {
-    id: "Q_MOD_C_076", module_id: "Module_C", difficulty: "Medium",
-    tags: ["machine-learning"],
-    content: "Trong các thuật toán phân loại, mô hình Support Vector Machine (SVM) tìm kiếm đường ranh giới quyết định (Decision Boundary) dựa trên tiêu chí nào?",
-    options: [
-      "A. Tối thiểu hóa tổng bình phương các sai số dự đoán.",
-      "B. Tối đa hóa lề (Margin) giữa các điểm hỗ trợ gần nhất.",
-      "C. Tính toán xác suất hậu nghiệm dựa trên định lý Bayes.",
-      "D. Xây dựng cấu trúc cây quyết định có độ lợi thông tin."
-    ],
-    correct_option: "B",
-    explanation: "SVM tìm một siêu phẳng phân tách các lớp sao cho khoảng cách lề (Margin) giữa các điểm hỗ trợ (Support Vectors) gần nhất của hai lớp là lớn nhất."
-  },
-  {
-    id: "Q_MOD_C_077", module_id: "Module_C", difficulty: "Medium",
-    tags: ["rag"],
-    content: "Trong quy trình xây dựng hệ thống RAG, tại sao chúng ta cần chia tài liệu văn bản dài thành các đoạn nhỏ (Chunking) trước khi tạo vector embedding?",
-    options: [
-      "A. Để giảm dung lượng lưu trữ của cơ sở dữ liệu quan hệ.",
-      "B. Giúp giữ ngữ cảnh tập trung và khớp chính xác hơn khi tìm kiếm.",
-      "C. Bắt buộc để mô hình LLM có thể đọc được tài liệu gốc.",
-      "D. Để ẩn đi các thông tin nhạy cảm của tài liệu gốc."
-    ],
-    correct_option: "B",
-    explanation: "Chia nhỏ tài liệu (Chunking) giúp các đoạn văn bản giữ nội dung tập trung vào một chủ đề cụ thể, tăng hiệu năng tìm kiếm ngữ nghĩa."
-  },
-  {
-    id: "Q_MOD_C_078", module_id: "Module_C", difficulty: "Medium",
-    tags: ["product-metrics"],
-    content: "Một công ty muốn đo lường tỷ lệ người dùng tiếp tục sử dụng ứng dụng AI sau 30 ngày kể từ ngày cài đặt. Chỉ số này được gọi là gì?",
-    options: [
-      "A. Tỷ lệ chuyển đổi (Conversion Rate)",
-      "B. Tỷ lệ giữ chân người dùng (Retention Rate)",
-      "C. Tỷ lệ rời bỏ dịch vụ (Churn Rate)",
-      "D. Tốc độ tăng trưởng người dùng (Growth Rate)"
-    ],
-    correct_option: "B",
-    explanation: "Retention Rate (Tỷ lệ giữ chân) đo lường phần trăm người dùng tiếp tục hoạt động trong hệ thống sau một khoảng thời gian nhất định."
-  },
-  {
-    id: "Q_MOD_C_079", module_id: "Module_C", difficulty: "Medium",
-    tags: ["machine-learning"],
-    content: "Khi tập dữ liệu huấn luyện gặp hiện tượng mất cân bằng lớp nghiêm trọng (ví dụ $99\\%$ bình thường, $1\\%$ gian lận), phương pháp 'SMOTE' giải quyết bằng cách nào?",
-    options: [
-      "A. Loại bỏ ngẫu nhiên các mẫu thuộc lớp đa số để cân bằng.",
-      "B. Tự động sinh thêm mẫu giả cho lớp thiểu số bằng cách nội suy.",
-      "C. Tăng hệ số phạt sai số đối với mẫu thuộc lớp đa số.",
-      "D. Sử dụng mạng nơ-ron tích chập để tự trích xuất đặc trưng."
-    ],
-    correct_option: "B",
-    explanation: "SMOTE (Synthetic Minority Over-sampling Technique) sinh ra các mẫu dữ liệu mới cho lớp thiểu số bằng cách nội suy giữa các điểm dữ liệu lân cận."
-  },
-  {
-    id: "Q_MOD_C_080", module_id: "Module_C", difficulty: "Medium",
-    tags: ["computer-vision"],
-    content: "Trong mô hình phát hiện vật thể YOLO, chỉ số IoU (Intersection over Union) được sử dụng để làm gì?",
-    options: [
-      "A. Tăng tốc độ tính toán các lớp tích chập của mạng CNN.",
-      "B. Đo mức độ chồng lấp giữa khung dự đoán và khung thực tế.",
-      "C. Xác định nhãn phân loại chính xác nhất cho vật thể.",
-      "D. Giảm độ phân giải hình ảnh đầu vào của mô hình học."
-    ],
-    correct_option: "B",
-    explanation: "IoU đo tỷ lệ diện tích phần giao nhau trên phần hợp nhau của khung dự đoán (predicted bounding box) và khung thực tế (ground truth box)."
-  },
-  {
-    id: "Q_MOD_C_081", module_id: "Module_C", difficulty: "Medium",
-    tags: ["nlp"],
-    content: "Phương pháp biểu diễn văn bản TF-IDF đánh giá tầm quan trọng của một từ trong một văn bản dựa trên những yếu tố nào?",
-    options: [
-      "A. Tổng số lượng ký tự cấu thành nên từ đó trong văn bản gốc.",
-      "B. Tần suất xuất hiện trong văn bản và nghịch đảo tần suất tài liệu.",
-      "C. Vị trí xuất hiện của từ ở đầu hay ở cuối câu văn bản.",
-      "D. Mối quan hệ ngữ nghĩa của từ đó đối với các từ xung quanh."
-    ],
-    correct_option: "B",
-    explanation: "TF-IDF kết hợp tần suất xuất hiện của từ trong tài liệu (TF) và nghịch đảo tần suất xuất hiện của từ đó trong toàn bộ tập tài liệu (IDF)."
-  },
-  {
-    id: "Q_MOD_C_082", module_id: "Module_C", difficulty: "Medium",
-    tags: ["product-ux"],
-    content: "Khi AI thực hiện dự đoán sai lệch đối với hành vi người dùng, cơ chế UX 'Implicit Feedback' (phản hồi ngầm định) thu thập dữ liệu bằng cách nào?",
-    options: [
-      "A. Hiển thị thông báo yêu cầu người dùng đánh giá 5 sao.",
-      "B. Theo dõi hành vi tắt gợi ý hoặc bỏ qua không nhấp chọn.",
-      "C. Gửi email khảo sát ý kiến khách hàng hàng tuần.",
-      "D. Yêu cầu người dùng viết báo cáo lỗi gửi về bộ phận hỗ trợ."
-    ],
-    correct_option: "B",
-    explanation: "Phản hồi ngầm định (Implicit Feedback) thu thập thông tin qua hành vi tự nhiên của người dùng (như bỏ qua gợi ý, thời gian xem) thay vì yêu cầu đánh giá trực tiếp."
-  },
-  {
-    id: "Q_MOD_C_083", module_id: "Module_C", difficulty: "Medium",
-    tags: ["machine-learning"],
-    content: "Kỹ thuật kiểm định chéo K-Fold Cross-Validation giải quyết vấn đề gì khi đánh giá hiệu năng mô hình học máy?",
-    options: [
-      "A. Giúp giảm thiểu thời gian huấn luyện mô hình trên máy chủ.",
-      "B. Tránh việc đánh giá mô hình bị thiên lệch do chia tập Train/Test.",
-      "C. Tăng số lượng tham số học được của các mạng nơ-ron sâu.",
-      "D. Khắc phục lỗi tiêu biến đạo hàm khi lan truyền ngược."
-    ],
-    correct_option: "B",
-    explanation: "K-Fold chia dữ liệu thành K phần, huấn luyện K lần trên K-1 phần và kiểm thử trên phần còn lại. Điều này giúp đánh giá khách quan và ổn định hiệu năng mô hình."
-  },
-  {
-    id: "Q_MOD_C_084", module_id: "Module_C", difficulty: "Medium",
-    tags: ["llm"],
-    content: "Trong prompt engineering, kỹ thuật 'Few-shot Prompting' khác biệt như thế nào so với 'Zero-shot Prompting'?",
-    options: [
-      "A. Few-shot sử dụng mô hình AI có số lượng tham số lớn hơn.",
-      "B. Few-shot cung cấp thêm một vài ví dụ minh họa trong prompt.",
-      "C. Few-shot cập nhật trọng số của mô hình ngôn ngữ lớn.",
-      "D. Few-shot chạy nhanh hơn nhiều so với Zero-shot."
-    ],
-    correct_option: "B",
-    explanation: "Few-shot Prompting đưa kèm một vài ví dụ (cặp đầu vào-đầu ra mẫu) vào trong ngữ cảnh prompt để mô hình học theo phong cách trả lời."
-  },
-  {
-    id: "Q_MOD_C_085", module_id: "Module_C", difficulty: "Medium",
-    tags: ["product-metrics"],
-    content: "Khi triển khai hệ thống AI lọc tin nhắn độc hại, chỉ số FDR (False Discovery Rate) tăng cao sẽ ảnh hưởng trực tiếp đến người dùng như thế nào?",
-    options: [
-      "A. Tin nhắn độc hại lọt qua bộ lọc nhiều hơn bình thường.",
-      "B. Nhiều tin nhắn bình thường bị hệ thống khóa nhầm hơn.",
-      "C. Thời gian gửi và nhận tin nhắn bị trễ lâu hơn.",
-      "D. Tài khoản người dùng tự động bị đăng xuất khỏi hệ thống."
-    ],
-    correct_option: "B",
-    explanation: "False Discovery Rate là tỷ lệ mẫu bị dự báo sai là dương tính trên tổng số mẫu dự báo dương tính. FDR cao nghĩa là trong số các tin nhắn bị khóa, có nhiều tin nhắn thường bị nhận nhầm."
-  },
-  {
-    id: "Q_MOD_C_086", module_id: "Module_C", difficulty: "Medium",
-    tags: ["machine-learning"],
-    content: "Khi huấn luyện cây quyết định (Decision Tree), thuật toán sử dụng chỉ số Gini Impurity hay Entropy nhằm mục đích:",
-    options: [
-      "A. Tối đa hóa khoảng cách lề giữa hai lớp cần phân loại.",
-      "B. Lựa chọn đặc trưng phân nhánh tối ưu nhất để phân tách dữ liệu.",
-      "C. Tính toán đạo hàm giảm dần cho quá trình cập nhật trọng số.",
-      "D. Gom cụm các mẫu dữ liệu không có nhãn vào các nhóm."
-    ],
-    correct_option: "B",
-    explanation: "Chỉ số Gini Impurity và Entropy đo lường độ tinh khiết (phân tán) của dữ liệu. Thuật toán chọn đặc trưng phân nhánh làm giảm tối đa độ không tinh khiết sau phân tách."
-  },
-  {
-    id: "Q_MOD_C_087", module_id: "Module_C", difficulty: "Medium",
-    tags: ["computer-vision"],
-    content: "Thuật toán Non-Maximum Suppression (NMS) trong các mô hình phát hiện vật thể (như YOLO) có vai trò gì ở giai đoạn hậu xử lý?",
-    options: [
-      "A. Tăng kích thước các khung chứa vật thể để bao trọn.",
-      "B. Loại bỏ bớt các khung dự đoán trùng lặp đè lên cùng vật thể.",
-      "C. Thay đổi màu sắc của khung hiển thị để dễ nhìn hơn.",
-      "D. Trích xuất thêm các đặc trưng biên của vật thể trong ảnh."
-    ],
-    correct_option: "B",
-    explanation: "NMS lọc và loại bỏ các khung dự đoán có độ tin cậy thấp và trùng lặp (dựa trên IoU) đè lên cùng một vật thể, chỉ giữ lại một khung tối ưu nhất."
-  },
-  {
-    id: "Q_MOD_C_088", module_id: "Module_C", difficulty: "Medium",
-    tags: ["nlp"],
-    content: "Trong xử lý ngôn ngữ tự nhiên, sự khác biệt chính giữa mô hình BERT và mô hình GPT là gì?",
-    options: [
-      "A. BERT chỉ chạy trên CPU, trong khi GPT chạy trên các GPU.",
-      "B. BERT học ngữ cảnh hai chiều; GPT học ngữ cảnh một chiều tự hồi quy.",
-      "C. BERT chỉ xử lý được tiếng Anh, còn GPT xử lý đa ngôn ngữ.",
-      "D. BERT được huấn luyện bằng học máy không giám sát hoàn toàn."
-    ],
-    correct_option: "B",
-    explanation: "BERT sử dụng bộ mã hóa (Encoder) hai chiều để hiểu ngữ cảnh xung quanh một từ. GPT sử dụng bộ giải mã (Decoder) một chiều để dự đoán từ tiếp theo từ trái sang phải."
-  },
-  {
-    id: "Q_MOD_C_089", module_id: "Module_C", difficulty: "Medium",
-    tags: ["product-ux"],
-    content: "Để đảm bảo quyền riêng tư của người dùng đối với các ứng dụng AI trên điện thoại, giải pháp kiến trúc nào là tối ưu nhất?",
-    options: [
-      "A. Gửi toàn bộ dữ liệu thô của người dùng lên máy chủ đám mây.",
-      "B. Chạy trực tiếp mô hình AI ngay trên thiết bị (On-device AI).",
-      "C. Mã hóa dữ liệu bằng mật khẩu rồi lưu trữ trên thẻ nhớ ngoài.",
-      "D. Tắt tính năng lưu trữ dữ liệu tạm thời của hệ điều hành."
-    ],
-    correct_option: "B",
-    explanation: "On-device AI cho phép xử lý dữ liệu trực tiếp trên thiết bị của người dùng mà không cần truyền dữ liệu thô về máy chủ, bảo vệ quyền riêng tư tối đa."
-  },
-  {
-    id: "Q_MOD_C_090", module_id: "Module_C", difficulty: "Medium",
-    tags: ["ethics"],
-    content: "Khái niệm 'Model Drift' (sự trôi dạt mô hình) trong vận hành sản phẩm AI thực tế mô tả hiện tượng nào?",
-    options: [
-      "A. Tốc độ xử lý của mô hình chậm dần do phần cứng bị hao mòn.",
-      "B. Hiệu năng mô hình giảm do phân phối dữ liệu thực tế thay đổi.",
-      "C. Lỗi tràn bộ nhớ xảy ra khi lưu trữ quá nhiều tệp log.",
-      "D. Mô hình tự động cập nhật trọng số mà không cần lập trình."
-    ],
-    correct_option: "B",
-    explanation: "Model Drift xảy ra khi các mối quan hệ trong dữ liệu thay đổi theo thời gian (ví dụ: xu hướng thị trường thay đổi), khiến các dự đoán huấn luyện trước đó không còn chính xác."
-  },
-  {
-    id: "Q_MOD_C_091", module_id: "Module_C", difficulty: "Medium",
-    tags: ["machine-learning", "optimization"],
-    content: "Tại sao phương pháp tối ưu hóa Adam (Adaptive Moment Estimation) thường hội tụ nhanh hơn Gradient Descent truyền thống trong các mạng nơ-ron sâu?",
-    options: [
-      "A. Adam nhân đôi tốc độ học ở mỗi vòng lặp huấn luyện bất kể độ lớn gradient.",
-      "B. Adam kết hợp Momentum và điều chỉnh tốc độ học riêng biệt cho mỗi tham số.",
-      "C. Adam bỏ qua các phép tính lan truyền ngược để đẩy nhanh tiến trình hội tụ.",
-      "D. Adam tự động chuyển đổi cấu trúc mạng nơ-ron thành các cây quyết định."
-    ],
-    correct_option: "B",
-    explanation: "Adam kết hợp cả Momentum (quán tính của các gradient trước) và RMSProp (chia tốc độ học cho căn bậc hai của trung bình động bình phương gradient) để tự điều chỉnh tốc độ học cho từng trọng số."
-  },
-  {
-    id: "Q_MOD_C_092", module_id: "Module_C", difficulty: "Medium",
-    tags: ["computer-vision"],
-    content: "Trong kiến trúc mạng Transformer dành cho thị giác máy tính (Vision Transformer - ViT), hình ảnh đầu vào được xử lý thế nào trước khi đưa vào các lớp Self-Attention?",
-    options: [
-      "A. Ảnh được đưa qua mạng CNN sâu để chuyển đổi thành ma trận đặc trưng kích thước lớn.",
-      "B. Ảnh được chia nhỏ thành các patches, phẳng hóa thành vector và cộng vector vị trí.",
-      "C. Ảnh được chuyển thành văn bản mô tả chi tiết nhờ tích hợp một mô hình OCR phụ trợ.",
-      "D. Ảnh được nén thành chuỗi nhị phân tần số thấp để hạn chế tối đa tài nguyên bộ nhớ."
-    ],
-    correct_option: "B",
-    explanation: "ViT chia ảnh đầu vào kích thước $H \\times W$ thành các patches kích thước $P \\times P$. Mỗi patch được phẳng hóa thành một vector độ dài $P^2 \\cdot C$, sau đó được ánh xạ tuyến tính và cộng thêm position embedding trước khi nạp vào Transformer Encoder."
-  },
-  {
-    id: "Q_MOD_C_093", module_id: "Module_C", difficulty: "Medium",
-    tags: ["nlp", "llm"],
-    content: "Hàm kích hoạt 'SwiGLU' (Swish Gated Linear Unit) thường được sử dụng trong các LLM hiện đại (như LLaMA) có điểm cải tiến gì nổi bật so với ReLU truyền thống?",
-    options: [
-      "A. SwiGLU loại bỏ các phép nhân ma trận phức tạp để đẩy nhanh tốc độ suy luận của mô hình.",
-      "B. SwiGLU kết hợp cơ chế cổng và Swish giúp dòng gradient mượt mà, tránh hiện tượng neuron chết.",
-      "C. SwiGLU ép giá trị đầu ra về số nguyên để tạo điều kiện thuận lợi cho việc lượng hóa 8-bit.",
-      "D. SwiGLU tự động đóng băng các trọng số không có sự đóng góp lớn vào hàm mất mát mục tiêu."
-    ],
-    correct_option: "B",
-    explanation: "SwiGLU là một dạng của Gated Linear Unit sử dụng Swish làm hàm kích hoạt. Nó cung cấp sự kiểm soát dòng thông tin tốt hơn và duy trì đạo hàm phi tuyến tính mượt mà ở cả vùng âm, giúp mô hình hội tụ tốt hơn ReLU."
-  },
-  {
-    id: "Q_MOD_C_094", module_id: "Module_C", difficulty: "Medium",
-    tags: ["rag"],
-    content: "Trong hệ thống RAG nâng cao, kỹ thuật 'Re-ranking' đóng vai trò gì để tối ưu hóa ngữ cảnh cung cấp cho LLM?",
-    options: [
-      "A. Thay đổi cấu trúc và thứ tự từ trong câu hỏi đầu vào để tăng khả năng so khớp ngữ nghĩa.",
-      "B. Sử dụng Cross-Encoder để chấm điểm và lọc ra các đoạn tài liệu có độ liên quan cao nhất.",
-      "C. Tự động điều chỉnh thứ tự từ của văn bản đầu ra nhằm tối ưu hóa tính mạch lạc ngữ pháp.",
-      "D. Định dạng lại cấu trúc lưu trữ của cơ sở dữ liệu vector theo bảng chữ cái tiếng Anh."
-    ],
-    correct_option: "B",
-    explanation: "Mô hình Bi-Encoder tìm kiếm vector rất nhanh nhưng độ chính xác chưa tối ưu. Re-ranking sử dụng Cross-Encoder (nhập cả câu hỏi và đoạn văn cùng lúc) để tính điểm tương tác chi tiết hơn, giúp lọc ra các ngữ cảnh chuẩn xác nhất trước khi gửi tới LLM."
-  },
-  {
-    id: "Q_MOD_C_095", module_id: "Module_C", difficulty: "Medium",
-    tags: ["product-metrics"],
-    content: "Để đánh giá hiệu năng của hệ thống AI khuyến nghị (Recommender System), chỉ số 'NDCG' (Normalized Discounted Cumulative Gain) ưu việt hơn Recall ở điểm nào?",
-    options: [
-      "A. NDCG sở hữu thuật toán tính toán nhanh hơn trên tập dữ liệu quy mô lớn.",
-      "B. NDCG có xem xét đến vị trí xếp hạng hiển thị của các sản phẩm gợi ý.",
-      "C. NDCG hoàn toàn độc lập với tổng số lượng sản phẩm được đề xuất hiển thị.",
-      "D. NDCG hỗ trợ thu thập trực tiếp ý kiến đánh giá chủ quan từ khách hàng."
-    ],
-    correct_option: "B",
-    explanation: "NDCG đo lường mức độ hữu ích của sản phẩm dựa trên vị trí của nó trong danh sách gợi ý. Sản phẩm liên quan cao xuất hiện càng sớm (ở trên cùng) thì điểm NDCG càng cao, điều mà Recall truyền thống không đo lường được."
-  },
-  {
-    id: "Q_MOD_C_096", module_id: "Module_C", difficulty: "Medium",
-    tags: ["machine-learning", "overfitting"],
-    content: "Phương pháp chuẩn hóa 'Batch Normalization' giúp đẩy nhanh quá trình huấn luyện mạng nơ-ron sâu chủ yếu nhờ cơ chế nào?",
-    options: [
-      "A. Triệt tiêu các tham số trọng số thiên lệch (bias weights) trong các lớp của mô hình.",
-      "B. Giảm hiện tượng dịch chuyển phân phối nội bộ bằng cách chuẩn hóa đầu vào của mỗi lớp ẩn.",
-      "C. Loại bỏ ngẫu nhiên một nửa số lượng liên kết neuron trong suốt quá trình lan truyền ngược.",
-      "D. Giảm đáng kể chiều rộng và chiều cao của các ma trận đặc trưng đi qua lớp mạng nơ-ron sâu."
-    ],
-    correct_option: "B",
-    explanation: "Batch Normalization thực hiện chuẩn hóa đầu vào của mỗi lớp ẩn theo mini-batch, giúp giảm hiện tượng Internal Covariate Shift (sự thay đổi phân phối đầu vào của các lớp sau do cập nhật trọng số ở lớp trước), làm quá trình huấn luyện ổn định và cho phép dùng tốc độ học cao hơn."
-  },
-  {
-    id: "Q_MOD_C_097", module_id: "Module_C", difficulty: "Medium",
-    tags: ["product-ux", "metrics"],
-    content: "Khi xây dựng mô hình AI nhận diện giọng nói (Speech-to-Text), làm sao để tối ưu hóa trải nghiệm người dùng đối với ứng dụng dịch thuật thời gian thực dựa trên các chỉ số mô hình?",
-    options: [
-      "A. Tập trung cải thiện độ chính xác của từ đơn lẻ và bỏ qua hoàn toàn độ trễ xử lý âm thanh.",
-      "B. Cân bằng giữa tỷ lệ lỗi từ (WER) thấp và độ trễ xử lý dưới ngưỡng nhận thức của con người.",
-      "C. Bỏ qua chỉ số WER để tập trung tối đa cho việc rút ngắn thời gian xử lý âm thanh về mức 0ms.",
-      "D. Kéo dài thời gian ghi âm của người dùng để mô hình AI có thêm thời gian phân tích cú pháp."
-    ],
-    correct_option: "B",
-    explanation: "Đối với dịch thuật thời gian thực, độ trễ cực kỳ quan trọng đối với UX. Do đó, cần cân bằng giữa chất lượng dịch (WER thấp) và độ trễ (latency) sao cho phản hồi mượt mà không gây cảm giác đứt quãng cho người dùng."
-  },
-  {
-    id: "Q_MOD_C_098", module_id: "Module_C", difficulty: "Medium",
-    tags: ["nlp", "llm"],
-    content: "Cơ chế 'RoPE' (Rotary Position Embedding) được sử dụng phổ biến trong các mô hình LLaMA cải tiến việc mã hóa vị trí trong Transformer như thế nào so với mã hóa vị trí tuyệt đối của Attention Is All You Need?",
-    options: [
-      "A. RoPE loại bỏ thông tin vị trí của từ nhằm tối ưu hóa tốc độ nhân các ma trận tự chú ý.",
-      "B. RoPE biểu diễn thông tin vị trí bằng phép xoay vector để giữ lại khoảng cách tương đối.",
-      "C. RoPE gán cho mỗi vị trí từ một giá trị số nguyên ngẫu nhiên được học trong quá trình huấn luyện.",
-      "D. RoPE thay thế hoàn toàn cơ chế tự chú ý bằng một bộ lọc tích chập một chiều để định vị từ."
-    ],
-    correct_option: "B",
-    explanation: "RoPE áp dụng một ma trận quay xoay các vector Query và Key tùy theo vị trí của chúng. Phép toán này đảm bảo rằng tích vô hướng $q_m^T k_n$ chỉ phụ thuộc vào khoảng cách tương đối $m - n$, giúp mô hình mở rộng độ dài ngữ cảnh tốt hơn."
-  },
-  {
-    id: "Q_MOD_C_099", module_id: "Module_C", difficulty: "Medium",
-    tags: ["machine-learning", "optimization"],
-    content: "Khi gặp hiện tượng mất cân bằng dữ liệu cực kỳ nghiêm trọng trong bài toán phân loại nhãn, tại sao hàm mất mát 'Focal Loss' hiệu quả hơn Cross-Entropy truyền thống?",
-    options: [
-      "A. Focal Loss loại bỏ các mẫu lớp đa số ra khỏi quá trình tính toán giá trị hàm mất mát.",
-      "B. Focal Loss giảm trọng số của mẫu dễ phân loại và tập trung tối đa vào các mẫu khó học.",
-      "C. Focal Loss chuyển đổi bài toán phân loại phi tuyến tính thành bài toán tuyến tính đơn giản.",
-      "D. Focal Loss tự động nhân đôi tốc độ học mỗi khi mô hình dự báo sai mẫu thuộc lớp thiểu số."
-    ],
-    correct_option: "B",
-    explanation: "Focal Loss thêm thừa số $(1 - p_t)^\\gamma$ vào hàm Cross Entropy. Đối với mẫu dễ phân loại ($p_t$ tiến gần 1), thừa số này tiến về 0 làm giảm mạnh đóng góp của chúng vào loss, buộc mô hình tập trung vào các mẫu khó phân loại."
-  },
-  {
-    id: "Q_MOD_C_100", module_id: "Module_C", difficulty: "Medium",
-    tags: ["llm", "quantization"],
-    content: "Trong kỹ thuật lượng hóa mô hình ngôn ngữ lớn (LLM Quantization), phương pháp lượng hóa sau huấn luyện (Post-Training Quantization - PTQ) khác gì so với lượng hóa trong khi huấn luyện (Quantization-Aware Training - QAT)?",
-    options: [
-      "A. PTQ chỉ thực thi được trên CPU, còn QAT yêu cầu bắt buộc chạy trên hệ thống GPU hiệu năng cao.",
-      "B. PTQ chuyển đổi trực tiếp trọng số sau khi học; QAT mô phỏng sai số lượng hóa trong lúc huấn luyện.",
-      "C. PTQ đòi hỏi dung lượng bộ nhớ lớn hơn nhiều để lưu giữ các tham số mô phỏng trong quá trình chạy.",
-      "D. PTQ làm tăng kích thước mô hình, còn QAT hỗ trợ thu nhỏ mô hình về kích thước lưu trữ tối thiểu."
-    ],
-    correct_option: "B",
-    explanation: "PTQ lượng hóa mô hình đã được huấn luyện đầy đủ trực tiếp, rất nhanh nhưng có thể suy giảm độ chính xác. QAT mô phỏng sai số lượng hóa trong quá trình lan truyền xuôi và ngược (dùng fake quantization), giúp mô hình thích ứng với việc giảm độ chính xác của trọng số, giữ vững hiệu năng tốt hơn."
+    "id": "Q_MOD_C_001",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-basic"
+    ],
+    "content": "Trí tuệ nhân tạo (AI) là gì?",
+    "options": [
+      "A. Hệ thống máy tính mô phỏng lại các hoạt động trí tuệ của con người.",
+      "B. Phần mềm chuyên dùng để soạn thảo văn bản và bảng tính văn phòng.",
+      "C. Thiết bị phần cứng dùng để kết nối mạng internet giữa các quốc gia.",
+      "D. Trò chơi điện tử được phát triển cho các dòng máy cầm tay thế hệ mới."
+    ],
+    "correct_option": "A",
+    "explanation": "Trí tuệ nhân tạo (AI) là lĩnh vực khoa học máy tính nhằm tạo ra những hệ thống máy tính có khả năng mô phỏng hoặc thực hiện các hoạt động trí tuệ giống như con người."
+  },
+  {
+    "id": "Q_MOD_C_002",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "machine-learning"
+    ],
+    "content": "Học máy (Machine Learning) là gì?",
+    "options": [
+      "A. Phương pháp lập trình thủ công từng dòng lệnh chi tiết cho máy tính.",
+      "B. Công nghệ giúp máy tính tự học hỏi từ dữ liệu mà không cần lập trình sẵn.",
+      "C. Việc sửa chữa các linh kiện phần cứng bị hỏng của máy tính cá nhân.",
+      "D. Hệ thống truyền tải điện năng tốc độ cao cho các trung tâm dữ liệu."
+    ],
+    "correct_option": "B",
+    "explanation": "Học máy là một nhánh của AI, tập trung vào việc phát triển các thuật toán giúp máy tính tự động tìm ra các quy luật từ dữ liệu để đưa ra dự đoán hoặc quyết định."
+  },
+  {
+    "id": "Q_MOD_C_003",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "training-data"
+    ],
+    "content": "Dữ liệu huấn luyện (Training Data) dùng để làm gì trong học máy?",
+    "options": [
+      "A. Dùng để cài đặt hệ điều hành và các ứng dụng cơ bản cho máy tính.",
+      "B. Dùng làm nguyên liệu học tập để mô hình tìm kiếm các quy luật đặc trưng.",
+      "C. Dùng làm công cụ để kết nối các thiết bị ngoại vi với thùng máy chủ.",
+      "D. Dùng để đăng tải lên mạng xã hội nhằm thu hút lượt tương tác của khách."
+    ],
+    "correct_option": "B",
+    "explanation": "Dữ liệu huấn luyện là tập dữ liệu ban đầu được dùng để cung cấp cho mô hình học máy học hỏi, từ đó mô hình có thể phát hiện và hiểu các quy luật trong dữ liệu."
+  },
+  {
+    "id": "Q_MOD_C_004",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "chatbot"
+    ],
+    "content": "Chatbot là gì?",
+    "options": [
+      "A. Phần mềm tự động trò chuyện và phản hồi các câu hỏi của người dùng.",
+      "B. Thiết bị định vị vị trí của người dùng thông qua sóng vệ tinh GPS.",
+      "C. Ứng dụng dọn dẹp các tệp tin rác để tăng tốc độ xử lý cho máy tính.",
+      "D. Trình duyệt web cho phép người dùng truy cập các trang mạng xã hội."
+    ],
+    "correct_option": "A",
+    "explanation": "Chatbot là một ứng dụng phần mềm được thiết kế để tự động giao tiếp, trò chuyện và trả lời các câu hỏi của người dùng bằng ngôn ngữ tự nhiên."
+  },
+  {
+    "id": "Q_MOD_C_005",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "supervised-learning"
+    ],
+    "content": "Đặc điểm chính của Học có giám sát (Supervised Learning) là gì?",
+    "options": [
+      "A. Máy tính tự học từ dữ liệu chưa được gán bất kỳ nhãn thông tin nào.",
+      "B. Máy tính học từ dữ liệu đã được gán nhãn kết quả từ trước một cách cụ thể.",
+      "C. Máy tính tự động tìm các nhóm dữ liệu tương đồng mà không cần hướng dẫn.",
+      "D. Máy tính chỉ thực hiện các phép tính số học cơ bản như cộng trừ nhân chia."
+    ],
+    "correct_option": "B",
+    "explanation": "Học có giám sát là phương pháp học máy trong đó mô hình học từ dữ liệu đã được gán nhãn trước (đầu vào đi kèm đầu ra mong muốn) để dự đoán cho dữ liệu mới."
+  },
+  {
+    "id": "Q_MOD_C_006",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "unsupervised-learning"
+    ],
+    "content": "Đặc điểm chính của Học không giám sát (Unsupervised Learning) là gì?",
+    "options": [
+      "A. Máy tính học từ dữ liệu chưa được gán nhãn kết quả trước đó để phân nhóm.",
+      "B. Máy tính học từ dữ liệu đã được ghi chú chi tiết kết quả đúng hay sai.",
+      "C. Máy tính cần có con người trực tiếp hướng dẫn và sửa lỗi từng bước một.",
+      "D. Máy tính chỉ có khả năng lưu trữ dữ liệu chứ không thể xử lý thông tin."
+    ],
+    "correct_option": "A",
+    "explanation": "Học không giám sát là phương pháp học máy sử dụng dữ liệu chưa được gán nhãn trước, mô hình sẽ tự động tìm kiếm cấu trúc hoặc mối liên hệ ẩn trong dữ liệu (ví dụ như gom cụm)."
+  },
+  {
+    "id": "Q_MOD_C_007",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "search-engine"
+    ],
+    "content": "Nhiệm vụ chính của một công cụ tìm kiếm (Search Engine) như Google là gì?",
+    "options": [
+      "A. Tự động soạn thảo các email quảng cáo và gửi tới hòm thư của khách.",
+      "B. Tìm kiếm và hiển thị các trang web liên quan nhất đến từ khóa truy vấn.",
+      "C. Bảo vệ máy tính của người dùng khỏi các phần mềm độc hại từ internet.",
+      "D. Thiết kế giao diện đồ họa đẹp mắt cho các trang mạng xã hội lớn nhất."
+    ],
+    "correct_option": "B",
+    "explanation": "Công cụ tìm kiếm có nhiệm vụ chính là thu thập dữ liệu web, sắp xếp và cung cấp các kết quả tìm kiếm phù hợp nhất với từ khóa mà người dùng nhập vào."
+  },
+  {
+    "id": "Q_MOD_C_008",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "image-recognition"
+    ],
+    "content": "Công nghệ nhận diện hình ảnh (Image Recognition) thường được ứng dụng để làm gì?",
+    "options": [
+      "A. Nghe và chuyển giọng nói của người dùng thành định dạng văn bản chữ viết.",
+      "B. Nhận diện các vật thể, khuôn mặt hoặc chữ viết xuất hiện trong bức ảnh.",
+      "C. Dịch các đoạn văn bản từ ngôn ngữ này sang ngôn ngữ khác một cách tự động.",
+      "D. Tạo ra các giai điệu nhạc không lời dựa trên sở thích cá nhân của người dùng."
+    ],
+    "correct_option": "B",
+    "explanation": "Nhận diện hình ảnh là khả năng của AI trong việc nhận biết và phân loại các vật thể, con người, chữ viết hoặc hành động xuất hiện trong hình ảnh hoặc video."
+  },
+  {
+    "id": "Q_MOD_C_009",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "llm"
+    ],
+    "content": "ChatGPT thuộc loại công nghệ AI nào sau đây?",
+    "options": [
+      "A. Mô hình ngôn ngữ lớn chuyên về tạo sinh văn bản.",
+      "B. Phần mềm chỉnh sửa hình ảnh chuyên nghiệp trên máy tính.",
+      "C. Công cụ quét và diệt virus tự động cho các máy chủ lớn.",
+      "D. Hệ điều hành dành riêng cho các thiết bị di động thông minh."
+    ],
+    "correct_option": "A",
+    "explanation": "ChatGPT là một ứng dụng dựa trên mô hình ngôn ngữ lớn (LLM), có khả năng hiểu và tạo ra văn bản giống như con người thông qua các câu hỏi/yêu cầu."
+  },
+  {
+    "id": "Q_MOD_C_010",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-basic"
+    ],
+    "content": "Hệ thống gợi ý (Recommender System) của YouTube hoạt động như thế nào?",
+    "options": [
+      "A. Đề xuất video dựa trên sở thích và lịch sử xem của từng người dùng.",
+      "B. Tự động xóa các video có thời lượng quá ngắn hoặc chất lượng hình ảnh kém.",
+      "C. Bắt buộc người dùng phải xem tất cả các video mới nhất từ các kênh đăng ký.",
+      "D. Hiển thị ngẫu nhiên các video quảng cáo mà không cần quan tâm đến chủ đề."
+    ],
+    "correct_option": "A",
+    "explanation": "Hệ thống gợi ý của YouTube phân tích lịch sử xem, lượt tương tác và sở thích của người dùng để đề xuất những video phù hợp nhất nhằm giữ chân họ trên nền tảng."
+  },
+  {
+    "id": "Q_MOD_C_011",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "chatbot"
+    ],
+    "content": "Lợi ích chính của việc tự động hóa chăm sóc khách hàng bằng Chatbot AI là gì?",
+    "options": [
+      "A. Tiết kiệm chi phí vận hành và hỗ trợ khách hàng liên tục 24/7.",
+      "B. Bắt buộc mọi khách hàng phải mua nhiều sản phẩm đắt tiền hơn.",
+      "C. Loại bỏ hoàn toàn sự can thiệp của con người trong doanh nghiệp.",
+      "D. Tăng thời gian chờ đợi phản hồi của khách hàng lên nhiều lần."
+    ],
+    "correct_option": "A",
+    "explanation": "Sử dụng Chatbot AI giúp doanh nghiệp phản hồi khách hàng ngay lập tức và liên tục 24/7 mà không phụ thuộc vào giờ làm việc của con người, giúp tiết kiệm chi phí vận hành."
+  },
+  {
+    "id": "Q_MOD_C_012",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "machine-learning"
+    ],
+    "content": "Trong học máy, 'Nhãn' (Label) của dữ liệu được hiểu là gì?",
+    "options": [
+      "A. Tên của tệp tin dữ liệu được lưu trữ trên ổ đĩa máy tính.",
+      "B. Kết quả chính xác cần dự đoán gắn liền với mỗi mẫu dữ liệu.",
+      "C. Địa chỉ email của người thu thập và xử lý tập dữ liệu đó.",
+      "D. Biểu tượng đồ họa hiển thị trên màn hình của ứng dụng di động."
+    ],
+    "correct_option": "B",
+    "explanation": "Trong học máy, nhãn (Label) là kết quả chính xác hoặc câu trả lời đi kèm với dữ liệu đầu vào (Ví dụ: ảnh chụp có nhãn là 'Mèo', hoặc email có nhãn là 'Thư rác')."
+  },
+  {
+    "id": "Q_MOD_C_013",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "nlp"
+    ],
+    "content": "Ứng dụng nào sau đây sử dụng công nghệ Nhận diện giọng nói (Speech-to-Text)?",
+    "options": [
+      "A. Phần mềm dịch tự động một văn bản từ tiếng Anh sang tiếng Việt.",
+      "B. Trợ lý ảo chuyển lời nói của bạn thành tin nhắn văn bản để gửi.",
+      "C. Bộ lọc thư rác tự động chuyển các email quảng cáo vào thùng rác.",
+      "D. Ứng dụng chỉnh sửa ảnh giúp làm mịn da và làm sáng khuôn mặt."
+    ],
+    "correct_option": "B",
+    "explanation": "Công nghệ Nhận diện giọng nói (Speech-to-Text) có vai trò lắng nghe và chuyển đổi âm thanh giọng nói của con người thành định dạng văn bản chữ viết trên thiết bị."
+  },
+  {
+    "id": "Q_MOD_C_014",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "machine-learning"
+    ],
+    "content": "'Dữ liệu kiểm thử' (Test Data) trong học máy dùng để làm gì?",
+    "options": [
+      "A. Dùng để cài đặt các bản cập nhật bảo mật mới nhất cho máy tính.",
+      "B. Dùng để đánh giá độ chính xác của mô hình sau khi đã huấn luyện.",
+      "C. Dùng để lưu trữ thông tin cá nhân và tài khoản của lập trình viên.",
+      "D. Dùng để thay thế hoàn toàn cho dữ liệu huấn luyện khi bắt đầu học."
+    ],
+    "correct_option": "B",
+    "explanation": "Dữ liệu kiểm thử (Test Data) là tập dữ liệu độc lập không dùng trong quá trình huấn luyện, được dùng để kiểm tra và đánh giá khả năng dự đoán thực tế của mô hình."
+  },
+  {
+    "id": "Q_MOD_C_015",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Trải nghiệm người dùng (UX) của ứng dụng AI sẽ bị ảnh hưởng thế nào nếu mô hình phản hồi quá chậm (độ trễ cao)?",
+    "options": [
+      "A. Người dùng sẽ cảm thấy thích thú vì nghĩ máy tính đang làm việc kỹ.",
+      "B. Người dùng dễ cảm thấy khó chịu, mất kiên nhẫn và rời bỏ ứng dụng.",
+      "C. Giao diện của ứng dụng sẽ tự động chuyển sang màu sắc đẹp mắt hơn.",
+      "D. Thiết bị của người dùng sẽ tự động tiết kiệm được nhiều pin hơn hẳn."
+    ],
+    "correct_option": "B",
+    "explanation": "Độ trễ cao (Latency) làm gián đoạn trải nghiệm sử dụng, khiến người dùng cảm thấy ứng dụng hoạt động không hiệu quả hoặc bị lỗi, dẫn đến việc họ rời bỏ ứng dụng."
+  },
+  {
+    "id": "Q_MOD_C_016",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "generative-ai"
+    ],
+    "content": "Công nghệ AI tạo ảnh từ văn bản (như Midjourney hoặc DALL-E) hoạt động thế nào?",
+    "options": [
+      "A. Tìm kiếm các bức ảnh có sẵn trên Google rồi tải về máy cho người dùng.",
+      "B. Vẽ ra một bức ảnh hoàn toàn mới dựa trên mô tả văn bản của người dùng.",
+      "C. Chụp ảnh màn hình máy tính của người dùng tại thời điểm nhập yêu cầu.",
+      "D. Quét các tệp tin hình ảnh có sẵn trong thư mục cá nhân của người dùng."
+    ],
+    "correct_option": "B",
+    "explanation": "AI tạo hình ảnh từ văn bản sử dụng mô hình tạo sinh để phân tích từ ngữ mô tả và tự động vẽ ra một bức ảnh hoàn toàn mới chưa từng tồn tại trước đó."
+  },
+  {
+    "id": "Q_MOD_C_017",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "computer-vision"
+    ],
+    "content": "Nhận diện khuôn mặt trên điện thoại thông minh là ứng dụng của lĩnh vực nào?",
+    "options": [
+      "A. Nhận diện giọng nói (Speech-to-Text).",
+      "B. Thị giác máy tính (Computer Vision).",
+      "C. Phân tích dữ liệu tài chính số.",
+      "D. Xử lý âm thanh (Audio Processing)."
+    ],
+    "correct_option": "B",
+    "explanation": "Nhận diện khuôn mặt yêu cầu máy tính phân tích các đặc điểm trên hình ảnh khuôn mặt thu được từ camera, đây là bài toán thuộc lĩnh vực Thị giác máy tính."
+  },
+  {
+    "id": "Q_MOD_C_018",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Việc hiển thị lý do gợi ý sản phẩm (ví dụ: 'Vì bạn đã mua cuốn sách A') giúp ích gì cho UX?",
+    "options": [
+      "A. Giúp tăng dung lượng lưu trữ của máy chủ chạy ứng dụng mua sắm trực tuyến.",
+      "B. Giúp xây dựng niềm tin và sự hài lòng của người dùng đối với hệ thống gợi ý.",
+      "C. Giúp điện thoại của người dùng kết nối internet nhanh hơn và ổn định hơn.",
+      "D. Giúp xóa bỏ hoàn toàn tất cả các lỗi lập trình có thể xảy ra trong phần mềm."
+    ],
+    "correct_option": "B",
+    "explanation": "Tính minh bạch trong gợi ý (AI Explainability) giúp người dùng hiểu tại sao họ nhận được đề xuất đó, từ đó làm tăng niềm tin và sự hài lòng đối với trải nghiệm sản phẩm."
+  },
+  {
+    "id": "Q_MOD_C_019",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "nlp"
+    ],
+    "content": "Nhận diện thực thể tên (Named Entity Recognition - NER) là tác vụ dùng để làm gì trong NLP?",
+    "options": [
+      "A. Xác định vị trí của các khuôn mặt xuất hiện trong một bức ảnh chân dung.",
+      "B. Tìm kiếm các từ chỉ tên người, địa danh, ngày tháng trong đoạn văn bản.",
+      "C. Dịch tự động một bài hát từ tiếng Việt sang tiếng Hàn hoặc tiếng Nhật.",
+      "D. Tự động điều chỉnh âm lượng của loa máy tính khi có tiếng ồn xung quanh."
+    ],
+    "correct_option": "B",
+    "explanation": "NER (Named Entity Recognition) là một tác vụ trong NLP nhằm tự động nhận diện và phân loại các thông tin quan trọng như tên người, tên tổ chức, địa điểm, mốc thời gian trong văn bản."
+  },
+  {
+    "id": "Q_MOD_C_020",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Trong AI, khái niệm 'Độ trễ' (Latency) đề cập đến điều gì?",
+    "options": [
+      "A. Tổng số lượng từ mà mô hình AI tạo sinh có thể tạo ra trong một giây.",
+      "B. Khoảng thời gian từ lúc người dùng gửi yêu cầu đến lúc AI trả lời xong.",
+      "C. Dung lượng bộ nhớ RAM mà hệ thống máy tính cần để lưu trữ mô hình AI.",
+      "D. Số lượng lập trình viên tham gia xây dựng và bảo trì hệ thống học máy."
+    ],
+    "correct_option": "B",
+    "explanation": "Độ trễ (Latency) là thời gian phản hồi của hệ thống, được tính từ lúc người dùng bắt đầu gửi câu hỏi hoặc lệnh cho AI đến khi nhận được phản hồi đầu ra."
+  },
+  {
+    "id": "Q_MOD_C_021",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "chatbot"
+    ],
+    "content": "Trợ lý ảo như Siri hay Google Assistant nhận đầu vào trực tiếp từ kênh nào?",
+    "options": [
+      "A. Các cử chỉ tay của người dùng trước camera của thiết bị.",
+      "B. Giọng nói trực tiếp của người dùng thông qua microphone.",
+      "C. Các tập tin văn bản định dạng PDF được tải lên từ thẻ nhớ.",
+      "D. Các nhấp chuột của người dùng trên màn hình cảm ứng di động."
+    ],
+    "correct_option": "B",
+    "explanation": "Trợ lý ảo bằng giọng nói sử dụng microphone tích hợp để thu âm trực tiếp tiếng nói của người dùng làm đầu vào để xử lý."
+  },
+  {
+    "id": "Q_MOD_C_022",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Để thu thập phản hồi của người dùng về chất lượng câu trả lời của AI, cách làm nào sau đây là đơn giản và hiệu quả nhất cho giao diện?",
+    "options": [
+      "A. Yêu cầu người dùng viết một bài đánh giá dài tối thiểu hai trăm từ.",
+      "B. Hiển thị hai nút biểu tượng ngón tay Like và Dislike dưới mỗi câu trả lời.",
+      "C. Gọi điện thoại trực tiếp cho từng người dùng sau mỗi lần họ sử dụng AI.",
+      "D. Khóa tài khoản của người dùng nếu họ không chịu thực hiện làm khảo sát."
+    ],
+    "correct_option": "B",
+    "explanation": "Nút Like/Dislike là cơ chế thu thập phản hồi tường minh (Explicit Feedback) nhanh chóng, dễ dùng và ít gây phiền toái nhất cho trải nghiệm người dùng."
+  },
+  {
+    "id": "Q_MOD_C_023",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "machine-learning"
+    ],
+    "content": "Đâu là một ví dụ về ứng dụng AI trong việc phát hiện thư rác (Spam)?",
+    "options": [
+      "A. Tự động xóa các tập tin hình ảnh có dung lượng quá lớn trên điện thoại.",
+      "B. Phân loại email nhận được thành hai nhóm: email thường và email rác.",
+      "C. Gửi email chúc mừng sinh nhật tự động tới tất cả bạn bè trong danh bạ.",
+      "D. Thay đổi hình nền của ứng dụng hòm thư theo thời gian thực trong ngày."
+    ],
+    "correct_option": "B",
+    "explanation": "Bộ lọc thư rác phân tích nội dung, người gửi và tiêu đề email để phân loại tự động email đó vào thư mục rác hoặc thư mục chính."
+  },
+  {
+    "id": "Q_MOD_C_024",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "unsupervised-learning"
+    ],
+    "content": "Kỹ thuật phân nhóm khách hàng dựa trên thói quen mua sắm mà không có nhãn trước thuộc bài toán nào?",
+    "options": [
+      "A. Học có giám sát (Supervised Learning).",
+      "B. Học không giám sát (Unsupervised Learning).",
+      "C. Nhận diện giọng nói (Speech-to-Text).",
+      "D. Tổng hợp giọng nói (Text-to-Speech)."
+    ],
+    "correct_option": "B",
+    "explanation": "Phân nhóm (Clustering) dữ liệu khách hàng chưa được gắn nhãn từ trước để tìm ra các nhóm có thói quen tương tự là bài toán kinh điển của Học không giám sát."
+  },
+  {
+    "id": "Q_MOD_C_025",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "overfitting"
+    ],
+    "content": "Trong học máy, hiện tượng 'Học vẹt' (Overfitting) xảy ra khi nào?",
+    "options": [
+      "A. Mô hình hoạt động tốt trên dữ liệu huấn luyện nhưng rất kém trên dữ liệu mới.",
+      "B. Mô hình không thể học được bất kỳ quy luật nào từ tập dữ liệu huấn luyện ban đầu.",
+      "C. Mô hình tự động xóa toàn bộ dữ liệu huấn luyện sau khi kết thúc quá trình học.",
+      "D. Mô hình hoạt động cực kỳ nhanh và chính xác trên mọi tập dữ liệu thực tế mới."
+    ],
+    "correct_option": "A",
+    "explanation": "Overfitting (Quá khớp/Học vẹt) xảy ra khi mô hình học quá chi tiết cả nhiễu trong tập huấn luyện, khiến nó đạt điểm cao trên tập huấn luyện nhưng dự đoán kém trên dữ liệu mới."
+  },
+  {
+    "id": "Q_MOD_C_026",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-basic"
+    ],
+    "content": "Đâu là một định nghĩa đơn giản về 'Trí tuệ nhân tạo hẹp' (Narrow AI)?",
+    "options": [
+      "A. AI có khả năng tự nhận thức và có cảm xúc giống như một con người thực sự.",
+      "B. AI được thiết kế và huấn luyện để chỉ thực hiện một nhiệm vụ cụ thể duy nhất.",
+      "C. AI có thể làm được tất cả mọi công việc tốt hơn bất kỳ con người nào trên thế giới.",
+      "D. AI tự động học cách lập trình ra các phần mềm máy tính khác mà không cần người."
+    ],
+    "correct_option": "B",
+    "explanation": "Trí tuệ nhân tạo hẹp (Narrow AI hay Weak AI) là các hệ thống AI được thiết kế và tối ưu để giải quyết một nhiệm vụ duy nhất (Ví dụ: nhận diện khuôn mặt, chơi cờ, dịch thuật)."
+  },
+  {
+    "id": "Q_MOD_C_027",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "nlp"
+    ],
+    "content": "Lĩnh vực 'Xử lý ngôn ngữ tự nhiên' (NLP) tập trung vào việc giúp máy tính làm gì?",
+    "options": [
+      "A. Nhận biết các chuyển động vật lý của con người trước camera của thiết bị.",
+      "B. Hiểu, phân tích và tạo ra ngôn ngữ của con người dưới dạng chữ hoặc tiếng.",
+      "C. Đo lường nhiệt độ và độ ẩm của môi trường xung quanh các máy chủ lớn.",
+      "D. Tự động điều khiển các robot di chuyển tránh các chướng ngại vật trên đường."
+    ],
+    "correct_option": "B",
+    "explanation": "Xử lý ngôn ngữ tự nhiên (NLP) là lĩnh vực giao thoa giữa khoa học máy tính và ngôn ngữ học, tập trung vào việc giúp máy tính hiểu và tương tác bằng ngôn ngữ của con người."
+  },
+  {
+    "id": "Q_MOD_C_028",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ethics"
+    ],
+    "content": "Tại sao 'Định kiến dữ liệu' (Data Bias) lại là một vấn đề nghiêm trọng trong AI?",
+    "options": [
+      "A. Làm cho mô hình AI chạy chậm hơn và tiêu tốn nhiều tài nguyên máy chủ hơn.",
+      "B. Làm cho mô hình AI đưa ra quyết định thiên vị, không công bằng với một nhóm người.",
+      "C. Làm tăng chi phí lưu trữ dữ liệu của doanh nghiệp lên gấp nhiều lần so với cũ.",
+      "D. Làm cho mã nguồn của chương trình máy tính bị lỗi và không thể biên dịch được."
+    ],
+    "correct_option": "B",
+    "explanation": "Nếu dữ liệu dùng để huấn luyện chứa định kiến xã hội hoặc bị mất cân bằng, mô hình AI sẽ học theo định kiến đó và đưa ra những quyết định phân biệt đối xử bất công."
+  },
+  {
+    "id": "Q_MOD_C_029",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Trong một hệ thống gợi ý phim (như Netflix), hành vi nào của người dùng được coi là 'Phản hồi ngầm định' (Implicit Feedback)?",
+    "options": [
+      "A. Người dùng nhấn nút đánh giá năm sao cho bộ phim sau khi xem xong hoàn toàn.",
+      "B. Người dùng tiếp tục xem tập tiếp theo của bộ phim hoặc xem hết toàn bộ phim.",
+      "C. Người dùng viết một bài nhận xét chi tiết về nội dung phim trên diễn đàn lớn.",
+      "D. Người dùng gửi email phản hồi trực tiếp cho bộ phận hỗ trợ khách hàng của ứng dụng."
+    ],
+    "correct_option": "B",
+    "explanation": "Phản hồi ngầm định (Implicit Feedback) là việc hệ thống tự theo dõi hành vi tự nhiên của người dùng (như thời gian xem, nhấp chuột) để đoán sở thích của họ mà không yêu cầu họ chấm điểm chủ động."
+  },
+  {
+    "id": "Q_MOD_C_030",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "nlp"
+    ],
+    "content": "Việc 'Tóm tắt văn bản' (Text Summarization) bằng AI giúp ích gì cho người dùng?",
+    "options": [
+      "A. Chuyển đổi toàn bộ văn bản từ định dạng PDF sang định dạng hình ảnh PNG.",
+      "B. Rút ngắn một bài viết dài thành các ý chính giúp người đọc nắm thông tin nhanh.",
+      "C. Tự động kiểm tra và sửa toàn bộ lỗi chính tả có trong bài viết ban đầu.",
+      "D. Đọc to bài viết lên bằng giọng nói nhân tạo của robot để người dùng nghe."
+    ],
+    "correct_option": "B",
+    "explanation": "Tóm tắt văn bản bằng AI giúp trích xuất các thông tin cốt lõi, ngắn gọn từ một văn bản dài, giúp tiết kiệm thời gian đọc và nắm bắt nội dung nhanh chóng."
+  },
+  {
+    "id": "Q_MOD_C_031",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "metrics"
+    ],
+    "content": "Một mô hình dự đoán thời tiết cho kết quả đúng 8 ngày trong tổng số 10 ngày kiểm thử. Độ chính xác (Accuracy) của mô hình này là bao nhiêu phần trăm?",
+    "options": [
+      "A. Sáu mươi phần trăm.",
+      "B. Tám mươi phần trăm.",
+      "C. Bốn mươi phần trăm.",
+      "D. Năm mươi phần trăm."
+    ],
+    "correct_option": "B",
+    "explanation": "Độ chính xác (Accuracy) được tính bằng tỷ lệ số dự đoán đúng trên tổng số trường hợp thử nghiệm: 8 / 10 = 0.8 (tương đương 80%)."
+  },
+  {
+    "id": "Q_MOD_C_032",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "machine-learning"
+    ],
+    "content": "Khái niệm 'Học sâu' (Deep Learning) là gì?",
+    "options": [
+      "A. Phương pháp học tập của học sinh bằng cách đọc sách giáo khoa liên tục nhiều giờ.",
+      "B. Một nhánh của học máy sử dụng các mạng nơ-ron nhân tạo có nhiều lớp ẩn để học.",
+      "C. Việc lập trình các câu lệnh điều khiển hệ thống lưu trữ dữ liệu của máy tính.",
+      "D. Thuật toán tìm kiếm các đường đi ngắn nhất trên bản đồ số của thiết bị di động."
+    ],
+    "correct_option": "B",
+    "explanation": "Học sâu (Deep Learning) là một tập hợp con của học máy sử dụng các mạng nơ-ron nhiều lớp (mạng nơ-ron sâu) để tự động trích xuất đặc trưng và học từ dữ liệu phức tạp."
+  },
+  {
+    "id": "Q_MOD_C_033",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ethics"
+    ],
+    "content": "Tại sao việc thu thập dữ liệu đa dạng và đại diện cho nhiều đối tượng lại quan trọng khi huấn luyện AI?",
+    "options": [
+      "A. Để mô hình AI hoạt động công bằng và chính xác với nhiều nhóm người dùng khác nhau.",
+      "B. Để giảm dung lượng lưu trữ của tập dữ liệu huấn luyện xuống mức thấp nhất có thể.",
+      "C. Để giúp cho lập trình viên không cần viết mã nguồn khi phát triển phần mềm ứng dụng.",
+      "D. Để đảm bảo máy tính luôn hoạt động mát mẻ và không bị quá nhiệt khi chạy chương trình."
+    ],
+    "correct_option": "A",
+    "explanation": "Dữ liệu huấn luyện đa dạng giúp mô hình AI học được đầy đủ đặc điểm của các nhóm đối tượng khác nhau, tránh hiện tượng hoạt động kém chính xác hoặc thiên vị trên một nhóm cụ thể."
+  },
+  {
+    "id": "Q_MOD_C_034",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "metrics"
+    ],
+    "content": "Ứng dụng lọc thư rác (Spam Filter) nhận diện nhầm một email công việc quan trọng là 'Thư rác' và đưa vào thùng rác. Đây là ví dụ của lỗi gì?",
+    "options": [
+      "A. True Positive (Dương tính thật).",
+      "B. False Positive (Dương tính giả).",
+      "C. True Negative (Âm tính thật).",
+      "D. False Negative (Âm tính giả)."
+    ],
+    "correct_option": "B",
+    "explanation": "Lỗi False Positive (Dương tính giả) xảy ra khi hệ thống nhận diện nhầm một đối tượng bình thường (âm tính thực tế) thành đối tượng vi phạm hoặc cần phát hiện (dương tính dự đoán)."
+  },
+  {
+    "id": "Q_MOD_C_035",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "metrics"
+    ],
+    "content": "Ứng dụng lọc thư rác bỏ sót một email quảng cáo độc hại và để nó hiển thị ở hòm thư chính. Đây là ví dụ của lỗi gì?",
+    "options": [
+      "A. True Positive (Dương tính thật).",
+      "B. False Positive (Dương tính giả).",
+      "C. True Negative (Âm tính thật).",
+      "D. False Negative (Âm tính giả)."
+    ],
+    "correct_option": "D",
+    "explanation": "Lỗi False Negative (Âm tính giả/Bỏ sót) xảy ra khi hệ thống không phát hiện được một đối tượng thực tế thuộc nhóm cần tìm (dương tính thực tế) và phân loại nó là bình thường (âm tính dự đoán)."
+  },
+  {
+    "id": "Q_MOD_C_036",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Mục đích của việc sử dụng các gợi ý câu hỏi mẫu (Quick Prompts) trong giao diện Chatbot AI là gì?",
+    "options": [
+      "A. Ép buộc người dùng chỉ được phép hỏi những câu hỏi có sẵn đó.",
+      "B. Giúp người dùng dễ dàng bắt đầu cuộc hội thoại mà không cần tự nghĩ câu hỏi.",
+      "C. Giảm lượng băng thông mạng của người dùng khi truy cập vào ứng dụng chat.",
+      "D. Tăng số lượng quảng cáo hiển thị trên màn hình giao diện của phần mềm chat."
+    ],
+    "correct_option": "B",
+    "explanation": "Các câu gợi ý nhanh giúp giảm công sức suy nghĩ câu hỏi ban đầu của người dùng, định hướng cho họ biết chatbot này có thể trả lời các chủ đề gì."
+  },
+  {
+    "id": "Q_MOD_C_037",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "machine-learning"
+    ],
+    "content": "Mạng nơ-ron nhân tạo (Artificial Neural Network) được lấy cảm hứng từ cấu trúc nào?",
+    "options": [
+      "A. Cấu trúc mạng lưới đường giao thông tại các đô thị lớn trên thế giới.",
+      "B. Hệ thống thần kinh và các tế bào não bộ sinh học của con người.",
+      "C. Các liên kết hóa học giữa các nguyên tử trong một phân tử chất lỏng.",
+      "D. Cách tổ chức thư mục và tập tin trong hệ điều hành của máy tính cá nhân."
+    ],
+    "correct_option": "B",
+    "explanation": "Mạng nơ-ron nhân tạo được mô phỏng dựa trên cách thức hoạt động và liên kết của các tế bào thần kinh (neuron) sinh học trong não bộ con người."
+  },
+  {
+    "id": "Q_MOD_C_038",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "generative-ai"
+    ],
+    "content": "Thuật ngữ 'Generative AI' (AI tạo sinh) dùng để chỉ những hệ thống AI có khả năng gì?",
+    "options": [
+      "A. Tự động sao lưu dữ liệu của máy tính lên các dịch vụ đám mây an toàn.",
+      "B. Tạo ra nội dung mới như văn bản, hình ảnh, âm thanh từ yêu cầu của người dùng.",
+      "C. Quét và tối ưu hóa hệ thống phần cứng để tăng tốc độ xử lý của máy tính.",
+      "D. Kết nối các thiết bị thông minh trong nhà thành một hệ thống điều khiển chung."
+    ],
+    "correct_option": "B",
+    "explanation": "AI tạo sinh (Generative AI) là loại công nghệ AI có khả năng tự động tạo ra nội dung hoàn toàn mới (như đoạn văn, bức tranh, bài nhạc) dựa trên dữ liệu đã được học."
+  },
+  {
+    "id": "Q_MOD_C_039",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Trong các hệ thống gợi ý sản phẩm, thuật ngữ 'Cold Start' (Khởi đầu lạnh) nói về khó khăn nào?",
+    "options": [
+      "A. Hệ thống máy chủ bị tắt đột ngột do nhiệt độ phòng máy xuống quá thấp trong mùa đông.",
+      "B. Khó khăn khi gợi ý sản phẩm cho người dùng mới vì chưa có dữ liệu lịch sử của họ.",
+      "C. Việc ứng dụng chạy quá chậm trong những giây đầu tiên khi người dùng mở điện thoại.",
+      "D. Sự cố mất kết nối mạng internet giữa ứng dụng của người dùng và hệ thống cơ sở dữ liệu."
+    ],
+    "correct_option": "B",
+    "explanation": "Hiện tượng 'Khởi đầu lạnh' (Cold Start) là thử thách phổ biến của hệ thống gợi ý khi gặp người dùng mới hoặc sản phẩm mới vì thiếu dữ liệu lịch sử tương tác để đưa ra đề xuất chính xác."
+  },
+  {
+    "id": "Q_MOD_C_040",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-basic"
+    ],
+    "content": "Khi bạn nói chuyện với trợ lý ảo bằng tiếng Việt và nó trả lời bạn bằng tiếng Việt nói, hệ thống đã thực hiện quy trình xử lý chính nào?",
+    "options": [
+      "A. Nhận diện giọng nói, xử lý ngôn ngữ tự nhiên và tổng hợp giọng nói.",
+      "B. Chỉ cần sử dụng camera để quét các cử chỉ khuôn mặt của người nói.",
+      "C. Chụp ảnh màn hình điện thoại và phân tích các ký tự hiển thị trên đó.",
+      "D. Tự động kết nối với tổng đài viên là con người để họ trả lời thay máy."
+    ],
+    "correct_option": "A",
+    "explanation": "Quy trình này gồm 3 bước: chuyển âm thanh giọng nói thành chữ (Speech-to-Text), xử lý hiểu và sinh câu trả lời bằng chữ (NLP), và phát câu trả lời thành âm thanh (Text-to-Speech)."
+  },
+  {
+    "id": "Q_MOD_C_041",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "machine-learning"
+    ],
+    "content": "'Dữ liệu bị gán nhãn sai' trong tập dữ liệu huấn luyện sẽ gây ra hậu quả gì cho mô hình AI?",
+    "options": [
+      "A. Mô hình sẽ chạy nhanh hơn nhưng tốn nhiều dung lượng bộ nhớ hơn.",
+      "B. Mô hình sẽ học sai quy luật và đưa ra các dự đoán thiếu chính xác.",
+      "C. Mô hình sẽ tự động sửa lại toàn bộ nhãn bị sai thành nhãn đúng.",
+      "D. Mô hình không thể khởi động được trên bất kỳ hệ thống máy tính nào."
+    ],
+    "correct_option": "B",
+    "explanation": "Nếu dữ liệu đầu vào chứa nhiều nhãn sai lệch (nhiễu), mô hình AI sẽ học theo những thông tin sai lệch đó, dẫn đến việc đưa ra các dự đoán sai lầm trên thực tế."
+  },
+  {
+    "id": "Q_MOD_C_042",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Khi người dùng nhấn nút 'Không quan tâm' vào một gợi ý video, hệ thống AI nên làm gì tiếp theo?",
+    "options": [
+      "A. Tiếp tục hiển thị video đó nhiều lần hơn để thuyết phục người dùng xem thử.",
+      "B. Giảm tần suất xuất hiện của các video có chủ đề tương tự đối với người dùng này.",
+      "C. Tự động khóa tài khoản của người dùng vì họ đã từ chối gợi ý của hệ thống.",
+      "D. Xóa bỏ hoàn toàn toàn bộ lịch sử xem video trước đây của người dùng này khỏi máy."
+    ],
+    "correct_option": "B",
+    "explanation": "Hành động 'Không quan tâm' là phản hồi tường minh của người dùng thể hiện sự từ chối. Hệ thống AI cần cập nhật sở thích này để lọc bỏ các nội dung tương tự, cải thiện UX."
+  },
+  {
+    "id": "Q_MOD_C_043",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "computer-vision"
+    ],
+    "content": "Đâu là định nghĩa đơn giản về 'Thị giác máy tính' (Computer Vision)?",
+    "options": [
+      "A. Khả năng máy tính có thể nghe và phân biệt được các loại âm thanh trong phòng.",
+      "B. Khả năng máy tính có thể nhìn, hiểu và phân tích thông tin từ hình ảnh hoặc video.",
+      "C. Phần mềm giúp bảo vệ mắt của lập trình viên khi làm việc lâu trước màn hình.",
+      "D. Thiết bị kính thông minh giúp tăng độ sáng cho màn hình máy tính cá nhân."
+    ],
+    "correct_option": "B",
+    "explanation": "Thị giác máy tính (Computer Vision) là lĩnh vực AI giúp máy tính có năng lực xử lý, phân tích và trích xuất thông tin hữu ích từ các hình ảnh hoặc các video kỹ thuật số."
+  },
+  {
+    "id": "Q_MOD_C_044",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "nlp"
+    ],
+    "content": "Trong NLP, tác vụ phân tích cảm xúc (Sentiment Analysis) giúp doanh nghiệp biết được điều gì từ phản hồi của khách hàng?",
+    "options": [
+      "A. Số lượng ký tự trung bình mà khách hàng nhập vào khi viết đánh giá.",
+      "B. Ý kiến của khách hàng là tích cực, tiêu cực hay trung tính đối với sản phẩm.",
+      "C. Địa chỉ ip và vị trí địa lý của khách hàng khi thực hiện viết nhận xét.",
+      "D. Tốc độ gõ bàn phím của khách hàng khi họ để lại phản hồi trên website."
+    ],
+    "correct_option": "B",
+    "explanation": "Phân tích cảm xúc giúp phân loại thái độ, cảm xúc của khách hàng qua văn bản phản hồi là khen (tích cực), chê (tiêu cực) hay bình thường (trung tính)."
+  },
+  {
+    "id": "Q_MOD_C_045",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ethics"
+    ],
+    "content": "Tại sao việc bảo mật dữ liệu cá nhân của người dùng là bắt buộc khi phát triển các sản phẩm AI?",
+    "options": [
+      "A. Để hạn chế số lượng người dùng truy cập vào ứng dụng nhằm tránh quá tải hệ thống.",
+      "B. Để tuân thủ pháp luật, bảo vệ quyền riêng tư và xây dựng lòng tin với khách hàng.",
+      "C. Để giúp cho thuật toán học máy chạy nhanh hơn và chính xác hơn gấp nhiều lần.",
+      "D. Để lập trình viên có thể bán thông tin cá nhân đó cho các bên thứ ba kiếm lời."
+    ],
+    "correct_option": "B",
+    "explanation": "Bảo vệ dữ liệu cá nhân là yêu cầu bắt buộc về mặt đạo đức và pháp lý (như luật bảo vệ dữ liệu), đồng thời tạo dựng lòng tin của khách hàng khi sử dụng sản phẩm AI."
+  },
+  {
+    "id": "Q_MOD_C_046",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "unsupervised-learning"
+    ],
+    "content": "Thuật toán K-Means trong học không giám sát thường được dùng để làm gì?",
+    "options": [
+      "A. Dự đoán chính xác giá nhà đất trong tương lai dựa trên dữ liệu lịch sử cũ.",
+      "B. Phân nhóm các điểm dữ liệu tương đồng vào chung các cụm mà không cần nhãn.",
+      "C. Dịch tự động các câu văn bản tiếng Anh sang tiếng Pháp hoặc tiếng Việt.",
+      "D. Nhận diện biển số xe máy từ hình ảnh camera giao thông chụp được ngoài đường."
+    ],
+    "correct_option": "B",
+    "explanation": "K-Means là thuật toán gom cụm (Clustering) phổ biến trong học không giám sát, hoạt động bằng cách nhóm các mẫu dữ liệu có đặc điểm giống nhau vào chung một cụm."
+  },
+  {
+    "id": "Q_MOD_C_047",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-basic"
+    ],
+    "content": "Trong các loại trí tuệ nhân tạo, 'Trí tuệ nhân tạo tổng hợp' (Artificial General Intelligence - AGI) được định nghĩa là gì?",
+    "options": [
+      "A. Hệ thống AI chỉ có thể chơi cờ vua và không làm được việc gì khác ngoài cờ vua.",
+      "B. Hệ thống AI có khả năng hiểu, học và thực hiện bất kỳ nhiệm vụ trí tuệ nào như con người.",
+      "C. Phần mềm diệt virus tự động quét toàn bộ hệ thống máy tính khi có kết nối mạng.",
+      "D. Công cụ tìm kiếm từ khóa trên mạng internet phổ biến nhất hiện nay trên thế giới."
+    ],
+    "correct_option": "B",
+    "explanation": "Trí tuệ nhân tạo tổng hợp (AGI) là cấp độ AI thông minh vượt qua AI hẹp, có khả năng tư duy, tự học hỏi và giải quyết đa dạng mọi công việc trí óc tương tự một con người."
+  },
+  {
+    "id": "Q_MOD_C_048",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Tại sao một ứng dụng AI cần thiết kế tính năng khiếu nại (ví dụ: nút 'Báo cáo lỗi') cho người dùng?",
+    "options": [
+      "A. Để người dùng tự sửa đổi mã nguồn của thuật toán học máy theo ý muốn của họ.",
+      "B. Để thu thập phản hồi, sửa lỗi hệ thống và cải thiện chất lượng dịch vụ của AI.",
+      "C. Để tăng số lượng quảng cáo hiển thị trên màn hình thiết bị của người sử dụng.",
+      "D. Để hệ thống tự động trừ tiền trong tài khoản của người dùng khi họ báo lỗi."
+    ],
+    "correct_option": "B",
+    "explanation": "Vì mô hình AI không phải lúc nào cũng dự đoán đúng 100%, thiết kế cơ chế báo lỗi giúp doanh nghiệp thu thập dữ liệu về các sai sót của AI để cải tiến mô hình."
+  },
+  {
+    "id": "Q_MOD_C_049",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Mô hình AI nhận diện khuôn mặt điểm danh nhân viên hoạt động kém vào mùa đông vì mọi người đeo khẩu trang kín. Hướng khắc phục tốt nhất về mặt sản phẩm là gì?",
+    "options": [
+      "A. Yêu cầu toàn bộ nhân viên phải cởi bỏ khẩu trang trước khi bước vào văn phòng.",
+      "B. Thu thập thêm hình ảnh nhân viên đeo khẩu trang để huấn luyện lại mô hình AI.",
+      "C. Thay thế hệ thống nhận diện khuôn mặt bằng hệ thống quét vân tay truyền thống.",
+      "D. Tắt hoàn toàn tính năng bảo mật bằng khuôn mặt và mở cửa tự do cho mọi người."
+    ],
+    "correct_option": "B",
+    "explanation": "Thay vì bắt người dùng thay đổi thói quen thiết yếu, việc thu thập dữ liệu huấn luyện sát với thực tế cuộc sống giúp mô hình nhận diện tốt hơn ngay cả khi khuôn mặt bị che một phần."
+  },
+  {
+    "id": "Q_MOD_C_050",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "nlp"
+    ],
+    "content": "Công nghệ dịch máy (Machine Translation) như Google Dịch hoạt động dựa trên lĩnh vực nào của AI?",
+    "options": [
+      "A. Thị giác máy tính (Computer Vision).",
+      "B. Xử lý ngôn ngữ tự nhiên (NLP).",
+      "C. Hệ thống định vị toàn cầu (GPS).",
+      "D. Khai phá dữ liệu âm thanh số."
+    ],
+    "correct_option": "B",
+    "explanation": "Dịch thuật văn bản liên quan đến việc hiểu ngữ nghĩa và ngữ pháp của các ngôn ngữ khác nhau, thuộc lĩnh vực Xử lý ngôn ngữ tự nhiên (NLP)."
+  },
+  {
+    "id": "Q_MOD_C_051",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "machine-learning"
+    ],
+    "content": "Trong học máy, mô hình hồi quy tuyến tính (Linear Regression) thường dùng để dự đoán loại giá trị nào?",
+    "options": [
+      "A. Một nhãn phân loại dạng đúng hoặc sai (như email rác hay không rác).",
+      "B. Một giá trị số liên tục (như dự đoán nhiệt độ hoặc giá cả sản phẩm).",
+      "C. Một danh sách các hình ảnh có chứa khuôn mặt của người nổi tiếng trên mạng.",
+      "D. Một đoạn hội thoại tự động giữa robot chăm sóc khách hàng và người dùng."
+    ],
+    "correct_option": "B",
+    "explanation": "Hồi quy (Regression) là bài toán dự đoán một giá trị số thực liên tục (ví dụ: dự đoán chiều cao, giá nhà, nhiệt độ ngày mai) dựa trên các thuộc tính đầu vào."
+  },
+  {
+    "id": "Q_MOD_C_052",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-basic"
+    ],
+    "content": "Sự khác biệt chính giữa Trí tuệ nhân tạo (AI) và lập trình truyền thống là gì?",
+    "options": [
+      "A. Lập trình truyền thống yêu cầu viết sẵn các luật cụ thể, còn AI tự học từ dữ liệu.",
+      "B. AI chỉ hoạt động trên điện thoại di động, lập trình truyền thống chỉ chạy trên máy tính.",
+      "C. Lập trình truyền thống chạy nhanh hơn AI gấp hàng ngàn lần trên tất cả thiết bị.",
+      "D. AI không cần sử dụng đến dòng điện hoặc pin để hoạt động như lập trình truyền thống."
+    ],
+    "correct_option": "A",
+    "explanation": "Lập trình truyền thống dựa vào con người viết rõ các quy tắc logic bằng code. AI dựa vào thuật toán tự học hỏi và tìm ra quy luật từ dữ liệu được cung cấp."
+  },
+  {
+    "id": "Q_MOD_C_053",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Để đánh giá mức độ hài lòng của người dùng với câu trả lời của trợ lý ảo, chỉ số nào sau đây được sử dụng phổ biến?",
+    "options": [
+      "A. Tổng số lượng linh kiện điện tử cấu thành nên bộ vi xử lý của điện thoại.",
+      "B. Chỉ số hài lòng của khách hàng (CSAT) thông qua các câu hỏi khảo sát nhanh.",
+      "C. Dung lượng bộ nhớ của tệp tin lưu trữ lịch sử cài đặt ứng dụng trên máy.",
+      "D. Tốc độ quạt tản nhiệt của máy chủ tại trung tâm dữ liệu khi chạy thuật toán."
+    ],
+    "correct_option": "B",
+    "explanation": "Chỉ số CSAT (Customer Satisfaction Score) đo lường trực tiếp độ hài lòng của khách hàng bằng cách hỏi họ tự đánh giá thang điểm sau khi sử dụng dịch vụ."
+  },
+  {
+    "id": "Q_MOD_C_054",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "search-engine"
+    ],
+    "content": "Khi bạn gõ từ khóa tìm kiếm trên Google và thấy danh sách kết quả, công nghệ nào đã được sử dụng?",
+    "options": [
+      "A. Công nghệ nhận diện giọng nói tự động.",
+      "B. Hệ thống tìm kiếm và xếp hạng thông tin.",
+      "C. Mô hình tự động tạo hình ảnh từ văn bản.",
+      "D. Hệ thống tự động lái xe ô tô thông minh."
+    ],
+    "correct_option": "B",
+    "explanation": "Google Search sử dụng công cụ tìm kiếm để quét các cơ sở dữ liệu khổng lồ của web, kết hợp thuật toán xếp hạng để đưa ra các kết quả phù hợp nhất với từ khóa."
+  },
+  {
+    "id": "Q_MOD_C_055",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-basic"
+    ],
+    "content": "Đâu là một ví dụ về ứng dụng AI trong cuộc sống hàng ngày?",
+    "options": [
+      "A. Chiếc nồi cơm điện tự động ngắt điện khi nước trong nồi sôi và cạn hết.",
+      "B. Ứng dụng bản đồ số tự động gợi ý lộ trình di chuyển tối ưu tránh tắc đường.",
+      "C. Chiếc quạt điện thông thường quay đều khi người dùng nhấn vào nút công tắc.",
+      "D. Cuốn sổ tay ghi chép lịch công tác hàng tuần của nhân viên văn phòng bằng bút."
+    ],
+    "correct_option": "B",
+    "explanation": "Ứng dụng bản đồ (như Google Maps) sử dụng AI phân tích dữ liệu giao thông thời gian thực để gợi ý lộ trình đi lại nhanh và tránh các đoạn đường kẹt xe."
+  },
+  {
+    "id": "Q_MOD_C_056",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ethics"
+    ],
+    "content": "Tại sao các ứng dụng AI thường hiển thị dòng chữ cảnh báo 'AI có thể đưa ra câu trả lời chưa chính xác'?",
+    "options": [
+      "A. Để tránh các rủi ro pháp lý và nhắc nhở người dùng tự kiểm chứng thông tin quan trọng.",
+      "B. Để thuyết phục người dùng nâng cấp lên phiên bản trả phí đắt tiền hơn của phần mềm.",
+      "C. Để chứng tỏ rằng hệ thống AI này không được xây dựng bởi các kỹ sư công nghệ chuyên nghiệp.",
+      "D. Để giải thích lý do tại sao ứng dụng của họ thường xuyên bị mất kết nối mạng internet."
+    ],
+    "correct_option": "A",
+    "explanation": "Mô hình AI (đặc biệt là LLM) có thể bị hiện tượng ảo tưởng (Hallucination) - sinh ra các thông tin sai lệch. Cảnh báo này giúp người dùng cẩn trọng và giảm thiểu rủi ro pháp lý."
+  },
+  {
+    "id": "Q_MOD_C_057",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "computer-vision"
+    ],
+    "content": "Nhận diện ký tự quang học (OCR) là công nghệ dùng để làm gì?",
+    "options": [
+      "A. Chuyển đổi chữ viết trong hình ảnh hoặc tài liệu quét thành văn bản số có thể chỉnh sửa.",
+      "B. Nghe các bản nhạc và tự động ghi lại lời bài hát dưới dạng các nốt nhạc trên giấy.",
+      "C. Vẽ ra các bức tranh nghệ thuật dựa trên sở thích và yêu cầu của người sử dụng ứng dụng.",
+      "D. Phát hiện các lỗi phần cứng trong bảng mạch điện tử của máy tính cá nhân bằng tia hồng ngoại."
+    ],
+    "correct_option": "A",
+    "explanation": "OCR (Optical Character Recognition) là công nghệ nhận dạng hình ảnh chữ viết (viết tay hoặc in) trên giấy tờ, ảnh chụp rồi số hóa chúng thành văn bản text."
+  },
+  {
+    "id": "Q_MOD_C_058",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "llm"
+    ],
+    "content": "Thuật ngữ 'Prompt' trong sử dụng ChatGPT được hiểu là gì?",
+    "options": [
+      "A. Câu lệnh hoặc câu hỏi yêu cầu mà người dùng nhập vào để AI trả lời.",
+      "B. Mật khẩu dùng để đăng nhập vào tài khoản cá nhân trên trang web của AI.",
+      "C. Tốc độ kết nối mạng internet giữa máy tính của người dùng và máy chủ AI.",
+      "D. Tên của công ty phát triển ra các mô hình ngôn ngữ lớn hiện đại nhất."
+    ],
+    "correct_option": "A",
+    "explanation": "Prompt (Câu lệnh/Từ gợi ý) là phần văn bản đầu vào do người dùng nhập để hướng dẫn, yêu cầu mô hình AI sinh ra câu trả lời mong muốn."
+  },
+  {
+    "id": "Q_MOD_C_059",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "unsupervised-learning"
+    ],
+    "content": "Trong học máy, việc gom cụm các bài viết cùng chủ đề thời sự mà không có nhãn trước là bài toán thuộc loại nào?",
+    "options": [
+      "A. Học có giám sát (Supervised Learning).",
+      "B. Học không giám sát (Unsupervised Learning).",
+      "C. Nhận diện giọng nói tiếng Việt tự động.",
+      "D. Tự động chuyển văn bản thành giọng nói."
+    ],
+    "correct_option": "B",
+    "explanation": "Gom cụm các văn bản có nội dung tương đồng khi không có nhãn chỉ đường trước là một bài toán của Học không giám sát."
+  },
+  {
+    "id": "Q_MOD_C_060",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "llm"
+    ],
+    "content": "Khi sử dụng ChatGPT, nếu bạn yêu cầu nó 'Hãy đóng vai một giáo viên tiếng Anh', bạn đang áp dụng kỹ thuật gì?",
+    "options": [
+      "A. Cập nhật mã nguồn và cài đặt lại toàn bộ hệ thống của ChatGPT.",
+      "B. Sử dụng Prompt đóng vai (Role-playing Prompt) để định hình cách trả lời.",
+      "C. Lập trình lại các tham số học máy bên trong mạng nơ-ron của mô hình.",
+      "D. Xóa bỏ lịch sử trò chuyện cũ để tăng tốc độ phản hồi của hệ thống chat."
+    ],
+    "correct_option": "B",
+    "explanation": "Prompt đóng vai giúp định hình phong cách, giọng điệu và giới hạn phạm vi kiến thức câu trả lời của mô hình ngôn ngữ lớn phù hợp với ngữ cảnh mong muốn."
+  },
+  {
+    "id": "Q_MOD_C_061",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "metrics"
+    ],
+    "content": "Ứng dụng lọc thư rác phân loại đúng một email rác là 'Thư rác'. Đây là trường hợp nào?",
+    "options": [
+      "A. True Positive (Dương tính thật).",
+      "B. False Positive (Dương tính giả).",
+      "C. True Negative (Âm tính thật).",
+      "D. False Negative (Âm tính giả)."
+    ],
+    "correct_option": "A",
+    "explanation": "True Positive (Dương tính thật) là trường hợp mô hình dự báo chính xác một mẫu thực sự thuộc nhóm cần tìm kiếm/phát hiện (ở đây là thư rác)."
+  },
+  {
+    "id": "Q_MOD_C_062",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "metrics"
+    ],
+    "content": "Ứng dụng lọc thư rác phân loại đúng một email công việc bình thường là 'Không phải thư rác'. Đây là trường hợp nào?",
+    "options": [
+      "A. True Positive (Dương tính thật).",
+      "B. False Positive (Dương tính giả).",
+      "C. True Negative (Âm tính thật).",
+      "D. False Negative (Âm tính giả)."
+    ],
+    "correct_option": "C",
+    "explanation": "True Negative (Âm tính thật) là trường hợp mô hình dự báo chính xác một mẫu bình thường (không phải đối tượng cần lọc) là bình thường."
+  },
+  {
+    "id": "Q_MOD_C_063",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "machine-learning"
+    ],
+    "content": "Một cửa hàng muốn dùng AI để dự đoán số lượng khách hàng đến cửa hàng vào ngày mai dựa trên lịch sử 3 năm qua. Đây thuộc loại bài toán nào?",
+    "options": [
+      "A. Phân loại nhãn (Classification).",
+      "B. Hồi quy dự báo (Regression).",
+      "C. Gom cụm dữ liệu (Clustering).",
+      "D. Nhận diện hình ảnh (Computer Vision)."
+    ],
+    "correct_option": "B",
+    "explanation": "Số lượng khách hàng là một giá trị số liên tục, do đó bài toán dự đoán giá trị số này dựa trên lịch sử thời gian thuộc nhóm bài toán Hồi quy (Regression)."
+  },
+  {
+    "id": "Q_MOD_C_064",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "computer-vision"
+    ],
+    "content": "Nhận diện biển số xe từ camera giao thông để phạt nguội xe vượt đèn đỏ thuộc lĩnh vực nào của AI?",
+    "options": [
+      "A. Xử lý ngôn ngữ tự nhiên (NLP).",
+      "B. Thị giác máy tính (Computer Vision).",
+      "C. Công nghệ định vị toàn cầu (GPS).",
+      "D. Tổng hợp giọng nói nhân tạo (TTS)."
+    ],
+    "correct_option": "B",
+    "explanation": "Việc phân tích dữ liệu hình ảnh/video từ camera để nhận diện và đọc biển số xe thuộc phạm vi ứng dụng của lĩnh vực Thị giác máy tính (Computer Vision)."
+  },
+  {
+    "id": "Q_MOD_C_065",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "machine-learning"
+    ],
+    "content": "Tại sao chúng ta cần làm sạch dữ liệu (loại bỏ dữ liệu trùng lặp, dữ liệu lỗi) trước khi huấn luyện mô hình AI?",
+    "options": [
+      "A. Để tăng kích thước của tập dữ liệu huấn luyện lên mức lớn nhất có thể.",
+      "B. Để đảm bảo mô hình AI học được các quy luật đúng đắn từ dữ liệu sạch.",
+      "C. Để giúp cho máy tính tiết kiệm điện năng tiêu thụ khi cắm sạc sử dụng.",
+      "D. Để tránh việc người dùng trái phép truy cập vào hệ thống mã nguồn của AI."
+    ],
+    "correct_option": "B",
+    "explanation": "Làm sạch dữ liệu giúp loại bỏ thông tin sai lệch, trùng lặp hoặc nhiễu, từ đó giúp mô hình AI tìm ra các quy luật chính xác và có hiệu năng dự đoán tốt hơn."
+  },
+  {
+    "id": "Q_MOD_C_066",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Một hệ thống gợi ý sản phẩm tốt cần giải quyết vấn đề gì để tránh gây nhàm chán cho khách hàng?",
+    "options": [
+      "A. Liên tục gợi ý đi gợi ý lại một món duy nhất mà khách hàng từng thích.",
+      "B. Cân bằng giữa việc gợi ý sản phẩm quen thuộc và đề xuất thêm sản phẩm mới lạ.",
+      "C. Tắt hoàn toàn hệ thống gợi ý tự động và chuyển sang hiển thị ngẫu nhiên.",
+      "D. Yêu cầu khách hàng tự nhập tay danh sách các sản phẩm họ muốn xem mỗi ngày."
+    ],
+    "correct_option": "B",
+    "explanation": "Hệ thống gợi ý tốt cần dung hòa giữa việc đề xuất những thứ khách hàng đã thích (Khai thác) và đưa thêm các sản phẩm mới có liên quan (Khám phá) để tăng sự đa dạng."
+  },
+  {
+    "id": "Q_MOD_C_067",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "computer-vision"
+    ],
+    "content": "Thuật ngữ 'Computer Vision' trong tiếng Anh có nghĩa là gì trong tiếng Việt?",
+    "options": [
+      "A. Xử lý ngôn ngữ tự nhiên.",
+      "B. Thị giác máy tính.",
+      "C. Nhận dạng giọng nói.",
+      "D. Phân tích dữ liệu số."
+    ],
+    "correct_option": "B",
+    "explanation": "Computer Vision dịch sang tiếng Việt có nghĩa là Thị giác máy tính, lĩnh vực nghiên cứu cách thu thập và phân tích thông tin hình ảnh của máy tính."
+  },
+  {
+    "id": "Q_MOD_C_068",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "nlp"
+    ],
+    "content": "Khi sử dụng Google Dịch, việc bạn nhập văn bản tiếng Việt và hệ thống trả về văn bản tiếng Anh là ứng dụng của:",
+    "options": [
+      "A. Xử lý ngôn ngữ tự nhiên (NLP).",
+      "B. Nhận diện khuôn mặt tự động.",
+      "C. Hệ thống tự động lái xe ô tô.",
+      "D. Công nghệ quét mã vạch sản phẩm."
+    ],
+    "correct_option": "A",
+    "explanation": "Dịch thuật văn bản chữ viết là tác vụ cốt lõi của lĩnh vực Xử lý ngôn ngữ tự nhiên (NLP) nhằm chuyển đổi ngữ nghĩa giữa các ngôn ngữ con người."
+  },
+  {
+    "id": "Q_MOD_C_069",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "machine-learning"
+    ],
+    "content": "Khái niệm 'Huấn luyện mô hình' (Model Training) trong học máy nghĩa là gì?",
+    "options": [
+      "A. Quá trình cài đặt ứng dụng AI lên điện thoại của người sử dụng.",
+      "B. Quá trình cho mô hình học từ dữ liệu để tự điều chỉnh các tham số.",
+      "C. Quá trình nhân viên nhập thủ công các câu trả lời vào phần mềm.",
+      "D. Quá trình kiểm tra lỗi phần cứng của máy tính trước khi bật máy."
+    ],
+    "correct_option": "B",
+    "explanation": "Huấn luyện mô hình (Training) là quá trình nạp dữ liệu cho mô hình học máy chạy thuật toán để tự tối ưu các trọng số/tham số phù hợp với quy luật của dữ liệu."
+  },
+  {
+    "id": "Q_MOD_C_070",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Để đo lường tỷ lệ người dùng nhấp vào một liên kết video được gợi ý trên YouTube, chỉ số nào được sử dụng?",
+    "options": [
+      "A. Tỷ lệ nhấp chuột (Click-Through Rate - CTR).",
+      "B. Tổng số lượng video có trên hệ thống YouTube.",
+      "C. Dung lượng bộ nhớ của tệp tin video được tải lên.",
+      "D. Thời lượng trung bình của một video trên YouTube."
+    ],
+    "correct_option": "A",
+    "explanation": "CTR (Click-Through Rate - Tỷ lệ nhấp chuột) là tỷ lệ số lần người dùng nhấn vào một đường link trên tổng số lần đường link đó hiển thị trước mắt họ."
+  },
+  {
+    "id": "Q_MOD_C_071",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ethics"
+    ],
+    "content": "Nếu dữ liệu huấn luyện của mô hình AI nhận diện khuôn mặt chỉ chứa ảnh của nam giới, mô hình sẽ gặp lỗi gì khi sử dụng thực tế?",
+    "options": [
+      "A. Mô hình sẽ chạy chậm hơn đáng kể khi quét khuôn mặt của nam giới.",
+      "B. Mô hình sẽ nhận diện kém chính xác hơn đối với khuôn mặt của nữ giới.",
+      "C. Mô hình sẽ tự động từ chối hoạt động vào những ngày thời tiết lạnh giá.",
+      "D. Mô hình sẽ tự động xóa toàn bộ dữ liệu hình ảnh có trong máy tính của bạn."
+    ],
+    "correct_option": "B",
+    "explanation": "Mất cân bằng dữ liệu nghiêm trọng khiến mô hình chỉ học tốt các đặc điểm của nhóm đa số (nam giới) và hoạt động kém hiệu quả trên nhóm thiểu số bị bỏ quên (nữ giới)."
+  },
+  {
+    "id": "Q_MOD_C_072",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "machine-learning"
+    ],
+    "content": "Trong học máy, thuật ngữ 'Feature' (Đặc trưng) được hiểu là gì?",
+    "options": [
+      "A. Tên của lập trình viên tham gia xây dựng thuật toán học máy.",
+      "B. Thuộc tính hoặc thông tin đầu vào dùng để mô tả một mẫu dữ liệu.",
+      "C. Bản cập nhật phần mềm mới nhất của hệ điều hành trên máy tính.",
+      "D. Mật khẩu bảo mật dùng để truy cập vào hệ thống máy chủ dữ liệu."
+    ],
+    "correct_option": "B",
+    "explanation": "Đặc trưng (Feature) là các thông tin đầu vào được đo lường hoặc trích xuất để mô tả đối tượng (ví dụ: chiều rộng cánh hoa, diện tích căn nhà, thời gian đăng bài)."
+  },
+  {
+    "id": "Q_MOD_C_073",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-basic"
+    ],
+    "content": "Đâu là một ví dụ về ứng dụng AI trong chăm sóc sức khỏe?",
+    "options": [
+      "A. Phần mềm quản lý lịch trực của các bác sĩ trong bệnh viện hàng tuần.",
+      "B. AI phân tích hình ảnh X-quang để hỗ trợ bác sĩ phát hiện khối u phổi.",
+      "C. Thiết bị đo nhiệt độ cơ thể bằng cách đặt trực tiếp dưới nách người.",
+      "D. Sổ tay ghi chép đơn thuốc của bệnh nhân do bác sĩ viết bằng tay."
+    ],
+    "correct_option": "B",
+    "explanation": "Phân tích ảnh X-quang, MRI bằng mô hình thị giác máy tính là ứng dụng tiêu biểu của AI giúp các bác sĩ chẩn đoán bệnh nhanh chóng và chính xác hơn."
+  },
+  {
+    "id": "Q_MOD_C_074",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "computer-vision"
+    ],
+    "content": "Một ứng dụng AI phát hiện lỗi sản phẩm trên băng chuyền nhà máy được gọi là ứng dụng của lĩnh vực nào?",
+    "options": [
+      "A. Xử lý ngôn ngữ tự nhiên (NLP).",
+      "B. Thị giác máy tính (Computer Vision).",
+      "C. Phân tích dữ liệu tài chính số.",
+      "D. Hệ thống định vị toàn cầu (GPS)."
+    ],
+    "correct_option": "B",
+    "explanation": "Ứng dụng này cần phân tích hình ảnh sản phẩm từ camera trên băng chuyền để tìm vết nứt, lỗi màu sắc, thuộc lĩnh vực Thị giác máy tính."
+  },
+  {
+    "id": "Q_MOD_C_075",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "machine-learning"
+    ],
+    "content": "Khái niệm 'Học tăng cường' (Reinforcement Learning) là phương pháp học máy dựa trên cơ chế nào?",
+    "options": [
+      "A. Học bằng cách ghi nhớ toàn bộ các quy tắc logic do con người thiết lập sẵn.",
+      "B. Học thông qua thử và sai để tối đa hóa phần thưởng nhận được từ môi trường.",
+      "C. Học bằng cách phân nhóm các điểm dữ liệu tương đồng mà không cần nhãn trước.",
+      "D. Học bằng cách sao chép mã nguồn của các mô hình AI khác có sẵn trên mạng."
+    ],
+    "correct_option": "B",
+    "explanation": "Học tăng cường là việc huấn luyện mô hình (agent) tự động tương tác với môi trường, thực hiện các hành động thử và sai để nhận điểm thưởng/phạt và rút ra chiến lược tối ưu."
+  },
+  {
+    "id": "Q_MOD_C_076",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "overfitting"
+    ],
+    "content": "Trong học máy, thuật ngữ 'Overfitting' trong tiếng Việt thường được gọi là gì?",
+    "options": [
+      "A. Chưa khớp (Thiếu khớp).",
+      "B. Quá khớp (Học vẹt).",
+      "C. Tối ưu hóa (Khớp chuẩn).",
+      "D. Tiêu biến đạo hàm (Mất khớp)."
+    ],
+    "correct_option": "B",
+    "explanation": "Overfitting được dịch phổ biến là 'Quá khớp' (hay mô tả nôm na là 'Học vẹt'), mô tả tình trạng mô hình quá bám sát dữ liệu cũ mà mất khả năng dự đoán dữ liệu mới."
+  },
+  {
+    "id": "Q_MOD_C_077",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "llm"
+    ],
+    "content": "Khi xây dựng chatbot tư vấn tuyển sinh cho trường học, kỹ thuật RAG giúp hạn chế lỗi gì của LLM?",
+    "options": [
+      "A. Giúp hạn chế lỗi dịch thuật sai ngữ pháp tiếng Việt thông dụng.",
+      "B. Giúp hạn chế hiện tượng chatbot bịa đặt thông tin không có thật.",
+      "C. Giúp tăng tốc độ kết nối internet của thiết bị di động người dùng.",
+      "D. Giúp giảm chi phí mua sắm các thiết bị phần cứng máy chủ đắt tiền."
+    ],
+    "correct_option": "B",
+    "explanation": "RAG (Retrieval-Augmented Generation) tìm kiếm tài liệu chính xác từ cơ sở dữ liệu của trường rồi gửi kèm vào prompt làm ngữ cảnh, giúp ngăn chatbot bịa đặt thông tin lung tung."
+  },
+  {
+    "id": "Q_MOD_C_078",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "nlp"
+    ],
+    "content": "Đâu là một ứng dụng của công nghệ Tổng hợp giọng nói (Text-to-Speech)?",
+    "options": [
+      "A. Chuyển đổi một đoạn ghi âm giọng nói thành văn bản chữ viết trên màn hình.",
+      "B. Chuyển đổi một đoạn văn bản chữ viết thành giọng nói phát ra qua loa máy.",
+      "C. Dịch tự động một văn bản từ tiếng Việt sang tiếng Hàn một cách chính xác.",
+      "D. Nhận diện khuôn mặt của chủ nhân để tự động mở khóa màn hình điện thoại."
+    ],
+    "correct_option": "B",
+    "explanation": "Tổng hợp giọng nói (Text-to-Speech - TTS) là công nghệ tự động chuyển đổi các ký tự văn bản chữ viết thành âm thanh giọng đọc nhân tạo của máy tính."
+  },
+  {
+    "id": "Q_MOD_C_079",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Khi thiết kế giao diện hiển thị câu trả lời của ChatGPT, kiểu chữ chạy ra từng từ (streaming) mang lại lợi ích gì cho UX?",
+    "options": [
+      "A. Giúp tiết kiệm dung lượng pin cho thiết bị di động của người dùng tốt hơn.",
+      "B. Giúp người dùng có cảm giác AI phản hồi nhanh hơn bằng cách đọc ngay từ đầu.",
+      "C. Giúp loại bỏ hoàn toàn các lỗi chính tả có trong câu trả lời của mô hình AI.",
+      "D. Giúp tăng độ dài của câu trả lời từ mô hình AI lên gấp hai đến ba lần cũ."
+    ],
+    "correct_option": "B",
+    "explanation": "Thay vì bắt người dùng đợi vài chục giây để hiển thị cả đoạn văn dài, hiển thị streaming chữ giúp giảm bớt sự khó chịu do phải chờ đợi của người dùng."
+  },
+  {
+    "id": "Q_MOD_C_080",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Tại sao các ứng dụng AI gợi ý sản phẩm cần thu thập phản hồi của người dùng?",
+    "options": [
+      "A. Để bán thông tin cá nhân của người dùng cho các công ty quảng cáo khác kiếm lời.",
+      "B. Để liên tục cải thiện độ chính xác và chất lượng của các gợi ý trong tương lai.",
+      "C. Để buộc người dùng phải trả thêm phí dịch vụ hàng tháng khi sử dụng ứng dụng.",
+      "D. Để hệ thống tự động xóa bớt các dữ liệu cũ giúp tiết kiệm không gian lưu trữ."
+    ],
+    "correct_option": "B",
+    "explanation": "Phản hồi của người dùng (thích, không thích, bỏ qua, mua hàng) là nguồn dữ liệu quý giá giúp thuật toán học máy cập nhật sở thích để đưa ra đề xuất tốt hơn lần sau."
+  },
+  {
+    "id": "Q_MOD_C_081",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-basic"
+    ],
+    "content": "Đâu là một ví dụ về ứng dụng AI trong lĩnh vực tài chính?",
+    "options": [
+      "A. Máy rút tiền tự động ATM giúp khách hàng thực hiện rút tiền mặt nhanh chóng.",
+      "B. AI phân tích lịch sử giao dịch để tự động phát hiện các thẻ bị nghi ngờ gian lận.",
+      "C. Sổ tay ghi chép các khoản thu chi hàng ngày của hộ gia đình bằng bút mực.",
+      "D. Phần mềm máy tính bỏ túi giúp học sinh thực hiện các phép toán cơ bản nhanh."
+    ],
+    "correct_option": "B",
+    "explanation": "AI có khả năng phân tích hàng triệu giao dịch tài chính thời gian thực để tìm ra các mẫu hành vi bất thường, phát hiện và cảnh báo sớm các giao dịch lừa đảo."
+  },
+  {
+    "id": "Q_MOD_C_082",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "supervised-learning"
+    ],
+    "content": "Thuật ngữ 'Supervised Learning' trong tiếng Anh có nghĩa là gì trong tiếng Việt?",
+    "options": [
+      "A. Học máy không giám sát.",
+      "B. Học máy có giám sát.",
+      "C. Học máy tăng cường.",
+      "D. Học máy bán giám sát."
+    ],
+    "correct_option": "B",
+    "explanation": "Supervised Learning dịch sang tiếng Việt nghĩa là Học có giám sát (phương pháp học máy dựa trên dữ liệu đầu vào đã có sẵn nhãn kết quả đúng)."
+  },
+  {
+    "id": "Q_MOD_C_083",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "unsupervised-learning"
+    ],
+    "content": "Trong học máy, thuật ngữ 'Unsupervised Learning' trong tiếng Anh có nghĩa là gì trong tiếng Việt?",
+    "options": [
+      "A. Học máy không giám sát.",
+      "B. Học máy có giám sát.",
+      "C. Học máy tăng cường.",
+      "D. Học máy bán giám sát."
+    ],
+    "correct_option": "A",
+    "explanation": "Unsupervised Learning dịch sang tiếng Việt nghĩa là Học không giám sát (phương pháp học máy làm việc với tập dữ liệu thô chưa được gán nhãn kết quả trước)."
+  },
+  {
+    "id": "Q_MOD_C_084",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "metrics"
+    ],
+    "content": "Một mô hình phân loại ảnh chó và mèo dự đoán đúng 95 ảnh trong tổng số 100 ảnh kiểm thử. Độ chính xác của mô hình này là bao nhiêu phần trăm?",
+    "options": [
+      "A. Tám mươi lăm phần trăm.",
+      "B. Chín mươi lăm phần trăm.",
+      "C. Bảy mươi lăm phần trăm.",
+      "D. Sáu mươi lăm phần trăm."
+    ],
+    "correct_option": "B",
+    "explanation": "Độ chính xác (Accuracy) được tính bằng số kết quả dự đoán đúng chia cho tổng số kết quả kiểm tra: 95 / 100 = 0.95 (tức 95%)."
+  },
+  {
+    "id": "Q_MOD_C_085",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Khi xây dựng một sản phẩm AI, bước đầu tiên và quan trọng nhất cần thực hiện là gì?",
+    "options": [
+      "A. Lập tức thuê các máy chủ đắt tiền nhất để chạy thử nghiệm thuật toán học máy.",
+      "B. Xác định rõ vấn đề cần giải quyết và thu thập dữ liệu chất lượng liên quan.",
+      "C. Viết các điều khoản sử dụng dài hàng ngàn trang để bắt người dùng cam kết.",
+      "D. Quảng cáo sản phẩm trên các phương tiện truyền thông để tìm kiếm khách hàng."
+    ],
+    "correct_option": "B",
+    "explanation": "Dữ liệu là cốt lõi của AI. Xác định đúng bài toán của người dùng và thu thập dữ liệu sạch, đúng chủ đề là điều kiện tiên quyết quyết định sự thành bại của sản phẩm."
+  },
+  {
+    "id": "Q_MOD_C_086",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Trong thiết kế UX cho sản phẩm AI, khái niệm 'AI Explainability' nghĩa là gì?",
+    "options": [
+      "A. Khả năng giải thích lý do và cơ sở đằng sau các quyết định hoặc dự đoán của AI.",
+      "B. Khả năng viết mã nguồn của lập trình viên một cách nhanh chóng và không có lỗi.",
+      "C. Khả năng dịch tự động giao diện ứng dụng sang nhiều ngôn ngữ khác nhau trên đời.",
+      "D. Khả năng tự động nâng cấp cấu hình phần cứng của thiết bị di động khi cần chạy."
+    ],
+    "correct_option": "A",
+    "explanation": "AI Explainability (Trí tuệ nhân tạo giải thích được) là việc làm cho các dự đoán phức tạp của mô hình AI trở nên rõ ràng và dễ hiểu đối với con người sử dụng."
+  },
+  {
+    "id": "Q_MOD_C_087",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ethics"
+    ],
+    "content": "Đâu là một ví dụ về định kiến dữ liệu (Bias) trong một hệ thống AI tuyển dụng?",
+    "options": [
+      "A. Hệ thống tự động sắp xếp hồ sơ ứng viên theo thời gian nộp từ mới đến cũ.",
+      "B. Hệ thống tự động đánh giá thấp hồ sơ ứng viên nữ vì chỉ học từ dữ liệu nam giới.",
+      "C. Hệ thống gửi email thông báo kết quả phỏng vấn tự động đến cho tất cả ứng viên.",
+      "D. Hệ thống cho phép ứng viên cập nhật thông tin cá nhân trực tuyến trên trang web."
+    ],
+    "correct_option": "B",
+    "explanation": "Khi tập dữ liệu chỉ chứa hồ sơ nam giới, AI sẽ học sai rằng nam giới phù hợp hơn nữ giới, gây ra sự phân biệt đối xử và đánh giá thấp bất công đối với ứng viên nữ."
+  },
+  {
+    "id": "Q_MOD_C_088",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "machine-learning"
+    ],
+    "content": "Trong học máy, dữ liệu bị thiếu (Missing Data) nên được xử lý thế nào trước khi huấn luyện?",
+    "options": [
+      "A. Giữ nguyên toàn bộ các giá trị thiếu đó mà không cần thực hiện bất kỳ xử lý nào.",
+      "B. Loại bỏ hoặc điền các giá trị thay thế hợp lý (như giá trị trung bình) vào chỗ trống.",
+      "C. Tự động tắt máy tính và ngừng toàn bộ quá trình phát triển mô hình AI lập tức.",
+      "D. Nhân bản các dòng dữ liệu bị thiếu đó lên gấp nhiều lần để lấp đầy tập dữ liệu."
+    ],
+    "correct_option": "B",
+    "explanation": "Dữ liệu bị khuyết thiếu gây lỗi cho nhiều thuật toán. Do đó, cần loại bỏ các dòng lỗi quá nhiều hoặc điền giá trị đại diện (như trung bình cộng) trước khi học."
+  },
+  {
+    "id": "Q_MOD_C_089",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ethics"
+    ],
+    "content": "Khi phát triển ứng dụng AI tự động lái xe, yếu tố nào cần được ưu tiên hàng đầu?",
+    "options": [
+      "A. Thiết kế giao diện nghe nhạc thật đẹp mắt và nhiều tính năng giải trí trên xe.",
+      "B. Sự an toàn tuyệt đối của hành khách trên xe và những người tham gia giao thông.",
+      "C. Tốc độ di chuyển của xe phải luôn đạt mức tối đa trong mọi điều kiện đường xá.",
+      "D. Màu sắc sơn bên ngoài của chiếc xe phải thật nổi bật để thu hút người đi đường."
+    ],
+    "correct_option": "B",
+    "explanation": "Ứng dụng AI liên quan trực tiếp đến tính mạng con người như xe tự lái đòi hỏi mức độ an toàn và độ chính xác cực kỳ cao là ưu tiên số một."
+  },
+  {
+    "id": "Q_MOD_C_090",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Một công cụ tìm kiếm trả về các kết quả không liên quan đến từ khóa mà người dùng nhập. Vấn đề này thuộc về chỉ số nào của sản phẩm?",
+    "options": [
+      "A. Độ trễ của hệ thống quá cao khi xử lý thông tin.",
+      "B. Chất lượng và độ chính xác của kết quả tìm kiếm kém.",
+      "C. Giao diện thiết kế của công cụ tìm kiếm chưa đẹp mắt.",
+      "D. Dung lượng lưu trữ của máy chủ tìm kiếm bị quá tải."
+    ],
+    "correct_option": "B",
+    "explanation": "Trả về thông tin không đúng nhu cầu tìm kiếm của người dùng trực tiếp phản ánh độ chính xác và chất lượng thuật toán tìm kiếm của sản phẩm đang bị kém."
+  },
+  {
+    "id": "Q_MOD_C_091",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-basic"
+    ],
+    "content": "Thiết bị thông minh tự động điều chỉnh nhiệt độ điều hòa dựa trên số lượng người trong phòng là ứng dụng của:",
+    "options": [
+      "A. Trí tuệ nhân tạo (AI).",
+      "B. Lập trình web cơ bản.",
+      "C. Công cụ tìm kiếm từ khóa.",
+      "D. Mạng xã hội trực tuyến."
+    ],
+    "correct_option": "A",
+    "explanation": "Việc phân tích dữ liệu cảm biến và tự động đưa ra quyết định thay đổi nhiệt độ phòng một cách thông minh là ứng dụng thực tế của Trí tuệ nhân tạo (AI)."
+  },
+  {
+    "id": "Q_MOD_C_092",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "overfitting"
+    ],
+    "content": "Trong học máy, thuật ngữ 'Underfitting' (Chưa khớp) xảy ra khi nào?",
+    "options": [
+      "A. Mô hình học quá kỹ các chi tiết nhiễu của dữ liệu huấn luyện ban đầu.",
+      "B. Mô hình quá đơn giản nên không thể học được các quy luật của dữ liệu.",
+      "C. Mô hình tự động nhân đôi kích thước của tập dữ liệu huấn luyện hiện tại.",
+      "D. Mô hình chạy cực kỳ nhanh và chính xác trên mọi tập dữ liệu thực tế mới."
+    ],
+    "correct_option": "B",
+    "explanation": "Underfitting (Chưa khớp) xảy ra khi mô hình quá đơn giản hoặc chưa được huấn luyện đủ, dẫn đến không thể nắm bắt được quy luật chung của cả tập dữ liệu huấn luyện."
+  },
+  {
+    "id": "Q_MOD_C_093",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "machine-learning"
+    ],
+    "content": "Tại sao việc đánh giá mô hình AI trên dữ liệu thực tế (Test set) lại cần thiết?",
+    "options": [
+      "A. Để giúp cho lập trình viên có thêm thời gian nghỉ ngơi trước khi ra mắt sản phẩm.",
+      "B. Để đảm bảo mô hình AI hoạt động tốt và chính xác khi áp dụng vào thực tế cuộc sống.",
+      "C. Để tăng dung lượng bộ nhớ của thiết bị di động cài đặt ứng dụng AI đó sau này.",
+      "D. Để xóa bỏ hoàn toàn tất cả các mã nguồn cũ đã được viết trước đó của phần mềm."
+    ],
+    "correct_option": "B",
+    "explanation": "Đánh giá trên tập kiểm thử (Test set) độc lập giúp chúng ta đo lường khách quan năng lực dự đoán thực tế của AI trên các dữ liệu mới mà nó chưa từng được học."
+  },
+  {
+    "id": "Q_MOD_C_094",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ethics"
+    ],
+    "content": "Một hệ thống chatbot AI trả lời khách hàng bằng những thông tin thô lỗ. Điều này vi phạm nguyên tắc nào trong phát triển AI?",
+    "options": [
+      "A. Nguyên tắc tối ưu hóa tốc độ xử lý dữ liệu của hệ thống máy chủ.",
+      "B. Nguyên tắc đạo đức và an toàn thông tin đối với người sử dụng sản phẩm.",
+      "C. Nguyên tắc tiết kiệm chi phí vận hành cho các doanh nghiệp vừa và nhỏ.",
+      "D. Nguyên tắc sử dụng các thuật toán học máy phức tạp nhất có thể trên đời."
+    ],
+    "correct_option": "B",
+    "explanation": "Hệ thống AI cần tuân thủ các chuẩn mực đạo đức xã hội, ngôn từ lịch sự, tôn trọng người dùng và không cung cấp các nội dung gây hại, thô lỗ hoặc xúc phạm."
+  },
+  {
+    "id": "Q_MOD_C_095",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Khi người dùng đánh giá 5 sao cho câu trả lời của Chatbot AI, hành động này được gọi là:",
+    "options": [
+      "A. Phản hồi ngầm định (Implicit Feedback).",
+      "B. Phản hồi tường minh (Explicit Feedback).",
+      "C. Cập nhật phần mềm hệ thống tự động.",
+      "D. Tải lên dữ liệu huấn luyện thô mới."
+    ],
+    "correct_option": "B",
+    "explanation": "Phản hồi tường minh (Explicit Feedback) là phản hồi mà người dùng chủ động cung cấp để đánh giá trực tiếp chất lượng hệ thống (như chấm sao, viết đánh giá)."
+  },
+  {
+    "id": "Q_MOD_C_096",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-basic"
+    ],
+    "content": "Khi bạn thấy các gợi ý quảng cáo giày thể thao xuất hiện sau khi bạn tìm kiếm từ khóa 'giày chạy bộ', công nghệ nào đã hoạt động?",
+    "options": [
+      "A. Hệ thống gợi ý quảng cáo dựa trên hành vi người dùng.",
+      "B. Phần mềm quét virus tự động trên thiết bị máy tính của bạn.",
+      "C. Công cụ nhận diện khuôn mặt tự động qua camera trước điện thoại.",
+      "D. Hệ thống tự động dịch thuật văn bản thời gian thực của trình duyệt."
+    ],
+    "correct_option": "A",
+    "explanation": "Hệ thống quảng cáo phân tích hành vi tìm kiếm (nhập từ khóa giày chạy bộ) để tự động đề xuất quảng cáo các sản phẩm liên quan mật thiết (giày thể thao) nhằm tăng tỷ lệ mua."
+  },
+  {
+    "id": "Q_MOD_C_097",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "machine-learning"
+    ],
+    "content": "Khái niệm 'Dataset' trong học máy có nghĩa là gì trong tiếng Việt?",
+    "options": [
+      "A. Tập dữ liệu.",
+      "B. Thuật toán học.",
+      "C. Máy chủ ảo.",
+      "D. Ngôn ngữ lập trình."
+    ],
+    "correct_option": "A",
+    "explanation": "Dataset được dịch sang tiếng Việt là tập dữ liệu - tập hợp các mẫu thông tin được thu thập dùng để huấn luyện hoặc kiểm tra mô hình học máy."
+  },
+  {
+    "id": "Q_MOD_C_098",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-basic"
+    ],
+    "content": "Đâu là một ví dụ về ứng dụng AI trong ngành bán lẻ?",
+    "options": [
+      "A. Việc nhân viên siêu thị thực hiện kiểm kho thủ công bằng cách đếm từng sản phẩm.",
+      "B. AI dự báo nhu cầu mua sắm các mặt hàng để siêu thị có kế hoạch nhập hàng hợp lý.",
+      "C. Việc in hóa đơn thanh toán cho khách hàng bằng máy in hóa đơn nhiệt tại quầy.",
+      "D. Sổ tay ghi chép danh sách các khách hàng thân thiết của siêu thị bằng bút bi."
+    ],
+    "correct_option": "B",
+    "explanation": "AI phân tích dữ liệu mua sắm lịch sử để dự đoán xu hướng nhu cầu hàng hóa của người tiêu dùng, giúp siêu thị lên kế hoạch tồn kho hiệu quả, tránh thừa hoặc thiếu hàng."
+  },
+  {
+    "id": "Q_MOD_C_099",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "llm"
+    ],
+    "content": "Khi sử dụng API của mô hình ngôn ngữ lớn, chi phí sử dụng thường phụ thuộc trực tiếp vào yếu tố nào?",
+    "options": [
+      "A. Số lượng nút bấm hiển thị trên giao diện của ứng dụng di động của người dùng.",
+      "B. Số lượng token (từ hoặc cụm từ) được gửi đi và nhận về từ hệ thống máy chủ API.",
+      "C. Số lần người dùng thực hiện khởi động lại thiết bị di động thông minh của họ.",
+      "D. Khoảng cách địa lý từ nhà của người dùng đến trung tâm dữ liệu gần nhất của AI."
+    ],
+    "correct_option": "B",
+    "explanation": "Nhà cung cấp dịch vụ LLM API (như OpenAI, Anthropic) tính phí dựa trên số lượng token ở cả phần yêu cầu (Prompt) gửi đi và câu trả lời sinh ra (Completion) nhận về."
+  },
+  {
+    "id": "Q_MOD_C_100",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "product-ux"
+    ],
+    "content": "Mục tiêu cuối cùng của việc đơn giản hóa các sản phẩm AI cho người dùng phổ thông là gì?",
+    "options": [
+      "A. Bắt buộc người dùng phải học lập trình máy tính trước khi sử dụng các dịch vụ AI.",
+      "B. Giúp bất kỳ ai cũng có thể dễ dàng sử dụng và hưởng lợi từ các công nghệ AI.",
+      "C. Tăng độ phức tạp của các hướng dẫn sử dụng phần mềm để thách thức người dùng.",
+      "D. Hạn chế tối đa số lượng người dùng có thể tiếp cận được với các ứng dụng AI mới."
+    ],
+    "correct_option": "B",
+    "explanation": "Đơn giản hóa trải nghiệm (UX) và hạ thấp rào cản kỹ thuật giúp các sản phẩm công nghệ AI tiếp cận được đại đa số mọi người dùng, giúp họ ứng dụng hiệu quả vào cuộc sống."
   }
 ];
 

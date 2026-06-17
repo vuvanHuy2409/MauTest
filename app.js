@@ -181,9 +181,8 @@ function startExam() {
 // Select questions with module-weighted distribution.
 // Module A (Math) and Module B (Programming) are prioritized at 35% each.
 // Module C (AI) and Module D (Ethics) each contribute 15%.
-// All difficulties are Easy or Medium — no Hard questions.
+// All questions are at Medium difficulty level.
 function selectQuestions(n) {
-  // Module quotas (weights: A=35%, B=35%, C=15%, D=15%)
   const moduleWeights = {
     Module_A: 0.35,
     Module_B: 0.35,
@@ -195,19 +194,10 @@ function selectQuestions(n) {
 
   Object.entries(moduleWeights).forEach(([mod, weight]) => {
     const quota = Math.round(n * weight);
-    const pool = STATE.allQuestions.filter(q => q.module_id === mod);
-
-    const easy   = shuffle(pool.filter(q => q.difficulty === 'Easy'));
-    const medium = shuffle(pool.filter(q => q.difficulty === 'Medium'));
-
-    // 40% Easy, 60% Medium (no Hard)
-    const easyCount   = Math.round(quota * 0.4);
-    const mediumCount = quota - easyCount;
-
-    selected = selected.concat(
-      easy.slice(0, easyCount),
-      medium.slice(0, mediumCount),
+    const pool = shuffle(
+      STATE.allQuestions.filter(q => q.module_id === mod)
     );
+    selected = selected.concat(pool.slice(0, quota));
   });
 
   return shuffle(selected).slice(0, n);

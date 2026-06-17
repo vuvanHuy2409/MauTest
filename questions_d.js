@@ -1,1302 +1,1702 @@
 const QUESTIONS_D = [
   {
-    id: "Q_MOD_D_001", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Có 3 mô hình AI: X, Y, và Z. Biết rằng: Mô hình X xử lý nhanh hơn mô hình Y. Mô hình Z xử lý chậm hơn mô hình Y. Phát biểu nào sau đây chắc chắn đúng?",
-    options: [
-      "A. Mô hình Z chắc chắn sẽ xử lý nhanh nhất.",
-      "B. Mô hình X chắc chắn xử lý nhanh hơn mô hình Z.",
-      "C. Mô hình Y chắc chắn sẽ xử lý nhanh nhất.",
-      "D. Mô hình X và mô hình Z có tốc độ xử lý bằng nhau."
+    "id": "Q_MOD_D_001",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "B",
-    explanation: "Từ dữ kiện bài toán, ta có thứ tự tốc độ xử lý từ nhanh đến chậm là: $X > Y > Z$. Do đó, mô hình X chắc chắn xử lý nhanh hơn mô hình Z."
+    "content": "Nếu đèn giao thông chuyển sang màu đỏ thì các xe phải dừng lại. Thực tế đèn giao thông đang có màu đỏ. Kết luận nào sau đây đúng?",
+    "options": [
+      "A. Các phương tiện xe cộ chắc chắn phải dừng lại.",
+      "B. Các phương tiện xe cộ có thể tiếp tục di chuyển.",
+      "C. Các phương tiện xe cộ được phép tăng tốc độ đi.",
+      "D. Các phương tiện xe cộ phải quay đầu xe đi ngược."
+    ],
+    "correct_option": "A",
+    "explanation": "Theo quy luật đèn đỏ, các phương tiện giao thông bắt buộc phải dừng lại."
   },
   {
-    id: "Q_MOD_D_002", module_id: "Module_D", difficulty: "Easy",
-    tags: ["data-ethics"],
-    content: "Bạn được giao nhiệm vụ thu thập hình ảnh khuôn mặt của sinh viên trong trường để xây dựng hệ thống điểm danh tự động. Hành vi nào sau đây tuân thủ đúng nguyên tắc **Đạo đức dữ liệu (Data Ethics)**?",
-    options: [
-      "A. Lắp đặt hệ thống camera ẩn bí mật tại các cửa lớp học để thu thập hình ảnh tự nhiên của sinh viên mà không thông báo trước.",
-      "B. Tự ý tải về toàn bộ hình ảnh cá nhân được sinh viên chia sẻ công khai trên mạng xã hội để đưa vào làm dữ liệu huấn luyện.",
-      "C. Gửi văn bản thông báo rõ ràng mục đích sử dụng và biểu mẫu cam kết đồng thuận cho sinh viên ký trước khi chụp ảnh thu thập.",
-      "D. Đăng tải công khai tập dữ liệu hình ảnh khuôn mặt lên internet để các khóa sinh viên sau có thể tự do dùng làm bài tập lớn."
+    "id": "Q_MOD_D_002",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "C",
-    explanation: "Quyền riêng tư và sự đồng thuận minh bạch (Informed Consent) từ chủ thể dữ liệu là nguyên tắc cốt lõi mang tính pháp lý trong đạo đức dữ liệu AI."
+    "content": "Nếu điện thoại hết pin thì màn hình sẽ bị tắt. Hiện tại điện thoại của bạn đã hết sạch pin. Kết luận nào sau đây đúng?",
+    "options": [
+      "A. Màn hình điện thoại chắc chắn sẽ bị tắt đi.",
+      "B. Màn hình điện thoại vẫn sáng bình thường thôi.",
+      "C. Màn hình điện thoại sẽ chuyển sang màu xanh.",
+      "D. Màn hình điện thoại sẽ tự động mở camera lên."
+    ],
+    "correct_option": "A",
+    "explanation": "Không có điện (hết pin) thì màn hình điện thoại không thể hoạt động và bị tắt."
   },
   {
-    id: "Q_MOD_D_003", module_id: "Module_D", difficulty: "Medium",
-    tags: ["ai-bias"],
-    content: "Một công ty công nghệ dùng dữ liệu hồ sơ tuyển dụng của 10 năm qua để huấn luyện AI lọc CV kỹ sư phần mềm. Do lịch sử ngành này trong quá khứ có tỷ lệ nam giới nộp đơn vượt trội, AI sau khi huấn luyện có xu hướng tự động đánh rớt các CV có chứa từ khóa liên quan đến \"nữ\" (Ví dụ: \"Hội cựu nữ sinh viên\"). Hiện tượng này được gọi là gì?",
-    options: [
-      "A. Lỗi quá khớp dữ liệu (Overfitting).",
-      "B. Định kiến thuật toán (Algorithmic Bias).",
-      "C. Lỗi ảo tưởng thông tin (Hallucination).",
-      "D. Lỗi tối ưu hóa toàn cục (Optimization)."
+    "id": "Q_MOD_D_003",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "B",
-    explanation: "AI học từ dữ liệu lịch sử. Nếu dữ liệu phản ánh sự mất cân bằng hoặc định kiến sẵn có của con người, AI sẽ lặp lại và khuếch đại định kiến đó. Đây gọi là hiện tượng Định kiến (Bias)."
+    "content": "Nếu cắm điện thì nồi cơm điện mới hoạt động. Hiện tại nồi cơm điện đang hoạt động. Kết luận nào sau đây chắc chắn đúng?",
+    "options": [
+      "A. Nồi cơm điện chắc chắn đã được cắm nguồn điện.",
+      "B. Nồi cơm điện chắc chắn chưa được cắm điện vào.",
+      "C. Nồi cơm điện đang bị hỏng phần bảng mạch chính.",
+      "D. Nồi cơm điện tự chạy bằng pin dự phòng bên trong."
+    ],
+    "correct_option": "A",
+    "explanation": "Nồi cơm điện hoạt động thì bắt buộc phải được cắm điện."
   },
   {
-    id: "Q_MOD_D_004", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Một nhóm nghiên cứu AI tuyên bố: *\"Tất cả các mô hình deep learning có trên 1 tỷ tham số đều cần GPU để chạy. Mô hình AI mang tên 'Alpha' không cần GPU để chạy.\"* Dựa vào tuyên bố trên, kết luận nào sau đây là chính xác nhất?",
-    options: [
-      "A. Mô hình Alpha chắc chắn có trên 1 tỷ tham số.",
-      "B. Mô hình Alpha không phải là mô hình deep learning.",
-      "C. Mô hình Alpha có số tham số dưới hoặc bằng 1 tỷ.",
-      "D. Tuyên bố của nhóm nghiên cứu chắc chắn bị sai."
+    "id": "Q_MOD_D_004",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "C",
-    explanation: "Theo quy tắc phủ định của mệnh đề kéo theo ($P \\rightarrow Q$ thì $\\neg Q \\rightarrow \\neg P$). Vì Alpha không cần GPU ($\\neg Q$), nên Alpha không thể là \"mô hình deep learning có trên 1 tỷ tham số\". Do đó, nó phải có dưới hoặc bằng 1 tỷ tham số."
+    "content": "Nếu muốn gửi thư điện tử thì máy tính phải kết nối internet. Máy tính đang không có mạng. Kết luận nào sau đây đúng?",
+    "options": [
+      "A. Bạn không thể gửi được thư điện tử lúc này.",
+      "B. Bạn vẫn gửi được thư điện tử bình thường thôi.",
+      "C. Thư điện tử sẽ tự động được gửi qua bưu điện.",
+      "D. Thư điện tử sẽ tự in ra giấy trên máy in kề bên."
+    ],
+    "correct_option": "A",
+    "explanation": "Không có internet thì không thể thực hiện gửi thư điện tử."
   },
   {
-    id: "Q_MOD_D_005", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-privacy"],
-    content: "Bạn đang làm việc với một tập dữ liệu lớn chứa thông tin hành vi mua sắm của khách hàng để huấn luyện AI. Bạn phát hiện ra trong file dữ liệu có chứa cả số CCCD, số điện thoại và địa chỉ nhà riêng của khách hàng dưới dạng văn bản thô (Plain text). Hành động nào sau đây thể hiện tư duy đúng đắn về an toàn dữ liệu?",
-    options: [
-      "A. Giữ nguyên các thông tin nhạy cảm này để huấn luyện vì dữ liệu thô càng chi tiết thì mô hình AI sẽ hoạt động càng chính xác.",
-      "B. Ẩn danh hóa hoặc mã hóa băm các trường thông tin định danh cá nhân (PII) trước khi chia sẻ dữ liệu hoặc đưa vào huấn luyện.",
-      "C. Đăng tải toàn bộ tập dữ liệu thô lên các diễn đàn công nghệ mở để nhờ cộng đồng lập trình hỗ trợ viết mã nguồn xử lý nhanh.",
-      "D. Hủy bỏ toàn bộ dự án nghiên cứu ngay lập tức và báo cáo với cấp trên rằng không thể xử lý dữ liệu chứa thông tin nhạy cảm."
+    "id": "Q_MOD_D_005",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "B",
-    explanation: "CCCD, số điện thoại, địa chỉ là các thông tin định danh cá nhân nhạy cảm (PII). Việc ẩn danh hóa hoặc băm mã hóa bảo mật là bắt buộc để bảo vệ quyền riêng tư trước khi đưa vào các phân hệ huấn luyện."
+    "content": "Nếu bạn chăm chỉ làm bài tập thì bạn sẽ hiểu bài hơn. Thực tế bạn rất chăm chỉ làm bài. Kết luận nào sau đây đúng?",
+    "options": [
+      "A. Bạn chắc chắn sẽ hiểu bài học sâu sắc hơn.",
+      "B. Bạn chắc chắn sẽ quên hết toàn bộ kiến thức.",
+      "C. Bạn chắc chắn sẽ bị điểm kém trong kỳ thi.",
+      "D. Bạn không có sự thay đổi nào về mặt kiến thức."
+    ],
+    "correct_option": "A",
+    "explanation": "Chăm chỉ làm bài tập giúp củng cố kiến thức và hiểu bài hơn."
   },
   {
-    id: "Q_MOD_D_006", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Hãy suy luận logic dựa trên các dữ kiện sau:\n\n* Mọi sinh viên học ngành Công nghệ thông tin (CNTT) đều phải học môn Lập trình.\n* Một số thành viên của Câu lạc bộ AI không phải là sinh viên ngành CNTT.\nPhát biểu nào sau đây **chắc chắn đúng**?",
-    options: [
-      "A. Tất cả các thành viên của Câu lạc bộ AI đều không biết lập trình.",
-      "B. Một số thành viên nhất định của Câu lạc bộ AI biết lập trình.",
-      "C. Có những người đang học môn Lập trình nhưng không học ngành CNTT.",
-      "D. Không có đủ cơ sở để khẳng định các phát biểu trên là đúng."
+    "id": "Q_MOD_D_006",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "D",
-    explanation: "Mệnh đề 1: CNTT $\\rightarrow$ Lập trình (không có nghĩa Lập trình $\\rightarrow$ CNTT). Mệnh đề 2: Một số thành viên CLB AI không thuộc CNTT, những người này có thể tự học lập trình hoặc không học (đề bài không nhắc tới). Vì vậy các phát biểu A, B, C đều là suy đoán vô căn cứ."
+    "content": "Nếu nhấn nút nguồn thì máy tính sẽ khởi động. Bạn chưa hề nhấn nút nguồn của máy. Kết luận nào sau đây chắc chắn đúng?",
+    "options": [
+      "A. Máy tính chưa khởi động theo cách thông thường.",
+      "B. Máy tính đã khởi động và sẵn sàng để làm việc.",
+      "C. Máy tính đã bị cháy hoàn toàn bộ nguồn bên trong.",
+      "D. Máy tính tự động kết nối với mạng internet nhà."
+    ],
+    "correct_option": "A",
+    "explanation": "Chưa nhấn nút nguồn thì máy tính chưa thể khởi động."
   },
   {
-    id: "Q_MOD_D_007", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Hãy suy luận logic từ các phát biểu sau:\n\n* Không có kỹ sư AI nào lười biếng.\n* Một số người thích chơi game là kỹ sư AI.\nPhát biểu nào sau đây **chắc chắn đúng**?",
-    options: [
-      "A. Tất cả những người có sở thích chơi game đều không lười biếng.",
-      "B. Một số người có sở thích chơi game chắc chắn không lười biếng.",
-      "C. Mọi người lười biếng chắc chắn đều có sở thích thích chơi game.",
-      "D. Tất cả các kỹ sư AI đều không có sở thích thích chơi game."
+    "id": "Q_MOD_D_007",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "B",
-    explanation: "Dữ kiện 2 cho biết một nhóm giao nhau: Một số người chơi game là kỹ sư AI. Dữ kiện 1 khẳng định toàn bộ kỹ sư AI đều chăm chỉ (không lười biếng). Do đó, những người vừa thích chơi game vừa là kỹ sư AI chắc chắn là những người không lười biếng."
+    "content": "Nếu trời mưa lớn thì buổi dã ngoại ngoài trời sẽ bị hủy. Thực tế buổi dã ngoại vẫn diễn ra. Kết luận nào sau đây đúng?",
+    "options": [
+      "A. Thực tế lúc đó trời đã không mưa lớn lắm đâu.",
+      "B. Thực tế lúc đó trời đã mưa cực kỳ dữ dội luôn.",
+      "C. Mọi người đều bị ướt hết do mưa lớn kéo dài.",
+      "D. Buổi dã ngoại đã được chuyển vào trong nhà học."
+    ],
+    "correct_option": "A",
+    "explanation": "Vì buổi dã ngoại không bị hủy, nên trời chắc chắn không mưa lớn."
   },
   {
-    id: "Q_MOD_D_008", module_id: "Module_D", difficulty: "Easy",
-    tags: ["open-source-licensing"],
-    content: "Một lập trình viên sử dụng mã nguồn mở của một tác giả khác được chia sẻ trên GitHub với giấy phép **MIT License** để xây dựng ứng dụng AI thương mại kiếm tiền cho mình. Hành vi này có vi phạm đạo đức hoặc bản quyền không?",
-    options: [
-      "A. Có vi phạm, vì việc khai thác mã nguồn của người khác để xây dựng sản phẩm thương mại sinh lời là hành vi trái pháp luật.",
-      "B. Không vi phạm, vì giấy phép MIT cho phép tự do sửa đổi và thương mại hóa sản phẩm, chỉ cần giữ nguyên tuyên bố bản quyền.",
-      "C. Có vi phạm, trừ trường hợp lập trình viên trích chia sẻ lại một phần doanh thu cụ thể theo thỏa thuận riêng với tác giả gốc.",
-      "D. Chỉ vi phạm trong trường hợp hệ thống phần mềm AI thương mại đó hoạt động không ổn định hoặc gây ra lỗi cho khách hàng."
+    "id": "Q_MOD_D_008",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "B",
-    explanation: "Giấy phép MIT là giấy phép mã nguồn mở tự do. Nó cho phép thương mại hóa hoàn toàn miễn phí, yêu cầu duy nhất là phải giữ nguyên thông báo bản quyền và quyền miễn trừ trách nhiệm của tác giả gốc trong source code."
+    "content": "Nếu bạn học ngành CNTT thì bạn phải học môn Lập trình cơ bản. Bạn đang học ngành CNTT. Kết luận nào sau đây đúng?",
+    "options": [
+      "A. Bạn phải học môn Lập trình cơ bản trong trường.",
+      "B. Bạn không cần học môn Lập trình cơ bản ở lớp.",
+      "C. Bạn được phép bỏ qua mọi môn học về lập trình.",
+      "D. Bạn chỉ cần học môn Lịch sử mà thôi không cần mã."
+    ],
+    "correct_option": "A",
+    "explanation": "Học CNTT thì bắt buộc phải học môn Lập trình cơ bản."
   },
   {
-    id: "Q_MOD_D_009", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-ethics"],
-    content: "Trong việc phát triển AI y tế giúp bác sĩ chẩn đoán ung thư qua ảnh chụp X-quang, hành vi nào sau đây được coi là **thiếu trách nhiệm đạo đức nghề nghiệp**?",
-    options: [
-      "A. Thực hiện thử nghiệm và kiểm định mô hình cực kỳ khắt khe tại nhiều cơ sở y tế độc lập trước khi đưa vào sử dụng.",
-      "B. Chủ động giấu các ca bệnh chẩn đoán sai sót nhằm làm đẹp kết quả báo cáo và tối ưu hóa doanh thu bán sản phẩm phần mềm.",
-      "C. Thiết kế hệ thống luôn hiển thị mức độ tin cậy của dự đoán giúp bác sĩ có thêm căn cứ đưa ra quyết định lâm sàng cuối.",
-      "D. Áp dụng quy trình bảo mật nghiêm ngặt để ẩn danh hoàn toàn thông tin cá nhân và bệnh án của bệnh nhân trong tập dữ liệu."
+    "id": "Q_MOD_D_009",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "B",
-    explanation: "Việc cố tình che giấu sai sót của mô hình AI trong y tế là hành vi vi phạm nghiêm trọng đạo đức, vì nó có thể trực tiếp làm sai lệch kết quả điều trị và gây nguy hiểm đến tính mạng của người bệnh."
+    "content": "Nếu mật khẩu nhập vào đúng thì bạn sẽ đăng nhập được. Bạn không đăng nhập được vào hệ thống. Kết luận nào sau đây đúng?",
+    "options": [
+      "A. Mật khẩu bạn nhập vào hệ thống đã bị sai rồi.",
+      "B. Mật khẩu bạn nhập vào hệ thống chắc chắn đúng.",
+      "C. Hệ thống đã tự động thay đổi mật khẩu của bạn.",
+      "D. Tài khoản của bạn đã bị xóa vĩnh viễn khỏi mạng."
+    ],
+    "correct_option": "A",
+    "explanation": "Không đăng nhập được đồng nghĩa mật khẩu nhập vào đã bị sai."
   },
   {
-    id: "Q_MOD_D_010", module_id: "Module_D", difficulty: "Easy",
-    tags: ["pure-logic"],
-    content: "Đọc tình huống sau: Ba sinh viên An, Bình, và Cường cùng tham gia một cuộc thi Hackathon về AI.\n\n* Nếu An đoạt giải thì Bình cũng đoạt giải.\n* Thừa nhận rằng An đã đoạt giải.\nKết luận nào sau đây chắc chắn đúng về mặt logic?",
-    options: [
-      "A. Chỉ có An chắc chắn đoạt giải.",
-      "B. Bình chắc chắn sẽ đoạt giải.",
-      "C. Cường chắc chắn sẽ đoạt giải.",
-      "D. Cả ba bạn đều không đoạt giải."
+    "id": "Q_MOD_D_010",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "B",
-    explanation: "Mệnh đề logic có dạng: $A \\rightarrow B$ (Nếu An được giải thì Bình được giải). Đề bài khẳng định vế $A$ xảy ra (An đã đoạt giải), theo quy tắc Modus Ponens, vế $B$ chắc chắn phải xảy ra $\\rightarrow$ Bình chắc chắn đoạt giải."
+    "content": "Nếu tài khoản có đủ tiền thì giao dịch mua hàng sẽ thành công. Giao dịch mua hàng đã thành công. Kết luận nào đúng?",
+    "options": [
+      "A. Tài khoản của bạn chắc chắn có đủ số tiền mua.",
+      "B. Tài khoản của bạn chắc chắn không có đồng nào.",
+      "C. Tài khoản của bạn đang bị khóa bởi ngân hàng.",
+      "D. Cửa hàng đã tặng miễn phí món hàng đó cho bạn."
+    ],
+    "correct_option": "A",
+    "explanation": "Giao dịch thành công chứng tỏ tài khoản có đủ tiền để thanh toán."
   },
   {
-    id: "Q_MOD_D_011", module_id: "Module_D", difficulty: "Medium",
-    tags: ["ai-bias"],
-    content: "Một ứng dụng AI tuyển dụng nhân sự tự động liên tục loại bỏ hồ sơ của các ứng viên đến từ một vùng miền cụ thể mà không dựa trên năng lực. Nguyên nhân gốc rễ của hành vi phân biệt đối xử này của AI thường bắt nguồn từ đâu?",
-    options: [
-      "A. Do mô hình AI tự hình thành ý thức độc lập và nảy sinh định kiến tiêu cực đối với người dân sinh sống tại vùng miền đó.",
-      "B. Do dữ liệu huấn luyện chứa định kiến sẵn có của con người trong quá khứ và mô hình AI đã tự động học lại khuôn mẫu sai này.",
-      "C. Do các thuật toán học máy sử dụng quá nhiều phép biến đổi ma trận phức tạp khiến cho độ chính xác bị suy giảm cục bộ.",
-      "D. Do hệ thống máy chủ vận hành mô hình bị quá nhiệt dẫn đến các sai số ngẫu nhiên trong việc tính toán kết quả tuyển dụng."
+    "id": "Q_MOD_D_011",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "B",
-    explanation: "Mô hình AI không tự sinh ra định kiến vùng miền. Hiện tượng phân biệt đối xử này xảy ra là do dữ liệu lịch sử đầu vào được thu thập từ con người đã có sẵn định kiến đó và AI ghi nhận lại quy luật này."
+    "content": "Nếu máy in hết giấy thì không thể in được tài liệu. Máy in đang không thể in tài liệu. Kết luận nào sau đây có thể đúng?",
+    "options": [
+      "A. Máy in có thể đã hết giấy để thực hiện việc in.",
+      "B. Máy in chắc chắn vẫn còn rất nhiều giấy bên trong.",
+      "C. Máy in đã tự động nạp thêm giấy từ bên ngoài vào.",
+      "D. Máy in đang hoạt động cực kỳ tốt không lỗi gì cả."
+    ],
+    "correct_option": "A",
+    "explanation": "Không in được tài liệu có thể do nguyên nhân máy in hết giấy."
   },
   {
-    id: "Q_MOD_D_012", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Hãy suy luận logic dựa trên các dữ kiện sau:\n\n* Mọi mô hình ngôn ngữ lớn (LLM) đều tiêu tốn rất nhiều tài nguyên phần cứng.\n* Hệ thống AI mang tên \"EcoChat\" không tiêu tốn nhiều tài nguyên phần cứng.\nPhát biểu nào sau đây **chắc chắn đúng**?",
-    options: [
-      "A. EcoChat chắc chắn là một mô hình ngôn ngữ lớn hoạt động cực kỳ tối ưu.",
-      "B. EcoChat chắc chắn không phải là một mô hình ngôn ngữ lớn theo định nghĩa.",
-      "C. EcoChat chỉ sử dụng các thuật toán nhân ma trận đơn giản và thông minh.",
-      "D. EcoChat thực chất là một loại phần mềm độc hại xâm nhập vào hệ thống."
+    "id": "Q_MOD_D_012",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "B",
-    explanation: "Mệnh đề: $LLM \\rightarrow Tốn\\_tài\\_nguyên$. Do EcoChat không tốn tài nguyên, theo logic phản chứng ($\\neg Q \\rightarrow \\neg P$), EcoChat chắc chắn không phải là mô hình LLM."
+    "content": "Nếu bạn đạt điểm mười môn Toán thì bạn được bố mẹ khen. Bạn không được bố mẹ khen. Kết luận nào sau đây chắc chắn đúng?",
+    "options": [
+      "A. Bạn chắc chắn không đạt điểm mười môn học Toán.",
+      "B. Bạn chắc chắn đã đạt điểm mười môn học Toán rồi.",
+      "C. Bạn đạt điểm mười nhưng bố mẹ quên không khen bạn.",
+      "D. Bố mẹ đã khen bạn vì bạn học tốt môn học khác."
+    ],
+    "correct_option": "A",
+    "explanation": "Vì nếu được điểm mười thì được khen. Không được khen nghĩa là không đạt điểm mười."
   },
   {
-    id: "Q_MOD_D_013", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-privacy"],
-    content: "Việc một kỹ sư AI âm thầm cài đặt một đoạn code ngầm trong ứng dụng để thu thập toàn bộ lịch sử gõ bàn phím (Keylogger) của người dùng nhằm lấy dữ liệu hội thoại thực tế huấn luyện AI mà không được sự cho phép của họ là vi phạm nguyên tắc đạo đức nào nghiêm trọng nhất?",
-    options: [
-      "A. Sự minh bạch và quyền riêng tư cá nhân của người sử dụng.",
-      "B. Sự tối ưu hóa của thuật toán và hiện tượng quá khớp dữ liệu.",
-      "C. Khả năng bảo mật của máy chủ và tốc độ tối ưu hóa hệ thống.",
-      "D. Các quy định pháp lý liên quan đến giấy phép mã nguồn mở MIT."
+    "id": "Q_MOD_D_013",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "A",
-    explanation: "Thu thập dữ liệu nhạy cảm một cách lén lút vi phạm nghiêm trọng quyền riêng tư và tính minh bạch thông tin cốt lõi đối với người dùng (Informed Consent)."
+    "content": "Nếu bạn tắt nguồn bộ phát Wifi thì mạng Internet trong nhà sẽ mất. Bạn đã tắt bộ phát Wifi. Kết luận nào sau đây đúng?",
+    "options": [
+      "A. Mạng Internet trong nhà chắc chắn đã bị mất đi.",
+      "B. Mạng Internet trong nhà vẫn hoạt động tốt như cũ.",
+      "C. Bộ phát Wifi tự động chuyển sang dùng mạng khác.",
+      "D. Tất cả máy tính trong nhà tự động tăng dung lượng."
+    ],
+    "correct_option": "A",
+    "explanation": "Tắt nguồn bộ phát Wifi thì mạng Internet chắc chắn bị mất."
   },
   {
-    id: "Q_MOD_D_014", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Đọc tình huống logic sau: Có 3 lập trình viên là Nam, Hải và Quốc. Biết rằng:\n\n* Người giỏi Python nhất là người lớn tuổi nhất.\n* Hải trẻ tuổi hơn Quốc.\n* Nam lớn tuổi hơn Quốc.\nAi là người giỏi Python nhất?",
-    options: [
-      "A. Lập trình viên Hải.",
-      "B. Lập trình viên Quốc.",
-      "C. Lập trình viên Nam.",
-      "D. Không thể xác định."
+    "id": "Q_MOD_D_014",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "C",
-    explanation: "Sắp xếp thứ tự tuổi từ lớn đến nhỏ dựa vào dữ kiện: Nam > Quốc, Quốc > Hải $\\Rightarrow$ Nam > Quốc > Hải. Vậy Nam là người lớn tuổi nhất, đồng nghĩa Nam là người giỏi Python nhất."
+    "content": "Nếu học sinh đạt danh hiệu học sinh giỏi thì được nhận phần thưởng. Bạn Nam được nhận phần thưởng. Kết luận nào sau đây đúng?",
+    "options": [
+      "A. Bạn Nam có thể đã đạt danh hiệu học sinh giỏi.",
+      "B. Bạn Nam chắc chắn không đạt danh hiệu học sinh.",
+      "C. Bạn Nam chắc chắn học kém nhất trong lớp học đó.",
+      "D. Bạn Nam được nhận thưởng do đi học muộn mỗi ngày."
+    ],
+    "correct_option": "A",
+    "explanation": "Nhận phần thưởng có thể do đạt danh hiệu học sinh giỏi (nhưng cũng có thể vì lý do khác)."
   },
   {
-    id: "Q_MOD_D_015", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-ethics"],
-    content: "Thuật ngữ \"Explainable AI\" (XAI - AI có thể giải thích được) hướng tới mục tiêu đạo đức và kỹ thuật nào trong phát triển Trí tuệ nhân tạo?",
-    options: [
-      "A. Phát triển các công cụ tự động tạo báo cáo kỹ thuật và kiểm thử thay thế hoàn toàn vai trò của các lập trình viên.",
-      "B. Chuyển đổi các mô hình dạng hộp đen phức tạp thành các hệ thống có cơ chế ra quyết định rõ ràng, dễ hiểu đối với con người.",
-      "C. Xây dựng các ứng dụng dạy học thông minh có khả năng tự động giải bài tập toán và tóm tắt kiến thức cho học sinh.",
-      "D. Tập trung tối ưu hóa các tham số để tăng độ chính xác của mô hình dự đoán lên mức tuyệt đối $100\\%$ trong thực tế."
+    "id": "Q_MOD_D_015",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "B",
-    explanation: "XAI giúp minh bạch hóa các quyết định nội bộ của AI, điều này đặc biệt quan trọng và mang tính bắt buộc trong các lĩnh vực nhạy cảm cao như Y tế (Chẩn đoán bệnh) và Tài chính (Duyệt hồ sơ vay vốn)."
+    "content": "Nếu chương trình có lỗi cú pháp thì nó sẽ không chạy được. Chương trình đang chạy bình thường. Kết luận nào sau đây đúng?",
+    "options": [
+      "A. Chương trình chắc chắn không có lỗi cú pháp nào.",
+      "B. Chương trình chắc chắn có rất nhiều lỗi cú pháp.",
+      "C. Chương trình tự sửa lỗi cú pháp trong khi chạy.",
+      "D. Chương trình chạy nhưng không hiển thị kết quả."
+    ],
+    "correct_option": "A",
+    "explanation": "Vì chương trình chạy bình thường nên nó không có lỗi cú pháp."
   },
   {
-    id: "Q_MOD_D_016", module_id: "Module_D", difficulty: "Easy",
-    tags: ["data-ethics"],
-    content: "Khi một dự án AI thất bại do mô hình liên tục đưa ra dự đoán sai lệch nghiêm trọng gây thiệt hại về tiền bạc cho khách hàng, trách nhiệm giải trình cuối cùng thuộc về ai?",
-    options: [
-      "A. Thuật toán học máy và mô hình AI do chúng tự động tính toán sai sót.",
-      "B. Hệ thống máy chủ vận hành mô hình do bị quá tải phần cứng khi xử lý.",
-      "C. Đội ngũ con người tham gia thiết kế, phát triển và vận hành hệ thống.",
-      "D. Khách hàng sử dụng dịch vụ vì đã đặt niềm tin vào sản phẩm công nghệ."
+    "id": "Q_MOD_D_016",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "C",
-    explanation: "AI là một công cụ do con người tạo ra, huấn luyện và vận hành. Do đó, con người (kỹ sư, quản lý dự án, công ty công nghệ) phải chịu trách nhiệm hoàn toàn về mặt pháp lý và đạo đức đối với các hệ quả do sản phẩm của mình gây ra."
+    "content": "Nếu ổ cứng đầy thì bạn không thể tải thêm tệp tin mới về máy. Bạn vẫn tải được tệp tin mới. Kết luận nào sau đây đúng?",
+    "options": [
+      "A. Ổ cứng của máy tính chắc chắn chưa bị đầy bộ nhớ.",
+      "B. Ổ cứng của máy tính chắc chắn đã bị đầy hoàn toàn.",
+      "C. Tệp tin mới tải về tự lưu trên mạng không cần ổ.",
+      "D. Máy tính đã tự động tăng thêm dung lượng vật lý."
+    ],
+    "correct_option": "A",
+    "explanation": "Vẫn tải được tệp tin nghĩa là ổ cứng chưa bị đầy."
   },
   {
-    id: "Q_MOD_D_017", module_id: "Module_D", difficulty: "Easy",
-    tags: ["data-ethics"],
-    content: "Khi đăng ký tài khoản trên một ứng dụng học tập AI mới, hành động nào của nhà cung cấp dịch vụ giúp bảo vệ quyền lợi của người dùng rõ ràng nhất?",
-    options: [
-      "A. Ẩn toàn bộ các điều khoản sử dụng chi tiết và tự động tích chọn đồng ý thay cho khách hàng.",
-      "B. Cung cấp rõ ràng tài liệu về điều khoản sử dụng và cách thu thập dữ liệu cá nhân để người dùng duyệt.",
-      "C. Yêu cầu bắt buộc người sử dụng phải cung cấp thông tin mật khẩu của các tài khoản mạng xã hội khác.",
-      "D. Giữ bí mật hoàn toàn các chính sách bảo mật để tránh rò rỉ cấu trúc vận hành của ứng dụng ra ngoài."
+    "id": "Q_MOD_D_017",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "B",
-    explanation: "Sự minh bạch thông tin thông qua Điều khoản dịch vụ và Chính sách bảo mật là yếu tố pháp lý và đạo đức bắt buộc để người dùng đưa ra quyết định đồng thuận."
+    "content": "Nếu bạn tắt Bluetooth trên điện thoại thì tai nghe không dây sẽ ngắt kết nối. Bạn đã tắt Bluetooth. Kết luận nào đúng?",
+    "options": [
+      "A. Tai nghe không dây chắc chắn đã bị ngắt kết nối.",
+      "B. Tai nghe không dây vẫn giữ kết nối nhạc như cũ.",
+      "C. Điện thoại tự bật lại Bluetooth sau vài giây thôi.",
+      "D. Tai nghe tự kết nối với một chiếc điện thoại khác."
+    ],
+    "correct_option": "A",
+    "explanation": "Tắt Bluetooth khiến tai nghe không dây ngắt kết nối ngay lập tức."
   },
   {
-    id: "Q_MOD_D_018", module_id: "Module_D", difficulty: "Easy",
-    tags: ["pure-logic"],
-    content: "Nếu phát biểu: 'Mọi chatbot AI đều bị ảo tưởng thông tin' là đúng, phát biểu nào sau đây chắc chắn đúng?",
-    options: [
-      "A. Chắc chắn không có bất kỳ chatbot AI nào bị gặp hiện tượng ảo tưởng thông tin.",
-      "B. Nếu ChatGPT thực sự là một chatbot AI thì ChatGPT sẽ bị ảo tưởng thông tin.",
-      "C. Chỉ có những chatbot AI có số lượng tham số cực lớn mới bị ảo tưởng thông tin.",
-      "D. Tất cả các mô hình chatbot AI đang vận hành trên thế giới đều không bị lỗi."
+    "id": "Q_MOD_D_018",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "B",
-    explanation: "Theo tam đoạn luận logic, nếu tất cả các phần tử thuộc tập hợp Chatbot AI đều có tính chất X, thì một phần tử cụ thể (ChatGPT) thuộc tập hợp đó chắc chắn cũng mang tính chất X."
+    "content": "Nếu bấm nút giảm âm lượng thì tiếng của tivi sẽ nhỏ đi. Bạn đã bấm nút giảm âm lượng. Kết luận nào sau đây đúng?",
+    "options": [
+      "A. Tiếng của tivi chắc chắn đã bị nhỏ đi lúc này.",
+      "B. Tiếng của tivi tự động to lên hết cỡ ngay lập tức.",
+      "C. Tivi tự động chuyển sang một kênh truyền hình khác.",
+      "D. Màn hình tivi tự động chuyển sang chế độ tắt nguồn."
+    ],
+    "correct_option": "A",
+    "explanation": "Bấm nút giảm âm lượng thì tiếng tivi chắc chắn nhỏ đi."
   },
   {
-    id: "Q_MOD_D_019", module_id: "Module_D", difficulty: "Easy",
-    tags: ["data-privacy"],
-    content: "Thuật ngữ 'PII' trong bảo mật thông tin và đạo đức dữ liệu viết tắt của cụm từ nào?",
-    options: [
-      "A. Private Image Intelligence (Trí tuệ hình ảnh riêng tư)",
-      "B. Personally Identifiable Information (Thông tin định danh cá nhân)",
-      "C. Product Interface Integration (Tích hợp giao diện sản phẩm)",
-      "D. Public Internet Infrastructure (Hạ tầng Internet công cộng)"
+    "id": "Q_MOD_D_019",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "B",
-    explanation: "PII (Personally Identifiable Information) là bất kỳ thông tin nào có thể dùng để phân biệt hoặc xác định danh tính của một cá nhân, ví dụ: số CCCD, tên, số điện thoại, email."
+    "content": "Nếu bạn khóa màn hình thì người khác không đọc được tin nhắn của bạn. Bạn đã khóa màn hình. Kết luận nào sau đây đúng?",
+    "options": [
+      "A. Người khác không thể đọc trực tiếp tin nhắn của bạn.",
+      "B. Người khác vẫn đọc được tin nhắn bình thường của bạn.",
+      "C. Tin nhắn của bạn sẽ tự động bị xóa khỏi điện thoại.",
+      "D. Điện thoại tự động gửi tin nhắn cho toàn bộ bạn bè."
+    ],
+    "correct_option": "A",
+    "explanation": "Khóa màn hình giúp ngăn người khác đọc tin nhắn trực tiếp."
   },
   {
-    id: "Q_MOD_D_020", module_id: "Module_D", difficulty: "Easy",
-    tags: ["open-source-licensing"],
-    content: "Giấy phép mã nguồn mở nào sau đây yêu cầu rằng bất kỳ mã nguồn sửa đổi hoặc phái sinh nào cũng phải được phát hành dưới cùng một giấy phép nguồn mở (tính chất lan truyền/copyleft)?",
-    options: [
-      "A. Giấy phép nguồn mở MIT License thông thường.",
-      "B. Giấy phép nguồn mở Apache License phiên bản 2.0.",
-      "C. Giấy phép nguồn mở GNU General Public License (GPL).",
-      "D. Giấy phép nguồn mở BSD License ba điều khoản."
+    "id": "Q_MOD_D_020",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "pure-logic"
     ],
-    correct_option: "C",
-    explanation: "GPL (GNU General Public License) là một giấy phép copyleft mạnh. Nó yêu cầu mã nguồn phái sinh cũng phải mở và sử dụng giấy phép GPL, không cho phép đóng gói thành phần mềm thương mại mã nguồn đóng."
+    "content": "Nếu bạn bấm lưu văn bản thì dữ liệu sẽ được giữ lại khi tắt máy. Bạn đã lưu văn bản. Kết luận nào sau đây đúng?",
+    "options": [
+      "A. Dữ liệu văn bản chắc chắn đã được giữ lại an toàn.",
+      "B. Dữ liệu văn bản chắc chắn bị xóa sạch khi tắt máy.",
+      "C. Máy tính tự động gửi văn bản này lên mạng internet.",
+      "D. Văn bản tự động in ra giấy sau khi bạn tắt máy tính."
+    ],
+    "correct_option": "A",
+    "explanation": "Lưu văn bản đảm bảo dữ liệu được giữ lại khi tắt máy."
   },
   {
-    id: "Q_MOD_D_021", module_id: "Module_D", difficulty: "Easy",
-    tags: ["pure-logic"],
-    content: "Mệnh đề logic kéo theo $P \\rightarrow Q$ (Nếu có P thì có Q) chỉ sai trong trường hợp duy nhất nào?",
-    options: [
-      "A. P đúng và Q đúng.",
-      "B. P sai và Q đúng.",
-      "C. P đúng và Q sai.",
-      "D. P sai và Q sai."
+    "id": "Q_MOD_D_021",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "C",
-    explanation: "Mệnh đề kéo theo chỉ sai khi giả thiết đúng mà kết luận lại sai ($1 \\rightarrow 0$ là sai). Trong tất cả các trường hợp khác, mệnh đề đều được coi là đúng."
+    "content": "Bạn phát hiện một người bạn quên đăng xuất tài khoản mạng xã hội trên máy tính ở thư viện. Hành động nào là đạo đức nhất?",
+    "options": [
+      "A. Bạn nhấn nút đăng xuất giúp bạn rồi rời đi luôn.",
+      "B. Bạn vào đọc trộm tin nhắn cá nhân của người bạn đó.",
+      "C. Bạn dùng tài khoản đó để đăng bài trêu đùa bạn bè.",
+      "D. Bạn cứ để mặc tài khoản như vậy và bỏ đi chỗ khác."
+    ],
+    "correct_option": "A",
+    "explanation": "Đăng xuất giúp bạn bảo vệ quyền riêng tư và thông tin cá nhân của họ."
   },
   {
-    id: "Q_MOD_D_022", module_id: "Module_D", difficulty: "Easy",
-    tags: ["data-ethics"],
-    content: "Khi thu thập dữ liệu từ người dùng thông qua ứng dụng di động, nguyên tắc đạo đức 'Minimization' (Tối thiểu hóa dữ liệu) khuyên kỹ sư AI điều gì?",
-    options: [
-      "A. Thu thập tối đa tất cả thông tin có thể lấy được nhằm phòng ngừa nhu cầu phân tích phát sinh trong tương lai.",
-      "B. Chỉ thu thập những thông tin thực sự cần thiết để phục vụ trực tiếp cho các tính năng cốt lõi của ứng dụng.",
-      "C. Tập trung thu thập dữ liệu hành vi của đối tượng trẻ em mà không cần xin ý kiến đồng ý từ phía phụ huynh học sinh.",
-      "D. Cho phép chuyển nhượng và bán thông tin người dùng cho bên thứ ba để có kinh phí duy trì hoạt động của hệ thống."
+    "id": "Q_MOD_D_022",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "B",
-    explanation: "Tối thiểu hóa dữ liệu (Data Minimization) yêu cầu chỉ thu thập phần dữ liệu tối thiểu cần thiết cho mục đích đã nêu, giúp hạn chế rủi ro lộ lọt thông tin cá nhân."
+    "content": "Khi làm bài tập nhóm môn Lập trình, bạn phát hiện một thành viên sao chép hoàn toàn code trên mạng về nộp. Bạn nên làm gì?",
+    "options": [
+      "A. Nhắc nhở bạn tự viết code hoặc cùng thảo luận làm bài.",
+      "B. Bỏ qua và nộp bài bình thường coi như không biết gì.",
+      "C. Đăng bài viết chỉ trích bạn đó công khai lên mạng xã hội.",
+      "D. Xóa tên của bạn đó ra khỏi nhóm mà không thông báo trước."
+    ],
+    "correct_option": "A",
+    "explanation": "Nhắc nhở và giúp đỡ bạn cùng tiến bộ là hành động đạo đức và trách nhiệm trong học tập nhóm."
   },
   {
-    id: "Q_MOD_D_023", module_id: "Module_D", difficulty: "Easy",
-    tags: ["ai-bias"],
-    content: "Một công ty tuyển dụng sử dụng mô hình AI chấm điểm thấp hơn cho các CV có địa chỉ nhà ở các vùng nông thôn. Hiện tượng này thể hiện vấn đề gì?",
-    options: [
-      "A. Hệ thống tuyển dụng đang hoạt động với độ chính xác cao.",
-      "B. Định kiến thuật toán (Algorithmic Bias) dựa trên địa lý.",
-      "C. Hệ thống gặp lỗi tràn bộ nhớ RAM trong khi xử lý dữ liệu.",
-      "D. Mô hình học máy đang tự động tối ưu hóa thời gian vận hành."
+    "id": "Q_MOD_D_023",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "B",
-    explanation: "Đây là định kiến hệ thống (bias) gây ra sự bất bình đẳng dựa trên các thuộc tính nhạy cảm như vùng miền, địa lý."
+    "content": "Khi muốn sử dụng hình ảnh của một người bạn để minh họa cho bài thuyết trình trước lớp, hành động nào là đúng đắn?",
+    "options": [
+      "A. Hỏi xin phép và được sự đồng ý của bạn trước khi dùng.",
+      "B. Tự ý lấy ảnh trên mạng xã hội của bạn về dùng luôn.",
+      "C. Chụp trộm hình ảnh của bạn lúc bạn đang ngủ trong lớp.",
+      "D. Ghép mặt bạn vào ảnh khác để làm bài thuyết trình lớp."
+    ],
+    "correct_option": "A",
+    "explanation": "Tôn trọng quyền hình ảnh của người khác bằng cách xin phép trước khi sử dụng."
   },
   {
-    id: "Q_MOD_D_024", module_id: "Module_D", difficulty: "Easy",
-    tags: ["data-privacy"],
-    content: "Hành động nào sau đây là biện pháp an toàn cơ bản nhất để bảo vệ mật khẩu của người dùng trong cơ sở dữ liệu?",
-    options: [
-      "A. Lưu trữ mật khẩu dưới dạng văn bản thô để hỗ trợ tra cứu nhanh khi người dùng quên mật khẩu đăng nhập.",
-      "B. Băm mật khẩu bằng thuật toán một chiều kết hợp kỹ thuật thêm Salt (muối) trước khi lưu vào cơ sở dữ liệu.",
-      "C. Gửi mật khẩu dạng thô định kỳ hàng tuần qua email cá nhân để nhắc nhở người dùng không bị quên tài khoản.",
-      "D. Bỏ qua hoàn toàn bước lưu trữ mật khẩu, cho phép mọi tài khoản đăng nhập tự do không cần kiểm tra bảo mật."
+    "id": "Q_MOD_D_024",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "B",
-    explanation: "Băm mật khẩu (Password Hashing with Salt) đảm bảo rằng ngay cả khi cơ sở dữ liệu bị rò rỉ, kẻ tấn công cũng không thể dễ dàng giải mã ngược lại để lấy mật khẩu thô."
+    "content": "Bạn vô tình nhặt được một chiếc thẻ nhớ chứa nhiều ảnh chụp cá nhân của người khác. Hành động nào sau đây là đạo đức nhất?",
+    "options": [
+      "A. Gửi lại thẻ nhớ cho ban quản lý hoặc người có thẩm quyền.",
+      "B. Đăng tải toàn bộ hình ảnh trong thẻ nhớ lên mạng xã hội.",
+      "C. Sao chép hình ảnh trong thẻ nhớ vào máy tính cá nhân mình.",
+      "D. Giữ thẻ nhớ để sử dụng và xóa hết toàn bộ ảnh cũ đi."
+    ],
+    "correct_option": "A",
+    "explanation": "Giao lại cho bộ phận quản lý giúp tăng cơ hội tìm lại chủ sở hữu và bảo vệ quyền riêng tư của họ."
   },
   {
-    id: "Q_MOD_D_025", module_id: "Module_D", difficulty: "Easy",
-    tags: ["pure-logic"],
-    content: "Phủ định của mệnh đề logic 'Tất cả sinh viên đều học lập trình' là mệnh đề nào?",
-    options: [
-      "A. Tất cả sinh viên trong trường đều không học lập trình.",
-      "B. Có ít nhất một sinh viên trong trường không học lập trình.",
-      "C. Mọi sinh viên trong trường đều phải chuyển sang học toán.",
-      "D. Có ít nhất một sinh viên trong trường học môn lập trình."
+    "id": "Q_MOD_D_025",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "B",
-    explanation: "Phủ định của mệnh đề lượng từ toàn thể '$\\forall x, P(x)$' là mệnh đề lượng từ tồn tại '$\\exists x, \\neg P(x)$' (Có ít nhất một phần tử không thỏa mãn)."
+    "content": "Khi viết bài nghiên cứu hoặc bài báo cáo học tập, hành động nào sau đây thể hiện sự tôn trọng quyền tác giả?",
+    "options": [
+      "A. Trích dẫn rõ nguồn và tên tác giả của tài liệu tham khảo.",
+      "B. Sao chép nguyên văn các đoạn văn dài mà không ghi nguồn.",
+      "C. Tự nhận các ý tưởng của người khác là do mình nghĩ ra.",
+      "D. Thay đổi một vài từ trong bài viết của người khác làm của mình."
+    ],
+    "correct_option": "A",
+    "explanation": "Trích dẫn nguồn rõ ràng là yêu cầu đạo đức học thuật cơ bản để tôn trọng quyền tác giả."
   },
   {
-    id: "Q_MOD_D_026", module_id: "Module_D", difficulty: "Easy",
-    tags: ["data-ethics"],
-    content: "Thuật ngữ 'Deepfake' dùng để chỉ công nghệ AI thực hiện hành vi nào sau đây?",
-    options: [
-      "A. Giải pháp tự động sao lưu dữ liệu hệ thống lên nền tảng điện toán đám mây.",
-      "B. Tạo ra hình ảnh, âm thanh hoặc video giả mạo như thật nhờ công nghệ deep learning.",
-      "C. Chương trình tự động quét virus và mã độc để bảo vệ an toàn cho máy tính cá nhân.",
-      "D. Ứng dụng hỗ trợ dịch thuật tự động thời gian thực giữa nhiều ngôn ngữ khác nhau."
+    "id": "Q_MOD_D_026",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "B",
-    explanation: "Deepfake kết hợp giữa 'deep learning' and 'fake'. Công nghệ này thường được dùng để tạo video giả mạo người nổi tiếng hoặc lừa đảo tài chính."
+    "content": "Khi làm khảo sát thông tin để phục vụ nghiên cứu khoa học, bạn cần làm gì đối với những người tham gia trả lời?",
+    "options": [
+      "A. Thông báo rõ mục đích khảo sát và xin sự đồng ý của họ.",
+      "B. Ép buộc họ phải trả lời toàn bộ các câu hỏi riêng tư.",
+      "C. Bí mật thu thập thông tin của họ khi họ không chú ý đến.",
+      "D. Bán thông tin cá nhân của họ cho các bên quảng cáo sản phẩm."
+    ],
+    "correct_option": "A",
+    "explanation": "Minh bạch về mục đích và có sự đồng ý của người tham gia là nguyên tắc đạo đức thu thập dữ liệu."
   },
   {
-    id: "Q_MOD_D_027", module_id: "Module_D", difficulty: "Easy",
-    tags: ["open-source-licensing"],
-    content: "Nếu bạn sử dụng thư viện AI có giấy phép 'Apache License 2.0', bạn được quyền làm gì?",
-    options: [
-      "A. Chỉ được phép sử dụng cho nghiên cứu cá nhân và tuyệt đối cấm mọi hành vi khai thác thương mại.",
-      "B. Được tự do sử dụng, sửa đổi và phân phối lại sản phẩm thương mại, miễn là đính kèm giấy phép gốc.",
-      "C. Phải thanh toán một khoản phí bản quyền định kỳ hàng năm cho tác giả hoặc tổ chức sở hữu ban đầu.",
-      "D. Bắt buộc phải công khai toàn bộ phần mã nguồn đóng của ứng dụng do doanh nghiệp tự phát triển thêm."
+    "id": "Q_MOD_D_027",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "B",
-    explanation: "Apache 2.0 là giấy phép nguồn mở rất thông thoáng và thân thiện với doanh nghiệp, cho phép thương mại hóa và không có tính chất 'lan truyền' bắt buộc mở mã nguồn như GPL."
+    "content": "Nếu bạn phát hiện một phần mềm học tập của trường bị lỗi hiển thị điểm của học sinh, hành động nào là phù hợp nhất?",
+    "options": [
+      "A. Báo cáo lỗi kỹ thuật này cho quản trị viên hệ thống trường.",
+      "B. Dùng lỗi này để tự sửa điểm của mình lên cao hơn.",
+      "C. Chia sẻ cách khai thác lỗi này cho các bạn khác trong lớp.",
+      "D. Bỏ qua lỗi và không thông báo cho bất kỳ ai biết về nó."
+    ],
+    "correct_option": "A",
+    "explanation": "Báo cáo lỗi cho quản trị viên giúp hệ thống sớm được khắc phục và hoạt động chính xác."
   },
   {
-    id: "Q_MOD_D_028", module_id: "Module_D", difficulty: "Easy",
-    tags: ["pure-logic"],
-    content: "Cho phát biểu: 'Nếu trời mưa thì đường ướt'. Biết rằng thực tế đường đang khô (không ướt). Kết luận logic nào sau đây là đúng?",
-    options: [
-      "A. Trời chắc chắn đang mưa.",
-      "B. Trời chắc chắn không mưa.",
-      "C. Trời chắc chắn sắp đổ mưa.",
-      "D. Không thể đưa ra kết luận nào."
+    "id": "Q_MOD_D_028",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "B",
-    explanation: "Theo luật Modus Tollens ($P \\rightarrow Q$ và $\\neg Q \\Rightarrow \\neg P$), vì đường không ướt ($\\neg Q$), ta suy ra trời không mưa ($\\neg P$)."
+    "content": "Hành động nào sau đây của một ứng dụng di động được xem là vi phạm đạo đức dữ liệu đối với người sử dụng?",
+    "options": [
+      "A. Tự động thu thập vị trí của người dùng mà không báo trước.",
+      "B. Hỏi ý kiến người dùng trước khi truy cập vào thư viện ảnh.",
+      "C. Cung cấp tài liệu rõ ràng về cách bảo mật dữ liệu cá nhân.",
+      "D. Cho phép người dùng tự xóa tài khoản khi không muốn dùng."
+    ],
+    "correct_option": "A",
+    "explanation": "Thu thập dữ liệu vị trí lén lút vi phạm quyền riêng tư và sự đồng thuận của người dùng."
   },
   {
-    id: "Q_MOD_D_029", module_id: "Module_D", difficulty: "Easy",
-    tags: ["data-privacy"],
-    content: "Hành vi nào sau đây được coi là vi phạm luật an toàn dữ liệu cá nhân khi chia sẻ tập dữ liệu huấn luyện AI công khai?",
-    options: [
-      "A. Chỉ chia sẻ các chỉ số thống kê tổng hợp cuối cùng của tập dữ liệu.",
-      "B. Chia sẻ dữ liệu đã được tiến hành ẩn danh hóa và băm kỹ các trường PII.",
-      "C. Chia sẻ thông tin cá nhân thô của khách hàng khi chưa nhận được sự đồng thuận.",
-      "D. Chia sẻ toàn bộ phần mã nguồn dùng để xây dựng và huấn luyện mô hình AI."
+    "id": "Q_MOD_D_029",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "C",
-    explanation: "Chia sẻ PII thô khi chưa có sự đồng ý rõ ràng của chủ thể dữ liệu là hành vi vi phạm pháp luật nghiêm trọng (ví dụ luật GDPR hoặc Luật An toàn thông tin mạng của Việt Nam)."
+    "content": "Bạn được giao nhiệm vụ quản lý danh sách email của lớp học để gửi thông báo. Hành động nào sau đây là đạo đức nhất?",
+    "options": [
+      "A. Chỉ dùng danh sách email để gửi thông tin liên quan đến lớp học.",
+      "B. Cung cấp danh sách email này cho các bên quảng cáo khóa học ngoài.",
+      "C. Dùng các email này để đăng ký tài khoản chơi game trực tuyến.",
+      "D. Chia sẻ công khai danh sách email này lên các trang mạng xã hội."
+    ],
+    "correct_option": "A",
+    "explanation": "Chỉ sử dụng dữ liệu đúng với mục đích ban đầu đã được đồng thuận."
   },
   {
-    id: "Q_MOD_D_030", module_id: "Module_D", difficulty: "Easy",
-    tags: ["data-ethics"],
-    content: "Trong các dự án AI, hành vi 'Data Scraping' (cào dữ liệu tự động) từ website khác mà không tuân theo file cấu hình `robots.txt` hoặc điều khoản dịch vụ của trang web đó thể hiện điều gì?",
-    options: [
-      "A. Khả năng tư duy sáng tạo của kỹ sư AI trong việc thu thập thông tin.",
-      "B. Hành vi xâm phạm quy định sở hữu trí tuệ và quyền kiểm soát dữ liệu của bên khác.",
-      "C. Phương pháp tối ưu hóa giúp cho website đích tải dữ liệu nhanh chóng hơn.",
-      "D. Hoạt động khai thác thông tin lành mạnh luôn được luật pháp quốc tế bảo hộ."
+    "id": "Q_MOD_D_030",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "B",
-    explanation: "File `robots.txt` quy định các vùng dữ liệu mà chủ sở hữu website cho phép hoặc cấm bot cào thông tin. Bỏ qua file này là hành vi thiếu đạo đức dữ liệu và có thể đối mặt với rủi ro pháp lý."
+    "content": "Tại sao việc tự ý tải và phát tán các khóa học trực tuyến có thu phí lên mạng Internet lại là hành vi thiếu đạo đức?",
+    "options": [
+      "A. Vì hành vi này vi phạm bản quyền và gây thiệt hại cho tác giả.",
+      "B. Vì hành vi này làm giảm tốc độ truy cập mạng của người khác.",
+      "C. Vì hành vi này làm tăng dung lượng lưu trữ của máy tính bạn.",
+      "D. Vì hành vi này giúp cho nhiều người được học tập miễn phí hơn."
+    ],
+    "correct_option": "A",
+    "explanation": "Tự ý phát tán khóa học có phí là xâm phạm quyền sở hữu trí tuệ và gây thiệt hại kinh tế cho người tạo ra nó."
   },
   {
-    id: "Q_MOD_D_031", module_id: "Module_D", difficulty: "Easy",
-    tags: ["pure-logic"],
-    content: "Cho hai mệnh đề: 'Hải thích học AI' và 'Hải giỏi toán'. Mệnh đề phủ định của mệnh đề hội (Hải thích học AI và Hải giỏi toán) là mệnh đề nào?",
-    options: [
-      "A. Hải không thích học AI đồng thời Hải cũng không học giỏi môn toán.",
-      "B. Hải không thích học AI hoặc Hải không học giỏi môn toán theo De Morgan.",
-      "C. Hải vẫn thích học AI nhưng thực tế Hải lại không học giỏi môn toán.",
-      "D. Hải rất học giỏi môn toán nhưng Hải lại không thích thú học môn AI."
+    "id": "Q_MOD_D_031",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "B",
-    explanation: "Theo luật De Morgan: $\\neg(P \\land Q) \\equiv \\neg P \\lor \\neg Q$ (Phủ định của hội là tuyển các phủ định)."
+    "content": "Khi đăng tải một bức ảnh chụp tập thể lớp lên mạng xã hội, hành động nào thể hiện sự tôn trọng bạn bè xung quanh?",
+    "options": [
+      "A. Hỏi ý kiến các bạn trong ảnh xem họ có đồng ý đăng hay không.",
+      "B. Cứ tự ý đăng lên trang cá nhân vì đây là ảnh chụp tập thể chung.",
+      "C. Đăng ảnh kèm theo các thông tin trêu chọc làm xấu hình ảnh bạn.",
+      "D. Chỉ gắn thẻ những người bạn ghét để trêu đùa họ trên mạng xã hội."
+    ],
+    "correct_option": "A",
+    "explanation": "Hỏi ý kiến bạn bè trước khi đăng ảnh chụp chung là tôn trọng quyền riêng tư của họ."
   },
   {
-    id: "Q_MOD_D_032", module_id: "Module_D", difficulty: "Easy",
-    tags: ["data-ethics"],
-    content: "Tại sao việc công bố các lỗ hổng bảo mật của mô hình AI (như khả năng bị tấn công adversarial) cho nhà phát triển trước khi công khai rộng rãi ra công chúng lại được coi là đạo đức nghề nghiệp?",
-    options: [
-      "A. Để nhà phát triển có thời gian vá lỗi bảo mật kịp thời, hạn chế nguy cơ bị kẻ xấu lợi dụng phá hoại.",
-      "B. Để tạo áp lực đàm phán và đòi một khoản tiền chuộc lớn từ phía công ty chủ quản sở hữu hệ thống AI.",
-      "C. Để công khai năng lực cá nhân và chứng minh trình độ của bản thân vượt trội hơn đội ngũ phát triển.",
-      "D. Hành động này hoàn toàn mang tính thủ tục và không mang lại bất kỳ lợi ích thực tế nào cho bảo mật."
+    "id": "Q_MOD_D_032",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "A",
-    explanation: "Đây gọi là nguyên tắc 'Responsible Disclosure' (Công bố có trách nhiệm) trong an ninh mạng và đạo đức công nghệ."
+    "content": "Một trò chơi di động yêu cầu quyền truy cập vào danh bạ điện thoại dù không có tính năng nào cần dùng. Bạn nên làm gì?",
+    "options": [
+      "A. Từ chối cấp quyền truy cập danh bạ để bảo vệ thông tin bạn bè.",
+      "B. Đồng ý cấp quyền ngay lập tức để trò chơi được bắt đầu nhanh.",
+      "C. Xóa hết toàn bộ số điện thoại trong danh bạ rồi mới đồng ý cấp.",
+      "D. Chia sẻ trò chơi này cho tất cả mọi người cùng chơi giống mình."
+    ],
+    "correct_option": "A",
+    "explanation": "Không cấp các quyền không cần thiết giúp hạn chế rò rỉ dữ liệu cá nhân."
   },
   {
-    id: "Q_MOD_D_033", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Xét suy luận sau:\n\n* Mọi loài chim đều bay được.\n* Con đà điểu là một loài chim.\n* Vì vậy, con đà điểu bay được.\nSuy luận này bị lỗi gì?",
-    options: [
-      "A. Suy luận gặp lỗi vi phạm quy tắc logic về mặt hình thức lập luận.",
-      "B. Suy luận dựa trên tiền đề sai thực tế là mọi loài chim đều bay được.",
-      "C. Suy luận hoàn toàn logic và phản ánh đúng thực tế khách quan.",
-      "D. Lập luận thiếu chính xác do chưa đưa ra định nghĩa đà điểu là gì."
+    "id": "Q_MOD_D_033",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "B",
-    explanation: "Về mặt hình thức (form), suy luận tuân theo đúng luật tam đoạn luận ($A \\rightarrow B, C \\rightarrow A \\Rightarrow C \\rightarrow B$). Tuy nhiên, suy luận không có tính chân thực (soundness) vì tiền đề ban đầu 'Mọi loài chim bay được' là một khẳng định sai thực tế."
+    "content": "Hành động nào sau đây của học sinh khi làm bài tập lớn thể hiện sự trung thực và đạo đức trong học tập?",
+    "options": [
+      "A. Tự mình tìm hiểu kiến thức, viết báo cáo và tự tay viết code.",
+      "B. Thuê người viết báo cáo và viết mã nguồn hộ rồi nộp bài làm.",
+      "C. Sao chép nguyên văn bài làm của khóa trước để nộp cho thầy cô.",
+      "D. Lấy bài làm của bạn cùng lớp rồi thay đổi tên tác giả của mình."
+    ],
+    "correct_option": "A",
+    "explanation": "Tự học và tự làm bài giúp học sinh tích lũy kiến thức thực sự."
   },
   {
-    id: "Q_MOD_D_034", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-privacy"],
-    content: "Kỹ thuật 'Differential Privacy' (Bảo mật vi sai) bảo vệ quyền riêng tư của cá nhân trong tập dữ liệu bằng cách nào?",
-    options: [
-      "A. Xóa bỏ toàn bộ các bản ghi chứa thông tin cá nhân của người dùng trước khi tiến hành chia sẻ.",
-      "B. Thêm nhiễu toán học vào kết quả truy vấn để ngăn chặn việc xác định danh tính cụ thể của cá nhân.",
-      "C. Mã hóa toàn bộ dữ liệu lưu trữ bằng các thuật toán mã hóa khóa đối xứng tiêu chuẩn như AES-256.",
-      "D. Thiết lập phân quyền truy cập chặt chẽ, chỉ cho phép cán bộ quản trị cấp cao nhất được đọc dữ liệu."
+    "id": "Q_MOD_D_034",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "B",
-    explanation: "Differential Privacy cung cấp một hàng rào toán học chống lại việc rò rỉ thông tin cá nhân bằng cách thêm nhiễu ngẫu nhiên được tính toán kỹ lưỡng, giữ nguyên các đặc trưng thống kê chung của tập dữ liệu."
+    "content": "Tại sao các công ty phát triển AI không nên sử dụng dữ liệu tin nhắn riêng tư của khách hàng để huấn luyện AI công cộng?",
+    "options": [
+      "A. Vì việc này xâm phạm quyền riêng tư và bí mật thư tín của khách hàng.",
+      "B. Vì dữ liệu tin nhắn làm tăng thời gian chạy của hệ thống máy chủ lớn.",
+      "C. Vì tin nhắn cá nhân thường chứa các ký tự viết tắt không có ý nghĩa.",
+      "D. Vì khách hàng sẽ không được nhận tiền từ việc cung cấp tin nhắn đó."
+    ],
+    "correct_option": "A",
+    "explanation": "Tin nhắn riêng tư chứa thông tin cá nhân và bí mật thư tín, việc sử dụng trái phép vi phạm quyền riêng tư."
   },
   {
-    id: "Q_MOD_D_035", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pii-masking"],
-    content: "Hành động che bớt hoặc thay thế một phần ký tự của số thẻ tín dụng (ví dụ: '4111-XXXX-XXXX-1234') trước khi hiển thị trên màn hình hoặc lưu vào file log được gọi là kỹ thuật gì?",
-    options: [
-      "A. Kỹ thuật Hashing (Băm dữ liệu một chiều).",
-      "B. Kỹ thuật Data Masking (Che mặt nạ dữ liệu).",
-      "C. Kỹ thuật Data Augmentation (Tăng cường dữ liệu).",
-      "D. Kỹ thuật Symmetric Encryption (Mã hóa đối xứng)."
+    "id": "Q_MOD_D_035",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "B",
-    explanation: "Data Masking (Che mặt nạ dữ liệu) giúp ẩn các ký tự nhạy cảm khi hiển thị hoặc lưu trữ log, tránh việc nhân viên vận hành vô tình nhìn thấy thông tin nhạy cảm."
+    "content": "Bạn phát hiện một trang web giả mạo giao diện ngân hàng để lừa lấy mật khẩu của mọi người. Bạn nên làm gì?",
+    "options": [
+      "A. Báo cáo trang web này cho cơ quan chức năng hoặc ngân hàng chính thức.",
+      "B. Đăng nhập thử bằng tài khoản của mình xem trang web có chạy thật không.",
+      "C. Bỏ qua và không chia sẻ cảnh báo gì cho những người xung quanh biết cả.",
+      "D. Chia sẻ đường link trang web này lên các nhóm để mọi người cùng đăng ký."
+    ],
+    "correct_option": "A",
+    "explanation": "Báo cáo trang web lừa đảo giúp ngăn chặn kịp thời các hành vi đánh cắp tài sản và thông tin."
   },
   {
-    id: "Q_MOD_D_036", module_id: "Module_D", difficulty: "Medium",
-    tags: ["ai-bias"],
-    content: "Khi thu thập dữ liệu để huấn luyện AI nhận diện các bệnh về da, nếu đội ngũ phát triển chỉ chụp ảnh từ những người có tông màu da sáng. Khi đưa vào thực tế ở các quốc gia có nhiều người da màu, mô hình dự đoán sai liên tục. Loại bias nào xuất hiện ở đây?",
-    options: [
-      "A. Historical Bias (Định kiến xuất phát từ lịch sử xã hội).",
-      "B. Representation Bias (Định kiến do dữ liệu thiếu đại diện).",
-      "C. Algorithmic Bias (Định kiến phát sinh từ chính thuật toán).",
-      "D. Evaluation Bias (Định kiến trong quá trình đánh giá mô hình)."
+    "id": "Q_MOD_D_036",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "B",
-    explanation: "Representation Bias xảy ra khi một nhóm đối tượng không được đại diện đầy đủ hoặc bị bỏ qua trong tập dữ liệu huấn luyện, khiến mô hình không thể khái quát hóa tốt cho nhóm đó."
+    "content": "Khi sử dụng các công cụ AI để tạo ra hình ảnh hoặc văn bản, hành vi nào sau đây là phù hợp nhất về đạo đức?",
+    "options": [
+      "A. Ghi rõ nội dung được tạo bởi AI khi chia sẻ cho người khác xem.",
+      "B. Tự nhận bản vẽ đó do chính tay mình tự vẽ suốt nhiều giờ liền.",
+      "C. Dùng sản phẩm AI để đi đăng ký dự thi các cuộc thi vẽ thủ công.",
+      "D. Khẳng định văn bản đó hoàn toàn do mình tự suy nghĩ và viết ra."
+    ],
+    "correct_option": "A",
+    "explanation": "Minh bạch thông tin bằng cách ghi rõ sản phẩm được tạo ra từ AI giúp người xem hiểu đúng nguồn gốc."
   },
   {
-    id: "Q_MOD_D_037", module_id: "Module_D", difficulty: "Medium",
-    tags: ["open-source-licensing"],
-    content: "Sự khác biệt cốt lõi giữa hai giấy phép mã nguồn mở 'MIT License' và 'GNU GPL v3' là gì?",
-    options: [
-      "A. MIT yêu cầu thanh toán bản quyền đối với các mục đích thương mại, trong khi GPL thì hoàn toàn miễn phí.",
-      "B. MIT cho phép đóng mã nguồn phái sinh khi thương mại hóa, còn GPL v3 bắt buộc sản phẩm phái sinh phải mở code.",
-      "C. GPL v3 cho phép sử dụng thương mại tự do, còn giấy phép MIT nghiêm cấm mọi hành vi tạo doanh thu trực tiếp.",
-      "D. Cả hai giấy phép này có tính chất pháp lý tương đương và hoàn toàn trùng khớp nhau về các điều khoản áp dụng."
+    "id": "Q_MOD_D_037",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "B",
-    explanation: "MIT là giấy phép cho phép tối đa (permissive license). GPL v3 là giấy phép copyleft (lan truyền), bảo vệ tính chất nguồn mở của phần mềm phái sinh."
+    "content": "Hành động nào sau đây thể hiện trách nhiệm đạo đức của một lập trình viên khi phát hành ứng dụng cho trẻ em?",
+    "options": [
+      "A. Thiết kế các cơ chế bảo mật nghiêm ngặt để bảo vệ thông tin trẻ em.",
+      "B. Tích hợp nhiều quảng cáo không phù hợp lứa tuổi để tối ưu doanh thu.",
+      "C. Yêu cầu trẻ em cung cấp thông tin tài khoản ngân hàng của cha mẹ đẻ.",
+      "D. Thu thập lịch sử trò chuyện của trẻ để bán cho các công ty quảng cáo."
+    ],
+    "correct_option": "A",
+    "explanation": "Bảo vệ thông tin của trẻ em là ưu tiên hàng đầu và là yêu cầu bắt buộc đối với nhà phát triển."
   },
   {
-    id: "Q_MOD_D_038", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-ethics"],
-    content: "Một nhà phát triển AI tạo sinh phát hành một mô hình sinh ảnh nghệ thuật cực kỳ đẹp mắt. Tuy nhiên, mô hình này được huấn luyện trên hàng triệu tác phẩm của các họa sĩ mà không xin phép hay trả tiền bản quyền cho họ. Vấn đề đạo đức chính ở đây là:",
-    options: [
-      "A. Gây ra hiện tượng Pygmalion làm sai lệch kỳ vọng của người dùng.",
-      "B. Xâm hại quyền tác giả và trục lợi trên chất xám mà không có sự đồng ý.",
-      "C. Khiến cho các bức ảnh do mô hình sinh ra có chất lượng hiển thị kém.",
-      "D. Gây khó khăn cho người sử dụng trong việc thiết kế các prompt đầu vào."
+    "id": "Q_MOD_D_038",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "B",
-    explanation: "Sử dụng tác phẩm có bản quyền làm dữ liệu huấn luyện AI thương mại mà không có sự đồng thuận (consent) hoặc đền bù hợp lý là chủ đề tranh chấp đạo đức và pháp lý lớn nhất hiện nay của AI tạo sinh."
+    "content": "Nếu bạn vô tình biết được mật khẩu máy tính của một đồng nghiệp trong phòng làm việc, bạn nên làm gì?",
+    "options": [
+      "A. Nhắc đồng nghiệp nên đổi mật khẩu mới và không sử dụng mật khẩu đó.",
+      "B. Sử dụng mật khẩu đó để đăng nhập máy tính của họ khi họ đi ra ngoài.",
+      "C. Chia sẻ mật khẩu này cho các đồng nghiệp khác trong phòng cùng biết.",
+      "D. Viết mật khẩu đó lên tờ giấy rồi dán ở khu vực công cộng của công ty."
+    ],
+    "correct_option": "A",
+    "explanation": "Nhắc nhở đồng nghiệp đổi mật khẩu thể hiện sự lịch thiệp, tôn trọng và đạo đức bảo mật thông tin."
   },
   {
-    id: "Q_MOD_D_039", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Cho phát biểu logic sau: 'Mọi kỹ sư AI giỏi đều biết thuật toán tích chập CNN hoặc thuật toán Transformer'. Biết rằng Quốc là một kỹ sư AI giỏi và Quốc không biết thuật toán tích chập CNN. Kết luận nào sau đây chắc chắn đúng?",
-    options: [
-      "A. Quốc chắc chắn biết thuật toán Transformer.",
-      "B. Quốc chắc chắn không biết thuật toán Transformer.",
-      "C. Quốc chắc chắn không phải kỹ sư AI trình độ giỏi.",
-      "D. Quốc chắc chắn am hiểu tường tận cả hai thuật toán."
+    "id": "Q_MOD_D_039",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "A",
-    explanation: "Mệnh đề logic có dạng: $P \\rightarrow (Q \\lor R)$. Biết rằng P đúng (Quốc là kỹ sư AI giỏi) và Q sai (Quốc không biết CNN), thì mệnh đề R (Quốc biết Transformer) chắc chắn phải đúng để tuyển ($Q \\lor R$) đúng."
+    "content": "Hành động nào sau đây là vi phạm đạo đức dữ liệu khi nghiên cứu các chỉ số sức khỏe của người dân?",
+    "options": [
+      "A. Công khai danh tính và tên của từng người tham gia khảo sát y tế.",
+      "B. Ẩn toàn bộ thông tin cá nhân của người tham gia trước khi công bố.",
+      "C. Chỉ sử dụng dữ liệu sức khỏe cho mục đích y học đã được đồng ý.",
+      "D. Cho phép người tham gia rút khỏi dự án nghiên cứu bất kỳ lúc nào."
+    ],
+    "correct_option": "A",
+    "explanation": "Thông tin sức khỏe là dữ liệu nhạy cảm, việc công khai danh tính người tham gia là vi phạm quyền riêng tư."
   },
   {
-    id: "Q_MOD_D_040", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-privacy"],
-    content: "Quy định 'Quyền được lãng quên' (Right to be Forgotten) trong luật bảo vệ dữ liệu GDPR của Châu Âu yêu cầu các hệ thống AI và doanh nghiệp điều gì?",
-    options: [
-      "A. Yêu cầu hệ thống xóa vĩnh viễn dữ liệu cá nhân của người dùng khi có yêu cầu hợp lệ.",
-      "B. Buộc người sử dụng phải thực hiện thay đổi mật khẩu định kỳ để đảm bảo tính an toàn.",
-      "C. Tự động thanh lọc dữ liệu lưu trữ hàng năm mà không cần thông báo cho khách hàng biết.",
-      "D. Cấm hoàn toàn việc ghi nhận và lưu trữ bất kỳ dữ liệu nào ngay từ thời điểm ban đầu."
+    "id": "Q_MOD_D_040",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-ethics"
     ],
-    correct_option: "A",
-    explanation: "Quyền được lãng quên cho phép cá nhân yêu cầu xóa dữ liệu của mình khi rút lại sự đồng thuận, hoặc dữ liệu không còn cần thiết cho mục đích ban đầu."
+    "content": "Tại sao việc tự ý chụp và đăng ảnh biển số xe của người khác lên mạng kèm lời lẽ xúc phạm là vi phạm đạo đức?",
+    "options": [
+      "A. Vì hành vi này bôi nhọ danh dự và xâm phạm quyền riêng tư cá nhân họ.",
+      "B. Vì hành vi này làm tăng dung lượng lưu trữ của các trang mạng xã hội.",
+      "C. Vì hành vi này khiến cho xe của họ bị tiêu hao nhiều nhiên liệu hơn.",
+      "D. Vì hành vi này làm giảm chất lượng camera chụp ảnh trên điện thoại bạn."
+    ],
+    "correct_option": "A",
+    "explanation": "Chia sẻ thông tin cá nhân kèm theo lời lẽ xúc phạm là hành vi bôi nhọ danh dự và vi phạm đạo đức nghiêm trọng."
   },
   {
-    id: "Q_MOD_D_041", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-ethics"],
-    content: "Khi xây dựng hệ thống AI dự báo khả năng tái phạm tội của các phạm nhân để hỗ trợ tòa án xét xử, nếu hệ thống dựa trên các dữ liệu lịch sử chứa định kiến chủng tộc sâu sắc. Kết quả là hệ thống liên tục đánh giá mức độ nguy hiểm của một nhóm người cao hơn các nhóm khác dù hành vi phạm tội giống nhau. Với tư cách là kỹ sư AI, hành động nào là đúng đắn?",
-    options: [
-      "A. Vẫn tiến hành đưa hệ thống vào áp dụng thực tế vì các mô hình AI luôn đưa ra quyết định công bằng hơn con người.",
-      "B. Tạm ngưng áp dụng, thực hiện khử sai lệch dữ liệu và khuyến cáo chỉ dùng AI làm kênh tham khảo dưới sự giám sát.",
-      "C. Thực hiện xáo trộn ngẫu nhiên nhãn của dữ liệu đầu vào để vượt qua các bước kiểm duyệt về đạo đức của cơ quan chức năng.",
-      "D. Đổ lỗi cho cấu trúc toán học của thuật toán và tiếp tục sử dụng hệ thống bình thường mà không cần hiệu chỉnh gì thêm."
+    "id": "Q_MOD_D_041",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
     ],
-    correct_option: "B",
-    explanation: "Hệ thống AI tác động trực tiếp đến tự do và quyền con người đòi hỏi tính trách nhiệm và giám sát tối cao. Việc phát hiện bias lịch sử yêu cầu phải hiệu chỉnh và có sự can thiệp của con người (Human-in-the-loop)."
+    "content": "Khái niệm \"Quyền riêng tư dữ liệu\" (Data Privacy) được hiểu một cách đơn giản nhất là gì?",
+    "options": [
+      "A. Quyền kiểm soát việc thông tin cá nhân của mình được dùng như thế nào.",
+      "B. Quyền yêu cầu mọi người trên thế giới không được sử dụng máy vi tính.",
+      "C. Quyền được sở hữu tất cả các phần mềm máy tính hiện có trên thị trường.",
+      "D. Quyền được tự do truy cập vào máy tính của người khác mà không cần xin."
+    ],
+    "correct_option": "A",
+    "explanation": "Quyền riêng tư dữ liệu là quyền của cá nhân trong việc kiểm soát cách thức thông tin cá nhân của họ được thu thập và sử dụng."
   },
   {
-    id: "Q_MOD_D_042", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Hãy suy luận logic từ các phát biểu sau:\n\n* Không có mô hình AI nào là hoàn hảo.\n* Một số mô hình AI được sử dụng trong y tế.\nPhát biểu nào sau đây chắc chắn đúng?",
-    options: [
-      "A. Tất cả các mô hình AI đang được áp dụng trong lĩnh vực y tế đều hoàn hảo.",
-      "B. Có một số mô hình AI áp dụng trong y tế không đạt được sự hoàn hảo tuyệt đối.",
-      "C. Mọi mô hình AI đạt trạng thái hoàn hảo đều bắt buộc phải dùng trong ngành y tế.",
-      "D. Các mô hình AI hoạt động trong y tế chắc chắn không bao giờ phát sinh sai sót."
+    "id": "Q_MOD_D_042",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
     ],
-    correct_option: "B",
-    explanation: "Vì không có mô hình AI nào hoàn hảo (Tất cả AI $\\rightarrow$ Không hoàn hảo). Do một số mô hình AI dùng trong y tế, nên những mô hình AI y tế này chắc chắn không hoàn hảo."
+    "content": "Thông tin nào sau đây thuộc nhóm thông tin cá nhân nhạy cảm cần được bảo vệ cẩn thận nhất?",
+    "options": [
+      "A. Số căn cước công dân và mật khẩu tài khoản ngân hàng cá nhân.",
+      "B. Danh sách những bài hát bạn thích nghe trên ứng dụng di động.",
+      "C. Địa chỉ của những quán cà phê nổi tiếng ở khu vực thành phố.",
+      "D. Lịch thi đấu bóng đá của các câu lạc bộ nổi tiếng thế giới."
+    ],
+    "correct_option": "A",
+    "explanation": "Căn cước công dân và mật khẩu ngân hàng là các thông tin định danh và tài chính nhạy cảm bậc nhất."
   },
   {
-    id: "Q_MOD_D_043", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-privacy"],
-    content: "Trong quá trình huấn luyện mô hình ngôn ngữ lớn (LLM), hiện tượng 'Data Leakage' (Rò rỉ dữ liệu) thông qua câu trả lời (ví dụ: người dùng prompt yêu cầu LLM hiển thị số điện thoại cá nhân có trong tập train) thuộc về nguy cơ an toàn nào?",
-    options: [
-      "A. Nguy cơ bị phá hoại vật lý trực tiếp lên hệ thống máy chủ lưu trữ.",
-      "B. Nguy cơ rò rỉ dữ liệu cá nhân do mô hình ghi nhớ nhầm thông tin nhạy cảm.",
-      "C. Lỗi biên dịch cú pháp trong mã nguồn Python khi xử lý huấn luyện mô hình.",
-      "D. Sự suy giảm nghiêm trọng về độ chính xác dự đoán của mạng nơ-ron nhân tạo."
+    "id": "Q_MOD_D_043",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
     ],
-    correct_option: "B",
-    explanation: "Mô hình LLM có khả năng ghi nhớ (memorize) các đoạn văn bản thô trong tập train. Nếu tập train chứa PII nhạy cảm, kẻ xấu có thể trích xuất ra qua prompt độc hại."
+    "content": "Khi nhận được một cuộc gọi tự xưng là công an yêu cầu bạn cung cấp mật khẩu ngân hàng để kiểm tra, bạn nên làm gì?",
+    "options": [
+      "A. Tuyệt đối không cung cấp và liên hệ trực tiếp với ngân hàng để xác minh.",
+      "B. Cung cấp ngay lập tức để phối hợp điều tra và bảo vệ tài sản của mình.",
+      "C. Cung cấp một mật khẩu giả để trêu đùa người đang thực hiện cuộc gọi đó.",
+      "D. Hỏi xin mật khẩu tài khoản của người gọi trước rồi mới cung cấp cho họ."
+    ],
+    "correct_option": "A",
+    "explanation": "Cơ quan chức năng và ngân hàng không bao giờ yêu cầu cung cấp mật khẩu qua điện thoại. Việc không cung cấp giúp tránh bị lừa đảo."
   },
   {
-    id: "Q_MOD_D_044", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Đọc tình huống sau: Có 4 mô hình AI A, B, C, D được kiểm thử. Kết quả cho thấy:\n\n* Mô hình A chính xác hơn mô hình B.\n* Mô hình C chính xác hơn mô hình D.\n* Mô hình B chính xác hơn mô hình C.\nSắp xếp thứ tự độ chính xác từ cao đến thấp là:",
-    options: [
-      "A. A > B > C > D",
-      "B. A > C > B > D",
-      "C. C > D > A > B",
-      "D. D > C > B > A"
+    "id": "Q_MOD_D_044",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
     ],
-    correct_option: "A",
-    explanation: "Ta có các bất đẳng thức: A > B, C > D, và B > C. Kết hợp lại: A > B > C > D."
+    "content": "Tại sao chúng ta không nên chia sẻ ảnh chụp hai mặt của Căn cước công dân lên các hội nhóm công khai?",
+    "options": [
+      "A. Vì kẻ xấu có thể dùng thông tin này để lừa đảo hoặc vay tiền trực tuyến.",
+      "B. Vì ảnh chụp thẻ căn cước công dân sẽ làm đầy dung lượng điện thoại bạn.",
+      "C. Vì thẻ căn cước công dân có màu sắc không phù hợp để đăng lên mạng xã hội.",
+      "D. Vì đăng ảnh thẻ căn cước sẽ làm giảm số lượng người theo dõi tài khoản bạn."
+    ],
+    "correct_option": "A",
+    "explanation": "Số CCCD và thông tin trên thẻ có thể bị lợi dụng để đăng ký các dịch vụ tài chính bất hợp pháp hoặc lừa đảo."
   },
   {
-    id: "Q_MOD_D_045", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-ethics"],
-    content: "Tại sao việc lạm dụng AI tạo sinh để viết tự động các bài báo khoa học giả, sau đó gửi đăng hàng loạt lên các tạp chí lại bị coi là vi phạm nghiêm trọng đạo đức học thuật?",
-    options: [
-      "A. Do các bài viết được tạo ra từ AI thường có cấu trúc trình bày và định dạng không đạt chuẩn thẩm mỹ khoa học.",
-      "B. Do hành vi này làm xói mòn tính trung thực học thuật bằng cách đưa vào hệ thống các tri thức giả lập không qua thực nghiệm.",
-      "C. Do các bài báo do trí tuệ nhân tạo sinh ra có dung lượng nội dung quá ngắn và không đáp ứng yêu cầu số trang tối thiểu.",
-      "D. Do đa số các nhà xuất bản tạp chí uy tín trên thế giới hiện nay nghiêm cấm sử dụng máy tính trong quá trình nghiên cứu."
+    "id": "Q_MOD_D_045",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
     ],
-    correct_option: "B",
-    explanation: "Đạo đức nghiên cứu khoa học yêu cầu tính thực nghiệm, trung thực và đóng góp tri thức thực sự từ con người. Việc spam bài viết do AI sinh ra làm loãng học thuật và tạo ra các thông tin sai lệch nguy hiểm."
+    "content": "Khi sử dụng máy tính công cộng tại quán net, hành động nào giúp bảo vệ tài khoản cá nhân của bạn?",
+    "options": [
+      "A. Đăng xuất hoàn toàn các tài khoản và xóa lịch sử duyệt web trước khi về.",
+      "B. Chọn tính năng lưu mật khẩu trên trình duyệt để lần sau đăng nhập nhanh.",
+      "C. Để nguyên trình duyệt đang mở tài khoản để người sau sử dụng tiếp cho tiện.",
+      "D. Tắt màn hình máy tính đi mà không cần bấm đăng xuất tài khoản cá nhân."
+    ],
+    "correct_option": "A",
+    "explanation": "Đăng xuất tài khoản và xóa dữ liệu duyệt web ngăn người dùng sau truy cập trái phép vào tài khoản của bạn."
   },
   {
-    id: "Q_MOD_D_046", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Cho ba mệnh đề logic sau:\n\n1. Nếu Nam học giỏi AI (P) hoặc Nam giỏi Toán (Q), thì Nam sẽ đỗ kỳ thi tuyển sinh (R).\n2. Nếu Nam đỗ kỳ thi tuyển sinh (R), Nam sẽ được nhận học bổng (S).\n3. Thực tế Nam không nhận được học bổng ($\\neg$S).\nPhát biểu nào sau đây chắc chắn đúng về mặt logic?",
-    options: [
-      "A. Nam đã đỗ kỳ thi tuyển sinh nhưng cuối cùng lại không được nhận học bổng.",
-      "B. Nam chắc chắn không học giỏi AI và đồng thời Nam cũng không giỏi môn Toán.",
-      "C. Nam thực tế học giỏi AI nhưng đáng tiếc là Nam lại không giỏi môn Toán học.",
-      "D. Nam thực tế rất giỏi môn Toán học nhưng Nam lại không học giỏi môn học AI."
+    "id": "Q_MOD_D_046",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
     ],
-    correct_option: "B",
-    explanation: "Từ (2) và (3): $R \\rightarrow S$ và $\\neg S \\Rightarrow \\neg R$ (Nam không đỗ kỳ thi). Từ (1) và $\\neg R$: $(P \\lor Q) \\rightarrow R$ và $\\neg R \\Rightarrow \\neg(P \\lor Q) \\equiv \\neg P \\land \\neg Q$ (Nam không học giỏi AI và Nam không giỏi Toán)."
+    "content": "Khái niệm \"Ẩn danh hóa dữ liệu\" (Data Anonymization) nhằm mục đích gì trong quản lý thông tin?",
+    "options": [
+      "A. Loại bỏ các thông tin định danh để không thể nhận ra cá nhân cụ thể.",
+      "B. Chuyển đổi toàn bộ thông tin trong cơ sở dữ liệu sang dạng hình vẽ.",
+      "C. Tăng tốc độ truyền tải các tập tin dữ liệu qua đường truyền internet.",
+      "D. Xóa bỏ hoàn toàn cơ sở dữ liệu để tránh bị tin tặc tấn công ăn cắp."
+    ],
+    "correct_option": "A",
+    "explanation": "Ẩn danh hóa dữ liệu giúp bảo vệ quyền riêng tư bằng cách biến dữ liệu cá nhân thành dữ liệu không thể định danh."
   },
   {
-    id: "Q_MOD_D_047", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-privacy"],
-    content: "Kỹ thuật mã hóa đồng cấu (Homomorphic Encryption) mang lại lợi ích đột phá nào cho an toàn dữ liệu và quyền riêng tư trong các ứng dụng AI đám mây?",
-    options: [
-      "A. Giúp nén toàn bộ thông tin hình ảnh xuống mức dung lượng cực nhỏ để dễ dàng lưu trữ.",
-      "B. Cho phép AI tính toán trực tiếp trên dữ liệu đã mã hóa mà không cần giải mã trước.",
-      "C. Hỗ trợ tự động dò quét và tiêu diệt các phần mềm độc hại xâm nhập máy tính người dùng.",
-      "D. Triệt tiêu hoàn toàn sự sai lệch định kiến (bias) tồn tại sẵn trong dữ liệu đầu vào."
+    "id": "Q_MOD_D_047",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
     ],
-    correct_option: "B",
-    explanation: "Mã hóa đồng cấu cho phép xử lý dữ liệu ở dạng mã hóa. Kết quả tính toán sau khi giải mã bởi người sở hữu khóa sẽ trùng khớp với kết quả tính trên dữ liệu thô, giúp bảo vệ dữ liệu nhạy cảm tối đa."
+    "content": "Khi một ứng dụng yêu cầu bạn đồng ý với \"Chính sách bảo mật\", tài liệu này thường giải thích điều gì?",
+    "options": [
+      "A. Cách ứng dụng thu thập, sử dụng và bảo vệ thông tin cá nhân của bạn.",
+      "B. Hướng dẫn chi tiết cách chơi game và đạt điểm số cao trong ứng dụng.",
+      "C. Lịch sử hình thành và phát triển của công ty viết ra ứng dụng di động.",
+      "D. Bảng giá chi tiết của các tính năng trả phí bên trong ứng dụng di động."
+    ],
+    "correct_option": "A",
+    "explanation": "Chính sách bảo mật là văn bản pháp lý làm rõ quyền lợi và nghĩa vụ của nhà phát triển trong việc xử lý thông tin người dùng."
   },
   {
-    id: "Q_MOD_D_048", module_id: "Module_D", difficulty: "Medium",
-    tags: ["ai-bias"],
-    content: "Phương pháp 'Pre-processing bias mitigation' giải quyết hiện tượng định kiến (bias) trong AI bằng cách nào?",
-    options: [
-      "A. Thực hiện điều chỉnh trực tiếp các trọng số của mô hình nơ-ron trong pha lan truyền ngược.",
-      "B. Xử lý và cân bằng lại tập dữ liệu huấn luyện để loại bỏ thiên vị trước khi đưa vào mô hình.",
-      "C. Tinh chỉnh lại ngưỡng xác suất quyết định ở đầu ra của mô hình sau khi quá trình học hoàn tất.",
-      "D. Gia tăng số lượng chu kỳ huấn luyện (epochs) nhằm cải thiện khả năng tối ưu hóa của mô hình."
+    "id": "Q_MOD_D_048",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
     ],
-    correct_option: "B",
-    explanation: "Pre-processing bias mitigation can thiệp vào giai đoạn chuẩn bị dữ liệu (ví dụ re-weighting, tối ưu hóa biểu diễn dữ liệu) để triệt tiêu bias ngay từ nguồn trước khi mô hình học."
+    "content": "Hành động nào sau đây là biện pháp an toàn khi sử dụng mạng Wifi công cộng không có mật khẩu?",
+    "options": [
+      "A. Tránh đăng nhập tài khoản ngân hàng hoặc thực hiện các giao dịch tiền bạc.",
+      "B. Đăng nhập vào tất cả các tài khoản cá nhân để kiểm tra độ bảo mật mạng.",
+      "C. Tải về và cài đặt các phần mềm lạ được gợi ý trên trình duyệt web lúc đó.",
+      "D. Tắt hoàn toàn tính năng tường lửa bảo vệ có sẵn trên máy tính cá nhân."
+    ],
+    "correct_option": "A",
+    "explanation": "Mạng Wifi công cộng không bảo mật dễ bị kẻ xấu nghe lén thông tin truyền tải, vì vậy nên tránh thực hiện các giao dịch nhạy cảm."
   },
   {
-    id: "Q_MOD_D_049", module_id: "Module_D", difficulty: "Medium",
-    tags: ["open-source-licensing"],
-    content: "Một công ty công nghệ sử dụng một thư viện AI có giấy phép 'GNU AGPL v3' (Affero GPL v3) để xây dựng dịch vụ SaaS chạy trên đám mây cho người dùng truy cập qua web. Công ty sửa đổi một phần code của thư viện này để tối ưu hóa. Công ty có nghĩa vụ gì về mặt bản quyền?",
-    options: [
-      "A. Không chịu bất kỳ ràng buộc nào do chỉ triển khai sản phẩm chạy trên máy chủ đám mây không phân phối trực tiếp.",
-      "B. Bắt buộc phải công khai toàn bộ mã nguồn sửa đổi của dịch vụ SaaS cho người dùng dưới cùng giấy phép AGPL v3.",
-      "C. Chỉ cần tiến hành đính kèm thông tin bản quyền và tên của các tác giả gốc tại mục giới thiệu trên giao diện web.",
-      "D. Phải trích xuất và thanh toán mười phần trăm doanh thu từ dịch vụ đám mây cho nhóm phát triển thư viện ban đầu."
+    "id": "Q_MOD_D_049",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
     ],
-    correct_option: "B",
-    explanation: "AGPL v3 được thiết kế đặc biệt để lấp đầy 'lỗ hổng SaaS' của GPL. Nó quy định việc chạy phần mềm trên mạng cho người dùng tương tác từ xa cũng tương đương với việc phân phối phần mềm, buộc phải cung cấp mã nguồn phái sinh cho người dùng mạng."
+    "content": "Khi bạn nhận được email từ một địa chỉ lạ chứa tệp tin đính kèm có đuôi `.exe`, bạn nên làm gì?",
+    "options": [
+      "A. Không mở tệp tin và xóa email để tránh nguy cơ máy tính bị nhiễm mã độc.",
+      "B. Tải tệp tin về máy tính rồi nhấp đúp chuột để chạy thử tệp tin đó ngay.",
+      "C. Chia sẻ tệp tin này cho bạn bè cùng lớp để họ cùng tải về dùng thử xem.",
+      "D. Đổi tên đuôi tệp tin thành định dạng tài liệu văn bản rồi mới mở ra đọc."
+    ],
+    "correct_option": "A",
+    "explanation": "Tệp đính kèm lạ có đuôi `.exe` có nguy cơ cao chứa virus hoặc mã độc gây hại cho máy tính."
   },
   {
-    id: "Q_MOD_D_050", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-ethics"],
-    content: "Trong các xe tự lái tích hợp AI, bài toán 'Tình huống khó xử đạo đức' (Ethical Dilemma - ví dụ: xe mất phanh buộc phải chọn đâm vào 1 người già hay 3 người trẻ) thường được các nhà nghiên cứu tiếp cận giải quyết như thế nào dưới góc độ thiết kế sản phẩm có trách nhiệm?",
-    options: [
-      "A. Thiết lập quy tắc cứng nhắc buộc xe tự lái luôn chủ động va chạm vào đối tượng có độ tuổi cao hơn.",
-      "B. Không xây dựng bất kỳ giải pháp nào, để hệ thống điều khiển tự động lựa chọn ngẫu nhiên khi xảy ra tai nạn.",
-      "C. Lập trình thuật toán tập trung giảm thiểu tối đa lực va chạm vật lý tổng thể và kích hoạt phanh khẩn cấp.",
-      "D. Yêu cầu người lái xe tự điều khiển thủ công hoặc bấm nút lựa chọn hướng tránh va chạm ngay trong tích tắc."
+    "id": "Q_MOD_D_050",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
     ],
-    correct_option: "C",
-    explanation: "Về mặt thiết kế đạo đức công nghệ, việc xếp hạng giá trị mạng sống con người là không thể chấp nhận được. Cách tiếp cận có trách nhiệm là thiết lập quy trình giảm thiểu va chạm vật lý tổng thể và tuân thủ các quy tắc an toàn khách quan."
+    "content": "Hành vi nào sau đây giúp hạn chế việc bị rò rỉ thông tin cá nhân qua các ứng dụng mạng xã hội?",
+    "options": [
+      "A. Chỉ kết bạn với những người quen biết và giới hạn quyền xem bài viết.",
+      "B. Đặt tất cả thông tin cá nhân ở chế độ công khai cho mọi người cùng xem.",
+      "C. Điền đầy đủ thông tin số điện thoại và địa chỉ nhà riêng lên trang cá nhân.",
+      "D. Nhấp vào mọi đường link quảng cáo trúng thưởng hiện trên bảng tin hàng ngày."
+    ],
+    "correct_option": "A",
+    "explanation": "Hạn chế đối tượng xem thông tin giúp giảm thiểu nguy cơ bị kẻ xấu thu thập thông tin cá nhân."
   },
   {
-    id: "Q_MOD_D_051", module_id: "Module_D", difficulty: "Easy",
-    tags: ["pure-logic"],
-    content: "Trong mệnh đề logic, mệnh đề hội $P \\land Q$ chỉ nhận giá trị Đúng (True) khi nào?",
-    options: [
-      "A. Khi cả hai mệnh đề P và Q đều có giá trị Đúng.",
-      "B. Khi chỉ có một trong hai mệnh đề P hoặc Q Đúng.",
-      "C. Khi cả hai mệnh đề P và Q đều có giá trị Sai.",
-      "D. Khi mệnh đề P có giá trị Đúng và Q có giá trị Sai."
+    "id": "Q_MOD_D_051",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
     ],
-    correct_option: "A",
-    explanation: "Mệnh đề hội (AND) chỉ nhận giá trị đúng khi cả hai mệnh đề thành phần đều đúng. Trong các trường hợp khác, nó nhận giá trị sai."
+    "content": "Khi bạn đăng ký số điện thoại tại một cửa hàng, cửa hàng tự ý bán số của bạn cho bên quảng cáo. Hành vi này vi phạm điều gì?",
+    "options": [
+      "A. Vi phạm quyền riêng tư và quy định bảo vệ thông tin cá nhân người dùng.",
+      "B. Vi phạm quy định về đăng ký kinh doanh và giấy phép mở cửa hàng dịch vụ.",
+      "C. Vi phạm quy chuẩn an toàn phòng cháy chữa cháy của cơ sở kinh doanh đó.",
+      "D. Vi phạm luật giao thông đường bộ đối với các phương tiện vận chuyển hàng."
+    ],
+    "correct_option": "A",
+    "explanation": "Chia sẻ dữ liệu cá nhân cho bên thứ ba khi chưa có sự đồng ý của chủ thể là vi phạm pháp luật bảo mật thông tin."
   },
   {
-    id: "Q_MOD_D_052", module_id: "Module_D", difficulty: "Easy",
-    tags: ["pure-logic"],
-    content: "Phủ định của mệnh đề kéo theo $P \\rightarrow Q$ tương đương với mệnh đề logic nào sau đây?",
-    options: [
-      "A. Mệnh đề $P \\land \\neg Q$.",
-      "B. Mệnh đề $\\neg P \\lor Q$.",
-      "C. Mệnh đề $\\neg P \\land Q$.",
-      "D. Mệnh đề $P \\lor \\neg Q$."
+    "id": "Q_MOD_D_052",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
     ],
-    correct_option: "A",
-    explanation: "Ta có $P \\rightarrow Q \\equiv \\neg P \\lor Q$. Phủ định của nó là $\\neg(P \\rightarrow Q) \\equiv \\neg(\\neg P \\lor Q) \\equiv P \\land \\neg Q$ theo luật De Morgan."
+    "content": "Mục đích chính của tính năng \"Xác thực hai yếu tố\" (2FA) khi đăng nhập tài khoản là gì?",
+    "options": [
+      "A. Tăng cường bảo mật bằng cách yêu cầu thêm một mã xác nhận gửi về điện thoại.",
+      "B. Giúp cho quá trình đăng nhập vào tài khoản được diễn ra nhanh chóng hơn nhiều.",
+      "C. Cho phép hai người cùng đăng nhập sử dụng một tài khoản tại một thời điểm.",
+      "D. Tự động thay đổi mật khẩu của tài khoản sau mỗi lần người dùng đăng nhập."
+    ],
+    "correct_option": "A",
+    "explanation": "2FA yêu cầu thêm một yếu tố xác thực thứ hai (ví dụ mã OTP qua SMS/App) giúp bảo vệ tài khoản ngay cả khi lộ mật khẩu."
   },
   {
-    id: "Q_MOD_D_053", module_id: "Module_D", difficulty: "Easy",
-    tags: ["data-privacy"],
-    content: "Trong các nguyên tắc đạo đức dữ liệu, thuật ngữ 'Informed Consent' được hiểu là gì?",
-    options: [
-      "A. Sự đồng thuận tự nguyện của chủ thể dữ liệu dựa trên thông tin đầy đủ.",
-      "B. Việc chia sẻ dữ liệu tự do giữa các tổ chức mà không cần xin phép.",
-      "C. Quá trình tự động ẩn danh hóa các thông tin định danh của cá nhân.",
-      "D. Quy trình mã hóa dữ liệu người dùng để ngăn chặn sự xâm nhập trái phép."
+    "id": "Q_MOD_D_053",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
     ],
-    correct_option: "A",
-    explanation: "'Informed Consent' (Đồng thuận dựa trên thông tin) yêu cầu tổ chức phải giải thích rõ ràng cách thu thập, sử dụng dữ liệu và chủ thể dữ liệu đồng ý trước khi thực hiện."
+    "content": "Nếu bạn nhận được một tin nhắn thông báo trúng thưởng từ một số điện thoại lạ kèm đường link yêu cầu nhập thông tin cá nhân để nhận giải, bạn nên làm gì?",
+    "options": [
+      "A. Bỏ qua tin nhắn và không nhấp vào đường link đó để tránh bị lừa đảo chiếm tài sản.",
+      "B. Nhấp vào đường link ngay để điền thông tin kẻo mất cơ hội nhận phần quà giá trị.",
+      "C. Gửi thông tin tài khoản ngân hàng của người thân để họ nhận giải thưởng hộ mình.",
+      "D. Chia sẻ đường link này cho nhiều người khác để họ cùng tham gia nhận thưởng chung."
+    ],
+    "correct_option": "A",
+    "explanation": "Tin nhắn trúng thưởng giả mạo kèm link là hình thức lừa đảo phổ biến nhằm chiếm đoạt tài khoản và thông tin cá nhân."
   },
   {
-    id: "Q_MOD_D_054", module_id: "Module_D", difficulty: "Easy",
-    tags: ["open-source-licensing"],
-    content: "Giấy phép Creative Commons 'CC BY' cho phép người khác làm gì với tác phẩm của bạn?",
-    options: [
-      "A. Tự do sao chép, phân phối và chỉnh sửa tác phẩm nhưng bắt buộc phải ghi công bạn.",
-      "B. Chỉ được phép sử dụng tác phẩm cho các mục đích phi thương mại và nghiên cứu.",
-      "C. Không được phép tạo ra các tác phẩm phái sinh từ tác phẩm gốc của bạn dưới mọi hình thức.",
-      "D. Sử dụng tác phẩm hoàn toàn tự do mà không cần ghi nhận bất kỳ thông tin nào về tác giả."
+    "id": "Q_MOD_D_054",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
     ],
-    correct_option: "A",
-    explanation: "Giấy phép CC BY là giấy phép ghi nhận tác giả (BY). Nó cho phép phân phối, phối lại, điều chỉnh và xây dựng dựa trên tác phẩm, miễn là ghi công tác giả gốc."
+    "content": "Khi bạn thanh toán bằng thẻ tín dụng tại một trang web không có biểu tượng khóa bảo mật (HTTPS), rủi ro lớn nhất là gì?",
+    "options": [
+      "A. Thông tin thẻ của bạn có thể bị kẻ xấu nghe lén và đánh cắp trong quá trình truyền.",
+      "B. Máy tính của bạn sẽ tự động bị hỏng hệ điều hành và không thể khởi động lại được.",
+      "C. Số tiền trong tài khoản của bạn sẽ tự động được chuyển đổi sang một loại ngoại tệ.",
+      "D. Trang web đó sẽ tự động khóa vĩnh viễn tài khoản đăng nhập của bạn trên hệ thống."
+    ],
+    "correct_option": "A",
+    "explanation": "Trang web không có HTTPS truyền thông tin dạng văn bản rõ, dễ bị kẻ tấn công đánh cắp dữ liệu thẻ trên đường truyền."
   },
   {
-    id: "Q_MOD_D_055", module_id: "Module_D", difficulty: "Easy",
-    tags: ["data-ethics"],
-    content: "Thuật ngữ 'Fairness' (Sự công bằng) trong hệ thống AI hướng đến mục tiêu chính nào sau đây?",
-    options: [
-      "A. Đảm bảo mô hình AI đưa ra các dự đoán không thiên vị hay phân biệt đối xử với các nhóm đối tượng.",
-      "B. Đảm bảo tốc độ huấn luyện mô hình AI đạt mức tối đa trên mọi kiến trúc phần cứng khác nhau.",
-      "C. Đảm bảo tính toán chính xác của các phép toán đại số tuyến tính trong thuật toán học máy.",
-      "D. Đảm bảo mã nguồn của mô hình AI được phân phối rộng rãi dưới các giấy phép nguồn mở."
+    "id": "Q_MOD_D_055",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
     ],
-    correct_option: "A",
-    explanation: "Sự công bằng (Fairness) trong AI hướng tới việc loại bỏ hoặc giảm thiểu định kiến phân biệt đối xử đối với các cá nhân hoặc nhóm dựa trên giới tính, chủng tộc, độ tuổi, v.v."
+    "content": "Hành vi nào sau đây được gọi là \"Phishing\" trong lĩnh vực an toàn thông tin mạng?",
+    "options": [
+      "A. Lừa đảo người dùng cung cấp thông tin nhạy cảm qua trang web hoặc email giả mạo.",
+      "B. Tăng cường tốc độ xử lý của máy tính bằng cách cài thêm bộ nhớ RAM vật lý mới.",
+      "C. Quét sạch các tập tin rác để giải phóng dung lượng lưu trữ trên đĩa cứng máy tính.",
+      "D. Tự động sao lưu dữ liệu lên các nền tảng điện toán đám mây để phòng ngừa sự cố."
+    ],
+    "correct_option": "A",
+    "explanation": "Phishing là hình thức giả mạo các tổ chức uy tín (như ngân hàng, mạng xã hội) để dụ người dùng tiết lộ mật khẩu, mã OTP."
   },
   {
-    id: "Q_MOD_D_056", module_id: "Module_D", difficulty: "Easy",
-    tags: ["open-source-licensing"],
-    content: "Giấy phép nguồn mở nào sau đây thuộc nhóm 'Permissive' (Thông thoáng/Cho phép tối đa)?",
-    options: [
+    "id": "Q_MOD_D_056",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
+    ],
+    "content": "Tại sao việc sử dụng cùng một mật khẩu cho tất cả các tài khoản trực tuyến lại rất nguy hiểm?",
+    "options": [
+      "A. Vì nếu một tài khoản bị lộ, kẻ xấu có thể đăng nhập vào tất cả tài khoản còn lại.",
+      "B. Vì trình duyệt web sẽ không cho phép bạn lưu mật khẩu giống nhau cho nhiều tài khoản.",
+      "C. Vì máy tính của bạn sẽ chạy chậm đi do phải xử lý các mật khẩu giống nhau đó.",
+      "D. Vì bạn sẽ dễ dàng quên mật khẩu đó hơn so với việc đặt các mật khẩu khác nhau."
+    ],
+    "correct_option": "A",
+    "explanation": "Dùng chung mật khẩu tạo ra hiệu ứng dây chuyền: kẻ xấu chỉ cần hack một tài khoản là chiếm được tất cả tài khoản khác."
+  },
+  {
+    "id": "Q_MOD_D_057",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
+    ],
+    "content": "Khi bạn vứt bỏ chiếc điện thoại cũ không dùng nữa, hành động nào giúp bảo vệ an toàn dữ liệu cá nhân của bạn?",
+    "options": [
+      "A. Thực hiện khôi phục cài đặt gốc và xóa sạch toàn bộ dữ liệu lưu trên máy.",
+      "B. Chỉ cần tháo thẻ SIM ra khỏi máy rồi mang đi vứt điện thoại cũ luôn.",
+      "C. Xóa các ứng dụng mạng xã hội trên màn hình chính là đủ an toàn rồi.",
+      "D. Tắt nguồn điện thoại cũ trước khi mang đi vứt ở bãi rác công cộng."
+    ],
+    "correct_option": "A",
+    "explanation": "Khôi phục cài đặt gốc (Factory Reset) giúp xóa sạch hoàn toàn các dữ liệu cá nhân lưu trữ trên bộ nhớ máy trước khi máy rơi vào tay người khác."
+  },
+  {
+    "id": "Q_MOD_D_058",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
+    ],
+    "content": "Ứng dụng nhắn tin thông báo tin nhắn được mã hóa đầu cuối (End-to-End Encryption). Điều này có ý nghĩa gì?",
+    "options": [
+      "A. Chỉ người gửi và người nhận mới có thể đọc được nội dung tin nhắn đó.",
+      "B. Nhà cung cấp dịch vụ nhắn tin được tự do đọc và phân tích tin nhắn đó.",
+      "C. Tin nhắn sẽ tự động biến mất khỏi điện thoại của cả hai bên sau năm giây.",
+      "D. Bất kỳ ai kết nối chung mạng Wifi với bạn cũng có thể xem tin nhắn đó."
+    ],
+    "correct_option": "A",
+    "explanation": "Mã hóa đầu cuối đảm bảo dữ liệu được mã hóa suốt hành trình, chỉ thiết bị của người gửi và người nhận mới có khóa để giải mã đọc tin."
+  },
+  {
+    "id": "Q_MOD_D_059",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
+    ],
+    "content": "Một phần mềm diệt virus trên máy tính có vai trò gì trong việc bảo vệ dữ liệu cá nhân của bạn?",
+    "options": [
+      "A. Phát hiện và ngăn chặn các mã độc đánh cắp thông tin cá nhân trên máy.",
+      "B. Tự động tăng tốc độ kết nối internet của máy tính lên mức nhanh nhất.",
+      "C. Sửa chữa các lỗi phần cứng của bàn phím và màn hình máy tính của bạn.",
+      "D. Giúp bạn khôi phục lại các tệp tin đã bị xóa khỏi thùng rác máy tính."
+    ],
+    "correct_option": "A",
+    "explanation": "Phần mềm diệt virus giúp bảo vệ máy tính khỏi phần mềm độc hại, Trojan gián điệp thu thập thông tin."
+  },
+  {
+    "id": "Q_MOD_D_060",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "data-privacy"
+    ],
+    "content": "Quy định GDPR của Liên minh Châu Âu bảo vệ quyền lợi nào sau đây của người sử dụng internet?",
+    "options": [
+      "A. Quyền bảo vệ thông tin cá nhân và kiểm soát dữ liệu trên môi trường mạng.",
+      "B. Quyền được sử dụng mạng internet tốc độ cao hoàn toàn miễn phí tại nhà.",
+      "C. Quyền được sở hữu các thiết bị máy tính cá nhân hiện đại và đắt tiền.",
+      "D. Quyền được tự do tải xuống mọi bộ phim có bản quyền mà không phải trả phí."
+    ],
+    "correct_option": "A",
+    "explanation": "GDPR (General Data Protection Regulation) là luật bảo vệ dữ liệu cá nhân nghiêm ngặt nhất thế giới, trao nhiều quyền kiểm soát dữ liệu cho người dùng."
+  },
+  {
+    "id": "Q_MOD_D_061",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
+    ],
+    "content": "Giấy phép mã nguồn mở \"MIT License\" cho phép người dùng thực hiện quyền hạn nào dưới đây?",
+    "options": [
+      "A. Được tự do sử dụng, sửa đổi và phân phối phần mềm kể cả cho thương mại.",
+      "B. Chỉ được phép sử dụng cho nghiên cứu học thuật và cấm dùng kiếm tiền.",
+      "C. Bắt buộc phải trả phí bản quyền hàng tháng cho tác giả viết ra code đó.",
+      "D. Không được phép thay đổi bất kỳ dòng mã nguồn nào của chương trình gốc."
+    ],
+    "correct_option": "A",
+    "explanation": "MIT là giấy phép nguồn mở cực kỳ thông thoáng, cho phép sử dụng thương mại, sửa đổi và phân phối tự do."
+  },
+  {
+    "id": "Q_MOD_D_062",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
+    ],
+    "content": "Khái niệm \"Copyleft\" (như giấy phép GPL) trong nguồn mở yêu cầu sản phẩm phái sinh điều gì?",
+    "options": [
+      "A. Phải mở mã nguồn của sản phẩm phái sinh dưới cùng giấy phép nguồn mở đó.",
+      "B. Được phép đóng mã nguồn sản phẩm phái sinh và bán dưới dạng độc quyền.",
+      "C. Phải trả một khoản phí bản quyền định kỳ cho tổ chức phần mềm tự do.",
+      "D. Nghiêm cấm mọi hành vi phân phối sản phẩm phái sinh ra bên ngoài công ty."
+    ],
+    "correct_option": "A",
+    "explanation": "Tính chất copyleft (lan truyền) yêu cầu phần mềm phái sinh (sửa đổi hoặc tích hợp từ code GPL) cũng phải mở mã nguồn dưới giấy phép GPL tương tự."
+  },
+  {
+    "id": "Q_MOD_D_063",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
+    ],
+    "content": "Khi sử dụng một phần mềm mã nguồn mở có giấy phép MIT, yêu cầu bắt buộc duy nhất là gì?",
+    "options": [
+      "A. Giữ nguyên thông báo bản quyền và tuyên bố miễn trừ trách nhiệm của tác giả.",
+      "B. Phải công khai toàn bộ mã nguồn của phần mềm thương mại do bạn tự viết thêm.",
+      "C. Gửi email thông báo cho tác giả gốc mỗi khi bạn chạy chương trình máy tính.",
+      "D. Trích một phần doanh thu bán phần mềm để ủng hộ cho cộng đồng nguồn mở đó."
+    ],
+    "correct_option": "A",
+    "explanation": "Yêu cầu duy nhất của giấy phép MIT là đính kèm thông báo bản quyền gốc và tuyên bố miễn trừ trách nhiệm trong sản phẩm."
+  },
+  {
+    "id": "Q_MOD_D_064",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
+    ],
+    "content": "Một dự án mã nguồn mở được chia sẻ công khai trên GitHub thường mang lại lợi ích gì cho cộng đồng?",
+    "options": [
+      "A. Mọi người đều có thể học hỏi từ mã nguồn và cùng nhau đóng góp sửa lỗi.",
+      "B. Người tạo ra dự án sẽ nhận được tiền bản quyền từ mỗi lượt tải xuống code.",
+      "C. Dự án sẽ tự động chạy và tạo ra tiền cho những người tham gia đóng góp.",
+      "D. Máy tính của người dùng sẽ tự động được nâng cấp phần cứng khi tải về."
+    ],
+    "correct_option": "A",
+    "explanation": "Mã nguồn mở trên GitHub thúc đẩy sự hợp tác học hỏi và phát triển chung trong cộng đồng CNTT."
+  },
+  {
+    "id": "Q_MOD_D_065",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
+    ],
+    "content": "Giấy phép Creative Commons \"CC BY\" yêu cầu người sử dụng tác phẩm phải làm điều gì?",
+    "options": [
+      "A. Phải ghi nhận thông tin tác giả và trích dẫn nguồn của tác phẩm gốc đầy đủ.",
+      "B. Nghiêm cấm hoàn toàn việc chỉnh sửa hoặc tạo ra các tác phẩm phái sinh khác.",
+      "C. Chỉ được phép sử dụng cho mục đích phi thương mại và không được kiếm tiền.",
+      "D. Phải chia sẻ tác phẩm mới dưới cùng một giấy phép với tác phẩm ban đầu."
+    ],
+    "correct_option": "A",
+    "explanation": "CC BY (Attribution) yêu cầu người dùng phải ghi danh tác giả gốc khi sử dụng tác phẩm."
+  },
+  {
+    "id": "Q_MOD_D_066",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
+    ],
+    "content": "Sự khác biệt chính giữa phần mềm mã nguồn mở và phần mềm mã nguồn đóng (độc quyền) là gì?",
+    "options": [
+      "A. Phần mềm nguồn mở cho phép xem mã nguồn, phần mềm đóng thì giấu mã nguồn.",
+      "B. Phần mềm nguồn mở luôn chạy chậm hơn rất nhiều so với phần mềm nguồn đóng.",
+      "C. Phần mềm nguồn đóng hoàn toàn miễn phí, phần mềm nguồn mở luôn phải mua.",
+      "D. Phần mềm nguồn mở chỉ chạy trên điện thoại, phần mềm nguồn đóng chạy trên PC."
+    ],
+    "correct_option": "A",
+    "explanation": "Mã nguồn mở (open source) công khai code cho mọi người xem, mã nguồn đóng (proprietary) giữ bí mật code."
+  },
+  {
+    "id": "Q_MOD_D_067",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
+    ],
+    "content": "Giấy phép Creative Commons ký hiệu \"NC\" (Non-Commercial) có ý nghĩa gì đối với người dùng?",
+    "options": [
+      "A. Không được phép sử dụng tác phẩm này cho các mục đích thương mại kiếm tiền.",
+      "B. Được tự do sử dụng tác phẩm để kinh doanh kiếm lời mà không cần xin phép.",
+      "C. Bắt buộc phải chia sẻ tác phẩm phái sinh dưới cùng giấy phép với bản gốc.",
+      "D. Nghiêm cấm mọi hành vi thay đổi cấu trúc hoặc nội dung của tác phẩm gốc."
+    ],
+    "correct_option": "A",
+    "explanation": "NC = Non-Commercial (Phi thương mại) cấm sử dụng tác phẩm cho các mục đích sinh lợi nhuận."
+  },
+  {
+    "id": "Q_MOD_D_068",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
+    ],
+    "content": "Tại sao các lập trình viên thường đóng góp mã nguồn của mình cho các dự án nguồn mở?",
+    "options": [
+      "A. Để chia sẻ tri thức, nâng cao kỹ năng lập trình và xây dựng hồ sơ năng lực.",
+      "B. Để nhận lương trực tiếp từ trang web GitHub hàng tháng dựa trên số dòng code.",
+      "C. Để ép buộc tất cả người dùng phần mềm phải mua bản quyền thương mại của họ.",
+      "D. Để giúp cho máy tính cá nhân của họ chạy nhanh hơn và tiết kiệm điện năng."
+    ],
+    "correct_option": "A",
+    "explanation": "Đóng góp nguồn mở giúp nâng cao tay nghề, chia sẻ giá trị cho cộng đồng và làm đẹp CV của lập trình viên."
+  },
+  {
+    "id": "Q_MOD_D_069",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
+    ],
+    "content": "Khi bạn tải một thư viện mã nguồn mở có giấy phép Apache 2.0 về sử dụng, bạn có thể làm gì?",
+    "options": [
+      "A. Được sửa đổi và bán sản phẩm thương mại đóng mà không cần mở nguồn phần tự viết.",
+      "B. Bắt buộc phải công khai toàn bộ mã nguồn của phần mềm thương mại do bạn viết ra.",
+      "C. Phải trả một khoản phí bản quyền định kỳ hàng năm cho tổ chức phát triển gốc.",
+      "D. Chỉ được phép chạy thử nghiệm trên máy tính cá nhân và cấm triển khai dịch vụ."
+    ],
+    "correct_option": "A",
+    "explanation": "Apache 2.0 là giấy phép permissive, cho phép đóng mã nguồn sản phẩm phái sinh và thương mại hóa thoải mái."
+  },
+  {
+    "id": "Q_MOD_D_070",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
+    ],
+    "content": "Giấy phép Creative Commons ký hiệu \"ND\" (No Derivatives) cấm người dùng làm điều gì?",
+    "options": [
+      "A. Cấm chỉnh sửa, chế tác hoặc tạo ra các tác phẩm phái sinh từ tác phẩm gốc.",
+      "B. Cấm chia sẻ tác phẩm này lên các trang mạng xã hội và diễn đàn trực tuyến.",
+      "C. Cấm sử dụng tác phẩm cho các mục đích học tập cá nhân phi thương mại ở lớp.",
+      "D. Cấm ghi tên tác giả gốc lên trên sản phẩm mới được tạo ra từ tác phẩm đó."
+    ],
+    "correct_option": "A",
+    "explanation": "ND = No Derivatives (Không phái sinh) cấm thay đổi, chỉnh sửa hay phối lại tác phẩm gốc."
+  },
+  {
+    "id": "Q_MOD_D_071",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
+    ],
+    "content": "Tại sao giấy phép GPL v3 lại được gọi là giấy phép nguồn mở có tính chất \"lan truyền\"?",
+    "options": [
+      "A. Vì mọi phần mềm kết hợp với code GPL v3 đều phải mở mã nguồn dưới giấy phép GPL v3.",
+      "B. Vì phần mềm này sẽ tự động lây nhiễm virus sang các máy tính khác trong cùng mạng.",
+      "C. Vì mã nguồn của nó tự động được chia sẻ sang tất cả các tài khoản mạng xã hội bạn.",
+      "D. Vì người dùng sẽ tự động chia sẻ phần mềm này cho tất cả bạn bè xung quanh tải về."
+    ],
+    "correct_option": "A",
+    "explanation": "Tính chất lan truyền (copyleft) buộc phần mềm kết hợp/phái sinh từ GPL cũng phải mở mã nguồn dưới giấy phép GPL."
+  },
+  {
+    "id": "Q_MOD_D_072",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
+    ],
+    "content": "Nếu một phần mềm nguồn mở được phát hành theo giấy phép \"Public Domain\", điều này có nghĩa là gì?",
+    "options": [
+      "A. Phần mềm thuộc về công chúng, ai cũng có thể tự do dùng mà không có ràng buộc nào.",
+      "B. Phần mềm chỉ được phép sử dụng tại các cơ quan nhà nước và trường học công lập.",
+      "C. Phần mềm bắt buộc người dùng phải trả tiền mua bản quyền trực tiếp từ chính phủ.",
+      "D. Phần mềm đã bị cấm phát hành và không ai được phép tải về sử dụng trên máy tính."
+    ],
+    "correct_option": "A",
+    "explanation": "Public Domain (Miền công cộng) nghĩa là tác giả từ bỏ mọi quyền tác quyền, phần mềm hoàn toàn tự do cho công chúng sử dụng."
+  },
+  {
+    "id": "Q_MOD_D_073",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
+    ],
+    "content": "Khi bạn lấy code nguồn mở của người khác về sửa rồi đăng lên mạng mà xóa tên tác giả gốc, hành vi này là gì?",
+    "options": [
+      "A. Vi phạm bản quyền và đạo đức sử dụng mã nguồn mở của cộng đồng công nghệ.",
+      "B. Hành vi bình thường vì mã nguồn mở cho phép người dùng làm mọi việc tự do.",
+      "C. Hành động sáng tạo giúp tối ưu hóa dung lượng hiển thị của tệp tin mã nguồn.",
+      "D. Biện pháp bảo mật cần thiết để tránh lộ thông tin cá nhân của tác giả gốc đó."
+    ],
+    "correct_option": "A",
+    "explanation": "Dù là mã nguồn mở, hầu hết các giấy phép đều yêu cầu giữ nguyên thông tin tác giả gốc. Xóa tên tác giả là vi phạm bản quyền và thiếu đạo đức."
+  },
+  {
+    "id": "Q_MOD_D_074",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
+    ],
+    "content": "Giấy phép Creative Commons viết tắt là \"CC\" thường được áp dụng cho loại sản phẩm nào?",
+    "options": [
+      "A. Các tác phẩm nội dung sáng tạo như hình ảnh, âm nhạc, văn bản và tài liệu.",
+      "B. Các hệ thống cơ sở dữ liệu lớn vận hành trên máy chủ đám mây của doanh nghiệp.",
+      "C. Các thiết bị phần cứng máy tính như bo mạch chủ, ổ cứng và bộ nhớ RAM vật lý.",
+      "D. Các thuật toán tối ưu hóa mạng nơ-ron nhân tạo phức tạp trong huấn luyện AI."
+    ],
+    "correct_option": "A",
+    "explanation": "Giấy phép CC được thiết kế riêng cho các tác phẩm sáng tạo nghệ thuật, nội dung, hình ảnh, tài liệu chứ không thiết kế cho phần mềm/phần cứng."
+  },
+  {
+    "id": "Q_MOD_D_075",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
+    ],
+    "content": "Mục đích chính của việc tổ chức phát triển mã nguồn mở cung cấp file \"LICENSE\" trong thư mục là gì?",
+    "options": [
+      "A. Quy định rõ ràng các điều kiện và quyền hạn của người dùng đối với mã nguồn đó.",
+      "B. Hướng dẫn chi tiết cách cài đặt và chạy ứng dụng trên các hệ điều hành khác nhau.",
+      "C. Lưu trữ thông tin liên hệ và số điện thoại hỗ trợ kỹ thuật của đội ngũ lập trình.",
+      "D. Lưu trữ lịch sử các phiên bản cập nhật và sửa lỗi của chương trình máy tính đó."
+    ],
+    "correct_option": "A",
+    "explanation": "File LICENSE chứa các điều khoản pháp lý quy định người dùng được làm gì và không được làm gì với mã nguồn."
+  },
+  {
+    "id": "Q_MOD_D_076",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
+    ],
+    "content": "Khi một công ty sử dụng thư viện GPL v3 để viết app thương mại và phân phối cho người dùng, công ty phải làm gì?",
+    "options": [
+      "A. Phải công khai toàn bộ mã nguồn của app thương mại đó dưới giấy phép GPL v3.",
+      "B. Chỉ cần trả một khoản tiền phí bản quyền nhỏ cho tác giả của thư viện GPL v3.",
+      "C. Được phép giữ kín mã nguồn của app thương mại đó và bán bình thường kiếm lời.",
+      "D. Phải cấm người dùng tự ý sao chép hoặc chia sẻ app thương mại đó trên internet."
+    ],
+    "correct_option": "A",
+    "explanation": "GPL v3 bắt buộc sản phẩm phái sinh phân phối ra ngoài phải mở mã nguồn dưới GPL v3."
+  },
+  {
+    "id": "Q_MOD_D_077",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
+    ],
+    "content": "Điều khoản \"No Warranty\" (Không bảo hành) trong các giấy phép nguồn mở có ý nghĩa gì đối với người dùng?",
+    "options": [
+      "A. Tác giả không chịu trách nhiệm nếu phần mềm xảy ra lỗi hoặc gây thiệt hại khi dùng.",
+      "B. Tác giả cam kết sẽ sửa chữa mọi lỗi phát sinh trong quá trình sử dụng phần mềm.",
+      "C. Người dùng sẽ được bồi thường tiền nếu phần mềm hoạt động không đúng như mô tả.",
+      "D. Phần mềm chắc chắn hoạt động hoàn hảo và không bao giờ gặp bất kỳ lỗi kỹ thuật nào."
+    ],
+    "correct_option": "A",
+    "explanation": "Không bảo hành nghĩa là người dùng tự chịu rủi ro khi sử dụng phần mềm nguồn mở, tác giả được miễn trừ trách nhiệm pháp lý."
+  },
+  {
+    "id": "Q_MOD_D_078",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
+    ],
+    "content": "Trang web GitHub đóng vai trò gì trong sự phát triển của cộng đồng mã nguồn mở?",
+    "options": [
+      "A. Là nơi lưu trữ mã nguồn, hỗ trợ quản lý phiên bản và giúp mọi người cùng hợp tác.",
+      "B. Là cửa hàng trực tuyến chuyên bán các phần mềm đóng gói có bản quyền thương mại.",
+      "C. Là mạng xã hội chỉ dành riêng cho việc chia sẻ hình ảnh và video cá nhân của bạn.",
+      "D. Là hệ thống máy chủ đám mây chuyên dùng để đào tiền ảo và giao dịch trực tuyến."
+    ],
+    "correct_option": "A",
+    "explanation": "GitHub là nền tảng lưu trữ mã nguồn phổ biến nhất thế giới, giúp lập trình viên lưu trữ và cộng tác phát triển code."
+  },
+  {
+    "id": "Q_MOD_D_079",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
+    ],
+    "content": "Giấy phép mã nguồn mở nào sau đây thuộc nhóm thân thiện nhất với doanh nghiệp (permissive licenses)?",
+    "options": [
       "A. Giấy phép MIT License.",
       "B. Giấy phép GNU GPL v3.",
       "C. Giấy phép GNU AGPL v3.",
-      "D. Giấy phép GNU LGPL v3."
+      "D. Giấy phép CC BY-SA 4.0."
     ],
-    correct_option: "A",
-    explanation: "MIT License là giấy phép cực kỳ thông thoáng (permissive), cho phép sao chép, sửa đổi, phân phối và sử dụng thương mại mà không bắt buộc phải mở mã nguồn."
+    "correct_option": "A",
+    "explanation": "MIT là permissive license, cho phép tích hợp vào phần mềm thương mại đóng mà không bắt mở nguồn, rất thân thiện với doanh nghiệp."
   },
   {
-    id: "Q_MOD_D_057", module_id: "Module_D", difficulty: "Easy",
-    tags: ["pure-logic"],
-    content: "Cho mệnh đề logic: 'Nếu bạn giải được bài toán này (A) thì bạn sẽ được điểm cao (B)'. Biết rằng bạn được điểm cao. Kết luận nào sau đây là đúng đắn về mặt logic?",
-    options: [
-      "A. Chưa thể đưa ra kết luận chắc chắn rằng bạn đã giải được bài toán này.",
-      "B. Bạn chắc chắn đã giải được bài toán này trước khi nhận điểm số cao.",
-      "C. Bạn chắc chắn không giải được bài toán này nhưng vẫn nhận điểm cao.",
-      "D. Kết luận rằng mệnh đề kéo theo ban đầu là một mệnh đề hoàn toàn sai."
+    "id": "Q_MOD_D_080",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "open-source-licensing"
     ],
-    correct_option: "A",
-    explanation: "Đây là lỗi khẳng định hệ quả (affirming the consequent). Từ $A \\rightarrow B$ và $B$ đúng, ta không thể suy ra $A$ đúng hay sai."
+    "content": "Hành động nào sau đây thể hiện việc tuân thủ đúng đạo đức và bản quyền nguồn mở?",
+    "options": [
+      "A. Đọc kỹ file LICENSE và làm đúng theo các điều khoản ghi trong giấy phép kèm theo.",
+      "B. Tự ý thay đổi giấy phép của thư viện nguồn mở thành giấy phép bản quyền của mình.",
+      "C. Xóa bỏ toàn bộ các tệp tin LICENSE và README trước khi đưa thư viện vào dự án.",
+      "D. Sử dụng code nguồn mở GPL v3 trong sản phẩm đóng mà không công khai mã nguồn app."
+    ],
+    "correct_option": "A",
+    "explanation": "Tôn trọng nguồn mở bằng cách tuân thủ đúng các điều khoản trong file LICENSE của tác giả."
   },
   {
-    id: "Q_MOD_D_058", module_id: "Module_D", difficulty: "Easy",
-    tags: ["data-privacy"],
-    content: "Việc thu thập dữ liệu vị trí GPS của người dùng 24/7 mà không có lý do chức năng rõ ràng vi phạm nguyên tắc bảo mật dữ liệu nào?",
-    options: [
-      "A. Nguyên tắc tối thiểu hóa dữ liệu (Data Minimization).",
-      "B. Nguyên tắc bảo đảm tính chính xác (Data Accuracy).",
-      "C. Nguyên tắc lưu trữ giới hạn thời gian (Storage Limitation).",
-      "D. Nguyên tắc bảo mật và toàn vẹn dữ liệu (Integrity)."
+    "id": "Q_MOD_D_081",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "Nguyên tắc Data Minimization yêu cầu chỉ thu thập dữ liệu cần thiết cho mục đích cụ thể. Thu thập dữ liệu vị trí liên tục không phục vụ chức năng là vi phạm nguyên tắc này."
+    "content": "Hiện tượng \"Định kiến thuật toán\" (Algorithmic Bias) trong AI được hiểu đơn giản là gì?",
+    "options": [
+      "A. AI đưa ra các quyết định thiên vị hoặc phân biệt đối xử với một nhóm đối tượng.",
+      "B. AI hoạt động với tốc độ cực kỳ nhanh chóng và không bao giờ xảy ra lỗi kỹ thuật.",
+      "C. AI tự động học thêm nhiều ngôn ngữ mới trên thế giới mà không cần con người dạy.",
+      "D. AI tự động tăng bộ nhớ RAM vật lý của máy tính lên gấp hai lần khi đang làm việc."
+    ],
+    "correct_option": "A",
+    "explanation": "Định kiến thuật toán xảy ra khi AI ra quyết định bất công, thiên vị hoặc phân biệt chủng tộc/giới tính do dữ liệu huấn luyện bị lệch."
   },
   {
-    id: "Q_MOD_D_059", module_id: "Module_D", difficulty: "Easy",
-    tags: ["pure-logic"],
-    content: "Mệnh đề phủ định của mệnh đề tuyển $P \\lor Q$ là mệnh đề logic nào theo luật De Morgan?",
-    options: [
-      "A. Mệnh đề $\\neg P \\land \\neg Q$.",
-      "B. Mệnh đề $\\neg P \\lor \\neg Q$.",
-      "C. Mệnh đề $P \\land \\neg Q$.",
-      "D. Mệnh đề $\\neg P \\lor Q$."
+    "id": "Q_MOD_D_082",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "Theo luật De Morgan, phủ định của tuyển là hội các phủ định: $\\neg(P \\lor Q) \\equiv \\neg P \\land \\neg Q$."
+    "content": "Nếu một mô hình nhận diện khuôn mặt chỉ được học bằng ảnh của nam giới, mô hình đó sẽ thế nào?",
+    "options": [
+      "A. Nhận diện khuôn mặt nữ giới kém chính xác hơn nhiều so với khuôn mặt nam giới.",
+      "B. Nhận diện khuôn mặt nữ giới đạt độ chính xác tuyệt đối một trăm phần trăm luôn.",
+      "C. Tự động chuyển đổi toàn bộ hình ảnh khuôn mặt nữ giới sang khuôn mặt nam giới.",
+      "D. Không thể khởi động được ứng dụng nhận diện trên bất kỳ thiết bị di động nào."
+    ],
+    "correct_option": "A",
+    "explanation": "Mô hình thiếu dữ liệu đại diện cho nữ giới nên sẽ nhận diện nữ giới kém chính xác hơn."
   },
   {
-    id: "Q_MOD_D_060", module_id: "Module_D", difficulty: "Easy",
-    tags: ["data-ethics"],
-    content: "Trong đạo đức AI, khái niệm 'Transparency' (Tính minh bạch) yêu cầu các nhà phát triển điều gì?",
-    options: [
-      "A. Cung cấp thông tin rõ ràng về cách thức hoạt động và dữ liệu huấn luyện của hệ thống AI.",
-      "B. Đảm bảo phần mềm AI chạy không bị trễ hoặc gặp lỗi kết nối mạng trong quá trình sử dụng.",
-      "C. Cấm hoàn toàn việc thương mại hóa các mô hình AI để bảo vệ quyền lợi cho người dùng.",
-      "D. Thiết lập các rào cản mật khẩu phức tạp để bảo vệ hệ thống khỏi các cuộc tấn công mạng."
+    "id": "Q_MOD_D_083",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "Tính minh bạch yêu cầu giải thích rõ ràng về cấu trúc, cách thức hoạt động, mục đích và nguồn gốc dữ liệu huấn luyện của mô hình AI cho các bên liên quan."
+    "content": "Để xây dựng một mô hình AI nhận diện các loại quả ở Việt Nam hoạt động tốt, bạn nên thu thập dữ liệu gì?",
+    "options": [
+      "A. Hình ảnh của nhiều loại quả khác nhau, chụp ở nhiều góc độ và điều kiện ánh sáng.",
+      "B. Chỉ chụp hình ảnh quả táo nhập khẩu từ nước ngoài ở cùng một góc độ duy nhất.",
+      "C. Chỉ chụp ảnh các loại rau xanh được trồng trong nhà kính của các nông trại lớn.",
+      "D. Hình ảnh của các loại động vật nuôi trong gia đình như chó, mèo, gà và vịt nhà."
+    ],
+    "correct_option": "A",
+    "explanation": "Dữ liệu huấn luyện đa dạng giúp mô hình học được các đặc trưng phong phú và nhận diện chính xác trong thực tế."
   },
   {
-    id: "Q_MOD_D_061", module_id: "Module_D", difficulty: "Easy",
-    tags: ["open-source-licensing"],
-    content: "Giấy phép Creative Commons 'CC0' (CC Zero) có ý nghĩa như thế nào đối với một tác phẩm?",
-    options: [
-      "A. Tác giả từ bỏ mọi quyền sở hữu trí tuệ để đưa tác phẩm vào miền công cộng tự do.",
-      "B. Người dùng phải trả phí bản quyền sau khi sử dụng tác phẩm quá một số lần quy định.",
-      "C. Tác phẩm chỉ được sử dụng cho mục đích phi thương mại và tuyệt đối cấm chỉnh sửa.",
-      "D. Bắt buộc người sử dụng phải chia sẻ sản phẩm phái sinh dưới cùng giấy phép CC0."
+    "id": "Q_MOD_D_084",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "CC0 cho phép tác giả từ bỏ quyền tác giả của mình trong phạm vi pháp luật cho phép, đưa tác phẩm vào miền công cộng (Public Domain) để bất kỳ ai cũng có thể sử dụng tự do không điều kiện."
+    "content": "Trong phát triển AI, khái niệm \"Dữ liệu huấn luyện\" (Training Data) có vai trò gì?",
+    "options": [
+      "A. Là tập dữ liệu mẫu dùng để dạy cho mô hình AI học các quy luật và đặc trưng.",
+      "B. Là phần mềm dùng để diệt virus và bảo vệ an toàn cho máy tính của lập trình viên.",
+      "C. Là tài liệu hướng dẫn sử dụng máy tính dành cho những người mới bắt đầu học CNTT.",
+      "D. Là hệ thống máy chủ vật lý dùng để kết nối internet tốc độ cao giữa các quốc gia."
+    ],
+    "correct_option": "A",
+    "explanation": "Dữ liệu huấn luyện là nguyên liệu đầu vào để các thuật toán học máy học hỏi quy luật và đưa ra dự đoán."
   },
   {
-    id: "Q_MOD_D_062", module_id: "Module_D", difficulty: "Easy",
-    tags: ["pure-logic"],
-    content: "Cho mệnh đề logic: 'Tất cả các mô hình học máy đều cần dữ liệu'. Mệnh đề phủ định của mệnh đề này là mệnh đề nào?",
-    options: [
-      "A. Có ít nhất một mô hình học máy không cần dữ liệu.",
-      "B. Tất cả các mô hình học máy đều không cần dữ liệu.",
-      "C. Không có mô hình học máy nào cần dữ liệu đầu vào.",
-      "D. Mọi mô hình học máy chỉ cần một lượng ít dữ liệu."
+    "id": "Q_MOD_D_085",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "Phủ định của $\\forall x, P(x)$ là $\\exists x, \\neg P(x)$ (Có ít nhất một phần tử không thỏa mãn tính chất P)."
+    "content": "Một ứng dụng AI gợi ý việc làm liên tục từ chối hồ sơ của nữ giới ứng tuyển ngành lập trình. Nguyên nhân là gì?",
+    "options": [
+      "A. Dữ liệu tuyển dụng trong lịch sử có tỷ lệ nam giới vượt trội và AI đã học theo mẫu đó.",
+      "B. Thuật toán AI tự động hình thành ý thức và ghét bỏ nữ giới học ngành lập trình máy tính.",
+      "C. Hệ thống máy chủ vận hành ứng dụng bị quá nhiệt nên tính toán sai lệch kết quả đầu ra.",
+      "D. Nữ giới không phù hợp để làm việc trong lĩnh vực phát triển các ứng dụng trí tuệ nhân tạo."
+    ],
+    "correct_option": "A",
+    "explanation": "AI học từ dữ liệu lịch sử. Nếu lịch sử tuyển dụng thiên vị nam giới, AI sẽ lặp lại định kiến đó."
   },
   {
-    id: "Q_MOD_D_063", module_id: "Module_D", difficulty: "Easy",
-    tags: ["data-privacy"],
-    content: "Phương pháp nào sau đây giúp loại bỏ định danh cá nhân trực tiếp như họ tên, số định danh khỏi cơ sở dữ liệu?",
-    options: [
-      "A. De-identification (Khử định danh dữ liệu).",
-      "B. Data Augmentation (Tăng cường dữ liệu).",
-      "C. Overfitting Prevention (Chống quá khớp).",
-      "D. Feature Scaling (Chuẩn hóa đặc trưng)."
+    "id": "Q_MOD_D_086",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "Khử định danh (De-identification) là quá trình loại bỏ các thông tin định danh trực tiếp nhằm bảo vệ quyền riêng tư của cá nhân trước khi chia sẻ dữ liệu."
+    "content": "Để giảm bớt định kiến (bias) trong mô hình AI tuyển dụng nhân sự, hành động nào sau đây là phù hợp?",
+    "options": [
+      "A. Loại bỏ các thông tin về giới tính và vùng miền khỏi hồ sơ trước khi đưa vào AI học.",
+      "B. Tăng thêm số lượng hồ sơ của nam giới trong tập dữ liệu huấn luyện lên gấp ba lần.",
+      "C. Giữ nguyên toàn bộ dữ liệu lịch sử và tăng số lượng chu kỳ huấn luyện của mô hình AI.",
+      "D. Cho phép AI tự động đoán giới tính của ứng viên dựa trên tên gọi của từng cá nhân."
+    ],
+    "correct_option": "A",
+    "explanation": "Ẩn đi các trường thông tin nhạy cảm (như giới tính, vùng miền) giúp AI tập trung đánh giá năng lực thực tế của ứng viên."
   },
   {
-    id: "Q_MOD_D_064", module_id: "Module_D", difficulty: "Easy",
-    tags: ["pure-logic"],
-    content: "Cho mệnh đề: 'Hôm nay trời không mưa hoặc tôi đi đá bóng'. Biết rằng hôm nay trời mưa. Kết luận logic nào là đúng?",
-    options: [
-      "A. Hôm nay tôi chắc chắn đi đá bóng.",
-      "B. Hôm nay tôi chắc chắn không đi đá bóng.",
-      "C. Hôm nay trời không mưa và tôi đi đá bóng.",
-      "D. Chưa thể kết luận được tôi có đi đá bóng hay không."
+    "id": "Q_MOD_D_087",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "Mệnh đề tuyển: $\\neg R \\lor B$. Biết rằng trời mưa tức là $R$ đúng $\\Rightarrow \\neg R$ sai. Để mệnh đề tuyển đúng thì vế còn lại $B$ (tôi đi đá bóng) buộc phải đúng."
+    "content": "Khái niệm \"Trí tuệ nhân tạo\" (AI) được hiểu đơn giản nhất là gì?",
+    "options": [
+      "A. Hệ thống máy tính có khả năng mô phỏng lại các hoạt động trí tuệ của con người.",
+      "B. Chiếc máy tính xách tay có cấu hình mạnh nhất và màn hình hiển thị sắc nét nhất.",
+      "C. Hệ điều hành máy tính có khả năng tự động diệt sạch mọi loại virus trên internet.",
+      "D. Chương trình máy tính chuyên dùng để soạn thảo văn bản và tính toán bảng biểu."
+    ],
+    "correct_option": "A",
+    "explanation": "AI là ngành khoa học máy tính mô phỏng các khả năng tư duy, học tập và ra quyết định của con người."
   },
   {
-    id: "Q_MOD_D_065", module_id: "Module_D", difficulty: "Easy",
-    tags: ["data-ethics"],
-    content: "Tại sao việc sử dụng hình ảnh của trẻ em làm dữ liệu huấn luyện AI cần được kiểm soát cực kỳ nghiêm ngặt?",
-    options: [
-      "A. Do trẻ em chưa đủ năng lực hành vi để tự đưa ra sự đồng thuận hợp pháp về quyền riêng tư.",
-      "B. Do hình ảnh trẻ em thường có kích thước dung lượng nhỏ hơn và độ phân giải không cao.",
-      "C. Do các mô hình AI không thể nhận diện được các đặc trưng khuôn mặt của đối tượng trẻ em.",
-      "D. Do việc xử lý hình ảnh trẻ em làm tiêu tốn nhiều năng lượng và tài nguyên phần cứng hơn."
+    "id": "Q_MOD_D_088",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "Trẻ em là đối tượng dễ bị tổn thương và pháp luật quy định cha mẹ hoặc người giám hộ hợp pháp phải cung cấp sự đồng thuận thay thế."
+    "content": "Tại sao việc kiểm thử mô hình AI trên một tập dữ liệu độc lập trước khi phát hành lại rất quan trọng?",
+    "options": [
+      "A. Để đánh giá xem mô hình hoạt động có thực sự chính xác trên dữ liệu thực tế hay không.",
+      "B. Để mô hình AI tự động sửa chữa các lỗi cú pháp trong mã nguồn của chương trình Python.",
+      "C. Để giảm dung lượng lưu trữ của tệp tin trọng số mô hình xuống mức nhỏ nhất có thể.",
+      "D. Để đăng ký bản quyền thương mại cho sản phẩm phần mềm trí tuệ nhân tạo đó dễ dàng hơn."
+    ],
+    "correct_option": "A",
+    "explanation": "Kiểm thử trên dữ liệu độc lập (chưa từng thấy trong lúc train) giúp đánh giá khả năng khái quát hóa thực tế của AI."
   },
   {
-    id: "Q_MOD_D_066", module_id: "Module_D", difficulty: "Easy",
-    tags: ["open-source-licensing"],
-    content: "Điểm chung cốt lõi giữa hai giấy phép nguồn mở MIT License và Apache License 2.0 là gì?",
-    options: [
-      "A. Cả hai đều cho phép người dùng tự do sử dụng thương mại mà không cần mở mã nguồn.",
-      "B. Cả hai đều bắt buộc người dùng phải mở mã nguồn phái sinh dưới cùng một giấy phép gốc.",
-      "C. Cả hai đều yêu cầu người dùng phải trả một khoản phí định quyền thương mại hàng năm.",
-      "D. Cả hai đều nghiêm cấm việc sửa đổi cấu trúc mã nguồn gốc của thư viện khi phát hành."
+    "id": "Q_MOD_D_089",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "Cả MIT và Apache 2.0 đều là giấy phép permissive, cho phép thương mại hóa và đóng mã nguồn sản phẩm phái sinh thoải mái."
+    "content": "Khi một chiếc xe tự lái gặp tai nạn do lỗi nhận diện chướng ngại vật của AI, trách nhiệm cuối cùng thuộc về ai?",
+    "options": [
+      "A. Công ty phát triển và đội ngũ kỹ sư thiết kế, vận hành hệ thống xe tự lái đó.",
+      "B. Thuật toán trí tuệ nhân tạo vì thuật toán tự tính toán sai số trong khi chạy xe.",
+      "C. Hệ thống camera và cảm biến hồng ngoại lắp trên xe do bị dính bụi bẩn ngoài đường.",
+      "D. Người đi bộ trên đường vì đã không chủ động tránh chiếc xe tự lái đang di chuyển."
+    ],
+    "correct_option": "A",
+    "explanation": "AI chỉ là công cụ do con người thiết kế và vận hành, do đó con người (nhà sản xuất/phát triển) phải chịu trách nhiệm pháp lý và đạo đức."
   },
   {
-    id: "Q_MOD_D_067", module_id: "Module_D", difficulty: "Easy",
-    tags: ["pure-logic"],
-    content: "Hai mệnh đề logic P và Q được gọi là tương đương logic ($P \\equiv Q$) khi và chỉ khi nào?",
-    options: [
-      "A. Chúng có cùng bảng giá trị chân lý trong mọi trường hợp của các biến thành phần.",
-      "B. Chúng có cùng số lượng các biến logic và cùng sử dụng các toán tử logic giống nhau.",
-      "C. Một trong hai mệnh đề luôn nhận giá trị Đúng và mệnh đề còn lại nhận giá trị Sai.",
-      "D. Chúng đều nhận giá trị Đúng trong ít nhất một trường hợp cụ thể của bảng chân lý."
+    "id": "Q_MOD_D_090",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "Hai mệnh đề tương đương logic khi và chỉ khi chúng có cùng giá trị chân lý (Đúng/Sai) trong mọi dòng của bảng chân trị."
+    "content": "Thuật ngữ \"Generative AI\" (AI tạo sinh - ví dụ như ChatGPT) dùng để chỉ khả năng nào của AI?",
+    "options": [
+      "A. Khả năng tự động tạo ra nội dung mới như văn bản, hình ảnh, âm thanh từ yêu cầu.",
+      "B. Khả năng tự động sửa chữa phần cứng máy tính khi thiết bị gặp sự cố hỏng hóc vật lý.",
+      "C. Khả năng kết nối các máy tính trên toàn cầu thành một mạng internet duy nhất hoạt động.",
+      "D. Khả năng quét sạch virus và phần mềm độc hại xâm nhập vào hệ thống cơ sở dữ liệu."
+    ],
+    "correct_option": "A",
+    "explanation": "AI tạo sinh (Generative AI) là các mô hình AI có khả năng sinh ra nội dung mới (text, image, code, audio) dựa trên dữ liệu đã học."
   },
   {
-    id: "Q_MOD_D_068", module_id: "Module_D", difficulty: "Easy",
-    tags: ["data-privacy"],
-    content: "Theo GDPR, chủ thể dữ liệu có quyền yêu cầu hạn chế xử lý dữ liệu cá nhân của họ khi nào?",
-    options: [
-      "A. Khi họ nghi ngờ tính chính xác của dữ liệu hoặc tính hợp pháp của việc xử lý dữ liệu.",
-      "B. Khi họ muốn chuyển sang sử dụng dịch vụ của một nhà cung cấp cạnh tranh khác trên thị trường.",
-      "C. Khi hệ thống của doanh nghiệp bị quá tải phần cứng và không thể xử lý dữ liệu kịp thời.",
-      "D. Khi họ không muốn trả phí dịch vụ hàng tháng cho nhà cung cấp giải pháp công nghệ."
+    "id": "Q_MOD_D_091",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "Theo GDPR, chủ thể dữ liệu có quyền yêu cầu hạn chế xử lý nếu họ phản đối tính chính xác của dữ liệu hoặc việc xử lý là bất hợp pháp nhưng họ không muốn xóa dữ liệu."
+    "content": "Một mô hình AI nhận diện chữ viết tay hoạt động rất tốt với chữ viết của giáo viên nhưng lại nhận diện sai liên tục với chữ viết của học sinh. Hiện tượng này do đâu?",
+    "options": [
+      "A. Tập dữ liệu huấn luyện chủ yếu chứa chữ viết của giáo viên và thiếu chữ viết của học sinh.",
+      "B. Thuật toán AI tự động nhận biết tuổi tác và từ chối xử lý chữ viết của những người trẻ tuổi.",
+      "C. Máy tính bị quá tải bộ nhớ RAM vật lý mỗi khi tiến hành xử lý chữ viết của đối tượng học sinh.",
+      "D. Học sinh viết chữ có nét vẽ quá đẹp khiến cho thuật toán AI không thể phân tích được quy luật."
+    ],
+    "correct_option": "A",
+    "explanation": "Do mất cân bằng dữ liệu (data imbalance), mô hình không được học đủ mẫu chữ viết tay của học sinh nên nhận diện kém."
   },
   {
-    id: "Q_MOD_D_069", module_id: "Module_D", difficulty: "Easy",
-    tags: ["data-ethics"],
-    content: "Vấn đề đạo đức nào xuất hiện khi một ứng dụng AI tạo nội dung tự động phát tán các thông tin sai sự thật?",
-    options: [
-      "A. Vấn đề tin giả và lan truyền thông tin sai lệch gây mất an toàn trật tự xã hội.",
-      "B. Vấn đề suy giảm hiệu suất xử lý toán học của hệ thống máy chủ vận hành mô hình.",
-      "C. Vấn đề vi phạm điều khoản phân phối mã nguồn mở của các giấy phép copyleft lan truyền.",
-      "D. Vấn đề không tối ưu hóa được không gian lưu trữ cơ sở dữ liệu của ứng dụng tạo sinh."
+    "id": "Q_MOD_D_092",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "AI sinh thông tin giả (hallucination hoặc cố tình tạo tin giả) gây ra các hệ lụy đạo đức lớn về truyền thông và trật tự xã hội."
+    "content": "Trong đạo đức AI, nguyên tắc \"Minh bạch\" (Transparency) yêu cầu nhà phát triển điều gì?",
+    "options": [
+      "A. Công khai rõ ràng cách thức hoạt động và nguồn dữ liệu dùng để huấn luyện mô hình AI.",
+      "B. Cho phép tất cả người dùng trên thế giới được tự do tải xuống mã nguồn đóng của công ty.",
+      "C. Thiết kế giao diện ứng dụng AI có màu sắc tươi sáng và dễ nhìn đối với mọi lứa tuổi.",
+      "D. Bắt buộc người dùng phải công khai toàn bộ thông tin cá nhân của họ lên trang chủ app."
+    ],
+    "correct_option": "A",
+    "explanation": "Minh bạch giúp người dùng hiểu rõ mô hình AI được xây dựng như thế nào, từ nguồn dữ liệu nào và hoạt động ra sao để xây dựng lòng tin."
   },
   {
-    id: "Q_MOD_D_070", module_id: "Module_D", difficulty: "Easy",
-    tags: ["pure-logic"],
-    content: "Cho mệnh đề logic: $P \\leftrightarrow Q$ (Mệnh đề tương đương). Mệnh đề này nhận giá trị Đúng (True) khi nào?",
-    options: [
-      "A. Khi cả hai mệnh đề P và Q có cùng giá trị chân lý (cùng Đúng hoặc cùng Sai).",
-      "B. Khi mệnh đề P có giá trị Đúng và mệnh đề Q nhận giá trị Sai trong mọi trường hợp.",
-      "C. Khi mệnh đề P có giá trị Sai và mệnh đề Q nhận giá trị Đúng trong mọi trường hợp.",
-      "D. Khi chỉ có một trong hai mệnh đề nhận giá trị Đúng và mệnh đề còn lại nhận giá trị Sai."
+    "id": "Q_MOD_D_093",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "Mệnh đề tương đương $P \\leftrightarrow Q$ đúng khi P và Q có cùng giá trị chân lý (cùng True hoặc cùng False)."
+    "content": "Khi sử dụng các công cụ AI để dịch thuật văn bản, người dùng nên lưu ý điều gì?",
+    "options": [
+      "A. AI có thể dịch sai ngữ cảnh hoặc từ ngữ chuyên ngành nên cần con người kiểm tra lại.",
+      "B. AI chắc chắn dịch chính xác tuyệt đối một trăm phần trăm và không bao giờ có sai sót.",
+      "C. Các bản dịch từ AI sẽ tự động bị xóa đi sau khi bạn tắt trình duyệt web của máy tính.",
+      "D. Dùng AI dịch thuật sẽ làm thay đổi cấu trúc font chữ của toàn bộ hệ điều hành máy tính."
+    ],
+    "correct_option": "A",
+    "explanation": "AI dịch thuật dựa trên xác suất nên có thể dịch sai ngữ nghĩa, ngữ cảnh, do đó cần có con người hiệu đính lại."
   },
   {
-    id: "Q_MOD_D_071", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Cho suy luận logic sau: 'Nếu mô hình bị quá khớp (P), thì độ chính xác trên tập kiểm thử sẽ thấp (Q). Thực tế, độ chính xác trên tập kiểm thử của mô hình rất cao ($\\neg$Q)'. Kết luận nào là đúng đắn?",
-    options: [
-      "A. Mô hình chắc chắn không bị quá khớp.",
-      "B. Mô hình chắc chắn đã bị hiện tượng quá khớp.",
-      "C. Chưa thể kết luận về việc mô hình có quá khớp không.",
-      "D. Mệnh đề kéo theo ban đầu là mệnh đề hoàn toàn sai."
+    "id": "Q_MOD_D_094",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "Áp dụng luật Modus Tollens: $P \\rightarrow Q$ và $\\neg Q \\Rightarrow \\neg P$. Vì độ chính xác kiểm thử cao ($\\neg Q$), suy ra mô hình không bị quá khớp ($\\neg P$)."
+    "content": "Hành vi nào sau đây được coi là sử dụng AI một cách thiếu đạo đức và vô trách nhiệm?",
+    "options": [
+      "A. Sử dụng công nghệ Deepfake để tạo video giả mạo người khác nhằm mục đích bôi nhọ danh dự.",
+      "B. Sử dụng chatbot AI để hỗ trợ tìm kiếm tài liệu học tập và tóm tắt bài học trên lớp.",
+      "C. Sử dụng công nghệ AI để phân tích mật độ giao thông và dự báo kẹt xe tại các ngã tư.",
+      "D. Sử dụng thuật toán học máy để dự báo thời tiết và lượng mưa hàng ngày cho người dân xem."
+    ],
+    "correct_option": "A",
+    "explanation": "Dùng Deepfake bôi nhọ người khác là vi phạm đạo đức nghiêm trọng và có thể cấu thành hành vi phạm pháp."
   },
   {
-    id: "Q_MOD_D_072", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-ethics"],
-    content: "Trong phát triển AI, khái niệm 'Human-in-the-loop' (Con người trong vòng lặp) có vai trò đạo đức nào?",
-    options: [
-      "A. Giữ vai trò giám sát, đưa ra quyết định hoặc can thiệp khi mô hình AI hoạt động không chính xác.",
-      "B. Thay thế hoàn toàn các máy chủ GPU bằng sức lao động thủ công của con người để huấn luyện mô hình.",
-      "C. Bắt buộc con người phải thực hiện nhập thủ công toàn bộ dữ liệu đầu vào của hệ thống AI hàng ngày.",
-      "D. Tăng cường khả năng tự học của thuật toán học máy mà không cần bất kỳ nhãn dữ liệu có sẵn nào."
+    "id": "Q_MOD_D_095",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "Con người trong vòng lặp (Human-in-the-loop) đảm bảo có sự giám sát và can thiệp của con người vào quyết định của AI, đặc biệt là các quyết định quan trọng ảnh hưởng đến con người."
+    "content": "Tại sao việc giải thích được quyết định của AI (Explainable AI) lại rất quan trọng trong y tế?",
+    "options": [
+      "A. Giúp bác sĩ hiểu rõ căn cứ đưa ra chẩn đoán của AI để đưa ra phác đồ điều trị an toàn.",
+      "B. Giúp mô hình AI tự động tăng độ chính xác lên mức tuyệt đối và không phát sinh lỗi nữa.",
+      "C. Giúp bệnh nhân tự chữa bệnh tại nhà bằng thuốc mà không cần đến bệnh viện gặp bác sĩ.",
+      "D. Giúp giảm chi phí mua sắm thiết bị y tế và máy chụp X-quang cho các bệnh viện tuyến dưới."
+    ],
+    "correct_option": "A",
+    "explanation": "Y tế liên quan trực tiếp đến sức khỏe con người, bác sĩ cần biết lý do AI chẩn đoán bệnh đó để đưa ra quyết định điều trị chính xác."
   },
   {
-    id: "Q_MOD_D_073", module_id: "Module_D", difficulty: "Medium",
-    tags: ["open-source-licensing"],
-    content: "Sự khác biệt chính giữa giấy phép Creative Commons 'CC BY-NC' và 'CC BY-ND' là gì?",
-    options: [
-      "A. CC BY-NC cấm sử dụng thương mại, trong khi CC BY-ND cấm tạo ra các tác phẩm phái sinh từ bản gốc.",
-      "B. CC BY-ND cấm sử dụng thương mại, trong khi CC BY-NC cấm tạo ra các tác phẩm phái sinh từ bản gốc.",
-      "C. CC BY-NC yêu cầu mở mã nguồn sản phẩm, còn CC BY-ND yêu cầu trả phí bản quyền cho tác giả gốc.",
-      "D. CC BY-ND yêu cầu mở mã nguồn sản phẩm, còn CC BY-NC yêu cầu trả phí bản quyền cho tác giả gốc."
+    "id": "Q_MOD_D_096",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "NC = Non-Commercial (phi thương mại - cấm dùng kiếm tiền). ND = No-Derivatives (không phái sinh - cấm chỉnh sửa, chế tác lại)."
+    "content": "Khi một hệ thống AI được dùng để tự động duyệt hồ sơ vay vốn ngân hàng, điều gì giúp bảo vệ quyền lợi của khách hàng?",
+    "options": [
+      "A. Khách hàng có quyền yêu cầu ngân hàng giải thích rõ lý do tại sao hồ sơ của họ bị từ chối.",
+      "B. Khách hàng được tự do sửa đổi số dư tài khoản của mình trên hệ thống của ngân hàng đó.",
+      "C. Ngân hàng bắt buộc phải duyệt đồng ý cho mọi khách hàng nộp hồ sơ đều được vay tiền mặt.",
+      "D. Hệ thống AI sẽ tự động thanh toán toàn bộ nợ cho khách hàng khi đến hạn trả nợ."
+    ],
+    "correct_option": "A",
+    "explanation": "Quyền được giải thích (Right to Explanation) giúp khách hàng biết được lý do hồ sơ bị từ chối để tránh sự thiên vị, bất công từ AI."
   },
   {
-    id: "Q_MOD_D_074", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Xét tính đúng đắn của mệnh đề: 'Hệ thống AI này an toàn nếu và chỉ nếu nó không bị tấn công từ chối dịch vụ và không chứa lỗ hổng bảo mật'. Mệnh đề này sai khi nào?",
-    options: [
-      "A. Hệ thống được đánh giá là an toàn nhưng thực tế phát hiện ra có chứa lỗ hổng bảo mật.",
-      "B. Hệ thống không bị tấn công và không có lỗ hổng bảo mật, đồng thời nó hoạt động an toàn.",
-      "C. Hệ thống bị tấn công từ chối dịch vụ hoặc có chứa lỗ hổng bảo mật, đồng thời nó không an toàn.",
-      "D. Hệ thống không bị tấn công nhưng có chứa lỗ hổng bảo mật, đồng thời nó hoạt động không an toàn."
+    "id": "Q_MOD_D_097",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "Mệnh đề tương đương $P \\leftrightarrow Q$ chỉ sai khi hai vế ngược giá trị chân trị. Ở phương án A, vế 1 (An toàn) là Đúng, nhưng vế 2 (không bị tấn công và không có lỗ hổng) bị Sai vì có lỗ hổng, dẫn đến mệnh đề tương đương bị sai."
+    "content": "Mối đe dọa lớn nhất đối với quyền riêng tư khi sử dụng các thiết bị loa thông minh tích hợp trợ lý ảo AI là gì?",
+    "options": [
+      "A. Thiết bị có thể bí mật ghi âm các cuộc hội thoại riêng tư trong nhà khi chưa được phép.",
+      "B. Thiết bị sẽ tự động làm tiêu hao rất nhiều điện năng của gia đình bạn trong một ngày.",
+      "C. Thiết bị sẽ tự động phát nhạc với âm lượng lớn nhất vào lúc nửa đêm gây mất ngủ cho bạn.",
+      "D. Thiết bị sẽ làm giảm tốc độ kết nối internet của tất cả các thiết bị khác trong gia đình."
+    ],
+    "correct_option": "A",
+    "explanation": "Loa thông minh luôn lắng nghe từ khóa kích hoạt, có nguy cơ ghi âm lén cuộc trò chuyện riêng tư của người dùng gửi về máy chủ."
   },
   {
-    id: "Q_MOD_D_075", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-privacy"],
-    content: "Tại sao kỹ thuật 'K-Anonymity' lại quan trọng trong việc xuất bản dữ liệu nghiên cứu y tế công cộng?",
-    options: [
-      "A. Nó đảm bảo mỗi cá nhân trong tập dữ liệu không thể bị phân biệt với ít nhất $k-1$ cá nhân khác.",
-      "B. Nó nén dữ liệu y tế xuống $k$ lần giúp tăng tốc độ truyền tải thông tin qua mạng internet.",
-      "C. Nó tự động chuyển đổi toàn bộ cơ sở dữ liệu y tế sang định dạng mã hóa khóa công khai RSA.",
-      "D. Nó ngăn chặn tuyệt đối các cuộc tấn công vật lý vào hệ thống lưu trữ dữ liệu của bệnh viện."
+    "id": "Q_MOD_D_098",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "K-Anonymity là kỹ thuật bảo vệ quyền riêng tư bằng cách ẩn danh dữ liệu sao cho mỗi bản ghi tương đồng với ít nhất $k-1$ bản ghi khác trên các thuộc tính định danh gián tiếp (quasi-identifiers)."
+    "content": "Trong đạo đức AI, nguyên tắc \"Công bằng\" (Fairness) hướng tới mục tiêu nào sau đây?",
+    "options": [
+      "A. Đảm bảo mô hình AI hoạt động bình đẳng, không thiên vị đối với bất kỳ nhóm đối tượng nào.",
+      "B. Đảm bảo tất cả các mô hình AI trên thế giới đều được bán với cùng một mức giá như nhau.",
+      "C. Đảm bảo mọi máy tính chạy AI đều có cấu hình phần cứng mạnh mẽ ngang nhau khi hoạt động.",
+      "D. Đảm bảo mọi người sử dụng đều được chia sẻ doanh thu từ các ứng dụng trí tuệ nhân tạo."
+    ],
+    "correct_option": "A",
+    "explanation": "Nguyên tắc công bằng yêu cầu AI không phân biệt đối xử dựa trên giới tính, màu da, sắc tộc hay tôn giáo."
   },
   {
-    id: "Q_MOD_D_076", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-ethics"],
-    content: "Trong đạo đức dữ liệu, hiện tượng 'Feedback Loop' (Vòng phản hồi định kiến) trong hệ thống gợi ý tin tức hoạt động như thế nào?",
-    options: [
-      "A. AI gợi ý tin tức dựa trên định kiến của người dùng, người dùng đọc và củng cố định kiến đó rồi tiếp tục cấp dữ liệu.",
-      "B. AI liên tục gửi email phản hồi lỗi lập trình về hệ thống của nhà phát triển để yêu cầu cập nhật bản vá mới.",
-      "C. Người dùng phản hồi trực tiếp các ý kiến đánh giá chất lượng sản phẩm lên các kho ứng dụng di động công khai.",
-      "D. Máy chủ tự động phản hồi tín hiệu ping để kiểm tra kết nối mạng giữa các nút trong hệ thống điện toán đám mây."
+    "id": "Q_MOD_D_099",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "Vòng phản hồi (Feedback Loop) xảy ra khi hệ thống gợi ý học từ dữ liệu hành vi của người dùng và tiếp tục gợi ý các nội dung tương tự, làm phân cực thông tin và củng cố định kiến của họ."
+    "content": "Tại sao việc sử dụng AI để tự động tạo ra tin tức giả mạo (Fake News) lại cực kỳ nguy hiểm?",
+    "options": [
+      "A. Vì tin giả lan truyền rất nhanh, gây hoang mang dư luận và làm mất trật tự an toàn xã hội.",
+      "B. Vì tin giả sẽ làm cho màn hình máy tính của người đọc tự động bị hỏng hiển thị màu sắc.",
+      "C. Vì tin giả làm tiêu tốn rất nhiều dung lượng đường truyền mạng internet của các gia đình.",
+      "D. Vì tin giả sẽ tự động xóa sạch các tài khoản mạng xã hội của những người nhấp vào xem."
+    ],
+    "correct_option": "A",
+    "explanation": "Tin tức giả do AI tạo ra hàng loạt có thể dẫn đến khủng hoảng truyền thông, gây hoang mang và lừa đảo diện rộng."
   },
   {
-    id: "Q_MOD_D_077", module_id: "Module_D", difficulty: "Medium",
-    tags: ["open-source-licensing"],
-    content: "Tại sao các tập đoàn công nghệ lớn thường e ngại việc sử dụng thư viện nguồn mở có giấy phép 'GPL v3' trong sản phẩm thương mại mã nguồn đóng của họ?",
-    options: [
-      "A. Vì GPL v3 bắt buộc họ phải công khai toàn bộ mã nguồn của sản phẩm thương mại đó cho người dùng.",
-      "B. Vì GPL v3 yêu cầu họ phải trả một tỷ lệ doanh thu bán hàng rất cao cho cộng đồng lập trình viên nguồn mở.",
-      "C. Vì GPL v3 nghiêm cấm mọi hình thức phân phối sản phẩm phần mềm thương mại ra thị trường đại chúng.",
-      "D. Vì GPL v3 không bảo đảm tính an toàn bảo mật và có thể tự động xóa dữ liệu trên hệ thống máy chủ."
+    "id": "Q_MOD_D_100",
+    "module_id": "Module_D",
+    "difficulty": "Medium",
+    "tags": [
+      "ai-bias"
     ],
-    correct_option: "A",
-    explanation: "GPL v3 có điều khoản copyleft lan truyền. Nếu tích hợp code GPL v3 vào phần mềm đóng, toàn bộ phần mềm phái sinh đó cũng phải mở mã nguồn dưới GPL v3 khi phân phối."
-  },
-  {
-    id: "Q_MOD_D_078", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Cho phát biểu logic sau: 'Mọi thuật toán phân loại đều cần nhãn dữ liệu hoặc là thuật toán học không giám sát'. Biết rằng K-Means là thuật toán học không giám sát. Phát biểu nào sau đây chắc chắn đúng về mặt logic?",
-    options: [
-      "A. Chưa thể khẳng định chắc chắn K-Means có cần nhãn dữ liệu hay không từ dữ kiện của phát biểu.",
-      "B. Thuật toán K-Means chắc chắn cần nhãn dữ liệu để thực hiện phân cụm các điểm dữ liệu đầu vào.",
-      "C. Thuật toán K-Means chắc chắn không cần nhãn dữ liệu để thực hiện phân cụm các điểm dữ liệu đầu vào.",
-      "D. Phát biểu logic ban đầu là một mệnh đề sai do thuật toán phân loại bắt buộc phải cần nhãn dữ liệu."
+    "content": "Để bảo vệ thông tin cá nhân của người học khi xây dựng ứng dụng AI giáo dục, hành động nào sau đây là tốt nhất?",
+    "options": [
+      "A. Chỉ thu thập dữ liệu học tập cần thiết và thực hiện mã hóa bảo mật thông tin người học.",
+      "B. Đăng tải công khai toàn bộ bảng điểm và thông tin liên hệ của học sinh lên mạng xã hội.",
+      "C. Thu thập mật khẩu của các tài khoản cá nhân khác của học sinh để tiện quản lý thông tin.",
+      "D. Cho phép bất kỳ ai trên internet cũng có thể tự do truy cập xem hồ sơ của học sinh đó."
     ],
-    correct_option: "A",
-    explanation: "Phát biểu có dạng: $C \\rightarrow (L \\lor U)$. Biết rằng K-Means là học không giám sát ($U$ đúng), thì mệnh đề tuyển ($L \\lor U$) luôn đúng bất kể $L$ đúng hay sai. Do đó, ta chưa thể kết luận K-Means có cần nhãn dữ liệu ($L$) hay không dựa trên phát biểu này."
-  },
-  {
-    id: "Q_MOD_D_079", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-privacy"],
-    content: "Quy định nào sau đây của Luật An ninh mạng Việt Nam liên quan trực tiếp đến việc lưu trữ dữ liệu người dùng của các công ty công nghệ nước ngoài?",
-    options: [
-      "A. Yêu cầu lưu trữ dữ liệu cá nhân của người sử dụng Việt Nam tại Việt Nam (Địa phương hóa dữ liệu).",
-      "B. Bắt buộc các công ty công nghệ phải mở toàn bộ mã nguồn thuật toán AI cho cơ quan quản lý kiểm tra.",
-      "C. Nghiêm cấm các công ty công nghệ cung cấp dịch vụ có thu phí đối với người sử dụng trong nước.",
-      "D. Yêu cầu các công ty công nghệ phải thanh toán thuế tài nguyên thông tin hàng tháng cho chính phủ."
-    ],
-    correct_option: "A",
-    explanation: "Luật An ninh mạng Việt Nam quy định các doanh nghiệp trong và ngoài nước cung cấp dịch vụ trên mạng viễn thông, Internet tại Việt Nam có hoạt động thu thập, khai thác, phân tích, xử lý dữ liệu về thông tin cá nhân... phải lưu trữ dữ liệu này tại Việt Nam."
-  },
-  {
-    id: "Q_MOD_D_080", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-ethics"],
-    content: "Việc sử dụng mô hình học máy dự đoán khả năng tài chính để tự động từ chối hồ sơ vay vốn mà không cung cấp lý do cụ thể vi phạm quyền đạo đức nào của khách hàng?",
-    options: [
-      "A. Quyền được giải thích (Right to Explanation) về quy trình ra quyết định tự động ảnh hưởng cá nhân.",
-      "B. Quyền được lãng quên dữ liệu cá nhân hoàn toàn khỏi hệ thống lưu trữ của tổ chức tài chính.",
-      "C. Quyền được chuyển đổi dữ liệu số từ tổ chức tín dụng này sang tổ chức tín dụng đối thủ cạnh tranh.",
-      "D. Quyền được yêu cầu bồi thường thiệt hại tài chính do mô hình AI đưa ra quyết định sai sót."
-    ],
-    correct_option: "A",
-    explanation: "Khách hàng có quyền được biết lý do tại sao họ bị từ chối vay vốn (Explainability / Right to Explanation) để đảm bảo tính công bằng và chống phân biệt đối xử."
-  },
-  {
-    id: "Q_MOD_D_081", module_id: "Module_D", difficulty: "Medium",
-    tags: ["open-source-licensing"],
-    content: "Khi sử dụng phần mềm có giấy phép 'GPL v3' để làm công cụ nội bộ trong công ty mà không phân phối ra bên ngoài, công ty có nghĩa vụ phải công khai mã nguồn của các sửa đổi không?",
-    options: [
-      "A. Không cần công khai mã nguồn, vì nghĩa vụ mở mã nguồn của GPL chỉ phát sinh khi phần mềm được phân phối.",
-      "B. Bắt buộc phải công khai mã nguồn lên các nền tảng công cộng ngay sau khi tiến hành sửa đổi mã nguồn.",
-      "C. Phải trả một khoản phí phạt bản quyền cho tổ chức sáng lập phần mềm nguồn mở tự do FSF hàng năm.",
-      "D. Chỉ cần công khai mã nguồn sửa đổi cho các đối tác chiến lược có ký hợp đồng bảo mật với công ty."
-    ],
-    correct_option: "A",
-    explanation: "Giấy phép GPL quy định nghĩa vụ mở mã nguồn phát sinh khi phân phối (distribute) phần mềm ra ngoài. Sử dụng nội bộ (internal use) không cấu thành hành vi phân phối, do đó không bắt buộc mở mã nguồn."
-  },
-  {
-    id: "Q_MOD_D_082", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Cho ba mệnh đề logic $P, Q, R$. Biết rằng mệnh đề kéo theo $(P \\land Q) \\rightarrow R$ có giá trị Sai (False). Phát biểu nào sau đây chắc chắn đúng?",
-    options: [
-      "A. Mệnh đề P nhận giá trị Đúng, mệnh đề Q nhận giá trị Đúng và mệnh đề R nhận giá trị Sai.",
-      "B. Mệnh đề P nhận giá trị Sai, mệnh đề Q nhận giá trị Đúng và mệnh đề R nhận giá trị Đúng.",
-      "C. Mệnh đề P nhận giá trị Đúng, mệnh đề Q nhận giá trị Sai và mệnh đề R nhận giá trị Sai.",
-      "D. Mệnh đề P nhận giá trị Sai, mệnh đề Q nhận giá trị Sai và mệnh đề R nhận giá trị Đúng."
-    ],
-    correct_option: "A",
-    explanation: "Mệnh đề kéo theo $A \\rightarrow B$ chỉ sai khi vế trước $A$ Đúng và vế sau $B$ Sai. Ở đây $P \\land Q$ phải Đúng (tức là cả P và Q đều Đúng) và R phải Sai."
-  },
-  {
-    id: "Q_MOD_D_083", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-privacy"],
-    content: "Kỹ thuật 'Anonymization' (Ẩn danh hóa) khác biệt cốt lõi như thế nào so với 'Pseudonymization' (Giả danh hóa) trong quản lý dữ liệu?",
-    options: [
-      "A. Ẩn danh hóa không thể đảo ngược để xác định danh tính, còn giả danh hóa có thể đảo ngược bằng thông tin bổ sung.",
-      "B. Giả danh hóa không thể đảo ngược để xác định danh tính, còn ẩn danh hóa có thể đảo ngược bằng thông tin bổ sung.",
-      "C. Ẩn danh hóa sử dụng thuật toán mã hóa đối xứng, còn giả danh hóa sử dụng thuật toán mã hóa bất đối xứng.",
-      "D. Giả danh hóa bắt buộc phải xóa bỏ toàn bộ dữ liệu, còn ẩn danh hóa cho phép lưu trữ dữ liệu thô vô thời hạn."
-    ],
-    correct_option: "A",
-    explanation: "Ẩn danh hóa (Anonymization) loại bỏ thông tin định danh vĩnh viễn, không thể khôi phục lại. Giả danh hóa (Pseudonymization) thay thế định danh bằng mã giả, có thể đối chiếu lại danh tính nếu có khóa giải mã hoặc thông tin bổ sung."
-  },
-  {
-    id: "Q_MOD_D_084", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-ethics"],
-    content: "Tại sao định kiến 'Automation Bias' lại nguy hiểm trong việc triển khai các hệ thống hỗ trợ quyết định bằng AI?",
-    options: [
-      "A. Con người có xu hướng tin tưởng mù quáng vào quyết định của máy tính và bỏ qua các dấu hiệu cảnh báo lỗi.",
-      "B. Thuật toán AI tự động tăng độ phức tạp tính toán dẫn đến hệ thống bị quá tải phần cứng liên tục.",
-      "C. Người dùng tự động chia sẻ thông tin cá nhân lên internet mà không qua các bước kiểm duyệt bảo mật.",
-      "D. Mô hình AI tự động sửa đổi mã nguồn và tự phát hành các phiên bản mới trên kho lưu trữ trực tuyến."
-    ],
-    correct_option: "A",
-    explanation: "Automation Bias (Định kiến tự động hóa) là xu hướng con người quá tin tưởng vào kết quả từ hệ thống tự động, bỏ qua các kiểm chứng thực tế hoặc phản biện cá nhân, dẫn đến bỏ lọt sai sót của AI."
-  },
-  {
-    id: "Q_MOD_D_085", module_id: "Module_D", difficulty: "Medium",
-    tags: ["open-source-licensing"],
-    content: "Giấy phép 'GNU LGPL' thường được áp dụng cho loại sản phẩm phần mềm nào và mang lại lợi ích gì?",
-    options: [
-      "A. Thư viện phần mềm, cho phép liên kết động với phần mềm thương mại đóng mà không buộc mở nguồn phần mềm đó.",
-      "B. Ứng dụng web, bắt buộc các nhà cung cấp dịch vụ SaaS phải công khai toàn bộ mã nguồn của dịch vụ đám mây.",
-      "C. Cơ sở dữ liệu lớn, nghiêm cấm mọi hành vi sao chép và phân phối dữ liệu cho các mục đích thương mại kiếm tiền.",
-      "D. Hệ điều hành máy tính, yêu cầu người sử dụng phải đóng góp mã nguồn sửa đổi cho cộng đồng hàng tháng."
-    ],
-    correct_option: "A",
-    explanation: "LGPL (Lesser GPL) được thiết kế cho các thư viện (libraries). Nó cho phép liên kết (link) với các chương trình đóng mà không làm chương trình đóng đó bị nhiễm tính chất copyleft của GPL, miễn là thư viện LGPL được liên kết động."
-  },
-  {
-    id: "Q_MOD_D_086", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Cho mệnh đề logic kéo theo: 'Nếu thuật toán học máy hoạt động tốt (A) thì tập dữ liệu huấn luyện không bị nhiễu (B)'. Mệnh đề đảo của mệnh đề này là mệnh đề nào?",
-    options: [
-      "A. Nếu tập dữ liệu huấn luyện không bị nhiễu thì thuật toán học máy hoạt động tốt.",
-      "B. Nếu thuật toán học máy không hoạt động tốt thì tập dữ liệu huấn luyện bị nhiễu.",
-      "C. Nếu tập dữ liệu huấn luyện bị nhiễu thì thuật toán học máy hoạt động không tốt.",
-      "D. Nếu thuật toán học máy hoạt động tốt thì tập dữ liệu huấn luyện bị nhiễu nặng."
-    ],
-    correct_option: "A",
-    explanation: "Mệnh đề đảo của $A \\rightarrow B$ là $B \\rightarrow A$ (Đổi chỗ giả thiết và kết luận)."
-  },
-  {
-    id: "Q_MOD_D_087", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-privacy"],
-    content: "Trong các nguyên tắc thiết kế hệ thống, khái niệm 'Privacy by Design' yêu cầu nhà phát triển điều gì?",
-    options: [
-      "A. Tích hợp các biện pháp bảo vệ quyền riêng tư ngay từ giai đoạn đầu tiên của quá trình thiết kế hệ thống.",
-      "B. Thiết kế giao diện ứng dụng sao cho người dùng không thể nhìn thấy các thông tin cá nhân của người khác.",
-      "C. Chỉ tiến hành xem xét các giải pháp bảo mật dữ liệu sau khi sản phẩm đã được đưa vào vận hành thực tế.",
-      "D. Chuyển giao toàn bộ trách nhiệm bảo vệ dữ liệu cá nhân cho người dùng tự quản lý trên thiết bị của họ."
-    ],
-    correct_option: "A",
-    explanation: "'Privacy by Design' (Riêng tư ngay từ khâu thiết kế) yêu cầu bảo vệ dữ liệu cá nhân phải được tích hợp sẵn vào công nghệ và quy trình hệ thống ngay từ đầu, thay vì thêm vào như một tính năng phụ sau này."
-  },
-  {
-    id: "Q_MOD_D_088", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-ethics"],
-    content: "Trong đạo đức dữ liệu, việc 'Data Poisoning' (Đầu độc dữ liệu) gây ra hậu quả nguy hại nào cho hệ thống AI?",
-    options: [
-      "A. Làm cho mô hình AI học sai quy luật, đưa ra dự đoán sai lệch hoặc tạo ra các cửa sau bảo mật cho kẻ tấn công.",
-      "B. Làm hỏng phần cứng của máy chủ chạy thuật toán do các dòng lệnh độc hại gây ra quá nhiệt hệ thống.",
-      "C. Làm tăng dung lượng lưu trữ của cơ sở dữ liệu lên gấp nhiều lần khiến hệ thống bị cạn kiệt bộ nhớ.",
-      "D. Làm suy giảm tốc độ kết nối internet và băng thông truyền tải dữ liệu giữa các máy trạm trong mạng."
-    ],
-    correct_option: "A",
-    explanation: "Đầu độc dữ liệu (Data Poisoning) là việc kẻ tấn công cố tình đưa dữ liệu sai lệch hoặc độc hại vào tập huấn luyện nhằm thao túng hành vi của mô hình AI theo ý muốn."
-  },
-  {
-    id: "Q_MOD_D_089", module_id: "Module_D", difficulty: "Medium",
-    tags: ["open-source-licensing"],
-    content: "Giấy phép Creative Commons 'CC BY-SA' quy định điều kiện gì đối với các tác phẩm phái sinh?",
-    options: [
-      "A. Bắt buộc phải được chia sẻ dưới cùng một giấy phép gốc hoặc giấy phép tương thích (Share-Alike).",
-      "B. Nghiêm cấm hoàn toàn việc chỉnh sửa, sao chép hoặc phân phối tác phẩm cho các mục đích thương mại.",
-      "C. Bắt buộc người sử dụng phải đóng mã nguồn của ứng dụng phần mềm có tích hợp tác phẩm nghệ thuật này.",
-      "D. Chỉ được phép phân phối tác phẩm phái sinh trong phạm vi nội bộ của tổ chức mà không được công khai."
-    ],
-    correct_option: "A",
-    explanation: "SA = Share-Alike (Chia sẻ tương tự). Yêu cầu sản phẩm phái sinh phải áp dụng cùng giấy phép hoặc giấy phép tương thích với tác phẩm gốc."
-  },
-  {
-    id: "Q_MOD_D_090", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Phủ định của mệnh đề logic 'Có ít nhất một thuật toán AI không bị bias' là mệnh đề logic nào?",
-    options: [
-      "A. Mọi thuật toán AI đều bị bias.",
-      "B. Có ít nhất một thuật toán AI bị bias.",
-      "C. Mọi thuật toán AI đều không bị bias.",
-      "D. Tất cả các thuật toán AI đều hoạt động tốt."
-    ],
-    correct_option: "A",
-    explanation: "Phủ định của mệnh đề tồn tại $\\exists x, \\neg P(x)$ là mệnh đề toàn thể $\\forall x, P(x)$ (Tất cả phần tử đều thỏa mãn P)."
-  },
-  {
-    id: "Q_MOD_D_091", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Chứng minh mệnh đề logic bằng phương pháp phản chứng (Proof by Contradiction) được thực hiện dựa trên nguyên lý toán học nào?",
-    options: [
-      "A. Giả thuyết mệnh đề cần chứng minh là sai, sau đó suy luận logic để dẫn tới một mâu thuẫn hiển nhiên.",
-      "B. Giả thuyết mệnh đề cần chứng minh là đúng, từ đó chứng tỏ mọi tiền đề liên quan đều nhận giá trị đúng.",
-      "C. Thực hiện kiểm tra tính đúng đắn của mệnh đề trên toàn bộ các phần tử hữu hạn của tập hợp xác định.",
-      "D. Xây dựng một bảng chân trị đầy đủ cho tất cả các mệnh đề thành phần và kiểm tra cột kết quả cuối cùng."
-    ],
-    correct_option: "A",
-    explanation: "Phương pháp phản chứng bắt đầu bằng cách giả sử mệnh đề cần chứng minh là sai (tức là $\\neg P$ đúng). Từ đó, thông qua các bước suy luận logic đúng đắn, ta chỉ ra một mâu thuẫn (như $A \\land \\neg A$). Do đó giả thiết $\\neg P$ sai, suy ra P phải đúng."
-  },
-  {
-    id: "Q_MOD_D_092", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-ethics"],
-    content: "Trong đạo đức dữ liệu y tế, nguy cơ 'Re-identification' (Tái định danh) xảy ra khi kẻ tấn công thực hiện hành vi nào sau đây?",
-    options: [
-      "A. Kết hợp tập dữ liệu đã ẩn danh với các nguồn dữ liệu công khai khác để khôi phục danh tính thực của cá nhân.",
-      "B. Sử dụng các thuật toán giải mã khóa công khai RSA để bẻ khóa các tập tin dữ liệu bệnh án đã được mã hóa.",
-      "C. Xâm nhập vật lý trực tiếp vào phòng máy chủ lưu trữ của bệnh viện để sao chép các hồ sơ thông tin gốc.",
-      "D. Gửi các email lừa đảo (phishing) trực tiếp đến các bác sĩ điều trị để yêu cầu họ cung cấp mật khẩu tài khoản."
-    ],
-    correct_option: "A",
-    explanation: "Tái định danh (Re-identification) là quá trình liên kết dữ liệu ẩn danh (đã bị loại bỏ các PII trực tiếp) với các nguồn dữ liệu phụ trợ bên ngoài (như danh sách cử tri, mạng xã hội) để tìm ra danh tính thực của chủ thể dữ liệu."
-  },
-  {
-    id: "Q_MOD_D_093", module_id: "Module_D", difficulty: "Medium",
-    tags: ["open-source-licensing"],
-    content: "Giấy phép nguồn mở 'GNU AGPL v3' giải quyết triệt để 'lỗ hổng dịch vụ ứng dụng' (SaaS loophole) của giấy phép 'GPL v3' bằng cách nào?",
-    options: [
-      "A. Quy định việc cung cấp phần mềm qua mạng như dịch vụ đám mây cũng bắt buộc phải công khai mã nguồn sửa đổi.",
-      "B. Yêu cầu các nhà cung cấp dịch vụ SaaS phải trả phí bản quyền dựa trên số lượng người dùng truy cập hàng tháng.",
-      "C. Nghiêm cấm hoàn toàn việc triển khai và chạy phần mềm sửa đổi trên mọi hệ thống hạ tầng điện toán đám mây.",
-      "D. Cho phép các doanh nghiệp đóng gói mã nguồn phái sinh thành sản phẩm thương mại đóng mà không cần mở nguồn."
-    ],
-    correct_option: "A",
-    explanation: "AGPL v3 (Affero GPL) quy định rằng nếu phần mềm được sửa đổi và cho phép người dùng tương tác qua mạng (như SaaS), nhà phát triển phải công khai mã nguồn sửa đổi cho người dùng mạng đó, điều mà GPL v3 không bắt buộc vì không coi đó là phân phối phần mềm truyền thống."
-  },
-  {
-    id: "Q_MOD_D_094", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Cho phát biểu logic sau: 'Mọi mô hình AI đạt độ chính xác cao trên tập train thì đều bị overfitting hoặc có dữ liệu chất lượng cao. Mô hình AI Alpha không bị overfitting và không có dữ liệu chất lượng cao'. Kết luận logic nào là đúng?",
-    options: [
-      "A. Mô hình Alpha chắc chắn không đạt độ chính xác cao trên tập dữ liệu train.",
-      "B. Mô hình Alpha chắc chắn đạt độ chính xác cao trên tập dữ liệu train.",
-      "C. Chưa thể kết luận về độ chính xác trên tập train của mô hình Alpha.",
-      "D. Phát biểu logic ban đầu là mệnh đề sai do chứa mâu thuẫn về điều kiện."
-    ],
-    correct_option: "A",
-    explanation: "Mệnh đề: $Acc \\rightarrow (Over \\lor Qual)$. Từ luật Modus Tollens, nếu phủ định hệ quả $\\neg(Over \\lor Qual) \\equiv \\neg Over \\land \\neg Qual$ xảy ra (Alpha không overfitting và không có dữ liệu chất lượng cao), ta suy ra phủ định giả thiết $\\neg Acc$ phải xảy ra (Alpha không đạt độ chính xác cao trên tập train)."
-  },
-  {
-    id: "Q_MOD_D_095", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-privacy"],
-    content: "Thuật toán 'Local Differential Privacy' (LDP) khác biệt cốt lõi như thế nào so với 'Centralized Differential Privacy' (CDP)?",
-    options: [
-      "A. LDP thêm nhiễu trực tiếp trên thiết bị người dùng trước khi gửi đi, còn CDP thêm nhiễu trên máy chủ tập trung.",
-      "B. CDP thêm nhiễu trực tiếp trên thiết bị người dùng trước khi gửi đi, còn LDP thêm nhiễu trên máy chủ tập trung.",
-      "C. LDP chỉ sử dụng thuật toán mã hóa đối xứng, còn CDP sử dụng thuật toán mã hóa bất đối xứng khóa công khai.",
-      "D. CDP yêu cầu loại bỏ hoàn toàn dữ liệu người dùng, còn LDP cho phép lưu trữ dữ liệu thô vô thời hạn trên máy chủ."
-    ],
-    correct_option: "A",
-    explanation: "Local Differential Privacy (LDP) thêm nhiễu trực tiếp tại nguồn (thiết bị của người dùng) trước khi gửi về máy chủ, do đó người thu thập dữ liệu cũng không biết dữ liệu thật của cá nhân. Centralized DP (CDP) giả định người thu thập dữ liệu là đáng tin cậy, dữ liệu thô được gửi về máy chủ và nhiễu được thêm vào khi truy vấn hoặc công bố kết quả."
-  },
-  {
-    id: "Q_MOD_D_096", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-ethics"],
-    content: "Tại sao phương pháp giảm định kiến 'In-processing bias mitigation' lại khó triển khai hơn phương pháp 'Pre-processing' trong thực tế phát triển AI?",
-    options: [
-      "A. Nó yêu cầu sửa đổi trực tiếp hàm mất mát hoặc kiến trúc của mô hình, đòi hỏi quyền can thiệp vào quá trình huấn luyện.",
-      "B. Nó yêu cầu phải thu thập thêm một lượng lớn dữ liệu mới từ các nhóm đối tượng nhạy cảm trong xã hội.",
-      "C. Nó làm tăng kích thước dung lượng lưu trữ của tập tin trọng số mô hình lên gấp nhiều lần sau khi huấn luyện.",
-      "D. Nó nghiêm cấm việc sử dụng các thư viện học máy thông dụng và buộc nhà phát triển phải tự viết lại mã nguồn."
-    ],
-    correct_option: "A",
-    explanation: "In-processing bias mitigation can thiệp trực tiếp vào thuật toán học (ví dụ: thêm ràng buộc công bằng vào hàm tối ưu/loss function), do đó phức tạp và đòi hỏi quyền can thiệp sâu vào code huấn luyện, trong khi Pre-processing chỉ cần biến đổi dữ liệu đầu vào."
-  },
-  {
-    id: "Q_MOD_D_097", module_id: "Module_D", difficulty: "Medium",
-    tags: ["open-source-licensing"],
-    content: "Một lập trình viên tích hợp một thư viện có giấy phép 'GNU GPL v3' vào sản phẩm thương mại của mình bằng phương thức liên kết động (Dynamic Linking). Hành vi này có thể dẫn tới hậu quả pháp lý nào đối với sản phẩm thương mại đó?",
-    options: [
-      "A. Sản phẩm thương mại đó vẫn có thể bị coi là sản phẩm phái sinh và bị buộc phải mở mã nguồn dưới GPL v3 theo luật.",
-      "B. Lập trình viên chắc chắn bị phạt tiền rất nặng do vi phạm nghiêm trọng quy định sử dụng thương mại của GPL v3.",
-      "C. Sản phẩm thương mại đó chắc chắn được bảo hộ mã nguồn đóng hoàn toàn và không chịu bất kỳ ràng buộc nào từ GPL v3.",
-      "D. Thư viện GPL v3 sẽ tự động kích hoạt mã độc để xóa bỏ toàn bộ dữ liệu trên hệ thống máy chủ thương mại."
-    ],
-    correct_option: "A",
-    explanation: "Tổ chức FSF (Free Software Foundation) giữ quan điểm rằng việc liên kết (dù là động hay tĩnh) một thư viện GPL vào phần mềm đều tạo ra một sản phẩm phái sinh, do đó toàn bộ chương trình phải mở mã nguồn dưới GPL v3. Điều này gây ra rủi ro pháp lý lớn cho các phần mềm thương mại đóng."
-  },
-  {
-    id: "Q_MOD_D_098", module_id: "Module_D", difficulty: "Medium",
-    tags: ["pure-logic"],
-    content: "Trong logic mệnh đề, một tập hợp các mệnh đề $\{P_1, P_2, ..., P_n\}$ được gọi là 'Satisfiable' (Khả thỏa) khi nào?",
-    options: [
-      "A. Có ít nhất một cách gán giá trị chân lý cho các biến mệnh đề sao cho tất cả các mệnh đề trong tập hợp đều Đúng.",
-      "B. Với mọi cách gán giá trị chân lý cho các biến mệnh đề, tất cả các mệnh đề trong tập hợp đều nhận giá trị Đúng.",
-      "C. Có ít nhất một cách gán giá trị chân lý cho các biến mệnh đề sao cho tất cả các mệnh đề trong tập hợp đều Sai.",
-      "D. Với mọi cách gán giá trị chân lý cho các biến mệnh đề, tất cả các mệnh đề trong tập hợp đều nhận giá trị Sai."
-    ],
-    correct_option: "A",
-    explanation: "Khả thỏa (Satisfiable) nghĩa là tồn tại ít nhất một cách gán giá trị chân lý cho các biến logic làm cho tất cả các mệnh đề trong hệ đồng thời nhận giá trị True. Nếu không tồn tại cách gán nào như vậy, tập hợp mệnh đề được gọi là bất khả thỏa (unsatisfiable/contradiction)."
-  },
-  {
-    id: "Q_MOD_D_099", module_id: "Module_D", difficulty: "Medium",
-    tags: ["data-privacy"],
-    content: "Trong đạo đức AI, nguyên tắc 'Accountability' (Trách nhiệm giải trình) đối mặt với thách thức lớn nào từ hiện tượng 'Black Box' (Hộp đen AI)?",
-    options: [
-      "A. Do tính chất phức tạp của mô hình nơ-ron, rất khó giải thích rõ ràng cơ chế ra quyết định để quy trách nhiệm khi xảy ra lỗi.",
-      "B. Do các máy chủ vận hành mô hình hoạt động hoàn toàn tự động và không chịu sự kiểm soát vật lý của con người.",
-      "C. Do các quy định pháp lý hiện hành chưa công nhận quyền sở hữu trí tuệ đối với các mô hình mạng nơ-ron sâu.",
-      "D. Do chi phí vận hành và nâng cấp các giải pháp an ninh mạng cho mô hình AI vượt quá ngân sách của doanh nghiệp."
-    ],
-    correct_option: "A",
-    explanation: "Hiện tượng 'hộp đen' của học sâu (deep learning) làm cho việc truy vết và giải thích tại sao AI đưa ra một quyết định cụ thể trở nên cực kỳ khó khăn. Khi AI đưa ra dự đoán sai gây thiệt hại (ví dụ: tai nạn xe tự lái, chẩn đoán bệnh sai), việc quy trách nhiệm giải trình (accountability) cho các bên liên quan gặp trở ngại lớn."
-  },
-  {
-    id: "Q_MOD_D_100", module_id: "Module_D", difficulty: "Medium",
-    tags: ["open-source-licensing"],
-    content: "Nếu bạn muốn đóng góp mã nguồn cho một dự án nguồn mở lớn nhưng không muốn bị kiện tụng về bản quyền sáng chế sau này, thỏa thuận pháp lý nào sau đây bảo vệ bạn tốt nhất?",
-    options: [
-      "A. Đóng góp dưới điều khoản của giấy phép có cấp quyền sáng chế rõ ràng như Apache License 2.0 hoặc ký thỏa thuận CLA.",
-      "B. Đóng góp mã nguồn dưới dạng ẩn danh hoàn toàn để tránh việc bị truy vết danh tính cá nhân trên môi trường mạng.",
-      "C. Đóng góp mã nguồn dưới giấy phép MIT License thông thường mà không cần ký thêm bất kỳ tài liệu pháp lý nào khác.",
-      "D. Yêu cầu dự án nguồn mở đó ký hợp đồng cam kết chia sẻ một phần doanh thu thương mại phát sinh từ việc sử dụng code."
-    ],
-    correct_option: "A",
-    explanation: "Giấy phép Apache 2.0 có chứa điều khoản cấp quyền sáng chế rõ ràng (patent grant) và điều khoản chấm dứt quyền này nếu bất kỳ bên nào kiện tụng về sáng chế. Đồng thời, CLA (Contributor License Agreement) là thỏa thuận đóng góp giúp làm rõ quyền sở hữu trí tuệ và bảo vệ cả người đóng góp lẫn dự án khỏi các tranh chấp pháp lý."
+    "correct_option": "A",
+    "explanation": "Chỉ thu thập dữ liệu tối thiểu (data minimization) và mã hóa thông tin là biện pháp tốt nhất để bảo vệ quyền riêng tư người học."
   }
 ];
