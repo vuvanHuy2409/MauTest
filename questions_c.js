@@ -1700,7 +1700,3 @@ const QUESTIONS_C = [
     "explanation": "Đơn giản hóa trải nghiệm (UX) và hạ thấp rào cản kỹ thuật giúp các sản phẩm công nghệ AI tiếp cận được đại đa số mọi người dùng, giúp họ ứng dụng hiệu quả vào cuộc sống."
   }
 ];
-
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = QUESTIONS_C;
-}
