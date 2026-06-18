@@ -1698,5 +1698,1705 @@ const QUESTIONS_A = [
     ],
     "correct_option": "B",
     "explanation": "Số trận thắng đội tuyển giành được trong mùa giải là: $20 \\times 70\\% = 20 \\times 0.7 = 14$ trận thắng."
+  },
+  {
+    "id": "Q_MOD_A_101",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{2} (2x^2 + 3x) \\, dx$.",
+    "options": [
+      "A. $I = \\frac{34}{3}$",
+      "B. $I = \\frac{35}{3}$",
+      "C. $I = \\frac{33}{3}$",
+      "D. $I = \\frac{36}{4}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Ta tìm nguyên hàm của hàm số: $F(x) = \\frac{2}{3}x^3 + \\frac{3}{2}x^2$. Áp dụng công thức Newton-Leibniz: $I = F(2) - F(0) = \\left(\\frac{2}{3}(2)^3 + \\frac{3}{2}(2)^2\\right) - 0 = \\frac{16}{3} + 6 = \\frac{34}{3}$."
+  },
+  {
+    "id": "Q_MOD_A_102",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{\\pi/3} \\sin(3x) \\, dx$.",
+    "options": [
+      "A. $I = \\frac{2}{3}$",
+      "B. $I = \\frac{1}{3}$",
+      "C. $I = 0$",
+      "D. $I = \\frac{\\pi}{3}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Nguyên hàm của $\\sin(3x)$ là $F(x) = -\\frac{\\cos(3x)}{3}$. Áp dụng công thức Newton-Leibniz: $I = F(\\pi/3) - F(0) = -\\frac{\\cos(\\pi)}{3} - \\left(-\\frac{\\cos(0)}{3}\\right) = \\frac{1}{3} + \\frac{1}{3} = \\frac{2}{3}$."
+  },
+  {
+    "id": "Q_MOD_A_103",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{1} e^{3x} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{e^3 - 1}{3}$",
+      "B. $I = e^3 - 1$",
+      "C. $I = \\frac{e^3}{3}$",
+      "D. $I = \\frac{e^3 + 1}{3}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Nguyên hàm của $e^{3x}$ là $F(x) = \\frac{1}{3}e^{3x}$. Áp dụng công thức Newton-Leibniz: $I = F(1) - F(0) = \\frac{e^3 - 1}{3}$."
+  },
+  {
+    "id": "Q_MOD_A_104",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{2} \\frac{1}{x + 2} \\, dx$.",
+    "options": [
+      "A. $I = \\ln\\left(\\frac{4}{2}\\right)$",
+      "B. $I = \\ln(4)$",
+      "C. $I = \\ln(2)$",
+      "D. $I = \\frac{1}{4}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Nguyên hàm của $\\frac{1}{x+2}$ là $F(x) = \\ln|x+2|$. Áp dụng công thức: $I = \\ln|2+2| - \\ln|0+2| = \\ln(4) - \\ln(2) = \\ln\\left(\\frac{4}{2}\\right)$."
+  },
+  {
+    "id": "Q_MOD_A_105",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định bằng phương pháp tích phân từng phần: $I = \\int_0^{1} x e^x \\, dx$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = e$",
+      "C. $I = e - 1$",
+      "D. $I = 2$"
+    ],
+    "correct_option": "A",
+    "explanation": "Đặt $u = x \\Rightarrow du = dx$ và $dv = e^x dx \\Rightarrow v = e^x$. Áp dụng công thức tích phân từng phần: $I = [x e^x]_0^1 - \\int_0^1 e^x dx = (1 \\cdot e^1 - 0) - [e^x]_0^1 = e - (e - 1) = 1$."
+  },
+  {
+    "id": "Q_MOD_A_106",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{2} (1x^2 + 4x) \\, dx$.",
+    "options": [
+      "A. $I = \\frac{32}{3}$",
+      "B. $I = \\frac{33}{3}$",
+      "C. $I = \\frac{31}{3}$",
+      "D. $I = \\frac{34}{4}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Ta tìm nguyên hàm của hàm số: $F(x) = \\frac{1}{3}x^3 + \\frac{4}{2}x^2$. Áp dụng công thức Newton-Leibniz: $I = F(2) - F(0) = \\left(\\frac{1}{3}(2)^3 + \\frac{4}{2}(2)^2\\right) - 0 = \\frac{8}{3} + 8 = \\frac{32}{3}$."
+  },
+  {
+    "id": "Q_MOD_A_107",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{\\pi/2} \\sin(2x) \\, dx$.",
+    "options": [
+      "A. $I = \\frac{2}{2}$",
+      "B. $I = \\frac{1}{2}$",
+      "C. $I = 0$",
+      "D. $I = \\frac{\\pi}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Nguyên hàm của $\\sin(2x)$ là $F(x) = -\\frac{\\cos(2x)}{2}$. Áp dụng công thức Newton-Leibniz: $I = F(\\pi/2) - F(0) = -\\frac{\\cos(\\pi)}{2} - \\left(-\\frac{\\cos(0)}{2}\\right) = \\frac{1}{2} + \\frac{1}{2} = \\frac{2}{2}$."
+  },
+  {
+    "id": "Q_MOD_A_108",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{1} e^{2x} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{e^2 - 1}{2}$",
+      "B. $I = e^2 - 1$",
+      "C. $I = \\frac{e^2}{2}$",
+      "D. $I = \\frac{e^2 + 1}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Nguyên hàm của $e^{2x}$ là $F(x) = \\frac{1}{2}e^{2x}$. Áp dụng công thức Newton-Leibniz: $I = F(1) - F(0) = \\frac{e^2 - 1}{2}$."
+  },
+  {
+    "id": "Q_MOD_A_109",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{3} \\frac{1}{x + 1} \\, dx$.",
+    "options": [
+      "A. $I = \\ln\\left(4\\right)$",
+      "B. $I = \\ln(4)$",
+      "C. $I = \\ln(1)$",
+      "D. $I = \\frac{1}{4}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Nguyên hàm của $\\frac{1}{x+1}$ là $F(x) = \\ln|x+1|$. Áp dụng công thức: $I = \\ln|3+1| - \\ln|0+1| = \\ln(4) - \\ln(1) = \\ln\\left(\\frac{4}{1}\\right)$."
+  },
+  {
+    "id": "Q_MOD_A_110",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định bằng phương pháp tích phân từng phần: $I = \\int_0^{1} x e^x \\, dx$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = e$",
+      "C. $I = e - 1$",
+      "D. $I = 2$"
+    ],
+    "correct_option": "A",
+    "explanation": "Đặt $u = x \\Rightarrow du = dx$ và $dv = e^x dx \\Rightarrow v = e^x$. Áp dụng công thức tích phân từng phần: $I = [x e^x]_0^1 - \\int_0^1 e^x dx = (1 \\cdot e^1 - 0) - [e^x]_0^1 = e - (e - 1) = 1$."
+  },
+  {
+    "id": "Q_MOD_A_111",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{2} (3x^2 + 5x) \\, dx$.",
+    "options": [
+      "A. $I = 18$",
+      "B. $I = 19$",
+      "C. $I = 17$",
+      "D. $I = \\frac{20}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Ta tìm nguyên hàm của hàm số: $F(x) = \\frac{3}{3}x^3 + \\frac{5}{2}x^2$. Áp dụng công thức Newton-Leibniz: $I = F(2) - F(0) = \\left(\\frac{3}{3}(2)^3 + \\frac{5}{2}(2)^2\\right) - 0 = \\frac{24}{3} + 10 = 18$."
+  },
+  {
+    "id": "Q_MOD_A_112",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{\\pi/1} \\sin(1x) \\, dx$.",
+    "options": [
+      "A. $I = 2$",
+      "B. $I = 1$",
+      "C. $I = 0$",
+      "D. $I = \\frac{\\pi}{1}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Nguyên hàm của $\\sin(1x)$ là $F(x) = -\\frac{\\cos(1x)}{1}$. Áp dụng công thức Newton-Leibniz: $I = F(\\pi/1) - F(0) = -\\frac{\\cos(\\pi)}{1} - \\left(-\\frac{\\cos(0)}{1}\\right) = \\frac{1}{1} + \\frac{1}{1} = \\frac{2}{1}$."
+  },
+  {
+    "id": "Q_MOD_A_113",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{1} e^{3x} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{e^3 - 1}{3}$",
+      "B. $I = e^3 - 1$",
+      "C. $I = \\frac{e^3}{3}$",
+      "D. $I = \\frac{e^3 + 1}{3}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Nguyên hàm của $e^{3x}$ là $F(x) = \\frac{1}{3}e^{3x}$. Áp dụng công thức Newton-Leibniz: $I = F(1) - F(0) = \\frac{e^3 - 1}{3}$."
+  },
+  {
+    "id": "Q_MOD_A_114",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{2} \\frac{1}{x + 3} \\, dx$.",
+    "options": [
+      "A. $I = \\ln\\left(\\frac{5}{3}\\right)$",
+      "B. $I = \\ln(5)$",
+      "C. $I = \\ln(3)$",
+      "D. $I = \\frac{1}{5}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Nguyên hàm của $\\frac{1}{x+3}$ là $F(x) = \\ln|x+3|$. Áp dụng công thức: $I = \\ln|2+3| - \\ln|0+3| = \\ln(5) - \\ln(3) = \\ln\\left(\\frac{5}{3}\\right)$."
+  },
+  {
+    "id": "Q_MOD_A_115",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định bằng phương pháp tích phân từng phần: $I = \\int_0^{1} x e^x \\, dx$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = e$",
+      "C. $I = e - 1$",
+      "D. $I = 2$"
+    ],
+    "correct_option": "A",
+    "explanation": "Đặt $u = x \\Rightarrow du = dx$ và $dv = e^x dx \\Rightarrow v = e^x$. Áp dụng công thức tích phân từng phần: $I = [x e^x]_0^1 - \\int_0^1 e^x dx = (1 \\cdot e^1 - 0) - [e^x]_0^1 = e - (e - 1) = 1$."
+  },
+  {
+    "id": "Q_MOD_A_116",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{2} (2x^2 + 2x) \\, dx$.",
+    "options": [
+      "A. $I = \\frac{28}{3}$",
+      "B. $I = \\frac{29}{3}$",
+      "C. $I = \\frac{27}{3}$",
+      "D. $I = \\frac{30}{4}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Ta tìm nguyên hàm của hàm số: $F(x) = \\frac{2}{3}x^3 + \\frac{2}{2}x^2$. Áp dụng công thức Newton-Leibniz: $I = F(2) - F(0) = \\left(\\frac{2}{3}(2)^3 + \\frac{2}{2}(2)^2\\right) - 0 = \\frac{16}{3} + 4 = \\frac{28}{3}$."
+  },
+  {
+    "id": "Q_MOD_A_117",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{\\pi/3} \\sin(3x) \\, dx$.",
+    "options": [
+      "A. $I = \\frac{2}{3}$",
+      "B. $I = \\frac{1}{3}$",
+      "C. $I = 0$",
+      "D. $I = \\frac{\\pi}{3}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Nguyên hàm của $\\sin(3x)$ là $F(x) = -\\frac{\\cos(3x)}{3}$. Áp dụng công thức Newton-Leibniz: $I = F(\\pi/3) - F(0) = -\\frac{\\cos(\\pi)}{3} - \\left(-\\frac{\\cos(0)}{3}\\right) = \\frac{1}{3} + \\frac{1}{3} = \\frac{2}{3}$."
+  },
+  {
+    "id": "Q_MOD_A_118",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{1} e^{2x} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{e^2 - 1}{2}$",
+      "B. $I = e^2 - 1$",
+      "C. $I = \\frac{e^2}{2}$",
+      "D. $I = \\frac{e^2 + 1}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Nguyên hàm của $e^{2x}$ là $F(x) = \\frac{1}{2}e^{2x}$. Áp dụng công thức Newton-Leibniz: $I = F(1) - F(0) = \\frac{e^2 - 1}{2}$."
+  },
+  {
+    "id": "Q_MOD_A_119",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{3} \\frac{1}{x + 2} \\, dx$.",
+    "options": [
+      "A. $I = \\ln\\left(\\frac{5}{2}\\right)$",
+      "B. $I = \\ln(5)$",
+      "C. $I = \\ln(2)$",
+      "D. $I = \\frac{1}{5}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Nguyên hàm của $\\frac{1}{x+2}$ là $F(x) = \\ln|x+2|$. Áp dụng công thức: $I = \\ln|3+2| - \\ln|0+2| = \\ln(5) - \\ln(2) = \\ln\\left(\\frac{5}{2}\\right)$."
+  },
+  {
+    "id": "Q_MOD_A_120",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định bằng phương pháp tích phân từng phần: $I = \\int_0^{1} x e^x \\, dx$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = e$",
+      "C. $I = e - 1$",
+      "D. $I = 2$"
+    ],
+    "correct_option": "A",
+    "explanation": "Đặt $u = x \\Rightarrow du = dx$ và $dv = e^x dx \\Rightarrow v = e^x$. Áp dụng công thức tích phân từng phần: $I = [x e^x]_0^1 - \\int_0^1 e^x dx = (1 \\cdot e^1 - 0) - [e^x]_0^1 = e - (e - 1) = 1$."
+  },
+  {
+    "id": "Q_MOD_A_121",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{2} (1x^2 + 3x) \\, dx$.",
+    "options": [
+      "A. $I = \\frac{26}{3}$",
+      "B. $I = \\frac{27}{3}$",
+      "C. $I = \\frac{25}{3}$",
+      "D. $I = \\frac{28}{4}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Ta tìm nguyên hàm của hàm số: $F(x) = \\frac{1}{3}x^3 + \\frac{3}{2}x^2$. Áp dụng công thức Newton-Leibniz: $I = F(2) - F(0) = \\left(\\frac{1}{3}(2)^3 + \\frac{3}{2}(2)^2\\right) - 0 = \\frac{8}{3} + 6 = \\frac{26}{3}$."
+  },
+  {
+    "id": "Q_MOD_A_122",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{\\pi/2} \\sin(2x) \\, dx$.",
+    "options": [
+      "A. $I = \\frac{2}{2}$",
+      "B. $I = \\frac{1}{2}$",
+      "C. $I = 0$",
+      "D. $I = \\frac{\\pi}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Nguyên hàm của $\\sin(2x)$ là $F(x) = -\\frac{\\cos(2x)}{2}$. Áp dụng công thức Newton-Leibniz: $I = F(\\pi/2) - F(0) = -\\frac{\\cos(\\pi)}{2} - \\left(-\\frac{\\cos(0)}{2}\\right) = \\frac{1}{2} + \\frac{1}{2} = \\frac{2}{2}$."
+  },
+  {
+    "id": "Q_MOD_A_123",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{1} e^{3x} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{e^3 - 1}{3}$",
+      "B. $I = e^3 - 1$",
+      "C. $I = \\frac{e^3}{3}$",
+      "D. $I = \\frac{e^3 + 1}{3}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Nguyên hàm của $e^{3x}$ là $F(x) = \\frac{1}{3}e^{3x}$. Áp dụng công thức Newton-Leibniz: $I = F(1) - F(0) = \\frac{e^3 - 1}{3}$."
+  },
+  {
+    "id": "Q_MOD_A_124",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{2} \\frac{1}{x + 1} \\, dx$.",
+    "options": [
+      "A. $I = \\ln\\left(3\\right)$",
+      "B. $I = \\ln(3)$",
+      "C. $I = \\ln(1)$",
+      "D. $I = \\frac{1}{3}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Nguyên hàm của $\\frac{1}{x+1}$ là $F(x) = \\ln|x+1|$. Áp dụng công thức: $I = \\ln|2+1| - \\ln|0+1| = \\ln(3) - \\ln(1) = \\ln\\left(\\frac{3}{1}\\right)$."
+  },
+  {
+    "id": "Q_MOD_A_125",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định bằng phương pháp tích phân từng phần: $I = \\int_0^{1} x e^x \\, dx$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = e$",
+      "C. $I = e - 1$",
+      "D. $I = 2$"
+    ],
+    "correct_option": "A",
+    "explanation": "Đặt $u = x \\Rightarrow du = dx$ và $dv = e^x dx \\Rightarrow v = e^x$. Áp dụng công thức tích phân từng phần: $I = [x e^x]_0^1 - \\int_0^1 e^x dx = (1 \\cdot e^1 - 0) - [e^x]_0^1 = e - (e - 1) = 1$."
+  },
+  {
+    "id": "Q_MOD_A_126",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{2} (3x^2 + 4x) \\, dx$.",
+    "options": [
+      "A. $I = 16$",
+      "B. $I = 17$",
+      "C. $I = 15$",
+      "D. $I = \\frac{18}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Ta tìm nguyên hàm của hàm số: $F(x) = \\frac{3}{3}x^3 + \\frac{4}{2}x^2$. Áp dụng công thức Newton-Leibniz: $I = F(2) - F(0) = \\left(\\frac{3}{3}(2)^3 + \\frac{4}{2}(2)^2\\right) - 0 = \\frac{24}{3} + 8 = 16$."
+  },
+  {
+    "id": "Q_MOD_A_127",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{\\pi/1} \\sin(1x) \\, dx$.",
+    "options": [
+      "A. $I = 2$",
+      "B. $I = 1$",
+      "C. $I = 0$",
+      "D. $I = \\frac{\\pi}{1}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Nguyên hàm của $\\sin(1x)$ là $F(x) = -\\frac{\\cos(1x)}{1}$. Áp dụng công thức Newton-Leibniz: $I = F(\\pi/1) - F(0) = -\\frac{\\cos(\\pi)}{1} - \\left(-\\frac{\\cos(0)}{1}\\right) = \\frac{1}{1} + \\frac{1}{1} = \\frac{2}{1}$."
+  },
+  {
+    "id": "Q_MOD_A_128",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{1} e^{2x} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{e^2 - 1}{2}$",
+      "B. $I = e^2 - 1$",
+      "C. $I = \\frac{e^2}{2}$",
+      "D. $I = \\frac{e^2 + 1}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Nguyên hàm của $e^{2x}$ là $F(x) = \\frac{1}{2}e^{2x}$. Áp dụng công thức Newton-Leibniz: $I = F(1) - F(0) = \\frac{e^2 - 1}{2}$."
+  },
+  {
+    "id": "Q_MOD_A_129",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định sau: $I = \\int_0^{3} \\frac{1}{x + 3} \\, dx$.",
+    "options": [
+      "A. $I = \\ln\\left(\\frac{6}{3}\\right)$",
+      "B. $I = \\ln(6)$",
+      "C. $I = \\ln(3)$",
+      "D. $I = \\frac{1}{6}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Nguyên hàm của $\\frac{1}{x+3}$ là $F(x) = \\ln|x+3|$. Áp dụng công thức: $I = \\ln|3+3| - \\ln|0+3| = \\ln(6) - \\ln(3) = \\ln\\left(\\frac{6}{3}\\right)$."
+  },
+  {
+    "id": "Q_MOD_A_130",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân xác định bằng phương pháp tích phân từng phần: $I = \\int_0^{1} x e^x \\, dx$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = e$",
+      "C. $I = e - 1$",
+      "D. $I = 2$"
+    ],
+    "correct_option": "A",
+    "explanation": "Đặt $u = x \\Rightarrow du = dx$ và $dv = e^x dx \\Rightarrow v = e^x$. Áp dụng công thức tích phân từng phần: $I = [x e^x]_0^1 - \\int_0^1 e^x dx = (1 \\cdot e^1 - 0) - [e^x]_0^1 = e - (e - 1) = 1$."
+  },
+  {
+    "id": "Q_MOD_A_131",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân suy rộng sau: $I = \\int_{2}^{\\infty} \\frac{1}{x^2} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{1}{2}$",
+      "B. Tích phân phân kỳ",
+      "C. $I = 2$",
+      "D. $I = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tính giới hạn: $I = \\lim_{b \\to \\infty} \\int_{2}^{b} x^{-2} \\, dx = \\lim_{b \\to \\infty} \\left[-\\frac{1}{x}\\right]_{2}^{b} = \\lim_{b \\to \\infty} \\left(-\\frac{1}{b} + \\frac{1}{2}\\right) = \\frac{1}{2}$."
+  },
+  {
+    "id": "Q_MOD_A_132",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân suy rộng sau: $I = \\int_0^{\\infty} e^{-4x} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{1}{4}$",
+      "B. $I = 4$",
+      "C. Tích phân phân kỳ",
+      "D. $I = 1$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tính giới hạn: $I = \\lim_{b \\to \\infty} \\int_0^b e^{-4x} \\, dx = \\lim_{b \\to \\infty} \\left[-\\frac{1}{4}e^{-4x}\\right]_0^b = \\lim_{b \\to \\infty} \\left(-\\frac{1}{4}e^{-4b} + \\frac{1}{4}\\right) = \\frac{1}{4}$."
+  },
+  {
+    "id": "Q_MOD_A_133",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Xác định tính hội tụ và tính giá trị tích phân suy rộng: $I = \\int_0^{1} \\frac{1}{\\sqrt{x}} \\, dx$.",
+    "options": [
+      "A. Tích phân hội tụ và $I = 2$",
+      "B. Tích phân phân kỳ",
+      "C. Tích phân hội tụ và $I = 1$",
+      "D. Tích phân hội tụ và $I = \\frac{1}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tích phân có điểm bất thường tại $x = 0$. Tính giới hạn: $I = \\lim_{{a \\to 0^+}} \\int_a^1 x^{-1/2} dx = \\lim_{{a \\to 0^+}} [2\\sqrt{x}]_a^1 = \\lim_{{a \\to 0^+}} (2 - 2\\sqrt{a}) = 2$."
+  },
+  {
+    "id": "Q_MOD_A_134",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân suy rộng sau: $I = \\int_{2}^{\\infty} \\frac{1}{x^2} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{1}{2}$",
+      "B. Tích phân phân kỳ",
+      "C. $I = 2$",
+      "D. $I = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tính giới hạn: $I = \\lim_{b \\to \\infty} \\int_{2}^{b} x^{-2} \\, dx = \\lim_{b \\to \\infty} \\left[-\\frac{1}{x}\\right]_{2}^{b} = \\lim_{b \\to \\infty} \\left(-\\frac{1}{b} + \\frac{1}{2}\\right) = \\frac{1}{2}$."
+  },
+  {
+    "id": "Q_MOD_A_135",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân suy rộng sau: $I = \\int_0^{\\infty} e^{-4x} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{1}{4}$",
+      "B. $I = 4$",
+      "C. Tích phân phân kỳ",
+      "D. $I = 1$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tính giới hạn: $I = \\lim_{b \\to \\infty} \\int_0^b e^{-4x} \\, dx = \\lim_{b \\to \\infty} \\left[-\\frac{1}{4}e^{-4x}\\right]_0^b = \\lim_{b \\to \\infty} \\left(-\\frac{1}{4}e^{-4b} + \\frac{1}{4}\\right) = \\frac{1}{4}$."
+  },
+  {
+    "id": "Q_MOD_A_136",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Xác định tính hội tụ và tính giá trị tích phân suy rộng: $I = \\int_0^{1} \\frac{1}{\\sqrt{x}} \\, dx$.",
+    "options": [
+      "A. Tích phân hội tụ và $I = 2$",
+      "B. Tích phân phân kỳ",
+      "C. Tích phân hội tụ và $I = 1$",
+      "D. Tích phân hội tụ và $I = \\frac{1}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tích phân có điểm bất thường tại $x = 0$. Tính giới hạn: $I = \\lim_{{a \\to 0^+}} \\int_a^1 x^{-1/2} dx = \\lim_{{a \\to 0^+}} [2\\sqrt{x}]_a^1 = \\lim_{{a \\to 0^+}} (2 - 2\\sqrt{a}) = 2$."
+  },
+  {
+    "id": "Q_MOD_A_137",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân suy rộng sau: $I = \\int_{2}^{\\infty} \\frac{1}{x^2} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{1}{2}$",
+      "B. Tích phân phân kỳ",
+      "C. $I = 2$",
+      "D. $I = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tính giới hạn: $I = \\lim_{b \\to \\infty} \\int_{2}^{b} x^{-2} \\, dx = \\lim_{b \\to \\infty} \\left[-\\frac{1}{x}\\right]_{2}^{b} = \\lim_{b \\to \\infty} \\left(-\\frac{1}{b} + \\frac{1}{2}\\right) = \\frac{1}{2}$."
+  },
+  {
+    "id": "Q_MOD_A_138",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân suy rộng sau: $I = \\int_0^{\\infty} e^{-4x} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{1}{4}$",
+      "B. $I = 4$",
+      "C. Tích phân phân kỳ",
+      "D. $I = 1$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tính giới hạn: $I = \\lim_{b \\to \\infty} \\int_0^b e^{-4x} \\, dx = \\lim_{b \\to \\infty} \\left[-\\frac{1}{4}e^{-4x}\\right]_0^b = \\lim_{b \\to \\infty} \\left(-\\frac{1}{4}e^{-4b} + \\frac{1}{4}\\right) = \\frac{1}{4}$."
+  },
+  {
+    "id": "Q_MOD_A_139",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Xác định tính hội tụ và tính giá trị tích phân suy rộng: $I = \\int_0^{1} \\frac{1}{\\sqrt{x}} \\, dx$.",
+    "options": [
+      "A. Tích phân hội tụ và $I = 2$",
+      "B. Tích phân phân kỳ",
+      "C. Tích phân hội tụ và $I = 1$",
+      "D. Tích phân hội tụ và $I = \\frac{1}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tích phân có điểm bất thường tại $x = 0$. Tính giới hạn: $I = \\lim_{{a \\to 0^+}} \\int_a^1 x^{-1/2} dx = \\lim_{{a \\to 0^+}} [2\\sqrt{x}]_a^1 = \\lim_{{a \\to 0^+}} (2 - 2\\sqrt{a}) = 2$."
+  },
+  {
+    "id": "Q_MOD_A_140",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân suy rộng sau: $I = \\int_{2}^{\\infty} \\frac{1}{x^2} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{1}{2}$",
+      "B. Tích phân phân kỳ",
+      "C. $I = 2$",
+      "D. $I = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tính giới hạn: $I = \\lim_{b \\to \\infty} \\int_{2}^{b} x^{-2} \\, dx = \\lim_{b \\to \\infty} \\left[-\\frac{1}{x}\\right]_{2}^{b} = \\lim_{b \\to \\infty} \\left(-\\frac{1}{b} + \\frac{1}{2}\\right) = \\frac{1}{2}$."
+  },
+  {
+    "id": "Q_MOD_A_141",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân suy rộng sau: $I = \\int_0^{\\infty} e^{-4x} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{1}{4}$",
+      "B. $I = 4$",
+      "C. Tích phân phân kỳ",
+      "D. $I = 1$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tính giới hạn: $I = \\lim_{b \\to \\infty} \\int_0^b e^{-4x} \\, dx = \\lim_{b \\to \\infty} \\left[-\\frac{1}{4}e^{-4x}\\right]_0^b = \\lim_{b \\to \\infty} \\left(-\\frac{1}{4}e^{-4b} + \\frac{1}{4}\\right) = \\frac{1}{4}$."
+  },
+  {
+    "id": "Q_MOD_A_142",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Xác định tính hội tụ và tính giá trị tích phân suy rộng: $I = \\int_0^{1} \\frac{1}{\\sqrt{x}} \\, dx$.",
+    "options": [
+      "A. Tích phân hội tụ và $I = 2$",
+      "B. Tích phân phân kỳ",
+      "C. Tích phân hội tụ và $I = 1$",
+      "D. Tích phân hội tụ và $I = \\frac{1}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tích phân có điểm bất thường tại $x = 0$. Tính giới hạn: $I = \\lim_{{a \\to 0^+}} \\int_a^1 x^{-1/2} dx = \\lim_{{a \\to 0^+}} [2\\sqrt{x}]_a^1 = \\lim_{{a \\to 0^+}} (2 - 2\\sqrt{a}) = 2$."
+  },
+  {
+    "id": "Q_MOD_A_143",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân suy rộng sau: $I = \\int_{2}^{\\infty} \\frac{1}{x^2} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{1}{2}$",
+      "B. Tích phân phân kỳ",
+      "C. $I = 2$",
+      "D. $I = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tính giới hạn: $I = \\lim_{b \\to \\infty} \\int_{2}^{b} x^{-2} \\, dx = \\lim_{b \\to \\infty} \\left[-\\frac{1}{x}\\right]_{2}^{b} = \\lim_{b \\to \\infty} \\left(-\\frac{1}{b} + \\frac{1}{2}\\right) = \\frac{1}{2}$."
+  },
+  {
+    "id": "Q_MOD_A_144",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân suy rộng sau: $I = \\int_0^{\\infty} e^{-4x} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{1}{4}$",
+      "B. $I = 4$",
+      "C. Tích phân phân kỳ",
+      "D. $I = 1$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tính giới hạn: $I = \\lim_{b \\to \\infty} \\int_0^b e^{-4x} \\, dx = \\lim_{b \\to \\infty} \\left[-\\frac{1}{4}e^{-4x}\\right]_0^b = \\lim_{b \\to \\infty} \\left(-\\frac{1}{4}e^{-4b} + \\frac{1}{4}\\right) = \\frac{1}{4}$."
+  },
+  {
+    "id": "Q_MOD_A_145",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Xác định tính hội tụ và tính giá trị tích phân suy rộng: $I = \\int_0^{1} \\frac{1}{\\sqrt{x}} \\, dx$.",
+    "options": [
+      "A. Tích phân hội tụ và $I = 2$",
+      "B. Tích phân phân kỳ",
+      "C. Tích phân hội tụ và $I = 1$",
+      "D. Tích phân hội tụ và $I = \\frac{1}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tích phân có điểm bất thường tại $x = 0$. Tính giới hạn: $I = \\lim_{{a \\to 0^+}} \\int_a^1 x^{-1/2} dx = \\lim_{{a \\to 0^+}} [2\\sqrt{x}]_a^1 = \\lim_{{a \\to 0^+}} (2 - 2\\sqrt{a}) = 2$."
+  },
+  {
+    "id": "Q_MOD_A_146",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân suy rộng sau: $I = \\int_{2}^{\\infty} \\frac{1}{x^2} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{1}{2}$",
+      "B. Tích phân phân kỳ",
+      "C. $I = 2$",
+      "D. $I = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tính giới hạn: $I = \\lim_{b \\to \\infty} \\int_{2}^{b} x^{-2} \\, dx = \\lim_{b \\to \\infty} \\left[-\\frac{1}{x}\\right]_{2}^{b} = \\lim_{b \\to \\infty} \\left(-\\frac{1}{b} + \\frac{1}{2}\\right) = \\frac{1}{2}$."
+  },
+  {
+    "id": "Q_MOD_A_147",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân suy rộng sau: $I = \\int_0^{\\infty} e^{-4x} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{1}{4}$",
+      "B. $I = 4$",
+      "C. Tích phân phân kỳ",
+      "D. $I = 1$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tính giới hạn: $I = \\lim_{b \\to \\infty} \\int_0^b e^{-4x} \\, dx = \\lim_{b \\to \\infty} \\left[-\\frac{1}{4}e^{-4x}\\right]_0^b = \\lim_{b \\to \\infty} \\left(-\\frac{1}{4}e^{-4b} + \\frac{1}{4}\\right) = \\frac{1}{4}$."
+  },
+  {
+    "id": "Q_MOD_A_148",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Xác định tính hội tụ và tính giá trị tích phân suy rộng: $I = \\int_0^{1} \\frac{1}{\\sqrt{x}} \\, dx$.",
+    "options": [
+      "A. Tích phân hội tụ và $I = 2$",
+      "B. Tích phân phân kỳ",
+      "C. Tích phân hội tụ và $I = 1$",
+      "D. Tích phân hội tụ và $I = \\frac{1}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tích phân có điểm bất thường tại $x = 0$. Tính giới hạn: $I = \\lim_{{a \\to 0^+}} \\int_a^1 x^{-1/2} dx = \\lim_{{a \\to 0^+}} [2\\sqrt{x}]_a^1 = \\lim_{{a \\to 0^+}} (2 - 2\\sqrt{a}) = 2$."
+  },
+  {
+    "id": "Q_MOD_A_149",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân suy rộng sau: $I = \\int_{2}^{\\infty} \\frac{1}{x^2} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{1}{2}$",
+      "B. Tích phân phân kỳ",
+      "C. $I = 2$",
+      "D. $I = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tính giới hạn: $I = \\lim_{b \\to \\infty} \\int_{2}^{b} x^{-2} \\, dx = \\lim_{b \\to \\infty} \\left[-\\frac{1}{x}\\right]_{2}^{b} = \\lim_{b \\to \\infty} \\left(-\\frac{1}{b} + \\frac{1}{2}\\right) = \\frac{1}{2}$."
+  },
+  {
+    "id": "Q_MOD_A_150",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân suy rộng sau: $I = \\int_0^{\\infty} e^{-4x} \\, dx$.",
+    "options": [
+      "A. $I = \\frac{1}{4}$",
+      "B. $I = 4$",
+      "C. Tích phân phân kỳ",
+      "D. $I = 1$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tính giới hạn: $I = \\lim_{b \\to \\infty} \\int_0^b e^{-4x} \\, dx = \\lim_{b \\to \\infty} \\left[-\\frac{1}{4}e^{-4x}\\right]_0^b = \\lim_{b \\to \\infty} \\left(-\\frac{1}{4}e^{-4b} + \\frac{1}{4}\\right) = \\frac{1}{4}$."
+  },
+  {
+    "id": "Q_MOD_A_151",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp trên miền chữ nhật $D = [0, 1] \\times [0, 2]$: $I = \\iint_D x y \\, dx dy$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = 3$",
+      "C. $I = 0.5$",
+      "D. $I = 2$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tích phân hai lớp trên miền chữ nhật có thể tách thành tích hai tích phân một lớp độc lập: $I = \\left(\\int_0^{1} x \\, dx\\right) \\times \\left(\\int_0^{2} y \\, dy\\right) = \\left[\\frac{x^2}{2}\\right]_0^{1} \\times \\left[\\frac{y^2}{2}\\right]_0^{2} = \\frac{1}{2} \\times \\frac{4}{2} = \\frac{1}{2} \\times 2 = 1$."
+  },
+  {
+    "id": "Q_MOD_A_152",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp sau: $I = \\iint_D (x + y) \\, dx dy$ với miền $D = [0, 1] \\times [0, 1]$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = 2$",
+      "C. $I = \\frac{1}{2}$",
+      "D. $I = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Ta tính tích phân lần lượt: $I = \\int_0^1 \\left( \\int_0^1 (x+y) \\, dy \\right) dx = \\int_0^1 \\left[ xy + \\frac{y^2}{2} \\right]_0^1 dx = \\int_0^1 \\left( x + \\frac{1}{2} \\right) dx = \\left[ \\frac{x^2}{2} + \\frac{x}{2} \\right]_0^1 = \\frac{1}{2} + \\frac{1}{2} = 1$."
+  },
+  {
+    "id": "Q_MOD_A_153",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp trên miền chữ nhật $D = [0, 3] \\times [0, 2]$: $I = \\iint_D x y \\, dx dy$.",
+    "options": [
+      "A. $I = 9$",
+      "B. $I = 11$",
+      "C. $I = 4.5$",
+      "D. $I = 18$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tích phân hai lớp trên miền chữ nhật có thể tách thành tích hai tích phân một lớp độc lập: $I = \\left(\\int_0^{3} x \\, dx\\right) \\times \\left(\\int_0^{2} y \\, dy\\right) = \\left[\\frac{x^2}{2}\\right]_0^{3} \\times \\left[\\frac{y^2}{2}\\right]_0^{2} = \\frac{9}{2} \\times \\frac{4}{2} = \\frac{9}{2} \\times 2 = 9$."
+  },
+  {
+    "id": "Q_MOD_A_154",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp sau: $I = \\iint_D (x + y) \\, dx dy$ với miền $D = [0, 1] \\times [0, 1]$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = 2$",
+      "C. $I = \\frac{1}{2}$",
+      "D. $I = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Ta tính tích phân lần lượt: $I = \\int_0^1 \\left( \\int_0^1 (x+y) \\, dy \\right) dx = \\int_0^1 \\left[ xy + \\frac{y^2}{2} \\right]_0^1 dx = \\int_0^1 \\left( x + \\frac{1}{2} \\right) dx = \\left[ \\frac{x^2}{2} + \\frac{x}{2} \\right]_0^1 = \\frac{1}{2} + \\frac{1}{2} = 1$."
+  },
+  {
+    "id": "Q_MOD_A_155",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp trên miền chữ nhật $D = [0, 2] \\times [0, 2]$: $I = \\iint_D x y \\, dx dy$.",
+    "options": [
+      "A. $I = 4$",
+      "B. $I = 6$",
+      "C. $I = 2.0$",
+      "D. $I = 8$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tích phân hai lớp trên miền chữ nhật có thể tách thành tích hai tích phân một lớp độc lập: $I = \\left(\\int_0^{2} x \\, dx\\right) \\times \\left(\\int_0^{2} y \\, dy\\right) = \\left[\\frac{x^2}{2}\\right]_0^{2} \\times \\left[\\frac{y^2}{2}\\right]_0^{2} = \\frac{4}{2} \\times \\frac{4}{2} = \\frac{4}{2} \\times 2 = 4$."
+  },
+  {
+    "id": "Q_MOD_A_156",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp sau: $I = \\iint_D (x + y) \\, dx dy$ với miền $D = [0, 1] \\times [0, 1]$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = 2$",
+      "C. $I = \\frac{1}{2}$",
+      "D. $I = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Ta tính tích phân lần lượt: $I = \\int_0^1 \\left( \\int_0^1 (x+y) \\, dy \\right) dx = \\int_0^1 \\left[ xy + \\frac{y^2}{2} \\right]_0^1 dx = \\int_0^1 \\left( x + \\frac{1}{2} \\right) dx = \\left[ \\frac{x^2}{2} + \\frac{x}{2} \\right]_0^1 = \\frac{1}{2} + \\frac{1}{2} = 1$."
+  },
+  {
+    "id": "Q_MOD_A_157",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp trên miền chữ nhật $D = [0, 1] \\times [0, 2]$: $I = \\iint_D x y \\, dx dy$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = 3$",
+      "C. $I = 0.5$",
+      "D. $I = 2$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tích phân hai lớp trên miền chữ nhật có thể tách thành tích hai tích phân một lớp độc lập: $I = \\left(\\int_0^{1} x \\, dx\\right) \\times \\left(\\int_0^{2} y \\, dy\\right) = \\left[\\frac{x^2}{2}\\right]_0^{1} \\times \\left[\\frac{y^2}{2}\\right]_0^{2} = \\frac{1}{2} \\times \\frac{4}{2} = \\frac{1}{2} \\times 2 = 1$."
+  },
+  {
+    "id": "Q_MOD_A_158",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp sau: $I = \\iint_D (x + y) \\, dx dy$ với miền $D = [0, 1] \\times [0, 1]$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = 2$",
+      "C. $I = \\frac{1}{2}$",
+      "D. $I = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Ta tính tích phân lần lượt: $I = \\int_0^1 \\left( \\int_0^1 (x+y) \\, dy \\right) dx = \\int_0^1 \\left[ xy + \\frac{y^2}{2} \\right]_0^1 dx = \\int_0^1 \\left( x + \\frac{1}{2} \\right) dx = \\left[ \\frac{x^2}{2} + \\frac{x}{2} \\right]_0^1 = \\frac{1}{2} + \\frac{1}{2} = 1$."
+  },
+  {
+    "id": "Q_MOD_A_159",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp trên miền chữ nhật $D = [0, 3] \\times [0, 2]$: $I = \\iint_D x y \\, dx dy$.",
+    "options": [
+      "A. $I = 9$",
+      "B. $I = 11$",
+      "C. $I = 4.5$",
+      "D. $I = 18$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tích phân hai lớp trên miền chữ nhật có thể tách thành tích hai tích phân một lớp độc lập: $I = \\left(\\int_0^{3} x \\, dx\\right) \\times \\left(\\int_0^{2} y \\, dy\\right) = \\left[\\frac{x^2}{2}\\right]_0^{3} \\times \\left[\\frac{y^2}{2}\\right]_0^{2} = \\frac{9}{2} \\times \\frac{4}{2} = \\frac{9}{2} \\times 2 = 9$."
+  },
+  {
+    "id": "Q_MOD_A_160",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp sau: $I = \\iint_D (x + y) \\, dx dy$ với miền $D = [0, 1] \\times [0, 1]$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = 2$",
+      "C. $I = \\frac{1}{2}$",
+      "D. $I = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Ta tính tích phân lần lượt: $I = \\int_0^1 \\left( \\int_0^1 (x+y) \\, dy \\right) dx = \\int_0^1 \\left[ xy + \\frac{y^2}{2} \\right]_0^1 dx = \\int_0^1 \\left( x + \\frac{1}{2} \\right) dx = \\left[ \\frac{x^2}{2} + \\frac{x}{2} \\right]_0^1 = \\frac{1}{2} + \\frac{1}{2} = 1$."
+  },
+  {
+    "id": "Q_MOD_A_161",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp trên miền chữ nhật $D = [0, 2] \\times [0, 2]$: $I = \\iint_D x y \\, dx dy$.",
+    "options": [
+      "A. $I = 4$",
+      "B. $I = 6$",
+      "C. $I = 2.0$",
+      "D. $I = 8$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tích phân hai lớp trên miền chữ nhật có thể tách thành tích hai tích phân một lớp độc lập: $I = \\left(\\int_0^{2} x \\, dx\\right) \\times \\left(\\int_0^{2} y \\, dy\\right) = \\left[\\frac{x^2}{2}\\right]_0^{2} \\times \\left[\\frac{y^2}{2}\\right]_0^{2} = \\frac{4}{2} \\times \\frac{4}{2} = \\frac{4}{2} \\times 2 = 4$."
+  },
+  {
+    "id": "Q_MOD_A_162",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp sau: $I = \\iint_D (x + y) \\, dx dy$ với miền $D = [0, 1] \\times [0, 1]$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = 2$",
+      "C. $I = \\frac{1}{2}$",
+      "D. $I = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Ta tính tích phân lần lượt: $I = \\int_0^1 \\left( \\int_0^1 (x+y) \\, dy \\right) dx = \\int_0^1 \\left[ xy + \\frac{y^2}{2} \\right]_0^1 dx = \\int_0^1 \\left( x + \\frac{1}{2} \\right) dx = \\left[ \\frac{x^2}{2} + \\frac{x}{2} \\right]_0^1 = \\frac{1}{2} + \\frac{1}{2} = 1$."
+  },
+  {
+    "id": "Q_MOD_A_163",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp trên miền chữ nhật $D = [0, 1] \\times [0, 2]$: $I = \\iint_D x y \\, dx dy$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = 3$",
+      "C. $I = 0.5$",
+      "D. $I = 2$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tích phân hai lớp trên miền chữ nhật có thể tách thành tích hai tích phân một lớp độc lập: $I = \\left(\\int_0^{1} x \\, dx\\right) \\times \\left(\\int_0^{2} y \\, dy\\right) = \\left[\\frac{x^2}{2}\\right]_0^{1} \\times \\left[\\frac{y^2}{2}\\right]_0^{2} = \\frac{1}{2} \\times \\frac{4}{2} = \\frac{1}{2} \\times 2 = 1$."
+  },
+  {
+    "id": "Q_MOD_A_164",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp sau: $I = \\iint_D (x + y) \\, dx dy$ với miền $D = [0, 1] \\times [0, 1]$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = 2$",
+      "C. $I = \\frac{1}{2}$",
+      "D. $I = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Ta tính tích phân lần lượt: $I = \\int_0^1 \\left( \\int_0^1 (x+y) \\, dy \\right) dx = \\int_0^1 \\left[ xy + \\frac{y^2}{2} \\right]_0^1 dx = \\int_0^1 \\left( x + \\frac{1}{2} \\right) dx = \\left[ \\frac{x^2}{2} + \\frac{x}{2} \\right]_0^1 = \\frac{1}{2} + \\frac{1}{2} = 1$."
+  },
+  {
+    "id": "Q_MOD_A_165",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp trên miền chữ nhật $D = [0, 3] \\times [0, 2]$: $I = \\iint_D x y \\, dx dy$.",
+    "options": [
+      "A. $I = 9$",
+      "B. $I = 11$",
+      "C. $I = 4.5$",
+      "D. $I = 18$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tích phân hai lớp trên miền chữ nhật có thể tách thành tích hai tích phân một lớp độc lập: $I = \\left(\\int_0^{3} x \\, dx\\right) \\times \\left(\\int_0^{2} y \\, dy\\right) = \\left[\\frac{x^2}{2}\\right]_0^{3} \\times \\left[\\frac{y^2}{2}\\right]_0^{2} = \\frac{9}{2} \\times \\frac{4}{2} = \\frac{9}{2} \\times 2 = 9$."
+  },
+  {
+    "id": "Q_MOD_A_166",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp sau: $I = \\iint_D (x + y) \\, dx dy$ với miền $D = [0, 1] \\times [0, 1]$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = 2$",
+      "C. $I = \\frac{1}{2}$",
+      "D. $I = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Ta tính tích phân lần lượt: $I = \\int_0^1 \\left( \\int_0^1 (x+y) \\, dy \\right) dx = \\int_0^1 \\left[ xy + \\frac{y^2}{2} \\right]_0^1 dx = \\int_0^1 \\left( x + \\frac{1}{2} \\right) dx = \\left[ \\frac{x^2}{2} + \\frac{x}{2} \\right]_0^1 = \\frac{1}{2} + \\frac{1}{2} = 1$."
+  },
+  {
+    "id": "Q_MOD_A_167",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp trên miền chữ nhật $D = [0, 2] \\times [0, 2]$: $I = \\iint_D x y \\, dx dy$.",
+    "options": [
+      "A. $I = 4$",
+      "B. $I = 6$",
+      "C. $I = 2.0$",
+      "D. $I = 8$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tích phân hai lớp trên miền chữ nhật có thể tách thành tích hai tích phân một lớp độc lập: $I = \\left(\\int_0^{2} x \\, dx\\right) \\times \\left(\\int_0^{2} y \\, dy\\right) = \\left[\\frac{x^2}{2}\\right]_0^{2} \\times \\left[\\frac{y^2}{2}\\right]_0^{2} = \\frac{4}{2} \\times \\frac{4}{2} = \\frac{4}{2} \\times 2 = 4$."
+  },
+  {
+    "id": "Q_MOD_A_168",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp sau: $I = \\iint_D (x + y) \\, dx dy$ với miền $D = [0, 1] \\times [0, 1]$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = 2$",
+      "C. $I = \\frac{1}{2}$",
+      "D. $I = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Ta tính tích phân lần lượt: $I = \\int_0^1 \\left( \\int_0^1 (x+y) \\, dy \\right) dx = \\int_0^1 \\left[ xy + \\frac{y^2}{2} \\right]_0^1 dx = \\int_0^1 \\left( x + \\frac{1}{2} \\right) dx = \\left[ \\frac{x^2}{2} + \\frac{x}{2} \\right]_0^1 = \\frac{1}{2} + \\frac{1}{2} = 1$."
+  },
+  {
+    "id": "Q_MOD_A_169",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp trên miền chữ nhật $D = [0, 1] \\times [0, 2]$: $I = \\iint_D x y \\, dx dy$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = 3$",
+      "C. $I = 0.5$",
+      "D. $I = 2$"
+    ],
+    "correct_option": "A",
+    "explanation": "Tích phân hai lớp trên miền chữ nhật có thể tách thành tích hai tích phân một lớp độc lập: $I = \\left(\\int_0^{1} x \\, dx\\right) \\times \\left(\\int_0^{2} y \\, dy\\right) = \\left[\\frac{x^2}{2}\\right]_0^{1} \\times \\left[\\frac{y^2}{2}\\right]_0^{2} = \\frac{1}{2} \\times \\frac{4}{2} = \\frac{1}{2} \\times 2 = 1$."
+  },
+  {
+    "id": "Q_MOD_A_170",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp sau: $I = \\iint_D (x + y) \\, dx dy$ với miền $D = [0, 1] \\times [0, 1]$.",
+    "options": [
+      "A. $I = 1$",
+      "B. $I = 2$",
+      "C. $I = \\frac{1}{2}$",
+      "D. $I = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Ta tính tích phân lần lượt: $I = \\int_0^1 \\left( \\int_0^1 (x+y) \\, dy \\right) dx = \\int_0^1 \\left[ xy + \\frac{y^2}{2} \\right]_0^1 dx = \\int_0^1 \\left( x + \\frac{1}{2} \\right) dx = \\left[ \\frac{x^2}{2} + \\frac{x}{2} \\right]_0^1 = \\frac{1}{2} + \\frac{1}{2} = 1$."
+  },
+  {
+    "id": "Q_MOD_A_171",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính diện tích miền $D$ giới hạn bởi hình tròn $x^2 + y^2 \\leq 16$ bằng cách sử dụng tích phân hai lớp $S = \\iint_D dx dy$.",
+    "options": [
+      "A. $S = 16\\pi$",
+      "B. $S = 8\\pi$",
+      "C. $S = 16\\pi^2$",
+      "D. $S = \\frac{16\\pi}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Chuyển sang tọa độ cực với $r \\in [0, 4]$ và $\\theta \\in [0, 2\\pi]$, ta có: $S = \\int_0^{2\\pi} d\\theta \\int_0^{4} r \\, dr = 2\\pi \\left[\\frac{r^2}{2}\\right]_0^{4} = 2\\pi \\frac{16}{2} = 16\\pi$."
+  },
+  {
+    "id": "Q_MOD_A_172",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp sau bằng cách chuyển sang tọa độ cực: $I = \\iint_D (x^2 + y^2) \\, dx dy$ với miền $D$ là hình tròn đơn vị $x^2 + y^2 \\leq 1$.",
+    "options": [
+      "A. $I = \\frac{\\pi}{2}$",
+      "B. $I = \\pi$",
+      "C. $I = 2\\pi$",
+      "D. $I = \\frac{\\pi}{4}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Đặt $x = r\\cos\\theta$, $y = r\\sin\\theta$, miền tích phân trở thành $r \\in [0, 1]$, $\\theta \\in [0, 2\\pi]$. Khi đó: $I = \\int_0^{2\\pi} d\\theta \\int_0^1 r^2 \\cdot r \\, dr = 2\\pi \\left[\\frac{r^4}{4}\\right]_0^1 = 2\\pi \\frac{1}{4} = \\frac{\\pi}{2}$."
+  },
+  {
+    "id": "Q_MOD_A_173",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Khi chuyển tích phân hai lớp từ hệ tọa độ Đề-các $(x, y)$ sang hệ tọa độ cực $(r, \\theta)$ với công thức đổi biến $x = r\\cos\\theta$, $y = r\\sin\\theta$, phần tử diện tích $dx dy$ được thay thế bằng biểu thức nào sau đây?",
+    "options": [
+      "A. $r \\, dr d\\theta$",
+      "B. $dr d\\theta$",
+      "C. $r^2 dr d\\theta$",
+      "D. $\\frac{1}{r} dr d\\theta$"
+    ],
+    "correct_option": "A",
+    "explanation": "Trong phép đổi biến số tọa độ cực, định thức Jacobi là $J = \\det \\begin{bmatrix} \\cos\\theta & -r\\sin\\theta \\\\ \\sin\\theta & r\\cos\\theta \\end{bmatrix} = r$. Do đó, vi phân diện tích biến đổi thành: $dx dy = |J| dr d\\theta = r dr d\\theta$."
+  },
+  {
+    "id": "Q_MOD_A_174",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính diện tích miền $D$ giới hạn bởi hình tròn $x^2 + y^2 \\leq 16$ bằng cách sử dụng tích phân hai lớp $S = \\iint_D dx dy$.",
+    "options": [
+      "A. $S = 16\\pi$",
+      "B. $S = 8\\pi$",
+      "C. $S = 16\\pi^2$",
+      "D. $S = \\frac{16\\pi}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Chuyển sang tọa độ cực với $r \\in [0, 4]$ và $\\theta \\in [0, 2\\pi]$, ta có: $S = \\int_0^{2\\pi} d\\theta \\int_0^{4} r \\, dr = 2\\pi \\left[\\frac{r^2}{2}\\right]_0^{4} = 2\\pi \\frac{16}{2} = 16\\pi$."
+  },
+  {
+    "id": "Q_MOD_A_175",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp sau bằng cách chuyển sang tọa độ cực: $I = \\iint_D (x^2 + y^2) \\, dx dy$ với miền $D$ là hình tròn đơn vị $x^2 + y^2 \\leq 1$.",
+    "options": [
+      "A. $I = \\frac{\\pi}{2}$",
+      "B. $I = \\pi$",
+      "C. $I = 2\\pi$",
+      "D. $I = \\frac{\\pi}{4}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Đặt $x = r\\cos\\theta$, $y = r\\sin\\theta$, miền tích phân trở thành $r \\in [0, 1]$, $\\theta \\in [0, 2\\pi]$. Khi đó: $I = \\int_0^{2\\pi} d\\theta \\int_0^1 r^2 \\cdot r \\, dr = 2\\pi \\left[\\frac{r^4}{4}\\right]_0^1 = 2\\pi \\frac{1}{4} = \\frac{\\pi}{2}$."
+  },
+  {
+    "id": "Q_MOD_A_176",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Khi chuyển tích phân hai lớp từ hệ tọa độ Đề-các $(x, y)$ sang hệ tọa độ cực $(r, \\theta)$ với công thức đổi biến $x = r\\cos\\theta$, $y = r\\sin\\theta$, phần tử diện tích $dx dy$ được thay thế bằng biểu thức nào sau đây?",
+    "options": [
+      "A. $r \\, dr d\\theta$",
+      "B. $dr d\\theta$",
+      "C. $r^2 dr d\\theta$",
+      "D. $\\frac{1}{r} dr d\\theta$"
+    ],
+    "correct_option": "A",
+    "explanation": "Trong phép đổi biến số tọa độ cực, định thức Jacobi là $J = \\det \\begin{bmatrix} \\cos\\theta & -r\\sin\\theta \\\\ \\sin\\theta & r\\cos\\theta \\end{bmatrix} = r$. Do đó, vi phân diện tích biến đổi thành: $dx dy = |J| dr d\\theta = r dr d\\theta$."
+  },
+  {
+    "id": "Q_MOD_A_177",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính diện tích miền $D$ giới hạn bởi hình tròn $x^2 + y^2 \\leq 16$ bằng cách sử dụng tích phân hai lớp $S = \\iint_D dx dy$.",
+    "options": [
+      "A. $S = 16\\pi$",
+      "B. $S = 8\\pi$",
+      "C. $S = 16\\pi^2$",
+      "D. $S = \\frac{16\\pi}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Chuyển sang tọa độ cực với $r \\in [0, 4]$ và $\\theta \\in [0, 2\\pi]$, ta có: $S = \\int_0^{2\\pi} d\\theta \\int_0^{4} r \\, dr = 2\\pi \\left[\\frac{r^2}{2}\\right]_0^{4} = 2\\pi \\frac{16}{2} = 16\\pi$."
+  },
+  {
+    "id": "Q_MOD_A_178",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp sau bằng cách chuyển sang tọa độ cực: $I = \\iint_D (x^2 + y^2) \\, dx dy$ với miền $D$ là hình tròn đơn vị $x^2 + y^2 \\leq 1$.",
+    "options": [
+      "A. $I = \\frac{\\pi}{2}$",
+      "B. $I = \\pi$",
+      "C. $I = 2\\pi$",
+      "D. $I = \\frac{\\pi}{4}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Đặt $x = r\\cos\\theta$, $y = r\\sin\\theta$, miền tích phân trở thành $r \\in [0, 1]$, $\\theta \\in [0, 2\\pi]$. Khi đó: $I = \\int_0^{2\\pi} d\\theta \\int_0^1 r^2 \\cdot r \\, dr = 2\\pi \\left[\\frac{r^4}{4}\\right]_0^1 = 2\\pi \\frac{1}{4} = \\frac{\\pi}{2}$."
+  },
+  {
+    "id": "Q_MOD_A_179",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Khi chuyển tích phân hai lớp từ hệ tọa độ Đề-các $(x, y)$ sang hệ tọa độ cực $(r, \\theta)$ với công thức đổi biến $x = r\\cos\\theta$, $y = r\\sin\\theta$, phần tử diện tích $dx dy$ được thay thế bằng biểu thức nào sau đây?",
+    "options": [
+      "A. $r \\, dr d\\theta$",
+      "B. $dr d\\theta$",
+      "C. $r^2 dr d\\theta$",
+      "D. $\\frac{1}{r} dr d\\theta$"
+    ],
+    "correct_option": "A",
+    "explanation": "Trong phép đổi biến số tọa độ cực, định thức Jacobi là $J = \\det \\begin{bmatrix} \\cos\\theta & -r\\sin\\theta \\\\ \\sin\\theta & r\\cos\\theta \\end{bmatrix} = r$. Do đó, vi phân diện tích biến đổi thành: $dx dy = |J| dr d\\theta = r dr d\\theta$."
+  },
+  {
+    "id": "Q_MOD_A_180",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính diện tích miền $D$ giới hạn bởi hình tròn $x^2 + y^2 \\leq 16$ bằng cách sử dụng tích phân hai lớp $S = \\iint_D dx dy$.",
+    "options": [
+      "A. $S = 16\\pi$",
+      "B. $S = 8\\pi$",
+      "C. $S = 16\\pi^2$",
+      "D. $S = \\frac{16\\pi}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Chuyển sang tọa độ cực với $r \\in [0, 4]$ và $\\theta \\in [0, 2\\pi]$, ta có: $S = \\int_0^{2\\pi} d\\theta \\int_0^{4} r \\, dr = 2\\pi \\left[\\frac{r^2}{2}\\right]_0^{4} = 2\\pi \\frac{16}{2} = 16\\pi$."
+  },
+  {
+    "id": "Q_MOD_A_181",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp sau bằng cách chuyển sang tọa độ cực: $I = \\iint_D (x^2 + y^2) \\, dx dy$ với miền $D$ là hình tròn đơn vị $x^2 + y^2 \\leq 1$.",
+    "options": [
+      "A. $I = \\frac{\\pi}{2}$",
+      "B. $I = \\pi$",
+      "C. $I = 2\\pi$",
+      "D. $I = \\frac{\\pi}{4}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Đặt $x = r\\cos\\theta$, $y = r\\sin\\theta$, miền tích phân trở thành $r \\in [0, 1]$, $\\theta \\in [0, 2\\pi]$. Khi đó: $I = \\int_0^{2\\pi} d\\theta \\int_0^1 r^2 \\cdot r \\, dr = 2\\pi \\left[\\frac{r^4}{4}\\right]_0^1 = 2\\pi \\frac{1}{4} = \\frac{\\pi}{2}$."
+  },
+  {
+    "id": "Q_MOD_A_182",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Khi chuyển tích phân hai lớp từ hệ tọa độ Đề-các $(x, y)$ sang hệ tọa độ cực $(r, \\theta)$ với công thức đổi biến $x = r\\cos\\theta$, $y = r\\sin\\theta$, phần tử diện tích $dx dy$ được thay thế bằng biểu thức nào sau đây?",
+    "options": [
+      "A. $r \\, dr d\\theta$",
+      "B. $dr d\\theta$",
+      "C. $r^2 dr d\\theta$",
+      "D. $\\frac{1}{r} dr d\\theta$"
+    ],
+    "correct_option": "A",
+    "explanation": "Trong phép đổi biến số tọa độ cực, định thức Jacobi là $J = \\det \\begin{bmatrix} \\cos\\theta & -r\\sin\\theta \\\\ \\sin\\theta & r\\cos\\theta \\end{bmatrix} = r$. Do đó, vi phân diện tích biến đổi thành: $dx dy = |J| dr d\\theta = r dr d\\theta$."
+  },
+  {
+    "id": "Q_MOD_A_183",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính diện tích miền $D$ giới hạn bởi hình tròn $x^2 + y^2 \\leq 16$ bằng cách sử dụng tích phân hai lớp $S = \\iint_D dx dy$.",
+    "options": [
+      "A. $S = 16\\pi$",
+      "B. $S = 8\\pi$",
+      "C. $S = 16\\pi^2$",
+      "D. $S = \\frac{16\\pi}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Chuyển sang tọa độ cực với $r \\in [0, 4]$ và $\\theta \\in [0, 2\\pi]$, ta có: $S = \\int_0^{2\\pi} d\\theta \\int_0^{4} r \\, dr = 2\\pi \\left[\\frac{r^2}{2}\\right]_0^{4} = 2\\pi \\frac{16}{2} = 16\\pi$."
+  },
+  {
+    "id": "Q_MOD_A_184",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính tích phân hai lớp sau bằng cách chuyển sang tọa độ cực: $I = \\iint_D (x^2 + y^2) \\, dx dy$ với miền $D$ là hình tròn đơn vị $x^2 + y^2 \\leq 1$.",
+    "options": [
+      "A. $I = \\frac{\\pi}{2}$",
+      "B. $I = \\pi$",
+      "C. $I = 2\\pi$",
+      "D. $I = \\frac{\\pi}{4}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Đặt $x = r\\cos\\theta$, $y = r\\sin\\theta$, miền tích phân trở thành $r \\in [0, 1]$, $\\theta \\in [0, 2\\pi]$. Khi đó: $I = \\int_0^{2\\pi} d\\theta \\int_0^1 r^2 \\cdot r \\, dr = 2\\pi \\left[\\frac{r^4}{4}\\right]_0^1 = 2\\pi \\frac{1}{4} = \\frac{\\pi}{2}$."
+  },
+  {
+    "id": "Q_MOD_A_185",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Khi chuyển tích phân hai lớp từ hệ tọa độ Đề-các $(x, y)$ sang hệ tọa độ cực $(r, \\theta)$ với công thức đổi biến $x = r\\cos\\theta$, $y = r\\sin\\theta$, phần tử diện tích $dx dy$ được thay thế bằng biểu thức nào sau đây?",
+    "options": [
+      "A. $r \\, dr d\\theta$",
+      "B. $dr d\\theta$",
+      "C. $r^2 dr d\\theta$",
+      "D. $\\frac{1}{r} dr d\\theta$"
+    ],
+    "correct_option": "A",
+    "explanation": "Trong phép đổi biến số tọa độ cực, định thức Jacobi là $J = \\det \\begin{bmatrix} \\cos\\theta & -r\\sin\\theta \\\\ \\sin\\theta & r\\cos\\theta \\end{bmatrix} = r$. Do đó, vi phân diện tích biến đổi thành: $dx dy = |J| dr d\\theta = r dr d\\theta$."
+  },
+  {
+    "id": "Q_MOD_A_186",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính thể tích vật thể tròn xoay thu được khi xoay miền phẳng giới hạn bởi đồ thị hàm số $y = x^2$, trục hoành $Ox$, và đường thẳng $x = 1$ quanh trục hoành $Ox$.",
+    "options": [
+      "A. $V = \\frac{\\pi}{5}$",
+      "B. $V = \\frac{\\pi}{3}$",
+      "C. $V = \\frac{\\pi}{4}$",
+      "D. $V = \\frac{\\pi}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Thể tích được tính bằng công thức: $V = \\pi \\int_0^1 y^2 \\, dx = \\pi \\int_0^1 (x^2)^2 \\, dx = \\pi \\int_0^1 x^4 \\, dx = \\pi \\left[\\frac{x^5}{5}\\right]_0^1 = \\frac{\\pi}{5}$."
+  },
+  {
+    "id": "Q_MOD_A_187",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính diện tích miền phẳng giới hạn bởi đồ thị hàm số $y = \\sin(x)$, trục hoành $Ox$ trên đoạn từ $x = 0$ đến $x = \\pi$.",
+    "options": [
+      "A. $S = 2$",
+      "B. $S = 1$",
+      "C. $S = \\pi$",
+      "D. $S = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Vì $\\sin(x) \\geq 0$ trên đoạn $[0, \\pi]$, diện tích cần tìm là: $S = \\int_0^{\\pi} \\sin(x) \\, dx = [-\\cos(x)]_0^{\\pi} = -\\cos(\\pi) - (-\\cos(0)) = 1 + 1 = 2$."
+  },
+  {
+    "id": "Q_MOD_A_188",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính diện tích miền phẳng giới hạn bởi đồ thị hàm số $y = x^2$ và đường thẳng $y = x$.",
+    "options": [
+      "A. $S = \\frac{1}{6}$",
+      "B. $S = \\frac{1}{3}$",
+      "C. $S = \\frac{1}{2}$",
+      "D. $S = \\frac{1}{12}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Hoành độ giao điểm: $x^2 = x \\Leftrightarrow x = 0$ hoặc $x = 1$. Trên đoạn $[0, 1]$, ta có $x \\geq x^2$. Diện tích được tính bởi công thức: $S = \\int_0^1 (x - x^2) \\, dx = \\left[\\frac{x^2}{2} - \\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$."
+  },
+  {
+    "id": "Q_MOD_A_189",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính thể tích vật thể tròn xoay thu được khi xoay miền phẳng giới hạn bởi đồ thị hàm số $y = x^2$, trục hoành $Ox$, và đường thẳng $x = 1$ quanh trục hoành $Ox$.",
+    "options": [
+      "A. $V = \\frac{\\pi}{5}$",
+      "B. $V = \\frac{\\pi}{3}$",
+      "C. $V = \\frac{\\pi}{4}$",
+      "D. $V = \\frac{\\pi}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Thể tích được tính bằng công thức: $V = \\pi \\int_0^1 y^2 \\, dx = \\pi \\int_0^1 (x^2)^2 \\, dx = \\pi \\int_0^1 x^4 \\, dx = \\pi \\left[\\frac{x^5}{5}\\right]_0^1 = \\frac{\\pi}{5}$."
+  },
+  {
+    "id": "Q_MOD_A_190",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính diện tích miền phẳng giới hạn bởi đồ thị hàm số $y = \\sin(x)$, trục hoành $Ox$ trên đoạn từ $x = 0$ đến $x = \\pi$.",
+    "options": [
+      "A. $S = 2$",
+      "B. $S = 1$",
+      "C. $S = \\pi$",
+      "D. $S = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Vì $\\sin(x) \\geq 0$ trên đoạn $[0, \\pi]$, diện tích cần tìm là: $S = \\int_0^{\\pi} \\sin(x) \\, dx = [-\\cos(x)]_0^{\\pi} = -\\cos(\\pi) - (-\\cos(0)) = 1 + 1 = 2$."
+  },
+  {
+    "id": "Q_MOD_A_191",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính diện tích miền phẳng giới hạn bởi đồ thị hàm số $y = x^2$ và đường thẳng $y = x$.",
+    "options": [
+      "A. $S = \\frac{1}{6}$",
+      "B. $S = \\frac{1}{3}$",
+      "C. $S = \\frac{1}{2}$",
+      "D. $S = \\frac{1}{12}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Hoành độ giao điểm: $x^2 = x \\Leftrightarrow x = 0$ hoặc $x = 1$. Trên đoạn $[0, 1]$, ta có $x \\geq x^2$. Diện tích được tính bởi công thức: $S = \\int_0^1 (x - x^2) \\, dx = \\left[\\frac{x^2}{2} - \\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$."
+  },
+  {
+    "id": "Q_MOD_A_192",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính thể tích vật thể tròn xoay thu được khi xoay miền phẳng giới hạn bởi đồ thị hàm số $y = x^2$, trục hoành $Ox$, và đường thẳng $x = 1$ quanh trục hoành $Ox$.",
+    "options": [
+      "A. $V = \\frac{\\pi}{5}$",
+      "B. $V = \\frac{\\pi}{3}$",
+      "C. $V = \\frac{\\pi}{4}$",
+      "D. $V = \\frac{\\pi}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Thể tích được tính bằng công thức: $V = \\pi \\int_0^1 y^2 \\, dx = \\pi \\int_0^1 (x^2)^2 \\, dx = \\pi \\int_0^1 x^4 \\, dx = \\pi \\left[\\frac{x^5}{5}\\right]_0^1 = \\frac{\\pi}{5}$."
+  },
+  {
+    "id": "Q_MOD_A_193",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính diện tích miền phẳng giới hạn bởi đồ thị hàm số $y = \\sin(x)$, trục hoành $Ox$ trên đoạn từ $x = 0$ đến $x = \\pi$.",
+    "options": [
+      "A. $S = 2$",
+      "B. $S = 1$",
+      "C. $S = \\pi$",
+      "D. $S = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Vì $\\sin(x) \\geq 0$ trên đoạn $[0, \\pi]$, diện tích cần tìm là: $S = \\int_0^{\\pi} \\sin(x) \\, dx = [-\\cos(x)]_0^{\\pi} = -\\cos(\\pi) - (-\\cos(0)) = 1 + 1 = 2$."
+  },
+  {
+    "id": "Q_MOD_A_194",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính diện tích miền phẳng giới hạn bởi đồ thị hàm số $y = x^2$ và đường thẳng $y = x$.",
+    "options": [
+      "A. $S = \\frac{1}{6}$",
+      "B. $S = \\frac{1}{3}$",
+      "C. $S = \\frac{1}{2}$",
+      "D. $S = \\frac{1}{12}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Hoành độ giao điểm: $x^2 = x \\Leftrightarrow x = 0$ hoặc $x = 1$. Trên đoạn $[0, 1]$, ta có $x \\geq x^2$. Diện tích được tính bởi công thức: $S = \\int_0^1 (x - x^2) \\, dx = \\left[\\frac{x^2}{2} - \\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$."
+  },
+  {
+    "id": "Q_MOD_A_195",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính thể tích vật thể tròn xoay thu được khi xoay miền phẳng giới hạn bởi đồ thị hàm số $y = x^2$, trục hoành $Ox$, và đường thẳng $x = 1$ quanh trục hoành $Ox$.",
+    "options": [
+      "A. $V = \\frac{\\pi}{5}$",
+      "B. $V = \\frac{\\pi}{3}$",
+      "C. $V = \\frac{\\pi}{4}$",
+      "D. $V = \\frac{\\pi}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Thể tích được tính bằng công thức: $V = \\pi \\int_0^1 y^2 \\, dx = \\pi \\int_0^1 (x^2)^2 \\, dx = \\pi \\int_0^1 x^4 \\, dx = \\pi \\left[\\frac{x^5}{5}\\right]_0^1 = \\frac{\\pi}{5}$."
+  },
+  {
+    "id": "Q_MOD_A_196",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính diện tích miền phẳng giới hạn bởi đồ thị hàm số $y = \\sin(x)$, trục hoành $Ox$ trên đoạn từ $x = 0$ đến $x = \\pi$.",
+    "options": [
+      "A. $S = 2$",
+      "B. $S = 1$",
+      "C. $S = \\pi$",
+      "D. $S = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Vì $\\sin(x) \\geq 0$ trên đoạn $[0, \\pi]$, diện tích cần tìm là: $S = \\int_0^{\\pi} \\sin(x) \\, dx = [-\\cos(x)]_0^{\\pi} = -\\cos(\\pi) - (-\\cos(0)) = 1 + 1 = 2$."
+  },
+  {
+    "id": "Q_MOD_A_197",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính diện tích miền phẳng giới hạn bởi đồ thị hàm số $y = x^2$ và đường thẳng $y = x$.",
+    "options": [
+      "A. $S = \\frac{1}{6}$",
+      "B. $S = \\frac{1}{3}$",
+      "C. $S = \\frac{1}{2}$",
+      "D. $S = \\frac{1}{12}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Hoành độ giao điểm: $x^2 = x \\Leftrightarrow x = 0$ hoặc $x = 1$. Trên đoạn $[0, 1]$, ta có $x \\geq x^2$. Diện tích được tính bởi công thức: $S = \\int_0^1 (x - x^2) \\, dx = \\left[\\frac{x^2}{2} - \\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$."
+  },
+  {
+    "id": "Q_MOD_A_198",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính thể tích vật thể tròn xoay thu được khi xoay miền phẳng giới hạn bởi đồ thị hàm số $y = x^2$, trục hoành $Ox$, và đường thẳng $x = 1$ quanh trục hoành $Ox$.",
+    "options": [
+      "A. $V = \\frac{\\pi}{5}$",
+      "B. $V = \\frac{\\pi}{3}$",
+      "C. $V = \\frac{\\pi}{4}$",
+      "D. $V = \\frac{\\pi}{2}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Thể tích được tính bằng công thức: $V = \\pi \\int_0^1 y^2 \\, dx = \\pi \\int_0^1 (x^2)^2 \\, dx = \\pi \\int_0^1 x^4 \\, dx = \\pi \\left[\\frac{x^5}{5}\\right]_0^1 = \\frac{\\pi}{5}$."
+  },
+  {
+    "id": "Q_MOD_A_199",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính diện tích miền phẳng giới hạn bởi đồ thị hàm số $y = \\sin(x)$, trục hoành $Ox$ trên đoạn từ $x = 0$ đến $x = \\pi$.",
+    "options": [
+      "A. $S = 2$",
+      "B. $S = 1$",
+      "C. $S = \\pi$",
+      "D. $S = 0$"
+    ],
+    "correct_option": "A",
+    "explanation": "Vì $\\sin(x) \\geq 0$ trên đoạn $[0, \\pi]$, diện tích cần tìm là: $S = \\int_0^{\\pi} \\sin(x) \\, dx = [-\\cos(x)]_0^{\\pi} = -\\cos(\\pi) - (-\\cos(0)) = 1 + 1 = 2$."
+  },
+  {
+    "id": "Q_MOD_A_200",
+    "module_id": "Module_A",
+    "difficulty": "Medium",
+    "tags": [
+      "calculus"
+    ],
+    "content": "Tính diện tích miền phẳng giới hạn bởi đồ thị hàm số $y = x^2$ và đường thẳng $y = x$.",
+    "options": [
+      "A. $S = \\frac{1}{6}$",
+      "B. $S = \\frac{1}{3}$",
+      "C. $S = \\frac{1}{2}$",
+      "D. $S = \\frac{1}{12}$"
+    ],
+    "correct_option": "A",
+    "explanation": "Hoành độ giao điểm: $x^2 = x \\Leftrightarrow x = 0$ hoặc $x = 1$. Trên đoạn $[0, 1]$, ta có $x \\geq x^2$. Diện tích được tính bởi công thức: $S = \\int_0^1 (x - x^2) \\, dx = \\left[\\frac{x^2}{2} - \\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$."
   }
 ];
