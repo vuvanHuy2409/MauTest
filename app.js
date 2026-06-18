@@ -142,6 +142,7 @@ function initQuestions() {
     ...(typeof QUESTIONS_B !== 'undefined' ? QUESTIONS_B : []),
     ...(typeof QUESTIONS_C !== 'undefined' ? QUESTIONS_C : []),
     ...(typeof QUESTIONS_D !== 'undefined' ? QUESTIONS_D : []),
+    ...(typeof QUESTIONS_E !== 'undefined' ? QUESTIONS_E : []),
   ];
   STATE.allQuestions = all;
 }
@@ -179,13 +180,14 @@ function startExam() {
 }
 
 // Select questions with module-weighted distribution.
-// Module A (Math) and Module B (Programming) are prioritized at 35% each.
-// Module C (AI) and Module D (Ethics) each contribute 15%.
+// Module A (Math) 25%, Module B (Programming) 25%, Module E (Calculus) 20%
+// Module C (AI) 15%, Module D (Ethics) 15%.
 // All questions are at Medium difficulty level.
 function selectQuestions(n) {
   const moduleWeights = {
-    Module_A: 0.35,
-    Module_B: 0.35,
+    Module_A: 0.25,
+    Module_B: 0.25,
+    Module_E: 0.20,
     Module_C: 0.15,
     Module_D: 0.15,
   };
@@ -371,7 +373,7 @@ function difficultyLabel(d) {
 }
 
 function moduleLabel(m) {
-  return { Module_A: 'Module A', Module_B: 'Module B', Module_C: 'Module C', Module_D: 'Module D' }[m] || m;
+  return { Module_A: 'Toán học', Module_B: 'Lập trình', Module_C: 'AI', Module_D: 'Đạo đức', Module_E: 'Tích phân' }[m] || m;
 }
 
 // ---------- Answer Selection ----------
@@ -500,7 +502,7 @@ function renderResults() {
   DOM.resultTime.textContent = `${m}:${String(s).padStart(2,'0')}`;
 
   // Per-module breakdown
-  const modules = ['Module_A', 'Module_B', 'Module_C', 'Module_D'];
+  const modules = ['Module_A', 'Module_B', 'Module_C', 'Module_D', 'Module_E'];
   modules.forEach((mod, mi) => {
     const modQs = STATE.examQuestions.map((q, i) => ({ q, i })).filter(x => x.q.module_id === mod);
     let modCorrect = 0;
