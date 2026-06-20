@@ -202,6 +202,16 @@ function selectQuestions(n) {
     selected = selected.concat(pool.slice(0, quota));
   });
 
+  // Backfill if selected questions count is less than requested n (e.g. if a module script failed to load)
+  if (selected.length < n && STATE.allQuestions.length > 0) {
+    const selectedIds = new Set(selected.map(q => q.id));
+    const remainingPool = shuffle(
+      STATE.allQuestions.filter(q => !selectedIds.has(q.id))
+    );
+    const needed = n - selected.length;
+    selected = selected.concat(remainingPool.slice(0, needed));
+  }
+
   const examQs = shuffle(selected).slice(0, n).map(q => {
     // Clone the question object to avoid mutating original state
     const cloned = JSON.parse(JSON.stringify(q));
