@@ -312,6 +312,7 @@ body {
 .module-tag.mod-b { background: #f5f5f7; color: #1d1d1f; border: 1px solid #d2d2d7; }
 .module-tag.mod-c { background: #f5f5f7; color: #1d1d1f; border: 1px solid #d2d2d7; }
 .module-tag.mod-d { background: #f5f5f7; color: #1d1d1f; border: 1px dashed #d2d2d7; }
+.module-tag.mod-e { background: #f5f5f7; color: #1d1d1f; border: 1px solid #d2d2d7; }
 
 .module-card-title {
   font-size: 0.95rem;
@@ -569,6 +570,7 @@ body {
 .module-badge.Module_B { background: #f5f5f7; color: #1d1d1f; border: 1px solid #d2d2d7; }
 .module-badge.Module_C { background: #f5f5f7; color: #1d1d1f; border: 1px solid #d2d2d7; }
 .module-badge.Module_D { background: #f5f5f7; color: #1d1d1f; border: 1px dashed #d2d2d7; }
+.module-badge.Module_E { background: #f5f5f7; color: #1d1d1f; border: 1px solid #d2d2d7; }
 
 .btn-flag {
   display: flex;
@@ -601,6 +603,80 @@ body {
 @keyframes slideIn {
   from { opacity: 0; transform: translateX(12px); }
   to { opacity: 1; transform: translateX(0); }
+}
+
+/* Solution during quiz (in-exam hand-calculation guide) */
+.quiz-solution-wrapper {
+  margin-top: 20px;
+  border-top: 1px solid #e8e8ed;
+  padding-top: 16px;
+}
+
+.btn-toggle-quiz-solution {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  border: 1px solid #c7d9f8;
+  background: #f0f6ff;
+  color: #0071e3;
+  font-family: var(--font-main);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-toggle-quiz-solution:hover {
+  background: #e1eeff;
+  border-color: #0071e3;
+  transform: scale(1.02);
+}
+
+.btn-toggle-quiz-solution.open {
+  background: #0071e3;
+  color: #ffffff;
+  border-color: #0071e3;
+}
+
+.quiz-solution-box {
+  margin-top: 14px;
+  border-radius: var(--radius-lg);
+  border: 1px solid #c7d9f8;
+  background: #f0f6ff;
+  overflow: hidden;
+  animation: slideDown 0.25s ease;
+}
+
+.quiz-solution-body {
+  padding: 18px 20px;
+  font-size: 0.88rem;
+  line-height: 1.85;
+  color: #1a3a5c;
+}
+
+.quiz-solution-body strong {
+  color: #0071e3;
+  font-weight: 700;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+.quiz-solution-body strong:first-child {
+  margin-top: 0;
+}
+
+.quiz-solution-body em {
+  color: #515154;
+  font-style: italic;
+  font-size: 0.82rem;
+  display: block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: rgba(0, 113, 227, 0.06);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid #0071e3;
 }
 
 .question-content {
@@ -888,6 +964,7 @@ body {
 .bar-mod-b { background: #86868b; }
 .bar-mod-c { background: #515154; }
 .bar-mod-d { background: #c1c1c7; }
+.bar-mod-e { background: #3a3a3c; }
 
 /* Review section */
 .review-section {
@@ -1088,6 +1165,93 @@ body {
 .review-explanation strong {
   color: #1d1d1f;
   font-weight: 600;
+}
+
+/* =====================
+   SOLUTION / HƯỚNG DẪN TỪNG BƯỚC
+   ===================== */
+.solution-block {
+  margin-top: 12px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1.5px solid #c7d9f8;
+  background: #f0f6ff;
+  transition: var(--transition);
+}
+
+.solution-toggle-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0071e3;
+  text-align: left;
+  transition: var(--transition);
+}
+.solution-toggle-btn:hover {
+  background: rgba(0, 113, 227, 0.06);
+}
+
+.solution-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.solution-toggle-text {
+  flex: 1;
+}
+.solution-chevron {
+  font-size: 0.7rem;
+  color: #0071e3;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+.solution-block.open .solution-chevron {
+  transform: rotate(180deg);
+}
+
+.solution-content {
+  display: none;
+  border-top: 1px solid #c7d9f8;
+  padding: 18px 20px;
+  animation: slideDown 0.25s ease;
+}
+.solution-block.open .solution-content {
+  display: block;
+}
+
+.solution-steps {
+  font-size: 0.875rem;
+  line-height: 1.85;
+  color: #1a3a5c;
+}
+.solution-steps strong {
+  color: #0071e3;
+  font-weight: 700;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+.solution-steps strong:first-child {
+  margin-top: 0;
+}
+/* Style for tips (emoji 💡) */
+.solution-steps em {
+  color: #515154;
+  font-style: italic;
+  font-size: 0.82rem;
+  display: block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: rgba(0, 113, 227, 0.06);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid #0071e3;
 }
 
 /* Actions */

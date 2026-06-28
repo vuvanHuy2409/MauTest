@@ -4,1699 +4,568 @@ const QUESTIONS_B = [
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "syntax-python"
+      "control-flow",
+      "conditionals"
     ],
-    "content": "Trong Python, lệnh nào dùng để hiển thị dữ liệu ra màn hình?",
+    "content": "Đoạn code sau đây sẽ in ra màn hình từ nào?\n```python\nx = 15\nif x % 3 == 0 and x % 5 == 0:\n    print(\"FizzBuzz\")\nelif x % 3 == 0:\n    print(\"Fizz\")\nelif x % 5 == 0:\n    print(\"Buzz\")\nelse:\n    print(x)\n```",
     "options": [
-      "A. Hàm print()",
-      "B. Hàm input()",
-      "C. Hàm write()",
-      "D. Hàm close()"
+      "A. `Fizz`",
+      "B. `Buzz`",
+      "C. `FizzBuzz`",
+      "D. `15`"
     ],
-    "correct_option": "A",
-    "explanation": "Hàm print() dùng để hiển thị dữ liệu."
+    "correct_option": "C",
+    "explanation": "Giá trị `x = 15` chia hết cho cả 3 và 5. Biểu thức điều kiện trong khối `if` đầu tiên: `x % 3 == 0 and x % 5 == 0` trả về `True`, do đó lệnh `print(\"FizzBuzz\")` được thực thi và toàn bộ các nhánh `elif` và `else` phía sau bị bỏ qua.",
+    "solution": "**Bước 1:** Đánh giá nhánh đầu tiên: `x % 3 == 0` (15 % 3 == 0) là True và `x % 5 == 0` (15 % 5 == 0) là True.\n**Bước 2:** Phép `and` giữa hai giá trị True cho kết quả True.\n**Bước 3:** Khối code của `if` được chọn, in ra `'FizzBuzz'`. Chọn đáp án C."
   },
   {
     "id": "Q_MOD_B_002",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "data-preprocessing"
+      "control-flow",
+      "loops"
     ],
-    "content": "Khi chuẩn bị dữ liệu hình ảnh cho AI, việc chuyển ảnh về kích thước nhỏ hơn nhằm mục đích gì?",
+    "content": "Giá trị cuối cùng của biến `total` sau khi thực hiện đoạn mã dưới đây là bao nhiêu?\n```python\ntotal = 0\nfor i in range(5):\n    total += i\nprint(total)\n```",
     "options": [
-      "A. Giúp máy tính tính toán nhanh hơn.",
-      "B. Giúp máy tính hiển thị đẹp mắt hơn.",
-      "C. Giúp máy tính bảo mật dữ liệu hơn.",
-      "D. Giúp máy tính lưu trữ hình ảnh lâu."
+      "A. 15",
+      "B. 10",
+      "C. 5",
+      "D. 0"
     ],
-    "correct_option": "A",
-    "explanation": "Giảm kích thước ảnh giúp giảm lượng tính toán, từ đó giúp mô hình chạy nhanh hơn và tiết kiệm bộ nhớ."
+    "correct_option": "B",
+    "explanation": "Hàm `range(5)` tạo ra một chuỗi số nguyên bắt đầu từ 0 đến 4 (gồm 0, 1, 2, 3, 4). Vòng lặp cộng dồn các giá trị này vào biến `total`: $0 + 1 + 2 + 3 + 4 = 10$.",
+    "solution": "**Bước 1:** Xác định các giá trị của biến lặp `i`: 0, 1, 2, 3, 4.\n**Bước 2:** Thực hiện cộng dồn từng bước vào `total`:\n- Lần 1: total = 0 + 0 = 0\n- Lần 2: total = 0 + 1 = 1\n- Lần 3: total = 1 + 2 = 3\n- Lần 4: total = 3 + 3 = 6\n- Lần 5: total = 6 + 4 = 10\n**Bước 3:** Kết quả cuối cùng là 10. Chọn B."
   },
   {
     "id": "Q_MOD_B_003",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "data-structures"
+      "control-flow",
+      "loops"
     ],
-    "content": "Cấu trúc dữ liệu Ngăn xếp (Stack) hoạt động theo nguyên tắc nào sau đây?",
+    "content": "Đoạn code sau đây sẽ tạo ra một danh sách chứa những số nào?\n```python\nnums = list(range(1, 10, 2))\nprint(nums)\n```",
     "options": [
-      "A. Vào sau, ra trước (LIFO)",
-      "B. Vào trước, ra trước (FIFO)",
-      "C. Không theo quy tắc nào cả",
-      "D. Vào sau, ra sau cùng nhau"
+      "A. `[1, 3, 5, 7, 9]`",
+      "B. `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`",
+      "C. `[1, 3, 5, 7]`",
+      "D. `[1, 2, 3, 4, 5, 6, 7, 8, 9]`"
     ],
     "correct_option": "A",
-    "explanation": "Ngăn xếp hoạt động theo cơ chế LIFO (Last In First Out), phần tử nào được thêm vào sau cùng sẽ được lấy ra đầu tiên."
+    "explanation": "Cú pháp `range(start, stop, step)` tạo ra dãy số bắt đầu từ `start` (ở đây là 1), tăng thêm lượng bằng `step` (ở đây là 2) ở mỗi bước, và dừng lại trước khi chạm tới hoặc vượt quá `stop` (ở đây là 10). Các giá trị tạo ra là 1, 3, 5, 7, 9. Ép kiểu sang list sẽ cho ra `[1, 3, 5, 7, 9]`.",
+    "solution": "**Bước 1:** Phân tích tham số của `range(1, 10, 2)`:\n- `start` = 1 (bao gồm số này)\n- `stop` = 10 (không bao gồm số này)\n- `step` = 2 (khoảng cách giữa các số liên tiếp)\n**Bước 2:** Bắt đầu từ 1, cộng thêm 2: 1, 3, 5, 7, 9. Số tiếp theo là 11 (lớn hơn cận 10 nên dừng lại).\n**Bước 3:** Chuyển sang dạng danh sách thu được `[1, 3, 5, 7, 9]`. Chọn đáp án A."
   },
   {
     "id": "Q_MOD_B_004",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "syntax-python"
+      "control-flow",
+      "loops"
     ],
-    "content": "Trong Python, phép toán `10 % 3` cho kết quả bằng bao nhiêu?",
+    "content": "Vòng lặp `while` sau sẽ chạy bao nhiêu lần?\n```python\ni = 1\nwhile i < 10:\n    print(i)\n    i *= 2\n```",
     "options": [
-      "A. Kết quả 1",
-      "B. Kết quả 2",
-      "C. Kết quả 3",
-      "D. Kết quả 0"
+      "A. 10 lần",
+      "B. 4 lần",
+      "C. 3 lần",
+      "D. Vòng lặp vô hạn"
     ],
-    "correct_option": "A",
-    "explanation": "10 chia 3 dư 1."
+    "correct_option": "B",
+    "explanation": "Các giá trị của `i` qua từng vòng lặp là:\n- Ban đầu: `i = 1` (1 < 10: Đúng, chạy lần 1, sau đó `i` nhân 2 thành `2`)\n- Lần 2: `i = 2` (2 < 10: Đúng, chạy lần 2, sau đó `i` thành `4`)\n- Lần 3: `i = 4` (4 < 10: Đúng, chạy lần 3, sau đó `i` thành `8`)\n- Lần 4: `i = 8` (8 < 10: Đúng, chạy lần 4, sau đó `i` thành `16`)\n- Sau đó: `i = 16` (16 < 10: Sai, kết thúc vòng lặp).\nTổng cộng vòng lặp thực hiện 4 lần.",
+    "solution": "**Bước 1:** Liệt kê sự thay đổi của biến kiểm tra điều kiện `i` sau mỗi lần lặp.\n**Bước 2:**\n- Vòng 1: i = 1, điều kiện 1 < 10 thỏa mãn.\n- Vòng 2: i = 2, điều kiện 2 < 10 thỏa mãn.\n- Vòng 3: i = 4, điều kiện 4 < 10 thỏa mãn.\n- Vòng 4: i = 8, điều kiện 8 < 10 thỏa mãn.\n- Kết thúc: i = 16, điều kiện 16 < 10 không thỏa mãn, vòng lặp dừng.\n**Bước 3:** Đếm số lần chạy thành công là 4 lần. Chọn B."
   },
   {
     "id": "Q_MOD_B_005",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "data-preprocessing"
+      "control-flow",
+      "loops"
     ],
-    "content": "Khi tập dữ liệu bị thiếu một số ô trống, cách đơn giản nhất để xử lý mà không làm mất cột là gì?",
+    "content": "Câu lệnh nào trong Python dùng để kết thúc vòng lặp ngay lập tức dù cho điều kiện lặp vẫn còn đúng?",
     "options": [
-      "A. Điền giá trị trung bình vào.",
-      "B. Xóa bỏ hoàn toàn cả bảng đó.",
-      "C. Nhân đôi giá trị các ô khác.",
-      "D. Đổi tên của các cột dữ liệu."
+      "A. `continue`",
+      "B. `pass`",
+      "C. `break`",
+      "D. `return`"
     ],
-    "correct_option": "A",
-    "explanation": "Điền giá trị trung bình (mean) hoặc trung vị (median) vào ô trống là một cách đơn giản để xử lý dữ liệu thiếu mà không phải xóa bỏ dữ liệu."
+    "correct_option": "C",
+    "explanation": "Từ khóa `break` dùng để chấm dứt vòng lặp chứa nó ngay lập tức. Câu lệnh `continue` bỏ qua các câu lệnh còn lại trong thân vòng lặp của lượt hiện tại để chuyển sang lượt lặp tiếp theo.",
+    "solution": "**Bước 1:** Định nghĩa chức năng của các lệnh kiểm tra vòng lặp:\n- `break`: Thoát hoàn toàn khỏi vòng lặp.\n- `continue`: Nhảy đến lượt lặp tiếp theo của vòng lặp hiện tại.\n- `pass`: Câu lệnh rỗng không làm gì cả.\n- `return`: Thoát khỏi một hàm (chứ không phải chỉ thoát vòng lặp đơn thuần).\n**Bước 2:** Chọn đáp án C."
   },
   {
     "id": "Q_MOD_B_006",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "algorithms"
+      "control-flow",
+      "loops"
     ],
-    "content": "Để tìm kiếm một từ trong cuốn từ điển đã được sắp xếp theo bảng chữ cái, phương pháp nào nhanh nhất?",
+    "content": "Từ khóa `continue` có tác dụng gì trong vòng lặp?",
     "options": [
-      "A. Tìm kiếm nhị phân (Binary Search).",
-      "B. Tìm kiếm tuyến tính từ trang đầu.",
-      "C. Tìm kiếm ngẫu nhiên các trang bất kỳ.",
-      "D. Tìm kiếm từ trang cuối cùng trở lại."
+      "A. Thoát hoàn toàn khỏi vòng lặp và kết thúc chương trình.",
+      "B. Bỏ qua phần code còn lại bên trong vòng lặp ở lượt hiện tại và chuyển sang lượt lặp tiếp theo.",
+      "C. Tạm dừng thực thi vòng lặp trong một khoảng thời gian.",
+      "D. Lặp lại đoạn code hiện tại vô hạn lần."
     ],
-    "correct_option": "A",
-    "explanation": "Từ điển đã được sắp xếp nên áp dụng tìm kiếm nhị phân (tra giữa rồi thu hẹp phạm vi) là nhanh nhất."
+    "correct_option": "B",
+    "explanation": "Câu lệnh `continue` kết thúc sớm lượt chạy hiện tại của vòng lặp, Python sẽ quay lại đỉnh vòng lặp và bắt đầu lượt lặp kế tiếp.",
+    "solution": "**Bước 1:** Nhớ lại cơ chế của `continue`.\n**Bước 2:** Khi gặp `continue`, bộ biên dịch Python lập tức dừng lượt thực thi hiện tại và nhảy về điều kiện lặp để xét lượt tiếp theo.\n**Bước 3:** Chọn phương án B."
   },
   {
     "id": "Q_MOD_B_007",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "tokenization"
+      "control-flow",
+      "loops"
     ],
-    "content": "Trong xử lý văn bản, bước \"Tokenization\" (Tách từ) dùng để làm gì?",
+    "content": "Đoạn code sau đây sẽ hiển thị kết quả gì?\n```python\nfor i in range(3):\n    if i == 1:\n        break\nelse:\n    print(\"Done\")\n```",
     "options": [
-      "A. Chia văn bản thành các từ nhỏ hơn.",
-      "B. Dịch văn bản sang một ngôn ngữ khác.",
-      "C. Sửa lại tất cả các lỗi chính tả có.",
-      "D. Thay đổi màu sắc của chữ trong câu."
+      "A. Không hiển thị gì.",
+      "B. `Done`",
+      "C. `Done` hiển thị 3 lần.",
+      "D. Báo lỗi cú pháp vì khối `else` không được đi kèm với `for`."
     ],
     "correct_option": "A",
-    "explanation": "Tokenization là quá trình chia nhỏ một đoạn văn bản thành các đơn vị nhỏ hơn (gọi là token), ví dụ tách câu thành các từ."
+    "explanation": "Trong Python, vòng lặp `for/while` có thể đi kèm khối `else`. Khối `else` này chỉ được thực thi khi vòng lặp hoàn thành bình thường mà không bị ngắt bởi câu lệnh `break`. Ở đây khi `i == 1`, vòng lặp gặp `break` và thoát ra, do đó khối `else` không được chạy.",
+    "solution": "**Bước 1:** Xem xét hoạt động của khối `else` trong vòng lặp:\n- Nếu vòng lặp kết thúc do điều kiện kết thúc của vòng lặp tự nhiên, `else` sẽ chạy.\n- Nếu vòng lặp bị ngắt bởi `break`, `else` bị bỏ qua.\n**Bước 2:** Theo dõi luồng lặp:\n- `i = 0`: không có gì xảy ra.\n- `i = 1`: điều kiện `i == 1` thỏa mãn, vòng lặp bị phá vỡ bởi `break`.\n**Bước 3:** Vì vòng lặp bị ngắt bởi `break`, khối `else` không được chạy. Chương trình kết thúc và không in ra gì. Chọn A."
   },
   {
     "id": "Q_MOD_B_008",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "syntax-python"
+      "data-structures",
+      "lists"
     ],
-    "content": "Trong Python, đoạn mã `x = [1, 2, 3]` tạo ra một đối tượng thuộc kiểu dữ liệu nào?",
+    "content": "Cho danh sách `lst = [10, 20, 30, 40, 50]`. Kết quả của phép truy cập phần tử `lst[-2]` là gì?",
     "options": [
-      "A. Kiểu danh sách (List)",
-      "B. Kiểu từ điển (Dict)",
-      "C. Kiểu chuỗi (String)",
-      "D. Kiểu số thực (Float)"
+      "A. 10",
+      "B. 40",
+      "C. 20",
+      "D. Lỗi IndexError"
     ],
-    "correct_option": "A",
-    "explanation": "Cú pháp dấu ngoặc vuông [] được dùng để khởi tạo kiểu dữ liệu danh sách (List) trong Python."
+    "correct_option": "B",
+    "explanation": "Python hỗ trợ truy cập phần tử bằng chỉ số âm (negative indexing). Chỉ số `-1` tương ứng với phần tử cuối cùng (`50`), `-2` tương ứng với phần tử sát cuối cùng (`40`).",
+    "solution": "**Bước 1:** Xác định các chỉ số âm cho các phần tử từ cuối danh sách lên đầu:\n- `50` tương ứng chỉ số -1\n- `40` tương ứng chỉ số -2\n- `30` tương ứng chỉ số -3\n- `20` tương ứng chỉ số -4\n- `10` tương ứng chỉ số -5\n**Bước 2:** Phần tử tại chỉ số `-2` là `40`. Chọn B."
   },
   {
     "id": "Q_MOD_B_009",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "data-structures"
+      "data-structures",
+      "lists"
     ],
-    "content": "Cấu trúc dữ liệu Hàng đợi (Queue) hoạt động theo nguyên tắc nào sau đây?",
+    "content": "Sự khác nhau giữa phương thức `append()` và `extend()` của đối tượng List là gì?",
     "options": [
-      "A. Vào trước, Ra trước (FIFO)",
-      "B. Vào sau, Ra trước (LIFO)",
-      "C. Không theo quy tắc nào cả",
-      "D. Vào sau, Ra sau cùng nhau"
+      "A. `append()` thêm một phần tử vào đầu danh sách, `extend()` thêm vào cuối danh sách.",
+      "B. `append()` thêm toàn bộ đối tượng truyền vào như một phần tử duy nhất, trong khi `extend()` giải nén đối tượng lặp (iterable) rồi thêm từng phần tử của nó vào danh sách.",
+      "C. `append()` chỉ dùng được cho số nguyên, `extend()` dùng được cho chuỗi.",
+      "D. Hai phương thức này hoàn toàn giống nhau."
     ],
-    "correct_option": "A",
-    "explanation": "Hàng đợi hoạt động theo cơ chế FIFO (First In First Out), phần tử nào được thêm vào trước sẽ được lấy ra trước."
+    "correct_option": "B",
+    "explanation": "Phương thức `append(x)` thêm đối tượng `x` vào cuối danh sách dưới dạng một phần tử đơn lẻ (nếu `x` là danh sách `[4, 5]`, danh sách ban đầu sẽ chứa thêm cả danh sách con `[4, 5]`). Còn `extend(t)` nhận một iterable `t` (như list, tuple) và thêm tất cả các phần tử nhỏ bên trong `t` vào cuối danh sách hiện tại.",
+    "solution": "**Bước 1:** So sánh cách hoạt động:\n- `lst = [1, 2]`; `lst.append([3, 4])` -> `[1, 2, [3, 4]]` (Thêm cả list con thành 1 phần tử).\n- `lst = [1, 2]`; `lst.extend([3, 4])` -> `[1, 2, 3, 4]` (Giải phóng và nối các phần tử con).\n**Bước 2:** Do đó đáp án B mô tả chính xác sự khác biệt."
   },
   {
     "id": "Q_MOD_B_010",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "syntax-python"
+      "data-structures",
+      "lists"
     ],
-    "content": "Trong Python, hàm nào sau đây được dùng để loại bỏ khoảng trắng thừa ở hai đầu của chuỗi?",
+    "content": "Cho danh sách `lst = [1, 2, 3]`. Sau khi thực hiện câu lệnh `val = lst.pop(0)`, giá trị của `val` và `lst` lần lượt là gì?",
     "options": [
-      "A. Hàm strip()",
-      "B. Hàm lower()",
-      "C. Hàm upper()",
-      "D. Hàm split()"
+      "A. `val = 1`, `lst = [2, 3]`",
+      "B. `val = 3`, `lst = [1, 2]`",
+      "C. `val = 1`, `lst = [1, 2, 3]`",
+      "D. `val = None`, `lst = [2, 3]`"
     ],
     "correct_option": "A",
-    "explanation": "Hàm strip() trong Python được dùng để xóa các khoảng trắng ở đầu và cuối của một chuỗi ký tự."
+    "explanation": "Phương thức `pop(index)` loại bỏ phần tử ở vị trí `index` khỏi danh sách, đồng thời trả về giá trị của phần tử vừa bị loại bỏ đó. Ở đây phần tử tại chỉ số 0 là `1`, nó được gán vào `val` và danh sách còn lại `[2, 3]`.",
+    "solution": "**Bước 1:** Phương thức `pop(0)` thực hiện xóa phần tử đầu tiên của danh sách.\n**Bước 2:** Phần tử bị xóa là `1`. Giá trị này được trả về và gán cho `val`.\n**Bước 3:** Danh sách `lst` bị biến đổi tại chỗ và trở thành `[2, 3]`. Kết quả: `val = 1`, `lst = [2, 3]` (Đáp án A)."
   },
   {
     "id": "Q_MOD_B_011",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "syntax-python"
+      "data-structures",
+      "lists"
     ],
-    "content": "Khi lập trình Python, lỗi \"IndexError: list index out of range\" thường xảy ra khi nào?",
+    "content": "Sự khác biệt giữa phương thức `lst.sort()` và hàm `sorted(lst)` là gì?",
     "options": [
-      "A. Chỉ số nằm ngoài danh sách.",
-      "B. Kiểu dữ liệu bị khai báo sai.",
-      "C. Tên biến viết không đúng luật.",
-      "D. Hàm chạy bị thiếu tham số vào."
+      "A. `lst.sort()` thay đổi thứ tự trực tiếp trên chính danh sách `lst` (in-place) và trả về `None`, còn `sorted(lst)` trả về một danh sách mới đã sắp xếp mà không làm thay đổi danh sách gốc.",
+      "B. `lst.sort()` chỉ sắp xếp giảm dần, `sorted(lst)` chỉ sắp xếp tăng dần.",
+      "C. `lst.sort()` chỉ dùng được cho chuỗi, `sorted()` dùng cho số nguyên.",
+      "D. Không có sự khác biệt, cả hai đều trả về danh sách mới."
     ],
     "correct_option": "A",
-    "explanation": "Lỗi IndexError xảy ra khi bạn cố gắng truy cập một phần tử trong danh sách bằng chỉ số (index) không tồn tại."
+    "explanation": "`lst.sort()` thực hiện sắp xếp tại chỗ (in-place optimization), làm thay đổi cấu trúc danh sách ban đầu và trả về giá trị đặc biệt `None`. Trong khi đó, `sorted(lst)` là một hàm độc lập (built-in function), nhận vào một danh sách và sao chép nó ra để sắp xếp, sau đó trả về danh sách mới này và giữ nguyên danh sách gốc.",
+    "solution": "**Bước 1:** Phân tích cơ chế bộ nhớ:\n- `lst.sort()` sửa trực tiếp danh sách hiện tại để tiết kiệm bộ nhớ.\n- `sorted(lst)` giữ an toàn cho danh sách gốc bằng cách tạo bản sao mới đã được sắp xếp.\n**Bước 2:** Đáp án A phát biểu chính xác. Chọn A."
   },
   {
     "id": "Q_MOD_B_012",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "data-augmentation"
+      "data-structures",
+      "tuples"
     ],
-    "content": "Kỹ thuật lật ảnh, xoay ảnh ngẫu nhiên để tăng số lượng dữ liệu ảnh huấn luyện được gọi là gì?",
+    "content": "Tại sao Python lại cung cấp kiểu dữ liệu Tuple khi đã có kiểu dữ liệu List?",
     "options": [
-      "A. Tăng cường dữ liệu (Augmentation)",
-      "B. Chuẩn hóa dữ liệu (Normalization)",
-      "C. Làm sạch dữ liệu (Data Cleaning)",
-      "D. Trích xuất dữ liệu (Data Mining)"
+      "A. Tuple có dung lượng lưu trữ không giới hạn.",
+      "B. Tuple là cấu trúc dữ liệu không thể thay đổi sau khi tạo (immutable), giúp đảm bảo an toàn dữ liệu và tối ưu hiệu suất bộ nhớ.",
+      "C. Tuple cho phép lưu trữ nhiều kiểu dữ liệu hỗn hợp hơn List.",
+      "D. Tuple có cú pháp viết dễ hơn List."
     ],
-    "correct_option": "A",
-    "explanation": "Tăng cường dữ liệu (Data Augmentation) là tập hợp các kỹ thuật biến đổi dữ liệu có sẵn để tạo ra dữ liệu mới phong phú hơn."
+    "correct_option": "B",
+    "explanation": "Tính bất biến (immutability) của Tuple giúp bảo vệ dữ liệu khỏi bị vô tình chỉnh sửa trong quá trình truyền tham chiếu qua các hàm. Ngoài ra, nó cho phép Tuple được sử dụng làm khóa (key) trong Dictionary, và giúp Python tối ưu tốc độ truy xuất cũng như giảm bộ nhớ hao phí so với danh sách động (List).",
+    "solution": "**Bước 1:** Xác định tính chất cốt lõi của Tuple: Immutability (Không thể thay đổi giá trị của các phần tử sau khi khai báo).\n**Bước 2:** Lợi thế của Tuple:\n- An toàn dữ liệu (hằng số).\n- Hiệu năng bộ nhớ tốt hơn.\n- Có thể băm (hashable) nên dùng làm key của từ điển được.\n**Bước 3:** Đáp án đúng là B."
   },
   {
     "id": "Q_MOD_B_013",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "syntax-python"
+      "data-structures",
+      "tuples"
     ],
-    "content": "Trong Python, khối lệnh `try-except` được sử dụng nhằm mục đích chính là gì?",
+    "content": "Câu lệnh khai báo nào sau đây sẽ tạo ra một đối tượng kiểu **Tuple** có duy nhất một phần tử?",
     "options": [
-      "A. Xử lý khi chương trình bị lỗi.",
-      "B. Lặp đi lặp lại một khối lệnh.",
-      "C. Định nghĩa một hàm tính toán.",
-      "D. Nhập dữ liệu mới từ bàn phím."
+      "A. `t = (5)`",
+      "B. `t = (5,)`",
+      "C. `t = [5]`",
+      "D. `t = tuple(5)`"
     ],
-    "correct_option": "A",
-    "explanation": "Cú pháp try-except được dùng để bắt và xử lý các ngoại lệ (lỗi) xảy ra trong quá trình chạy chương trình, giúp chương trình không bị dừng đột ngột."
+    "correct_option": "B",
+    "explanation": "Để tạo một Tuple có một phần tử duy nhất, bắt buộc phải có dấu phẩy đi sau phần tử đó (ví dụ `(5,)`). Nếu chỉ viết `(5)`, Python sẽ hiểu dấu ngoặc đơn là dấu ngoặc toán học ưu tiên phép tính và coi đó là số nguyên `5` thông thường.",
+    "solution": "**Bước 1:** Phân tích cú pháp từng phương án:\n- `(5)`: Chỉ là số nguyên 5 đặt trong ngoặc đơn toán học, kiểu `int`.\n- `(5,)`: Dấu phẩy báo hiệu cho trình thông dịch đây là một Tuple chứa 1 phần tử.\n- `[5]`: Khai báo List chứa 1 phần tử.\n- `tuple(5)`: Báo lỗi vì số nguyên không phải là đối tượng lặp để đưa vào hàm `tuple()`.\n**Bước 2:** Chọn B."
   },
   {
     "id": "Q_MOD_B_014",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "data-structures"
+      "data-structures",
+      "dictionaries"
     ],
-    "content": "Trong Python, cấu trúc dữ liệu nào lưu trữ các phần tử dưới dạng các cặp khóa - giá trị?",
+    "content": "Đối tượng nào sau đây **không thể** được sử dụng làm khóa (key) trong Dictionary của Python?",
     "options": [
-      "A. Từ điển (Dictionary)",
-      "B. Danh sách (Python List)",
-      "C. Tập hợp (Python Set)",
-      "D. Bộ giá trị (Py Tuple)"
+      "A. Một chuỗi ký tự (`\"name\"`)",
+      "B. Một số nguyên (`42`)",
+      "C. Một danh sách (`[1, 2]`)",
+      "D. Một tuple (`(1, 2)`)"
     ],
-    "correct_option": "A",
-    "explanation": "Dictionary trong Python lưu trữ dữ liệu dưới dạng key-value (khóa - giá trị), giúp tra cứu nhanh chóng theo khóa."
+    "correct_option": "C",
+    "explanation": "Từ điển (Dictionary) trong Python hoạt động dựa trên bảng băm (hash table). Các khóa bắt buộc phải là đối tượng có thể băm được (hashable), đồng nghĩa chúng phải có tính chất bất biến (immutable). Chuỗi, số, và tuple (nếu bản thân các phần tử của tuple cũng là immutable) đều bất biến nên dùng làm khóa được. Danh sách (`list`) là kiểu dữ liệu có thể thay đổi (mutable), do đó nó không có giá trị băm cố định và không thể dùng làm khóa trong Dictionary (sẽ gây lỗi TypeError: unhashable type).",
+    "solution": "**Bước 1:** Nhớ lại tính chất của key trong Dictionary: Phải là kiểu dữ liệu bất biến (immutable) và có thể băm (hashable).\n**Bước 2:** Phân tích các phương án:\n- Chuỗi (`str`): Immutable -> Dùng làm key được.\n- Số nguyên (`int`): Immutable -> Dùng làm key được.\n- Tuple (`tuple`): Immutable -> Dùng làm key được.\n- List (`list`): Mutable -> Không dùng làm key được.\n**Bước 3:** Chọn đáp án C."
   },
   {
     "id": "Q_MOD_B_015",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "data-preprocessing"
+      "data-structures",
+      "dictionaries"
     ],
-    "content": "Phương pháp \"One-Hot Encoding\" thường dùng để mã hóa loại dữ liệu nào sau đây?",
+    "content": "Cho từ điển `d = {\"a\": 1}`. So sánh hai cách lấy giá trị: `d[\"b\"]` và `d.get(\"b\", 0)`. Kết quả là gì?",
     "options": [
-      "A. Dữ liệu chữ phân loại.",
-      "B. Dữ liệu số nguyên lớn.",
-      "C. Dữ liệu âm thanh lớn.",
-      "D. Dữ liệu hình ảnh màu."
+      "A. Cả hai đều trả về `None`.",
+      "B. `d[\"b\"]` gây lỗi `KeyError`, còn `d.get(\"b\", 0)` trả về giá trị `0`.",
+      "C. `d[\"b\"]` trả về `0`, còn `d.get(\"b\", 0)` gây lỗi `KeyError`.",
+      "D. Cả hai đều gây lỗi cú pháp."
     ],
-    "correct_option": "A",
-    "explanation": "One-Hot Encoding chuyển đổi dữ liệu dạng chữ phân loại (như màu đỏ, xanh, vàng) thành các số nhị phân 0 và 1 để máy tính hiểu được."
+    "correct_option": "B",
+    "explanation": "Truy cập trực tiếp bằng ngoặc vuông `d[key]` sẽ sinh ra ngoại lệ `KeyError` nếu khóa không tồn tại trong từ điển. Trong khi đó, phương thức `get(key, default)` được thiết kế an toàn hơn: nếu khóa không có trong từ điển, nó trả về giá trị mặc định được định nghĩa trước (ở đây là `0`) mà không làm chương trình bị lỗi.",
+    "solution": "**Bước 1:** Đánh giá `d[\"b\"]`. Từ điển `d` chỉ có khóa `\"a\"`, không có khóa `\"b\"`. Truy cập trực tiếp sinh ra ngoại lệ `KeyError`.\n**Bước 2:** Đánh giá `d.get(\"b\", 0)`. Phương thức `get` tìm kiếm khóa `\"b\"`. Vì không tìm thấy, nó trả về tham số thứ hai là `0`.\n**Bước 3:** Chọn phương án B."
   },
   {
     "id": "Q_MOD_B_016",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "algorithms"
+      "data-structures",
+      "dictionaries"
     ],
-    "content": "Thuật toán duyệt lần lượt từng phần tử từ đầu đến cuối danh sách được gọi là gì?",
+    "content": "Phương thức nào dùng để lấy ra danh sách các cặp khóa-giá trị dưới dạng danh sách các tuple từ một Dictionary?",
     "options": [
-      "A. Thuật toán tìm tuyến tính.",
-      "B. Thuật toán tìm nhị phân.",
-      "C. Thuật toán sắp xếp nổi bọt.",
-      "D. Thuật toán sắp xếp chèn lọc."
+      "A. `keys()`",
+      "B. `values()`",
+      "C. `items()`",
+      "D. `pairs()`"
     ],
-    "correct_option": "A",
-    "explanation": "Tìm kiếm tuyến tính là phương pháp tìm kiếm bằng cách so sánh lần lượt từ phần tử đầu tiên đến phần tử cuối cùng của danh sách."
+    "correct_option": "C",
+    "explanation": "Phương thức `items()` trả về một đối tượng view chứa các cặp `(key, value)` dưới dạng tuple. Phương thức `keys()` chỉ trả về các khóa, và `values()` chỉ trả về các giá trị.",
+    "solution": "**Bước 1:** Điểm qua các phương thức của từ điển:\n- `keys()`: Trả về danh sách khóa.\n- `values()`: Trả về danh sách giá trị.\n- `items()`: Trả về danh sách các cặp khóa-giá trị dưới dạng `(key, value)`.\n**Bước 2:** Chọn C."
   },
   {
     "id": "Q_MOD_B_017",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "data-structures"
+      "data-structures",
+      "sets"
     ],
-    "content": "Định dạng file nào sau đây lưu trữ dữ liệu dưới dạng văn bản thô, ngăn cách bởi dấu phẩy?",
+    "content": "Giá trị của tập hợp `s` sau khi thực hiện lệnh dưới đây là gì?\n```python\ns = set([1, 2, 2, 3, 3, 3])\nprint(s)\n```",
     "options": [
-      "A. Dữ liệu bảng phân tách bằng dấu phẩy.",
-      "B. Dữ liệu mã nguồn viết bằng ngôn ngữ C.",
-      "C. Dữ liệu ảnh màu có độ phân giải cao.",
-      "D. Dữ liệu âm thanh đã nén dung lượng."
+      "A. `{1, 2, 2, 3, 3, 3}`",
+      "B. `[1, 2, 3]`",
+      "C. `{1, 2, 3}`",
+      "D. `(1, 2, 3)`"
     ],
-    "correct_option": "A",
-    "explanation": "CSV viết tắt của Comma-Separated Values, là định dạng tệp văn bản thô dùng để lưu trữ dữ liệu bảng với các giá trị được phân tách bằng dấu phẩy."
+    "correct_option": "C",
+    "explanation": "Tập hợp (Set) trong Python chỉ chứa các phần tử duy nhất (không trùng lặp). Khi chuyển đổi danh sách chứa các số lặp lại sang tập hợp, các phần tử trùng sẽ bị tự động loại bỏ. Dấu ngoặc nhọn `{}` biểu thị một tập hợp.",
+    "solution": "**Bước 1:** Tập hợp được xây dựng từ List `[1, 2, 2, 3, 3, 3]`.\n**Bước 2:** Tự động loại bỏ các giá trị trùng lặp, chỉ giữ lại các giá trị độc bản: `1`, `2`, `3`.\n**Bước 3:** Kiểu Set được bao bọc bởi dấu ngoặc nhọn: `{1, 2, 3}`. Chọn C."
   },
   {
     "id": "Q_MOD_B_018",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "syntax-python"
+      "data-structures",
+      "sets"
     ],
-    "content": "Trong Python, phép toán `2 ** 3` cho kết quả bằng bao nhiêu?",
+    "content": "Cho hai tập hợp `a = {1, 2, 3}` và `b = {3, 4, 5}`. Kết quả của phép giao hai tập hợp `a & b` là gì?",
     "options": [
-      "A. Kết quả 8",
-      "B. Kết quả 6",
-      "C. Kết quả 5",
-      "D. Kết quả 9"
+      "A. `{1, 2, 3, 4, 5}`",
+      "B. `{3}`",
+      "C. `{1, 2, 4, 5}`",
+      "D. `{}`"
     ],
-    "correct_option": "A",
-    "explanation": "`2 ** 3` là 2 mũ 3 = 8."
+    "correct_option": "B",
+    "explanation": "Toán tử `&` đại diện cho phép toán giao (intersection) giữa hai tập hợp, trả về tập hợp chứa các phần tử xuất hiện ở **cả hai** tập hợp. Ở đây chỉ có số `3` xuất hiện đồng thời trong cả `a` và `b`.",
+    "solution": "**Bước 1:** Tìm các phần tử chung của hai tập hợp:\n- Tập `a`: 1, 2, 3\n- Tập `b`: 3, 4, 5\n**Bước 2:** Số 3 thuộc cả hai tập hợp.\n**Bước 3:** Phép giao `a & b` trả về tập hợp `{3}`. Chọn B."
   },
   {
     "id": "Q_MOD_B_019",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "syntax-python"
+      "data-structures",
+      "sets"
     ],
-    "content": "Cú pháp nào giúp mở file trong Python mà tự động đóng file sau khi dùng xong?",
+    "content": "Cho hai tập hợp `a = {1, 2, 3}` và `b = {3, 4, 5}`. Kết quả của phép toán `a | b` là gì?",
     "options": [
-      "A. Sử dụng câu lệnh with open()",
-      "B. Sử dụng câu lệnh file open()",
-      "C. Sử dụng câu lệnh just open()",
-      "D. Sử dụng câu lệnh free open()"
+      "A. `{3}`",
+      "B. `{1, 2, 3, 4, 5}`",
+      "C. `{1, 2, 4, 5}`",
+      "D. Lỗi cú pháp"
     ],
-    "correct_option": "A",
-    "explanation": "Cú pháp 'with open(...) as file:' giúp tự động đóng tệp khi khối lệnh bên trong kết thúc, ngăn ngừa rò rỉ tài nguyên."
+    "correct_option": "B",
+    "explanation": "Toán tử `|` đại diện cho phép hợp (union) giữa hai tập hợp, trả về tập hợp chứa tất cả các phần tử thuộc ít nhất một trong hai tập hợp đó (không có phần tử trùng lặp).",
+    "solution": "**Bước 1:** Liệt kê tất cả phần tử của cả hai tập hợp: 1, 2, 3, 4, 5.\n**Bước 2:** Phép hợp kết hợp tất cả các phần tử và tự động gộp phần tử trùng lặp (số 3).\n**Bước 3:** Kết quả thu được là `{1, 2, 3, 4, 5}`. Chọn đáp án B."
   },
   {
     "id": "Q_MOD_B_020",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "algorithms"
+      "data-structures",
+      "sets"
     ],
-    "content": "Thuật toán sắp xếp nổi bọt (Bubble Sort) hoạt động dựa trên cơ chế nào?",
+    "content": "Sự khác nhau giữa hai phương thức xóa phần tử `remove()` và `discard()` trong Set là gì?",
     "options": [
-      "A. Đổi chỗ phần tử cạnh nhau.",
-      "B. Chia mảng làm nhiều phần.",
-      "C. Lấy ngẫu nhiên phần tử.",
-      "D. Chọn phần tử chốt chia."
+      "A. `remove()` xóa phần tử ở cuối, `discard()` xóa phần tử chỉ định.",
+      "B. Nếu phần tử cần xóa không tồn tại trong tập hợp, `remove()` sẽ phát sinh lỗi `KeyError`, còn `discard()` sẽ bỏ qua và không báo lỗi.",
+      "C. `discard()` trả về phần tử bị xóa, `remove()` không trả về gì.",
+      "D. Hai phương thức này hoàn toàn giống nhau."
     ],
-    "correct_option": "A",
-    "explanation": "Sắp xếp nổi bọt hoạt động bằng cách liên tục so sánh và đổi chỗ hai phần tử kề nhau nếu chúng sai thứ tự, đưa phần tử lớn nhất nổi dần về cuối."
+    "correct_option": "B",
+    "explanation": "Cả hai phương thức đều dùng để xóa một phần tử xác định khỏi tập hợp. Điểm khác biệt duy nhất là tính an toàn: `remove(x)` sẽ sinh lỗi nếu tập hợp không chứa `x`, còn `discard(x)` vẫn chạy bình thường mà không gây lỗi.",
+    "solution": "**Bước 1:** Phân tích hành vi khi phần tử cần xóa không có trong Set:\n- `s.remove(x)`: Ném lỗi `KeyError`.\n- `s.discard(x)`: Không làm gì cả, không báo lỗi.\n**Bước 2:** Chọn phương án B."
   },
   {
     "id": "Q_MOD_B_021",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "data-preprocessing"
+      "data-structures",
+      "dictionaries"
     ],
-    "content": "Việc thu nhỏ kích thước hình ảnh đầu vào trước khi đưa vào mô hình AI có tác dụng gì?",
+    "content": "Đoạn code sau đây sẽ hiển thị kết quả gì?\n```python\nd = {\"x\": 1, \"y\": 2}\nprint(\"x\" in d, 1 in d)\n```",
     "options": [
-      "A. Giảm thời gian máy tính xử lý.",
-      "B. Tăng độ sắc nét của hình ảnh.",
-      "C. Giữ nguyên chi tiết ảnh nhỏ.",
-      "D. Chuyển ảnh màu thành ảnh xám."
+      "A. `True True`",
+      "B. `True False`",
+      "C. `False True`",
+      "D. `False False`"
     ],
-    "correct_option": "A",
-    "explanation": "Thu nhỏ kích thước ảnh làm giảm số lượng điểm ảnh, giúp mô hình AI tính toán nhanh hơn và ít tốn tài nguyên phần cứng hơn."
+    "correct_option": "B",
+    "explanation": "Khi sử dụng toán tử `in` trên một Dictionary, Python sẽ mặc định tìm kiếm trên **danh sách các khóa (keys)** của từ điển chứ không tìm kiếm trên danh sách các giá trị (values). Do đó, `\"x\"` là một khóa nên trả về `True`, còn `1` là một giá trị (chứ không phải khóa) nên trả về `False`.",
+    "solution": "**Bước 1:** Khảo sát hành vi của toán tử `in` đối với từ điển:\n- `key in dict` kiểm tra xem `key` có tồn tại trong danh sách các khóa của từ điển không.\n**Bước 2:**\n- `\"x\" in d` trả về `True` vì `\"x\"` là khóa.\n- `1 in d` trả về `False` vì `1` là giá trị của khóa `\"x\"` chứ không phải là khóa tự thân.\n**Bước 3:** Chọn B."
   },
   {
     "id": "Q_MOD_B_022",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "data-structures"
+      "data-structures",
+      "copying"
     ],
-    "content": "Trong cấu trúc dữ liệu đồ thị, các thành phần chính bao gồm những gì?",
+    "content": "Đoạn code sau đây in ra kết quả gì?\n```python\nimport copy\na = [[1, 2], [3, 4]]\nb = copy.copy(a)\nb[0][0] = 99\nprint(a[0][0])\n```",
     "options": [
-      "A. Các đỉnh và các cạnh.",
-      "B. Các dòng và các cột.",
-      "C. Các khóa và các giá.",
-      "D. Các hàm và các lớp."
+      "A. 1",
+      "B. 99",
+      "C. Lỗi TypeError",
+      "D. `[99, 2]`"
     ],
-    "correct_option": "A",
-    "explanation": "Một đồ thị (Graph) gồm một tập hợp các đỉnh (Vertices/Nodes) kết nối với nhau bởi các cạnh (Edges)."
+    "correct_option": "B",
+    "explanation": "`copy.copy(a)` thực hiện sao chép nông (shallow copy). Nó tạo ra một đối tượng danh sách bên ngoài mới, nhưng nội dung bên trong của nó vẫn chứa các tham chiếu đến các đối tượng danh sách con ban đầu của `a`. Do đó, khi chỉnh sửa danh sách con thông qua `b[0][0] = 99`, danh sách con của `a` cũng bị ảnh hưởng vì cả `a` và `b` cùng chia sẻ chung đối tượng danh sách con đó trong bộ nhớ.",
+    "solution": "**Bước 1:** Nhận diện loại sao chép: `copy.copy()` là sao chép nông (shallow copy).\n**Bước 2:** Cấu trúc dữ liệu `a` có tính phân cấp (lồng nhau): danh sách bên trong danh sách.\n- Bản sao nông `b` độc lập với `a` ở cấp độ danh sách ngoài cùng.\n- Nhưng danh sách con bên trong `a[0]` và `b[0]` thực chất là cùng một đối tượng trong bộ nhớ.\n**Bước 3:** Khi thay đổi `b[0][0]`, giá trị tại `a[0][0]` cũng thay đổi thành `99`. Chọn đáp án B."
   },
   {
     "id": "Q_MOD_B_023",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "syntax-python"
+      "data-structures",
+      "copying"
     ],
-    "content": "Trong Python, từ khóa `lambda` được dùng để tạo ra loại hàm nào?",
+    "content": "Để sao chép một danh sách lồng nhau nhiều cấp sao cho bản sao mới hoàn toàn độc lập, không chia sẻ bất kỳ tham chiếu đối tượng con nào với danh sách gốc, ta nên dùng cách nào?",
     "options": [
-      "A. Tạo một hàm ẩn danh viết ngắn.",
-      "B. Khai báo một biến số thực mới.",
-      "C. Tạo ra một vòng lặp vô hạn mới.",
-      "D. Import thư viện từ bên ngoài vào."
+      "A. `b = a.copy()`",
+      "B. `b = list(a)`",
+      "C. `b = copy.deepcopy(a)`",
+      "D. `b = a[:]`"
     ],
-    "correct_option": "A",
-    "explanation": "Từ khóa lambda dùng để định nghĩa các hàm ẩn danh (anonymous function) ngắn gọn trên một dòng lệnh đơn giản."
+    "correct_option": "C",
+    "explanation": "Để thực hiện sao chép sâu (deep copy), ta phải sử dụng hàm `copy.deepcopy()` từ module thư viện chuẩn `copy`. Nó sẽ đệ quy sao chép tất cả các đối tượng con lồng nhau bên trong, đảm bảo tạo ra một cấu trúc dữ liệu mới hoàn toàn độc lập với đối tượng ban đầu.",
+    "solution": "**Bước 1:** Phân tích các cách sao chép danh sách lồng nhau:\n- `a.copy()`, `list(a)`, và `a[:]` đều là sao chép nông (shallow copy), các đối tượng con lồng bên trong vẫn dùng chung địa chỉ bộ nhớ.\n- `copy.deepcopy(a)` tạo các đối tượng con mới đệ quy.\n**Bước 2:** Do đó chọn đáp án C."
   },
   {
     "id": "Q_MOD_B_024",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "data-structures"
+      "control-flow",
+      "loops"
     ],
-    "content": "Sự khác biệt chính giữa Tuple và List trong Python là gì?",
+    "content": "Vòng lặp sau đây in ra những giá trị nào?\n```python\nfor i in range(1, 4):\n    for j in range(1, 3):\n        if i == j:\n            print(f\"{i},{j}\")\n```",
     "options": [
-      "A. Tuple không thay đổi được còn List thì có.",
-      "B. Tuple lưu số còn List chỉ lưu được chữ.",
-      "C. Tuple chạy chậm hơn List trong mọi trường hợp.",
-      "D. Tuple không dùng chỉ số để truy cập phần tử."
+      "A. `1,1` và `2,2` và `3,3`",
+      "B. `1,1` và `2,2`",
+      "C. `1,1`",
+      "D. Không hiển thị gì"
     ],
-    "correct_option": "A",
-    "explanation": "Tuple là kiểu dữ liệu bất biến (immutable), tức là không thể sửa đổi sau khi tạo, còn List thì có thể sửa đổi bình thường (mutable)."
+    "correct_option": "B",
+    "explanation": "Vòng lặp ngoài `i` nhận các giá trị: 1, 2, 3. Vòng lặp trong `j` nhận các giá trị: 1, 2.\n- Khi `i = 1`: `j` có thể là 1 hoặc 2. Điều kiện `i == j` thỏa mãn khi `j = 1` -> in ra `1,1`.\n- Khi `i = 2`: `j` có thể là 1 hoặc 2. Điều kiện `i == j` thỏa mãn khi `j = 2` -> in ra `2,2`.\n- Khi `i = 3`: `j` chỉ có thể là 1 hoặc 2, không thể bằng `i`. Không in gì.\nDo đó kết quả in ra là `1,1` và `2,2`.",
+    "solution": "**Bước 1:** Liệt kê các cặp `(i, j)` được sinh ra bởi hai vòng lặp lồng nhau:\n- i = 1: j = 1 (1==1 -> In), j = 2 (1!=2)\n- i = 2: j = 1 (2!=1), j = 2 (2==2 -> In)\n- i = 3: j = 1 (3!=1), j = 2 (3!=2)\n**Bước 2:** Kết quả chỉ bao gồm `1,1` và `2,2`. Chọn đáp án B."
   },
   {
     "id": "Q_MOD_B_025",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "syntax-python"
+      "control-flow"
     ],
-    "content": "Cho danh sách `x = [5, 6, 7]`. Phần tử `x[1]` bằng bao nhiêu?",
+    "content": "Từ khóa `pass` trong Python được dùng để làm gì?",
     "options": [
-      "A. Kết quả là 6",
-      "B. Kết quả là 5",
-      "C. Kết quả là 7",
-      "D. Kết quả là 0"
+      "A. Thoát khỏi vòng lặp giống như `break`.",
+      "B. Đóng file đang mở.",
+      "C. Làm một câu lệnh giữ chỗ (placeholder) rỗng, không thực hiện hành động nào khi chạy để tránh lỗi cú pháp.",
+      "D. Bỏ qua các lỗi logic trong chương trình."
     ],
-    "correct_option": "A",
-    "explanation": "Trong Python, chỉ số phần tử của danh sách bắt đầu từ 0. Do đó ds[1] trả về phần tử thứ hai là 6."
+    "correct_option": "C",
+    "explanation": "`pass` là câu lệnh rỗng (null statement) trong Python. Nó được sử dụng khi cú pháp của Python yêu cầu phải có một khối lệnh (ví dụ sau định nghĩa hàm hoặc lớp chưa viết nội dung), nhưng bạn chưa muốn triển khai logic gì ở đó.",
+    "solution": "**Bước 1:** Phân tích từ khóa `pass`:\n- Python không cho phép khối thụt đầu dòng rỗng.\n- `pass` đóng vai trò là một câu lệnh hợp lệ nhưng không thực hiện bất cứ hành động nào.\n**Bước 2:** Chọn C."
   },
   {
     "id": "Q_MOD_B_026",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "syntax-python"
+      "data-structures",
+      "lists"
     ],
-    "content": "Đặc điểm quan trọng nhất của Tập hợp (Set) trong Python là gì?",
+    "content": "Cho danh sách `lst = [1, 2, 3, 2, 4, 2]`. Kết quả trả về của hàm `lst.count(2)` là bao nhiêu?",
     "options": [
-      "A. Không chứa các phần tử trùng lặp.",
-      "B. Luôn tự động sắp xếp các phần tử.",
-      "C. Chỉ cho phép lưu kiểu số nguyên.",
-      "D. Không thể duyệt qua bằng vòng lặp."
+      "A. 1",
+      "B. 3",
+      "C. 6",
+      "D. Lỗi vì danh sách chứa phần tử trùng nhau"
     ],
-    "correct_option": "A",
-    "explanation": "Tập hợp (Set) chỉ chứa các phần tử duy nhất."
+    "correct_option": "B",
+    "explanation": "Phương thức `count(x)` của List dùng để đếm số lần xuất hiện của phần tử `x` trong danh sách. Ở đây số `2` xuất hiện 3 lần.",
+    "solution": "**Bước 1:** Đếm thủ công số lần số `2` xuất hiện trong `[1, 2, 3, 2, 4, 2]`.\n**Bước 2:** Có 3 số `2` xuất hiện.\n**Bước 3:** `lst.count(2)` trả về `3`. Chọn B."
   },
   {
     "id": "Q_MOD_B_027",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "algorithms"
+      "data-structures",
+      "lists"
     ],
-    "content": "Để chạy thuật toán tìm kiếm nhị phân, dữ liệu cần có điều kiện gì?",
+    "content": "Cho danh sách `lst = [10, 20, 30, 20, 40]`. Kết quả trả về của hàm `lst.index(20)` là gì?",
     "options": [
-      "A. Dữ liệu phải được sắp xếp trước.",
-      "B. Dữ liệu phải toàn là số nguyên.",
-      "C. Dữ liệu phải được lưu trong Set.",
-      "D. Dữ liệu phải là các chữ cái in."
+      "A. 1",
+      "B. 3",
+      "C. `[1, 3]`",
+      "D. Lỗi TypeError"
     ],
     "correct_option": "A",
-    "explanation": "Tìm kiếm nhị phân yêu cầu danh sách đã được sắp xếp."
+    "explanation": "Phương thức `index(x)` trả về chỉ số (vị trí index) xuất hiện **đầu tiên** của phần tử `x` trong danh sách từ trái qua phải. Số `20` xuất hiện ở chỉ số 1 và 3, chỉ số đầu tiên là 1.",
+    "solution": "**Bước 1:** Tìm vị trí của các phần tử có giá trị là `20`:\n- Vị trí index 1 có giá trị 20.\n- Vị trí index 3 có giá trị 20.\n**Bước 2:** Hàm `index()` luôn trả về vị trí đầu tiên tìm thấy.\n**Bước 3:** Kết quả trả về là 1. Chọn A."
   },
   {
     "id": "Q_MOD_B_028",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "data-preprocessing"
+      "data-structures",
+      "lists"
     ],
-    "content": "Kỹ thuật 'Label Encoding' dùng để làm gì?",
+    "content": "Kết quả của câu lệnh cắt lát danh sách `lst = [0, 1, 2, 3, 4, 5]` với cú pháp `lst[1:5:2]` là gì?",
     "options": [
-      "A. Chuyển chữ phân loại thành số.",
-      "B. Xóa bỏ các giá trị bị thiếu.",
-      "C. Tăng kích thước ảnh lên nhiều.",
-      "D. Chia đều tập dữ liệu làm hai."
+      "A. `[1, 3]`",
+      "B. `[1, 3, 5]`",
+      "C. `[1, 2, 3, 4]`",
+      "D. `[2, 4]`"
     ],
     "correct_option": "A",
-    "explanation": "Chuyển các nhãn chữ thành số nguyên (0, 1, 2...)."
+    "explanation": "Cú pháp cắt lát (slicing) `[start:stop:step]` lấy các phần tử từ chỉ số `start` (ở đây là 1) đến trước chỉ số `stop` (ở đây dừng trước 5 tức là tối đa đến chỉ số 4) với bước nhảy `step` là 2. Các chỉ số được chọn là 1 và 3. Giá trị tương ứng là `1` và `3`.",
+    "solution": "**Bước 1:** Xác định cận chỉ số: bắt đầu từ index 1, kết thúc trước index 5 (lấy index 1, 2, 3, 4).\n**Bước 2:** Áp dụng bước nhảy 2: từ index 1 nhảy lên index 3, bước tiếp theo lên index 5 (vượt quá giới hạn nên loại).\n**Bước 3:** Phần tử tại index 1 là `1`, phần tử tại index 3 là `3`. Kết quả `[1, 3]`. Chọn A."
   },
   {
     "id": "Q_MOD_B_029",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "syntax-python"
+      "data-structures",
+      "sets"
     ],
-    "content": "Trong Python, từ khóa nào dùng để trả về giá trị từ một hàm?",
+    "content": "Làm thế nào để thêm một phần tử duy nhất vào một Set đã tồn tại?",
     "options": [
-      "A. Từ khóa return",
-      "B. Từ khóa output",
-      "C. Từ khóa result",
-      "D. Từ khóa export"
+      "A. `s.append(element)`",
+      "B. `s.add(element)`",
+      "C. `s.insert(element)`",
+      "D. `s.push(element)`"
     ],
-    "correct_option": "A",
-    "explanation": "Dùng từ khóa return để trả về giá trị từ hàm."
+    "correct_option": "B",
+    "explanation": "Set sử dụng phương thức `add()` để thêm một phần tử vào tập hợp. `append()` dùng cho List, `push()` dùng cho cấu trúc Stack tự định nghĩa, và `insert()` dùng cho List khi muốn chèn phần tử tại vị trí index cụ thể.",
+    "solution": "**Bước 1:** Điểm qua các phương thức thêm phần tử của tập hợp:\n- Set không có thứ tự chỉ mục nên không thể sử dụng `insert()`.\n- Set không sử dụng các từ khóa `append` hay `push`.\n- Phương thức chuẩn của Set để thêm phần tử là `add()`.\n**Bước 2:** Chọn B."
   },
   {
     "id": "Q_MOD_B_030",
     "module_id": "Module_B",
     "difficulty": "Medium",
     "tags": [
-      "algorithms"
-    ],
-    "content": "Thuật toán sắp xếp trộn (Merge Sort) dựa trên nguyên lý nào?",
-    "options": [
-      "A. Chia để trị và trộn lại.",
-      "B. Đổi chỗ hai số cạnh nhau.",
-      "C. Chọn số nhỏ nhất đưa lên.",
-      "D. Chọn ngẫu nhiên để sắp."
-    ],
-    "correct_option": "A",
-    "explanation": "Merge sort chia nhỏ danh sách rồi trộn lại theo thứ tự."
-  },
-  {
-    "id": "Q_MOD_B_031",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-preprocessing"
-    ],
-    "content": "Tại sao cần chia tập dữ liệu thành tập huấn luyện và kiểm tra?",
-    "options": [
-      "A. Để đánh giá độ chính xác mô hình.",
-      "B. Để tăng tốc độ mạng internet nhà.",
-      "C. Để bảo mật thông tin người dùng.",
-      "D. Để giảm dung lượng lưu trữ tệp."
-    ],
-    "correct_option": "A",
-    "explanation": "Chia tập dữ liệu để đánh giá khả năng tổng quát hóa."
-  },
-  {
-    "id": "Q_MOD_B_032",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "tokenization"
-    ],
-    "content": "Trong xử lý ngôn ngữ, tách câu thành các từ độc lập gọi là gì?",
-    "options": [
-      "A. Tách từ (Tokenization)",
-      "B. Chuẩn hóa (Normalization)",
-      "C. Làm sạch (Data Cleaning)",
-      "D. Tăng cường (Augmentation)"
-    ],
-    "correct_option": "A",
-    "explanation": "Tách câu thành các từ gọi là Tokenization."
-  },
-  {
-    "id": "Q_MOD_B_033",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-augmentation"
-    ],
-    "content": "Dịch văn bản sang tiếng Anh rồi dịch lại tiếng Việt để làm gì?",
-    "options": [
-      "A. Để tạo thêm dữ liệu văn bản.",
-      "B. Để sửa lỗi chính tả văn bản.",
-      "C. Để dịch nghĩa của các từ cổ.",
-      "D. Để nén dung lượng của tệp."
-    ],
-    "correct_option": "A",
-    "explanation": "Kỹ thuật này dùng để tăng cường dữ liệu văn bản."
-  },
-  {
-    "id": "Q_MOD_B_034",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Trong Python, làm thế nào để truyền giá trị vào một hàm?",
-    "options": [
-      "A. Truyền qua các tham số của hàm.",
-      "B. Định nghĩa các biến toàn cục.",
-      "C. Sử dụng câu lệnh in ra màn hình.",
-      "D. Viết chú thích ở bên trong hàm."
-    ],
-    "correct_option": "A",
-    "explanation": "Dữ liệu được truyền qua đối số/tham số."
-  },
-  {
-    "id": "Q_MOD_B_035",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "algorithms"
-    ],
-    "content": "Thuật toán duyệt đồ thị theo chiều rộng (BFS) dùng cấu trúc nào?",
-    "options": [
-      "A. Hàng đợi (Queue)",
-      "B. Ngăn xếp (Stack)",
-      "C. Từ điển (Dict)",
-      "D. Tập hợp (Set)"
-    ],
-    "correct_option": "A",
-    "explanation": "BFS sử dụng hàng đợi (Queue) để duyệt."
-  },
-  {
-    "id": "Q_MOD_B_036",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-structures"
-    ],
-    "content": "Nút nằm ở vị trí cao nhất của một cây nhị phân gọi là gì?",
-    "options": [
-      "A. Nút gốc (Root)",
-      "B. Nút lá (Leaf)",
-      "C. Nút con trái",
-      "D. Nút con phải"
-    ],
-    "correct_option": "A",
-    "explanation": "Nút cao nhất gọi là nút gốc (root)."
-  },
-  {
-    "id": "Q_MOD_B_037",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-preprocessing"
-    ],
-    "content": "Dữ liệu dạng chuỗi thời gian (như nhiệt độ hằng ngày) là gì?",
-    "options": [
-      "A. Dữ liệu ghi theo mốc thời gian.",
-      "B. Dữ liệu ảnh chụp từ máy ảnh.",
-      "C. Dữ liệu âm thanh của bài hát.",
-      "D. Dữ liệu các bài báo tiếng Anh."
-    ],
-    "correct_option": "A",
-    "explanation": "Dữ liệu chuỗi thời gian được sắp xếp theo thời gian."
-  },
-  {
-    "id": "Q_MOD_B_038",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "algorithms"
-    ],
-    "content": "Kỹ thuật lưu kết quả tính toán trước đó để tránh tính lại gọi là gì?",
-    "options": [
-      "A. Quy hoạch động",
-      "B. Tìm tuyến tính",
-      "C. Sắp xếp nổi bọt",
-      "D. Thiết kế đệ quy"
-    ],
-    "correct_option": "A",
-    "explanation": "Quy hoạch động lưu kết quả bài toán con để tránh tính lại."
-  },
-  {
-    "id": "Q_MOD_B_039",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Chương trình Python được chạy bằng cách nào?",
-    "options": [
-      "A. Trình thông dịch chạy dòng mã.",
-      "B. Trình biên dịch mã ra file exe.",
-      "C. Chạy trực tiếp trên trình duyệt.",
-      "D. Không cần chạy mà tự hiểu lấy."
-    ],
-    "correct_option": "A",
-    "explanation": "Python sử dụng trình thông dịch (interpreter) để chạy."
-  },
-  {
-    "id": "Q_MOD_B_040",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-preprocessing"
-    ],
-    "content": "Chuẩn hóa MinMaxScaler đưa dữ liệu về khoảng nào mặc định?",
-    "options": [
-      "A. Khoảng từ 0 đến 1.",
-      "B. Khoảng từ -1 đến 1.",
-      "C. Khoảng từ 0 đến 10.",
-      "D. Khoảng từ 0 đến 255."
-    ],
-    "correct_option": "A",
-    "explanation": "MinMaxScaler đưa dữ liệu về khoảng [0, 1]."
-  },
-  {
-    "id": "Q_MOD_B_041",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "algorithms"
-    ],
-    "content": "Trong mạng xã hội, một nhóm bạn có nhiều liên kết với nhau gọi là gì?",
-    "options": [
-      "A. Cộng đồng (Community)",
-      "B. Đỉnh đơn độc (Node)",
-      "C. Cạnh nối (Edge link)",
-      "D. Cây nhị phân (Tree)"
-    ],
-    "correct_option": "A",
-    "explanation": "Các nhóm liên kết chặt chẽ gọi là cộng đồng."
-  },
-  {
-    "id": "Q_MOD_B_042",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-structures"
-    ],
-    "content": "Để tìm kiếm thông tin nhanh trên trang web, ta nên làm gì?",
-    "options": [
-      "A. Tạo chỉ mục (Index) dữ liệu.",
-      "B. Xóa hết toàn bộ bài viết đi.",
-      "C. Đổi tên toàn bộ các bài viết.",
-      "D. Dịch văn bản sang tiếng Anh."
-    ],
-    "correct_option": "A",
-    "explanation": "Tạo chỉ mục giúp tăng tốc độ tìm kiếm."
-  },
-  {
-    "id": "Q_MOD_B_043",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Biến định nghĩa bên trong một hàm gọi là loại biến gì?",
-    "options": [
-      "A. Biến cục bộ (Local type)",
-      "B. Biến toàn cục (Global)",
-      "C. Biến của lớp (Class type)",
-      "D. Biến hằng số (Const var)"
-    ],
-    "correct_option": "A",
-    "explanation": "Biến trong hàm là biến cục bộ, chỉ dùng trong hàm."
-  },
-  {
-    "id": "Q_MOD_B_044",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-preprocessing"
-    ],
-    "content": "Việc đưa các biến thể của từ về dạng từ gốc gọi là gì?",
-    "options": [
-      "A. Chuẩn hóa từ gốc (Stemming)",
-      "B. Quá trình tách từ (Tokenize)",
-      "C. Loại bỏ các từ dừng (Stops)",
-      "D. Tăng cường dữ liệu (Augment)"
-    ],
-    "correct_option": "A",
-    "explanation": "Đưa từ về gốc gọi là Stemming/Lemmatization."
-  },
-  {
-    "id": "Q_MOD_B_045",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Hàm `zip()` trong Python dùng để làm gì?",
-    "options": [
-      "A. Ghép các phần tử danh sách lại.",
-      "B. Nén một tệp tin thành file zip.",
-      "C. Đếm số lượng phần tử của list.",
-      "D. Sắp xếp danh sách theo thứ tự."
-    ],
-    "correct_option": "A",
-    "explanation": "`zip()` ghép các phần tử ở vị trí tương ứng thành các tuple."
-  },
-  {
-    "id": "Q_MOD_B_046",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "algorithms"
-    ],
-    "content": "Khi sắp xếp danh sách, tham số `key` trong hàm sorted() dùng để làm gì?",
-    "options": [
-      "A. Xác định tiêu chí so sánh số.",
-      "B. Xác định mật khẩu mở tệp tin.",
-      "C. Xác định kiểu của các chữ cái.",
-      "D. Xác định chiều tăng hay giảm."
-    ],
-    "correct_option": "A",
-    "explanation": "Tham số `key` quy định tiêu chí sắp xếp."
-  },
-  {
-    "id": "Q_MOD_B_047",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Ưu điểm chính của Generator (dùng yield) trong Python là gì?",
-    "options": [
-      "A. Tiết kiệm bộ nhớ khi chạy.",
-      "B. Tăng tính bảo mật cho code.",
-      "C. Không bao giờ xảy ra lỗi.",
-      "D. Dễ viết hơn hàm bình thường."
-    ],
-    "correct_option": "A",
-    "explanation": "Generator sinh phần tử theo yêu cầu, tiết kiệm bộ nhớ."
-  },
-  {
-    "id": "Q_MOD_B_048",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-preprocessing"
-    ],
-    "content": "Tập dữ liệu bị mất cân bằng nhãn (imbalanced) nghĩa là gì?",
-    "options": [
-      "A. Một lớp có số lượng rất ít.",
-      "B. Tất cả các lớp có số bằng nhau.",
-      "C. Dữ liệu toàn là số âm lớn.",
-      "D. Dữ liệu bị thiếu nhiều cột."
-    ],
-    "correct_option": "A",
-    "explanation": "Mất cân bằng là số lượng mẫu giữa các lớp chênh lệch lớn."
-  },
-  {
-    "id": "Q_MOD_B_049",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "algorithms"
-    ],
-    "content": "Mô hình MapReduce được thiết kế chính nhằm mục đích gì?",
-    "options": [
-      "A. Xử lý song song dữ liệu lớn.",
-      "B. Chụp ảnh màn hình máy tính.",
-      "C. Nén tệp tin ảnh chất lượng.",
-      "D. Dịch thuật tự động văn bản."
-    ],
-    "correct_option": "A",
-    "explanation": "MapReduce giúp xử lý phân tán song song dữ liệu lớn."
-  },
-  {
-    "id": "Q_MOD_B_050",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-augmentation"
-    ],
-    "content": "Trong tăng cường dữ liệu ảnh, kỹ thuật trộn hai ảnh gọi là gì?",
-    "options": [
-      "A. Kỹ thuật MixUp ảnh.",
-      "B. Kỹ thuật Resize ảnh.",
-      "C. Kỹ thuật Crop ảnh.",
-      "D. Kỹ thuật Flip ảnh."
-    ],
-    "correct_option": "A",
-    "explanation": "MixUp trộn hai ảnh và nhãn của chúng với nhau."
-  },
-  {
-    "id": "Q_MOD_B_051",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Đoạn mã `[x for x in range(3)]` tạo ra danh sách nào?",
-    "options": [
-      "A. Danh sách [0, 1, 2]",
-      "B. Danh sách [1, 2, 3]",
-      "C. Danh sách [0, 1, 3]",
-      "D. Báo lỗi cú pháp chạy"
-    ],
-    "correct_option": "A",
-    "explanation": "range(3) tạo các số từ 0 đến 2."
-  },
-  {
-    "id": "Q_MOD_B_052",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-structures"
-    ],
-    "content": "Phần tử đầu tiên của Danh sách liên kết gọi là gì?",
-    "options": [
-      "A. Phần tử đầu (Head)",
-      "B. Phần tử cuối (Tail)",
-      "C. Phần tử giữa (Middle)",
-      "D. Phần tử rỗng (Null)"
-    ],
-    "correct_option": "A",
-    "explanation": "Phần tử đầu tiên của danh sách liên kết gọi là Head."
-  },
-  {
-    "id": "Q_MOD_B_053",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-preprocessing"
-    ],
-    "content": "Những giá trị quá lớn hoặc quá nhỏ bất thường gọi là gì?",
-    "options": [
-      "A. Các điểm dị biệt (Outliers)",
-      "B. Các điểm trung bình (Means)",
-      "C. Các giá trị thiếu (Missing)",
-      "D. Các điểm trung vị (Medians)"
-    ],
-    "correct_option": "A",
-    "explanation": "Các giá trị bất thường được gọi là outliers."
-  },
-  {
-    "id": "Q_MOD_B_054",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Trong try-except, khối lệnh `finally` chạy khi nào?",
-    "options": [
-      "A. Luôn luôn chạy khi kết thúc.",
-      "B. Chỉ chạy khi chương trình lỗi.",
-      "C. Chỉ chạy khi không có lỗi gì.",
-      "D. Không bao giờ được chạy cả."
-    ],
-    "correct_option": "A",
-    "explanation": "Khối finally luôn chạy dù có lỗi hay không."
-  },
-  {
-    "id": "Q_MOD_B_055",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-preprocessing"
-    ],
-    "content": "Các từ phổ biến ít nghĩa (như 'the', 'is') gọi là gì?",
-    "options": [
-      "A. Các từ dừng (Stop words)",
-      "B. Các từ khóa (Key words)",
-      "C. Các từ đồng nghĩa (Syns)",
-      "D. Các từ viết tắt (Shorts)"
-    ],
-    "correct_option": "A",
-    "explanation": "Các từ ít nghĩa ngữ pháp này là stop words."
-  },
-  {
-    "id": "Q_MOD_B_056",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Cho `a = [1, 2]`, sau đó chạy `b = a`. Nếu sửa `b[0] = 9` thì `a[0]` là mấy?",
-    "options": [
-      "A. Số là 9",
-      "B. Số là 1",
-      "C. Số là 2",
-      "D. Số là 0"
-    ],
-    "correct_option": "A",
-    "explanation": "a và b cùng trỏ tới một danh sách."
-  },
-  {
-    "id": "Q_MOD_B_057",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "algorithms"
-    ],
-    "content": "Để dùng tìm kiếm nhị phân, danh sách cần được làm gì?",
-    "options": [
-      "A. Cần phải được sắp xếp.",
-      "B. Cần phải xóa hết số lẻ.",
-      "C. Cần phải được đảo ngược.",
-      "D. Cần phải chuyển sang set."
-    ],
-    "correct_option": "A",
-    "explanation": "Dữ liệu phải được sắp xếp để chạy tìm kiếm nhị phân."
-  },
-  {
-    "id": "Q_MOD_B_058",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Trong Python, hàm nào dùng để đếm số ký tự của một chuỗi?",
-    "options": [
-      "A. Hàm len()",
-      "B. Hàm count()",
-      "C. Hàm size()",
-      "D. Hàm type()"
-    ],
-    "correct_option": "A",
-    "explanation": "Hàm len() dùng để đếm số ký tự của chuỗi."
-  },
-  {
-    "id": "Q_MOD_B_059",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-preprocessing"
-    ],
-    "content": "Mã hóa nhãn 'Đỏ', 'Xanh' thành '0', '1' gọi là gì?",
-    "options": [
-      "A. Mã hóa nhãn (Label Encode)",
-      "B. Chuẩn hóa (Standardization)",
-      "C. Tăng cường (Augmentation)",
-      "D. Rời rạc hóa (Discretize)"
-    ],
-    "correct_option": "A",
-    "explanation": "Đây là kỹ thuật Label Encoding."
-  },
-  {
-    "id": "Q_MOD_B_060",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Hàm nào dùng để kiểm tra một chuỗi có chứa toàn số?",
-    "options": [
-      "A. Hàm isdigit()",
-      "B. Hàm isalpha()",
-      "C. Hàm islower()",
-      "D. Hàm isspace()"
-    ],
-    "correct_option": "A",
-    "explanation": "Hàm isdigit() trả về True nếu chuỗi toàn số."
-  },
-  {
-    "id": "Q_MOD_B_061",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-structures"
-    ],
-    "content": "Trong từ điển (Dictionary), các khóa (keys) có đặc điểm gì?",
-    "options": [
-      "A. Không được trùng lặp nhau.",
-      "B. Phải toàn là kiểu số thực.",
-      "C. Tự động tăng lên khi thêm.",
-      "D. Không thể truy cập trực tiếp."
-    ],
-    "correct_option": "A",
-    "explanation": "Mỗi khóa trong Dictionary phải là duy nhất."
-  },
-  {
-    "id": "Q_MOD_B_062",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Muốn ghi thêm dữ liệu vào cuối file có sẵn, ta dùng mode nào?",
-    "options": [
-      "A. Chế độ 'a'",
-      "B. Chế độ 'w'",
-      "C. Chế độ 'r'",
-      "D. Chế độ 'x'"
-    ],
-    "correct_option": "A",
-    "explanation": "Mode 'a' (append) dùng để ghi thêm vào cuối file."
-  },
-  {
-    "id": "Q_MOD_B_063",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-preprocessing"
-    ],
-    "content": "Điền giá trị trống bằng giá trị xuất hiện nhiều nhất gọi là gì?",
-    "options": [
-      "A. Điền yếu vị (Mode)",
-      "B. Điền trung bình (Mean)",
-      "C. Điền trung vị (Median)",
-      "D. Điền số không ngẫu nhiên"
-    ],
-    "correct_option": "A",
-    "explanation": "Yếu vị (Mode) là giá trị xuất hiện nhiều nhất."
-  },
-  {
-    "id": "Q_MOD_B_064",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Trong Python, kết quả so sánh `3 == 3.0` là gì?",
-    "options": [
-      "A. Kết quả là True",
-      "B. Kết quả là False",
-      "C. Kết quả là None",
-      "D. Kết quả báo lỗi"
-    ],
-    "correct_option": "A",
-    "explanation": "Giá trị số học của 3 and 3.0 bằng nhau nên là True."
-  },
-  {
-    "id": "Q_MOD_B_065",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-structures"
-    ],
-    "content": "Số lượng cạnh đi ra từ một đỉnh đồ thị có hướng gọi là gì?",
-    "options": [
-      "A. Bậc ra (Out-degree)",
-      "B. Bậc vào (In-degree)",
-      "C. Cạnh nối (Edge link)",
-      "D. Đường đi ngắn nhất"
-    ],
-    "correct_option": "A",
-    "explanation": "Số cạnh đi ra gọi là bậc ra (out-degree)."
-  },
-  {
-    "id": "Q_MOD_B_066",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Hàm nào dùng để xóa và trả về phần tử cuối cùng của list?",
-    "options": [
-      "A. Phương thức pop()",
-      "B. Phương thức remove()",
-      "C. Phương thức clear()",
-      "D. Phương thức delete()"
-    ],
-    "correct_option": "A",
-    "explanation": "Hàm pop() không tham số xóa và trả về phần tử cuối."
-  },
-  {
-    "id": "Q_MOD_B_067",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-preprocessing"
-    ],
-    "content": "Chia cột 'Tuổi' thành các nhóm 'Trẻ', 'Già' gọi là gì?",
-    "options": [
-      "A. Rời rạc hóa (Binning)",
-      "B. Chuẩn hóa (Normalization)",
-      "C. Mã hóa (Label Encoding)",
-      "D. Tăng cường (Augmentation)"
-    ],
-    "correct_option": "A",
-    "explanation": "Binning chia dữ liệu số liên tục thành các nhóm."
-  },
-  {
-    "id": "Q_MOD_B_068",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Toán tử logic nào trả về True khi mọi điều kiện đều True?",
-    "options": [
-      "A. Toán tử and",
-      "B. Toán tử or",
-      "C. Toán tử not",
-      "D. Toán tử xor"
-    ],
-    "correct_option": "A",
-    "explanation": "Phép and chỉ True khi tất cả các điều kiện đều True."
-  },
-  {
-    "id": "Q_MOD_B_069",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-structures"
-    ],
-    "content": "Cấu trúc cho phép thêm/xóa ở cả hai đầu rất nhanh gọi là gì?",
-    "options": [
-      "A. Hàng đợi hai đầu (Deque)",
-      "B. Ngăn xếp đơn giản (Stack)",
-      "C. Danh sách liên kết đơn (List)",
-      "D. Mảng một chiều tĩnh (Array)"
-    ],
-    "correct_option": "A",
-    "explanation": "Deque (Double-ended queue) cho phép thêm xóa ở cả hai đầu."
-  },
-  {
-    "id": "Q_MOD_B_070",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Để kiểm tra khóa 'k' có nằm trong dict 'd' không, ta viết thế nào?",
-    "options": [
-      "A. Biểu thức 'k in d'",
-      "B. Biểu thức 'd.has(k)'",
-      "C. Biểu thức 'k exists'",
-      "D. Biểu thức 'd.contains'"
-    ],
-    "correct_option": "A",
-    "explanation": "Toán tử in dùng để kiểm tra sự tồn tại của khóa."
-  },
-  {
-    "id": "Q_MOD_B_071",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Nếu hai biến trỏ cùng một danh sách, sửa biến này thì biến kia thế nào?",
-    "options": [
-      "A. Biến kia cũng thay đổi.",
-      "B. Biến kia không thay đổi.",
-      "C. Cả hai biến tự biến mất.",
-      "D. Chương trình báo lỗi ngay."
-    ],
-    "correct_option": "A",
-    "explanation": "Vì hai biến cùng trỏ vào một vùng nhớ danh sách."
-  },
-  {
-    "id": "Q_MOD_B_072",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "algorithms"
-    ],
-    "content": "Trong thuật toán sắp xếp nhanh (Quick Sort), phần tử mốc gọi là gì?",
-    "options": [
-      "A. Phần tử chốt (Pivot)",
-      "B. Phần tử đầu (Header)",
-      "C. Phần tử cuối (Footer)",
-      "D. Phần tử rỗng (Nuller)"
-    ],
-    "correct_option": "A",
-    "explanation": "Phần tử mốc dùng để phân chia mảng gọi là Pivot."
-  },
-  {
-    "id": "Q_MOD_B_073",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-preprocessing"
-    ],
-    "content": "Đưa từ về dạng gốc chính xác dựa vào ngữ nghĩa từ điển gọi là gì?",
-    "options": [
-      "A. Lemmatization",
-      "B. Tokenization",
-      "C. Stopword list",
-      "D. Postagging id"
-    ],
-    "correct_option": "A",
-    "explanation": "Lemmatization đưa từ về nguyên thể đúng nghĩa từ điển."
-  },
-  {
-    "id": "Q_MOD_B_074",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Trong Python, hàm `d.get(khóa, mặc_định)` dùng để làm gì?",
-    "options": [
-      "A. Lấy giá trị khóa an toàn.",
-      "B. Thêm một khóa mới vào.",
-      "C. Xóa đi một khóa có sẵn.",
-      "D. Sắp xếp các khóa tăng."
-    ],
-    "correct_option": "A",
-    "explanation": "Hàm get() lấy giá trị của khóa, trả về mặc định nếu không có."
-  },
-  {
-    "id": "Q_MOD_B_075",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-structures"
-    ],
-    "content": "Duyệt cây nhị phân tìm kiếm theo thứ tự In-order sẽ thu được gì?",
-    "options": [
-      "A. Dãy số tăng dần.",
-      "B. Dãy số giảm dần.",
-      "C. Dãy số ngẫu nhiên.",
-      "D. Báo lỗi cú pháp."
-    ],
-    "correct_option": "A",
-    "explanation": "Duyệt In-order (Trái - Gốc - Phải) của BST cho dãy tăng dần."
-  },
-  {
-    "id": "Q_MOD_B_076",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Để kế thừa từ lớp cha `Model` trong Python, ta viết thế nào?",
-    "options": [
-      "A. class Sub(Model):",
-      "B. class Sub[Model]:",
-      "C. class Sub<Model>:",
-      "D. class Sub: Model:"
-    ],
-    "correct_option": "A",
-    "explanation": "Cú pháp kế thừa trong Python sử dụng dấu ngoặc đơn."
-  },
-  {
-    "id": "Q_MOD_B_077",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-preprocessing"
-    ],
-    "content": "Nếu cột phân loại có quá nhiều giá trị, ta nên làm gì?",
-    "options": [
-      "A. Gom nhóm hoặc mã hóa.",
-      "B. Xóa hết toàn bộ cột đi.",
-      "C. Giữ nguyên không xử lý.",
-      "D. Nhân đôi dòng dữ liệu."
-    ],
-    "correct_option": "A",
-    "explanation": "Gom nhóm hoặc dùng mã hóa tần suất giúp giảm số chiều."
-  },
-  {
-    "id": "Q_MOD_B_078",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "algorithms"
-    ],
-    "content": "Thuật toán sắp xếp chèn (Insertion Sort) chèn phần tử vào đâu?",
-    "options": [
-      "A. Chèn vào vị trí thích hợp.",
-      "B. Chèn vào cuối danh sách.",
-      "C. Chèn vào đầu danh sách.",
-      "D. Chèn vào vị trí ngẫu nhiên."
-    ],
-    "correct_option": "A",
-    "explanation": "Insertion sort chèn phần tử vào đúng vị trí đã sắp xếp trước đó."
-  },
-  {
-    "id": "Q_MOD_B_079",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Trong Python, toán tử `is` dùng để kiểm tra điều gì?",
-    "options": [
-      "A. Có cùng địa chỉ ô nhớ hay không.",
-      "B. Có cùng giá trị nội dung hay không.",
-      "C. Có cùng kiểu dữ liệu hay là không.",
-      "D. Có cùng tên biến số trong bộ nhớ."
-    ],
-    "correct_option": "A",
-    "explanation": "`is` so sánh ID ô nhớ, `==` so sánh giá trị nội dung."
-  },
-  {
-    "id": "Q_MOD_B_080",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-preprocessing"
-    ],
-    "content": "Thuật toán K-Nearest Neighbors (KNN) phân loại dựa trên cái gì?",
-    "options": [
-      "A. Khoảng cách giữa các điểm.",
-      "B. Đạo hàm của hàm mất mát.",
-      "C. Phép nhân các ma trận lớn.",
-      "D. Quy luật của cây quyết định."
-    ],
-    "correct_option": "A",
-    "explanation": "KNN phân loại dựa trên khoảng cách tới các láng giềng gần nhất."
-  },
-  {
-    "id": "Q_MOD_B_081",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Trong ký tự chính quy (Regex), ký hiệu `\\d` dùng để khớp với gì?",
-    "options": [
-      "A. Khớp một chữ số từ 0 đến 9.",
-      "B. Khớp một chữ cái viết thường.",
-      "C. Khớp một khoảng trắng bất kỳ.",
-      "D. Khớp một ký tự đặc biệt nào."
-    ],
-    "correct_option": "A",
-    "explanation": "`\\d` đại diện cho một chữ số từ 0 đến 9."
-  },
-  {
-    "id": "Q_MOD_B_082",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-structures"
-    ],
-    "content": "Hiện tượng hai khóa băm ra cùng một địa chỉ trong bảng băm gọi là gì?",
-    "options": [
-      "A. Sự xung đột (Collision)",
-      "B. Sự phân hoạch (Partition)",
-      "C. Sự giải phóng (Release)",
-      "D. Sự chuẩn hóa (Normalize)"
-    ],
-    "correct_option": "A",
-    "explanation": "Hai khóa có cùng chỉ số băm gọi là xung đột (collision)."
-  },
-  {
-    "id": "Q_MOD_B_083",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Từ khóa `yield` trong hàm Python dùng để tạo ra đối tượng nào?",
-    "options": [
-      "A. Generator (Trình tạo)",
-      "B. List (Danh sách số)",
-      "C. Dict (Từ điển khóa)",
-      "D. Class (Lớp đối tượng)"
-    ],
-    "correct_option": "A",
-    "explanation": "Hàm chứa `yield` là một generator."
-  },
-  {
-    "id": "Q_MOD_B_084",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "algorithms"
-    ],
-    "content": "Với mảng đã xếp `[2, 4, 6, 8, 10]`, tìm `6` bằng nhị phân mất mấy lần so sánh?",
-    "options": [
-      "A. So sánh đúng 1 lần.",
-      "B. So sánh đúng 2 lần.",
-      "C. So sánh đúng 3 lần.",
-      "D. So sánh đúng 4 lần."
-    ],
-    "correct_option": "A",
-    "explanation": "Phần tử ở giữa mảng là 6, so sánh lần đầu khớp luôn."
-  },
-  {
-    "id": "Q_MOD_B_085",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-preprocessing"
-    ],
-    "content": "MinMaxScaler chuyển các giá trị về khoảng nào?",
-    "options": [
-      "A. Khoảng từ 0 đến 1.",
-      "B. Khoảng từ 0 đến 100.",
-      "C. Khoảng từ -1 đến 1.",
-      "D. Khoảng từ 0 đến 255."
-    ],
-    "correct_option": "A",
-    "explanation": "MinMaxScaler đưa dữ liệu về khoảng [0, 1]."
-  },
-  {
-    "id": "Q_MOD_B_086",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Ưu điểm của List Comprehension so với vòng lặp `for` thường là gì?",
-    "options": [
-      "A. Viết code ngắn gọn hơn.",
-      "B. Bảo mật chương trình hơn.",
-      "C. Định nghĩa hàm nhanh hơn.",
-      "D. Xóa dữ liệu tự động hơn."
-    ],
-    "correct_option": "A",
-    "explanation": "List Comprehension giúp viết code ngắn gọn trên một dòng."
-  },
-  {
-    "id": "Q_MOD_B_087",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-structures"
-    ],
-    "content": "Phần tử nhỏ nhất của cây nhị phân tìm kiếm nằm ở đâu?",
-    "options": [
-      "A. Nằm ở tận cùng bên trái.",
-      "B. Nằm ở tận cùng bên phải.",
-      "C. Nằm ngay tại nút gốc cây.",
-      "D. Nằm ở vị trí ngẫu nhiên."
-    ],
-    "correct_option": "A",
-    "explanation": "Theo tính chất BST, phần tử nhỏ nhất nằm ở tận cùng bên trái."
-  },
-  {
-    "id": "Q_MOD_B_088",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Để sửa đổi một biến toàn cục bên trong hàm, ta dùng từ khóa nào?",
-    "options": [
-      "A. Từ khóa global",
-      "B. Từ khóa nonlocal",
-      "C. Từ khóa public",
-      "D. Từ khóa static"
-    ],
-    "correct_option": "A",
-    "explanation": "Dùng từ khóa `global` để báo sửa đổi biến toàn cục."
-  },
-  {
-    "id": "Q_MOD_B_089",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "algorithms"
-    ],
-    "content": "Đoạn mã Bubble Sort đã tối ưu chạy trên mảng đã sắp xếp mất bao lâu?",
-    "options": [
-      "A. Có độ phức tạp là O(n)",
-      "B. Có độ phức tạp là O(n2)",
-      "C. Có độ phức tạp là O(log)",
-      "D. Có độ phức tạp là O(1)"
-    ],
-    "correct_option": "A",
-    "explanation": "Nếu mảng đã xếp sẵn, Bubble Sort tối ưu chạy mất O(n)."
-  },
-  {
-    "id": "Q_MOD_B_090",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-preprocessing"
-    ],
-    "content": "Kỹ thuật tính trung bình của một khung dữ liệu trượt gọi là gì?",
-    "options": [
-      "A. Trung bình trượt (Rolling)",
-      "B. Phép toán vi phân thời gian",
-      "C. Chuẩn hóa thang đo dữ liệu",
-      "D. Tách chuỗi thời gian ra"
-    ],
-    "correct_option": "A",
-    "explanation": "Tính trung bình trong cửa sổ trượt gọi là Rolling Mean."
-  },
-  {
-    "id": "Q_MOD_B_091",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Decorator trong Python dùng để làm gì?",
-    "options": [
-      "A. Thêm tính năng cho hàm.",
-      "B. Xóa đi một hàm cũ có.",
-      "C. Định nghĩa một biến mới.",
-      "D. In dữ liệu ra màn hình."
-    ],
-    "correct_option": "A",
-    "explanation": "Decorator giúp bổ sung tính năng cho một hàm mà không đổi code gốc."
-  },
-  {
-    "id": "Q_MOD_B_092",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "algorithms"
-    ],
-    "content": "Trong Quick Sort, bước chia mảng thành hai phần gọi là gì?",
-    "options": [
-      "A. Bước phân hoạch (Partition)",
-      "B. Bước trộn mảng (Merge array)",
-      "C. Bước sắp xếp chèn (Insert)",
-      "D. Bước hoán đổi ngẫu nhiên"
-    ],
-    "correct_option": "A",
-    "explanation": "Bước phân chia mảng theo phần tử chốt gọi là phân hoạch."
-  },
-  {
-    "id": "Q_MOD_B_093",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "tokenization"
-    ],
-    "content": "Thuật toán tokenization BPE ghép các ký tự dựa vào cái gì?",
-    "options": [
-      "A. Tần suất xuất hiện cặp.",
-      "B. Độ dài của các từ ghép.",
-      "C. Ý nghĩa ngữ pháp của từ.",
-      "D. Thứ tự trong bảng chữ."
-    ],
-    "correct_option": "A",
-    "explanation": "BPE ghép các cặp ký tự xuất hiện nhiều nhất thành token mới."
-  },
-  {
-    "id": "Q_MOD_B_094",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-structures"
-    ],
-    "content": "Trong Max-Heap, phần tử nằm ở gốc (root) có đặc điểm gì?",
-    "options": [
-      "A. Là phần tử có giá trị lớn nhất.",
-      "B. Là phần tử có giá trị nhỏ nhất.",
-      "C. Là phần tử có giá trị bằng không.",
-      "D. Là phần tử có giá trị ngẫu nhiên."
-    ],
-    "correct_option": "A",
-    "explanation": "Max-Heap duy trì phần tử lớn nhất tại gốc."
-  },
-  {
-    "id": "Q_MOD_B_095",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Cú pháp `if __name__ == '__main__':` dùng để làm gì?",
-    "options": [
-      "A. Chỉ chạy code khi chạy file này.",
-      "B. Khai báo một lớp đối tượng mới.",
-      "C. Bắt lỗi khi chương trình bị hỏng.",
-      "D. Tự động đóng tệp tin sau khi mở."
-    ],
-    "correct_option": "A",
-    "explanation": "Giúp đoạn mã chỉ chạy khi file được thực thi trực tiếp."
-  },
-  {
-    "id": "Q_MOD_B_096",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "algorithms"
-    ],
-    "content": "Thuật toán Dijkstra dùng để tìm cái gì trên đồ thị?",
-    "options": [
-      "A. Đường đi ngắn nhất.",
-      "B. Số lượng đỉnh đồ thị.",
-      "C. Các đỉnh bị cô lập có.",
-      "D. Chu trình âm đồ thị."
-    ],
-    "correct_option": "A",
-    "explanation": "Dijkstra tìm đường đi ngắn nhất từ một đỉnh nguồn."
-  },
-  {
-    "id": "Q_MOD_B_097",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-preprocessing"
-    ],
-    "content": "Đoạn mã tính độ chính xác Accuracy đo lường điều gì của mô hình?",
-    "options": [
-      "A. Tỷ lệ dự đoán đúng của mô hình.",
-      "B. Thời gian mô hình chạy huấn luyện.",
-      "C. Bộ nhớ mô hình chiếm dụng của máy.",
-      "D. Số lượng tham số của mạng nơ-ron."
-    ],
-    "correct_option": "A",
-    "explanation": "Accuracy bằng số mẫu dự đoán đúng chia cho tổng số mẫu."
-  },
-  {
-    "id": "Q_MOD_B_098",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "syntax-python"
-    ],
-    "content": "Trong Python, hàm nào dùng để lấy phần tử tiếp theo của iterator?",
-    "options": [
-      "A. Sử dụng hàm next()",
-      "B. Sử dụng hàm get()",
-      "C. Sử dụng hàm pop()",
-      "D. Sử dụng hàm index()"
-    ],
-    "correct_option": "A",
-    "explanation": "Hàm next() dùng để lấy giá trị tiếp theo từ iterator."
-  },
-  {
-    "id": "Q_MOD_B_099",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "algorithms"
-    ],
-    "content": "Bài toán cái túi (Knapsack Problem) nhằm mục đích gì?",
-    "options": [
-      "A. Chọn đồ vật để đạt giá trị lớn nhất.",
-      "B. Sắp xếp đồ vật theo thứ tự cân nặng.",
-      "C. Xóa bớt các đồ vật bị hỏng trong kho.",
-      "D. Đổi tên của các đồ vật có trong túi."
-    ],
-    "correct_option": "A",
-    "explanation": "Knapsack tìm cách chọn đồ vật sao cho giá trị lớn nhất mà không quá tải trọng."
-  },
-  {
-    "id": "Q_MOD_B_100",
-    "module_id": "Module_B",
-    "difficulty": "Medium",
-    "tags": [
-      "data-preprocessing"
-    ],
-    "content": "Trong Transformer, kỹ thuật Masking dùng để che cái gì?",
-    "options": [
-      "A. Che đi các từ ở tương lai khi học.",
-      "B. Che đi các từ bị viết sai chính tả.",
-      "C. Che đi các từ dừng xuất hiện nhiều.",
-      "D. Che đi các từ khóa quan trọng nhất."
-    ],
-    "correct_option": "A",
-    "explanation": "Masking ngăn mô hình nhìn thấy trước các từ tương lai khi huấn luyện."
+      "data-structures",
+      "dictionaries"
+    ],
+    "content": "Lệnh nào dùng để xóa tất cả các cặp khóa-giá trị khỏi từ điển mà không xóa bỏ bản thân từ điển đó?",
+    "options": [
+      "A. `del d`",
+      "B. `d.clear()`",
+      "C. `d.remove_all()`",
+      "D. `d = None`"
+    ],
+    "correct_option": "B",
+    "explanation": "Phương thức `clear()` làm rỗng từ điển bằng cách xóa toàn bộ phần tử của từ điển đó tại chỗ. Khác với `del d` (xóa hoàn toàn tham chiếu biến `d` khỏi bộ nhớ), `clear()` giữ lại từ điển rỗng `{}` để tái sử dụng.",
+    "solution": "**Bước 1:** Tìm cách dọn sạch từ điển:\n- `del d` sẽ xóa đi biến `d` khiến chương trình báo NameError nếu truy cập lại.\n- `d = None` gán biến `d` sang đối tượng rỗng None chứ không xóa nội dung từ điển cũ.\n- `d.clear()` xóa sạch các khóa bên trong và giữ nguyên kiểu từ điển rỗng.\n**Bước 2:** Chọn B."
   }
 ];

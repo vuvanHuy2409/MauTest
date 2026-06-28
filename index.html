@@ -38,28 +38,27 @@
   <div class="landing-container">
 
     <div class="badge-pill">
-      <span>AI Training Program 2026</span>
+      <span>Python Certification 2026</span>
     </div>
 
     <h1 class="hero-title">
       Hệ Thống Thi<br/>
-      <span class="gradient-text">Trắc Nghiệm AI</span>
+      <span class="gradient-text">Trắc Nghiệm Python</span>
     </h1>
 
     <p class="hero-subtitle">
-      Đánh giá năng lực qua <strong>500 câu hỏi</strong> cơ bản, dễ hiểu,
-      ưu tiên <strong>Toán học</strong> và <strong>Lập trình</strong>.
-      Phù hợp với người mới bắt đầu học về AI.
+      Đánh giá năng lực qua <strong>150 câu hỏi</strong> chất lượng cao,
+      từ cơ bản đến nâng cao, bao phủ toàn bộ các chủ đề quan trọng trong Python.
     </p>
 
     <!-- Stats -->
     <div class="stats-grid">
       <div class="stat-card">
-        <div class="stat-value">500</div>
+        <div class="stat-value">150</div>
         <div class="stat-label">Câu hỏi</div>
       </div>
       <div class="stat-card">
-        <div class="stat-value">4</div>
+        <div class="stat-value">5</div>
         <div class="stat-label">Modules</div>
       </div>
       <div class="stat-card">
@@ -68,7 +67,7 @@
       </div>
       <div class="stat-card">
         <div class="stat-icon">🎯</div>
-        <div class="stat-value">TB</div>
+        <div class="stat-value">Dễ-Khó</div>
         <div class="stat-label">Độ khó</div>
       </div>
     </div>
@@ -104,34 +103,42 @@
       <div class="module-card">
         <div class="module-card-header">
           <span class="module-tag mod-a">Module A</span>
-          <span class="module-count">200 câu</span>
+          <span class="module-count">30 câu</span>
         </div>
-        <div class="module-card-title">Toán học & Suy luận định lượng</div>
-        <div class="module-card-desc">Đại số tuyến tính, Xác suất thống kê, Giải tích, Hàm kích hoạt, Chỉ số đánh giá mô hình.</div>
+        <div class="module-card-title">Cú pháp & Kiểu dữ liệu</div>
+        <div class="module-card-desc">Cú pháp cơ bản, biến, kiểu số, chuỗi, boolean, toán tử logic, so sánh, nhập/xuất cơ bản.</div>
       </div>
       <div class="module-card">
         <div class="module-card-header">
           <span class="module-tag mod-b">Module B</span>
-          <span class="module-count">100 câu</span>
+          <span class="module-count">30 câu</span>
         </div>
-        <div class="module-card-title">Lập trình & Xử lý dữ liệu</div>
-        <div class="module-card-desc">Python syntax, Cấu trúc dữ liệu, Thuật toán, Tiền xử lý dữ liệu, Tokenization, Augmentation.</div>
+        <div class="module-card-title">Cấu trúc & Dữ liệu</div>
+        <div class="module-card-desc">Cấu trúc rẽ nhánh if-else, vòng lặp for/while, danh sách (list), tuple, set, từ điển (dict).</div>
       </div>
       <div class="module-card">
         <div class="module-card-header">
           <span class="module-tag mod-c">Module C</span>
-          <span class="module-count">100 câu</span>
+          <span class="module-count">30 câu</span>
         </div>
-        <div class="module-card-title">Kiến thức AI & Tư duy sản phẩm</div>
-        <div class="module-card-desc">Supervised/Unsupervised Learning, Computer Vision, NLP, LLM, RAG, Transfer Learning, UX Metrics.</div>
+        <div class="module-card-title">Hàm & OOP</div>
+        <div class="module-card-desc">Định nghĩa hàm, tham số (*args, **kwargs), phạm vi biến, lập trình hướng đối tượng (Class, kế thừa, đóng gói, đa hình).</div>
       </div>
       <div class="module-card">
         <div class="module-card-header">
           <span class="module-tag mod-d">Module D</span>
-          <span class="module-count">100 câu</span>
+          <span class="module-count">30 câu</span>
         </div>
-        <div class="module-card-title">Logic, Đạo đức & Phán đoán hành vi</div>
-        <div class="module-card-desc">Suy luận mệnh đề, Quyền riêng tư dữ liệu, Định kiến AI, Đạo đức nghề nghiệp, Giấy phép mã nguồn.</div>
+        <div class="module-card-title">Ngoại lệ & Thư viện</div>
+        <div class="module-card-desc">Xử lý ngoại lệ try-except, đọc/ghi file, Context Manager, thư viện chuẩn (math, datetime, os, json, random).</div>
+      </div>
+      <div class="module-card">
+        <div class="module-card-header">
+          <span class="module-tag mod-e">Module E</span>
+          <span class="module-count">30 câu</span>
+        </div>
+        <div class="module-card-title">Python nâng cao</div>
+        <div class="module-card-desc">Comprehensions, generator, iterator, hàm lambda, map/filter, decorator, regex, threading/multiprocessing.</div>
       </div>
     </div>
 
@@ -213,6 +220,16 @@
       <div class="question-content" id="question-content">
         Đang tải câu hỏi…
       </div>
+      <!-- Solution during exam -->
+      <div class="quiz-solution-wrapper" id="quiz-solution-wrapper" style="display: none;">
+        <button class="btn-toggle-quiz-solution" id="btn-toggle-quiz-solution">
+          <span class="quiz-sol-icon">💡</span>
+          <span class="quiz-sol-text">Xem giải thích chi tiết</span>
+        </button>
+        <div class="quiz-solution-box" id="quiz-solution-box" style="display: none;">
+          <div class="quiz-solution-body" id="quiz-solution-body"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Options -->
@@ -279,31 +296,38 @@
     <div class="breakdown-grid">
       <div class="breakdown-card">
         <div class="breakdown-header">
-          <span class="module-tag mod-a breakdown-title">Module A – Toán học</span>
+          <span class="module-tag mod-a breakdown-title">Module A – Cú pháp & Kiểu dữ liệu</span>
           <span class="breakdown-score" style="color:var(--accent-blue)" id="mod-score-A">–</span>
         </div>
         <div class="breakdown-bar"><div class="breakdown-bar-fill bar-mod-a" id="mod-bar-A" style="width:0%"></div></div>
       </div>
       <div class="breakdown-card">
         <div class="breakdown-header">
-          <span class="module-tag mod-b breakdown-title">Module B – Lập trình</span>
+          <span class="module-tag mod-b breakdown-title">Module B – Cấu trúc & Dữ liệu</span>
           <span class="breakdown-score" style="color:var(--accent-green)" id="mod-score-B">–</span>
         </div>
         <div class="breakdown-bar"><div class="breakdown-bar-fill bar-mod-b" id="mod-bar-B" style="width:0%"></div></div>
       </div>
       <div class="breakdown-card">
         <div class="breakdown-header">
-          <span class="module-tag mod-c breakdown-title">Module C – AI Knowledge</span>
+          <span class="module-tag mod-c breakdown-title">Module C – Hàm & OOP</span>
           <span class="breakdown-score" style="color:var(--accent-purple)" id="mod-score-C">–</span>
         </div>
         <div class="breakdown-bar"><div class="breakdown-bar-fill bar-mod-c" id="mod-bar-C" style="width:0%"></div></div>
       </div>
       <div class="breakdown-card">
         <div class="breakdown-header">
-          <span class="module-tag mod-d breakdown-title">Module D – Đạo đức & Logic</span>
+          <span class="module-tag mod-d breakdown-title">Module D – Ngoại lệ & Thư viện</span>
           <span class="breakdown-score" style="color:var(--accent-orange)" id="mod-score-D">–</span>
         </div>
         <div class="breakdown-bar"><div class="breakdown-bar-fill bar-mod-d" id="mod-bar-D" style="width:0%"></div></div>
+      </div>
+      <div class="breakdown-card">
+        <div class="breakdown-header">
+          <span class="module-tag mod-e breakdown-title">Module E – Python nâng cao</span>
+          <span class="breakdown-score" style="color:var(--accent-pink)" id="mod-score-E">–</span>
+        </div>
+        <div class="breakdown-bar"><div class="breakdown-bar-fill bar-mod-e" id="mod-bar-E" style="width:0%"></div></div>
       </div>
     </div>
 

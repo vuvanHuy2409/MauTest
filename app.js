@@ -49,6 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
     prevBtn:        document.getElementById('prev-btn'),
     nextBtn:        document.getElementById('next-btn'),
     submitBtn:      document.getElementById('submit-btn'),
+    quizSolutionWrapper: document.getElementById('quiz-solution-wrapper'),
+    btnToggleQuizSolution: document.getElementById('btn-toggle-quiz-solution'),
+    quizSolutionBox: document.getElementById('quiz-solution-box'),
+    quizSolutionBody: document.getElementById('quiz-solution-body'),
 
     // Results
     scoreValue:     document.getElementById('score-value'),
@@ -85,6 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Flag button
   DOM.flagBtn.addEventListener('click', toggleFlag);
+
+  // Quiz solution toggle button
+  if (DOM.btnToggleQuizSolution) {
+    DOM.btnToggleQuizSolution.addEventListener('click', toggleQuizSolution);
+  }
 
   // Navigation
   DOM.prevBtn.addEventListener('click', () => navigateTo(STATE.currentIndex - 1));
@@ -180,16 +189,14 @@ function startExam() {
 }
 
 // Select questions with module-weighted distribution.
-// Module A (Math) 25%, Module B (Programming) 25%, Module E (Calculus) 20%
-// Module C (AI) 15%, Module D (Ethics) 15%.
-// All questions are at Medium difficulty level.
+// All 5 modules have equal weight of 20% each.
 function selectQuestions(n) {
   const moduleWeights = {
-    Module_A: 0.25,
-    Module_B: 0.25,
+    Module_A: 0.20,
+    Module_B: 0.20,
+    Module_C: 0.20,
+    Module_D: 0.20,
     Module_E: 0.20,
-    Module_C: 0.15,
-    Module_D: 0.15,
   };
 
   let selected = [];
@@ -334,6 +341,25 @@ function renderQuestion(index) {
     if (typeof hljs !== 'undefined') hljs.highlightElement(block);
   });
 
+  // Setup Solution display during exam (quiz phase)
+  if (DOM.quizSolutionWrapper) {
+    if (q.solution) {
+      DOM.quizSolutionWrapper.style.display = 'block';
+      DOM.quizSolutionBox.style.display = 'none';
+      DOM.btnToggleQuizSolution.classList.remove('open');
+      const textEl = DOM.btnToggleQuizSolution.querySelector('.quiz-sol-text');
+      if (textEl) textEl.textContent = 'Xem giải thích chi tiết';
+      
+      const solutionFormatted = q.solution
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.+?)\*/g, '<em>$1</em>')
+        .replace(/\n/g, '<br>');
+      DOM.quizSolutionBody.innerHTML = parseContent(solutionFormatted);
+    } else {
+      DOM.quizSolutionWrapper.style.display = 'none';
+    }
+  }
+
   // Progress
   const answered = STATE.userAnswers.filter(a => a !== null).length;
   DOM.progressFill.style.width = `${(answered / STATE.examMode) * 100}%`;
@@ -383,7 +409,13 @@ function difficultyLabel(d) {
 }
 
 function moduleLabel(m) {
-  return { Module_A: 'Toán học', Module_B: 'Lập trình', Module_C: 'AI', Module_D: 'Đạo đức', Module_E: 'Tích phân' }[m] || m;
+  return { 
+    Module_A: 'Cú pháp & Kiểu dữ liệu', 
+    Module_B: 'Cấu trúc & Dữ liệu', 
+    Module_C: 'Hàm & OOP', 
+    Module_D: 'Ngoại lệ & Thư viện', 
+    Module_E: 'Python nâng cao' 
+  }[m] || m;
 }
 
 // ---------- Answer Selection ----------
@@ -612,6 +644,29 @@ function renderReviewList() {
       `;
     });
 
+    // Build solution HTML if question has step-by-step guide
+    let solutionHtml = '';
+    if (q.solution) {
+      const solutionId = `solution-${i}`;
+      // Convert markdown-like bold and newlines to HTML
+      const solutionFormatted = q.solution
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.+?)\*/g, '<em>$1</em>')
+        .replace(/\n/g, '<br>');
+      solutionHtml = `
+        <div class="solution-block" id="${solutionId}">
+          <button class="solution-toggle-btn" onclick="toggleSolution('${solutionId}')">
+            <span class="solution-icon">📖</span>
+            <span class="solution-toggle-text">Xem hướng dẫn từng bước</span>
+            <span class="solution-chevron">▼</span>
+          </button>
+          <div class="solution-content">
+            <div class="solution-steps">${parseContent(solutionFormatted)}</div>
+          </div>
+        </div>
+      `;
+    }
+
     item.innerHTML = `
       <div class="review-item-header" onclick="toggleReviewItem(this)">
         <span class="review-item-number">Câu ${i + 1}</span>
@@ -622,6 +677,7 @@ function renderReviewList() {
         <div class="review-item-content">${parseContent(q.content)}</div>
         <div class="review-options-list">${optionsHtml}</div>
         ${q.explanation ? `<div class="review-explanation"><strong>Giải thích:</strong> ${parseContent(q.explanation)}</div>` : ''}
+        ${solutionHtml}
       </div>
     `;
 
@@ -638,6 +694,35 @@ window.toggleReviewItem = function(header) {
   const body = header.nextElementSibling;
   body.classList.toggle('open');
 };
+
+window.toggleSolution = function(solutionId) {
+  const block = document.getElementById(solutionId);
+  if (!block) return;
+  const isOpen = block.classList.toggle('open');
+  const btn = block.querySelector('.solution-toggle-btn');
+  const textEl = btn.querySelector('.solution-toggle-text');
+  textEl.textContent = isOpen ? 'Ẩn hướng dẫn' : 'Xem hướng dẫn từng bước';
+  // Re-render math inside solution content
+  const content = block.querySelector('.solution-content');
+  if (content) renderMath(content);
+};
+
+function toggleQuizSolution() {
+  if (!DOM.quizSolutionBox || !DOM.btnToggleQuizSolution) return;
+  const isHidden = DOM.quizSolutionBox.style.display === 'none';
+  if (isHidden) {
+    DOM.quizSolutionBox.style.display = 'block';
+    DOM.btnToggleQuizSolution.classList.add('open');
+    const textEl = DOM.btnToggleQuizSolution.querySelector('.quiz-sol-text');
+    if (textEl) textEl.textContent = 'Ẩn giải thích chi tiết';
+    renderMath(DOM.quizSolutionBody);
+  } else {
+    DOM.quizSolutionBox.style.display = 'none';
+    DOM.btnToggleQuizSolution.classList.remove('open');
+    const textEl = DOM.btnToggleQuizSolution.querySelector('.quiz-sol-text');
+    if (textEl) textEl.textContent = 'Xem giải thích chi tiết';
+  }
+}
 
 // ---------- Reset / Home ----------
 function resetExam() {
