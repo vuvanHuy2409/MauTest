@@ -410,11 +410,11 @@ function difficultyLabel(d) {
 
 function moduleLabel(m) {
   return { 
-    Module_A: 'Cú pháp & Kiểu dữ liệu', 
-    Module_B: 'Cấu trúc & Dữ liệu', 
-    Module_C: 'Hàm & OOP', 
-    Module_D: 'Ngoại lệ & Thư viện', 
-    Module_E: 'Python nâng cao' 
+    Module_A: 'Toán tuyến tính & Pandas', 
+    Module_B: 'Python Cơ bản', 
+    Module_C: 'Python Hướng đối tượng & Nâng cao', 
+    Module_D: 'Thuật ngữ AI & Mô hình LLM', 
+    Module_E: 'Kiến thức Tự luận - Thiết kế Chatbot RAG' 
   }[m] || m;
 }
 

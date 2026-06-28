@@ -12,11 +12,11 @@ const QUESTIONS_C = [
       "A. `[1]` và `[2]`",
       "B. `[1]` và `[1, 2]`",
       "C. `[1]` và `[]`",
-      "D. Báo lỗi Runtime error"
+      "D. Lỗi"
     ],
     "correct_option": "B",
-    "explanation": "Trong Python, các tham số mặc định (default arguments) chỉ được khởi tạo **một lần duy nhất** khi định nghĩa hàm được biên dịch (chứ không phải khởi tạo lại mỗi khi hàm được gọi). Nếu tham số mặc định là một đối tượng có thể thay đổi (mutable) như danh sách rỗng `[]`, mọi lượt gọi hàm không truyền đối số sẽ sử dụng chung đối tượng danh sách này. Lần gọi thứ nhất thêm 1 vào danh sách -> in ra `[1]`. Lần gọi thứ hai thêm 2 vào chính danh sách đó -> in ra `[1, 2]`.",
-    "solution": "**Bước 1:** Nhận diện hành vi của tham số mặc định có kiểu dữ liệu thay đổi được (mutable default arguments).\n**Bước 2:** `target=[]` được tạo ra một lần duy nhất lúc khai báo hàm và lưu trữ chung trong thuộc tính `__defaults__` của hàm.\n**Bước 3:** Lần gọi 1: `append_to(1)` sửa đổi danh sách mặc định thành `[1]`. Lần gọi 2: `append_to(2)` sửa đổi danh sách mặc định thành `[1, 2]`. Chọn B."
+    "explanation": "Tham số mặc định kiểu thay đổi được (mutable) như `[]` chỉ được khởi tạo một lần khi biên dịch hàm. Các lượt gọi tiếp theo không truyền đối số sẽ dùng chung danh sách này.",
+    "solution": "**Bước 1:** Phân tích tính lưu giữ của tham số mặc định dạng danh sách. Chọn B."
   },
   {
     "id": "Q_MOD_C_002",
@@ -26,7 +26,7 @@ const QUESTIONS_C = [
       "functions",
       "arguments"
     ],
-    "content": "Kiểu dữ liệu của biến `args` bên trong hàm nhận đối số biến đổi vị trí (ví dụ `def func(*args):`) là gì?",
+    "content": "Tham số `*args` trong định nghĩa hàm có kiểu dữ liệu là gì bên trong hàm?",
     "options": [
       "A. `list`",
       "B. `dict`",
@@ -34,8 +34,8 @@ const QUESTIONS_C = [
       "D. `set`"
     ],
     "correct_option": "C",
-    "explanation": "Cú pháp `*args` dùng để gom tất cả các tham số vị trí dư thừa truyền vào hàm thành một đối tượng bất biến dạng **Tuple**.",
-    "solution": "**Bước 1:** Khi sử dụng ký tự `*` trước tên biến trong định nghĩa tham số hàm, Python thực hiện đóng gói tham số (argument packing).\n**Bước 2:** Tất cả đối số vị trí không định danh sẽ được thu gom vào một `tuple`.\n**Bước 3:** Chọn đáp án C."
+    "explanation": "`*args` thu gom các đối số vị trí không đặt tên truyền dư thừa vào hàm thành một `tuple`.",
+    "solution": "**Bước 1:** `*args` đóng gói thành tuple. Chọn C."
   },
   {
     "id": "Q_MOD_C_003",
@@ -45,7 +45,7 @@ const QUESTIONS_C = [
       "functions",
       "arguments"
     ],
-    "content": "Kiểu dữ liệu của biến `kwargs` bên trong định nghĩa hàm `def func(**kwargs):` là gì?",
+    "content": "Tham số `**kwargs` trong định nghĩa hàm có kiểu dữ liệu là gì bên trong hàm?",
     "options": [
       "A. `list`",
       "B. `dict`",
@@ -53,8 +53,8 @@ const QUESTIONS_C = [
       "D. `set`"
     ],
     "correct_option": "B",
-    "explanation": "Cú pháp `**kwargs` dùng để thu gom tất cả các tham số truyền dưới dạng từ khóa (keyword arguments) thành một đối tượng **Dictionary**.",
-    "solution": "**Bước 1:** Ký hiệu hai dấu sao `**` trước tên biến khai báo tham số hàm chỉ thị việc thu thập các đối số dạng `key=value`.\n**Bước 2:** Trình thông dịch Python tự động đóng gói các cặp khóa-giá trị này vào một từ điển (`dict`).\n**Bước 3:** Chọn đáp án B."
+    "explanation": "`**kwargs` đóng gói các đối số truyền dạng keyword `key=value` thành một `dict`.",
+    "solution": "**Bước 1:** `**kwargs` đóng gói thành từ điển. Chọn B."
   },
   {
     "id": "Q_MOD_C_004",
@@ -64,7 +64,7 @@ const QUESTIONS_C = [
       "functions",
       "scope"
     ],
-    "content": "Đoạn code sau đây sẽ in ra màn hình kết quả là gì?\n```python\nx = 10\ndef change():\n    x = 20\nchange()\nprint(x)\n```",
+    "content": "Đoạn code sau đây in ra kết quả gì?\n```python\nx = 10\ndef change():\n    x = 20\nchange()\nprint(x)\n```",
     "options": [
       "A. 20",
       "B. 10",
@@ -72,8 +72,8 @@ const QUESTIONS_C = [
       "D. `None`"
     ],
     "correct_option": "B",
-    "explanation": "Biến `x = 10` nằm ở phạm vi toàn cục (global scope). Bên trong hàm `change()`, câu lệnh `x = 20` tạo ra một biến **cục bộ** mới trùng tên `x` (local scope) chứ không làm thay đổi giá trị của biến toàn cục `x`. Sau khi hàm thực thi xong, biến cục bộ bị giải phóng, và `print(x)` toàn cục vẫn in ra `10`.",
-    "solution": "**Bước 1:** Khảo sát phạm vi biến (Variable Scope) theo quy tắc LEGB.\n- `x = 10` ở cấp ngoài cùng (Global).\n- `x = 20` bên trong hàm tạo ra biến cục bộ mới (Local).\n**Bước 2:** Hàm `change()` được gọi nhưng không tác động đến biến toàn cục.\n**Bước 3:** Câu lệnh `print(x)` bên ngoài hàm tham chiếu đến biến toàn cục, giá trị in ra là `10`. Chọn B."
+    "explanation": "`x = 20` trong hàm tạo ra biến cục bộ mới, không ảnh hưởng đến biến toàn cục `x = 10`.",
+    "solution": "**Bước 1:** Xác định biến cục bộ che biến toàn cục trong hàm. Chọn B."
   },
   {
     "id": "Q_MOD_C_005",
@@ -83,16 +83,16 @@ const QUESTIONS_C = [
       "functions",
       "scope"
     ],
-    "content": "Để thay đổi giá trị của một biến toàn cục (global variable) bên trong một hàm, bạn phải làm gì?",
+    "content": "Để ghi đè giá trị biến toàn cục bên trong hàm, ta cần khai báo từ khóa nào trước tên biến?",
     "options": [
-      "A. Sử dụng từ khóa `global` đi kèm tên biến bên trong hàm.",
-      "B. Truyền biến đó làm đối số đầu vào cho hàm.",
-      "C. Đặt tên hàm trùng tên với biến.",
-      "D. Python tự động cho phép thay đổi trực tiếp mà không cần làm gì."
+      "A. `global`",
+      "B. `nonlocal`",
+      "C. `public`",
+      "D. `outer`"
     ],
     "correct_option": "A",
-    "explanation": "Để thông báo cho hàm biết rằng một biến cụ thể tham chiếu đến biến nằm ngoài phạm vi toàn cục (chứ không phải tạo biến cục bộ mới), ta dùng khai báo `global <tên_biến>` trước khi gán lại giá trị cho nó.",
-    "solution": "**Bước 1:** Mặc định, nếu bạn gán giá trị cho một biến trong hàm, Python coi đó là biến cục bộ.\n**Bước 2:** Để ghi đè giá trị của biến toàn cục, ta phải khai báo từ khóa `global` để báo hiệu cho Python.\n**Bước 3:** Chọn A."
+    "explanation": "Khai báo `global x` bên trong hàm chỉ định Python thao tác trên biến toàn cục ngoài hàm thay vì tạo mới biến cục bộ.",
+    "solution": "**Bước 1:** Khai báo global biến số. Chọn A."
   },
   {
     "id": "Q_MOD_C_006",
@@ -102,16 +102,16 @@ const QUESTIONS_C = [
       "functions",
       "scope"
     ],
-    "content": "Từ khóa `nonlocal` trong Python được dùng khi nào?",
+    "content": "Từ khóa `nonlocal` dùng khi nào?",
     "options": [
-      "A. Khi muốn truy cập biến toàn cục ở ngoài cùng.",
+      "A. Khi muốn truy cập biến toàn cục.",
       "B. Khi muốn sửa đổi một biến nằm ở phạm vi của hàm bao quanh bên ngoài (enclosing scope) trong cấu trúc hàm lồng nhau.",
-      "C. Khi muốn biến đó có thể được import bởi module khác.",
-      "D. Khi muốn định nghĩa biến nằm trong file cấu hình."
+      "C. Khi muốn tạo biến tĩnh.",
+      "D. Không tồn tại từ khóa này."
     ],
     "correct_option": "B",
-    "explanation": "Từ khóa `nonlocal` được sử dụng trong các hàm lồng nhau (nested functions) để khai báo rằng biến này thuộc về hàm bao bên ngoài gần nhất (enclosing scope), chứ không phải biến cục bộ của hàm hiện tại hay biến toàn cục.",
-    "solution": "**Bước 1:** Phân tích phạm vi biến bao bọc (Enclosing Scope):\n- Xảy ra khi có hàm lồng hàm.\n- Để hàm con bên trong thay đổi giá trị biến của hàm cha bên ngoài, ta dùng `nonlocal`.\n**Bước 2:** Chọn B."
+    "explanation": "`nonlocal` liên kết biến trong hàm con với biến của hàm cha bao bọc nó.",
+    "solution": "**Bước 1:** Dùng nonlocal trong closure hoặc hàm lồng hàm để sửa biến hàm cha. Chọn B."
   },
   {
     "id": "Q_MOD_C_007",
@@ -120,16 +120,16 @@ const QUESTIONS_C = [
     "tags": [
       "modules"
     ],
-    "content": "Khi một module Python chạy trực tiếp dưới dạng một script độc lập (chạy từ terminal), biến đặc biệt `__name__` sẽ có giá trị là gì?",
+    "content": "Khi chạy một file Python trực tiếp từ terminal, biến `__name__` mang giá trị là gì?",
     "options": [
-      "A. Tên file của module đó (ví dụ `\"my_module\"`).",
+      "A. Tên file Python đó.",
       "B. `\"__main__\"`",
       "C. `\"root\"`",
       "D. `None`"
     ],
     "correct_option": "B",
-    "explanation": "Khi file Python được thực thi trực tiếp, Python gán chuỗi `\"__main__\"` cho biến hệ thống `__name__`. Nếu file được import dưới dạng thư viện từ một file khác, `__name__` sẽ mang giá trị là tên của module (tên file bỏ đuôi .py). Điều này thường dùng để tạo điều kiện kiểm tra chạy thử: `if __name__ == '__main__':`.",
-    "solution": "**Bước 1:** Tìm hiểu biến đặc biệt `__name__` trong Python.\n**Bước 2:** Khi chạy file trực tiếp, hệ thống gán nhãn `__main__` cho module chạy chính.\n**Bước 3:** Do đó giá trị là `\"__main__\"` (Đáp án B)."
+    "explanation": "Khi thực thi trực tiếp, Python thiết lập giá trị biến đặc biệt `__name__` thành `\"__main__\"`.",
+    "solution": "**Bước 1:** Giá trị mặc định khi chạy file trực tiếp là `__main__`. Chọn B."
   },
   {
     "id": "Q_MOD_C_008",
@@ -138,16 +138,16 @@ const QUESTIONS_C = [
     "tags": [
       "oop"
     ],
-    "content": "Trong Lập trình hướng đối tượng (OOP) của Python, phương thức đặc biệt `__init__` đóng vai trò gì?",
+    "content": "Phương thức khởi dựng `__init__` trong lớp Python đóng vai trò gì?",
     "options": [
-      "A. Giải phóng bộ nhớ của đối tượng khi nó bị hủy.",
-      "B. Khởi tạo đối tượng (Constructor) dùng để gán giá trị ban đầu cho các thuộc tính khi đối tượng mới được tạo ra.",
-      "C. Chuyển đổi đối tượng thành dạng chuỗi ký tự.",
-      "D. Kích hoạt lớp để kế thừa từ lớp khác."
+      "A. Hủy thực thể đối tượng.",
+      "B. Khởi tạo đối tượng (Constructor) dùng để thiết lập giá trị ban đầu cho các thuộc tính khi đối tượng mới được tạo.",
+      "C. In thông tin đối tượng.",
+      "D. Kế thừa lớp cha."
     ],
     "correct_option": "B",
-    "explanation": "Phương thức `__init__` được gọi tự động ngay sau khi một đối tượng mới được khởi tạo từ lớp. Nó hoạt động như một hàm tạo (Constructor) dùng để thiết lập các giá trị ban đầu cho các thuộc tính đối tượng.",
-    "solution": "**Bước 1:** Nhận biết các phương thức ma thuật (dunder methods) trong OOP Python.\n**Bước 2:** `__init__` là phương thức khởi dựng lớp đối tượng, nhận tham số truyền vào khi gọi `ClassName()` và gán giá trị thuộc tính qua `self`.\n**Bước 3:** Chọn B."
+    "explanation": "`__init__` hoạt động như một constructor để thiết lập trạng thái ban đầu của đối tượng.",
+    "solution": "**Bước 1:** Phương thức `__init__` là constructor khởi tạo thực thể. Chọn B."
   },
   {
     "id": "Q_MOD_C_009",
@@ -156,16 +156,16 @@ const QUESTIONS_C = [
     "tags": [
       "oop"
     ],
-    "content": "Tham số `self` xuất hiện ở tham số đầu tiên của các phương thức trong một lớp có ý nghĩa gì?",
+    "content": "Tham số `self` trong phương thức của Class trỏ tới đối tượng nào?",
     "options": [
-      "A. Trỏ tới chính lớp (Class) chứa phương thức đó.",
-      "B. Trỏ tới chính thực thể/đối tượng (Instance) cụ thể đang gọi phương thức.",
-      "C. Là một từ khóa bắt buộc của hệ thống Python, không thể thay đổi tên.",
-      "D. Dùng để gọi các hàm bên ngoài lớp."
+      "A. Trỏ tới chính Class đó.",
+      "B. Trỏ tới thực thể cụ thể (Instance) đang gọi phương thức.",
+      "C. Trỏ tới lớp cha.",
+      "D. Là từ khóa hệ thống bắt buộc."
     ],
     "correct_option": "B",
-    "explanation": "`self` đại diện cho đối tượng cụ thể (instance) đang gọi phương thức đó, cho phép phương thức truy cập và sửa đổi các thuộc tính và phương thức khác của chính đối tượng đó. (Lưu ý: Tên gọi `self` là quy ước cộng đồng, bạn có thể đổi tên khác nhưng bắt buộc phải là tham số đầu tiên của phương thức thực thể).",
-    "solution": "**Bước 1:** Khi một đối tượng gọi phương thức `obj.method()`, Python tự động dịch thành `Class.method(obj)`.\n**Bước 2:** Tham số đầu tiên chính là đối tượng đang gọi phương thức đó, được đại diện bởi `self`.\n**Bước 3:** Chọn đáp án B."
+    "explanation": "`self` đại diện cho chính đối tượng cụ thể đang thực hiện phương thức đó.",
+    "solution": "**Bước 1:** `self` là tham chiếu trỏ đến đối tượng hiện hành. Chọn B."
   },
   {
     "id": "Q_MOD_C_010",
@@ -174,16 +174,16 @@ const QUESTIONS_C = [
     "tags": [
       "oop"
     ],
-    "content": "Đoạn code sau đây định nghĩa thuộc tính lớp (class attribute) và thuộc tính đối tượng (instance attribute). Kết quả in ra là gì?\n```python\nclass Dog:\n    species = \"Canine\"  # Class attribute\n\n    def __init__(self, name):\n        self.name = name  # Instance attribute\n\nd1 = Dog(\"Buddy\")\nd2 = Dog(\"Lucy\")\nprint(d1.species, d2.name)\n```",
+    "content": "Đoạn code sau in ra kết quả gì?\n```python\nclass Dog:\n    species = \"Canine\"\n    def __init__(self, name):\n        self.name = name\nd1 = Dog(\"Buddy\")\nd2 = Dog(\"Lucy\")\nprint(d1.species, d2.name)\n```",
     "options": [
       "A. `Canine Buddy`",
       "B. `Canine Lucy`",
       "C. `Canine Canine`",
-      "D. Báo lỗi vì species không thuộc Buddy"
+      "D. Lỗi"
     ],
     "correct_option": "B",
-    "explanation": "Thuộc tính lớp `species` được chia sẻ chung bởi tất cả thực thể của lớp `Dog`. Do đó, cả `d1.species` và `d2.species` đều trả về `\"Canine\"`. Thuộc tính thực thể `name` là riêng biệt của từng thực thể, `d2.name` là `\"Lucy\"`.",
-    "solution": "**Bước 1:** Phân tích sự khác biệt giữa Class Attribute và Instance Attribute:\n- `species` được khai báo trong thân Class nhưng ngoài các phương thức -> chia sẻ chung giữa các đối tượng.\n- `self.name` được khai báo trong `__init__` gắn với `self` -> thuộc tính riêng biệt của từng thực thể.\n**Bước 2:** `d1.species` là `'Canine'`, `d2.name` là `'Lucy'`.\n**Bước 3:** Kết quả in ra là `'Canine Lucy'`. Chọn B."
+    "explanation": "`species` là thuộc tính lớp dùng chung, `name` là thuộc tính đối tượng riêng biệt. `d2.name` là `'Lucy'`.",
+    "solution": "**Bước 1:** Phân tích thuộc tính lớp vs thuộc tính thực thể. Chọn B."
   },
   {
     "id": "Q_MOD_C_011",
@@ -192,16 +192,16 @@ const QUESTIONS_C = [
     "tags": [
       "oop"
     ],
-    "content": "Đoạn code sau đây thực hiện sửa đổi một thuộc tính lớp (class attribute). Kết quả in ra là gì?\n```python\nclass Test:\n    count = 0\n\nt1 = Test()\nt2 = Test()\nTest.count = 5\nprint(t1.count, t2.count)\n```",
+    "content": "Đoạn code sau in ra gì?\n```python\nclass Test:\n    count = 0\nt1 = Test()\nt2 = Test()\nTest.count = 5\nprint(t1.count, t2.count)\n```",
     "options": [
       "A. `0 0`",
       "B. `5 5`",
       "C. `5 0`",
-      "D. Báo lỗi"
+      "D. Lỗi"
     ],
     "correct_option": "B",
-    "explanation": "Khi thay đổi thuộc tính lớp trực tiếp thông qua tên lớp (`Test.count = 5`), sự thay đổi này áp dụng lên thuộc tính chung và tất cả các thực thể chưa ghi đè thuộc tính này đều sẽ phản ánh giá trị mới. Do đó `t1.count` và `t2.count` đều có giá trị `5`.",
-    "solution": "**Bước 1:** Thuộc tính lớp `count` ban đầu có giá trị bằng `0`.\n**Bước 2:** `Test.count = 5` thay đổi giá trị thuộc tính lớp dùng chung này trên vùng nhớ lớp.\n**Bước 3:** Cả `t1` và `t2` không tự tạo thuộc tính thực thể `count` của riêng chúng, nên chúng tiếp tục tham chiếu đến thuộc tính chung của lớp Test. In ra `5 5`. Chọn B."
+    "explanation": "Sửa thuộc tính lớp thông qua `Test.count = 5` cập nhật giá trị chung cho toàn bộ các thực thể chưa ghi đè nó.",
+    "solution": "**Bước 1:** Chỉnh sửa thuộc tính lớp tác động đến mọi đối tượng chưa tự định nghĩa thuộc tính thực thể đó. Chọn B."
   },
   {
     "id": "Q_MOD_C_012",
@@ -211,7 +211,7 @@ const QUESTIONS_C = [
       "oop",
       "inheritance"
     ],
-    "content": "Cú pháp nào sau đây thể hiện lớp `Dog` kế thừa từ lớp `Animal` trong Python?",
+    "content": "Cú pháp khai báo lớp `Dog` kế thừa từ lớp `Animal` là gì?",
     "options": [
       "A. `class Dog inherit Animal:`",
       "B. `class Dog(Animal):`",
@@ -219,8 +219,8 @@ const QUESTIONS_C = [
       "D. `class Dog implements Animal:`"
     ],
     "correct_option": "B",
-    "explanation": "Trong Python, tính kế thừa được biểu diễn đơn giản bằng cách đặt tên lớp cha bên trong dấu ngoặc đơn `()` ngay sau tên lớp con khi khai báo.",
-    "solution": "**Bước 1:** Kiểm tra cú pháp kế thừa trong Python.\n**Bước 2:** Không sử dụng các từ khóa `extends`, `implements`, hay `inherit` giống các ngôn ngữ khác.\n**Bước 3:** Cú pháp chuẩn là `class Dog(Animal):`. Chọn B."
+    "explanation": "Python sử dụng ngoặc đơn sau tên lớp con để khai báo kế thừa: `class Dog(Animal):`.",
+    "solution": "**Bước 1:** Đặt lớp cha trong ngoặc đơn để kế thừa. Chọn B."
   },
   {
     "id": "Q_MOD_C_013",
@@ -230,7 +230,7 @@ const QUESTIONS_C = [
       "oop",
       "inheritance"
     ],
-    "content": "Để gọi phương thức khởi tạo của lớp cha từ bên trong phương thức khởi tạo của lớp con, ta sử dụng hàm nào sau đây?",
+    "content": "Từ khóa nào giúp gọi constructor của lớp cha từ lớp con?",
     "options": [
       "A. `super().__init__()`",
       "B. `parent().__init__()`",
@@ -238,8 +238,8 @@ const QUESTIONS_C = [
       "D. `self.parent.__init__()`"
     ],
     "correct_option": "A",
-    "explanation": "Hàm built-in `super()` trả về một đối tượng proxy cho phép gọi các phương thức của lớp cha, phổ biến nhất là `super().__init__()` để chạy constructor của lớp cha từ lớp con.",
-    "solution": "**Bước 1:** Xác định từ khóa để gọi phương thức lớp cha.\n**Bước 2:** Python sử dụng hàm `super()` để ủy quyền cho lớp cha.\n**Bước 3:** Constructor lớp cha được gọi qua `super().__init__()`. Chọn A."
+    "explanation": "`super()` trả về proxy ủy quyền gọi các phương thức của lớp cha, điển hình là `super().__init__()`.",
+    "solution": "**Bước 1:** Dùng `super()` để gọi phương thức cha. Chọn A."
   },
   {
     "id": "Q_MOD_C_014",
@@ -249,16 +249,16 @@ const QUESTIONS_C = [
       "oop",
       "encapsulation"
     ],
-    "content": "Quy ước đặt tên biến bắt đầu bằng một dấu gạch dưới (ví dụ `_status`) trong một lớp Python có ý nghĩa gì?",
+    "content": "Biến bắt đầu bằng một dấu gạch dưới (ví dụ `_status`) có ý nghĩa gì trong Class Python?",
     "options": [
-      "A. Biến đó là biến cục bộ chỉ dùng trong constructor.",
-      "B. Biến đó được coi là thuộc tính được bảo vệ (protected), chỉ báo hiệu cho các lập trình viên khác biết đây là thuộc tính nội bộ và không nên truy cập trực tiếp từ bên ngoài lớp.",
-      "C. Trình thông dịch Python sẽ khóa hoàn toàn không cho phép truy cập biến này từ bên ngoài.",
-      "D. Biến đó bắt buộc phải có kiểu dữ liệu là số nguyên."
+      "A. Biến private tuyệt đối bị khóa bởi trình thông dịch.",
+      "B. Quy ước ngầm báo hiệu đây là thuộc tính nội bộ (protected), khuyên các lập trình viên không nên gọi trực tiếp từ ngoài lớp.",
+      "C. Biến tĩnh của lớp.",
+      "D. Hằng số."
     ],
     "correct_option": "B",
-    "explanation": "Python không có cơ chế khóa truy cập cứng (như từ khóa private/protected của C++ hay Java). Việc sử dụng một dấu gạch dưới chỉ mang tính chất quy ước (convention) báo hiệu đây là thuộc tính protected, các đoạn code bên ngoài nên tôn trọng và tránh thay đổi nó trực tiếp.",
-    "solution": "**Bước 1:** Nhớ lại tính chất đóng gói của Python.\n**Bước 2:** Một dấu gạch dưới `_` chỉ là quy ước gợi ý bảo vệ (protected), hệ thống không ngăn cấm truy cập vật lý.\n**Bước 3:** Chọn B."
+    "explanation": "Một dấu gạch dưới chỉ là quy ước cộng đồng để đánh dấu thuộc tính nội bộ, không có sự ngăn chặn vật lý từ hệ thống.",
+    "solution": "**Bước 1:** Nhận biết một dấu gạch dưới là quy ước protected. Chọn B."
   },
   {
     "id": "Q_MOD_C_015",
@@ -268,16 +268,16 @@ const QUESTIONS_C = [
       "oop",
       "encapsulation"
     ],
-    "content": "Khi bạn đặt tên cho một thuộc tính lớp bắt đầu bằng **hai** dấu gạch dưới và không kết thúc bằng gạch dưới (ví dụ `__value`), điều gì xảy ra?",
+    "content": "Điều gì xảy ra khi đặt tên biến bắt đầu bằng hai dấu gạch dưới (ví dụ `__value`) trong Class?",
     "options": [
-      "A. Python báo lỗi cú pháp (SyntaxError).",
-      "B. Trình thông dịch Python sẽ thực hiện cơ chế đổi tên thuộc tính (name mangling) thành `_ClassName__value` để tránh xung đột tên và ngăn cản việc truy cập trực tiếp bằng tên gốc từ bên ngoài.",
-      "C. Thuộc tính tự động chuyển sang kiểu dữ liệu hằng số.",
-      "D. Thuộc tính đó sẽ bị xóa sau khi constructor kết thúc."
+      "A. Gây lỗi cú pháp.",
+      "B. Trình thông dịch thực hiện cơ chế đổi tên thuộc tính (name mangling) thành `_ClassName__value` để hạn chế truy cập trực tiếp từ ngoài.",
+      "C. Biến tự động bị xóa sau khi tạo.",
+      "D. Biến đó chuyển thành kiểu hằng số."
     ],
     "correct_option": "B",
-    "explanation": "Hai dấu gạch dưới kích hoạt tính năng đổi tên (name mangling). Python âm thầm đổi tên biến `__value` của lớp `MyClass` thành `_MyClass__value`. Nhờ vậy, nếu cố gắng gọi `obj.__value` từ bên ngoài, chương trình sẽ báo lỗi `AttributeError` vì thuộc tính mang tên đó không còn tồn tại.",
-    "solution": "**Bước 1:** Hai dấu gạch dưới ở đầu (`__attr`) kích hoạt tính năng name mangling.\n**Bước 2:** Tên biến được biên dịch nội bộ thành `_ClassName__attr`.\n**Bước 3:** Việc này giúp bảo vệ biến chống ghi đè vô ý ở các lớp con. Chọn B."
+    "explanation": "Hai dấu gạch dưới kích hoạt name mangling, tự động biên dịch đổi tên thuộc tính thành `_ClassName__value` để tránh trùng lặp hoặc truy xuất trực tiếp vô ý.",
+    "solution": "**Bước 1:** Hai dấu gạch dưới gây ra cơ chế name mangling để che giấu thuộc tính. Chọn B."
   },
   {
     "id": "Q_MOD_C_016",
@@ -287,16 +287,16 @@ const QUESTIONS_C = [
       "oop",
       "methods"
     ],
-    "content": "Sự khác biệt chính giữa `@classmethod` và `@staticmethod` trong một lớp Python là gì?",
+    "content": "Sự khác biệt giữa `@classmethod` và `@staticmethod` là gì?",
     "options": [
-      "A. `@classmethod` nhận tham số đầu tiên trỏ đến lớp (`cls`), trong khi `@staticmethod` không nhận bất kỳ tham số mặc định nào của lớp hay đối tượng.",
-      "B. `@classmethod` chỉ dùng cho các phương thức toán học, `@staticmethod` dùng cho hiển thị dữ liệu.",
-      "C. `@classmethod` có thể gọi từ bên ngoài lớp, `@staticmethod` thì không.",
-      "D. Không có sự khác biệt, hai decorator này hoàn toàn như nhau."
+      "A. `@classmethod` nhận tham số lớp `cls` ở tham số đầu tiên, còn `@staticmethod` không nhận tham số mặc định nào của lớp hay đối tượng.",
+      "B. `@classmethod` chỉ dùng cho số, `@staticmethod` dùng cho chữ.",
+      "C. `@classmethod` không thể gọi từ Class.",
+      "D. Cả hai hoàn toàn như nhau."
     ],
     "correct_option": "A",
-    "explanation": "Phương thức lớp `@classmethod` liên kết với lớp và nhận tham số đầu tiên đại diện cho chính lớp đó (thường đặt tên là `cls`). Phương thức tĩnh `@staticmethod` hoạt động giống một hàm thông thường nhưng được đặt trong không gian tên lớp vì lý do logic, nó không nhận `self` hay `cls`.",
-    "solution": "**Bước 1:** Phân tích định nghĩa phương thức lớp và phương thức tĩnh:\n- Class method: nhận `cls` làm tham số đầu tiên, có quyền sửa đổi Class State.\n- Static method: không nhận tham số đặc biệt nào cả, độc lập với Class/Instance State.\n**Bước 2:** Chọn đáp án A."
+    "explanation": "`@classmethod` liên kết với lớp và nhận `cls` để thao tác trạng thái lớp. `@staticmethod` là hàm độc lập logic đặt trong lớp, không nhận `self` hay `cls`.",
+    "solution": "**Bước 1:** Phân biệt phương thức lớp (nhận `cls`) và phương thức tĩnh (không nhận tham số tự động). Chọn A."
   },
   {
     "id": "Q_MOD_C_017",
@@ -306,7 +306,7 @@ const QUESTIONS_C = [
       "oop",
       "dunder"
     ],
-    "content": "Phương thức ma thuật (dunder method) nào dùng để quy định giá trị trả về khi ta gọi hàm ép kiểu chuỗi `str(obj)` hoặc hàm hiển thị `print(obj)` đối với một đối tượng tự định nghĩa?",
+    "content": "Ghi đè dunder method nào để định nghĩa chuỗi đại diện dễ đọc khi hiển thị đối tượng bằng lệnh `print(obj)`?",
     "options": [
       "A. `__repr__`",
       "B. `__str__`",
@@ -314,8 +314,8 @@ const QUESTIONS_C = [
       "D. `__string__`"
     ],
     "correct_option": "B",
-    "explanation": "Phương thức `__str__` được thiết kế để trả về chuỗi ký tự thân thiện, dễ đọc cho người dùng cuối (informal/readable string representation), và nó được ưu tiên gọi bởi `str()` và `print()`.",
-    "solution": "**Bước 1:** Ép kiểu sang chuỗi `str()` gọi dunder method nào?\n**Bước 2:** Python định nghĩa phương thức `__str__(self)` cho mục đích hiển thị trực quan thông tin đối tượng.\n**Bước 3:** Chọn đáp án B."
+    "explanation": "`__str__` được thiết kế để trả về chuỗi mô tả thân thiện cho người dùng cuối khi in hoặc ép kiểu `str(obj)`.",
+    "solution": "**Bước 1:** Ép kiểu chuỗi hoặc in đối tượng gọi phương thức ma thuật `__str__`. Chọn B."
   },
   {
     "id": "Q_MOD_C_018",
@@ -325,16 +325,16 @@ const QUESTIONS_C = [
       "oop",
       "dunder"
     ],
-    "content": "Quy ước viết tắt 'dunder' dùng để chỉ loại phương thức nào trong Python?",
+    "content": "Dunder method nào tương ứng với việc nạp chồng toán tử so sánh bằng `==` giữa hai đối tượng?",
     "options": [
-      "A. Phương thức chạy bất đồng bộ.",
-      "B. Phương thức được định nghĩa bằng C++ trong nhân Python.",
-      "C. Phương thức đặc biệt bắt đầu và kết thúc bằng hai dấu gạch dưới (Double Underline).",
-      "D. Các phương thức bị lỗi thời cần thay thế."
+      "A. `__cmp__`",
+      "B. `__eq__`",
+      "C. `__compare__`",
+      "D. `__equal__`"
     ],
-    "correct_option": "C",
-    "explanation": "'dunder' là từ ghép viết tắt của **D**ouble **Under**score (hai dấu gạch dưới), ám chỉ các phương thức đặc biệt trong Python như `__init__`, `__str__`, `__len__`, v.v.",
-    "solution": "**Bước 1:** Phân tích thuật ngữ 'dunder'.\n**Bước 2:** D = Double, Under = Underline / Underscore.\n**Bước 3:** Trỏ trực tiếp đến các hàm bắt đầu và kết thúc bằng `__`. Chọn C."
+    "correct_option": "B",
+    "explanation": "Toán tử `==` gọi dunder method `__eq__(self, other)` (viết tắt của equal).",
+    "solution": "**Bước 1:** Phép so sánh bằng gọi hàm `__eq__`. Chọn B."
   },
   {
     "id": "Q_MOD_C_019",
@@ -344,16 +344,16 @@ const QUESTIONS_C = [
       "oop",
       "dunder"
     ],
-    "content": "Khi bạn thực hiện phép so sánh `obj1 == obj2`, Python sẽ âm thầm gọi phương thức ma thuật nào được định nghĩa trong lớp của đối tượng?",
+    "content": "Để đối tượng lớp có thể trả về độ dài khi dùng hàm `len(obj)`, ta cần ghi đè phương thức nào?",
     "options": [
-      "A. `__cmp__`",
-      "B. `__eq__`",
-      "C. `__compare__`",
-      "D. `__equal__`"
+      "A. `__size__`",
+      "B. `__length__`",
+      "C. `__len__`",
+      "D. `__count__`"
     ],
-    "correct_option": "B",
-    "explanation": "Phép so sánh bằng `==` tương ứng với dunder method `__eq__` (viết tắt của **eq**ual). Lớp của đối tượng có thể ghi đè phương thức này để tự định nghĩa cơ chế so sánh bằng nhau của các thuộc tính.",
-    "solution": "**Bước 1:** So sánh bằng `==` trong Python thực chất là một lời gọi phương thức ma thuật.\n**Bước 2:** Phương thức tương ứng là `__eq__(self, other)`.\n**Bước 3:** Chọn B."
+    "correct_option": "C",
+    "explanation": "Hàm `len(obj)` sẽ kích hoạt cuộc gọi dunder method `__len__(self)`.",
+    "solution": "**Bước 1:** `len()` gọi phương thức ma thuật `__len__`. Chọn C."
   },
   {
     "id": "Q_MOD_C_020",
@@ -363,26 +363,7 @@ const QUESTIONS_C = [
       "oop",
       "dunder"
     ],
-    "content": "Nếu bạn muốn đối tượng tự định nghĩa của mình có thể phản hồi lại khi gọi hàm kiểm tra độ dài `len(obj)`, lớp của bạn bắt buộc phải ghi đè phương thức nào?",
-    "options": [
-      "A. `__size__`",
-      "B. `__length__`",
-      "C. `__len__`",
-      "D. `__count__`"
-    ],
-    "correct_option": "C",
-    "explanation": "Hàm built-in `len(obj)` sẽ kích hoạt lời gọi phương thức `obj.__len__()`. Phương thức này bắt buộc phải trả về một số nguyên không âm.",
-    "solution": "**Bước 1:** Hàm `len()` gọi phương thức dunder nào?\n**Bước 2:** Phương thức ma thuật tương ứng là `__len__(self)`.\n**Bước 3:** Chọn C."
-  },
-  {
-    "id": "Q_MOD_C_021",
-    "module_id": "Module_C",
-    "difficulty": "Medium",
-    "tags": [
-      "oop",
-      "dunder"
-    ],
-    "content": "Toán tử cộng `+` giữa hai đối tượng tự định nghĩa (ví dụ `obj1 + obj2`) được định nghĩa logic bằng phương thức ma thuật nào?",
+    "content": "Toán tử cộng `+` giữa hai thực thể lớp gọi phương thức ma thuật nào?",
     "options": [
       "A. `__plus__`",
       "B. `__add__`",
@@ -390,8 +371,27 @@ const QUESTIONS_C = [
       "D. `__concat__`"
     ],
     "correct_option": "B",
-    "explanation": "Để thực hiện nạp chồng toán tử cộng `+`, lớp của đối tượng phải triển khai phương thức `__add__(self, other)`. Khi thực thi `a + b`, Python sẽ gọi `a.__add__(b)`.",
-    "solution": "**Bước 1:** Xác định dunder method ứng với toán tử `+`.\n**Bước 2:** Tên phương thức là `__add__(self, other)`.\n**Bước 3:** Chọn B."
+    "explanation": "Toán tử `+` kích hoạt phương thức `__add__(self, other)`.",
+    "solution": "**Bước 1:** Nạp chồng toán tử cộng dùng dunder `__add__`. Chọn B."
+  },
+  {
+    "id": "Q_MOD_C_021",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "oop",
+      "inheritance"
+    ],
+    "content": "Đa kế thừa trong Python giải quyết thứ tự tìm kiếm thuộc tính và phương thức qua cơ chế nào?",
+    "options": [
+      "A. FIFO",
+      "B. LIFO",
+      "C. MRO (Method Resolution Order)",
+      "D. Duyệt ngẫu nhiên"
+    ],
+    "correct_option": "C",
+    "explanation": "Method Resolution Order (MRO) sử dụng thuật toán C3 Linearization để tạo chuỗi tìm kiếm phương thức trên sơ đồ đa kế thừa.",
+    "solution": "**Bước 1:** Trật tự phân giải phương thức kế thừa là MRO. Chọn C."
   },
   {
     "id": "Q_MOD_C_022",
@@ -399,111 +399,110 @@ const QUESTIONS_C = [
     "difficulty": "Medium",
     "tags": [
       "oop",
-      "inheritance"
+      "methods"
     ],
-    "content": "Trong đa kế thừa của Python, cơ chế nào quy định thứ tự tìm kiếm các phương thức khi các lớp cha trùng tên phương thức?",
+    "content": "Decorator nào giúp biến một phương thức Class thành thuộc tính chỉ đọc (truy cập không cần dấu ngoặc đơn)?",
     "options": [
-      "A. FIFO (First In First Out)",
-      "B. LIFO (Last In First Out)",
-      "C. MRO (Method Resolution Order)",
-      "D. Tìm kiếm ngẫu nhiên"
+      "A. `@classmethod`",
+      "B. `@property`",
+      "C. `@attribute`",
+      "D. `@read_only`"
     ],
-    "correct_option": "C",
-    "explanation": "MRO (Method Resolution Order) là thứ tự giải quyết phương thức trong Python, sử dụng thuật toán C3 Linearization để xây dựng chuỗi ưu tiên tìm kiếm phương thức trên sơ đồ kế thừa dạng đồ thị.",
-    "solution": "**Bước 1:** Tìm thuật ngữ dùng để chỉ thứ tự tìm kiếm phương thức kế thừa.\n**Bước 2:** Thuật ngữ đó là Method Resolution Order (MRO).\n**Bước 3:** Bạn có thể xem chuỗi này qua thuộc tính `Class.__mro__`. Chọn C."
+    "correct_option": "B",
+    "explanation": "Decorator `@property` cho phép truy xuất phương thức dưới dạng thuộc tính (getter).",
+    "solution": "**Bước 1:** Sử dụng `@property` để định nghĩa thuộc tính ảo từ hàm. Chọn B."
   },
   {
     "id": "Q_MOD_C_023",
     "module_id": "Module_C",
     "difficulty": "Medium",
     "tags": [
-      "oop",
-      "methods"
+      "oop"
     ],
-    "content": "Phương thức nào dùng để tạo ra một thuộc tính chỉ đọc (read-only attribute) bằng cách biến một phương thức lớp thành một thuộc tính có thể truy cập không cần dấu ngoặc đơn `()`?",
+    "content": "Hàm built-in nào kiểm tra xem đối tượng có phải là thực thể của lớp chỉ định hoặc lớp con của nó không?",
     "options": [
-      "A. `@classmethod`",
-      "B. `@property`",
-      "C. `@read_only`",
-      "D. `@attribute`"
+      "A. `isinstance()`",
+      "B. `issubclass()`",
+      "C. `typeof()`",
+      "D. `checkattr()`"
     ],
-    "correct_option": "B",
-    "explanation": "Decorator `@property` dùng để định nghĩa một getter method, biến phương thức đó thành một thuộc tính ảo giúp truy xuất giá trị bằng cú pháp `obj.name` thay vì `obj.name()`.",
-    "solution": "**Bước 1:** Phân tích tính năng định nghĩa thuộc tính từ phương thức.\n**Bước 2:** Trình decorator `@property` cho phép biến phương thức thành thuộc tính chỉ đọc.\n**Bước 3:** Chọn B."
+    "correct_option": "A",
+    "explanation": "`isinstance(obj, Class)` dùng để kiểm tra kiểu đối tượng đối với lớp chỉ định.",
+    "solution": "**Bước 1:** `isinstance` kiểm tra thực thể đối tượng. Chọn A."
   },
   {
     "id": "Q_MOD_C_024",
     "module_id": "Module_C",
     "difficulty": "Medium",
     "tags": [
-      "oop"
+      "oop",
+      "inheritance"
     ],
-    "content": "Hàm built-in nào dùng để kiểm tra xem một đối tượng có phải là một thực thể được tạo ra từ một lớp cụ thể nào đó hay không?",
+    "content": "Hàm `issubclass(Child, Parent)` trả về giá trị gì nếu `Child` kế thừa từ `Parent`?",
     "options": [
-      "A. `isinstance()`",
-      "B. `issubclass()`",
-      "C. `typeof()`",
-      "D. `check_class()`"
+      "A. `True`",
+      "B. `False`",
+      "C. `None`",
+      "D. Lỗi"
     ],
     "correct_option": "A",
-    "explanation": "Hàm `isinstance(object, classinfo)` trả về `True` nếu đối tượng `object` là thực thể của lớp hoặc lớp con của lớp chỉ định trong `classinfo`.",
-    "solution": "**Bước 1:** Tìm hàm kiểm tra thực thể lớp.\n- `isinstance(obj, Class)`: Kiểm tra đối tượng `obj` có thuộc lớp `Class` không.\n- `issubclass(Sub, Parent)`: Kiểm tra quan hệ kế thừa giữa hai lớp.\n**Bước 2:** Chọn A."
+    "explanation": "`issubclass` kiểm tra quan hệ kế thừa giữa hai lớp, trả về `True` nếu lớp thứ nhất là con của lớp thứ hai.",
+    "solution": "**Bước 1:** Kiểm tra quan hệ lớp con: trả về True. Chọn A."
   },
   {
     "id": "Q_MOD_C_025",
     "module_id": "Module_C",
     "difficulty": "Medium",
     "tags": [
-      "oop",
-      "inheritance"
+      "functions"
     ],
-    "content": "Cho lớp `Parent` và lớp `Child(Parent)`. Hàm `issubclass(Child, Parent)` sẽ trả về giá trị là gì?",
+    "content": "Hàm trong Python có thể gán cho biến, truyền làm tham số hoặc trả về từ hàm khác vì nó là gì?",
     "options": [
-      "A. `True`",
-      "B. `False`",
-      "C. `None`",
-      "D. Ném lỗi TypeError"
+      "A. Biến toàn cục.",
+      "B. Đối tượng hạng nhất (First-class citizen).",
+      "C. Hàm bất đồng bộ.",
+      "D. Thực thể tĩnh."
     ],
-    "correct_option": "A",
-    "explanation": "Hàm `issubclass(class1, class2)` kiểm tra xem lớp `class1` có phải là lớp con (kế thừa trực tiếp hoặc gián tiếp) của lớp `class2` hay không. Do `Child` kế thừa từ `Parent`, kết quả trả về là `True`.",
-    "solution": "**Bước 1:** Nhận biết hàm `issubclass()` dùng để kiểm tra quan hệ kế thừa giữa các lớp lớp học.\n**Bước 2:** `Child` được khai báo kế thừa từ `Parent`.\n**Bước 3:** Kết quả trả về chắc chắn là `True`. Chọn A."
+    "correct_option": "B",
+    "explanation": "Khái niệm First-class citizen/object nghĩa là hàm được đối xử giống như mọi đối tượng dữ liệu thông thường khác.",
+    "solution": "**Bước 1:** Hàm là First-class citizen trong Python. Chọn B."
   },
   {
     "id": "Q_MOD_C_026",
     "module_id": "Module_C",
     "difficulty": "Medium",
     "tags": [
-      "functions"
+      "functions",
+      "namespaces"
     ],
-    "content": "Đoạn code sau đây thực hiện gán hàm cho biến. Kết quả in ra là gì?\n```python\ndef greet(name):\n    return f\"Hello {name}\"\n\nsay_hi = greet\nprint(say_hi(\"Alice\"))\n```",
+    "content": "Quy tắc LEGB định nghĩa thứ tự tra cứu không gian tên biến trong Python là viết tắt của các từ nào?",
     "options": [
-      "A. Báo lỗi vì greet là một hàm, không thể gán trực tiếp cho biến say_hi.",
-      "B. `Hello Alice`",
-      "C. `<function greet at ...>`",
-      "D. `greet Alice`"
+      "A. Loop, Exception, Generator, Boolean",
+      "B. Local, Enclosing, Global, Built-in",
+      "C. List, Element, Group, Byte",
+      "D. Level, Environment, Garbage, Block"
     ],
     "correct_option": "B",
-    "explanation": "Trong Python, hàm được coi là đối tượng hạng nhất (first-class citizens). Bạn có thể gán hàm cho một biến, truyền hàm làm tham số hoặc trả về một hàm từ hàm khác. Biến `say_hi` trỏ đến cùng khối code của hàm `greet` và có thể được gọi thông qua dấu ngoặc đơn.",
-    "solution": "**Bước 1:** Tìm hiểu tính chất 'First-class function' của Python.\n**Bước 2:** Gán tên hàm `say_hi = greet` chuyển tham chiếu hàm sang `say_hi`.\n**Bước 3:** Lời gọi `say_hi(\"Alice\")` chạy hàm gốc và trả về `'Hello Alice'`. Chọn B."
+    "explanation": "Thứ tự tìm kiếm biến: Cục bộ (Local) -> Hàm chứa ngoài (Enclosing) -> Toàn cục (Global) -> Hệ thống dựng sẵn (Built-in).",
+    "solution": "**Bước 1:** Quy tắc LEGB mô tả phạm vi tìm kiếm định danh. Chọn B."
   },
   {
     "id": "Q_MOD_C_027",
     "module_id": "Module_C",
     "difficulty": "Medium",
     "tags": [
-      "functions",
-      "recursion"
+      "oop"
     ],
-    "content": "Hàm đệ quy tính giai thừa sau đây bị thiếu điều kiện dừng. Điều gì xảy ra khi gọi `factorial(5)`?\n```python\ndef factorial(n):\n    return n * factorial(n - 1)\n```",
+    "content": "Để kiểm tra xem một thuộc tính có tồn tại trong đối tượng hay không mà không gây lỗi, ta sử dụng hàm nào?",
     "options": [
-      "A. Chương trình chạy bình thường và trả về 120.",
-      "B. Chương trình chạy mãi mãi cho đến khi hết dung lượng đĩa cứng.",
-      "C. Phát sinh lỗi `RecursionError: maximum recursion depth exceeded`.",
-      "D. Trả về `None`."
+      "A. `hasattr()`",
+      "B. `getattr()`",
+      "C. `setattr()`",
+      "D. `checkattr()`"
     ],
-    "correct_option": "C",
-    "explanation": "Đệ quy không có điều kiện dừng sẽ tạo ra các lời gọi hàm lồng nhau vô tận. Để ngăn chặn tràn ngăn xếp bộ nhớ (stack overflow), Python quy định một giới hạn đệ quy tối đa (mặc định khoảng 1000 lần). Khi vượt quá giới hạn này, Python ném ra lỗi `RecursionError`.",
-    "solution": "**Bước 1:** Đệ quy cần hai yếu tố cốt lõi: Công thức đệ quy và Điều kiện dừng.\n**Bước 2:** Hàm này thiếu điều kiện dừng (như `if n == 1: return 1`). Lời gọi hàm sẽ tiến về số âm vô hạn.\n**Bước 3:** Trình thông dịch ném ra lỗi `RecursionError` để bảo vệ bộ nhớ ngăn xếp. Chọn C."
+    "correct_option": "A",
+    "explanation": "`hasattr(obj, name)` nhận tên thuộc tính dưới dạng chuỗi và trả về giá trị logic True/False mô tả sự tồn tại.",
+    "solution": "**Bước 1:** Dùng `hasattr` để kiểm tra thuộc tính đối tượng an toàn. Chọn A."
   },
   {
     "id": "Q_MOD_C_028",
@@ -513,52 +512,430 @@ const QUESTIONS_C = [
       "oop",
       "dunder"
     ],
-    "content": "Phương thức dunder `__repr__` được thiết kế nhằm mục đích chính nào sau đây?",
+    "content": "Dunder method `__repr__` được thiết kế nhằm mục đích chính nào?",
     "options": [
-      "A. Chuyển đổi đối tượng thành dạng đồ họa UI.",
-      "B. Trả về một chuỗi biểu diễn rõ ràng, chi tiết, không mập mờ của đối tượng (thường có dạng giống như câu lệnh khởi tạo đối tượng) phục vụ việc debug và ghi log cho lập trình viên.",
-      "C. Đóng file và kết nối mạng tự động.",
-      "D. Mã hóa bảo mật đối tượng."
+      "A. Trả về chuỗi ký tự hiển thị dễ đọc cho người dùng cuối.",
+      "B. Trả về chuỗi mô tả kỹ thuật chi tiết của đối tượng (dạng không mập mờ) dùng cho ghi log và debug của lập trình viên.",
+      "C. Tự động đóng file.",
+      "D. Giải phóng bộ nhớ."
     ],
     "correct_option": "B",
-    "explanation": "`__repr__` (viết tắt của **repr**esentation) trả về chuỗi mô tả kỹ thuật giúp lập trình viên hiểu rõ cấu trúc đối tượng khi lập trình hoặc gỡ lỗi, lý tưởng nhất là `eval(repr(obj)) == obj`.",
-    "solution": "**Bước 1:** So sánh `__str__` vs `__repr__`:\n- `__str__`: Thân thiện với người dùng (Readable).\n- `__repr__`: Rõ ràng về mặt kỹ thuật cho dev (Unambiguous / Debugging).\n**Bước 2:** Chọn B."
+    "explanation": "`__repr__` (representation) trả về chuỗi mô tả chi tiết, tốt nhất là dưới dạng chuỗi mã nguồn có thể tái tạo lại đối tượng.",
+    "solution": "**Bước 1:** Phân biệt `__str__` (người dùng) và `__repr__` (lập trình viên/debug). Chọn B."
   },
   {
     "id": "Q_MOD_C_029",
     "module_id": "Module_C",
     "difficulty": "Medium",
     "tags": [
-      "functions",
-      "namespaces"
+      "oop",
+      "dunder"
     ],
-    "content": "Quy tắc LEGB viết tắt của các từ nào để chỉ thứ tự tìm kiếm biến của Python?",
+    "content": "Đoạn code sau sử dụng closure. Kết quả in ra là gì?\n```python\ndef maker(n):\n    return lambda x: x * n\ndoubler = maker(2)\nprint(doubler(5))\n```",
     "options": [
-      "A. List, Element, Group, Byte",
-      "B. Local, Enclosing, Global, Built-in",
-      "C. Loop, Exception, Generator, Boolean",
-      "D. Level, Environment, Garbage, Block"
+      "A. 10",
+      "B. 25",
+      "C. 5",
+      "D. Lỗi"
     ],
-    "correct_option": "B",
-    "explanation": "Quy tắc LEGB chỉ thứ tự tìm kiếm định danh (biến): Cục bộ (Local) -> Hàm bao ngoài (Enclosing) -> Toàn cục (Global) -> Hệ thống dựng sẵn (Built-in).",
-    "solution": "**Bước 1:** Tìm hiểu cách giải quyết định danh (Name Resolution) trong Python.\n**Bước 2:** Thứ tự tìm kiếm từ hẹp đến rộng: Local -> Enclosing -> Global -> Built-in.\n**Bước 3:** Chọn đáp án B."
+    "correct_option": "A",
+    "explanation": "`maker(2)` trả về hàm lambda có ghi nhớ biến ngoại vi `n = 2`. Gọi `doubler(5)` chạy phép tính `5 * 2 = 10`.",
+    "solution": "**Bước 1:** Phép gọi hàm closure giữ trạng thái biến số. Chọn A."
   },
   {
     "id": "Q_MOD_C_030",
     "module_id": "Module_C",
     "difficulty": "Medium",
     "tags": [
-      "oop"
+      "oop",
+      "methods"
     ],
-    "content": "Để kiểm tra xem một thuộc tính có tồn tại trong đối tượng hay không mà không gây lỗi, ta sử dụng hàm nào?",
+    "content": "Lệnh nào lấy ra giá trị thuộc tính động từ đối tượng dựa trên chuỗi tên thuộc tính truyền vào?",
     "options": [
-      "A. `hasattr(object, name)`",
-      "B. `getattr(object, name)`",
-      "C. `setattr(object, name, value)`",
-      "D. `checkattr(object, name)`"
+      "A. `hasattr()`",
+      "B. `getattr()`",
+      "C. `setattr()`",
+      "D. `get_value()`"
+    ],
+    "correct_option": "B",
+    "explanation": "`getattr(obj, 'attribute_name')` cho phép truy xuất giá trị thuộc tính bằng chuỗi tên thuộc tính linh hoạt.",
+    "solution": "**Bước 1:** Dùng `getattr` để lấy thuộc tính động của đối tượng. Chọn B."
+  },
+  {
+    "id": "Q_MOD_C_031",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "oop",
+      "dunder"
+    ],
+    "content": "Phương thức ma thuật nào dùng để giải phóng hoặc dọn dẹp tài nguyên (Destructor) khi một đối tượng bị hủy khỏi bộ nhớ?",
+    "options": [
+      "A. `__init__`",
+      "B. `__del__`",
+      "C. `__destruct__`",
+      "D. `__close__`"
+    ],
+    "correct_option": "B",
+    "explanation": "Phương thức `__del__(self)` là destructor trong Python, được gọi khi số lượng tham chiếu đến đối tượng bằng 0 và bộ dọn rác chuẩn bị xóa nó.",
+    "solution": "**Bước 1:** Phương thức hủy thực thể đối tượng là `__del__`. Chọn B."
+  },
+  {
+    "id": "Q_MOD_C_032",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "advanced",
+      "lambda"
+    ],
+    "content": "Đoạn code sau sử dụng lambda để sắp xếp danh sách các tuple theo phần tử thứ hai. Kết quả in ra là gì?\n```python\nlst = [(1, 9), (2, 3), (3, 6)]\nlst.sort(key=lambda x: x[1])\nprint(lst)\n```",
+    "options": [
+      "A. `[(1, 9), (2, 3), (3, 6)]`",
+      "B. `[(2, 3), (3, 6), (1, 9)]`",
+      "C. `[(3, 6), (2, 3), (1, 9)]`",
+      "D. Lỗi TypeError"
+    ],
+    "correct_option": "B",
+    "explanation": "Hàm lambda `lambda x: x[1]` chỉ thị sắp xếp dựa trên phần tử chỉ số 1 của tuple (các giá trị 9, 3, 6). Sắp xếp tăng dần sẽ là 3, 6, 9 tương ứng danh sách các tuple `[(2, 3), (3, 6), (1, 9)]`.",
+    "solution": "**Bước 1:** Trích xuất khóa sắp xếp qua phần tử thứ hai của mỗi tuple: 9, 3, 6.\n**Bước 2:** Sắp xếp tăng dần: 3 < 6 < 9.\n**Bước 3:** Thứ tự tuple tương ứng là (2,3), (3,6), (1,9). Chọn B."
+  },
+  {
+    "id": "Q_MOD_C_033",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "advanced",
+      "comprehensions"
+    ],
+    "content": "Giá trị của biểu thức list comprehension `[x**2 for x in range(4)]` là gì?",
+    "options": [
+      "A. `[1, 4, 9, 16]`",
+      "B. `[0, 1, 4, 9]`",
+      "C. `[0, 1, 2, 3]`",
+      "D. `[0, 2, 4, 6]`"
+    ],
+    "correct_option": "B",
+    "explanation": "`range(4)` sinh các số: 0, 1, 2, 3. Bình phương tương ứng: $0^2=0$, $1^2=1$, $2^2=4$, $3^2=9$. Kết quả `[0, 1, 4, 9]`.",
+    "solution": "**Bước 1:** Tính bình phương từng số từ 0 đến 3. Chọn B."
+  },
+  {
+    "id": "Q_MOD_C_034",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "oop",
+      "properties"
+    ],
+    "content": "Khi sử dụng `@property` cho phương thức `name(self)`, ta định nghĩa phương thức thiết lập giá trị (setter) tương ứng bằng decorator nào?",
+    "options": [
+      "A. `@name.setter`",
+      "B. `@property.setter`",
+      "C. `@setter.name`",
+      "D. `@set_name`"
     ],
     "correct_option": "A",
-    "explanation": "Hàm `hasattr(object, name)` nhận vào đối tượng và tên thuộc tính (dưới dạng chuỗi), trả về `True` nếu thuộc tính tồn tại và `False` nếu ngược lại.",
-    "solution": "**Bước 1:** Phân tích các hàm thao tác thuộc tính động (reflection):\n- `hasattr()`: Kiểm tra sự tồn tại (Trả về Boolean).\n- `getattr()`: Lấy giá trị thuộc tính.\n- `setattr()`: Thiết lập thuộc tính.\n**Bước 2:** Để kiểm tra an toàn, ta dùng `hasattr()`. Chọn A."
+    "explanation": "Khi có thuộc tính `@property` tên là `name`, ta định nghĩa setter bằng cú pháp `@name.setter` phía trước phương thức cùng tên.",
+    "solution": "**Bước 1:** Setter tương ứng của property `x` có dạng `@x.setter`. Chọn A."
+  },
+  {
+    "id": "Q_MOD_C_035",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "oop",
+      "dunder"
+    ],
+    "content": "Để nạp chồng toán tử nhân `*` giữa hai đối tượng, ta cần ghi đè phương thức ma thuật nào?",
+    "options": [
+      "A. `__mul__`",
+      "B. `__prod__`",
+      "C. `__multiply__`",
+      "D. `__times__`"
+    ],
+    "correct_option": "A",
+    "explanation": "Toán tử `*` kích hoạt lời gọi phương thức `__mul__(self, other)`.",
+    "solution": "**Bước 1:** Hàm ma thuật tương ứng với toán tử `*` là `__mul__`. Chọn A."
+  },
+  {
+    "id": "Q_MOD_C_036",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "advanced",
+      "generators"
+    ],
+    "content": "Đoạn code sau in ra kết quả gì?\n```python\ndef gen():\n    yield 1\n    yield 2\ng = gen()\nprint(next(g), next(g))\n```",
+    "options": [
+      "A. `1 1`",
+      "B. `1 2`",
+      "C. `2 2`",
+      "D. Lỗi StopIteration"
+    ],
+    "correct_option": "B",
+    "explanation": "Lần đầu gọi `next(g)` chạy đến `yield 1` và trả về 1. Lần gọi thứ hai chạy tiếp đến `yield 2` và trả về 2.",
+    "solution": "**Bước 1:** Theo dõi tiến trình của generator. Chọn B."
+  },
+  {
+    "id": "Q_MOD_C_037",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "oop",
+      "dunder"
+    ],
+    "content": "Phương thức đặc biệt `__new__` trong Class Python khác biệt gì với `__init__`?",
+    "options": [
+      "A. Không có sự khác biệt.",
+      "B. `__new__` thực tế là phương thức tạo thực thể đối tượng mới (allocator) và trả về đối tượng đó; còn `__init__` chỉ chịu trách nhiệm khởi tạo thuộc tính cho thực thể đã có.",
+      "C. `__new__` chạy sau `__init__`.",
+      "D. `__new__` là hàm viết bằng C++."
+    ],
+    "correct_option": "B",
+    "explanation": "`__new__` là phương thức tĩnh thực sự chịu trách nhiệm cấp phát bộ nhớ và tạo thực thể lớp, sau đó `__init__` được gọi để khởi tạo trạng thái.",
+    "solution": "**Bước 1:** `__new__` là phương thức khởi tạo thực thể thực sự (được gọi trước `__init__`). Chọn B."
+  },
+  {
+    "id": "Q_MOD_C_038",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "oop"
+    ],
+    "content": "Phương thức nào dùng để lấy danh sách tất cả các thuộc tính và phương thức hợp lệ của một đối tượng?",
+    "options": [
+      "A. `dir(object)`",
+      "B. `help(object)`",
+      "C. `vars(object)`",
+      "D. `dict(object)`"
+    ],
+    "correct_option": "A",
+    "explanation": "Hàm built-in `dir(object)` trả về danh sách các chuỗi đại diện cho toàn bộ các thuộc tính và phương thức được định nghĩa trên đối tượng đó.",
+    "solution": "**Bước 1:** Tra cứu thuộc tính động qua hàm `dir()`. Chọn A."
+  },
+  {
+    "id": "Q_MOD_C_039",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "advanced",
+      "decorators"
+    ],
+    "content": "Mã nguồn decorator sau in ra kết quả gì?\n```python\ndef dec(f):\n    return lambda: f() + 1\n@dec\ndef val():\n    return 5\nprint(val())\n```",
+    "options": [
+      "A. 5",
+      "B. 6",
+      "C. Lỗi TypeError",
+      "D. `None`"
+    ],
+    "correct_option": "B",
+    "explanation": "Decorator bọc hàm `val` bằng lambda thực hiện `val() + 1` tương đương `5 + 1 = 6`.",
+    "solution": "**Bước 1:** Phân tích decorator lồng hàm: Kết quả trả về cộng thêm 1. Chọn B."
+  },
+  {
+    "id": "Q_MOD_C_040",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "advanced",
+      "lambda"
+    ],
+    "content": "Hàm ẩn danh lambda trong Python có giới hạn cú pháp quan trọng nào?",
+    "options": [
+      "A. Chỉ được phép chứa duy nhất một biểu thức kết quả (expression) và tự động trả về giá trị đó, không chứa khối lệnh đa dòng hoặc từ khóa return.",
+      "B. Chỉ được phép nhận tối đa 1 đối số truyền vào.",
+      "C. Không thể gọi được từ bên ngoài module.",
+      "D. Bắt buộc phải đặt tên khi khai báo."
+    ],
+    "correct_option": "A",
+    "explanation": "Lambda được thiết kế cho các hàm ngắn gọn trên 1 dòng nên chỉ chấp nhận duy nhất một biểu thức tính toán đơn giản.",
+    "solution": "**Bước 1:** Nhớ lại ràng buộc cú pháp của biểu thức lambda. Chọn A."
+  },
+  {
+    "id": "Q_MOD_C_041",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "oop",
+      "dunder"
+    ],
+    "content": "Phương thức ma thuật nào được gọi khi ta cố gắng truy cập một thuộc tính không tồn tại trong đối tượng?",
+    "options": [
+      "A. `__getattribute__`",
+      "B. `__getattr__`",
+      "C. `__missing__`",
+      "D. `__error__`"
+    ],
+    "correct_option": "B",
+    "explanation": "Khác với `__getattribute__` (luôn gọi cho mọi thuộc tính), `__getattr__` chỉ được kích hoạt làm giải pháp dự phòng cuối cùng khi thuộc tính yêu cầu không được tìm thấy trong bảng thuộc tính thông thường.",
+    "solution": "**Bước 1:** Thuộc tính thiếu kích hoạt dunder `__getattr__`. Chọn B."
+  },
+  {
+    "id": "Q_MOD_C_042",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "advanced",
+      "closures"
+    ],
+    "content": "Yếu tố nào sau đây là bắt buộc để tạo ra một Closure (bao đóng) trong Python?",
+    "options": [
+      "A. Phải có hàm lồng nhau, hàm con phải tham chiếu đến biến của hàm cha, và hàm cha phải trả về hàm con đó.",
+      "B. Phải sử dụng từ khóa `global`.",
+      "C. Phải kết nối trực tiếp với cơ sở dữ liệu.",
+      "D. Hàm con bắt buộc phải viết bằng cú pháp lambda."
+    ],
+    "correct_option": "A",
+    "explanation": "Closure yêu cầu lưu trữ ngữ cảnh biến của hàm ngoài (enclosing scope) gắn với hàm con được trả về.",
+    "solution": "**Bước 1:** Đối chiếu điều kiện tạo Closure. Chọn A."
+  },
+  {
+    "id": "Q_MOD_C_043",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "oop"
+    ],
+    "content": "Để lấy ra từ điển chứa tất cả các thuộc tính của thực thể đối tượng dưới dạng các cặp `tên_thuộc_tính: giá_trị`, ta truy cập thuộc tính ma thuật nào?",
+    "options": [
+      "A. `__dict__`",
+      "B. `__slots__`",
+      "C. `__vars__`",
+      "D. `__methods__`"
+    ],
+    "correct_option": "A",
+    "explanation": "Thuộc tính `__dict__` lưu trữ không gian tên thuộc tính của đối tượng dưới dạng từ điển thông thường.",
+    "solution": "**Bước 1:** Không gian tên thuộc tính lưu trong `__dict__`. Chọn A."
+  },
+  {
+    "id": "Q_MOD_C_044",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "oop",
+      "slots"
+    ],
+    "content": "Thuộc tính đặc biệt `__slots__` dùng trong khai báo Class nhằm mục đích gì?",
+    "options": [
+      "A. Để mã hóa bảo mật lớp học.",
+      "B. Khai báo danh sách cố định các thuộc tính thực thể được phép tạo, giúp tối ưu hóa bộ nhớ và tăng tốc độ truy xuất bằng cách ngăn chặn việc tự động tạo từ điển `__dict__` cho mỗi đối tượng.",
+      "C. Định nghĩa danh sách các lớp con.",
+      "D. Đóng gói các hàm thành luồng xử lý song song."
+    ],
+    "correct_option": "B",
+    "explanation": "`__slots__` tối ưu bộ nhớ cho Class khi cần khởi tạo hàng triệu đối tượng nhỏ, ngăn chặn việc tạo động thuộc tính ngoài danh sách khai báo sẵn.",
+    "solution": "**Bước 1:** `__slots__` ngăn chặn tạo `__dict__` để tối ưu RAM. Chọn B."
+  },
+  {
+    "id": "Q_MOD_C_045",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "advanced",
+      "comprehensions"
+    ],
+    "content": "Biểu thức set comprehension `{x for x in [1, 2, 2, 3]}` trả về kết quả gì?",
+    "options": [
+      "A. `{1, 2, 2, 3}`",
+      "B. `{1, 2, 3}`",
+      "C. `[1, 2, 3]`",
+      "D. `(1, 2, 3)`"
+    ],
+    "correct_option": "B",
+    "explanation": "Set comprehension trả về kiểu tập hợp (Set) được bao bọc trong ngoặc nhọn và tự loại bỏ các giá trị trùng lặp.",
+    "solution": "**Bước 1:** Set comprehension tạo Set duy nhất. Chọn B."
+  },
+  {
+    "id": "Q_MOD_C_046",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "oop",
+      "dunder"
+    ],
+    "content": "Khi sử dụng hàm ép kiểu số nguyên `int(obj)` cho đối tượng tự định nghĩa, phương thức dunder nào được kích hoạt?",
+    "options": [
+      "A. `__int__`",
+      "B. `__to_int__`",
+      "C. `__integer__`",
+      "D. `__index__`"
+    ],
+    "correct_option": "A",
+    "explanation": "Hàm `int()` gọi dunder method `__int__(self)` định nghĩa trong lớp.",
+    "solution": "**Bước 1:** Ép kiểu int gọi `__int__`. Chọn A."
+  },
+  {
+    "id": "Q_MOD_C_047",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "oop",
+      "dunder"
+    ],
+    "content": "Để cho phép đối tượng thực thể có thể được gọi như một hàm thông qua dấu ngoặc đơn (ví dụ `obj()`), lớp của đối tượng bắt buộc phải định nghĩa phương thức nào?",
+    "options": [
+      "A. `__call__`",
+      "B. `__run__`",
+      "C. `__execute__`",
+      "D. `__invoke__`"
+    ],
+    "correct_option": "A",
+    "explanation": "Định nghĩa `__call__(self, *args, **kwargs)` cho phép gọi thực thể của lớp giống như một hàm thông thường (callable object).",
+    "solution": "**Bước 1:** Biến đối tượng thành callable bằng `__call__`. Chọn A."
+  },
+  {
+    "id": "Q_MOD_C_048",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "oop",
+      "inheritance"
+    ],
+    "content": "Hàm `super()` trong trường hợp đa kế thừa phức tạp sẽ duyệt lớp theo thứ tự nào?",
+    "options": [
+      "A. Luôn duyệt lớp cha đầu tiên khai báo bên trái trước.",
+      "B. Theo trật tự tuyến tính được tính toán bởi thuật toán MRO.",
+      "C. Theo thứ tự bảng chữ cái tên lớp.",
+      "D. Duyệt ngẫu nhiên."
+    ],
+    "correct_option": "B",
+    "explanation": "`super()` tìm kiếm phương thức dựa trên danh sách MRO đã được tính toán sẵn cho Class tại thời điểm định nghĩa.",
+    "solution": "**Bước 1:** MRO quyết định chuỗi tìm kiếm của `super()`. Chọn B."
+  },
+  {
+    "id": "Q_MOD_C_049",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "oop",
+      "dunder"
+    ],
+    "content": "Phương thức dunder `__contains__` được sử dụng để định nghĩa hành vi cho toán tử nào?",
+    "options": [
+      "A. `==`",
+      "B. `in`",
+      "C. `is`",
+      "D. `[]`"
+    ],
+    "correct_option": "B",
+    "explanation": "Toán tử thành viên `x in obj` kích hoạt cuộc gọi phương thức `obj.__contains__(x)`.",
+    "solution": "**Bước 1:** Toán tử `in` gọi hàm `__contains__`. Chọn B."
+  },
+  {
+    "id": "Q_MOD_C_050",
+    "module_id": "Module_C",
+    "difficulty": "Medium",
+    "tags": [
+      "oop"
+    ],
+    "content": "Hàm `vars(object)` trả về thông tin gì tương đương?",
+    "options": [
+      "A. `object.__dict__`",
+      "B. `object.__methods__`",
+      "C. `object.__class__`",
+      "D. `dir(object)`"
+    ],
+    "correct_option": "A",
+    "explanation": "Hàm `vars(obj)` trả về thuộc tính `__dict__` của đối tượng đó.",
+    "solution": "**Bước 1:** `vars()` trả về dictionary thuộc tính `__dict__`. Chọn A."
   }
 ];
