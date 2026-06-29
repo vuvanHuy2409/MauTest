@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Entrance Exam – Hệ Thống Thi Trắc Nghiệm AI 2026</title>
-  <meta name="description" content="Hệ thống thi trắc nghiệm tuyển sinh chương trình đào tạo AI với 500 câu hỏi, 4 modules, đồng hồ đếm ngược và kết quả chi tiết." />
+  <title>Pandas Entrance Exam – Hệ Thống Thi Trắc Nghiệm Pandas 2026</title>
+  <meta name="description" content="Hệ thống thi trắc nghiệm đánh giá năng lực lập trình Pandas bằng Python với 250 câu hỏi, 5 modules, đồng hồ đếm ngược và kết quả chi tiết." />
 
   <!-- KaTeX for math rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous" />
@@ -38,23 +38,23 @@
   <div class="landing-container">
 
     <div class="badge-pill">
-      <span>Python Certification 2026</span>
+      <span>Pandas Certification 2026</span>
     </div>
 
     <h1 class="hero-title">
       Hệ Thống Thi<br/>
-      <span class="gradient-text">Trắc Nghiệm Python</span>
+      <span class="gradient-text">Trắc Nghiệm Pandas</span>
     </h1>
 
     <p class="hero-subtitle">
-      Đánh giá năng lực qua <strong>150 câu hỏi</strong> chất lượng cao,
-      từ cơ bản đến nâng cao, bao phủ toàn bộ các chủ đề quan trọng trong Python.
+      Đánh giá năng lực qua <strong>250 câu hỏi</strong> chất lượng cao,
+      từ cơ bản đến nâng cao, bao phủ toàn bộ các chủ đề quan trọng trong Pandas.
     </p>
 
     <!-- Stats -->
     <div class="stats-grid">
       <div class="stat-card">
-        <div class="stat-value">150</div>
+        <div class="stat-value">250</div>
         <div class="stat-label">Câu hỏi</div>
       </div>
       <div class="stat-card">
@@ -69,6 +69,21 @@
         <div class="stat-icon">🎯</div>
         <div class="stat-value">Dễ-Khó</div>
         <div class="stat-label">Độ khó</div>
+      </div>
+    </div>
+
+    <!-- Subject selector -->
+    <div class="mode-selector" style="margin-bottom: 20px;">
+      <div class="mode-label">Chọn chủ đề thi</div>
+      <div class="mode-options">
+        <button class="mode-btn selected" id="subject-pandas-btn" data-subject="python_pandas" style="flex: 1; min-width: 160px;">
+          <span class="mode-questions">Python & Pandas</span>
+          <span>Cú pháp Python & Thao tác dữ liệu Pandas</span>
+        </button>
+        <button class="mode-btn" id="subject-math-btn" data-subject="math" style="flex: 1; min-width: 160px;">
+          <span class="mode-questions">Toán học tuyến tính</span>
+          <span>Vector, Nhân ma trận & Định thức</span>
+        </button>
       </div>
     </div>
 
@@ -99,46 +114,46 @@
     </button>
 
     <!-- Module overview -->
-    <div class="modules-grid">
+    <div class="modules-grid" id="modules-overview-grid">
       <div class="module-card">
         <div class="module-card-header">
           <span class="module-tag mod-a">Module A</span>
-          <span class="module-count">50 câu</span>
+          <span class="module-count" id="mod-a-count-label">50 câu</span>
         </div>
-        <div class="module-card-title">Toán tuyến tính & Pandas</div>
-        <div class="module-card-desc">Định thức, nhân ma trận, chiều vector, và các phép toán lập trình với Series, DataFrames trong Pandas.</div>
+        <div class="module-card-title" id="mod-a-title">Khởi tạo & Chỉ mục</div>
+        <div class="module-card-desc" id="mod-a-desc">Làm quen với cách tạo lập Series, DataFrame, và các thao tác gán/truy xuất chỉ mục dữ liệu trong Pandas.</div>
       </div>
       <div class="module-card">
         <div class="module-card-header">
           <span class="module-tag mod-b">Module B</span>
-          <span class="module-count">50 câu</span>
+          <span class="module-count" id="mod-b-count-label">50 câu</span>
         </div>
-        <div class="module-card-title">Python Cơ bản</div>
-        <div class="module-card-desc">Cú pháp, khai báo biến, câu điều kiện rẽ nhánh, các vòng lặp, và cấu trúc dữ liệu cốt lõi (List, Tuple, Dict, Set).</div>
+        <div class="module-card-title" id="mod-b-title">Python Cơ bản</div>
+        <div class="module-card-desc" id="mod-b-desc">Cú pháp lập trình cơ bản, khai báo biến, các câu điều kiện, vòng lặp và cấu trúc dữ liệu cơ sở của Python.</div>
       </div>
       <div class="module-card">
         <div class="module-card-header">
           <span class="module-tag mod-c">Module C</span>
-          <span class="module-count">50 câu</span>
+          <span class="module-count" id="mod-c-count-label">50 câu</span>
         </div>
-        <div class="module-card-title">Python Hướng đối tượng & Nâng cao</div>
-        <div class="module-card-desc">Lập trình OOP (Class, kế thừa, đa hình, đóng gói), Decorator, Generator, Iterator, Lambda và Comprehensions.</div>
+        <div class="module-card-title" id="mod-c-title">Truy vấn & Biến đổi</div>
+        <div class="module-card-desc" id="mod-c-desc">Lọc dữ liệu theo điều kiện (Boolean indexing), truy xuất loc/iloc, và các phương thức biến đổi cột dữ liệu.</div>
       </div>
       <div class="module-card">
         <div class="module-card-header">
           <span class="module-tag mod-d">Module D</span>
-          <span class="module-count">50 câu</span>
+          <span class="module-count" id="mod-d-count-label">50 câu</span>
         </div>
-        <div class="module-card-title">Thuật ngữ AI & Mô hình LLM</div>
-        <div class="module-card-desc">Định nghĩa Token, Embedding, RAG, Prompt Engineering, cơ chế Attention, mô hình mã nguồn mở vs đóng, vRAM phần cứng.</div>
+        <div class="module-card-title" id="mod-d-title">Gom nhóm & Kết hợp</div>
+        <div class="module-card-desc" id="mod-d-desc">Các kỹ thuật nâng cao để nhóm dữ liệu groupby, tính toán aggregate, và ghép nối dữ liệu qua merge, join, concat.</div>
       </div>
       <div class="module-card">
         <div class="module-card-header">
           <span class="module-tag mod-e">Module E</span>
-          <span class="module-count">50 câu</span>
+          <span class="module-count" id="mod-e-count-label">50 câu</span>
         </div>
-        <div class="module-card-title">Kiến thức Tự luận - Thiết kế Chatbot RAG</div>
-        <div class="module-card-desc">Các bước xây dựng RAG chatbot dựa trên tài liệu, tối ưu hóa Chunking, Vector DB, Reranking, bảo mật, và giảm thiểu ảo tưởng.</div>
+        <div class="module-card-title" id="mod-e-title">Nâng cao & Chuỗi thời gian</div>
+        <div class="module-card-desc" id="mod-e-desc">Thao tác xử lý dữ liệu chuỗi thời gian (resample, rolling), tối ưu bộ nhớ category, và các hàm biến đổi reshape.</div>
       </div>
     </div>
 
@@ -296,35 +311,35 @@
     <div class="breakdown-grid">
       <div class="breakdown-card">
         <div class="breakdown-header">
-          <span class="module-tag mod-a breakdown-title">Module A – Toán tuyến tính & Pandas</span>
+          <span class="module-tag mod-a breakdown-title">Module A – Khởi tạo & Chỉ mục</span>
           <span class="breakdown-score" style="color:var(--accent-blue)" id="mod-score-A">–</span>
         </div>
         <div class="breakdown-bar"><div class="breakdown-bar-fill bar-mod-a" id="mod-bar-A" style="width:0%"></div></div>
       </div>
       <div class="breakdown-card">
         <div class="breakdown-header">
-          <span class="module-tag mod-b breakdown-title">Module B – Python Cơ bản</span>
+          <span class="module-tag mod-b breakdown-title">Module B – Tiền xử lý dữ liệu</span>
           <span class="breakdown-score" style="color:var(--accent-green)" id="mod-score-B">–</span>
         </div>
         <div class="breakdown-bar"><div class="breakdown-bar-fill bar-mod-b" id="mod-bar-B" style="width:0%"></div></div>
       </div>
       <div class="breakdown-card">
         <div class="breakdown-header">
-          <span class="module-tag mod-c breakdown-title">Module C – Python Hướng đối tượng & Nâng cao</span>
+          <span class="module-tag mod-c breakdown-title">Module C – Truy vấn & Biến đổi</span>
           <span class="breakdown-score" style="color:var(--accent-purple)" id="mod-score-C">–</span>
         </div>
         <div class="breakdown-bar"><div class="breakdown-bar-fill bar-mod-c" id="mod-bar-C" style="width:0%"></div></div>
       </div>
       <div class="breakdown-card">
         <div class="breakdown-header">
-          <span class="module-tag mod-d breakdown-title">Module D – Thuật ngữ AI & Mô hình LLM</span>
+          <span class="module-tag mod-d breakdown-title">Module D – Gom nhóm & Kết hợp</span>
           <span class="breakdown-score" style="color:var(--accent-orange)" id="mod-score-D">–</span>
         </div>
         <div class="breakdown-bar"><div class="breakdown-bar-fill bar-mod-d" id="mod-bar-D" style="width:0%"></div></div>
       </div>
       <div class="breakdown-card">
         <div class="breakdown-header">
-          <span class="module-tag mod-e breakdown-title">Module E – Kiến thức Tự luận - Thiết kế Chatbot RAG</span>
+          <span class="module-tag mod-e breakdown-title">Module E – Nâng cao & Chuỗi thời gian</span>
           <span class="breakdown-score" style="color:var(--accent-pink)" id="mod-score-E">–</span>
         </div>
         <div class="breakdown-bar"><div class="breakdown-bar-fill bar-mod-e" id="mod-bar-E" style="width:0%"></div></div>
@@ -374,6 +389,7 @@
 <script src="questions_c.js?v=1.0.1"></script>
 <script src="questions_d.js?v=1.0.1"></script>
 <script src="questions_e.js?v=1.0.1"></script>
+<script src="questions_math.js?v=1.0.1"></script>
 
 <!-- App engine -->
 <script src="app.js?v=1.0.1"></script>

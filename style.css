@@ -245,6 +245,16 @@ body {
 .mode-btn.selected .mode-time {
   color: #a1a1a6;
 }
+.mode-btn span:not(.mode-questions):not(.mode-time) {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  font-weight: 400;
+}
+.mode-btn.selected span:not(.mode-questions):not(.mode-time) {
+  color: #a1a1a6;
+}
 
 /* Start button */
 .btn-start {

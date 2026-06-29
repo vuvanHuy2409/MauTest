@@ -16,6 +16,7 @@ const STATE = {
   examMode: 40,      // 20 | 40 | 50
   phase: 'landing',  // 'landing' | 'quiz' | 'results'
   reviewFilter: 'all',
+  currentSubject: 'python_pandas', // 'python_pandas' | 'math'
 };
 
 // ---------- DOM refs (populated after DOMContentLoaded) ----------
@@ -70,10 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
     modalOverlay:   document.getElementById('modal-overlay'),
     modalConfirm:   document.getElementById('modal-confirm'),
     modalCancel:    document.getElementById('modal-cancel'),
+
+    // Subject Selector
+    subjectPandasBtn: document.getElementById('subject-pandas-btn'),
+    subjectMathBtn:   document.getElementById('subject-math-btn'),
   };
 
   // Load questions and initialise
   initQuestions();
+  updateModuleLabelsInDOM();
 
   // Mode buttons
   DOM.modeBtns.forEach(btn => {
@@ -83,6 +89,16 @@ document.addEventListener('DOMContentLoaded', () => {
       STATE.examMode = parseInt(btn.dataset.count);
     });
   });
+
+  // Subject buttons
+  if (DOM.subjectPandasBtn && DOM.subjectMathBtn) {
+    DOM.subjectPandasBtn.addEventListener('click', () => {
+      selectSubject('python_pandas');
+    });
+    DOM.subjectMathBtn.addEventListener('click', () => {
+      selectSubject('math');
+    });
+  }
 
   // Start button
   DOM.startBtn.addEventListener('click', startExam);
@@ -145,14 +161,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ---------- Question Initialisation ----------
 function initQuestions() {
-  // Combine all module questions (loaded via separate script files)
-  const all = [
-    ...(typeof QUESTIONS_A !== 'undefined' ? QUESTIONS_A : []),
-    ...(typeof QUESTIONS_B !== 'undefined' ? QUESTIONS_B : []),
-    ...(typeof QUESTIONS_C !== 'undefined' ? QUESTIONS_C : []),
-    ...(typeof QUESTIONS_D !== 'undefined' ? QUESTIONS_D : []),
-    ...(typeof QUESTIONS_E !== 'undefined' ? QUESTIONS_E : []),
-  ];
+  let all = [];
+  if (STATE.currentSubject === 'math') {
+    all = typeof QUESTIONS_MATH !== 'undefined' ? QUESTIONS_MATH : [];
+  } else {
+    all = [
+      ...(typeof QUESTIONS_A !== 'undefined' ? QUESTIONS_A : []),
+      ...(typeof QUESTIONS_B !== 'undefined' ? QUESTIONS_B : []),
+      ...(typeof QUESTIONS_C !== 'undefined' ? QUESTIONS_C : []),
+      ...(typeof QUESTIONS_D !== 'undefined' ? QUESTIONS_D : []),
+      ...(typeof QUESTIONS_E !== 'undefined' ? QUESTIONS_E : []),
+    ];
+  }
   STATE.allQuestions = all;
 }
 
@@ -409,13 +429,23 @@ function difficultyLabel(d) {
 }
 
 function moduleLabel(m) {
-  return { 
-    Module_A: 'Toán tuyến tính & Pandas', 
-    Module_B: 'Python Cơ bản', 
-    Module_C: 'Python Hướng đối tượng & Nâng cao', 
-    Module_D: 'Thuật ngữ AI & Mô hình LLM', 
-    Module_E: 'Kiến thức Tự luận - Thiết kế Chatbot RAG' 
-  }[m] || m;
+  if (STATE.currentSubject === 'math') {
+    return { 
+      Module_A: 'Vector & Phép toán Vector', 
+      Module_B: 'Ma trận & Kích thước ma trận', 
+      Module_C: 'Phép nhân ma trận', 
+      Module_D: 'Định thức ma trận', 
+      Module_E: 'Ma trận chuyển vị & Nghịch đảo' 
+    }[m] || m;
+  } else {
+    return { 
+      Module_A: 'Khởi tạo & Chỉ mục', 
+      Module_B: 'Tiền xử lý dữ liệu', 
+      Module_C: 'Truy vấn & Biến đổi', 
+      Module_D: 'Gom nhóm & Kết hợp', 
+      Module_E: 'Nâng cao & Chuỗi thời gian' 
+    }[m] || m;
+  }
 }
 
 // ---------- Answer Selection ----------
@@ -734,3 +764,58 @@ function goHome() {
   stopTimer();
   showPage('landing');
 }
+
+// ---------- Subject Switcher Helpers ----------
+function selectSubject(subject) {
+  STATE.currentSubject = subject;
+  
+  if (subject === 'python_pandas') {
+    DOM.subjectPandasBtn.classList.add('selected');
+    DOM.subjectMathBtn.classList.remove('selected');
+  } else {
+    DOM.subjectMathBtn.classList.add('selected');
+    DOM.subjectPandasBtn.classList.remove('selected');
+  }
+  
+  initQuestions();
+  updateModuleLabelsInDOM();
+}
+
+function updateModuleLabelsInDOM() {
+  const labels = {
+    python_pandas: {
+      A: { title: 'Khởi tạo & Chỉ mục', desc: 'Làm quen với cách tạo lập Series, DataFrame, và các thao tác gán/truy xuất chỉ mục dữ liệu trong Pandas.', count: '50 câu' },
+      B: { title: 'Python Cơ bản', desc: 'Cú pháp lập trình cơ bản, khai báo biến, các câu điều kiện, vòng lặp và cấu trúc dữ liệu cơ sở của Python.', count: '50 câu' },
+      C: { title: 'Truy vấn & Biến đổi', desc: 'Lọc dữ liệu theo điều kiện (Boolean indexing), truy xuất loc/iloc, và các phương thức biến đổi cột dữ liệu.', count: '50 câu' },
+      D: { title: 'Gom nhóm & Kết hợp', desc: 'Các kỹ thuật nâng cao để nhóm dữ liệu groupby, tính toán aggregate, và ghép nối dữ liệu qua merge, join, concat.', count: '50 câu' },
+      E: { title: 'Nâng cao & Chuỗi thời gian', desc: 'Thao tác xử lý dữ liệu chuỗi thời gian (resample, rolling), tối ưu bộ nhớ category, và các hàm biến đổi reshape.', count: '50 câu' }
+    },
+    math: {
+      A: { title: 'Vector & Phép toán Vector', desc: 'Tích vô hướng, độ dài vector, tổng/hiệu vector, nhân số với vector, góc giữa hai vector và khoảng cách Euclid.', count: '10 câu' },
+      B: { title: 'Ma trận & Kích thước ma trận', desc: 'Khái niệm ma trận chéo, đối xứng, trực giao, vết ma trận, phép cộng trừ ma trận và nhân số với ma trận.', count: '10 câu' },
+      C: { title: 'Phép nhân ma trận', desc: 'Quy tắc nhân hai ma trận, tính kích thước ma trận kết quả, các tính chất và tích ngoài của vector.', count: '10 câu' },
+      D: { title: 'Định thức ma trận', desc: 'Cách tính định thức ma trận cấp 2 và cấp 3, tính chất định thức đối với phép biến đổi dòng/chuyển vị và ma trận kỳ dị.', count: '10 câu' },
+      E: { title: 'Ma trận chuyển vị & Nghịch đảo', desc: 'Cách tìm ma trận chuyển vị, điều kiện khả nghịch, tính ma trận nghịch đảo và liên hệ định thức/chuyển vị.', count: '10 câu' }
+    }
+  };
+
+  const current = labels[STATE.currentSubject];
+  const modules = ['A', 'B', 'C', 'D', 'E'];
+  
+  modules.forEach(mod => {
+    // Update Landing page cards
+    const titleEl = document.getElementById(`mod-${mod.toLowerCase()}-title`);
+    const descEl = document.getElementById(`mod-${mod.toLowerCase()}-desc`);
+    const countEl = document.getElementById(`mod-${mod.toLowerCase()}-count-label`);
+    if (titleEl) titleEl.textContent = current[mod].title;
+    if (descEl) descEl.textContent = current[mod].desc;
+    if (countEl) countEl.textContent = current[mod].count;
+
+    // Update Results breakdown headers
+    const breakdownTitleEl = document.querySelector(`.breakdown-title.mod-${mod.toLowerCase()}`);
+    if (breakdownTitleEl) {
+      breakdownTitleEl.textContent = `Module ${mod} – ${current[mod].title}`;
+    }
+  });
+}
+
